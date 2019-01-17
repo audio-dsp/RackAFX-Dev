@@ -1,4 +1,4 @@
-The following repository is and was meant to be used with Will Prickle's RackAFX 
+The following repository is and was meant to be used with Will Pirkle's RackAFX 
 I've followed the tutorials to setup an "All_SDK".
 
 ![Audio Plugins](vst_au_AAX.png "Audio Plugins")
