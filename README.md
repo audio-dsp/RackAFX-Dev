@@ -7,6 +7,8 @@ RackAFX can be downloaded from [here:](http://www.willpirkle.com/rackafx/downloa
 
 The Books and Sample Projects can be downloaded from the Professors [website](http://www.willpirkle.com )
 
+AAX/AU/VST Project Exporting using RackAFX Part 1. [here](https://www.youtube.com/watch?v=qXkah52VKaE)
+
 
 
 
