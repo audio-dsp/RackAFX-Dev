@@ -1,0 +1,3 @@
+LIBRARY			TEMPOSYNCREVERSER
+DESCRIPTION		'TempoSyncReverser'
+EXPORTS         main

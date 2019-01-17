@@ -1,0 +1,87 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+127                     PNG     DISCARDABLE     "images\\bmp00127.png"
+128                     PNG     DISCARDABLE     "images\\bmp00128.png"
+129                     PNG     DISCARDABLE     "images\\bmp00129.png"
+130                     PNG     DISCARDABLE     "images\\bmp00130.png"
+227                     PNG     DISCARDABLE     "images\\bmp00227.png"
+131                     PNG     DISCARDABLE     "images\\bmp00131.png"
+132                     PNG     DISCARDABLE     "images\\bmp00132.png"
+133                     PNG     DISCARDABLE     "images\\bmp00133.png"
+228                     PNG     DISCARDABLE     "images\\bmp00228.png"
+229                     PNG     DISCARDABLE     "images\\bmp00229.png"
+230                     PNG     DISCARDABLE     "images\\bmp00230.png"
+231                     PNG     DISCARDABLE     "images\\bmp00231.png"
+234                     PNG     DISCARDABLE     "images\\bmp00234.png"
+232                     PNG     DISCARDABLE     "images\\bmp00232.png"
+233                     PNG     DISCARDABLE     "images\\bmp00233.png"
+236                     PNG     DISCARDABLE     "images\\bmp00236.png"
+235                     PNG     DISCARDABLE     "images\\bmp00235.png"
+134                     PNG     DISCARDABLE     "images\\bmp00134.png"
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

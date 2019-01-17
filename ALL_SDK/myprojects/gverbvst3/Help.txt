@@ -1,0 +1,76 @@
+************	                        
+Description:
+
+************
+	
+This is port of Gverb reverb. Gverb source code can be freely found on the internet. 
+As opposed to some of our more advanced reverbs, as the one found in Simple sampler, GVerb internal architecture is rather simple, but still sounds good.        
+
+The original code did not support sample-rate scaling. Rather that trying to change the code, high-quality resampling to target-rate was added.  
+The plugin will work best and use minimum CPU at native 44100 sample rate, when no resampling is perfomed.
+
+
+
+***************	                        
+Gverb usage:
+***************	
+	
+	
+ Installation:
+ ------------
+-VST2: Just copy the dll file to your VST plugin folder and re-scan from inside of VST host program.
+-VST3: Copy VST3 file to your VST plugin folder (for example "C:\Program Files\Common Files\VST3\") and re-scan. Host program must support VST3 platform.
+-Standalone: Copy exe file to desktop or folder of your choice and run it. Choose inputs and outputs from menu. 
+
+ Denstallation:
+ ------------
+-Simply delete plugin files.
+
+
+
+ General usage tips:
+ ------------------
+
+-Knob adjustment:           Mouse drag, or mouse wheel over knob.
+-Fine knob adjustment:      Hold "Ctrl" at the same time.
+-Reset knob value:          Double click on knob.
+
+ Controls:
+ --------
+-Size:                     Adjusts reverb space size.
+-Decay:                    Controls how long reverb tail will last.
+-Bandwidth:                Adjusts frequency range of input signal. 
+-Damping:                  Amount of high-frequency attenuation. 
+
+-Early level:              Amount of early part of reverb or "close reflections".
+-Late level:               Amount of late part of reverb or "tail".
+-Dry level:                Amount of original unprocessed signal added to processed signal.
+-Output:                   Adjusts output level.
+
+
+-Indicator screen :        Shows value of currently adjusted knob.
+-Preset box:               Shows presets drop-down list.
+
+
+-----------------------
+
+ -Tested on: Windows XP, Windows 7.
+
+ -Known issues: Latency is not reported correctly to host program (should be about 1 ms);
+ 
+
+
+ -please send any feedback/suggestion to ElementsPlugins@Gmail.com.
+
+
+
+ -original GVerb code:
+  Copyright (C) 1999 Juhana Sadeharju
+  kouhia at nic.funet.fi
+  http://wiki.audacityteam.org/wiki/GVerb
+
+
+ -VST is a trademark and software of Steinberg Media Technologies GmbH
+ 
+
+ 

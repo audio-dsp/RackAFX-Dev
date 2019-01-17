@@ -1,0 +1,109 @@
+
+
+<SimpleColourOrgan>
+	<Palette name="A. Wallace Rimington (Black=silent)">
+		<silent col="000000"/>
+		<C col="FA0B0C"/>
+		<C# col="A00C09"/>
+		<D col="F44712"/>
+		<D# col="F88010"/>
+		<E col="F5F43C"/>
+		<F col="709226"/>
+		<F# col="149033"/>
+		<G col="27A481"/>
+		<G# col="1B9081"/>
+		<A col="7F087C"/>
+		<A# col="1C0D82"/>
+		<B col="D71386"/>
+	</Palette>
+	<Palette name="A. Wallace Rimington (White=silent)">
+		<silent col="FFFFFF"/>
+		<C col="FA0B0C"/>
+		<C# col="A00C09"/>
+		<D col="F44712"/>
+		<D# col="F88010"/>
+		<E col="F5F43C"/>
+		<F col="709226"/>
+		<F# col="149033"/>
+		<G col="27A481"/>
+		<G# col="1B9081"/>
+		<A col="7F087C"/>
+		<A# col="1C0D82"/>
+		<B col="D71386"/>
+	</Palette>
+	<Palette name="Alexander Scriabin (Black=silent)">
+		<silent col="000000"/>
+		<C col="FA0B0C"/>
+		<C# col="D71386"/>
+		<D col="F5F43C"/>
+		<D# col="5A5685"/>
+		<E col="1C5BA0"/>
+		<F col="A00C09"/>
+		<F# col="1C0D82"/>
+		<G col="F88010"/>
+		<G# col="7F087C"/>
+		<A col="149033"/>
+		<A# col="5A5685"/>
+		<B col="1C5BA0"/>
+	</Palette>
+	<Palette name="Alexander Scriabin (White=silent)">
+		<silent col="FFFFFF"/>
+		<C col="FA0B0C"/>
+		<C# col="D71386"/>
+		<D col="F5F43C"/>
+		<D# col="5A5685"/>
+		<E col="1C5BA0"/>
+		<F col="A00C09"/>
+		<F# col="1C0D82"/>
+		<G col="F88010"/>
+		<G# col="7F087C"/>
+		<A col="149033"/>
+		<A# col="5A5685"/>
+		<B col="1C5BA0"/>
+	</Palette>
+	<Palette name="Louis Bertrand Castel (Black=silent)">
+		<silent col="000000"/>
+		<C col="1C0D82"/>
+		<C# col="1B9081"/>
+		<D col="149033"/>
+		<D# col="709226"/>
+		<E col="F5F43C"/>
+		<F col="F5D23B"/>
+		<F# col="F88010"/>
+		<G col="FA0B0C"/>
+		<G# col="A00C09"/>
+		<A col="D71386"/>
+		<A# col="4B0E7D"/>
+		<B col="7F087C"/>
+	</Palette>
+	<Palette name="Louis Bertrand Castel (White=silent)">
+		<silent col="FFFFFF"/>
+		<C col="1C0D82"/>
+		<C# col="1B9081"/>
+		<D col="149033"/>
+		<D# col="709226"/>
+		<E col="F5F43C"/>
+		<F col="F5D23B"/>
+		<F# col="F88010"/>
+		<G col="FA0B0C"/>
+		<G# col="A00C09"/>
+		<A col="D71386"/>
+		<A# col="4B0E7D"/>
+		<B col="7F087C"/>
+	</Palette>
+	<Palette name="Niall Moody Pastel">
+		<silent col="FFFFFF"/>
+		<C col="FFCBCB"/>
+		<C# col="FFCBE2"/>
+		<D col="FFCBFB"/>
+		<D# col="E2CBFF"/>
+		<E col="CBD0FF"/>
+		<F col="CBE2FF"/>
+		<F# col="CBF7FF"/>
+		<G col="CBFFEE"/>
+		<G# col="CDFFCB"/>
+		<A col="E6FFCB"/>
+		<A# col="FFF6CB"/>
+		<B col="FFE2CB"/>
+	</Palette>
+</SimpleColourOrgan>

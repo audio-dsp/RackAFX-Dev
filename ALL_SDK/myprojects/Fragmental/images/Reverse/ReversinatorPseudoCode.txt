@@ -1,0 +1,21 @@
+Init:
+-----
+wp = 0;
+rp1 = bufSize-1;
+rp2 = (bufSize/2)-1;
+
+Process:
+--------
+delayLine[wp] = input;
+output = (delayLine[rp1] * cosTable[rp1]) + (delayLine[rp2] * (1.0f-cosTable[rp2]);
+
+++wp;
+wp %= bufSize;
+
+--rp1;
+if(rp1 < 0)
+    rp1 = bufSize - 1;
+
+--rp2;
+if(rp2 < 0)
+    rp2 = bufSize - 1;

@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		089C1669FE841209C02AAC07 = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4F9091AC011F3BD104CA0E50,
+				4F9091AD011F3BD104CA0E50,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 089C166AFE841209C02AAC07;
+			projectDirPath = "";
+			targets = (
+				8D01CCC60486CAD60068D4B7,
+			);
+		};
+		089C166AFE841209C02AAC07 = {
+			children = (
+				08FB77ADFE841716C02AAC07,
+				089C167CFE841241C02AAC07,
+				089C1671FE841209C02AAC07,
+				19C28FB4FE9D528D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = SimpleColourOrgan;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 = {
+			children = (
+				D2AB1D420972F8DE003C0F0A,
+				D2AB1D350972F7C2003C0F0A,
+				D2AB1D2C0972F783003C0F0A,
+				08EA7FFBFE8413EDC02AAC07,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 = {
+			children = (
+				D2AB1CEC0972F27E003C0F0A,
+				8D01CCD10486CAD60068D4B7,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		08EA7FFBFE8413EDC02AAC07 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		08FB77ADFE841716C02AAC07 = {
+			children = (
+				D2AB1CF70972F2CE003C0F0A,
+				D2AB1CBE0972F1E2003C0F0A,
+				D2AB1CC50972F1E2003C0F0A,
+				D2AB1CB40972F1E2003C0F0A,
+				D2AB1CB50972F1E2003C0F0A,
+				D2AB1CB60972F1E2003C0F0A,
+				D2AB1CB70972F1E2003C0F0A,
+				D2AB1CB80972F1E2003C0F0A,
+				D2AB1CB90972F1E2003C0F0A,
+				D2AB1CBA0972F1E2003C0F0A,
+				D2AB1CBB0972F1E2003C0F0A,
+				D2AB1CBC0972F1E2003C0F0A,
+				D2AB1CCA0972F1E2003C0F0A,
+				D2AB1CCB0972F1E2003C0F0A,
+			);
+			isa = PBXGroup;
+			name = Source;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//190
+//191
+//192
+//193
+//194
+		19C28FB4FE9D528D11CA2CBB = {
+			children = (
+				8D01CCD20486CAD60068D4B7,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//4F0
+//4F1
+//4F2
+//4F3
+//4F4
+		4F9091AC011F3BD104CA0E50 = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4F9091AD011F3BD104CA0E50 = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4F0
+//4F1
+//4F2
+//4F3
+//4F4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D01CCC60486CAD60068D4B7 = {
+			buildPhases = (
+				8D01CCC70486CAD60068D4B7,
+				8D01CCC90486CAD60068D4B7,
+				8D01CCCB0486CAD60068D4B7,
+				8D01CCCD0486CAD60068D4B7,
+				8D01CCCF0486CAD60068D4B7,
+				D2AB1CF30972F298003C0F0A,
+				D2AB1CF40972F2AF003C0F0A,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ../vstsdk2.4/vstgui.sf/vstgui/vstplugsmacho.h;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "../vstsdk2.4 ../vstsdk2.4/public.sdk/source/vst2.x";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = Bundle;
+				OTHER_CFLAGS = "-DTIXML_USE_STL -DVSYNC";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SimpleColourOrgan;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = vst;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = SimpleColourOrgan;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = SimpleColourOrgan;
+			productReference = 8D01CCD20486CAD60068D4B7;
+			productType = "com.apple.product-type.bundle";
+		};
+		8D01CCC70486CAD60068D4B7 = {
+			buildActionMask = 2147483647;
+			files = (
+				D2AB1CCD0972F1E2003C0F0A,
+				D2AB1CCF0972F1E2003C0F0A,
+				D2AB1CD10972F1E2003C0F0A,
+				D2AB1CD30972F1E2003C0F0A,
+				D2AB1CD40972F1E2003C0F0A,
+				D2AB1CD70972F1E2003C0F0A,
+				D2AB1CD90972F1E2003C0F0A,
+				D2AB1CDD0972F1E2003C0F0A,
+				D2AB1CDF0972F1E2003C0F0A,
+				D2AB1CE10972F1E2003C0F0A,
+				D2772FDD09BB8A2500439885,
+				D2772FDF09BB8A2500439885,
+				D2772FE109BB8A2500439885,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D01CCC90486CAD60068D4B7 = {
+			buildActionMask = 2147483647;
+			files = (
+				D2AB1CED0972F27E003C0F0A,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D01CCCB0486CAD60068D4B7 = {
+			buildActionMask = 2147483647;
+			files = (
+				D2AB1CCC0972F1E2003C0F0A,
+				D2AB1CCE0972F1E2003C0F0A,
+				D2AB1CD00972F1E2003C0F0A,
+				D2AB1CD20972F1E2003C0F0A,
+				D2AB1CD60972F1E2003C0F0A,
+				D2AB1CD80972F1E2003C0F0A,
+				D2AB1CDA0972F1E2003C0F0A,
+				D2AB1CDB0972F1E2003C0F0A,
+				D2AB1CDC0972F1E2003C0F0A,
+				D2AB1CDE0972F1E2003C0F0A,
+				D2AB1CE00972F1E2003C0F0A,
+				D2772FDE09BB8A2500439885,
+				D2772FE009BB8A2500439885,
+				D2772FE209BB8A2500439885,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D01CCCD0486CAD60068D4B7 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D01CCCE0486CAD60068D4B7,
+				D2AB1D2D0972F783003C0F0A,
+				D2AB1D360972F7C2003C0F0A,
+				D2AB1D430972F8DE003C0F0A,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D01CCCE0486CAD60068D4B7 = {
+			fileRef = 08EA7FFBFE8413EDC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D01CCCF0486CAD60068D4B7 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D01CCD10486CAD60068D4B7 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist;
+			path = Info.plist;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		8D01CCD20486CAD60068D4B7 = {
+			explicitFileType = wrapper.cfbundle;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = SimpleColourOrgan.vst;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+//D20
+//D21
+//D22
+//D23
+//D24
+		D2772FD709BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = aeffeditor.h;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/aeffeditor.h";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FD809BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = audioeffect.cpp;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.cpp";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FD909BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = audioeffect.h;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/audioeffect.h";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FDA09BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = audioeffectx.cpp;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.cpp";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FDB09BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			name = audioeffectx.h;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/audioeffectx.h";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FDC09BB8A2500439885 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			name = vstplugmain.cpp;
+			path = "/Users/niallmoody/Programming/VST Plugins/vstsdk2.4/public.sdk/source/vst2.x/vstplugmain.cpp";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2772FDD09BB8A2500439885 = {
+			fileRef = D2772FD709BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2772FDE09BB8A2500439885 = {
+			fileRef = D2772FD809BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2772FDF09BB8A2500439885 = {
+			fileRef = D2772FD909BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2772FE009BB8A2500439885 = {
+			fileRef = D2772FDA09BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2772FE109BB8A2500439885 = {
+			fileRef = D2772FDB09BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2772FE209BB8A2500439885 = {
+			fileRef = D2772FDC09BB8A2500439885;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CB40972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = Colour.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CB50972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = Colour.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CB60972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = ColourNote.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CB70972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = ColourNote.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CB80972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = ColourOrganGui.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CB90972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = ColourOrganGui.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CBA0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = CriticalSection.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CBB0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = CriticalSection.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CBC0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = PaletteFile.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CBE0972F1E2003C0F0A = {
+			children = (
+				D2AB1CBF0972F1E2003C0F0A,
+				D2AB1CC00972F1E2003C0F0A,
+				D2AB1CC10972F1E2003C0F0A,
+				D2AB1CC20972F1E2003C0F0A,
+				D2AB1CC30972F1E2003C0F0A,
+				D2AB1CC40972F1E2003C0F0A,
+			);
+			isa = PBXGroup;
+			path = tinyxml;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CBF0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = tinystr.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC00972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = tinystr.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC10972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = tinyxml.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC20972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = tinyxml.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC30972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = tinyxmlerror.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC40972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = tinyxmlparser.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC50972F1E2003C0F0A = {
+			children = (
+				D2AB1CC60972F1E2003C0F0A,
+				D2AB1CC70972F1E2003C0F0A,
+				D2AB1CC80972F1E2003C0F0A,
+				D2AB1CC90972F1E2003C0F0A,
+			);
+			isa = PBXGroup;
+			path = VSTGL;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC60972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = VSTGLEditor.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC70972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = VSTGLEditor.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC80972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = VSTGLTimer.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CC90972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = VSTGLTimer.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CCA0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.cpp.cpp;
+			path = VstPlugin.cpp;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CCB0972F1E2003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = VstPlugin.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CCC0972F1E2003C0F0A = {
+			fileRef = D2AB1CB40972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CCD0972F1E2003C0F0A = {
+			fileRef = D2AB1CB50972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CCE0972F1E2003C0F0A = {
+			fileRef = D2AB1CB60972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CCF0972F1E2003C0F0A = {
+			fileRef = D2AB1CB70972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD00972F1E2003C0F0A = {
+			fileRef = D2AB1CB80972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD10972F1E2003C0F0A = {
+			fileRef = D2AB1CB90972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD20972F1E2003C0F0A = {
+			fileRef = D2AB1CBA0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD30972F1E2003C0F0A = {
+			fileRef = D2AB1CBB0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD40972F1E2003C0F0A = {
+			fileRef = D2AB1CBC0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD60972F1E2003C0F0A = {
+			fileRef = D2AB1CBF0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD70972F1E2003C0F0A = {
+			fileRef = D2AB1CC00972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD80972F1E2003C0F0A = {
+			fileRef = D2AB1CC10972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CD90972F1E2003C0F0A = {
+			fileRef = D2AB1CC20972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDA0972F1E2003C0F0A = {
+			fileRef = D2AB1CC30972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDB0972F1E2003C0F0A = {
+			fileRef = D2AB1CC40972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDC0972F1E2003C0F0A = {
+			fileRef = D2AB1CC60972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDD0972F1E2003C0F0A = {
+			fileRef = D2AB1CC70972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDE0972F1E2003C0F0A = {
+			fileRef = D2AB1CC80972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CDF0972F1E2003C0F0A = {
+			fileRef = D2AB1CC90972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CE00972F1E2003C0F0A = {
+			fileRef = D2AB1CCA0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CE10972F1E2003C0F0A = {
+			fileRef = D2AB1CCB0972F1E2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CEC0972F27E003C0F0A = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = PkgInfo;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1CED0972F27E003C0F0A = {
+			fileRef = D2AB1CEC0972F27E003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1CF30972F298003C0F0A = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp PkgInfo build/SimpleColourOrgan.vst/Contents/";
+		};
+		D2AB1CF40972F2AF003C0F0A = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r build/SimpleColourOrgan.vst $HOME/Library/Audio/Plug-Ins/VST/";
+		};
+		D2AB1CF70972F2CE003C0F0A = {
+			children = (
+				D2772FD709BB8A2500439885,
+				D2772FD809BB8A2500439885,
+				D2772FD909BB8A2500439885,
+				D2772FDA09BB8A2500439885,
+				D2772FDB09BB8A2500439885,
+				D2772FDC09BB8A2500439885,
+			);
+			isa = PBXGroup;
+			name = VSTSDK;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		D2AB1D2C0972F783003C0F0A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = AGL.framework;
+			path = /System/Library/Frameworks/AGL.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2AB1D2D0972F783003C0F0A = {
+			fileRef = D2AB1D2C0972F783003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1D350972F7C2003C0F0A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = CoreServices.framework;
+			path = /System/Library/Frameworks/CoreServices.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2AB1D360972F7C2003C0F0A = {
+			fileRef = D2AB1D350972F7C2003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		D2AB1D420972F8DE003C0F0A = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = OpenGL.framework;
+			path = /System/Library/Frameworks/OpenGL.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		D2AB1D430972F8DE003C0F0A = {
+			fileRef = D2AB1D420972F8DE003C0F0A;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 089C1669FE841209C02AAC07;
+}

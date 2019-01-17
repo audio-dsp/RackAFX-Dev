@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.44.1"
+   sodipodi:docbase="C:\Programming\VST Plugins\Fragmental\manual"
+   sodipodi:docname="EnvDemonstration.svg"
+   inkscape:export-filename="C:\Programming\VST Plugins\Fragmental\manual\EnvDemonstration.png"
+   inkscape:export-xdpi="93.720001"
+   inkscape:export-ydpi="93.720001">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="463.05605"
+     inkscape:cy="631.47439"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1280"
+     inkscape:window-height="744"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 156.74689,423.81386 L 166.92131,423.81386 L 170.31278,364.46309 L 168.61704,450.94563 L 173.70425,369.55028 L 172.00852,449.24989 L 177.09573,362.76734 L 175.39999,456.03283 L 180.4872,371.24603 L 180.4872,439.07548 L 183.87867,376.33323 L 183.87867,440.77121 L 187.27014,384.81192 L 187.27014,447.55415 L 190.66162,394.98633 L 192.35735,433.98826 L 194.05309,405.16075 L 194.05309,428.90105 L 197.44456,413.63943 L 199.1403,423.81386 L 241.5337,423.81386"
+       id="path1874" />
+    <path
+       id="path1876"
+       d="M 268.26106,425.24243 L 278.43547,425.24243 L 281.82694,365.89166 L 280.97907,425.20436 L 283.70264,365.94563 L 282.67481,425.42653 L 285.21842,370.97885 L 284.41554,425.32132 L 288.60989,364.19591 L 287.62844,425.67569 L 292.00136,372.6746 L 292.3585,425.86119 L 295.39283,377.7618 C 295.39283,377.7618 294.9021,424.18725 295.74997,426.30692 C 296.59784,428.4266 298.78431,386.24049 298.78431,386.24049 L 299.32002,427.01843 L 302.17578,396.4149 L 302.97866,426.13112 L 305.56725,406.58932 L 305.56725,426.40105 L 308.95872,415.068 L 310.65446,425.24243 L 353.04787,425.24243"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="cccccccccccccsccccccccc" />
+    <path
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 368.39286,424.32647 L 378.57143,424.32647 L 383.92857,364.86218 L 424.82143,364.86218 L 460.89286,425.57647 L 488.75,425.57647"
+       id="path4563"
+       sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="153.57143"
+       y="468.07648"
+       id="text5450"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5452"
+         x="153.57143"
+         y="468.07648"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode">Stage 1: The input</tspan><tspan
+         sodipodi:role="line"
+         x="153.57143"
+         y="480.57648"
+         id="tspan5454"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode">audio signal.</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5456"
+       y="468.07648"
+       x="263.57144"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         id="tspan5460"
+         y="468.07648"
+         x="263.57144"
+         sodipodi:role="line">Stage 2: The input</tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="480.57648"
+         x="263.57144"
+         sodipodi:role="line"
+         id="tspan5464">signal as it appears</tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="493.07648"
+         x="263.57144"
+         sodipodi:role="line"
+         id="tspan5466">to the envelope</tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="505.57648"
+         x="263.57144"
+         sodipodi:role="line"
+         id="tspan5468">follower.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       x="382.14285"
+       y="468.07648"
+       id="text5470"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="382.14285"
+         y="468.07648"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         id="tspan5493">Stage 3: The enveloped</tspan><tspan
+         sodipodi:role="line"
+         x="382.14285"
+         y="480.57648"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         id="tspan1902">signal (notice the</tspan><tspan
+         sodipodi:role="line"
+         x="382.14285"
+         y="493.07648"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         id="tspan1904">attack, hold and decay</tspan><tspan
+         sodipodi:role="line"
+         x="382.14285"
+         y="505.57648"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         id="tspan1906">sections).</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5495"
+       y="468.07648"
+       x="520"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;fill:black;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="468.07648"
+         x="520"
+         sodipodi:role="line"
+         id="tspan5527">Stage 4: The enveloped</tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="480.57648"
+         x="520"
+         sodipodi:role="line"
+         id="tspan1914">signal after passing</tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Lucida Sans Unicode"
+         y="493.07648"
+         x="520"
+         sodipodi:role="line"
+         id="tspan1916">through the waveshaper.</tspan></text>
+    <path
+       sodipodi:nodetypes="cccccc"
+       id="path1891"
+       d="M 511.25,424.32647 L 526.73187,424.32647 L 526.78571,364.86218 L 580.81055,364.86218 L 581.27411,425.57647 L 631.60714,425.57647"
+       style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:black;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>

@@ -1,0 +1,3 @@
+LIBRARY			HARMONICAL
+DESCRIPTION		'Harmonical'
+EXPORTS         main
