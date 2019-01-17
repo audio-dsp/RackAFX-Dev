@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{49C34D1C-60FD-4EA2-BC00-3184730F0A9B}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{80989DF6-83B4-4B91-A297-7932A8822AA7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RackAFXDLL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RingModulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginconstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RackAFXDLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RingModulator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
+
