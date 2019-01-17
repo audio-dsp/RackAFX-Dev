@@ -77,7 +77,14 @@ void CEnvelopeDetector::setTCModeAnalog(bool bAnalogTC)
 	setReleaseTime(m_fReleaseTime_mSec);
 }
 
+/*
+	SEE:
+	http://c4dm.eecs.qmul.ac.uk/audioengineering/compressors/documents/report.pdf
 
+	for RMS Detector, the sqrt operation is AFTER the detector
+	input -> x^2 -> RC Detector -> sqrt(out) -> out
+
+*/
 float CEnvelopeDetector::detect(float fInput)
 {
 	switch(m_uDetectMode)
@@ -86,39 +93,44 @@ float CEnvelopeDetector::detect(float fInput)
 		fInput = fabs(fInput);
 		break;
 	case 1:
+	case 2: // --- both MS and RMS require squaring the input
 		fInput = fabs(fInput) * fabs(fInput);
-		break;
-	case 2:
-		fInput = pow((float)fabs(fInput) * (float)fabs(fInput), (float)0.5);
 		break;
 	default:
 		fInput = (float)fabs(fInput);
 		break;
 	}
 
-	float fOld = m_fEnvelope;
+	float fCurrEnvelope = 0.0;
 	if(fInput> m_fEnvelope)
-		m_fEnvelope = m_fAttackTime * (m_fEnvelope - fInput) + fInput;
+		fCurrEnvelope = m_fAttackTime * (m_fEnvelope - fInput) + fInput;
 	else
-		m_fEnvelope = m_fReleaseTime * (m_fEnvelope - fInput) + fInput;
+		fCurrEnvelope = m_fReleaseTime * (m_fEnvelope - fInput) + fInput;
 
-	if(m_fEnvelope > 0.0 && m_fEnvelope < FLT_MIN_PLUS) m_fEnvelope = 0;
-	if(m_fEnvelope < 0.0 && m_fEnvelope > FLT_MIN_MINUS) m_fEnvelope = 0;
+	if(fCurrEnvelope > 0.0 && fCurrEnvelope < FLT_MIN_PLUS) fCurrEnvelope = 0;
+	if(fCurrEnvelope < 0.0 && fCurrEnvelope > FLT_MIN_MINUS) fCurrEnvelope = 0;
 
-	// bound them; can happen when using pre-detector gains of more than 1.0
-	m_fEnvelope = fmin(m_fEnvelope, (float)1.0);
-	m_fEnvelope = fmax(m_fEnvelope, (float)0.0);
+	// --- bound them; can happen when using pre-detector gains of more than 1.0
+	fCurrEnvelope = fmin(fCurrEnvelope, (float)1.0);
+	fCurrEnvelope = fmax(fCurrEnvelope, (float)0.0);
 
-	//16-bit scaling!
+	// --- store envelope prior to sqrt for RMS version
+	m_fEnvelope = fCurrEnvelope;
+
+	// --- if RMS, do the SQRT
+	if(m_uDetectMode == 2)
+		fCurrEnvelope =  pow(fCurrEnvelope, (float)0.5);
+
+	// --- 16-bit scaling!
 	if(m_bLogDetector)
 	{
-		if(m_fEnvelope <= 0)
+		if(fCurrEnvelope <= 0)
 			return -96.0; // 16 bit noise floor
 
-		return 20*log10	(m_fEnvelope);
+		return 20*log10(fCurrEnvelope);
 	}
 
-	return m_fEnvelope;
+	return fCurrEnvelope;
 }
 
 
@@ -688,27 +700,27 @@ bool CWaveData::readWaveFile(char* pFilePath)
 	m_uNumChannels = 0;
 	m_uSampleRate = 0;
 	m_uSampleCount = 0;
-    
+
     // --- create filestream from open binary file
     ifstream inFile;
     inFile.open(pFilePath, std::ifstream::binary);
-    
-    // --- OK?	
+
+    // --- OK?
     bool bIsOpen = inFile.is_open();
-    
+
     if(!bIsOpen)
         return false;
- 
+
     // --- this is used to identify each chunk
     char szIdentifier[5] = {0};
-    
+
     // --- advance 12 chars
     inFile.seekg(12);
-    
+
     // --- read first RiffChunk and the WaveFileHeader
     inFile.read((char*)(&RiffChunk), sizeof(RiffChunk));
     inFile.read((char*)(&WaveFileHeader), sizeof(WaveFileHeader));
-    
+
     // --- set the waveformatex
     WaveSample.WaveFormatEx.wFormatTag      = WaveFileHeader.wFormatTag;
     WaveSample.WaveFormatEx.nChannels       = WaveFileHeader.wChannels;
@@ -717,59 +729,59 @@ bool CWaveData::readWaveFile(char* pFilePath)
     WaveSample.WaveFormatEx.nBlockAlign     = WaveFileHeader.wBlockAlign;
     WaveSample.WaveFormatEx.wBitsPerSample  = WaveFileHeader.wBitsPerSample;
     WaveSample.WaveFormatEx.cbSize          = 0;
-    
+
     // --- I don't support these types (compressed, uLaw/aLaw, etc..)
     if(WaveSample.WaveFormatEx.wFormatTag != 1 && WaveSample.WaveFormatEx.wFormatTag != 3)
     {
         inFile.close();
         return false;
     }
-    
+
     // --- for backing up the first seek
     dwIncrementBytes = sizeof(WaveFileHeader);
-    
+
     do {
         // RiffChunk.dwLength - dwIncrementBytes sets the file pointer to position 0 first time through
         // advance by RiffChunk.dwLength - dwIncrementBytes
         int position = inFile.tellg();
         inFile.seekg(position + (RiffChunk.dwLength - dwIncrementBytes));
-        
+
         // --- advanced past end of file?
         bFailed = inFile.fail();
-        
+
         if(!bFailed)
         {
             // --- read the RiffChunk
             inFile.read((char*)(&RiffChunk), sizeof(RiffChunk));
-            
+
             // --- this now makes the seekg() advance in RiffChunk.dwLength chunks
             //     which vary with the type of chunk
             dwIncrementBytes = 0;
-            
+
             // --- extract the chunk identifier
             memcpy(szIdentifier, RiffChunk.IdentifierString, 4);
         }
-        
+
     } while(strcmp(szIdentifier, "data") && !bFailed);
-    
+
     // --- AUDIO DATA CHUNK data
     // --- 16 bit
     if(!bFailed && WaveSample.WaveFormatEx.wBitsPerSample == 16)
     {
 		WaveSample.pSampleData = (char *)LocalAlloc(LMEM_ZEROINIT, RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         if(m_pWaveBuffer)
             delete [] m_pWaveBuffer;
-        
+
         m_pWaveBuffer = new float[nSampleCount];
         short* pShorts = new short[nSampleCount];
         memset(pShorts, 0, nSampleCount*sizeof(short));
@@ -779,7 +791,7 @@ bool CWaveData::readWaveFile(char* pFilePath)
             // MSB
             pShorts[i] = (unsigned char)WaveSample.pSampleData[m+1];
             pShorts[i] <<= 8;
-            
+
             // LSB
             short lsb = (unsigned char)WaveSample.pSampleData[m];
             // in case top of lsb is bad
@@ -787,16 +799,16 @@ bool CWaveData::readWaveFile(char* pFilePath)
             pShorts[i] |= lsb;
             m+=2;
         }
-        
+
         // convet to float -1.0 -> +1.0
         for(UINT i = 0; i < nSampleCount; i++)
         {
             m_pWaveBuffer[i] = ((float)pShorts[i])/32768.0;
         }
-        
+
         delete [] pShorts;
         LocalFree(WaveSample.pSampleData);
-        
+
         bSampleLoaded = true;
     }
     // --- 24 bits
@@ -804,27 +816,27 @@ bool CWaveData::readWaveFile(char* pFilePath)
     {
 		WaveSample.pSampleData = (char *)LocalAlloc(LMEM_ZEROINIT, RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         if(m_pWaveBuffer)
             delete [] m_pWaveBuffer;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         int* pSignedInts = new int[nSampleCount];
         memset(pSignedInts, 0, nSampleCount*sizeof(long));
-        
+
         int m = 0;
         int mask = 0x000000FF;
-        
+
         // 24-bits in 3-byte packs
         if(WaveSample.WaveFormatEx.nBlockAlign/WaveSample.WaveFormatEx.nChannels == 3)
         {
@@ -833,25 +845,25 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+2];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 lsb <<= 8;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=3;
             }
         }
-        
+
         // --- 24-bits in 4-byte packs
         if(WaveSample.WaveFormatEx.nBlockAlign/WaveSample.WaveFormatEx.nChannels == 4)
         {
@@ -860,148 +872,148 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 int nsb2 = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
         }
-        
+
         // convet to float -1.0 -> +1.0
         for(UINT i = 0; i < nSampleCount; i++)
         {
             m_pWaveBuffer[i] = ((float)pSignedInts[i])/2147483648.0; // 2147483648.0 = 1/2 of 2^32
         }
-        
+
         delete [] pSignedInts;
         LocalFree(WaveSample.pSampleData);
-        
+
         bSampleLoaded = true;
-        
+
     }
     // --- 32 bits
     else if(!bFailed && WaveSample.WaveFormatEx.wBitsPerSample == 32)
     {
 		WaveSample.pSampleData = (char *)LocalAlloc(LMEM_ZEROINIT, RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         if(m_pWaveBuffer)
             delete [] m_pWaveBuffer;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         if(WaveSample.WaveFormatEx.wFormatTag == 1)
         {
             int* pSignedInts = new int[nSampleCount];
             memset(pSignedInts, 0, nSampleCount*sizeof(int));
-            
+
             int m = 0;
             int mask = 0x000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 int nsb2 = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
-            
+
             // convet to float -1.0 -> +1.0
             for(UINT i = 0; i < nSampleCount; i++)
             {
                 m_pWaveBuffer[i] = ((float)pSignedInts[i])/2147483648.0; // 2147483648.0 = 1/2 of 2^32
             }
-            
+
             delete [] pSignedInts;
             // free(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
         else if(WaveSample.WaveFormatEx.wFormatTag == 3) // float
         {
             unsigned int* pUSignedInts = new unsigned int[nSampleCount];
             memset(pUSignedInts, 0, nSampleCount*sizeof(unsigned int));
-            
+
             int m = 0;
             int mask = 0x000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pUSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pUSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (unsigned int)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pUSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 int nsb2 = (unsigned int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pUSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 int lsb = (unsigned int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pUSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
-            
+
             // Use the Union trick to re-use same memory location as two different data types
             //
             // see: http://www.cplusplus.com/doc/tutorial/other_data_types/#union
@@ -1012,10 +1024,10 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 wd.u = pUSignedInts[i];
                 m_pWaveBuffer[i] = wd.f;
             }
-            
+
             delete []pUSignedInts;
             LocalFree(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
     }
@@ -1024,87 +1036,87 @@ bool CWaveData::readWaveFile(char* pFilePath)
     {
 		WaveSample.pSampleData = (char *)LocalAlloc(LMEM_ZEROINIT, RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         if(m_pWaveBuffer)
             delete [] m_pWaveBuffer;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         // floating point only
         if(WaveSample.WaveFormatEx.wFormatTag == 3) // float
         {
             unsigned long long* pUSignedLongLongs = new unsigned long long[nSampleCount];
             memset(pUSignedLongLongs, 0, nSampleCount*sizeof(unsigned long long));
-            
+
             int m = 0;
             unsigned long long mask = 0x00000000000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pUSignedLongLongs[i] = (unsigned char)WaveSample.pSampleData[m+7];
                 pUSignedLongLongs[i] <<= 56;
-                
+
                 // NSB
                 unsigned long long nsb = (unsigned long long)WaveSample.pSampleData[m+6];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 48;
                 pUSignedLongLongs[i] |= nsb;
-                
+
                 // NSB2
                 unsigned long long nsb2 = (unsigned long long)WaveSample.pSampleData[m+5];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 40;
                 pUSignedLongLongs[i] |= nsb2;
-                
+
                 // NSB3
                 unsigned long long nsb3 = (unsigned long long)WaveSample.pSampleData[m+4];
                 // in case top of nsb is bad
                 nsb3 &= mask;
                 nsb3 <<= 32;
                 pUSignedLongLongs[i] |= nsb3;
-                
+
                 // NSB4
                 unsigned long long nsb4 = (unsigned long long)WaveSample.pSampleData[m+3];
                 // in case top of nsb is bad
                 nsb4 &= mask;
                 nsb4 <<= 24;
                 pUSignedLongLongs[i] |= nsb4;
-                
+
                 // NSB5
                 unsigned long long nsb5 = (unsigned long long)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb5 &= mask;
                 nsb5 <<= 16;
                 pUSignedLongLongs[i] |= nsb5;
-                
+
                 // NSB6
                 unsigned long long nsb6 = (unsigned long long)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb6 &= mask;
                 nsb6 <<= 8;
                 pUSignedLongLongs[i] |= nsb6;
-                
+
                 // LSB
                 unsigned long long lsb = (unsigned long long)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pUSignedLongLongs[i] |= lsb;
-                
+
                 m+=8;
             }
-            
+
             // Use the Union trick to re-use same memory location as two different data types
             //
             // see: http://www.cplusplus.com/doc/tutorial/other_data_types/#union
@@ -1114,22 +1126,26 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 wd.u64 = pUSignedLongLongs[i];
                 m_pWaveBuffer[i] = (float)wd.d; // cast the union's double as a float to chop off bottom
             }
-            
+
             delete [] pUSignedLongLongs;
             LocalFree(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
     }
-    
+
     // --- now find the loops, MIDI note info, etc... (smpl)
     int dInc = 0;
     do {
         int position = inFile.tellg();
-        inFile.seekg(position + dInc);
-        
-        bFailed = inFile.fail();
-        
+		if(position < 0)
+			bFailed = true;
+		else
+		{
+			inFile.seekg(position + dInc);
+			bFailed = inFile.fail();
+		}
+
         if(!bFailed)
         {
             // --- read chunk, looking for 'smpl'
@@ -1137,9 +1153,8 @@ bool CWaveData::readWaveFile(char* pFilePath)
             dInc = RiffChunk.dwLength;
             memcpy(szIdentifier, RiffChunk.IdentifierString, 4);
         }
-        
     } while(strcmp(szIdentifier, "smpl") && !bFailed) ;
-    
+
     // Found a smpl chunk
     /* smpl CHUNK format
      Offset	Size	Description			Value
@@ -1156,17 +1171,17 @@ bool CWaveData::readWaveFile(char* pFilePath)
      0x28	4	Sampler Data		0 - 0xFFFFFFFF
      0x2C
      List of Sample Loops ------------------ //
-     
+
      MIDI Unity Note
      The MIDI unity note value has the same meaning as the instrument chunk's MIDI Unshifted Note field which
      specifies the musical note at which the sample will be played at it's original sample rate
      (the sample rate specified in the format chunk).
-     
+
      MIDI Pitch Fraction
      The MIDI pitch fraction specifies the fraction of a semitone up from the specified MIDI unity note field.
      A value of 0x80000000 means 1/2 semitone (50 cents) and a value of 0x00000000 means no fine tuning
      between semitones.
-     
+
      SMPTE Format
      The SMPTE format specifies the Society of Motion Pictures and Television E time format used in the
      following SMPTE Offset field. If a value of 0 is set, SMPTE Offset should also be set to 0.
@@ -1176,14 +1191,14 @@ bool CWaveData::readWaveFile(char* pFilePath)
      25	25 frames per second
      29	30 frames per second with frame dropping (30 drop)
      30	30 frames per second
-     
+
      SMPTE Offset
      The SMPTE Offset value specifies the time offset to be used for the synchronization / calibration
      to the first sample in the waveform. This value uses a format of 0xhhmmssff where hh is a signed value
      that specifies the number of hours (-23 to 23), mm is an unsigned value that specifies the
      number of minutes (0 to 59), ss is an unsigned value that specifies the number of seconds
      (0 to 59) and ff is an unsigned value that specifies the number of frames (0 to -1).
-     
+
      // Sample Loop Data Struct
      Offset	Size	Description		Value
      0x00	4	Cue Point ID	0 - 0xFFFFFFFF
@@ -1192,7 +1207,7 @@ bool CWaveData::readWaveFile(char* pFilePath)
      0x0C	4	End				0 - 0xFFFFFFFF
      0x10	4	Fraction		0 - 0xFFFFFFFF
      0x14	4	Play Count		0 - 0xFFFFFFFF
-     
+
      Loop type:
      Value	Loop Type
      0	Loop forward (normal)
@@ -1200,8 +1215,8 @@ bool CWaveData::readWaveFile(char* pFilePath)
      2	Loop backward (reverse)
      3 - 31	Reserved for future standard types
      32 - 0xFFFFFFFF	Sampler specific types (defined by manufacturer)*/
-    
-    
+
+
     // skipping some stuff; could add later
     if(!bFailed)
     {
@@ -1214,38 +1229,38 @@ bool CWaveData::readWaveFile(char* pFilePath)
         m_uMIDIPitchFraction = 0;
         m_uSMPTEFormat = 0;
         m_uSMPTEOffset = 0;
-        
+
         // found a loop set; currently only taking the FIRST loop set
         // only need one loop set for potentially sustaining waves
         int position = inFile.tellg();
         inFile.seekg(position + dInc);
-        
+
         // --- MIDI Note Number
         inFile.read((char*)(&m_uMIDINote), 4);
-        
+
         // --- m_uMIDIPitchFraction
         inFile.read((char*)(&m_uMIDIPitchFraction), 4);
-        
+
         // --- m_uSMPTEFormat
         inFile.read((char*)(&m_uSMPTEFormat), 4);
-        
+
         // --- m_uSMPTEOffset
         inFile.read((char*)(&m_uSMPTEOffset), 4);
-        
+
         // --- MIDI Note Number
         inFile.read((char*)(&m_uLoopCount), 4);
-        
+
         // --- skip cuepoint & sampledata
         position = inFile.tellg();
         inFile.seekg(position + 8);
-        
+
         // --- m_uLoopType
         inFile.read((char*)(&m_uLoopType), 4);
-        
+
         // --- loop start sample
         inFile.read((char*)(&m_uLoopStartIndex), 4);
         m_uLoopStartIndex *= m_uNumChannels;
-        
+
         // --- loop end sample
         inFile.read((char*)(&m_uLoopEndIndex), 4);
         m_uLoopEndIndex *= m_uNumChannels;
@@ -1261,10 +1276,10 @@ bool CWaveData::readWaveFile(char* pFilePath)
         m_uSMPTEFormat = 0;
         m_uSMPTEOffset = 0;
     }
-    
+
     // --- close the file
     inFile.close();
-    
+
     // --- hope we got one loaded!
     return bSampleLoaded;
 }
@@ -1273,6 +1288,7 @@ bool CWaveData::readWaveFile(char* pFilePath)
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include "MacTypes.h"
 using namespace std;
 
 // union for data conversion
@@ -1321,7 +1337,7 @@ typedef struct _wave_sample {
     UInt32          dwId;
     UInt32          bPlaying;
     struct _wave_sample *pNext;
-    
+
 } WAVE_SAMPLE, *PWAVE_SAMPLE;
 
 
@@ -1330,7 +1346,7 @@ typedef struct _wave_sample {
 CWaveData::CWaveData(char* pFilePath)
 {
 	m_bWaveLoaded = false;
-    
+
 	m_pWaveBuffer = NULL;
 	m_uLoopCount = 0;
 	m_uLoopStartIndex = 0;
@@ -1340,7 +1356,7 @@ CWaveData::CWaveData(char* pFilePath)
 	m_uMIDIPitchFraction = 0;
 	m_uSMPTEFormat = 0;
 	m_uSMPTEOffset = 0;
-    
+
 	if(pFilePath)
 		m_bWaveLoaded = readWaveFile(pFilePath);
 }
@@ -1349,28 +1365,56 @@ CWaveData::~CWaveData()
 {
 	if(m_pWaveBuffer)
 		delete [] m_pWaveBuffer;
-    
+
 }
 
 // --- prompts with file open dialog, returns TRUE if successfuly
 //     opened and parsed the file into the member m_pWaveBuffer
 //
-// NOTE: this is not available for MacOS due to Carbon's 64-bit incompatibility
 /*
-    Suggest using the NSOpenPanel in the Cocoa part of code to get a path; here is the sample
- code:
- NSOpenPanel *op;
+ For MacOS there is no easy way to do this in C++; you need NSOpenPanel (objective C)
  
- // open a file at launch from the ~/Library/Application Support/Core Image Fun House/Example Images folder
- op = [NSOpenPanel openPanel];
- [op setAllowsMultipleSelection:NO];
- if ([op runModalForDirectory:path2 file:nil types:[NSArray arrayWithObjects:@"wav", nil]] == NSOKButton)
- [[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[[op URLs] objectAtIndex:0] display:YES error:&err];
- */
+ However, VSTGUI4 has a platform independent file open dialog CNewFileSelector that we can use.
+ 
+RackAFX: 
+  -- You must install the VSTGUI4 main folder (named vstgui4) in your RackAFX projects folder (see the Advanced GUI Tutorials at www.willpirkle.com)
+     The include is #include "../vstgui4/vstgui/vstgui.h"
+ 
+VST3 MacOS:
+ --- The VSTGUI4 library is included with the VST3 SDK
+     The include is #include "vstgui4/vstgui/vstgui.h"
+
+AU   MacOS:
+ --- The VSTGUI4 library is included with the project
+     The include is #include "vstgui4/vstgui/vstgui.h"
+ 
+AAX   MacOS:
+--- You must install the VSTGUI4 main folder (named vstgui4) in your ExamplePlugins folder (see www.willpirkle.com)
+    The include is #include "vstgui/vstgui.h"
+ 
+*/
+
+#if defined DEVELOPMENT || defined RELEASE
+#include "vstgui4/vstgui/vstgui.h" // VST3
+#elif defined AAXPLUGIN
+#include "vstgui/vstgui.h" // AAX
+#elif defined AUPLUGIN
+#include #include "vstgui4/vstgui/vstgui.h" // AU
+#else
+#include "../vstgui4/vstgui/vstgui.h" // RAFX
+#endif
+
 bool CWaveData::initWithUserWAVFile(char* pInitDir)
 {
-    // --- not availale :(
-    return false;
+    m_bWaveLoaded = false;
+    CNewFileSelector* pSelector = CNewFileSelector::create();
+    if(pSelector->runModal())
+    {
+        UTF8StringPtr filename = pSelector->getSelectedFile(0);
+        m_bWaveLoaded = readWaveFile(filename);
+    }
+    
+    return m_bWaveLoaded;
 }
 
 // THE FOLLOWING TYPES ARE SUPPORTED:
@@ -1383,7 +1427,7 @@ bool CWaveData::initWithUserWAVFile(char* pInitDir)
 // 32-BIT Signed Integer PCM
 // 32-BIT Floating Point
 // 64-BIT Floating Point
-bool CWaveData::readWaveFile(char* pFilePath)
+bool CWaveData::readWaveFile(const char* pFilePath)
 {
     bool bSampleLoaded = false;
     bool bFailed = false;
@@ -1394,27 +1438,27 @@ bool CWaveData::readWaveFile(char* pFilePath)
 	m_uNumChannels = 0;
 	m_uSampleRate = 0;
 	m_uSampleCount = 0;
-    
+
     // --- create filestream from open binary file
     ifstream inFile;
     inFile.open(pFilePath, std::ifstream::binary);
-    
+
     // --- OK?
     bool bIsOpen = inFile.is_open();
-    
+
     if(!bIsOpen)
         return false;
- 
+
     // --- this is used to identify each chunk
     char szIdentifier[5] = {0};
-    
+
     // --- advance 12 chars
     inFile.seekg(12);
-    
+
     // --- read first RiffChunk and the WaveFileHeader
     inFile.read((char*)(&RiffChunk), sizeof(RiffChunk));
     inFile.read((char*)(&WaveFileHeader), sizeof(WaveFileHeader));
-    
+
     // --- set the waveformatex
     WaveSample.WaveFormatEx.wFormatTag      = WaveFileHeader.wFormatTag;
     WaveSample.WaveFormatEx.nChannels       = WaveFileHeader.wChannels;
@@ -1423,41 +1467,41 @@ bool CWaveData::readWaveFile(char* pFilePath)
     WaveSample.WaveFormatEx.nBlockAlign     = WaveFileHeader.wBlockAlign;
     WaveSample.WaveFormatEx.wBitsPerSample  = WaveFileHeader.wBitsPerSample;
     WaveSample.WaveFormatEx.cbSize          = 0;
-    
+
     // --- I don't support these types (compressed, uLaw/aLaw, etc..)
     if(WaveSample.WaveFormatEx.wFormatTag != 1 && WaveSample.WaveFormatEx.wFormatTag != 3)
     {
         inFile.close();
         return false;
     }
-    
+
     // --- for backing up the first seek
     dwIncrementBytes = sizeof(WaveFileHeader);
-    
+
     do {
         // RiffChunk.dwLength - dwIncrementBytes sets the file pointer to position 0 first time through
         // advance by RiffChunk.dwLength - dwIncrementBytes
         int position = inFile.tellg();
         inFile.seekg(position + (RiffChunk.dwLength - dwIncrementBytes));
-        
+
         // --- advanced past end of file?
         bFailed = inFile.fail();
-        
+
         if(!bFailed)
         {
             // --- read the RiffChunk
             inFile.read((char*)(&RiffChunk), sizeof(RiffChunk));
-            
+
             // --- this now makes the seekg() advance in RiffChunk.dwLength chunks
             //     which vary with the type of chunk
             dwIncrementBytes = 0;
-            
+
             // --- extract the chunk identifier
             memcpy(szIdentifier, RiffChunk.IdentifierString, 4);
         }
-        
+
     } while(strcmp(szIdentifier, "data") && !bFailed);
-    
+
     if(m_pWaveBuffer)
         delete [] m_pWaveBuffer;
 
@@ -1467,21 +1511,21 @@ bool CWaveData::readWaveFile(char* pFilePath)
     {
         WaveSample.pSampleData = (char*)alloca(RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         if(m_pWaveBuffer)
             delete [] m_pWaveBuffer;
-        
+
         m_pWaveBuffer = new float[nSampleCount];
         UInt16* pShorts = new UInt16[nSampleCount];
-        
+
         memset(pShorts, 0, nSampleCount*sizeof(UInt16));
         int m = 0;
         for(UINT i=0; i<nSampleCount; i++)
@@ -1489,7 +1533,7 @@ bool CWaveData::readWaveFile(char* pFilePath)
             // MSB
             pShorts[i] = (unsigned char)WaveSample.pSampleData[m+1];
             pShorts[i] <<= 8;
-            
+
             // LSB
             UInt16 lsb = (unsigned char)WaveSample.pSampleData[m];
             // in case top of lsb is bad
@@ -1497,16 +1541,16 @@ bool CWaveData::readWaveFile(char* pFilePath)
             pShorts[i] |= lsb;
             m+=2;
         }
-        
+
         // convert to float -1.0 -> +1.0
         for(UINT i = 0; i < nSampleCount; i++)
         {
             m_pWaveBuffer[i] = ((float)pShorts[i])/32768.0;
         }
-        
+
         delete [] pShorts;
         // free(WaveSample.pSampleData);
-        
+
         bSampleLoaded = true;
     }
     // --- 24 bits
@@ -1514,24 +1558,24 @@ bool CWaveData::readWaveFile(char* pFilePath)
     {
         WaveSample.pSampleData = (char*)alloca(RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         int* pSignedInts = new int[nSampleCount];
         memset(pSignedInts, 0, nSampleCount*sizeof(int));
-        
+
         int m = 0;
         int mask = 0x000000FF;
-        
+
         // 24-bits in 3-byte packs
         if(WaveSample.WaveFormatEx.nBlockAlign/WaveSample.WaveFormatEx.nChannels == 3)
         {
@@ -1540,25 +1584,25 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+2];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 lsb <<= 8;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=3;
             }
         }
-        
+
         // --- 24-bits in 4-byte packs
         if(WaveSample.WaveFormatEx.nBlockAlign/WaveSample.WaveFormatEx.nChannels == 4)
         {
@@ -1567,145 +1611,145 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 int nsb2 = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
         }
-        
+
         // convet to float -1.0 -> +1.0
         for(UINT i = 0; i < nSampleCount; i++)
         {
             m_pWaveBuffer[i] = ((float)pSignedInts[i])/2147483648.0; // 2147483648.0 = 1/2 of 2^32
         }
-        
+
         delete [] pSignedInts;
         //// free(WaveSample.pSampleData);
-        
+
         bSampleLoaded = true;
-        
+
     }
     // --- 32 bits
     else if(!bFailed && WaveSample.WaveFormatEx.wBitsPerSample == 32)
     {
         WaveSample.pSampleData = (char*)alloca(RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         if(WaveSample.WaveFormatEx.wFormatTag == 1)
         {
             int* pSignedInts = new int[nSampleCount];
             memset(pSignedInts, 0, nSampleCount*sizeof(int));
-            
+
             int m = 0;
             int mask = 0x000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pSignedInts[i] <<= 24;
-                
+
                 // NSB
                 int nsb = (int)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 int nsb2 = (int)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 int lsb = (int)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
-            
+
             // convet to float -1.0 -> +1.0
             for(UINT i = 0; i < nSampleCount; i++)
             {
                 m_pWaveBuffer[i] = ((float)pSignedInts[i])/2147483648.0; // 2147483648.0 = 1/2 of 2^32
             }
-            
+
             delete [] pSignedInts;
             // free(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
         else if(WaveSample.WaveFormatEx.wFormatTag == 3) // float
         {
             UInt32* pUSignedInts = new UInt32[nSampleCount];
             memset(pUSignedInts, 0, nSampleCount*sizeof(UInt32));
-            
+
             int m = 0;
             int mask = 0x000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pUSignedInts[i] = (unsigned char)WaveSample.pSampleData[m+3];
                 pUSignedInts[i] <<= 24;
-                
+
                 // NSB
                 UInt32 nsb = (UInt32)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 16;
                 pUSignedInts[i] |= nsb;
-                
+
                 // NSB2
                 UInt32 nsb2 = (UInt32)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 8;
                 pUSignedInts[i] |= nsb2;
-                
+
                 // LSB
                 UInt32 lsb = (UInt32)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pUSignedInts[i] |= lsb;
-                
+
                 m+=4;
             }
-            
+
             // --- Use the Union trick to re-use same memory location as two different data types
             UWaveData wd;
             for(UINT i = 0; i < nSampleCount; i++)
@@ -1714,10 +1758,10 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 wd.u = pUSignedInts[i];
                 m_pWaveBuffer[i] = wd.f;
             }
-            
+
             delete []pUSignedInts;
             // free(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
     }
@@ -1726,84 +1770,84 @@ bool CWaveData::readWaveFile(char* pFilePath)
     {
         WaveSample.pSampleData = (char*)alloca(RiffChunk.dwLength);
         WaveSample.Size = RiffChunk.dwLength;
-        
+
         inFile.read(WaveSample.pSampleData, RiffChunk.dwLength);
-        
+
         UINT nSampleCount = (float)RiffChunk.dwLength/(float)(WaveSample.WaveFormatEx.wBitsPerSample/8.0);
         m_uSampleCount = nSampleCount;
-        
+
         m_uNumChannels = WaveSample.WaveFormatEx.nChannels;
         m_uSampleRate = WaveSample.WaveFormatEx.nSamplesPerSec;
-        
+
         // our buffer gets created
         m_pWaveBuffer = new float[nSampleCount];
-        
+
         // floating point only
         if(WaveSample.WaveFormatEx.wFormatTag == 3) // float
         {
             UInt64* pUSignedLongLongs = new UInt64[nSampleCount];
             memset(pUSignedLongLongs, 0, nSampleCount*sizeof(UInt64));
-            
+
             int m = 0;
             UInt64 mask = 0x00000000000000FF;
-            
+
             for(UINT i=0; i<nSampleCount; i++)
             {
                 // MSB
                 pUSignedLongLongs[i] = (unsigned char)WaveSample.pSampleData[m+7];
                 pUSignedLongLongs[i] <<= 56;
-                
+
                 // NSB
                 UInt64 nsb = (UInt64)WaveSample.pSampleData[m+6];
                 // in case top of nsb is bad
                 nsb &= mask;
                 nsb <<= 48;
                 pUSignedLongLongs[i] |= nsb;
-                
+
                 // NSB2
                 UInt64 nsb2 = (UInt64)WaveSample.pSampleData[m+5];
                 // in case top of nsb is bad
                 nsb2 &= mask;
                 nsb2 <<= 40;
                 pUSignedLongLongs[i] |= nsb2;
-                
+
                 // NSB3
                 UInt64 nsb3 = (UInt64)WaveSample.pSampleData[m+4];
                 // in case top of nsb is bad
                 nsb3 &= mask;
                 nsb3 <<= 32;
                 pUSignedLongLongs[i] |= nsb3;
-                
+
                 // NSB4
                 UInt64 nsb4 = (UInt64)WaveSample.pSampleData[m+3];
                 // in case top of nsb is bad
                 nsb4 &= mask;
                 nsb4 <<= 24;
                 pUSignedLongLongs[i] |= nsb4;
-                
+
                 // NSB5
                 UInt64 nsb5 = (UInt64)WaveSample.pSampleData[m+2];
                 // in case top of nsb is bad
                 nsb5 &= mask;
                 nsb5 <<= 16;
                 pUSignedLongLongs[i] |= nsb5;
-                
+
                 // NSB6
                 UInt64 nsb6 = (UInt64)WaveSample.pSampleData[m+1];
                 // in case top of nsb is bad
                 nsb6 &= mask;
                 nsb6 <<= 8;
                 pUSignedLongLongs[i] |= nsb6;
-                
+
                 // LSB
                 UInt64 lsb = (UInt64)WaveSample.pSampleData[m];
                 // in case top of lsb is bad
                 lsb &= mask;
                 pUSignedLongLongs[i] |= lsb;
-                
+
                 m+=8;
             }
-            
+
             // Use the Union trick to re-use same memory location as two different data types
             UWaveData wd;
             for(UINT i = 0; i < nSampleCount; i++)
@@ -1811,22 +1855,26 @@ bool CWaveData::readWaveFile(char* pFilePath)
                 wd.u64 = pUSignedLongLongs[i];
                 m_pWaveBuffer[i] = (float)wd.d; // cast the union's double as a float to chop off bottom
             }
-            
+
             delete [] pUSignedLongLongs;
             // free(WaveSample.pSampleData);
-            
+
             bSampleLoaded = true;
         }
     }
-    
+
     // --- now find the loops, MIDI note info, etc... (smpl)
     int dInc = 0;
     do {
         int position = inFile.tellg();
-        inFile.seekg(position + dInc);
-        
-        bFailed = inFile.fail();
-        
+		if(position < 0)
+			bFailed = true;
+		else
+		{
+			inFile.seekg(position + dInc);
+			bFailed = inFile.fail();
+		}
+
         if(!bFailed)
         {
             // --- read chunk, looking for 'smpl'
@@ -1834,9 +1882,8 @@ bool CWaveData::readWaveFile(char* pFilePath)
             dInc = RiffChunk.dwLength;
             memcpy(szIdentifier, RiffChunk.IdentifierString, 4);
         }
-        
     } while(strcmp(szIdentifier, "smpl") && !bFailed) ;
-    
+
     // Found a smpl chunk
     /* smpl CHUNK format
      Offset	Size	Description			Value
@@ -1853,17 +1900,17 @@ bool CWaveData::readWaveFile(char* pFilePath)
      0x28	4	Sampler Data		0 - 0xFFFFFFFF
      0x2C
      List of Sample Loops ------------------ //
-     
+
      MIDI Unity Note
      The MIDI unity note value has the same meaning as the instrument chunk's MIDI Unshifted Note field which
      specifies the musical note at which the sample will be played at it's original sample rate
      (the sample rate specified in the format chunk).
-     
+
      MIDI Pitch Fraction
      The MIDI pitch fraction specifies the fraction of a semitone up from the specified MIDI unity note field.
      A value of 0x80000000 means 1/2 semitone (50 cents) and a value of 0x00000000 means no fine tuning
      between semitones.
-     
+
      SMPTE Format
      The SMPTE format specifies the Society of Motion Pictures and Television E time format used in the
      following SMPTE Offset field. If a value of 0 is set, SMPTE Offset should also be set to 0.
@@ -1873,14 +1920,14 @@ bool CWaveData::readWaveFile(char* pFilePath)
      25	25 frames per second
      29	30 frames per second with frame dropping (30 drop)
      30	30 frames per second
-     
+
      SMPTE Offset
      The SMPTE Offset value specifies the time offset to be used for the synchronization / calibration
      to the first sample in the waveform. This value uses a format of 0xhhmmssff where hh is a signed value
      that specifies the number of hours (-23 to 23), mm is an unsigned value that specifies the
      number of minutes (0 to 59), ss is an unsigned value that specifies the number of seconds
      (0 to 59) and ff is an unsigned value that specifies the number of frames (0 to -1).
-     
+
      // Sample Loop Data Struct
      Offset	Size	Description		Value
      0x00	4	Cue Point ID	0 - 0xFFFFFFFF
@@ -1889,7 +1936,7 @@ bool CWaveData::readWaveFile(char* pFilePath)
      0x0C	4	End				0 - 0xFFFFFFFF
      0x10	4	Fraction		0 - 0xFFFFFFFF
      0x14	4	Play Count		0 - 0xFFFFFFFF
-     
+
      Loop type:
      Value	Loop Type
      0	Loop forward (normal)
@@ -1897,8 +1944,8 @@ bool CWaveData::readWaveFile(char* pFilePath)
      2	Loop backward (reverse)
      3 - 31	Reserved for future standard types
      32 - 0xFFFFFFFF	Sampler specific types (defined by manufacturer)*/
-    
-    
+
+
     // skipping some stuff; could add later
     if(!bFailed)
     {
@@ -1911,38 +1958,38 @@ bool CWaveData::readWaveFile(char* pFilePath)
         m_uMIDIPitchFraction = 0;
         m_uSMPTEFormat = 0;
         m_uSMPTEOffset = 0;
-        
+
         // found a loop set; currently only taking the FIRST loop set
         // only need one loop set for potentially sustaining waves
         int position = inFile.tellg();
         inFile.seekg(position + dInc);
-        
+
         // --- MIDI Note Number
         inFile.read((char*)(&m_uMIDINote), 4);
-        
+
         // --- m_uMIDIPitchFraction
         inFile.read((char*)(&m_uMIDIPitchFraction), 4);
-        
+
         // --- m_uSMPTEFormat
         inFile.read((char*)(&m_uSMPTEFormat), 4);
-        
+
         // --- m_uSMPTEOffset
         inFile.read((char*)(&m_uSMPTEOffset), 4);
-        
+
         // --- MIDI Note Number
         inFile.read((char*)(&m_uLoopCount), 4);
-        
+
         // --- skip cuepoint & sampledata
         position = inFile.tellg();
         inFile.seekg(position + 8);
-        
+
         // --- m_uLoopType
         inFile.read((char*)(&m_uLoopType), 4);
-        
+
         // --- loop start sample
         inFile.read((char*)(&m_uLoopStartIndex), 4);
         m_uLoopStartIndex *= m_uNumChannels;
-        
+
         // --- loop end sample
         inFile.read((char*)(&m_uLoopEndIndex), 4);
         m_uLoopEndIndex *= m_uNumChannels;
@@ -1958,10 +2005,10 @@ bool CWaveData::readWaveFile(char* pFilePath)
         m_uSMPTEFormat = 0;
         m_uSMPTEOffset = 0;
     }
-    
+
     // --- close the file
     inFile.close();
-    
+
     // --- hope we got one loaded!
     return bSampleLoaded;
 }
@@ -1977,6 +2024,21 @@ CUICtrl::CUICtrl(void)
 	m_pUserCookedUINTData = NULL;
 	m_pCurrentMeterValue = NULL;
 
+	fSmoothingFloatValue = 0.0;
+	fSmoothingTimeInMs = 100.0;
+	bEnableParamSmoothing = false;
+
+	fJoystickValue = 0.0;
+	bKorgVectorJoystickOrientation = false;
+
+	fUserDisplayDataLoLimit = 0.0;
+	fUserDisplayDataHiLimit = 0.0;
+
+	fInitUserIntValue = 0.0;;
+	fInitUserFloatValue = 0.0;;
+	fInitUserDoubleValue = 0.0;;
+	fInitUserUINTValue = 0.0;;
+
 	cControlName = &cName[0];
 	cControlUnits = &cUnits[0];
 	cVariableName = &cVName[0];
@@ -1989,7 +2051,6 @@ CUICtrl::CUICtrl(void)
 	memset(&cMeterVName[0], 0, 1024*sizeof(BYTE));
 	memset(&cUnits[0], 0, 1024*sizeof(BYTE));
 	memset(&cEnumeratedList[0], 0, 1024*sizeof(BYTE));
-
 	memset(&dPresetData[0], 0, PRESET_COUNT*sizeof(double));
 
 	bOwnerControl = false;
@@ -2017,76 +2078,72 @@ CUICtrl::CUICtrl(void)
 	uMIDIControlChannel		= 0;
 }
 
+// --- copy constructor
 CUICtrl::CUICtrl(const CUICtrl& initCUICtrl)
 {
-	cControlName = &cName[0];
-	cControlUnits = &cUnits[0];
-	cVariableName = &cVName[0];
-	cEnumeratedList = &cVEnumeratedList[0];
-	cMeterVariableName = &cMeterVName[0];
+	cControlName			= &cName[0];
+	cControlUnits			= &cUnits[0];
+	cVariableName			= &cVName[0];
+	cEnumeratedList			= &cVEnumeratedList[0];
+	cMeterVariableName		= &cMeterVName[0];
 
-	uControlType				= initCUICtrl.uControlType;
+	uControlType			= initCUICtrl.uControlType;
 	uControlId				= initCUICtrl.uControlId;
 	bOwnerControl			= initCUICtrl.bOwnerControl;
-	bUseMeter			= initCUICtrl.bUseMeter;
-	bLogMeter			= initCUICtrl.bLogMeter;
-	bUpsideDownMeter			= initCUICtrl.bUpsideDownMeter;
+	bUseMeter				= initCUICtrl.bUseMeter;
+	bLogMeter				= initCUICtrl.bLogMeter;
+	bUpsideDownMeter		= initCUICtrl.bUpsideDownMeter;
 	uDetectorMode			= initCUICtrl.uDetectorMode;
-	bLogSlider			= initCUICtrl.bLogSlider;
-	bExpSlider			= initCUICtrl.bExpSlider;
+	bLogSlider				= initCUICtrl.bLogSlider;
+	bExpSlider				= initCUICtrl.bExpSlider;
 
-	uMeterColorScheme			= initCUICtrl.uMeterColorScheme;
+	uMeterColorScheme		= initCUICtrl.uMeterColorScheme;
 	fMeterAttack_ms			= initCUICtrl.fMeterAttack_ms;
-	fMeterRelease_ms			= initCUICtrl.fMeterRelease_ms;
+	fMeterRelease_ms		= initCUICtrl.fMeterRelease_ms;
 
-	fUserDisplayDataLoLimit				= initCUICtrl.fUserDisplayDataLoLimit;
-	fUserDisplayDataHiLimit				= initCUICtrl.fUserDisplayDataHiLimit;
+	fUserDisplayDataLoLimit	= initCUICtrl.fUserDisplayDataLoLimit;
+	fUserDisplayDataHiLimit	= initCUICtrl.fUserDisplayDataHiLimit;
 
-	uUserDataType				= initCUICtrl.uUserDataType;
-	fInitUserIntValue				= initCUICtrl.fInitUserIntValue;
-	fInitUserFloatValue				= initCUICtrl.fInitUserFloatValue;
-	fInitUserDoubleValue				= initCUICtrl.fInitUserDoubleValue;
-	fInitUserUINTValue				= initCUICtrl.fInitUserUINTValue;
+	uUserDataType			= initCUICtrl.uUserDataType;
+	fInitUserIntValue		= initCUICtrl.fInitUserIntValue;
+	fInitUserFloatValue		= initCUICtrl.fInitUserFloatValue;
+	fInitUserDoubleValue	= initCUICtrl.fInitUserDoubleValue;
+	fInitUserUINTValue		= initCUICtrl.fInitUserUINTValue;
 
-	// VST PRESETS
-	fUserCookedIntData				= initCUICtrl.fUserCookedIntData;
-	fUserCookedFloatData				= initCUICtrl.fInitUserFloatValue;
-	fUserCookedDoubleData				= initCUICtrl.fUserCookedDoubleData;
-	fUserCookedUINTData				= initCUICtrl.fUserCookedUINTData;
+	// --- for smoothing only
+	fSmoothingFloatValue	= initCUICtrl.fSmoothingFloatValue;
+	fSmoothingTimeInMs		= initCUICtrl.fSmoothingTimeInMs;
+	bEnableParamSmoothing	= initCUICtrl.bEnableParamSmoothing;
+	
+	fJoystickValue			= initCUICtrl.fJoystickValue;
+	bKorgVectorJoystickOrientation = initCUICtrl.bKorgVectorJoystickOrientation;
 
-	m_pUserCookedIntData				= initCUICtrl.m_pUserCookedIntData;
-	m_pUserCookedFloatData				= initCUICtrl.m_pUserCookedFloatData;
-	m_pUserCookedDoubleData				= initCUICtrl.m_pUserCookedDoubleData;
-	m_pUserCookedUINTData				= initCUICtrl.m_pUserCookedUINTData;
-	m_pCurrentMeterValue				= initCUICtrl.m_pCurrentMeterValue;
+	m_pUserCookedIntData	= initCUICtrl.m_pUserCookedIntData;
+	m_pUserCookedFloatData	= initCUICtrl.m_pUserCookedFloatData;
+	m_pUserCookedDoubleData	= initCUICtrl.m_pUserCookedDoubleData;
+	m_pUserCookedUINTData	= initCUICtrl.m_pUserCookedUINTData;
+	m_pCurrentMeterValue	= initCUICtrl.m_pCurrentMeterValue;
 
-	bMIDIControl				= initCUICtrl.bMIDIControl;
-	uMIDIControlCommand			= initCUICtrl.uMIDIControlCommand;
-	uMIDIControlName			= initCUICtrl.uMIDIControlName;
-	uMIDIControlChannel = initCUICtrl.uMIDIControlChannel;
+	bMIDIControl			= initCUICtrl.bMIDIControl;
+	uMIDIControlCommand		= initCUICtrl.uMIDIControlCommand;
+	uMIDIControlName		= initCUICtrl.uMIDIControlName;
+	uMIDIControlChannel		= initCUICtrl.uMIDIControlChannel;
 
 	nGUIRow					= initCUICtrl.nGUIRow;
 	nGUIColumn				= initCUICtrl.nGUIColumn;
 	pvAddlData				= initCUICtrl.pvAddlData;
+	
 	for(int i=0; i<PRESET_COUNT; i++)
-	{
 		dPresetData[i] = initCUICtrl.dPresetData[i];
-	}
 
 	for(int i=0; i<CONTROL_THEME_SIZE; i++)
-	{
 		uControlTheme[i] = initCUICtrl.uControlTheme[i];
-	}
 
 	for(int i=0; i<PLUGIN_CONTROL_THEME_SIZE; i++)
-	{
 		uFluxCapControl[i] = initCUICtrl.uFluxCapControl[i];
-	}
 
 	for(int i=0; i<PLUGIN_CONTROL_THEME_SIZE; i++)
-	{
 		fFluxCapData[i] = initCUICtrl.fFluxCapData[i];
-	}
 
     strncpy(cControlName, initCUICtrl.cControlName, 1023);
     cControlName[1023] = '\0';
@@ -2108,196 +2165,178 @@ CUICtrl::~CUICtrl(void)
 {
 
 }
+
+// --- CUIControlList -------------------------------- //
 CUIControlList::CUIControlList()
 {
-     p=NULL;
+     p = NULL;
 }
 
 
 CUICtrl* CUIControlList::getAt(int nIndex)
 {
 	node *q;
-	int c=0;
-	for( q=p ; q != NULL ; q = q->link )
+	int c = 0;
+	for(q = p; q != NULL; q = q->link )
 	{
 		if(c == nIndex)
 			return &q->data;
-
 		c++;
 	}
-
 	return NULL;
-
 }
 
 void CUIControlList::append(CUICtrl num)
 {
-     node *q,*t;
+   node *q,*t;
 
-   if( p == NULL )
-   {
-        p = new node;
-      p->data = num;
-      p->link = NULL;
-   }
-   else
-   {
-        q = p;
-      while( q->link != NULL )
-           q = q->link;
+	if(p == NULL)
+	{
+		p = new node;
+		p->data = num;
+		p->link = NULL;
+	}
+	else
+	{
+		q = p;
+		while(q->link != NULL)
+			q = q->link;
 
-      t = new node;
-      t->data = num;
-      t->link = NULL;
-      q->link = t;
-   }
+		t = new node;
+		t->data = num;
+		t->link = NULL;
+		q->link = t;
+	}
 }
 
 void CUIControlList::add_as_first(CUICtrl num)
 {
-     node *q;
-
-   q = new node;
-   q->data = num;
-   q->link = p;
-   p = q;
+	node *q;
+	q = new node;
+	q->data = num;
+	q->link = p;
+	p = q;
 }
 
 void CUIControlList::addafter( int c, CUICtrl num)
 {
-     node *q,*t;
-   int i;
-   for(i=0,q=p;i<c;i++)
-   {
-        q = q->link;
-      if( q == NULL )
-      {
-           //cout<<"\nThere are less than "<<c<<" elements.";
-         return;
-      }
-   }
+	node *q,*t;
+	int i;
+	for(i = 0, q = p; i<c; i++)
+	{
+		q = q->link;
+		if( q == NULL )
+			return;
+	}
 
-   t = new node;
-   t->data = num;
-   t->link = q->link;
-   q->link = t;
+	t = new node;
+	t->data = num;
+	t->link = q->link;
+	q->link = t;
 }
 
 void CUIControlList::update( CUICtrl num )
 {
-     node *q,*r;
-   q = p;
-   if( q->data.uControlId == num.uControlId )
-   {
-	   q->data = num;
-      return;
-   }
+	node *q,*r;
+	q = p;
+	if(q->data.uControlId == num.uControlId)
+	{
+		q->data = num;
+		return;
+	}
 
-   r = q;
-   while( q!=NULL )
-   {
-      if( q->data.uControlId == num.uControlId )
-      {
-		   q->data = num;
-		  return;
-      }
-	  r = q;
-	  q = q->link;
-    }
-
-
-   //cout<<"\nElement "<<num<<" not Found.";
+	r = q;
+	while( q!=NULL )
+	{
+		if( q->data.uControlId == num.uControlId )
+		{
+			q->data = num;
+			return;
+		}
+		r = q;
+		q = q->link;
+	}
 }
-void CUIControlList::del( CUICtrl num )
+
+void CUIControlList::del(CUICtrl num)
 {
-     node *q,*r;
-   q = p;
-   if( q->data.uControlId == num.uControlId )
-   {
-        p = q->link;
-      delete q;
-      return;
-   }
+	node *q,*r;
+	q = p;
+	if( q->data.uControlId == num.uControlId )
+	{
+		p = q->link;
+		delete q;
+		return;
+	}
 
-   r = q;
-   while( q!=NULL )
-   {
-        if( q->data.uControlId == num.uControlId )
-      {
-           r->link = q->link;
-         delete q;
-         return;
-      }
+	r = q;
+	while( q!=NULL )
+	{
+		if( q->data.uControlId == num.uControlId )
+		{
+			r->link = q->link;
+			delete q;
+			return;
+		}
 
-      r = q;
-      q = q->link;
-   }
-   //cout<<"\nElement "<<num<<" not Found.";
+		r = q;
+		q = q->link;
+	}
 }
 
+// --- currently unused
 void CUIControlList::display()
-{
-//      node *q;
-//   cout<<endl;
+{/*
+   node *q;
+   cout<<endl;
 
-//   for( q = p ; q != NULL ; q = q->link )
-  //      cout<<endl<<q->data;
-
+   for( q = p ; q != NULL ; q = q->link )
+      cout<<endl<<q->data;*/
 }
+
+// --- only continuous and switch types
 int CUIControlList::countLegalVSTIF()
 {
-     node *q;
-   int c=0;
-   for( q=p ; q != NULL ; q = q->link )
-   {
-	   if(q->data.uControlType == FILTER_CONTROL_CONTINUOUSLY_VARIABLE ||
+	node *q;
+	int c = 0;
+	for(q = p; q != NULL; q = q->link)
+	{
+		if(q->data.uControlType == FILTER_CONTROL_CONTINUOUSLY_VARIABLE ||
 		   q->data.uControlType == FILTER_CONTROL_RADIO_SWITCH_VARIABLE)
-	   {
+		{
 			c++;
-	   }
-   }
-   return c;
+		}
+	}
+	return c;
 }
 
 int CUIControlList::countLegalCustomVSTGUI()
 {
-     node *q;
-   int c=0;
-   for( q=p ; q != NULL ; q = q->link )
-   {
-		if(q->data.uControlType == FILTER_CONTROL_CONTINUOUSLY_VARIABLE)
-		{
-			 c++;
-		}
-		if(q->data.uControlType == FILTER_CONTROL_RADIO_SWITCH_VARIABLE)
-		{
-				c++;
-		}
-   }
-
-   return c;
+	return countLegalVSTIF();
 }
 
 int CUIControlList::count()
 {
-     node *q;
-   int c=0;
-   for( q=p ; q != NULL ; q = q->link )
-        c++;
+	node *q;
+	int c=0;
+	for(q = p; q != NULL; q = q->link)
+	   c++;
 
-   return c;
+	return c;
 }
 
 CUIControlList::~CUIControlList()
 {
-    node *q;
-   if( p == NULL )
-        return;
+	node *q;
+	if(p == NULL)
+		return;
 
-   while( p != NULL )
-   {
-        q = p->link;
-      delete p;
-      p = q;
-   }
+	while(p != NULL)
+	{
+		q = p->link;
+		delete p;
+		p = q;
+	}
 }
+// --- END CUIControlList -------------------------------- //
+

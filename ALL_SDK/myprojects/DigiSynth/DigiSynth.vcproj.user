@@ -9,7 +9,7 @@
 			Name="Debug|Win32"
 			>
 			<DebugSettings
-				Command="C:\Program Files\RackAFX\RackAFX.exe"
+				Command="C:\Program Files (x86)\RackAFX\RackAFX.exe"
 				WorkingDirectory=""
 				CommandArguments=""
 				Attach="true"
@@ -63,6 +63,7 @@
 		</Configuration>
 	</Configurations>
 </VisualStudioUserFile>
+
 
 
 

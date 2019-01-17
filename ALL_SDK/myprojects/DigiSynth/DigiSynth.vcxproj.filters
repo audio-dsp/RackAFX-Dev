@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Synth Core">
+    <Filter Include="Resources">
+      <UniqueIdentifier>{bdd1600b-f277-467b-8323-4e69e45ad94e}</UniqueIdentifier>    </Filter>    <Filter Include="Synth Core">
       <UniqueIdentifier>{11e74656-1588-4087-bdf3-cb59d1e05f92}</UniqueIdentifier>
     </Filter>
     <Filter Include="RAFX Core">
@@ -104,8 +105,29 @@
     <ClInclude Include="RackAFXDLL.h">
       <Filter>RAFX Core</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
     <ClInclude Include="trace.h">
       <Filter>RAFX Core</Filter>
     </ClInclude>
   </ItemGroup>
+   <ItemGroup>
+     <Image Include="resources\knobvst.png">
+        <Filter>Resources</Filter>
+      </Image>
+    </ItemGroup>
+    <ItemGroup>
+      <ResourceCompile Include="DigiSynth.rc">
+       <Filter>Resources</Filter>
+      </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="RackAFX.uidesc">
+      <Filter>Resources</Filter>
+      </None>
+  </ItemGroup>
 </Project>
+
+
+

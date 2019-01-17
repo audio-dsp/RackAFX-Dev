@@ -1,66 +1,62 @@
 #include "RackAFXDLL.h"
+//#define RAFX_DLLMAIN
 
 // WARNING: DO NOT UNDER ANY CIRCUMSTANCES EDIT THIS FILE! **********************
-
-/* VST Support
-#include "audioeffect.h"
-#include "Sock2VSTFactory.h"
-END VST Support */
 
 ///////////////////////////////////////////////////////////
 //
 // Global variables
 //
 void* g_hModule;   // DLL module handle
+#define stringCompanyName "RackAFX User"
 static float g_fMUResult;
+unsigned long uPCID1 = 4294967286;
+unsigned long uPCID2 = 4289217859;
+unsigned long uPCID3 = 4294967221;
+unsigned long uPCID4 = 4287445337;
+unsigned long uCCID1 = 209597999;
+unsigned long uCCID2 = 4294967207;
+unsigned long uCCID3 = 4294935382;
+unsigned long uCCID4 = 4294967191;
+// --- VSTCompatibility: ENABLED --- //
+
 
 ///////////////////////////////////////////////////////////
 //
 // DLL module information
 //
+
 extern "C"
 {
 	// entry point DllMain
-	BOOL APIENTRY DllMain(HANDLE hModule,
-						  DWORD dwReason,
-						  void* lpReserved)
+	BOOL APIENTRY DllMain(HINSTANCE hInst, DWORD dwReason, LPVOID /*lpvReserved*/)
 	{
-		if (dwReason == DLL_PROCESS_ATTACH)
+		if(dwReason == DLL_PROCESS_ATTACH)
 		{
-			g_hModule = (HMODULE)hModule ;
+			g_hModule = hInst;
+
+			// --- VST2 and VST3 -- DO NOT EDIT
+			CRAFXPlugInContainer::createRAFXPlugInContainer(g_hModule, createObject, uPCID1, uPCID2, uPCID3, uPCID4, uCCID1, uCCID2, uCCID3, uCCID4, &g_pGUIXML[0], g_nGUIXMLSize, stringCompanyName);
 		}
+		else if(dwReason == DLL_PROCESS_DETACH)
+		{
+			// --- VST2 and VST3 -- DO NOT EDIT
+			CRAFXPlugInContainer::destroyRAFXPlugInContainer();
+		}
+
 		return TRUE ;
 	}
-	// end entry point DllMain
+	// end entry point DllMain*/
 
-/* VST Support
-// VST Support - DO NOT EDIT THIS CODE
-	extern AudioEffect* createEffectInstance (audioMasterCallback audioMaster);
-
-	#ifdef CODE_BLOX_MINGW
-        #define VST_EXPORT DllExport
-	#else
-       #define VST_EXPORT
-    #endif
-
-	// VST Export Function
-	VST_EXPORT AEffect* VSTPluginMain (audioMasterCallback audioMaster)
+	// --- VST3 ONLY: not used now but I may use later
+	/*bool DllExportVST3 InitDll()
 	{
-		// Get VST Version of the Host
-		if (!audioMaster (0, audioMasterVersion, 0, 0, 0, 0))
-			return 0;  // old version
-
-		// Create the AudioEffect
-		AudioEffect* effect = createEffectInstance (audioMaster);
-		if (!effect)
-			return 0;
-
-		// Return the VST AEffect structur
-		return effect->getAeffect ();
+		return true;
 	}
-// end VSTPlugInMain 0x7FFD
-END VST Support */
-
+	bool DllExportVST3 ExitDll()
+	{
+		return true;
+	}*/
 }
 
 //RackAFX Creation Function
@@ -75,15 +71,6 @@ DllExport UINT getAPIVersion()
 	return CURRENT_PLUGIN_API;
 }
 
-/* VST Support
-// create VST object and attach the RackAFXPlugIn Buddy - DO NOT EDIT THIS CODE
-AudioEffect* createEffectInstance (audioMasterCallback audioMaster)
-{
-	CPlugIn* pOb = new CDigiSynth; // ***
 
-	Sock2VSTFactory factory(pOb, audioMaster);
-	return factory.getVSTPlugIn();
-}
-// end createEffectInstance 0x7FFE
-END VST Support */
+
 
