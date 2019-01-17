@@ -1,0 +1,3 @@
+LIBRARY			CYCLESHIFTER
+DESCRIPTION		'CycleShifter'
+EXPORTS         main
