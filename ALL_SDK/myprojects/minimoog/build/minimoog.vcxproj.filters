@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Adder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\ADSR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\audioeffect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\audioeffectx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\BasicBlock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Moog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\MoogPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Multiplexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Multiplier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Noise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Oscil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\Waveform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\source\vstplugmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\aeffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\aeffectx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\aeffeditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\audioeffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\basic_blocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\Moog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\MoogPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\vstfxstore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\plugcontroller.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\plugids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\plugprocessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\include\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{964C7251-2507-3580-B681-9833C102EB5B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A4B15351-1D9F-385F-8625-9F348C9F2A03}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

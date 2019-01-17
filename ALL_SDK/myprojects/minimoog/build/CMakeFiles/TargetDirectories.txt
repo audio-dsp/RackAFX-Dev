@@ -1,0 +1,3 @@
+C:/Users/Jonathan_Moore/My_Work/Steinberg/my_plugins/minimoog/build/CMakeFiles/minimoog.dir
+C:/Users/Jonathan_Moore/My_Work/Steinberg/my_plugins/minimoog/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Jonathan_Moore/My_Work/Steinberg/my_plugins/minimoog/build/CMakeFiles/ZERO_CHECK.dir

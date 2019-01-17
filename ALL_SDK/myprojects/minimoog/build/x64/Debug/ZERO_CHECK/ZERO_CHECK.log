@@ -1,0 +1,10 @@
+﻿Build started 12/31/2018 12:42:52 PM.
+     1>Project "C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\build\ZERO_CHECK.vcxproj" on node 2 (Rebuild target(s)).
+     1>CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because C:/Users/Jonathan_Moore/My_Work/Steinberg/my_plugins/minimoog/build/CMakeFiles/generate.stamp is up-to-date.
+     1>Done Building Project "C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\build\ZERO_CHECK.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.07

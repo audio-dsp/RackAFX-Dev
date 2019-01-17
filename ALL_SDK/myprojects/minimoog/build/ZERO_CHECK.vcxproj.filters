@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Jonathan_Moore\My_Work\Steinberg\my_plugins\minimoog\build\CMakeFiles\5e34fe387718ca3812a01afd4ed3e10e\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{353F60B1-FD50-3531-B8C7-432E352CA83B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

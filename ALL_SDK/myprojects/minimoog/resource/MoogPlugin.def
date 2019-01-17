@@ -1,0 +1,4 @@
+LIBRARY MOOGPLUGIN
+EXPORTS
+VSTPluginMain
+main=VSTPluginMain
