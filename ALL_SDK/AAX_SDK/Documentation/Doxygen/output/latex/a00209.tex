@@ -1,0 +1,232 @@
+\hypertarget{a00209}{}\section{A\+A\+X\+\_\+\+Exports.\+cpp File Reference}
+\label{a00209}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Init.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}acfunknown.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}acfresult.\+h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T}~extern \char`\"{}C\char`\"{} \+\_\+\+\_\+declspec(dllexport) A\+C\+F\+R\+E\+S\+U\+L\+T \+\_\+\+\_\+stdcall
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_aa455fa4d9a2236334d0fd959b4919788}{A\+C\+F\+Register\+Plugin} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host\+Void, I\+A\+C\+F\+Plugin\+Definition $\ast$$\ast$pp\+Plugin\+Definition\+Void)
+\begin{DoxyCompactList}\small\item\em The main plug-\/in registration method. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_a68950ea83fea9b46b8f3fef409355b71}{A\+C\+F\+Register\+Component} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host, acf\+U\+Int32 index, I\+A\+C\+F\+Component\+Definition $\ast$$\ast$pp\+Component\+Definition)
+\begin{DoxyCompactList}\small\item\em Registers a specific component in the D\+L\+L. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_a63cbe0222beee199dad20c26e79ebeaa}{A\+C\+F\+Get\+Class\+Factory} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host, const acf\+C\+L\+S\+I\+D \&clsid, const \hyperlink{a00150_a59df0b41744eee7a066787aaedf97f67}{acf\+I\+I\+D} \&iid, void $\ast$$\ast$pp\+Out)
+\begin{DoxyCompactList}\small\item\em Gets the factory for a given class I\+D. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_ae5327dbd8fd750c78eca3892831f4ad8}{A\+C\+F\+Can\+Unload\+Now} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host)
+\begin{DoxyCompactList}\small\item\em Determines whether or not the host may unload the D\+L\+L. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_ada314f5040499160998c3c444fbe4dfd}{A\+C\+F\+Startup} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host)
+\begin{DoxyCompactList}\small\item\em D\+L\+L initialization routine. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_aba48dc247519ce7ecd2c064e928d9f18}{A\+C\+F\+Shutdown} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host)
+\begin{DoxyCompactList}\small\item\em D\+L\+L shutdown routine. \end{DoxyCompactList}\item 
+\hyperlink{a00209_ac70085d71c555deff0dfb54c2b503f4c}{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T} \hyperlink{a00209_a2a47c5f7e29baf716a4c4956389e83c9}{A\+C\+F\+Get\+S\+D\+K\+Version} (acf\+U\+Int64 $\ast$o\+S\+D\+K\+Version)
+\begin{DoxyCompactList}\small\item\em Returns the D\+L\+L\textquotesingle{}s S\+D\+K version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00209_ac70085d71c555deff0dfb54c2b503f4c}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T@{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T}}
+\index{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T@{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+E\+X\+P\+O\+R\+T~extern \char`\"{}C\char`\"{} \+\_\+\+\_\+declspec(dllexport) A\+C\+F\+R\+E\+S\+U\+L\+T \+\_\+\+\_\+stdcall}\label{a00209_ac70085d71c555deff0dfb54c2b503f4c}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00209_aa455fa4d9a2236334d0fd959b4919788}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Register\+Plugin@{A\+C\+F\+Register\+Plugin}}
+\index{A\+C\+F\+Register\+Plugin@{A\+C\+F\+Register\+Plugin}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Register\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Register\+Plugin (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host, }
+\item[{I\+A\+C\+F\+Plugin\+Definition $\ast$$\ast$}]{pp\+Plugin\+Definition}
+\end{DoxyParamCaption}
+)}\label{a00209_aa455fa4d9a2236334d0fd959b4919788}
+
+
+The main plug-\/in registration method. 
+
+
+
+References A\+A\+X\+Register\+Plugin().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{a00209_aa455fa4d9a2236334d0fd959b4919788_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_a68950ea83fea9b46b8f3fef409355b71}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Register\+Component@{A\+C\+F\+Register\+Component}}
+\index{A\+C\+F\+Register\+Component@{A\+C\+F\+Register\+Component}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Register\+Component}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Register\+Component (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host, }
+\item[{acf\+U\+Int32}]{index, }
+\item[{I\+A\+C\+F\+Component\+Definition $\ast$$\ast$}]{pp\+Component\+Definition}
+\end{DoxyParamCaption}
+)}\label{a00209_a68950ea83fea9b46b8f3fef409355b71}
+
+
+Registers a specific component in the D\+L\+L. 
+
+
+
+References A\+A\+X\+Register\+Component().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00209_a68950ea83fea9b46b8f3fef409355b71_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_a63cbe0222beee199dad20c26e79ebeaa}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Get\+Class\+Factory@{A\+C\+F\+Get\+Class\+Factory}}
+\index{A\+C\+F\+Get\+Class\+Factory@{A\+C\+F\+Get\+Class\+Factory}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Get\+Class\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Get\+Class\+Factory (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host, }
+\item[{const acf\+C\+L\+S\+I\+D \&}]{clsid, }
+\item[{const {\bf acf\+I\+I\+D} \&}]{iid, }
+\item[{void $\ast$$\ast$}]{pp\+Out}
+\end{DoxyParamCaption}
+)}\label{a00209_a63cbe0222beee199dad20c26e79ebeaa}
+
+
+Gets the factory for a given class I\+D. 
+
+
+
+References A\+A\+X\+Get\+Class\+Factory().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{a00209_a63cbe0222beee199dad20c26e79ebeaa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_ae5327dbd8fd750c78eca3892831f4ad8}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Can\+Unload\+Now@{A\+C\+F\+Can\+Unload\+Now}}
+\index{A\+C\+F\+Can\+Unload\+Now@{A\+C\+F\+Can\+Unload\+Now}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Can\+Unload\+Now}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Can\+Unload\+Now (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host}
+\end{DoxyParamCaption}
+)}\label{a00209_ae5327dbd8fd750c78eca3892831f4ad8}
+
+
+Determines whether or not the host may unload the D\+L\+L. 
+
+
+
+References A\+A\+X\+Can\+Unload\+Now().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{a00209_ae5327dbd8fd750c78eca3892831f4ad8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_ada314f5040499160998c3c444fbe4dfd}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Startup@{A\+C\+F\+Startup}}
+\index{A\+C\+F\+Startup@{A\+C\+F\+Startup}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Startup}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Startup (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host}
+\end{DoxyParamCaption}
+)}\label{a00209_ada314f5040499160998c3c444fbe4dfd}
+
+
+D\+L\+L initialization routine. 
+
+
+
+References A\+A\+X\+Startup().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00209_ada314f5040499160998c3c444fbe4dfd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_aba48dc247519ce7ecd2c064e928d9f18}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Shutdown@{A\+C\+F\+Shutdown}}
+\index{A\+C\+F\+Shutdown@{A\+C\+F\+Shutdown}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Shutdown (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host}
+\end{DoxyParamCaption}
+)}\label{a00209_aba48dc247519ce7ecd2c064e928d9f18}
+
+
+D\+L\+L shutdown routine. 
+
+
+
+References A\+A\+X\+Shutdown().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{a00209_aba48dc247519ce7ecd2c064e928d9f18_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00209_a2a47c5f7e29baf716a4c4956389e83c9}{}\index{A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}!A\+C\+F\+Get\+S\+D\+K\+Version@{A\+C\+F\+Get\+S\+D\+K\+Version}}
+\index{A\+C\+F\+Get\+S\+D\+K\+Version@{A\+C\+F\+Get\+S\+D\+K\+Version}!A\+A\+X\+\_\+\+Exports.\+cpp@{A\+A\+X\+\_\+\+Exports.\+cpp}}
+\subsubsection[{A\+C\+F\+Get\+S\+D\+K\+Version}]{\setlength{\rightskip}{0pt plus 5cm}A\+C\+F\+A\+P\+I A\+C\+F\+Get\+S\+D\+K\+Version (
+\begin{DoxyParamCaption}
+\item[{acf\+U\+Int64 $\ast$}]{o\+S\+D\+K\+Version}
+\end{DoxyParamCaption}
+)}\label{a00209_a2a47c5f7e29baf716a4c4956389e83c9}
+
+
+Returns the D\+L\+L\textquotesingle{}s S\+D\+K version. 
+
+
+
+References A\+A\+X\+Get\+S\+D\+K\+Version().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{a00209_a2a47c5f7e29baf716a4c4956389e83c9_cgraph}
+\end{center}
+\end{figure}
+
+

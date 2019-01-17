@@ -1,0 +1,322 @@
+\hypertarget{a00342}{}\section{E\+Q and Dynamics Curve Displays}
+\label{a00342}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}
+
+
+\subsection{ }
+Displaying E\+Q and Dynamics curves in Pro Tools, control surfaces, and other auxiliary graphical interfaces. 
+
+\paragraph*{About}
+
+ Pro Tools, control surfaces, and other auxiliary displays connected to the A\+A\+X host may provide a curve data display to enhance the graphical representation of the plug-\/in\textquotesingle{}s state.
+
+ A \char`\"{}bouncing ball\char`\"{} meter may also be overlaid within the curve data presentation for Dynamics plug-\/ins.
+
+  Pro Tools Mix Window displaying E\+Q plug-\/in instances
+
+  Pro Tools $\vert$ S6 M\+T\+M display showing a Dynamics plug-\/in instance with bouncing-\/ball metering
+
+
+
+\paragraph*{Requirements}
+
+ \begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000001}{Host Compatibility Notes}]For S6 control surface displays, see \hyperlink{a00374_PT-226228}{P\+T-\/226228} and \hyperlink{a00374_PT-226227}{P\+T-\/226227} in the \hyperlink{a00374}{Known Issues} page for more information about the requirements listed in this section.\end{DoxyRefDesc}
+
+
+ These are the requirements for supporting the A\+A\+X curve data display features\+:
+
+
+\begin{DoxyItemize}
+\item To support E\+Q curve data displays, a plug-\/in must support \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data()}
+\item To support Dynamics curve data displays, a plug-\/in must also support \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Display\+Range()} for the Dynamics curve data types.
+\end{DoxyItemize}
+
+ The A\+A\+X host will only query and display curve data for plug-\/ins of the applicable \hyperlink{a00206_aef9637518fb1ac0e2f403444c73aba4a}{Category}, as specified in the \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} documentation.
+
+ In order to present a bouncing-\/ball metering display, Dynamics plug-\/ins must also support \hyperlink{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Meter\+Ids()} in addition to the two other curve data methods. This feature is always optional\+: a Dynamics plug-\/in may present a curve only without support for a bouncing-\/ball meter overlay.
+
+
+
+\paragraph*{Pro Tools Implementation}
+
+ There are three different kinds of calls that Pro Tools will make when querying E\+Q plug-\/ins for curve data\+:
+\begin{DoxyItemize}
+\item An initial query with a small set of points. This query is used only to determine whether the plug-\/in supports the E\+Q Curve display feature. The result data is not used. If the plug-\/in does not support the feature it must return an error value from \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{Get\+Curve\+Data()}
+\item A normal full-\/curve query to get the base curve data across the full display range
+\item One or more targeted queries around any detected inflection points. These queries are used to increase display resolution for plug-\/ins with very narrow Q settings.
+\end{DoxyItemize}
+
+ Pro Tools will call \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{Get\+Curve\+Data()} from a thread in a low-\/priority thread pool. Most other Pro Tools operations will not be blocked by the execution of this method, though note that if a control surface is also issuing queries then the method may be called concurrently from multiple host threads.
+
+ In Pro Tools, curve updates are triggered by incrementing the plug-\/in\textquotesingle{}s change counter. This is the counter value returned from the \hyperlink{a00061_a17b96da201d9a242d3662e87525a7227}{Get\+Number\+Of\+Changes()} method in the plug-\/in. This counter is updated automatically when any plug-\/in parameter changes.
+
+
+
+\paragraph*{Testing}
+
+ There are several ways to test a plug-\/in\textquotesingle{}s S6 curve implementation\+:
+
+ \subparagraph*{View the plug-\/in using Pro Tools or another client app or control surface with curve display support }
+
+  The best way to test your plug-\/in\textquotesingle{}s curve data display support is to use a real application or control surface to test the behavior of your plug-\/in with real user workflows. For E\+Q plug-\/ins you can use the E\+Q Curve display in the Pro Tools Mix Window.
+
+ 
+
+ \subparagraph*{View the plug-\/in using the S6 Surfulator software to emulate an S6 control surface }
+
+  You can view the plug-\/in\textquotesingle{}s curve data on the emulated M\+T\+M module display. The emulator runs the same software as a true S6 system, so the curve representation in the emulator will be accurate to what would be displayed on S6 hardware. 
+
+ \subparagraph*{Test E\+Q and Dynamics curves at high resolution within Pro Tools using the \char`\"{}\+Test\+Get\+Curve\+Data\char`\"{} Digi\+Option }
+
+  See \hyperlink{a00360_aax_pro_tools_guide_06c_digioptions}{Using Digi\+Options} for more information about this option.
+
+  Test\+Get\+Curve\+Data E\+Q graph in plug-\/in header 
+
+ \subparagraph*{Use the aaxh dish which is included in the D\+S\+H Test Tools package to check your plug-\/in\textquotesingle{}s curve data }
+
+  \begin{DoxyVerb}dsh> load_dish aaxh
+dsh> loadpi "/path/to/your/plug-in.aaxplugin"
+dsh> listeffects
+	View the list of effects in your plug-in and determine which effect you want to test, if there are more than one
+dsh> instantiateforcontext {plugin: 0, effect: 0, plat: native, in: mono, out: mono, rate: 48000, alg: true}
+	Use whatever context parameterization is appropriate for the plug-in configuration you want to test
+dsh> getcurvedata {plugin: 0, inst: 0, display: graph}
+	Experiment with other display values to get other kinds of information
+	You can edit the instance's parameter values within DSH using the "setparameter" command to see the effects of various parameter changes on the curve\end{DoxyVerb}
+
+
+ The \char`\"{}getcurvedata\char`\"{} command will check all three curve data types and will present information for each supported type.
+
+ Here is an example of the command output using Avid\textquotesingle{}s Dynamics I\+I\+I plug-\/in\+: \begin{DoxyVerb}cmd_result:
+  curve_data:
+	AXdr:
+	  values:
+		supported: false
+	AXdy:
+	  values:
+		ascii_art: |
+				0|                                                                                
+				 |                                                                                
+				 |                                                                                
+				 |                                                                                
+				 |                                                                                
+				 |                                                                        ********
+				 |                                                            ************        
+				 |                                                ************                    
+				 |                                            ****                                
+				 |                                       *****                                    
+				 |                                   *****                                        
+				 |                               *****                                            
+				 |                           *****                                                
+				 |                       *****                                                    
+				 |                   *****                                                        
+				 |               *****                                                            
+				 |           *****                                                                
+				 |       *****                                                                    
+				 |   *****                                                                        
+			  -60|****                                                                            
+		  ----------------------------------------------------------------------------------------
+				 | -60                                                                           0
+	  
+		supported: true
+	AXeq:
+	  values:
+		supported: false
+  instanceID: 0
+  pluginID: 0
+message_type: cmd_result
+...\end{DoxyVerb}
+ 
+
+ \subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \{ \hyperlink{a00342_gga59c73d8f51c5c55d54a728eff39da884a115d7543992756d3474f944f31bcc784}{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None} = 0, 
+\hyperlink{a00342_gga59c73d8f51c5c55d54a728eff39da884a01b32d7031ceff45f7acad05dcddad19}{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q} = \textquotesingle{}A\+Xeq\textquotesingle{}, 
+\hyperlink{a00342_gga59c73d8f51c5c55d54a728eff39da884aed3949ae429e38e979f7d005759c579e}{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics} = \textquotesingle{}A\+Xdy\textquotesingle{}, 
+\hyperlink{a00342_gga59c73d8f51c5c55d54a728eff39da884a011b1b00d6189a8903735dcae2f8bc93}{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction} = \textquotesingle{}A\+Xdr\textquotesingle{}
+ \}
+\begin{DoxyCompactList}\small\item\em Different Curve Types that can be queried from the Host. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Auxiliary U\+I methods}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+::\+Get\+Curve\+Data} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, const float $\ast$i\+Values, uint32\+\_\+t i\+Num\+Values, float $\ast$o\+Values) const =0
+\begin{DoxyCompactList}\small\item\em Generate a set of output values based on a set of given input values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Auxiliary U\+I methods}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+::\+Get\+Curve\+Data\+Meter\+Ids} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, uint32\+\_\+t $\ast$o\+X\+Meter\+Id, uint32\+\_\+t $\ast$o\+Y\+Meter\+Id) const =0
+\begin{DoxyCompactList}\small\item\em Indicates which meters correspond to the X and Y axes of the E\+Q or Dynamics graph. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+::\+Get\+Curve\+Data\+Display\+Range} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, float $\ast$o\+X\+Min, float $\ast$o\+X\+Max, float $\ast$o\+Y\+Min, float $\ast$o\+Y\+Max) const =0
+\begin{DoxyCompactList}\small\item\em Determines the range of the graph shown by the plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00342_ga59c73d8f51c5c55d54a728eff39da884}{}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!A\+A\+X\+\_\+\+E\+Curve\+Type@{A\+A\+X\+\_\+\+E\+Curve\+Type}}
+\index{A\+A\+X\+\_\+\+E\+Curve\+Type@{A\+A\+X\+\_\+\+E\+Curve\+Type}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+Curve\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+\_\+\+E\+Curve\+Type}}\label{a00342_ga59c73d8f51c5c55d54a728eff39da884}
+
+
+Different Curve Types that can be queried from the Host. 
+
+\begin{DoxyNote}{Note}
+All \textquotesingle{}A\+X\+\_\+\+\_\+\textquotesingle{} I\+Ds are reserved for host messages
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data()} 
+
+\hyperlink{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Meter\+Ids()} 
+
+\hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Display\+Range()} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None}}\item[{\em 
+\hypertarget{a00342_gga59c73d8f51c5c55d54a728eff39da884a115d7543992756d3474f944f31bcc784}{}A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+None\label{a00342_gga59c73d8f51c5c55d54a728eff39da884a115d7543992756d3474f944f31bcc784}
+}]\index{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q}}\item[{\em 
+\hypertarget{a00342_gga59c73d8f51c5c55d54a728eff39da884a01b32d7031ceff45f7acad05dcddad19}{}A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+E\+Q\label{a00342_gga59c73d8f51c5c55d54a728eff39da884a01b32d7031ceff45f7acad05dcddad19}
+}]E\+Q Curve, input values are in Hz, output values are in d\+B. \begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000027}{Host Compatibility Notes}]Pro Tools requests this curve type for \hyperlink{a00206_aef9637518fb1ac0e2f403444c73aba4aad84edabff7d1d8732079b467c07dedcc}{E\+Q} plug-\/ins only \end{DoxyRefDesc}
+\index{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics}}\item[{\em 
+\hypertarget{a00342_gga59c73d8f51c5c55d54a728eff39da884aed3949ae429e38e979f7d005759c579e}{}A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Dynamics\label{a00342_gga59c73d8f51c5c55d54a728eff39da884aed3949ae429e38e979f7d005759c579e}
+}]Dynamics Curve showing input vs. output, input and output values are in d\+B. \begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000028}{Host Compatibility Notes}]Pro Tools requests this curve type for \hyperlink{a00206_aef9637518fb1ac0e2f403444c73aba4aa1e8d5202983c58aa0346a9a547f55bd9}{Dynamics} plug-\/ins only \end{DoxyRefDesc}
+\index{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction@{A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction}}\item[{\em 
+\hypertarget{a00342_gga59c73d8f51c5c55d54a728eff39da884a011b1b00d6189a8903735dcae2f8bc93}{}A\+A\+X\+\_\+e\+Curve\+Type\+\_\+\+Reduction\label{a00342_gga59c73d8f51c5c55d54a728eff39da884a011b1b00d6189a8903735dcae2f8bc93}
+}]Gain-\/reduction curve showing input vs. gain reduction, input and output values are in d\+B. \begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000029}{Host Compatibility Notes}]Pro Tools requests this curve type for \hyperlink{a00206_aef9637518fb1ac0e2f403444c73aba4aa1e8d5202983c58aa0346a9a547f55bd9}{Dynamics} plug-\/ins only \end{DoxyRefDesc}
+\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00342_gaa85bda4027342eb644a9c92a17da6d49}{}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!Get\+Curve\+Data@{Get\+Curve\+Data}}
+\index{Get\+Curve\+Data@{Get\+Curve\+Data}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}
+\subsubsection[{Get\+Curve\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+::\+Get\+Curve\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{const float $\ast$}]{i\+Values, }
+\item[{uint32\+\_\+t}]{i\+Num\+Values, }
+\item[{float $\ast$}]{o\+Values}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00342_gaa85bda4027342eb644a9c92a17da6d49}
+
+
+Generate a set of output values based on a set of given input values. 
+
+This method is used by the host to generate graphical curves. Given a set of input values, e.\+g. frequencies in Hz, this method should generate a corresponding set of output values, e.\+g. d\+B gain at each frequency. The semantics of these input and output values are dictated by {\ttfamily i\+Curve\+Type}. See \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}.
+
+Plug-\/ins may also define custom curve type I\+Ds to use this method internally. For example, the plug-\/in\textquotesingle{}s G\+U\+I could use this method to request curve data in an arbitrary format.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+This method may be called by the host simultaneously from multiple threads with differents {\ttfamily i\+Values}.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+{\ttfamily o\+Values} must be allocated by caller with the same size as {\ttfamily i\+Values} ({\ttfamily i\+Num\+Values}).
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000050}{Host Compatibility Notes}]Versions of S6 software which support the \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()} method will not display a plug-\/in\textquotesingle{}s curve data unless both \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{Get\+Curve\+Data()} and \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()} are supported by the plug-\/in.\end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+S6 currently polls this method to update a plug-\/in\textquotesingle{}s E\+Q or dynamics curves based on changes to the parameters mapped to the plug-\/in\textquotesingle{}s E\+Q or dynamics center section page tables. Parameters that are not included in these page tables will not trigger updates to the curves displayed on S6. (G\+W\+S\+W-\/7314, \hyperlink{a00374_PTSW-195316}{P\+T\+S\+W-\/195316 / P\+T-\/218485})
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt in}  & {\em i\+Values} & An array of input values \\
+\hline
+\mbox{\tt in}  & {\em i\+Num\+Values} & The size of {\ttfamily i\+Values} \\
+\hline
+\mbox{\tt out}  & {\em o\+Values} & An array of ouptut values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method must return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not support curve data for the requested {\ttfamily i\+Curve\+Type} 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{a00018_a41deeb0825a1c07f9b77c62215cb4de7}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+\hypertarget{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!Get\+Curve\+Data\+Meter\+Ids@{Get\+Curve\+Data\+Meter\+Ids}}
+\index{Get\+Curve\+Data\+Meter\+Ids@{Get\+Curve\+Data\+Meter\+Ids}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}
+\subsubsection[{Get\+Curve\+Data\+Meter\+Ids}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+::\+Get\+Curve\+Data\+Meter\+Ids (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{uint32\+\_\+t $\ast$}]{o\+X\+Meter\+Id, }
+\item[{uint32\+\_\+t $\ast$}]{o\+Y\+Meter\+Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}
+
+
+Indicates which meters correspond to the X and Y axes of the E\+Q or Dynamics graph. 
+
+These meters can be used by attached control surfaces to present an indicator in the same X/\+Y coordinate plane as the plug-\/in\textquotesingle{}s curve data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Meter\+Id} & Id of the X-\/axis meter \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Meter\+Id} & Id of the Y-\/axis meter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{a00018_abd41a9d952b3ef1db63b5f00bad03bb0}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+\hypertarget{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{}\index{E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}!Get\+Curve\+Data\+Display\+Range@{Get\+Curve\+Data\+Display\+Range}}
+\index{Get\+Curve\+Data\+Display\+Range@{Get\+Curve\+Data\+Display\+Range}!E\+Q and Dynamics Curve Displays@{E\+Q and Dynamics Curve Displays}}
+\subsubsection[{Get\+Curve\+Data\+Display\+Range}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+::\+Get\+Curve\+Data\+Display\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{float $\ast$}]{o\+X\+Min, }
+\item[{float $\ast$}]{o\+X\+Max, }
+\item[{float $\ast$}]{o\+Y\+Min, }
+\item[{float $\ast$}]{o\+Y\+Max}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}
+
+
+Determines the range of the graph shown by the plug-\/in. 
+
+Min/max arguments define the range of the axes of the graph.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Min} & Min value of X-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Max} & Max value of X-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Min} & Min value of Y-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Max} & Max value of Y-\/axis range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{a00018_aaa02d76800a2a0dad30587e13c89da7d}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+Collaboration diagram for E\+Q and Dynamics Curve Displays\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00342}
+\end{center}
+\end{figure}

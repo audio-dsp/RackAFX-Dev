@@ -1,0 +1,91 @@
+\hypertarget{a00346}{}\section{Display delegates}
+\label{a00346}\index{Display delegates@{Display delegates}}
+
+
+\subsection{ }
+Classes for parameter value string conversion. 
+
+Display delegates are used to convert real parameter values to and from their formatted string representations. All display delegates implement the \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate} interface, which contains two conversion functions\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}    ValueToString(T value, std::string& valueString) \textcolor{keyword}{const} = 0;
+\textcolor{keyword}{virtual} \textcolor{keywordtype}{bool}    StringToValue(\textcolor{keyword}{const} std::string& valueString, T& value) \textcolor{keyword}{const} = 0;      
+\end{DoxyCode}
+\hypertarget{a00346_displaydelegates_decorators}{}\subsection{Display delegate decorators}\label{a00346_displaydelegates_decorators}
+The A\+A\+X S\+D\+K utilizes a decorator pattern in order to provide code re-\/use while accounting for a wide variety of possible parameter display formats. The S\+D\+K includes a number of sample display delegate decorator classes.
+
+Each concrete display delegate decorator implements \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator} and adheres to the decorator pattern. The decorator pattern allows multiple display behaviors to be composited or wrapped together at run time. For instance it is possible to implement a d\+B\+V (d\+B Volts) decorator, by wrapping an \hyperlink{a00015}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator} with an \hyperlink{a00045}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator}.\hypertarget{a00346_displaydelegates_decorators_implementation}{}\subsubsection{Display delegate decorator implementation}\label{a00346_displaydelegates_decorators_implementation}
+By implementing \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}, each concrete display delegate decorator class implements the full \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate} interface. In addition, it retains a pointer to the \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator} that it wraps. When the decorator performs a conversion, it calls into its wrapped class so that the wrapped decorator may apply its own conversion formatting. By repeating this pattern in each decorator, all of the decorator subclasses call into their \char`\"{}wrapper\char`\"{} in turn, resulting in a final string to which all of the decorators\textquotesingle{} conversions have been applied in sequence.
+
+Here is the relevant implementation from \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator} \+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+\hyperlink{a00094}{AAX\_IDisplayDelegateDecorator<T>::AAX\_IDisplayDelegateDecorator}
+      (\textcolor{keyword}{const} \hyperlink{a00092}{AAX\_IDisplayDelegate<T>}& displayDelegate)  :
+    \hyperlink{a00092}{AAX\_IDisplayDelegate}<T>(),
+    mWrappedDisplayDelegate(displayDelegate.Clone())
+\{
+
+\}
+
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+\textcolor{keywordtype}{bool}        \hyperlink{a00094_ada5780cfa332ac7946bf95aa65ae96f5}{AAX\_IDisplayDelegateDecorator<T>::ValueToString}(
+      T value, \hyperlink{a00042}{AAX\_CString}* valueString)\textcolor{keyword}{ const }
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} mWrappedDisplayDelegate->ValueToString(value, valueString);
+\}
+
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+\textcolor{keywordtype}{bool}        \hyperlink{a00094_a18d19293f3eca619cb5bb7f1ffde1a8d}{AAX\_IDisplayDelegateDecorator<T>::StringToValue}(\textcolor{keyword}{
+      const} \hyperlink{a00042}{AAX\_CString}& valueString, T* value)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} mWrappedDisplayDelegate->StringToValue(valueString, value);
+\}
+\end{DoxyCode}
+\hypertarget{a00346_example}{}\subsubsection{Decibel decorator example}\label{a00346_example}
+Here is a concrete example of how a decibel decorator might be implemented
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+\textcolor{keywordtype}{bool}    \hyperlink{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}{AAX\_CDecibelDisplayDelegateDecorator<T>::ValueToString}
+      (T value, \hyperlink{a00042}{AAX\_CString}* valueString)\textcolor{keyword}{ const }
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{if} (value <= 0)
+    \{
+         *valueString = \hyperlink{a00042}{AAX\_CString}(\textcolor{stringliteral}{"--- dB"});
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+    
+    value = 20*log10(value);
+    \textcolor{keywordtype}{bool} succeeded = \hyperlink{a00094_ada5780cfa332ac7946bf95aa65ae96f5}{AAX\_IDisplayDelegateDecorator<T>::ValueToString}
+      (value, valueString);
+     *valueString += \hyperlink{a00042}{AAX\_CString}(\textcolor{stringliteral}{"dB"});
+    \textcolor{keywordflow}{return} succeeded;
+\}
+\end{DoxyCode}
+
+
+Notice in this example that the \hyperlink{a00094_ada5780cfa332ac7946bf95aa65ae96f5}{Value\+To\+String()} method is called in the parent class, \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. This results in a call into the wrapped class\textquotesingle{} implementation of \hyperlink{a00094_ada5780cfa332ac7946bf95aa65ae96f5}{Value\+To\+String()}, which converts the decorated value to a redecorated string, and so forth for additional decorators. \subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00093}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}
+\begin{DoxyCompactList}\small\item\em Defines the display behavior for a parameter. \end{DoxyCompactList}\item 
+class \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Classes for parameter value string conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Documents}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00347}{Display delegate decorators}
+\begin{DoxyCompactList}\small\item\em Classes for adapting parameter value strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for Display delegates\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00346}
+\end{center}
+\end{figure}

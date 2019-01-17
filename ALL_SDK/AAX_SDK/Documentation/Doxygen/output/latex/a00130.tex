@@ -1,0 +1,302 @@
+\hypertarget{a00130}{}\section{A\+A\+X\+\_\+\+V\+Collection Class Reference}
+\label{a00130}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+V\+Collection.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+V\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{a00686}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+V\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{a00687}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Version-\/managed concrete \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} class. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00130_a68a62b3180bba5ede9b57402a241d8a5}{A\+A\+X\+\_\+\+V\+Collection} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host)
+\item 
+virtual \hyperlink{a00130_a499715437f7f28e77046de417bd121be}{$\sim$\+A\+A\+X\+\_\+\+V\+Collection} ()
+\item 
+virtual \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} $\ast$ \hyperlink{a00130_adad9ce833210851c3aa92d2427ecb4f7}{New\+Descriptor} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Create a new Effect descriptor. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00130_a19002849fe72624a49f7be47fdead471}{Add\+Effect} (const char $\ast$in\+Effect\+I\+D, \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} $\ast$in\+Effect\+Descriptor) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Add an Effect description to the collection. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00130_acbeb4c2c794a8518d6bf0bad720de922}{Set\+Manufacturer\+Name} (const char $\ast$in\+Package\+Name) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in manufacturer name. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00130_aae06470b0d07232622fbe29e898490d0}{Add\+Package\+Name} (const char $\ast$in\+Package\+Name) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package name. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00130_ab5851c0566b99aad61e10afe13d23bf5}{Set\+Package\+Version} (uint32\+\_\+t in\+Version) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package version number. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map} $\ast$ \hyperlink{a00130_ae8666d0dfec390004d5199bdf4c0f284}{New\+Property\+Map} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Create a new property map. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00130_a8bdb50050f90c5ea3c189a92fba16f5b}{Set\+Properties} (\hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map} $\ast$in\+Properties) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Set the properties of the collection. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00091}{A\+A\+X\+\_\+\+I\+Description\+Host} $\ast$ \hyperlink{a00130_a6eda35807e8573dcf02706b9016248fb}{Description\+Host} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\item 
+virtual const \hyperlink{a00091}{A\+A\+X\+\_\+\+I\+Description\+Host} $\ast$ \hyperlink{a00130_a8eb37af47511ecf6b08eb80f325bb08b}{Description\+Host} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\item 
+virtual \hyperlink{a00145}{I\+A\+C\+F\+Definition} $\ast$ \hyperlink{a00130_a7622e015fa99c8504d42f99181b1d473}{Host\+Definition} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\item 
+I\+A\+C\+F\+Plugin\+Definition $\ast$ \hyperlink{a00130_a1004f47db07fc8a05fcda4cc2a452700}{Get\+I\+Unknown} (void) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00130_a68a62b3180bba5ede9b57402a241d8a5}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{A\+A\+X\+\_\+\+V\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+V\+Collection\+::\+A\+A\+X\+\_\+\+V\+Collection (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host}
+\end{DoxyParamCaption}
+)}\label{a00130_a68a62b3180bba5ede9b57402a241d8a5}
+\hypertarget{a00130_a499715437f7f28e77046de417bd121be}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!````~A\+A\+X\+\_\+\+V\+Collection@{$\sim$\+A\+A\+X\+\_\+\+V\+Collection}}
+\index{````~A\+A\+X\+\_\+\+V\+Collection@{$\sim$\+A\+A\+X\+\_\+\+V\+Collection}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+V\+Collection}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+V\+Collection\+::$\sim$\+A\+A\+X\+\_\+\+V\+Collection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a499715437f7f28e77046de417bd121be}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00130_adad9ce833210851c3aa92d2427ecb4f7}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!New\+Descriptor@{New\+Descriptor}}
+\index{New\+Descriptor@{New\+Descriptor}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{New\+Descriptor}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+Effect\+Descriptor}$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+New\+Descriptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_adad9ce833210851c3aa92d2427ecb4f7}
+
+
+Create a new Effect descriptor. 
+
+This implementation retains each generated \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} and destroys the descriptor upon \hyperlink{a00130}{A\+A\+X\+\_\+\+V\+Collection} destruction\+Create a new Effect descriptor.
+
+Implements \hyperlink{a00087_afab70588134a065a5b4d6ea6ddd5ddff}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a19002849fe72624a49f7be47fdead471}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Add\+Effect@{Add\+Effect}}
+\index{Add\+Effect@{Add\+Effect}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Add\+Effect}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+V\+Collection\+::\+Add\+Effect (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Effect\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Effect\+Descriptor} $\ast$}]{in\+Effect\+Descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a19002849fe72624a49f7be47fdead471}
+
+
+Add an Effect description to the collection. 
+
+Each Effect that a plug-\/in registers with \hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Effect()} is considered a completely different user-\/facing product. For example, in Avid\textquotesingle{}s Dynamics I\+I\+I plug-\/in the Expander, Compressor, and De\+Esser are each registered as separate Effects. All stem format variations within each Effect are registered within that Effect\textquotesingle{}s \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} using \hyperlink{a00096_aec33938f50461dd5e7c1dcc25faf6917}{Add\+Component()}.
+
+The \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{A\+A\+X\+\_\+e\+Property\+\_\+\+Product\+I\+D} value for all Process\+Procs within a single Effect must be identical.
+
+This method passes ownership of an \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} object to the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection}. The \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} must not be deleted by the A\+A\+X plug-\/in, nor should it be edited in any way after it is passed to the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Effect\+I\+D} & The effect I\+D. \\
+\hline
+\mbox{\tt in}  & {\em in\+Effect\+Descriptor} & The Effect descriptor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_acbeb4c2c794a8518d6bf0bad720de922}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Set\+Manufacturer\+Name@{Set\+Manufacturer\+Name}}
+\index{Set\+Manufacturer\+Name@{Set\+Manufacturer\+Name}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Set\+Manufacturer\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+V\+Collection\+::\+Set\+Manufacturer\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Package\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_acbeb4c2c794a8518d6bf0bad720de922}
+
+
+Set the plug-\/in manufacturer name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Package\+Name} & The name of the manufacturer. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00087_a7fbeab9630460b9bf4525512609855f0}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_aae06470b0d07232622fbe29e898490d0}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Add\+Package\+Name@{Add\+Package\+Name}}
+\index{Add\+Package\+Name@{Add\+Package\+Name}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Add\+Package\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+V\+Collection\+::\+Add\+Package\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Package\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_aae06470b0d07232622fbe29e898490d0}
+
+
+Set the plug-\/in package name. 
+
+May be called multiple times to add abbreviated package names.
+
+\begin{DoxyNote}{Note}
+Every plug-\/in must include at least one name variant with 16 or fewer characters, plus a null terminating character. Used for Presets folder.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Package\+Name} & The name of the package. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_ab5851c0566b99aad61e10afe13d23bf5}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Set\+Package\+Version@{Set\+Package\+Version}}
+\index{Set\+Package\+Version@{Set\+Package\+Version}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Set\+Package\+Version}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+V\+Collection\+::\+Set\+Package\+Version (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_ab5851c0566b99aad61e10afe13d23bf5}
+
+
+Set the plug-\/in package version number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Version} & The package version numner. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00087_a4e69ac93eaac9c285c2bc3ac5b25880b}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_ae8666d0dfec390004d5199bdf4c0f284}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!New\+Property\+Map@{New\+Property\+Map}}
+\index{New\+Property\+Map@{New\+Property\+Map}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{New\+Property\+Map}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+Property\+Map}$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+New\+Property\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_ae8666d0dfec390004d5199bdf4c0f284}
+
+
+Create a new property map. 
+
+
+
+Implements \hyperlink{a00087_a665bac1e4e4558e0998d15a030a57407}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a8bdb50050f90c5ea3c189a92fba16f5b}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Set\+Properties@{Set\+Properties}}
+\index{Set\+Properties@{Set\+Properties}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Set\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+V\+Collection\+::\+Set\+Properties (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Property\+Map} $\ast$}]{in\+Properties}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a8bdb50050f90c5ea3c189a92fba16f5b}
+
+
+Set the properties of the collection. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Properties} & Collection properties \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00087_a0cbb609eec2550f7db3a137a826ec436}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a6eda35807e8573dcf02706b9016248fb}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Description\+Host@{Description\+Host}}
+\index{Description\+Host@{Description\+Host}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+Description\+Host}$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a6eda35807e8573dcf02706b9016248fb}
+
+
+
+
+Get a pointer to an \hyperlink{a00091}{A\+A\+X\+\_\+\+I\+Description\+Host}, if supported by the host
+
+This interface is served by the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} in order to avoid requiring a new method prototype for the \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} method called from the A\+A\+X Library.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00299}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h} for available feature U\+I\+Ds, e.\+g. \hyperlink{a00299_aa6369eb43ac68152d30ec665de5ea603}{A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+Feature\+\_\+\+Aux\+Output\+Stem} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{a00087_aeed6374265a6c9b4c59f752644feba02}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a8eb37af47511ecf6b08eb80f325bb08b}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Description\+Host@{Description\+Host}}
+\index{Description\+Host@{Description\+Host}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf A\+A\+X\+\_\+\+I\+Description\+Host}$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a8eb37af47511ecf6b08eb80f325bb08b}
+
+
+
+
+Get a pointer to an \hyperlink{a00091}{A\+A\+X\+\_\+\+I\+Description\+Host}, if supported by the host
+
+This interface is served by the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} in order to avoid requiring a new method prototype for the \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} method called from the A\+A\+X Library.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00299}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h} for available feature U\+I\+Ds, e.\+g. \hyperlink{a00299_aa6369eb43ac68152d30ec665de5ea603}{A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+Feature\+\_\+\+Aux\+Output\+Stem} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{a00087_a47ed935bdc38c43efa64ec36cee03a7c}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a7622e015fa99c8504d42f99181b1d473}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Host\+Definition@{Host\+Definition}}
+\index{Host\+Definition@{Host\+Definition}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Host\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf I\+A\+C\+F\+Definition}$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+Host\+Definition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00130_a7622e015fa99c8504d42f99181b1d473}
+
+
+
+
+Get a pointer to an \hyperlink{a00145}{I\+A\+C\+F\+Definition}, if supported by the host
+
+This interface is served by the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} in order to avoid requiring a new method prototype for the \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} method called from the A\+A\+X Library.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00299}{A\+A\+X\+\_\+\+U\+I\+Ds.\+h} for available host attribute U\+I\+Ds, e.\+g. \hyperlink{a00299_a1bbc82d62cf23079e92826874381a891}{A\+A\+X\+A\+T\+T\+R\+\_\+\+Client\+\_\+\+Level}
+\end{DoxySeeAlso}
+The implementation of \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} owns the referenced object. No Add\+Ref occurs.
+
+\hyperlink{a00145_abf9f28b14b95f0835857a9096d108989}{I\+A\+C\+F\+Definition\+::\+Define\+Attribute()} is not supported on this object 
+
+Implements \hyperlink{a00087_a8346a9084bf81e1834990aec2685640b}{A\+A\+X\+\_\+\+I\+Collection}.
+
+\hypertarget{a00130_a1004f47db07fc8a05fcda4cc2a452700}{}\index{A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}!Get\+I\+Unknown@{Get\+I\+Unknown}}
+\index{Get\+I\+Unknown@{Get\+I\+Unknown}!A\+A\+X\+\_\+\+V\+Collection@{A\+A\+X\+\_\+\+V\+Collection}}
+\subsubsection[{Get\+I\+Unknown}]{\setlength{\rightskip}{0pt plus 5cm}I\+A\+C\+F\+Plugin\+Definition$\ast$ A\+A\+X\+\_\+\+V\+Collection\+::\+Get\+I\+Unknown (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}\label{a00130_a1004f47db07fc8a05fcda4cc2a452700}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00302}{A\+A\+X\+\_\+\+V\+Collection.\+h}\end{DoxyCompactItemize}

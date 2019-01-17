@@ -1,0 +1,207 @@
+\hypertarget{a00048}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate Class Reference}
+\label{a00048}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{a00487}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{a00488}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface allowing an A\+A\+X plug-\/in to interact with the host\textquotesingle{}s automation system. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00350}{Parameter updates} 
+
+\hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} 
+\end{DoxySeeAlso}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a2de166cf16da311514ab40b1871e4435}{Register\+Parameter} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D)=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a5d1ff21e71cd04f717808da4b9f83d62}{Unregister\+Parameter} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D)=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a094075c1a3ddaf01a29a024ce03aabc0}{Post\+Set\+Value\+Request} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double normalized\+Value) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_ac28f4c2e24869a0e28d1a5f358683b12}{Post\+Current\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double normalized\+Value) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a6685bdc1e53f26be6e7f6d58a31d06d1}{Post\+Touch\+Request} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D)=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a192c9c9a4af9c29caa763753f59fa59a}{Post\+Release\+Request} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D)=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00048_a6183efcf15bd190cb99c6287be007d52}{Get\+Touch\+State} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} $\ast$o\+Touched)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00048_a2de166cf16da311514ab40b1871e4435}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Register\+Parameter@{Register\+Parameter}}
+\index{Register\+Parameter@{Register\+Parameter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Register\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Register\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a2de166cf16da311514ab40b1871e4435}
+
+
+
+
+Register a control with the automation system using a char$\ast$ based control identifier
+
+The automation delegate owns a list of the I\+Ds of all of the parameters that have been registered with it. This list is used to set up listeners for all of the registered parameters such that the automation delegate may update the plug-\/in when the state of any of the registered parameters have been modified.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00086_ab1c1d4292460119b22d68247150cc1a0}{A\+A\+X\+\_\+\+I\+Automation\+Delegate\+::\+Unregister\+Parameter()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & Parameter I\+D that is being registered \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_a5d1ff21e71cd04f717808da4b9f83d62}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Unregister\+Parameter@{Unregister\+Parameter}}
+\index{Unregister\+Parameter@{Unregister\+Parameter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Unregister\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Unregister\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a5d1ff21e71cd04f717808da4b9f83d62}
+
+
+
+
+Unregister a control with the automation system using a char$\ast$ based control identifier
+
+\begin{DoxyNote}{Note}
+All registered controls should be unregistered or the system might leak.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00086_a4d91efb2d922729d02e2ea7d7a05ed10}{A\+A\+X\+\_\+\+I\+Automation\+Delegate\+::\+Register\+Parameter()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & Parameter I\+D that is being registered \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_a094075c1a3ddaf01a29a024ce03aabc0}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Post\+Set\+Value\+Request@{Post\+Set\+Value\+Request}}
+\index{Post\+Set\+Value\+Request@{Post\+Set\+Value\+Request}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Post\+Set\+Value\+Request}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Post\+Set\+Value\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{normalized\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a094075c1a3ddaf01a29a024ce03aabc0}
+
+
+
+
+Submits a request for the given parameter\textquotesingle{}s value to be changed
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & I\+D of the parameter for which a change is requested \\
+\hline
+\mbox{\tt in}  & {\em normalized\+Value} & The requested new parameter value, formatted as a double and normalized to \mbox{[}0 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_ac28f4c2e24869a0e28d1a5f358683b12}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Post\+Current\+Value@{Post\+Current\+Value}}
+\index{Post\+Current\+Value@{Post\+Current\+Value}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Post\+Current\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Post\+Current\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{normalized\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_ac28f4c2e24869a0e28d1a5f358683b12}
+
+
+
+
+Notifies listeners that a parameter\textquotesingle{}s value has changed
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & I\+D of the parameter that has been updated \\
+\hline
+\mbox{\tt in}  & {\em normalized\+Value} & The current parameter value, formatted as a double and normalized to \mbox{[}0 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_a6685bdc1e53f26be6e7f6d58a31d06d1}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Post\+Touch\+Request@{Post\+Touch\+Request}}
+\index{Post\+Touch\+Request@{Post\+Touch\+Request}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Post\+Touch\+Request}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Post\+Touch\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a6685bdc1e53f26be6e7f6d58a31d06d1}
+
+
+
+
+Requests that the given parameter be \char`\"{}touched\char`\"{}, i.\+e. locked for updates by the current client
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & I\+D of the parameter that will be touched \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_a192c9c9a4af9c29caa763753f59fa59a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Post\+Release\+Request@{Post\+Release\+Request}}
+\index{Post\+Release\+Request@{Post\+Release\+Request}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Post\+Release\+Request}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Post\+Release\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a192c9c9a4af9c29caa763753f59fa59a}
+
+
+
+
+Requests that the given parameter be \char`\"{}released\char`\"{}, i.\+e. available for updates from any client
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & I\+D of the parameter that will be released \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00048_a6183efcf15bd190cb99c6287be007d52}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}!Get\+Touch\+State@{Get\+Touch\+State}}
+\index{Get\+Touch\+State@{Get\+Touch\+State}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate}}
+\subsubsection[{Get\+Touch\+State}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate\+::\+Get\+Touch\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean} $\ast$}]{o\+Touched}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00048_a6183efcf15bd190cb99c6287be007d52}
+
+
+
+
+Gets the current touched state of a parameter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Touched} & The current touch state of the parameter \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00216}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Automation\+Delegate.\+h}\end{DoxyCompactItemize}

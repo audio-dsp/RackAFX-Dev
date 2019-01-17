@@ -1,0 +1,97 @@
+\hypertarget{a00030}{}\section{A\+A\+X\+\_\+\+C\+Packet Class Reference}
+\label{a00030}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Packet\+Dispatcher.\+h$>$}
+
+
+
+\subsection{Description}
+Container for packet-\/related data. 
+
+This class collects a number of packet-\/related data into the same object and provides a facility for tracking when the parameter is \char`\"{}dirty\char`\"{}, i.\+e. after its value has been updated and before an associated packet has not been posted. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00030_aff3be2253e450887b07a519c84fe47e2}{A\+A\+X\+\_\+\+C\+Packet} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)
+\item 
+\hyperlink{a00030_ac0dc6c7d54d3e2d8b2717dcc55be839e}{$\sim$\+A\+A\+X\+\_\+\+C\+Packet} ()
+\item 
+{\footnotesize template$<$typename Data\+Type $>$ }\\Data\+Type $\ast$ \hyperlink{a00030_a4f9bbeedcad126dd34e797ac4c8fc736}{Get\+Ptr} ()
+\item 
+void \hyperlink{a00030_a43449a06b1c20f85b90560ec30057570}{Set\+Dirty} (bool i\+Dirty)
+\item 
+bool \hyperlink{a00030_ab4df0365b4e420dad972582b9aea4fa2}{Is\+Dirty} () const 
+\item 
+\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} \hyperlink{a00030_aa2a93175b06f12a62f5cb3101126b8f3}{Get\+I\+D} () const 
+\item 
+uint32\+\_\+t \hyperlink{a00030_ad1a948ee92e899bf970f2cc3522ed45e}{Get\+Size} () const 
+\item 
+{\footnotesize template$<$$>$ }\\const void $\ast$ \hyperlink{a00030_a14cb7e34d64f05dd57ff8b903602f32b}{Get\+Ptr} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00030_aff3be2253e450887b07a519c84fe47e2}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Packet\+::\+A\+A\+X\+\_\+\+C\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_aff3be2253e450887b07a519c84fe47e2}
+\hypertarget{a00030_ac0dc6c7d54d3e2d8b2717dcc55be839e}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!````~A\+A\+X\+\_\+\+C\+Packet@{$\sim$\+A\+A\+X\+\_\+\+C\+Packet}}
+\index{````~A\+A\+X\+\_\+\+C\+Packet@{$\sim$\+A\+A\+X\+\_\+\+C\+Packet}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+C\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Packet\+::$\sim$\+A\+A\+X\+\_\+\+C\+Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_ac0dc6c7d54d3e2d8b2717dcc55be839e}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00030_a4f9bbeedcad126dd34e797ac4c8fc736}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Get\+Ptr@{Get\+Ptr}}
+\index{Get\+Ptr@{Get\+Ptr}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Get\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Data\+Type $>$ Data\+Type$\ast$ A\+A\+X\+\_\+\+C\+Packet\+::\+Get\+Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_a4f9bbeedcad126dd34e797ac4c8fc736}
+\hypertarget{a00030_a43449a06b1c20f85b90560ec30057570}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Set\+Dirty@{Set\+Dirty}}
+\index{Set\+Dirty@{Set\+Dirty}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Set\+Dirty}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Packet\+::\+Set\+Dirty (
+\begin{DoxyParamCaption}
+\item[{bool}]{i\+Dirty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_a43449a06b1c20f85b90560ec30057570}
+\hypertarget{a00030_ab4df0365b4e420dad972582b9aea4fa2}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Is\+Dirty@{Is\+Dirty}}
+\index{Is\+Dirty@{Is\+Dirty}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Is\+Dirty}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Packet\+::\+Is\+Dirty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_ab4df0365b4e420dad972582b9aea4fa2}
+\hypertarget{a00030_aa2a93175b06f12a62f5cb3101126b8f3}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Get\+I\+D@{Get\+I\+D}}
+\index{Get\+I\+D@{Get\+I\+D}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Get\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Field\+Index} A\+A\+X\+\_\+\+C\+Packet\+::\+Get\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_aa2a93175b06f12a62f5cb3101126b8f3}
+\hypertarget{a00030_ad1a948ee92e899bf970f2cc3522ed45e}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Get\+Size@{Get\+Size}}
+\index{Get\+Size@{Get\+Size}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Get\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+Packet\+::\+Get\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_ad1a948ee92e899bf970f2cc3522ed45e}
+\hypertarget{a00030_a14cb7e34d64f05dd57ff8b903602f32b}{}\index{A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}!Get\+Ptr@{Get\+Ptr}}
+\index{Get\+Ptr@{Get\+Ptr}!A\+A\+X\+\_\+\+C\+Packet@{A\+A\+X\+\_\+\+C\+Packet}}
+\subsubsection[{Get\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ const void$\ast$ A\+A\+X\+\_\+\+C\+Packet\+::\+Get\+Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00030_a14cb7e34d64f05dd57ff8b903602f32b}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00189}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher.\+h}\end{DoxyCompactItemize}

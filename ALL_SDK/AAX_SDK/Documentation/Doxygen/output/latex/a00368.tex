@@ -1,0 +1,29 @@
+\hypertarget{a00368}{}\section{G\+U\+I Extensions}
+\label{a00368}\index{G\+U\+I Extensions@{G\+U\+I Extensions}}
+G\+U\+I Extensions for the A\+A\+X S\+D\+K. 
+
+\hypertarget{a00368_about}{}\subsection{About the S\+D\+K\textquotesingle{}s G\+U\+I Extensions}\label{a00368_about}
+The code and projects in the S\+D\+K\textquotesingle{}s Extensions/\+G\+U\+I/ directory demonstrate how to extend the A\+A\+X S\+D\+K\textquotesingle{}s G\+U\+I programming interface using a variety of popular G\+U\+I frameworks, including\+:
+
+
+\begin{DoxyItemize}
+\item Native Cocoa
+\item Native Win32
+\item V\+S\+T\+G\+U\+I
+\item J\+U\+C\+E
+\end{DoxyItemize}
+
+These projects do not represent core functionality of the A\+A\+X S\+D\+K, but rather they serve as examples of how plug-\/in G\+U\+Is can be written to the A\+A\+X specification using a variety of different approaches.\hypertarget{a00368_notes}{}\subsection{Notes}\label{a00368_notes}
+
+\begin{DoxyItemize}
+\item The V\+S\+T and J\+U\+C\+E G\+U\+I Extension library projects use a macro value to resolve file paths to the installed framework directory. This macro is defined in a Visual Studio property sheet on Windows and as a custom project variable on Mac. Because this macro will not be resolved on Mac until compilation, the Xcode G\+U\+I will not be able to find the included files. However, the projects should builds successfully once the macros are updated to point to the correct directory.
+\item The J\+U\+C\+E G\+U\+I Extension code in this S\+D\+K was written using version 1.\+51 of the J\+U\+C\+E framework
+\item Several V\+S\+T\+G\+U\+I-\/based headers with an \char`\"{}\+\_\+ext\char`\"{} filename are provided along with the S\+D\+K\textquotesingle{}s G\+U\+I Extensions code. These headers are slightly modified versions of the corresponding headers that are distributed with V\+S\+T\+G\+U\+I. The headers have been modified for use with our example plug-\/ins because we had several problems when using the V\+S\+T\+G\+U\+I S\+D\+K for 64 bit. For example, we encountered conflicting typedefs redefinitions like int32\+\_\+t etc., which are preprocessed out of the vstguibase\+\_\+ext.\+h file. These headers should not be required to build a 32-\/bit plug-\/in and they were only added in our transitional A\+A\+X S\+D\+K, version 1.\+5. 
+\end{DoxyItemize}Collaboration diagram for G\+U\+I Extensions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{a00368}
+\end{center}
+\end{figure}

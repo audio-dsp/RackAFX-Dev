@@ -1,0 +1,88 @@
+\hypertarget{a00089}{}\section{A\+A\+X\+\_\+\+I\+Container Class Reference}
+\label{a00089}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Container.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Container\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00607}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Abstract container interface \subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7}{E\+Status} \{ \\*
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7add595169a28f04ed79be4f1c5974eb48}{e\+Status\+\_\+\+Success} = 0, 
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7a977319edf1a7a788eeee29dd71982f66}{e\+Status\+\_\+\+Overflow} = 1, 
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7a26ef7d5d740723455d59080b273ac217}{e\+Status\+\_\+\+Not\+Initialized} = 2, 
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7a7586eb60b4cb29ee8ed06aa7c539fe62}{e\+Status\+\_\+\+Unavailable} = 3, 
+\\*
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7a1585c38bb587c4adcadefbe3823ee9f8}{e\+Status\+\_\+\+Unsupported} = 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00089_ac8974c4fdc9352dc662bf7242b83c7c9}{$\sim$\+A\+A\+X\+\_\+\+I\+Container} ()
+\item 
+virtual void \hyperlink{a00089_a35280907fac53883d3501beef8c30596}{Clear} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7}{}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!E\+Status@{E\+Status}}
+\index{E\+Status@{E\+Status}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}
+\subsubsection[{E\+Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+\_\+\+I\+Container\+::\+E\+Status}}\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Status\+\_\+\+Success@{e\+Status\+\_\+\+Success}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!e\+Status\+\_\+\+Success@{e\+Status\+\_\+\+Success}}\item[{\em 
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7add595169a28f04ed79be4f1c5974eb48}{}e\+Status\+\_\+\+Success\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7add595169a28f04ed79be4f1c5974eb48}
+}]Operation succeeded. \index{e\+Status\+\_\+\+Overflow@{e\+Status\+\_\+\+Overflow}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!e\+Status\+\_\+\+Overflow@{e\+Status\+\_\+\+Overflow}}\item[{\em 
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7a977319edf1a7a788eeee29dd71982f66}{}e\+Status\+\_\+\+Overflow\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7a977319edf1a7a788eeee29dd71982f66}
+}]Internal buffer overflow. \index{e\+Status\+\_\+\+Not\+Initialized@{e\+Status\+\_\+\+Not\+Initialized}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!e\+Status\+\_\+\+Not\+Initialized@{e\+Status\+\_\+\+Not\+Initialized}}\item[{\em 
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7a26ef7d5d740723455d59080b273ac217}{}e\+Status\+\_\+\+Not\+Initialized\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7a26ef7d5d740723455d59080b273ac217}
+}]Uninitialized container. \index{e\+Status\+\_\+\+Unavailable@{e\+Status\+\_\+\+Unavailable}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!e\+Status\+\_\+\+Unavailable@{e\+Status\+\_\+\+Unavailable}}\item[{\em 
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7a7586eb60b4cb29ee8ed06aa7c539fe62}{}e\+Status\+\_\+\+Unavailable\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7a7586eb60b4cb29ee8ed06aa7c539fe62}
+}]An internal resource was not available. \index{e\+Status\+\_\+\+Unsupported@{e\+Status\+\_\+\+Unsupported}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!e\+Status\+\_\+\+Unsupported@{e\+Status\+\_\+\+Unsupported}}\item[{\em 
+\hypertarget{a00089_aea020100f0b06636ce7cb25c2fdb0af7a1585c38bb587c4adcadefbe3823ee9f8}{}e\+Status\+\_\+\+Unsupported\label{a00089_aea020100f0b06636ce7cb25c2fdb0af7a1585c38bb587c4adcadefbe3823ee9f8}
+}]Operation is unsupported. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00089_ac8974c4fdc9352dc662bf7242b83c7c9}{}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!````~A\+A\+X\+\_\+\+I\+Container@{$\sim$\+A\+A\+X\+\_\+\+I\+Container}}
+\index{````~A\+A\+X\+\_\+\+I\+Container@{$\sim$\+A\+A\+X\+\_\+\+I\+Container}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Container}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+Container\+::$\sim$\+A\+A\+X\+\_\+\+I\+Container (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00089_ac8974c4fdc9352dc662bf7242b83c7c9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00089_a35280907fac53883d3501beef8c30596}{}\index{A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+I\+Container@{A\+A\+X\+\_\+\+I\+Container}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void A\+A\+X\+\_\+\+I\+Container\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00089_a35280907fac53883d3501beef8c30596}
+Clear the container 
+
+Implemented in \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T, S $>$}, \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T\+Numbered\+Param\+State\+List, 256 $>$}, \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ const T\+Param\+Val\+Pair, 16 $\ast$k\+Synchronized\+Parameter\+Queue\+Size $>$}, \hyperlink{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$}, \hyperlink{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ const T\+Param\+Val\+Pair $>$}, and \hyperlink{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T\+Numbered\+Param\+State\+List $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00238}{A\+A\+X\+\_\+\+I\+Container.\+h}\end{DoxyCompactItemize}

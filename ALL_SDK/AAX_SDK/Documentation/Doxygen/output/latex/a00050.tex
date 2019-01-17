@@ -1,0 +1,505 @@
+\hypertarget{a00050}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor Class Reference}
+\label{a00050}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{a00493}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{a00494}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned description interface for an A\+A\+X plug-\/in algorithm callback. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_ab93e4b968f3239326ac1046b64eab2f5}{Clear} ()=0
+\begin{DoxyCompactList}\small\item\em Clears the descriptor. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_aa81ce274471a76742e71d02bc3442253}{Add\+Reserved\+Field} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, uint32\+\_\+t in\+Field\+Type)=0
+\begin{DoxyCompactList}\small\item\em Subscribes a context field to host-\/provided services or information. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a81370dad377b30b3c5dec9ba0e9ad310}{Add\+Audio\+In} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes an audio input context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a70e7e5c55208bcafd6b402eebf12aeb7}{Add\+Audio\+Out} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes an audio output context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a38c2683ca133ca0863e4645afd27ab9f}{Add\+Audio\+Buffer\+Length} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes a buffer length context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_aa59e93b261ae1f4951ed84b55b70742e}{Add\+Sample\+Rate} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes a sample rate context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_af9864953ec953720b844e9ad57a2da14}{Add\+Clock} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes a clock context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_ac88f0100827278c2f9bfae2f74ae103f}{Add\+Side\+Chain\+In} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index)=0
+\begin{DoxyCompactList}\small\item\em Subscribes a side-\/chain input context field. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_af15ea360a7e581ac796b95b473057dad}{Add\+Data\+In\+Port} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, uint32\+\_\+t in\+Packet\+Size, \hyperlink{a00206_ab5677b173ad8647c24d34d28272d11fc}{A\+A\+X\+\_\+\+E\+Data\+In\+Port\+Type} in\+Port\+Type)=0
+\begin{DoxyCompactList}\small\item\em Adds a custom data port to the algorithm context. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a9207476186fa1b1fb361dd36b242e567}{Add\+Aux\+Output\+Stem} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, int32\+\_\+t in\+Stem\+Format, const char in\+Name\+U\+T\+F8\mbox{[}$\,$\mbox{]})=0
+\begin{DoxyCompactList}\small\item\em Adds an auxiliary output stem for a plug-\/in. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_aaec556edd58fea7d4b6c404f7ce1f95c}{Add\+Private\+Data} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, int32\+\_\+t in\+Data\+Size, uint32\+\_\+t in\+Options=\hyperlink{a00206_a9f1ef2cb64daf30eaf145dfbb8cd0d00a59458e9bf18919c51e59eb2fd6e84a9a}{A\+A\+X\+\_\+e\+Private\+Data\+Options\+\_\+\+Default\+Options})=0
+\begin{DoxyCompactList}\small\item\em Adds a private data port to the algorithm context. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_aed4d0748c59e03fe18b79b924f7dbaab}{Add\+Dma\+Instance} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, \hyperlink{a00095_af8d0f19f2896dd6dbd126b919b24e39b}{A\+A\+X\+\_\+\+I\+Dma\+::\+E\+Mode} in\+Dma\+Mode)=0
+\begin{DoxyCompactList}\small\item\em Adds a D\+M\+A field to the plug-\/in\textquotesingle{}s context. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a72b9908f5bbef7d5fb3d259b76861a82}{Add\+M\+I\+D\+I\+Node} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, \hyperlink{a00206_a5e1dffce35d05990dbbad651702678e4}{A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type} in\+Node\+Type, const char in\+Node\+Name\mbox{[}$\,$\mbox{]}, uint32\+\_\+t channel\+Mask)=0
+\begin{DoxyCompactList}\small\item\em Adds a M\+I\+D\+I node field to the plug-\/in\textquotesingle{}s context. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a4acfd619cfbd35ffd0ff20ca67bda305}{Add\+Process\+Proc\+\_\+\+Native} (\hyperlink{a00163_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc} in\+Process\+Proc, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$in\+Properties, \hyperlink{a00163_a3963a850079d3186e08c97a1a4d0ef1c}{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc} in\+Instance\+Init\+Proc, \hyperlink{a00163_aa64561d963284a3124a0821e7dc79c9a}{A\+A\+X\+\_\+\+C\+Background\+Proc} in\+Background\+Proc, \hyperlink{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector} $\ast$out\+Proc\+I\+D)=0
+\begin{DoxyCompactList}\small\item\em Registers an algorithm processing entrypoint (process procedure) for the native architecture. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_adf549e7f348c670b79bdb5f283798db2}{Add\+Process\+Proc\+\_\+\+T\+I} (const char in\+D\+L\+L\+File\+Name\+U\+T\+F8\mbox{[}$\,$\mbox{]}, const char in\+Process\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$in\+Properties, const char in\+Instance\+Init\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, const char in\+Background\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, \hyperlink{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector} $\ast$out\+Proc\+I\+D)=0
+\begin{DoxyCompactList}\small\item\em Registers an algorithm processing entrypoint (process procedure) for the native architecture. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00050_a6b7aec8153fb7243d62284ea504c5681}{Add\+Meters} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, const \hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} $\ast$in\+Meter\+I\+Ds, const uint32\+\_\+t in\+Meter\+Count)=0
+\begin{DoxyCompactList}\small\item\em Adds a meter field to the plug-\/in\textquotesingle{}s context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00050_ab93e4b968f3239326ac1046b64eab2f5}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_ab93e4b968f3239326ac1046b64eab2f5}
+
+
+Clears the descriptor. 
+
+Clears the descriptor and readies it for the next algorithm description \hypertarget{a00050_aa81ce274471a76742e71d02bc3442253}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Reserved\+Field@{Add\+Reserved\+Field}}
+\index{Add\+Reserved\+Field@{Add\+Reserved\+Field}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Reserved\+Field}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Reserved\+Field (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{uint32\+\_\+t}]{in\+Field\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_aa81ce274471a76742e71d02bc3442253}
+
+
+Subscribes a context field to host-\/provided services or information. 
+
+\begin{DoxyNote}{Note}
+Currently for internal use only.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Field\+Type} & Type of field that is being added \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a81370dad377b30b3c5dec9ba0e9ad310}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Audio\+In@{Add\+Audio\+In}}
+\index{Add\+Audio\+In@{Add\+Audio\+In}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Audio\+In}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Audio\+In (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a81370dad377b30b3c5dec9ba0e9ad310}
+
+
+Subscribes an audio input context field. 
+
+Defines an audio in port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: float$\ast$$\ast$
+\item Data kind\+: An array of float arrays, one for each input channel
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a70e7e5c55208bcafd6b402eebf12aeb7}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Audio\+Out@{Add\+Audio\+Out}}
+\index{Add\+Audio\+Out@{Add\+Audio\+Out}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Audio\+Out}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Audio\+Out (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a70e7e5c55208bcafd6b402eebf12aeb7}
+
+
+Subscribes an audio output context field. 
+
+Defines an audio out port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: float$\ast$$\ast$
+\item Data kind\+: An array of float arrays, one for each output channel
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a38c2683ca133ca0863e4645afd27ab9f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Audio\+Buffer\+Length@{Add\+Audio\+Buffer\+Length}}
+\index{Add\+Audio\+Buffer\+Length@{Add\+Audio\+Buffer\+Length}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Audio\+Buffer\+Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Audio\+Buffer\+Length (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a38c2683ca133ca0863e4645afd27ab9f}
+
+
+Subscribes a buffer length context field. 
+
+Defines a buffer length port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: int32\+\_\+t$\ast$
+\item Data kind\+: The number of samples in the current audio buffer
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_aa59e93b261ae1f4951ed84b55b70742e}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Sample\+Rate@{Add\+Sample\+Rate}}
+\index{Add\+Sample\+Rate@{Add\+Sample\+Rate}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Sample\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Sample\+Rate (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_aa59e93b261ae1f4951ed84b55b70742e}
+
+
+Subscribes a sample rate context field. 
+
+Defines a sample rate port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} $\ast$
+\item Data kind\+: The current sample rate
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_af9864953ec953720b844e9ad57a2da14}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Clock@{Add\+Clock}}
+\index{Add\+Clock@{Add\+Clock}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Clock (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_af9864953ec953720b844e9ad57a2da14}
+
+
+Subscribes a clock context field. 
+
+Defines a clock port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: \hyperlink{a00149_aae7325dbfa53a983f208a68cb563fba5}{A\+A\+X\+\_\+\+C\+Timestamp} $\ast$
+\item Data kind\+: A running counter which increments even when the transport is not playing. The counter increments exactly once per sample quantum.
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000051}{Host Compatibility Notes}]As of Pro Tools 11.\+1, this field may be used in both Native and D\+S\+P plug-\/ins. The D\+S\+P clock data is a 16-\/bit cycling counter. This field was only available for Native plug-\/ins in previous Pro Tools versions.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_ac88f0100827278c2f9bfae2f74ae103f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Side\+Chain\+In@{Add\+Side\+Chain\+In}}
+\index{Add\+Side\+Chain\+In@{Add\+Side\+Chain\+In}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Side\+Chain\+In}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Side\+Chain\+In (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_ac88f0100827278c2f9bfae2f74ae103f}
+
+
+Subscribes a side-\/chain input context field. 
+
+Defines a side-\/chain input port for host-\/provided information in the algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyItemize}
+\item Data type\+: int32\+\_\+t$\ast$
+\item Data kind\+: The index of the plug-\/in\textquotesingle{}s first side-\/chain input channel within the array of input audio buffers
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_af15ea360a7e581ac796b95b473057dad}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Data\+In\+Port@{Add\+Data\+In\+Port}}
+\index{Add\+Data\+In\+Port@{Add\+Data\+In\+Port}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Data\+In\+Port}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Data\+In\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{uint32\+\_\+t}]{in\+Packet\+Size, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Data\+In\+Port\+Type}}]{in\+Port\+Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_af15ea360a7e581ac796b95b473057dad}
+
+
+Adds a custom data port to the algorithm context. 
+
+Defines a read-\/only data port for plug-\/in information in the algorithm\textquotesingle{}s context structure. The plug-\/in can send information to this port using \hyperlink{a00090_ae5dd2b5925dbc181513bca1c4ac5e716}{A\+A\+X\+\_\+\+I\+Controller\+::\+Post\+Packet()}.
+
+The host guarantees that all packets will be delivered to this port in the order in which they were posted, up to the point of a packet buffer overflow, though some packets may be dropped depending on the {\ttfamily in\+Port\+Type} and host implementation.
+
+\begin{DoxyNote}{Note}
+When a plug-\/in is operating in offline (Audio\+Suite) mode, all data ports operate as \hyperlink{a00206_ab5677b173ad8647c24d34d28272d11fca43dc59a68b369ee607f70700bfd02c2d}{A\+A\+X\+\_\+e\+Data\+In\+Port\+Type\+\_\+\+Unbuffered} ports
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the port, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Packet\+Size} & Size of the data packets that will be sent to this port \\
+\hline
+\mbox{\tt in}  & {\em in\+Port\+Type} & The requested packet delivery behavior for this port \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a9207476186fa1b1fb361dd36b242e567}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Aux\+Output\+Stem@{Add\+Aux\+Output\+Stem}}
+\index{Add\+Aux\+Output\+Stem@{Add\+Aux\+Output\+Stem}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Aux\+Output\+Stem}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Aux\+Output\+Stem (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{int32\+\_\+t}]{in\+Stem\+Format, }
+\item[{const char}]{in\+Name\+U\+T\+F8\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a9207476186fa1b1fb361dd36b242e567}
+
+
+Adds an auxiliary output stem for a plug-\/in. 
+
+Use this method to add additional output channels to the algorithm context.
+
+The aux output stem audio buffers will be added to the end of the audio outputs array in the order in which they are described. When writing audio data to a specific aux output, find the proper starting channel by accumulating all of the channels of the main output stem format and any previously-\/described aux output stems.
+
+The plug-\/in is responsible for providing a meaningful name for each aux outputs. At the very least, individual outputs should be labeled \char`\"{}\+Output xx\char`\"{}, where \char`\"{}xx\char`\"{} is the aux output number as it is defined in the plug-\/in. The output name should also include the words \char`\"{}mono\char`\"{} and \char`\"{}stereo\char`\"{} to support when users are looking for an output with a specific stem format.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000052}{Host Compatibility Notes}]There is a hard limit to the number of outputs that Pro Tools supports for a single plug-\/in instance. This limit is currently set at 256 channels, which includes all of the plug-\/in\textquotesingle{}s output channels in addition to the sum total of all of its aux output stem channels.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000053}{Host Compatibility Notes}]Pro Tools supports only mono and stereo auxiliary output stem formats\end{DoxyRefDesc}
+
+
+\begin{DoxyWarning}{Warning}
+This method will return an error code on hosts which do not support auxiliary output stems. This indicates that the host will not provide audio buffers for auxiliary output stems during processing. A plug-\/in must not attempt to write data into auxiliary output stem buffers which have not been provided by the host!
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & D\+E\+P\+R\+E\+C\+A\+T\+E\+D\+: This parameter is no longer needed by the host, but is included in the interface for binary compatibility \\
+\hline
+\mbox{\tt in}  & {\em in\+Stem\+Format} & The stem format of the new aux output \\
+\hline
+\mbox{\tt in}  & {\em in\+Name\+U\+T\+F8} & The name of the aux output. This name is static and cannot be changed after the descriptor is submitted to the host \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_aaec556edd58fea7d4b6c404f7ce1f95c}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Private\+Data@{Add\+Private\+Data}}
+\index{Add\+Private\+Data@{Add\+Private\+Data}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Private\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Private\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{int32\+\_\+t}]{in\+Data\+Size, }
+\item[{uint32\+\_\+t}]{in\+Options = {\ttfamily {\bf A\+A\+X\+\_\+e\+Private\+Data\+Options\+\_\+\+Default\+Options}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_aaec556edd58fea7d4b6c404f7ce1f95c}
+
+
+Adds a private data port to the algorithm context. 
+
+Defines a read/write data port for private state data. Data written to this port will be maintained by the host between calls to the algorithm context.
+
+\begin{DoxySeeAlso}{See also}
+alg\+\_\+pd\+\_\+registration
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the port, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Data\+Size} & Size of the data packets that will be sent to this port \\
+\hline
+\mbox{\tt in}  & {\em in\+Options} & Options that define the private data port\textquotesingle{}s behavior \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_aed4d0748c59e03fe18b79b924f7dbaab}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Dma\+Instance@{Add\+Dma\+Instance}}
+\index{Add\+Dma\+Instance@{Add\+Dma\+Instance}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Dma\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Dma\+Instance (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Dma\+::\+E\+Mode}}]{in\+Dma\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_aed4d0748c59e03fe18b79b924f7dbaab}
+
+
+Adds a D\+M\+A field to the plug-\/in\textquotesingle{}s context. 
+
+D\+M\+A (direct memory access) provides efficient reads from and writes to external memory on the D\+S\+P. D\+M\+A behavior is emulated in host-\/based plug-\/ins for cross-\/platform portability.
+
+\begin{DoxyNote}{Note}
+The order in which D\+M\+A instances are added defines their priority and therefore order of execution of D\+M\+A operations. In most plug-\/ins, Scatter fields should be placed first in order to achieve the lowest possible access latency.
+\end{DoxyNote}
+For more information, see \hyperlink{a00340}{Direct Memory Access} .
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000042}{Todo}]Update the D\+M\+A system management such that operation priority can be set arbitrarily\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Dma\+Mode} & \hyperlink{a00095_af8d0f19f2896dd6dbd126b919b24e39b}{A\+A\+X\+\_\+\+I\+Dma\+::\+E\+Mode} that will apply to this field \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a72b9908f5bbef7d5fb3d259b76861a82}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+M\+I\+D\+I\+Node@{Add\+M\+I\+D\+I\+Node}}
+\index{Add\+M\+I\+D\+I\+Node@{Add\+M\+I\+D\+I\+Node}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+M\+I\+D\+I\+Node}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type}}]{in\+Node\+Type, }
+\item[{const char}]{in\+Node\+Name\mbox{[}$\,$\mbox{]}, }
+\item[{uint32\+\_\+t}]{channel\+Mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a72b9908f5bbef7d5fb3d259b76861a82}
+
+
+Adds a M\+I\+D\+I node field to the plug-\/in\textquotesingle{}s context. 
+
+
+\begin{DoxyItemize}
+\item Data type\+: \hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} $\ast$
+\end{DoxyItemize}
+
+The resulting M\+I\+D\+I node data will be available both in the algorithm context and in the plug-\/in\textquotesingle{}s \hyperlink{a00099}{data model} via \hyperlink{a00062_a229029f0d4bd758538c48931b9f9a9ad}{Update\+M\+I\+D\+I\+Nodes()}.
+
+To add a M\+I\+D\+I node that is only accessible to the plug-\/in\textquotesingle{}s data model, use \hyperlink{a00096_aa7709de005e0256feb522758ccc5b582}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor\+::\+Add\+Control\+M\+I\+D\+I\+Node()}
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000054}{Host Compatibility Notes}]Due to current restrictions M\+I\+D\+I data won\textquotesingle{}t be delivered to D\+S\+P algorithms, only to A\+A\+X Native.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & The I\+D of the port. M\+I\+D\+I node ports should formatted as a pointer to an \hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}. \\
+\hline
+\mbox{\tt in}  & {\em in\+Node\+Type} & The type of M\+I\+D\+I node, as \hyperlink{a00206_a5e1dffce35d05990dbbad651702678e4}{A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type} \\
+\hline
+\mbox{\tt in}  & {\em in\+Node\+Name} & The name of the M\+I\+D\+I node as it should appear in the host\textquotesingle{}s U\+I \\
+\hline
+\mbox{\tt in}  & {\em channel\+Mask} & The channel mask for the M\+I\+D\+I node. This parameter specifies used M\+I\+D\+I channels. For Global M\+I\+D\+I nodes, use a mask of \hyperlink{a00206_a349dae6bc64bda67a5440cbc6637f92d}{A\+A\+X\+\_\+\+E\+Midi\+Global\+Node\+Selectors} \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00050_a4acfd619cfbd35ffd0ff20ca67bda305}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Process\+Proc\+\_\+\+Native@{Add\+Process\+Proc\+\_\+\+Native}}
+\index{Add\+Process\+Proc\+\_\+\+Native@{Add\+Process\+Proc\+\_\+\+Native}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Process\+Proc\+\_\+\+Native}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Process\+Proc\+\_\+\+Native (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Process\+Proc}}]{in\+Process\+Proc, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{in\+Properties, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}}]{in\+Instance\+Init\+Proc, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Background\+Proc}}]{in\+Background\+Proc, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Selector} $\ast$}]{out\+Proc\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a4acfd619cfbd35ffd0ff20ca67bda305}
+
+
+Registers an algorithm processing entrypoint (process procedure) for the native architecture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Process\+Proc} & Symbol for this processing callback \\
+\hline
+\mbox{\tt in}  & {\em in\+Properties} & A property map for this processing callback. The property map\textquotesingle{}s values are copied by the host and associated with the new Process\+Proc. The property map contents are unchanged and the map may be re-\/used when registering additional Process\+Procs. \\
+\hline
+\mbox{\tt in}  & {\em in\+Instance\+Init\+Proc} & Initialization routine that will be called when a new instance of the Effect is created. See \hyperlink{a00327_alg_initialization}{Algorithm initialization}. \\
+\hline
+\mbox{\tt in}  & {\em in\+Background\+Proc} & Background routine that will be called in an idle context within the same address space as the associated process procedure. See \hyperlink{a00341}{Background processing callback} \\
+\hline
+\mbox{\tt out}  & {\em out\+Proc\+I\+D} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000043}{Todo}]document this parameter \end{DoxyRefDesc}
+\hypertarget{a00050_adf549e7f348c670b79bdb5f283798db2}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Process\+Proc\+\_\+\+T\+I@{Add\+Process\+Proc\+\_\+\+T\+I}}
+\index{Add\+Process\+Proc\+\_\+\+T\+I@{Add\+Process\+Proc\+\_\+\+T\+I}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Process\+Proc\+\_\+\+T\+I}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Process\+Proc\+\_\+\+T\+I (
+\begin{DoxyParamCaption}
+\item[{const char}]{in\+D\+L\+L\+File\+Name\+U\+T\+F8\mbox{[}$\,$\mbox{]}, }
+\item[{const char}]{in\+Process\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{in\+Properties, }
+\item[{const char}]{in\+Instance\+Init\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, }
+\item[{const char}]{in\+Background\+Proc\+Symbol\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Selector} $\ast$}]{out\+Proc\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_adf549e7f348c670b79bdb5f283798db2}
+
+
+Registers an algorithm processing entrypoint (process procedure) for the native architecture. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+D\+L\+L\+File\+Name\+U\+T\+F8} & U\+T\+F-\/8 encoded filename for the E\+L\+F D\+L\+L containing the algorithm code fragment \\
+\hline
+\mbox{\tt in}  & {\em in\+Process\+Proc\+Symbol} & Symbol for this processing callback \\
+\hline
+\mbox{\tt in}  & {\em in\+Properties} & A property map for this processing callback. The property map\textquotesingle{}s values are copied by the host and associated with the new Process\+Proc. The property map contents are unchanged and the map may be re-\/used when registering additional Process\+Procs. \\
+\hline
+\mbox{\tt in}  & {\em in\+Instance\+Init\+Proc\+Symbol} & Initialization routine that will be called when a new instance of the Effect is created. Must be included in the same D\+L\+L as the main algorithm entrypoint. See \hyperlink{a00327_alg_initialization}{Algorithm initialization}. \\
+\hline
+\mbox{\tt in}  & {\em in\+Background\+Proc\+Symbol} & Background routine that will be called in an idle context within the same address space as the associated process procedure. Must be included in the same D\+L\+L as the main algorithm entrypoint. See \hyperlink{a00341}{Background processing callback} \\
+\hline
+\mbox{\tt out}  & {\em out\+Proc\+I\+D} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000044}{Todo}]document this parameter \end{DoxyRefDesc}
+\hypertarget{a00050_a6b7aec8153fb7243d62284ea504c5681}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}!Add\+Meters@{Add\+Meters}}
+\index{Add\+Meters@{Add\+Meters}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor}}
+\subsubsection[{Add\+Meters}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+::\+Add\+Meters (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} $\ast$}]{in\+Meter\+I\+Ds, }
+\item[{const uint32\+\_\+t}]{in\+Meter\+Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00050_a6b7aec8153fb7243d62284ea504c5681}
+
+
+Adds a meter field to the plug-\/in\textquotesingle{}s context. 
+
+Meter fields include an array of meter tap values, with one tap per meter per context. Only one meter field should be added per Component. Individual meter behaviors can be described at the Effect level.
+
+For more information, see \hyperlink{a00337}{Plug-\/in meters} .
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the field, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Meter\+I\+Ds} & Array of 32-\/bit I\+Ds, one for each meter. Meter I\+Ds must be unique within the Effect. \\
+\hline
+\mbox{\tt in}  & {\em in\+Meter\+Count} & The number of meters included in this field \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00218}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h}\end{DoxyCompactItemize}

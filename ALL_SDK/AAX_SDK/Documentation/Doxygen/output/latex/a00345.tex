@@ -1,0 +1,41 @@
+\hypertarget{a00345}{}\section{Taper delegates}
+\label{a00345}\index{Taper delegates@{Taper delegates}}
+
+
+\subsection{ }
+Classes for conversion to and from normalized parameter values. 
+
+Taper delegates are used to convert real parameter values to and from their normalized representations. All taper delegates implement the A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$\+T$>$ interface template, which contains two conversion functions\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} T       NormalizedToReal(\textcolor{keywordtype}{double} normalizedValue) \textcolor{keyword}{const} = 0;
+\textcolor{keyword}{virtual} \textcolor{keywordtype}{double}  RealToNormalized(T realValue) \textcolor{keyword}{const} = 0;    
+\end{DoxyCode}
+
+
+In addition, tapers may incorporate logical value constraints via the following interface methods\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} T       GetMaximumValue()  \textcolor{keyword}{const} = 0;
+\textcolor{keyword}{virtual} T       GetMinimumValue() \textcolor{keyword}{const} = 0;
+\textcolor{keyword}{virtual} T       ConstrainRealValue(T value) \textcolor{keyword}{const} = 0;
+\end{DoxyCode}
+
+
+For more information, see the \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate} class documentation. \subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00115}{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}
+\begin{DoxyCompactList}\small\item\em Defines the taper conversion behavior for a parameter. \end{DoxyCompactList}\item 
+class \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Classes for conversion to and from normalized parameter values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for Taper delegates\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{a00345}
+\end{center}
+\end{figure}

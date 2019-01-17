@@ -1,0 +1,337 @@
+\hypertarget{a00205}{}\section{A\+A\+X\+\_\+\+Endian\+Swap.\+h File Reference}
+\label{a00205}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+{\ttfamily \#include $<$algorithm$>$}\\*
+
+
+\subsection{Description}
+Utility functions for byte-\/swapping. Used by \hyperlink{a00014}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}. 
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00205_a8bad80e5aaa9c0a227bf53589dfa181b}{E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{a00205_a121ee6a20eb996039b0f187db0a2cc8e}{A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place} (T $\ast$the\+Data\+P)
+\begin{DoxyCompactList}\small\item\em Byte swap data in-\/place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00205_a5caa5e68dec3f028697b64ad04f0cb5c}{A\+A\+X\+\_\+\+Endian\+Swap} (T the\+Data)
+\begin{DoxyCompactList}\small\item\em Make a byte-\/swapped copy of data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{a00205_a2aa4dc892c77aa0ed29e84a5f29c9538}{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place} (T $\ast$the\+Data\+P)
+\begin{DoxyCompactList}\small\item\em Convert data in-\/place between Big Endian and native byte ordering. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00205_a7387790d73eed6c54af682c7afd9e463}{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap} (T the\+Data)
+\begin{DoxyCompactList}\small\item\em Copy and convert data between Big Endian and native byte ordering. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{a00205_af4164bdfb3807edcd582e0289a6ed59a}{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place} (T $\ast$the\+Data\+P)
+\begin{DoxyCompactList}\small\item\em Convert data in-\/place from the native byte ordering to Little Endian byte ordering. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00205_a49f57c502ff278b26260b1744da99633}{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap} (T the\+Data)
+\begin{DoxyCompactList}\small\item\em Copy and convert data from the native byte ordering to Little Endian byte ordering. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Iter $>$ }\\void \hyperlink{a00205_ae58f8ce3c8247e07d49e17c011ec5366}{A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place} (Iter begin\+I, Iter end\+I)
+\begin{DoxyCompactList}\small\item\em Byte swap a sequence of data in-\/place. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Iter $>$ }\\void \hyperlink{a00205_ae9e72785a26249cd3e3c05baf8c9ce70}{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place} (Iter begin\+I, Iter end\+I)
+\begin{DoxyCompactList}\small\item\em Convert an sequence of data in-\/place between Big Endian and native byte ordering. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Iter $>$ }\\void \hyperlink{a00205_a4d8bcdfb048c8124f1f2886537e65678}{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place} (Iter begin\+I, Iter end\+I)
+\begin{DoxyCompactList}\small\item\em Convert an sequence of data in-\/place from the native byte ordering to Little Endian byte ordering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00205_a8bad80e5aaa9c0a227bf53589dfa181b}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H@{E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H}}
+\index{E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H@{E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+D\+I\+A\+N\+S\+W\+A\+P\+\_\+\+H}\label{a00205_a8bad80e5aaa9c0a227bf53589dfa181b}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00205_a121ee6a20eb996039b0f187db0a2cc8e}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{the\+Data\+P}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a121ee6a20eb996039b0f187db0a2cc8e}
+
+
+Byte swap data in-\/place. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place(), A\+A\+X\+\_\+\+Endian\+Swap(), A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place(), and A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a121ee6a20eb996039b0f187db0a2cc8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_a5caa5e68dec3f028697b64ad04f0cb5c}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Endian\+Swap@{A\+A\+X\+\_\+\+Endian\+Swap}}
+\index{A\+A\+X\+\_\+\+Endian\+Swap@{A\+A\+X\+\_\+\+Endian\+Swap}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Endian\+Swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+\_\+\+Endian\+Swap (
+\begin{DoxyParamCaption}
+\item[{T}]{the\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a5caa5e68dec3f028697b64ad04f0cb5c}
+
+
+Make a byte-\/swapped copy of data. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{a00205_a5caa5e68dec3f028697b64ad04f0cb5c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_a2aa4dc892c77aa0ed29e84a5f29c9538}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{the\+Data\+P}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a2aa4dc892c77aa0ed29e84a5f29c9538}
+
+
+Convert data in-\/place between Big Endian and native byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place().
+
+
+
+Referenced by A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a2aa4dc892c77aa0ed29e84a5f29c9538_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a2aa4dc892c77aa0ed29e84a5f29c9538_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_a7387790d73eed6c54af682c7afd9e463}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap}}
+\index{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap (
+\begin{DoxyParamCaption}
+\item[{T}]{the\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a7387790d73eed6c54af682c7afd9e463}
+
+
+Copy and convert data between Big Endian and native byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a7387790d73eed6c54af682c7afd9e463_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_af4164bdfb3807edcd582e0289a6ed59a}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{the\+Data\+P}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_af4164bdfb3807edcd582e0289a6ed59a}
+
+
+Convert data in-\/place from the native byte ordering to Little Endian byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place().
+
+
+
+Referenced by A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_af4164bdfb3807edcd582e0289a6ed59a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_af4164bdfb3807edcd582e0289a6ed59a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_a49f57c502ff278b26260b1744da99633}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap}}
+\index{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap (
+\begin{DoxyParamCaption}
+\item[{T}]{the\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a49f57c502ff278b26260b1744da99633}
+
+
+Copy and convert data from the native byte ordering to Little Endian byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a49f57c502ff278b26260b1744da99633_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_ae58f8ce3c8247e07d49e17c011ec5366}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iter $>$ void A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{Iter}]{begin\+I, }
+\item[{Iter}]{end\+I}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_ae58f8ce3c8247e07d49e17c011ec5366}
+
+
+Byte swap a sequence of data in-\/place. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+In\+Place().
+
+
+
+Referenced by A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place(), and A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_ae58f8ce3c8247e07d49e17c011ec5366_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_ae58f8ce3c8247e07d49e17c011ec5366_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_ae9e72785a26249cd3e3c05baf8c9ce70}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iter $>$ void A\+A\+X\+\_\+\+Big\+Endian\+Native\+Swap\+Sequence\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{Iter}]{begin\+I, }
+\item[{Iter}]{end\+I}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_ae9e72785a26249cd3e3c05baf8c9ce70}
+
+
+Convert an sequence of data in-\/place between Big Endian and native byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_ae9e72785a26249cd3e3c05baf8c9ce70_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00205_a4d8bcdfb048c8124f1f2886537e65678}{}\index{A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}!A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place}}
+\index{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place@{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place}!A\+A\+X\+\_\+\+Endian\+Swap.\+h@{A\+A\+X\+\_\+\+Endian\+Swap.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Iter $>$ void A\+A\+X\+\_\+\+Little\+Endian\+Native\+Swap\+Sequence\+In\+Place (
+\begin{DoxyParamCaption}
+\item[{Iter}]{begin\+I, }
+\item[{Iter}]{end\+I}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00205_a4d8bcdfb048c8124f1f2886537e65678}
+
+
+Convert an sequence of data in-\/place from the native byte ordering to Little Endian byte ordering. 
+
+
+
+References A\+A\+X\+\_\+\+Endian\+Swap\+Sequence\+In\+Place().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00205_a4d8bcdfb048c8124f1f2886537e65678_cgraph}
+\end{center}
+\end{figure}
+
+

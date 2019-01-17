@@ -1,0 +1,4 @@
+<map id="AAX::FastTrunc2Int32" name="AAX::FastTrunc2Int32">
+<area shape="rect" id="node2" href="$a00047.html#a9cf82c7a9b110f02e258707ce27f940c" title="Perform an extra fast table lookup :) " alt="" coords="221,5,445,47"/>
+<area shape="rect" id="node3" href="$a00047.html#a4ead74bb72df82c5fbcb8aae85785c8d" title="AAX_FastInterpolatedTable\lLookup::DoTableLookupExtraFastMulti" alt="" coords="207,71,459,112"/>
+</map>

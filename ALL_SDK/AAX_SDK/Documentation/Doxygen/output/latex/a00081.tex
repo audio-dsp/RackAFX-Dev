@@ -1,0 +1,87 @@
+\hypertarget{a00081}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3 Class Reference}
+\label{a00081}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{a00586}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{a00587}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface for an \hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map}. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00081_a50631b0da6247499c8758e3508ea33a4}{Get\+Property64} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} in\+Property, \hyperlink{a00149_a49471789032304f99ac1af8c15a87313}{A\+A\+X\+\_\+\+C\+Property\+Value64} $\ast$out\+Value) const =0
+\begin{DoxyCompactList}\small\item\em Get a property value from a property map. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00081_acbce1075d81361b9ac8a10a9f133949f}{Add\+Property64} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} in\+Property, \hyperlink{a00149_a49471789032304f99ac1af8c15a87313}{A\+A\+X\+\_\+\+C\+Property\+Value64} in\+Value)=0
+\begin{DoxyCompactList}\small\item\em Add a property to a property map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00081_a50631b0da6247499c8758e3508ea33a4}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3}!Get\+Property64@{Get\+Property64}}
+\index{Get\+Property64@{Get\+Property64}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3}}
+\subsubsection[{Get\+Property64}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3\+::\+Get\+Property64 (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Property}}]{in\+Property, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value64} $\ast$}]{out\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00081_a50631b0da6247499c8758e3508ea33a4}
+
+
+Get a property value from a property map. 
+
+Returns true if the selected property is supported, false if it is not
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Property} & The property I\+D \\
+\hline
+\mbox{\tt out}  & {\em out\+Value} & The property value \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00081_acbce1075d81361b9ac8a10a9f133949f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3}!Add\+Property64@{Add\+Property64}}
+\index{Add\+Property64@{Add\+Property64}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3}}
+\subsubsection[{Add\+Property64}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map\+\_\+\+V3\+::\+Add\+Property64 (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Property}}]{in\+Property, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value64}}]{in\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00081_acbce1075d81361b9ac8a10a9f133949f}
+
+
+Add a property to a property map. 
+
+\begin{DoxyNote}{Note}
+This method may return an error if adding the property was unsuccessful. If there is a failure when adding a required property then registration of the relevant description element must be abandoned and the plug-\/in\textquotesingle{}s description logic should proceed to the next element.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Property} & The property I\+D. \\
+\hline
+\mbox{\tt in}  & {\em in\+Value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00232}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Property\+Map.\+h}\end{DoxyCompactItemize}

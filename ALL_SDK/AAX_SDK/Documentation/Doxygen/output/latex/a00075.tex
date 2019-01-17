@@ -1,0 +1,323 @@
+\hypertarget{a00075}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2 Class Reference}
+\label{a00075}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{a00568}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{a00569}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface to the host\textquotesingle{}s representation of a plug-\/in instance\textquotesingle{}s page table. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_a325487a56b579e64a21dcfe1a2b435e9}{Get\+Num\+Parameters\+With\+Name\+Variations} (int32\+\_\+t \&o\+Num\+Parameter\+Identifiers) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_ac342780ed3567c75d8a68458f0a4ff0c}{Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index} (int32\+\_\+t i\+Index, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&o\+Parameter\+Identifier) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_af0c22a440afacf5e9ebeaccab11ecde3}{Get\+Num\+Name\+Variations\+For\+Parameter} (\hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D} i\+Parameter\+Identifier, int32\+\_\+t \&o\+Num\+Variations) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_ab866525f8d8902ed8782dc01087d71ce}{Get\+Parameter\+Name\+Variation\+At\+Index} (\hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D} i\+Parameter\+Identifier, int32\+\_\+t i\+Index, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&o\+Name\+Variation, int32\+\_\+t \&o\+Length) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_ac4de2771c4025a98f83b89fc6104d9b0}{Get\+Parameter\+Name\+Variation\+Of\+Length} (\hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D} i\+Parameter\+Identifier, int32\+\_\+t i\+Length, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&o\+Name\+Variation) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_ada210c1f77658103f2796ae3011bc603}{Clear\+Parameter\+Name\+Variations} ()=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_af03ce323e3ad6bcfe3b11627698b43c7}{Clear\+Name\+Variations\+For\+Parameter} (\hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D} i\+Parameter\+Identifier)=0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00075_ac4e03c26b8423c49228d0011bf348e11}{Set\+Parameter\+Name\+Variation} (\hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D} i\+Parameter\+Identifier, const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&i\+Name\+Variation, int32\+\_\+t i\+Length)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00075_a325487a56b579e64a21dcfe1a2b435e9}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Get\+Num\+Parameters\+With\+Name\+Variations@{Get\+Num\+Parameters\+With\+Name\+Variations}}
+\index{Get\+Num\+Parameters\+With\+Name\+Variations@{Get\+Num\+Parameters\+With\+Name\+Variations}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Get\+Num\+Parameters\+With\+Name\+Variations}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Get\+Num\+Parameters\+With\+Name\+Variations (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t \&}]{o\+Num\+Parameter\+Identifiers}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_a325487a56b579e64a21dcfe1a2b435e9}
+
+
+
+
+Get the number of parameters with name variations defined for the current table type
+
+Provides the number of parameters with {\ttfamily lt;Control\+Name\+Variationslt;} which are explicitly defined for the current page table type.
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_ac505024dd195c1965c54acac8f1f3016}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Num\+Parameter\+Identifiers} & The number of parameters with name variations explicitly associated with the current table type. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{a00075_ac342780ed3567c75d8a68458f0a4ff0c}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index@{Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index}}
+\index{Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index@{Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{i\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} \&}]{o\+Parameter\+Identifier}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_ac342780ed3567c75d8a68458f0a4ff0c}
+
+
+
+
+Get the identifier for a parameter with name variations defined for the current table type
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_ad186d2870ad5c188a7375080e8a7907b}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Num\+Parameters\+With\+Name\+Variations()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Index} & The target parameter index within the list of parameters with explicit name variations defined for this table type. \\
+\hline
+\mbox{\tt out}  & {\em o\+Parameter\+Identifier} & The identifier used for the parameter in the page table name variations list (may be parameter name or I\+D) \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{a00075_af0c22a440afacf5e9ebeaccab11ecde3}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Get\+Num\+Name\+Variations\+For\+Parameter@{Get\+Num\+Name\+Variations\+For\+Parameter}}
+\index{Get\+Num\+Name\+Variations\+For\+Parameter@{Get\+Num\+Name\+Variations\+For\+Parameter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Get\+Num\+Name\+Variations\+For\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Get\+Num\+Name\+Variations\+For\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}]{i\+Parameter\+Identifier, }
+\item[{int32\+\_\+t \&}]{o\+Num\+Variations}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_af0c22a440afacf5e9ebeaccab11ecde3}
+
+
+
+
+Get the number of name variations defined for a parameter
+
+Provides the number of {\ttfamily lt;Control\+Name\+Variationslt;} which are explicitly defined for {\ttfamily i\+Parameter\+Identifier} for the current page table type. No fallback logic is used to resolve this to the list of variations which would actually be used for an attached control surface if no explicit variations are defined for the current table type.
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_adffe5a5f2ad548bd4c704508d816d568}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Parameter\+Name\+Variation\+At\+Index()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S} and provides zero to {\ttfamily o\+Num\+Variations} if {\ttfamily i\+Parameter\+Identifier} is not found
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+Identifier} & The identifier for the parameter \\
+\hline
+\mbox{\tt out}  & {\em o\+Num\+Variations} & The number of name variations which are defined for this parameter and explicitly associated with the current table type. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{a00075_ab866525f8d8902ed8782dc01087d71ce}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Get\+Parameter\+Name\+Variation\+At\+Index@{Get\+Parameter\+Name\+Variation\+At\+Index}}
+\index{Get\+Parameter\+Name\+Variation\+At\+Index@{Get\+Parameter\+Name\+Variation\+At\+Index}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Get\+Parameter\+Name\+Variation\+At\+Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Get\+Parameter\+Name\+Variation\+At\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}]{i\+Parameter\+Identifier, }
+\item[{int32\+\_\+t}]{i\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} \&}]{o\+Name\+Variation, }
+\item[{int32\+\_\+t \&}]{o\+Length}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_ab866525f8d8902ed8782dc01087d71ce}
+
+
+
+
+Get a parameter name variation from the page table
+
+Only returns {\ttfamily lt;Control\+Name\+Variationslt;} which are explicitly defined for the current page table type. No fallback logic is used to resolve this to the abbreviation which would actually be shown on an attached control surface if no explicit variation is defined for the current table type.
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_af8be797a3ec7ed3117e720dd29ea7cc7}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Num\+Name\+Variations\+For\+Parameter()}
+\end{DoxySeeAlso}
+
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_a6ddd61f6ba18b8be8141363d5234ed9d}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Parameter\+Name\+Variation\+Of\+Length()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937ab7383b0169f6dfa5f86b1fefd6c58ae2}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+A\+B\+B\+R\+E\+V\+I\+A\+T\+E\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+A\+M\+E} if no suitable variation is defined for this table
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a8dd2fdd469583a046765eae9178678a3}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E} if {\ttfamily i\+Index} is out of range
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+Identifier} & The identifier for the parameter \\
+\hline
+\mbox{\tt in}  & {\em i\+Index} & Index of the name variation \\
+\hline
+\mbox{\tt out}  & {\em o\+Name\+Variation} & The name variation, if one is explicitly defined for this table type \\
+\hline
+\mbox{\tt out}  & {\em o\+Length} & The length value for this name variation. This corresponds to the variation\textquotesingle{}s {\ttfamily sz} attribute in the page table X\+M\+L and may be different from the string length of {\ttfamily i\+Name\+Variation}. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{a00075_ac4de2771c4025a98f83b89fc6104d9b0}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Get\+Parameter\+Name\+Variation\+Of\+Length@{Get\+Parameter\+Name\+Variation\+Of\+Length}}
+\index{Get\+Parameter\+Name\+Variation\+Of\+Length@{Get\+Parameter\+Name\+Variation\+Of\+Length}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Get\+Parameter\+Name\+Variation\+Of\+Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Get\+Parameter\+Name\+Variation\+Of\+Length (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}]{i\+Parameter\+Identifier, }
+\item[{int32\+\_\+t}]{i\+Length, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} \&}]{o\+Name\+Variation}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_ac4de2771c4025a98f83b89fc6104d9b0}
+
+
+
+
+Get a parameter name variation of a particular length from the page table
+
+Only returns {\ttfamily lt;Control\+Name\+Variationslt;} which are explicitly defined of {\ttfamily i\+Length} for the current page table type. No fallback logic is used to resolve this to the abbreviation which would actually be shown on an attached control surface if no explicit variation is defined for the specified length or current table type.
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item \begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_adffe5a5f2ad548bd4c704508d816d568}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Parameter\+Name\+Variation\+At\+Index()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937ab7383b0169f6dfa5f86b1fefd6c58ae2}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+A\+B\+B\+R\+E\+V\+I\+A\+T\+E\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+N\+A\+M\+E} if no suitable variation is defined for this table
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+Identifier} & The identifier for the parameter \\
+\hline
+\mbox{\tt in}  & {\em i\+Length} & The variation length to check, i.\+e. the {\ttfamily sz} attribute for the name variation in the page table X\+M\+L \\
+\hline
+\mbox{\tt out}  & {\em o\+Name\+Variation} & The name variation, if one is explicitly defined for this table type and {\ttfamily i\+Length} \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\hypertarget{a00075_ada210c1f77658103f2796ae3011bc603}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Clear\+Parameter\+Name\+Variations@{Clear\+Parameter\+Name\+Variations}}
+\index{Clear\+Parameter\+Name\+Variations@{Clear\+Parameter\+Name\+Variations}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Clear\+Parameter\+Name\+Variations}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Clear\+Parameter\+Name\+Variations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_ada210c1f77658103f2796ae3011bc603}
+
+
+
+
+Clears all name variations for the current page table type
+
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_a00a902ce17c43ae32947dba6088936d2}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Clear()} 
+
+\hyperlink{a00107_ae6cf05c366d982e8ea92fea1d98f1d22}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Clear\+Name\+Variations\+For\+Parameter()} 
+\end{DoxySeeAlso}
+\hypertarget{a00075_af03ce323e3ad6bcfe3b11627698b43c7}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Clear\+Name\+Variations\+For\+Parameter@{Clear\+Name\+Variations\+For\+Parameter}}
+\index{Clear\+Name\+Variations\+For\+Parameter@{Clear\+Name\+Variations\+For\+Parameter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Clear\+Name\+Variations\+For\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Clear\+Name\+Variations\+For\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}]{i\+Parameter\+Identifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_af03ce323e3ad6bcfe3b11627698b43c7}
+
+
+
+
+Clears all name variations for a single parameter for the current page table type
+
+\begin{DoxyWarning}{Warning}
+This will invalidate the list of parameter name variations indices, i.\+e. the parameter identifier associated with each index by \hyperlink{a00107_ac505024dd195c1965c54acac8f1f3016}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index()}
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00107_a00a902ce17c43ae32947dba6088936d2}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Clear()} 
+
+\hyperlink{a00107_a6af3965eaf2baeadef9a44aa9c77ecbb}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Clear\+Parameter\+Name\+Variations()}
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S} and provides zero to {\ttfamily o\+Num\+Variations} if {\ttfamily i\+Parameter\+Identifier} is not found
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+Identifier} & The identifier for the parameter \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00075_ac4e03c26b8423c49228d0011bf348e11}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}!Set\+Parameter\+Name\+Variation@{Set\+Parameter\+Name\+Variation}}
+\index{Set\+Parameter\+Name\+Variation@{Set\+Parameter\+Name\+Variation}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2}}
+\subsubsection[{Set\+Parameter\+Name\+Variation}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+\_\+\+V2\+::\+Set\+Parameter\+Name\+Variation (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}]{i\+Parameter\+Identifier, }
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{i\+Name\+Variation, }
+\item[{int32\+\_\+t}]{i\+Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00075_ac4e03c26b8423c49228d0011bf348e11}
+
+
+
+
+Sets a name variation explicitly for the current page table type
+
+This will add a new name variation or overwrite the existing name variation with the same length which is defined for the current table type.
+
+\begin{DoxyWarning}{Warning}
+If no name variation previously existed for this parameter then this will invalidate the list of parameter name variations indices, i.\+e. the parameter identifier associated with each index by \hyperlink{a00107_ac505024dd195c1965c54acac8f1f3016}{A\+A\+X\+\_\+\+I\+Page\+Table\+::\+Get\+Name\+Variation\+Parameter\+I\+D\+At\+Index()}
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Normally parameter name variations are only used with the {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}} table type
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T if {\ttfamily i\+Name\+Variation} is empty or if {\ttfamily i\+Length} is less than zero
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+Identifier} & The identifier for the parameter \\
+\hline
+\mbox{\tt in}  & {\em i\+Name\+Variation} & The new parameter name variation \\
+\hline
+\mbox{\tt in}  & {\em i\+Length} & The length value for this name variation. This corresponds to the variation\textquotesingle{}s {\ttfamily sz} attribute in the page table X\+M\+L and is not required to match the length of {\ttfamily i\+Name\+Variation}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00229}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table.\+h}\end{DoxyCompactItemize}

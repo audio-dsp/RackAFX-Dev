@@ -1,0 +1,6 @@
+<map id="AAX_CParameterManager" name="AAX_CParameterManager">
+<area shape="rect" id="node3" href="$a00108.html" title="The base interface for all normalizable plug&#45;in parameters. " alt="" coords="181,25,304,52"/>
+<area shape="rect" id="node5" title="STL class. " alt="" coords="203,96,283,123"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="5,89,132,130"/>
+<area shape="rect" id="node7" href="$a00086.html" title="Interface allowing an AAX plug&#45;in to interact with the host&#39;s event system. " alt="" coords="429,123,609,149"/>
+</map>

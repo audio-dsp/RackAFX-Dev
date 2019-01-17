@@ -1,0 +1,676 @@
+\hypertarget{a00020}{}\section{A\+A\+X\+\_\+\+C\+Host\+Processor Class Reference}
+\label{a00020}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Host\+Processor.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Host\+Processor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{a00421}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Host\+Processor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{a00422}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Concrete implementation of the \hyperlink{a00101}{A\+A\+X\+\_\+\+I\+Host\+Processor} interface for non-\/real-\/time processing. 
+
+Host processor objects are used to process regions of audio data in a non-\/real-\/time context.
+\begin{DoxyItemize}
+\item Host processors must generate output samples linearly and incrementally, but may randomly access samples from the processing region on the timeline for input. See \hyperlink{a00102_aa7d5eb30282956a40ed34acc5881298c}{Get\+Audio()} for more information.
+\item Host processors may re-\/define the processing region using \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Translate\+Output\+Bounds()}.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} 
+\end{DoxySeeAlso}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00020_ab9c80cadc9eee6d44713eac97d0a4e09}{A\+A\+X\+\_\+\+C\+Host\+Processor} (void)
+\item 
+virtual \hyperlink{a00020_a292b055693eace03d45b3a550dbefa50}{$\sim$\+A\+A\+X\+\_\+\+C\+Host\+Processor} ()
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a9fa45d23e62ae69192997b385129cf6b}{Initialize} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Controller) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Host Processor initialization. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a2047f4ec04271a975971a126b290688d}{Uninitialize} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Host Processor teardown. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Host processor interface}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a79ef65fd98f14144beb708061fba884e}{Init\+Output\+Bounds} (int64\+\_\+t i\+Src\+Start, int64\+\_\+t i\+Src\+End, int64\+\_\+t $\ast$o\+Dst\+Start, int64\+\_\+t $\ast$o\+Dst\+End) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Sets the processing region. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a0bea1943fa89cdd227302247595482c8}{Set\+Location} (int64\+\_\+t i\+Sample) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Updates the relative sample location of the current processing frame. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}{Render\+Audio} (const float $\ast$const in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, int32\+\_\+t in\+Audio\+In\+Count, float $\ast$const i\+Audio\+Outs\mbox{[}$\,$\mbox{]}, int32\+\_\+t i\+Audio\+Out\+Count, int32\+\_\+t $\ast$io\+Window\+Size) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Perform the signal processing. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_afb0d1b047d76ab4ad2df2618111fc2c6}{Pre\+Render} (int32\+\_\+t in\+Audio\+In\+Count, int32\+\_\+t i\+Audio\+Out\+Count, int32\+\_\+t i\+Window\+Size) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Invoked right before the start of a Preview or Render pass. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_aa0415cb0bdf991c295c71bd9899489df}{Post\+Render} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Invoked at the end of a Render pass. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_adec65f5e13856b0bfcb3fbe9200213cf}{Analyze\+Audio} (const float $\ast$const in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, int32\+\_\+t in\+Audio\+In\+Count, int32\+\_\+t $\ast$io\+Window\+Size) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Override this method if the plug-\/in needs to analyze the audio prior to a Render pass. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a3b43c44e627036241cb2d1d57d1bff34}{Pre\+Analyze} (int32\+\_\+t in\+Audio\+In\+Count, int32\+\_\+t i\+Window\+Size) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Invoked right before the start of an Analysis pass. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_ae7c61a3642cf0fc2c7915b426fa01cad}{Post\+Analyze} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Invoked at the end of an Analysis pass. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a97b29831dde192bdc2e9e0290f60e8c6}{Get\+Clip\+Name\+Suffix} (int32\+\_\+t in\+Max\+Length, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$out\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Called by host application to retrieve a custom string to be appended to the clip name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Convenience methods}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} $\ast$ \hyperlink{a00020_ac545926ac56fe6788aebda2a905a138f}{Get\+Effect\+Parameters} ()
+\item 
+const \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} $\ast$ \hyperlink{a00020_a0b805c0c8eaa83efcd9eff6fec1697f1}{Get\+Effect\+Parameters} () const 
+\item 
+\hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} $\ast$ \hyperlink{a00020_aff1d956c341d1e06283a1bbb91240ebd}{Get\+Host\+Processor\+Delegate} ()
+\item 
+const \hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} $\ast$ \hyperlink{a00020_a0e78e9fe7255c15dbdb94fa87117cf4c}{Get\+Host\+Processor\+Delegate} () const 
+\item 
+int64\+\_\+t \hyperlink{a00020_a93a99af9ac58f111fcc045c84ab24093}{Get\+Location} () const 
+\begin{DoxyCompactList}\small\item\em The relative sample location of the current processing frame. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_a2d145d968b944cbb9ca4256335249fb2}{Get\+Input\+Range} () const 
+\begin{DoxyCompactList}\small\item\em The length (in samples) of the current timeline selection. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_a88f59a2655d17cd59f7fe771126d5f01}{Get\+Output\+Range} () const 
+\begin{DoxyCompactList}\small\item\em The length (in samples) of the clip that will be rendered to the timeline. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{Get\+Src\+Start} () const 
+\begin{DoxyCompactList}\small\item\em The sample position of the beginning of the current timeline selection relative to the beginning of the current input selection, i.\+e. 0. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_a5ec16926f70c9a6189d0cc8c06b42124}{Get\+Src\+End} () const 
+\begin{DoxyCompactList}\small\item\em The sample position of the end of the current timeline selection relative to the beginning of the current input selection. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_a4a9cc5ac5011227b1d3355a751659236}{Get\+Dst\+Start} () const 
+\begin{DoxyCompactList}\small\item\em The sample position of the beginning of the of the clip that will be rendered to the timeline relative to the beginning of the current input selection. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00020_acf7ac84262e9141598c7b7dad0355467}{Get\+Dst\+End} () const 
+\begin{DoxyCompactList}\small\item\em The sample position of the end of the of the clip that will be rendered to the timeline relative to the beginning of the current input selection. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{Translate\+Output\+Bounds} (int64\+\_\+t i\+Src\+Start, int64\+\_\+t i\+Src\+End, int64\+\_\+t \&o\+Dst\+Start, int64\+\_\+t \&o\+Dst\+End)
+\begin{DoxyCompactList}\small\item\em Define the boundaries of the clip that will be rendered to the timeline. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00020_a44b4889c96aeced88596cfbb9863eabe}{Get\+Audio} (const float $\ast$const in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, int32\+\_\+t in\+Audio\+In\+Count, int64\+\_\+t in\+Location, int32\+\_\+t $\ast$io\+Num\+Samples)
+\begin{DoxyCompactList}\small\item\em Randomly access audio from the timeline. \end{DoxyCompactList}\item 
+virtual int32\+\_\+t \hyperlink{a00020_a55aeb268e1312ddba1989e37cace823f}{Get\+Side\+Chain\+Input\+Num} ()
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the index of the side chain input buffer. \end{DoxyCompactList}\item 
+\hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} $\ast$ \hyperlink{a00020_ab63ce71f04ca92bbd18608be32d58b38}{Controller} ()
+\item 
+const \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} $\ast$ \hyperlink{a00020_a5ed8e2d8b83251dfd2ae62b3760765db}{Controller} () const 
+\item 
+\hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} $\ast$ \hyperlink{a00020_a8cea2a8e266babcf5b6812669b7a40db}{Host\+Processor\+Delegate} ()
+\item 
+const \hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} $\ast$ \hyperlink{a00020_a851c6a03388ec0af3e46b6767d46a29a}{Host\+Processor\+Delegate} () const 
+\item 
+\hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} $\ast$ \hyperlink{a00020_aa4814b762825385280f69ed71949ac48}{Effect\+Parameters} ()
+\item 
+const \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} $\ast$ \hyperlink{a00020_a16239f1000e5a769ce7e8672761e77e6}{Effect\+Parameters} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00020_ab9c80cadc9eee6d44713eac97d0a4e09}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Host\+Processor}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+A\+A\+X\+\_\+\+C\+Host\+Processor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00020_ab9c80cadc9eee6d44713eac97d0a4e09}
+\hypertarget{a00020_a292b055693eace03d45b3a550dbefa50}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!````~A\+A\+X\+\_\+\+C\+Host\+Processor@{$\sim$\+A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\index{````~A\+A\+X\+\_\+\+C\+Host\+Processor@{$\sim$\+A\+A\+X\+\_\+\+C\+Host\+Processor}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+C\+Host\+Processor}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+C\+Host\+Processor\+::$\sim$\+A\+A\+X\+\_\+\+C\+Host\+Processor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a292b055693eace03d45b3a550dbefa50}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00020_a9fa45d23e62ae69192997b385129cf6b}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a9fa45d23e62ae69192997b385129cf6b}
+
+
+Host Processor initialization. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Controller} & A versioned reference that can be resolved to both an \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} interface and an \hyperlink{a00102}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_a00aa7da380e86cd79c6b8da1aa51c3b7}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_a2047f4ec04271a975971a126b290688d}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Uninitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Uninitialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a2047f4ec04271a975971a126b290688d}
+
+
+Host Processor teardown. 
+
+
+
+Implements \hyperlink{a00066_a238fc3fee9180cd52df2c87180f4a656}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_a79ef65fd98f14144beb708061fba884e}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Init\+Output\+Bounds@{Init\+Output\+Bounds}}
+\index{Init\+Output\+Bounds@{Init\+Output\+Bounds}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Init\+Output\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Init\+Output\+Bounds (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{i\+Src\+Start, }
+\item[{int64\+\_\+t}]{i\+Src\+End, }
+\item[{int64\+\_\+t $\ast$}]{o\+Dst\+Start, }
+\item[{int64\+\_\+t $\ast$}]{o\+Dst\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a79ef65fd98f14144beb708061fba884e}
+
+
+Sets the processing region. 
+
+This method allows offline processing plug-\/ins to vary the length and/or start/end points of the audio processing region.
+
+This method is called in a few different scenarios\+:
+\begin{DoxyItemize}
+\item Before an analyze, process or preview of data begins.
+\item At the end of every preview loop.
+\item After the user makes a new data selection on the timeline.
+\end{DoxyItemize}
+
+Plug-\/ins that inherit from \hyperlink{a00020}{A\+A\+X\+\_\+\+C\+Host\+Processor} should not override this method. Instead, use the following convenience functions\+:
+\begin{DoxyItemize}
+\item To retrieve the length or boundaries of the processing region, use \hyperlink{a00020_a2d145d968b944cbb9ca4256335249fb2}{Get\+Input\+Range()}, \hyperlink{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{Get\+Src\+Start()}, etc.
+\item To change the boundaries of the processing region before processing begins, use \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Translate\+Output\+Bounds()}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Currently, a host processor may not randomly access samples outside of the boundary defined by {\ttfamily o\+Dst\+Start} and {\ttfamily o\+Dst\+End} 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000007}{Legacy Porting Notes}]D\+A\+E no longer makes use of the m\+Start\+Bound and m\+End\+Bounds member variables that existed in the legacy R\+T\+A\+S/\+T\+D\+M S\+D\+K. Use {\ttfamily o\+Dst\+Start} and {\ttfamily o\+Dst\+End} instead (preferably by overriding \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{Translate\+Output\+Bounds()}.)\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Src\+Start} & The selection start of the user selected region. This is will always return 0 for a given selection on the timeline. \\
+\hline
+\mbox{\tt in}  & {\em i\+Src\+End} & The selection end of the user selected region. This will always return the value of the selection length on the timeline. \\
+\hline
+\mbox{\tt in}  & {\em o\+Dst\+Start} & The starting sample location in the output audio region. By default, this is the same as {\ttfamily i\+Src\+Start}. \\
+\hline
+\mbox{\tt in}  & {\em o\+Dst\+End} & The ending sample location in the output audio region. By default, this is the same as {\ttfamily i\+Src\+End}. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_a157bab3b949dc98f02e66c907c419bad}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_a0bea1943fa89cdd227302247595482c8}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Set\+Location@{Set\+Location}}
+\index{Set\+Location@{Set\+Location}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Set\+Location}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Set\+Location (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{i\+Sample}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a0bea1943fa89cdd227302247595482c8}
+
+
+Updates the relative sample location of the current processing frame. 
+
+This method is called by the host to update the relative sample location of the current processing frame.
+
+\begin{DoxyNote}{Note}
+Plug-\/ins should not override this method; instead, use \hyperlink{a00020_a93a99af9ac58f111fcc045c84ab24093}{A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Location()} to retrieve the current relative sample location.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Sample} & The sample location of the first sample in the current processing frame relative to the beginning of the full processing buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_ae9bd1a23f31701d3de6d9d410c819c81}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Render\+Audio@{Render\+Audio}}
+\index{Render\+Audio@{Render\+Audio}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Render\+Audio}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Render\+Audio (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$const}]{in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, }
+\item[{int32\+\_\+t}]{in\+Audio\+In\+Count, }
+\item[{float $\ast$const}]{i\+Audio\+Outs\mbox{[}$\,$\mbox{]}, }
+\item[{int32\+\_\+t}]{i\+Audio\+Out\+Count, }
+\item[{int32\+\_\+t $\ast$}]{io\+Window\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}
+
+
+Perform the signal processing. 
+
+This method is called by the host to invoke the plug-\/in\textquotesingle{}s signal processing.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000008}{Legacy Porting Notes}]This method is a replacement for the Audio\+Suite {\ttfamily Process\+Audio} method\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+Ins} & Input audio buffer \\
+\hline
+\mbox{\tt in}  & {\em in\+Audio\+In\+Count} & The number if input channels \\
+\hline
+\mbox{\tt in}  & {\em i\+Audio\+Outs} & The number of output channels \\
+\hline
+\mbox{\tt in}  & {\em i\+Audio\+Out\+Count} & A user defined destination end of the ingested audio \\
+\hline
+\mbox{\tt in}  & {\em io\+Window\+Size} & Window buffer length of the received audio \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_a8ede94912e89621bf6951042687c3c4a}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_afb0d1b047d76ab4ad2df2618111fc2c6}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Pre\+Render@{Pre\+Render}}
+\index{Pre\+Render@{Pre\+Render}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Pre\+Render}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Pre\+Render (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Audio\+In\+Count, }
+\item[{int32\+\_\+t}]{i\+Audio\+Out\+Count, }
+\item[{int32\+\_\+t}]{i\+Window\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_afb0d1b047d76ab4ad2df2618111fc2c6}
+
+
+Invoked right before the start of a Preview or Render pass. 
+
+This method is called by the host to allow a plug-\/in to make any initializations before processing actually begins. Upon a Preview pass, Pre\+Render will also be called at the beginning of every \char`\"{}loop\char`\"{}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7adf2cad11d0a42c0684bada7519202db2}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Start\+Pass}, \hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a1fb443ff62601d3e5f5562a4af8edf41}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Begin\+Pass\+Group}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+In\+Count} & The number if input channels \\
+\hline
+\mbox{\tt in}  & {\em i\+Audio\+Out\+Count} & The number of output channels \\
+\hline
+\mbox{\tt in}  & {\em i\+Window\+Size} & Window buffer length of the ingested audio \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_aac48c69e51b81cc59c7b6807c1c7f9ed}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_aa0415cb0bdf991c295c71bd9899489df}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Post\+Render@{Post\+Render}}
+\index{Post\+Render@{Post\+Render}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Post\+Render}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Post\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_aa0415cb0bdf991c295c71bd9899489df}
+
+
+Invoked at the end of a Render pass. 
+
+\begin{DoxyNote}{Note}
+Upon a Preview pass, Post\+Render will not be called until Preview has stopped.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a07e96f54fb45a47b56e76091f0f44cbf}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Stop\+Pass}, \hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a6c7dcf22600f9fe8a6113dbd5ffd1605}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+End\+Pass\+Group} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{a00066_afafcab62ae4b4174a9f81350bba2da9f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_adec65f5e13856b0bfcb3fbe9200213cf}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Analyze\+Audio@{Analyze\+Audio}}
+\index{Analyze\+Audio@{Analyze\+Audio}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Analyze\+Audio}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Analyze\+Audio (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$const}]{in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, }
+\item[{int32\+\_\+t}]{in\+Audio\+In\+Count, }
+\item[{int32\+\_\+t $\ast$}]{io\+Window\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_adec65f5e13856b0bfcb3fbe9200213cf}
+
+
+Override this method if the plug-\/in needs to analyze the audio prior to a Render pass. 
+
+Use this after declaring the appropriate properties in Describe. See \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea925c49bb79454b33bf1d5f4cb09d373f}{A\+A\+X\+\_\+e\+Property\+\_\+\+Requires\+Analysis} and \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5a2bacb421fc36f890a121f01a9e72ba}{A\+A\+X\+\_\+e\+Property\+\_\+\+Optional\+Analysis}
+
+To request an analysis pass from within a plug-\/in, use \hyperlink{a00102_a8ab521c8f0902707a8e8d67d7886d4f4}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate\+::\+Force\+Analyze()}
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000009}{Legacy Porting Notes}]Ported from Audio\+Suite\textquotesingle{}s {\ttfamily Analyze\+Audio}(bool {\ttfamily is\+Master\+Bypassed}) method\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+Ins} & Input audio buffer \\
+\hline
+\mbox{\tt in}  & {\em in\+Audio\+In\+Count} & The number of input channels \\
+\hline
+\mbox{\tt in}  & {\em io\+Window\+Size} & Window buffer length of the ingested audio \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_a8a1710040b8ae79248383ab1bf17e6b6}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_a3b43c44e627036241cb2d1d57d1bff34}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Pre\+Analyze@{Pre\+Analyze}}
+\index{Pre\+Analyze@{Pre\+Analyze}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Pre\+Analyze}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Pre\+Analyze (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Audio\+In\+Count, }
+\item[{int32\+\_\+t}]{i\+Window\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a3b43c44e627036241cb2d1d57d1bff34}
+
+
+Invoked right before the start of an Analysis pass. 
+
+This method is called by the host to allow a plug-\/in to make any initializations before an Analysis pass actually begins.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7adf2cad11d0a42c0684bada7519202db2}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Start\+Pass}, \hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a1fb443ff62601d3e5f5562a4af8edf41}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Begin\+Pass\+Group}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+In\+Count} & The number if input channels \\
+\hline
+\mbox{\tt in}  & {\em i\+Window\+Size} & Window buffer length of the ingested audio \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00066_a7d816bdb7b3b683aa2245a179d61d70e}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_ae7c61a3642cf0fc2c7915b426fa01cad}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Post\+Analyze@{Post\+Analyze}}
+\index{Post\+Analyze@{Post\+Analyze}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Post\+Analyze}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Post\+Analyze (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_ae7c61a3642cf0fc2c7915b426fa01cad}
+
+
+Invoked at the end of an Analysis pass. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a07e96f54fb45a47b56e76091f0f44cbf}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+Stop\+Pass}, \hyperlink{a00206_a6ec854be40c8cf810dec97de3e56c0a7a6c7dcf22600f9fe8a6113dbd5ffd1605}{A\+A\+X\+\_\+e\+Processing\+State\+\_\+\+End\+Pass\+Group} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{a00066_a3b42c24c578987ab8dc6127ccc7d15b3}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor}.
+
+\hypertarget{a00020_a97b29831dde192bdc2e9e0290f60e8c6}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Clip\+Name\+Suffix@{Get\+Clip\+Name\+Suffix}}
+\index{Get\+Clip\+Name\+Suffix@{Get\+Clip\+Name\+Suffix}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Clip\+Name\+Suffix}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Clip\+Name\+Suffix (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Max\+Length, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{out\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00020_a97b29831dde192bdc2e9e0290f60e8c6}
+
+
+Called by host application to retrieve a custom string to be appended to the clip name. 
+
+If no string is provided then the host\textquotesingle{}s default will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Max\+Length} & The maximum allowed string length, not including the N\+U\+L\+L terminating char\\
+\hline
+\mbox{\tt out}  & {\em out\+String} & Add a value to this string to provide a custom clip suffix \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00067_a60a29fda8490f240ecf869ff14fabf0e}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2}.
+
+\hypertarget{a00020_ac545926ac56fe6788aebda2a905a138f}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Effect\+Parameters@{Get\+Effect\+Parameters}}
+\index{Get\+Effect\+Parameters@{Get\+Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_ac545926ac56fe6788aebda2a905a138f}
+\hypertarget{a00020_a0b805c0c8eaa83efcd9eff6fec1697f1}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Effect\+Parameters@{Get\+Effect\+Parameters}}
+\index{Get\+Effect\+Parameters@{Get\+Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a0b805c0c8eaa83efcd9eff6fec1697f1}
+\hypertarget{a00020_aff1d956c341d1e06283a1bbb91240ebd}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Host\+Processor\+Delegate@{Get\+Host\+Processor\+Delegate}}
+\index{Get\+Host\+Processor\+Delegate@{Get\+Host\+Processor\+Delegate}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Host\+Processor\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Host\+Processor\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_aff1d956c341d1e06283a1bbb91240ebd}
+\hypertarget{a00020_a0e78e9fe7255c15dbdb94fa87117cf4c}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Host\+Processor\+Delegate@{Get\+Host\+Processor\+Delegate}}
+\index{Get\+Host\+Processor\+Delegate@{Get\+Host\+Processor\+Delegate}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Host\+Processor\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Host\+Processor\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a0e78e9fe7255c15dbdb94fa87117cf4c}
+\hypertarget{a00020_a93a99af9ac58f111fcc045c84ab24093}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Location@{Get\+Location}}
+\index{Get\+Location@{Get\+Location}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Location}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Location (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a93a99af9ac58f111fcc045c84ab24093}
+
+
+The relative sample location of the current processing frame. 
+
+This method returns the relative sample location for the current \hyperlink{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}{Render\+Audio()} processing frame. For example, if a value of 10 is provided for the \hyperlink{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}{Render\+Audio()} {\ttfamily io\+Window} parameter, then calls to this method from within each execution of \hyperlink{a00020_ab8fd8661bd7f58d9e771cd4c37a17f8f}{Render\+Audio()} will return 0, 10, 20,... \hypertarget{a00020_a2d145d968b944cbb9ca4256335249fb2}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Input\+Range@{Get\+Input\+Range}}
+\index{Get\+Input\+Range@{Get\+Input\+Range}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Input\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Input\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a2d145d968b944cbb9ca4256335249fb2}
+
+
+The length (in samples) of the current timeline selection. 
+
+\hypertarget{a00020_a88f59a2655d17cd59f7fe771126d5f01}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Output\+Range@{Get\+Output\+Range}}
+\index{Get\+Output\+Range@{Get\+Output\+Range}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Output\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Output\+Range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a88f59a2655d17cd59f7fe771126d5f01}
+
+
+The length (in samples) of the clip that will be rendered to the timeline. 
+
+\hypertarget{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Src\+Start@{Get\+Src\+Start}}
+\index{Get\+Src\+Start@{Get\+Src\+Start}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Src\+Start}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Src\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}
+
+
+The sample position of the beginning of the current timeline selection relative to the beginning of the current input selection, i.\+e. 0. 
+
+\hypertarget{a00020_a5ec16926f70c9a6189d0cc8c06b42124}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Src\+End@{Get\+Src\+End}}
+\index{Get\+Src\+End@{Get\+Src\+End}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Src\+End}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Src\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a5ec16926f70c9a6189d0cc8c06b42124}
+
+
+The sample position of the end of the current timeline selection relative to the beginning of the current input selection. 
+
+\hypertarget{a00020_a4a9cc5ac5011227b1d3355a751659236}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Dst\+Start@{Get\+Dst\+Start}}
+\index{Get\+Dst\+Start@{Get\+Dst\+Start}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Dst\+Start}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Dst\+Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_a4a9cc5ac5011227b1d3355a751659236}
+
+
+The sample position of the beginning of the of the clip that will be rendered to the timeline relative to the beginning of the current input selection. 
+
+This value will be equal to the value returned by \hyperlink{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{Get\+Src\+Start()} unless the selection boundaries have been modified by overriding \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{Translate\+Output\+Bounds()} \hypertarget{a00020_acf7ac84262e9141598c7b7dad0355467}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Dst\+End@{Get\+Dst\+End}}
+\index{Get\+Dst\+End@{Get\+Dst\+End}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Dst\+End}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Dst\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00020_acf7ac84262e9141598c7b7dad0355467}
+
+
+The sample position of the end of the of the clip that will be rendered to the timeline relative to the beginning of the current input selection. 
+
+This value will be equal to the value returned by \hyperlink{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{Get\+Src\+Start()} unless the selection boundaries have been modified by overriding \hyperlink{a00020_a4d793e60071069e6f98c4d841d37ac96}{Translate\+Output\+Bounds()} \hypertarget{a00020_a4d793e60071069e6f98c4d841d37ac96}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Translate\+Output\+Bounds@{Translate\+Output\+Bounds}}
+\index{Translate\+Output\+Bounds@{Translate\+Output\+Bounds}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Translate\+Output\+Bounds}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Translate\+Output\+Bounds (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t}]{i\+Src\+Start, }
+\item[{int64\+\_\+t}]{i\+Src\+End, }
+\item[{int64\+\_\+t \&}]{o\+Dst\+Start, }
+\item[{int64\+\_\+t \&}]{o\+Dst\+End}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{a00020_a4d793e60071069e6f98c4d841d37ac96}
+
+
+Define the boundaries of the clip that will be rendered to the timeline. 
+
+This method is called from \hyperlink{a00020_a79ef65fd98f14144beb708061fba884e}{A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Init\+Output\+Bounds()}, providing a convenient hook for re-\/defining the processing region boundaries. See \hyperlink{a00020_a79ef65fd98f14144beb708061fba884e}{Init\+Output\+Bounds()} for more information.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Src\+Start} & The selection start of the user selected region. This is will always return 0 for a given selection on the timeline. \\
+\hline
+\mbox{\tt in}  & {\em i\+Src\+End} & The selection end of the user selected region. This will always return the value of the selection length on the timeline. \\
+\hline
+\mbox{\tt in}  & {\em o\+Dst\+Start} & The starting sample location in the output audio region. By default, this is the same as {\ttfamily i\+Src\+Start}. \\
+\hline
+\mbox{\tt in}  & {\em o\+Dst\+End} & The ending sample location in the output audio region. By default, this is the same as {\ttfamily i\+Src\+End}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00020_a44b4889c96aeced88596cfbb9863eabe}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Audio@{Get\+Audio}}
+\index{Get\+Audio@{Get\+Audio}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Audio}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Audio (
+\begin{DoxyParamCaption}
+\item[{const float $\ast$const}]{in\+Audio\+Ins\mbox{[}$\,$\mbox{]}, }
+\item[{int32\+\_\+t}]{in\+Audio\+In\+Count, }
+\item[{int64\+\_\+t}]{in\+Location, }
+\item[{int32\+\_\+t $\ast$}]{io\+Num\+Samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{a00020_a44b4889c96aeced88596cfbb9863eabe}
+
+
+Randomly access audio from the timeline. 
+
+This is a convenience wrapper around \hyperlink{a00102_aa7d5eb30282956a40ed34acc5881298c}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate\+::\+Get\+Audio()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+Ins} & Timeline audio buffer(s). This must be set to {\ttfamily in\+Audio\+Ins} from \hyperlink{a00066_a8ede94912e89621bf6951042687c3c4a}{A\+A\+X\+\_\+\+I\+Host\+Processor\+::\+Render\+Audio()} \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Audio\+In\+Count} & Number of buffers in {\ttfamily in\+Audio\+Ins}. This must be set to {\ttfamily in\+Audio\+In\+Count} from \hyperlink{a00066_a8ede94912e89621bf6951042687c3c4a}{A\+A\+X\+\_\+\+I\+Host\+Processor\+::\+Render\+Audio()} \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Location} & A sample location relative to the beginning of the currently processed region, e.\+g. a value of 0 corresponds to the timeline location returned by \hyperlink{a00020_a6b46a3287c04a74195c3b4d095ff5dd1}{A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Src\+Start()} \\
+\hline
+\mbox{\tt in,out}  & {\em io\+Num\+Samples} & \begin{DoxyItemize}
+\item Input\+: The maximum number of samples to read. \item Output\+: The actual number of samples that were read from the timeline \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\hypertarget{a00020_a55aeb268e1312ddba1989e37cace823f}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Get\+Side\+Chain\+Input\+Num@{Get\+Side\+Chain\+Input\+Num}}
+\index{Get\+Side\+Chain\+Input\+Num@{Get\+Side\+Chain\+Input\+Num}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Get\+Side\+Chain\+Input\+Num}]{\setlength{\rightskip}{0pt plus 5cm}virtual int32\+\_\+t A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Get\+Side\+Chain\+Input\+Num (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{a00020_a55aeb268e1312ddba1989e37cace823f}
+
+
+C\+A\+L\+L\+: Returns the index of the side chain input buffer. 
+
+This is a convenience wrapper around \hyperlink{a00102_aaf6821f08105fd949aa9e78f3a1f7f50}{A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate\+::\+Get\+Side\+Chain\+Input\+Num()} \hypertarget{a00020_ab63ce71f04ca92bbd18608be32d58b38}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Controller@{Controller}}
+\index{Controller@{Controller}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Controller}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Controller (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_ab63ce71f04ca92bbd18608be32d58b38}
+\hypertarget{a00020_a5ed8e2d8b83251dfd2ae62b3760765db}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Controller@{Controller}}
+\index{Controller@{Controller}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Controller}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Controller (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_a5ed8e2d8b83251dfd2ae62b3760765db}
+\hypertarget{a00020_a8cea2a8e266babcf5b6812669b7a40db}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Host\+Processor\+Delegate@{Host\+Processor\+Delegate}}
+\index{Host\+Processor\+Delegate@{Host\+Processor\+Delegate}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Host\+Processor\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Host\+Processor\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_a8cea2a8e266babcf5b6812669b7a40db}
+\hypertarget{a00020_a851c6a03388ec0af3e46b6767d46a29a}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Host\+Processor\+Delegate@{Host\+Processor\+Delegate}}
+\index{Host\+Processor\+Delegate@{Host\+Processor\+Delegate}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Host\+Processor\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Host\+Processor\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Host\+Processor\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_a851c6a03388ec0af3e46b6767d46a29a}
+\hypertarget{a00020_aa4814b762825385280f69ed71949ac48}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Effect\+Parameters@{Effect\+Parameters}}
+\index{Effect\+Parameters@{Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_aa4814b762825385280f69ed71949ac48}
+\hypertarget{a00020_a16239f1000e5a769ce7e8672761e77e6}{}\index{A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}!Effect\+Parameters@{Effect\+Parameters}}
+\index{Effect\+Parameters@{Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Host\+Processor@{A\+A\+X\+\_\+\+C\+Host\+Processor}}
+\subsubsection[{Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters}$\ast$ A\+A\+X\+\_\+\+C\+Host\+Processor\+::\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{a00020_a16239f1000e5a769ce7e8672761e77e6}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00173}{A\+A\+X\+\_\+\+C\+Host\+Processor.\+h}\end{DoxyCompactItemize}

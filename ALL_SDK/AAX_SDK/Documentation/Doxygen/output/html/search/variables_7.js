@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['k32bitabsmax',['k32BitAbsMax',['../a00181.html#a19c3de953254f182959cb74c9f6ed055',1,'AAX_CommonConversions.h']]],
+  ['k32bitnegmax',['k32BitNegMax',['../a00181.html#a4623748ef4a22daea8cbbf7557ecb60e',1,'AAX_CommonConversions.h']]],
+  ['k32bitposmax',['k32BitPosMax',['../a00181.html#a6758dcc7fe73efcefb9980ff895c36d0',1,'AAX_CommonConversions.h']]],
+  ['k56kfloatnegmax',['k56kFloatNegMax',['../a00181.html#ae1518eaa8f13def92b4c9daeedbbe002',1,'AAX_CommonConversions.h']]],
+  ['k56kfloatposmax',['k56kFloatPosMax',['../a00181.html#abc7ad084f4b51c70feeac700ab05f7a5',1,'AAX_CommonConversions.h']]],
+  ['k56kfracabsmax',['k56kFracAbsMax',['../a00181.html#ad6054f9b9b26d0b3ee01a6ef097afaea',1,'AAX_CommonConversions.h']]],
+  ['k56kfrachalf',['k56kFracHalf',['../a00181.html#a485384e2f324b1666ad9d8600c442d61',1,'AAX_CommonConversions.h']]],
+  ['k56kfracnegmax',['k56kFracNegMax',['../a00181.html#a3306ddeeab535815290a268837e276b1',1,'AAX_CommonConversions.h']]],
+  ['k56kfracnegone',['k56kFracNegOne',['../a00181.html#affbe56efc7321622e3d4c1e2ef60cb28',1,'AAX_CommonConversions.h']]],
+  ['k56kfracposmax',['k56kFracPosMax',['../a00181.html#aa1f75eeb19dad78b3045cb5778421b61',1,'AAX_CommonConversions.h']]],
+  ['k56kfraczero',['k56kFracZero',['../a00181.html#aeb01246d63cd5b5d1b6c6eb5bcd08b8b',1,'AAX_CommonConversions.h']]],
+  ['kinvalidindex',['kInvalidIndex',['../a00042.html#afa6319e07e02639611c86e1606867564',1,'AAX_CString']]],
+  ['kmaxstringlength',['kMaxStringLength',['../a00042.html#aac7fe2ef7191455a685602c9122ce515',1,'AAX_CString']]],
+  ['kneg144db',['kNeg144DB',['../a00181.html#a2381bc3bc0a4c5e07bf67baf7d440137',1,'AAX_CommonConversions.h']]],
+  ['kneg144gain',['kNeg144Gain',['../a00181.html#a1baf8195909ae1265cbb609e6702d2b4',1,'AAX_CommonConversions.h']]],
+  ['koneover56kfracabsmax',['kOneOver56kFracAbsMax',['../a00181.html#a5ad86b72eda6b0e72864ec774adad1cf',1,'AAX_CommonConversions.h']]],
+  ['kpowextent',['kPowExtent',['../a00288.html#a4e6fcac015bb083018e8897563966cf6',1,'AAX']]],
+  ['kpowtablesize',['kPowTableSize',['../a00288.html#a59f1ab59ea51ed94f87e8d935870df9e',1,'AAX']]]
+];

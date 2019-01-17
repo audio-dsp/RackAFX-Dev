@@ -1,0 +1,301 @@
+\hypertarget{a00361}{}\section{Media Composer Guide}
+\label{a00361}\index{Media Composer Guide@{Media Composer Guide}}
+Details about using A\+A\+X plug-\/ins in Media Composer. 
+
+\hypertarget{a00361_aax_media_composer_guide_contents}{}\subsection{Contents}\label{a00361_aax_media_composer_guide_contents}
+\begin{DoxyItemize}
+\item \hyperlink{a00361_aax_media_composer_guide__about_this_document}{About this document} \item \hyperlink{a00361_aax_media_composer_guide__processing_modes}{Processing modes} \item \hyperlink{a00361_aax_media_composer_guide__requirements}{Compatibility requirements} \item \hyperlink{a00361_aax_media_composer_guide__features}{A\+A\+X feature support in Media Composer} \item \hyperlink{a00361_aax_media_composer_guide__additional_information}{Additional Information}\end{DoxyItemize}
+ \hypertarget{a00361_aax_media_composer_guide__about_this_document}{}\subsection{About this document}\label{a00361_aax_media_composer_guide__about_this_document}
+This guide discusses specific details related to using A\+A\+X plug-\/ins with Media Composer, such as loading and initialization procedures, G\+U\+I hosting, and other application-\/specific features.
+
+For more information about the features, functionality, and use of Media Composer see the Media Composer user documentation. 
+
+ \hypertarget{a00361_aax_media_composer_guide__processing_modes}{}\subsection{Processing modes}\label{a00361_aax_media_composer_guide__processing_modes}
+Media Composer supports A\+A\+X plug-\/ins in two processing modes\+: Audio\+Suite and A\+A\+X Native 
+\begin{DoxyItemize}
+\item Audio\+Suite plug-\/ins perform non-\/real-\/time, random-\/access, file-\/based processing entirely on the host C\+P\+U.  
+\item A\+A\+X Native plug-\/ins perform real-\/time, linear, non-\/destructive processing entirely on the host C\+P\+U. 
+\end{DoxyItemize}
+
+A\+A\+X plug-\/in processing in Media Composer is managed by specific Tools. Each of these Tools can be accessed using the \char`\"{}\+Tools\char`\"{} menu in the Media Composer application.
+
+\hypertarget{a00361_subsection__media_composer_guide__audiosuite}{}\subsubsection{Non-\/real-\/time processing (\+Audio\+Suite)}\label{a00361_subsection__media_composer_guide__audiosuite}
+ Use the Audio\+Suite Tool to perform Audio\+Suite processing in Media Composer. The Audio\+Suite Tool applies an effect to a clip in the timeline of the record monitor.
+
+Specific Audio\+Suite plug-\/ins appear in the Plug-\/\+In Selection menu in the Audio\+Suite window.
+
+\begin{DoxyNote}{Note}
+Unlike Pro Tools, the effect to clip relationship is remembered along with the effect parameters used. Parameters to the effects can be changed at a later time, and at any time the effect can be re-\/rendered with the saved effect parameters. Therefore it is very important for Audio\+Suite plug-\/ins to maintain compatibility between instances, versions, and systems in order to function properly in Media Composer workflows. See \hyperlink{a00361_subsection__aax_media_composer_guide__features__presets}{Preset management} for more information.
+\end{DoxyNote}
+Media Composer supports two Audio\+Suite processing modes\+: 
+\begin{DoxyItemize}
+\item Apply a plug-\/in to a clip in the Timeline. This method creates a rendered effect.  
+\item Use the controls in the Audio\+Suite window to create a new master clip. This method lets you process more than one channel at a time and to create new media with a duration longer or shorter than the source media.  
+\end{DoxyItemize}
+
+By default, the Audio\+Suite window displays the controls for applying a plug-\/in to a clip in the Timeline. When you drag a master clip into the window, the window expands to display additional parameters for working with master clips.
+
+\hypertarget{a00361_subsubsection__media_composer_guide__audiosuite_apply_to_clip}{}\paragraph{Applying an Audio\+Suite Plug-\/in to a Clip in the Timeline}\label{a00361_subsubsection__media_composer_guide__audiosuite_apply_to_clip}
+ The following illustration shows the default layout of the Audio\+Suite window\+:
+
+  Figure 1\+: The Audio\+Suite window
+
+To apply an Audio\+Suite plug-\/in to a clip in the Timeline\+: 
+\begin{DoxyEnumerate}
+\item Open the Audio\+Suite window by doing one of the following\+: 
+\begin{DoxyItemize}
+\item Select Tools $>$ Audio\+Suite  
+\item If an audio tool is already open, click the Effect Mode Selector menu and select Audio\+Suite  
+\end{DoxyItemize}
+\item Use the Track Selection Menu button to select the tracks that you want to modify. 
+\begin{DoxyItemize}
+\item When you select an item from this menu, the system selects or deselects the corresponding track in the Timeline  
+\item To select multiple tracks, press the Shift key while you select additional tracks from the Track Selection menu. Plus signs (+) mark the additional tracks and indicate that the effect is applied to more than one track.  
+\end{DoxyItemize}
+\item Click the Plug-\/\+In Selection menu, and select a plug-\/in  
+\item Click the Activate Current Plug-\/\+In button. This opens a dialog box associated with the plug-\/in.  
+\end{DoxyEnumerate}
+
+From the Audio\+Suite dialog box, you may make any necessary adjustments to the plug-\/in and Preview the effect in real-\/time. 
+\begin{DoxyItemize}
+\item To save the effect, click O\+K  
+\item To close the dialog box without saving the effect, click Cancel  
+\item To save the effect as a template, drag the effect icon to a bin  
+\end{DoxyItemize}
+
+\hypertarget{a00361_subsubsection__media_composer_guide__audiosuite_master_clip_mode}{}\paragraph{Audio\+Suite Master Clip Mode}\label{a00361_subsubsection__media_composer_guide__audiosuite_master_clip_mode}
+ Drag a Master Clip into the Audio\+Suite Tool to engage Audio\+Suite Master Clip Mode. This mode supports all Audio\+Suite effects, including those that change the width or length of the effected clip. A new Master Clip is generated for each Audio\+Suite processing pass applied in this mode.
+
+In Master Clip Mode, the Audio\+Suite window will be expanded to display additional controls. You can also click the Display/\+Hide Master Clip Controls button to display or hide the additional parameters.
+
+The following operations are available in Master Clip Mode\+: 
+\begin{DoxyItemize}
+\item Apply Audio\+Suite plug-\/ins to more than one track at the same time. For example, a plug-\/in might let you process two separate tracks as a stereo pair. This enables you to use plug-\/ins that perform linked compression, reverb, and other effects that allow multichannel input.  
+\item Create new media with a longer or shorter duration than the source media. This lets you use effects that perform time compression and expansion. For example, you can use a Time Compression Expansion plug-\/in to change the length of the audio file, or you can lengthen the file in order to add a reverb trail.  
+\item Apply one mono Audio\+Suite effect to multiple inputs of a master clip in a multiple-\/mono fashion.  
+\end{DoxyItemize}
+
+For more information about processing in Master Clip Mode, see the Media Composer user documentation.
+
+\hypertarget{a00361_subsubsection__media_composer_guide__audiosuite_restrictions}{}\paragraph{Restrictions on Audio\+Suite processing}\label{a00361_subsubsection__media_composer_guide__audiosuite_restrictions}
+ 
+\begin{DoxyItemize}
+\item Media Composer does not support width-\/changing Audio\+Suite effects except in \hyperlink{a00361_subsubsection__media_composer_guide__audiosuite_master_clip_mode}{Master Clip Mode}. See \hyperlink{a00361_subsection__aax_media_composer_guide__features__processing}{Processing configurations} for more information about supported stem formats in Media Composer.  
+\item Audio\+Suite effects that change the clip length should only be used in \hyperlink{a00361_subsubsection__media_composer_guide__audiosuite_master_clip_mode}{Master Clip Mode}, because consolidated sequences will not consolidate the correct media length. 
+\end{DoxyItemize}
+
+\hypertarget{a00361_subsection__real-time_processing}{}\subsubsection{Real-\/time processing}\label{a00361_subsection__real-time_processing}
+ Use the Audio Track Effect Tool to perform real-\/time processing in Media Composer. Audio Track Effects appear in the Audio tab of the Effect Palette, as well as in the menus of the Audio Track inserts in the Audio Mixer Window and the Timeline Track Control Panel.
+
+Real-\/time A\+A\+X processing in Media Composer is analogous to the track inserts feature in Pro Tools. For more information about track inserts in Pro Tools, see the \hyperlink{a00360_subsection__realtime_processing}{Real-\/time processing} section in the \hyperlink{a00360}{Pro Tools Guide}.
+
+\hypertarget{a00361_subsubsectin__media_composer_guide__inserting_real-time}{}\paragraph{Creating and accessing real-\/time plug-\/in instances}\label{a00361_subsubsectin__media_composer_guide__inserting_real-time}
+ To insert a plug-\/in effect on a track in Media Composer, select the track where you want to apply the effect, which insert location you want to use on the track, and the specific effect you want to add to your sequence.
+
+You can also insert a plug-\/in track effect by dragging an Audio Track Effect template from a bin to your sequence.
+
+To insert an Audio Track Effect plug-\/in from the Timeline  Right-\/click the Record Track button or the Track Control panel for the track where you want to apply the insert and select A\+A\+X Effects {\itshape \mbox{[}track number\mbox{]}} $>$ Insert {\itshape \mbox{[}a-\/e\mbox{]}} $>$ {\itshape \mbox{[}insert\mbox{]}}.
+
+To insert an Audio Track Effect plug-\/in using the insert button  
+\begin{DoxyEnumerate}
+\item Click an Audio Effect insert button in the Track Control panel for the track where you want to apply the insert. This opens the Audio Track Effect tool.  
+\item Click the Select Effect button, and select an Audio Track Effect plug-\/in effect.   Figure 1\+: Select an insert in the Audio Track Effect Tool  
+\end{DoxyEnumerate}
+
+To insert an plug-\/in using the Effect Palette  
+\begin{DoxyEnumerate}
+\item In the Project window, click the Effects tab. This opens the Effect Palette.   Figure 2\+: The Effect Palette  
+\item Click the Audio tab.  
+\item Click an effect category, select the effect you want, and drag it to the segment or to the Audio Track Effect insert button where you want to apply the insert. This opens the Select Insert dialog box.   Figure 3\+: The Select Insert dialog box \begin{DoxyNote}{Note}
+You can only insert mono effects on a mono track, stereo effects on a stereo track, and surround sound effects on a surround sound track.  
+\end{DoxyNote}
+
+\item Do one of the following\+: 
+\begin{DoxyItemize}
+\item If you want to add a new insert, click an \mbox{[}Empty\mbox{]} insert button.  
+\item If you want to replace an existing insert, click the appropriate insert button.  
+\end{DoxyItemize}The plug-\/in effect is inserted in the track to which you dragged the effect icon.  
+\end{DoxyEnumerate}
+
+To edit an existing Audio Track Effect Plug-\/\+In  After you insert an Audio Track Effect plug-\/in on an audio track, you can access the plug-\/in controls by using the Track Control panel or the Audio Track Effect tool.
+
+  Figure 4\+: Audio Track Effect plug-\/in inserts in the Track Control panel   Figure 5\+: Audio Track Effect tool\+: Select Track, Select Insert, and Select Effect buttons (left), Bypass button (center), and Save Effect button (right)
+
+When you select an insert button in the Track Control panel or an effect in the Audio Track Effect tool, the controls for the plug-\/in appear in the Audio Track Effect tool window.
+
+  Figure 6\+: The Compressor/\+Limiter Dyn 3 plug-\/in window displayed in the Audio Track Effect tool dialog box
+
+You can also open the tool by selecting Tools $>$ Audio Track Effect Tool or right-\/clicking the Record Track button for the track where you want to edit an insert and selecting Audio Track Effect tool. You can use the buttons in the tool to select a specific insert to edit.
+
+To save changes to a plug-\/in\textquotesingle{}s settings, do one of the following\+: 
+\begin{DoxyItemize}
+\item Click the Save Effect icon in the Audio Track Effect tool  
+\item Close the Audio Track Effect tool  
+\end{DoxyItemize}
+
+\hypertarget{a00361_subsubsectin__media_composer_guide__using_templates}{}\paragraph{Using Audio Track Effect Templates}\label{a00361_subsubsectin__media_composer_guide__using_templates}
+ If you apply an Audio Track effect and make a set of adjustments to it, you can quickly recreate the same sound on other tracks in your sequence or project. You can save an Audio Track effect with its parameter settings to a bin as an effect template. You can then apply the template to other audio tracks at any time.
+
+You can apply an Audio Track effect template with all its parameters directly to an Audio Track Effect insert button in the Track Selection panel or to clips in the Timeline.
+
+To save an Audio Track Effect as a template  Do one of the following\+: 
+\begin{DoxyItemize}
+\item Click the Save Effect button in the Audio Track Effect tool and drag it to a bin  
+\item Click an Audio Track Effect button and drag it to a bin  
+\end{DoxyItemize}
+
+A new track effect template appears in the bin, containing the parameter setting information for the effect. The new effect template is identified in the bin by an effect icon. By default, your Avid editing application names the template by the plug-\/in name.
+
+To apply an Audio Track Effect template to an audio track  Do one of the following\+: 
+\begin{DoxyItemize}
+\item Drag the Audio Track Effect template from the bin to an insert button in the Track Selection panel  
+\item Drag the Audio Track Effect template from the bin to a segment on the track where you want to apply the effect. The Select Insert dialog box opens so you can select the insert where you want to apply the effect.  
+\end{DoxyItemize}
+
+This applies the effect to the track.
+
+
+
+ \hypertarget{a00361_aax_media_composer_guide__requirements}{}\subsection{Compatibility requirements}\label{a00361_aax_media_composer_guide__requirements}
+ Media Composer supports 64-\/bit A\+A\+X Native plug-\/ins beginning in Media Composer 8.\+1. There are no Media Composer versions that support 32-\/bit A\+A\+X plug-\/ins, and Media Composer does not currently support A\+A\+X D\+S\+P plug-\/ins.
+
+In addition to implementing the client-\/side A\+A\+X A\+P\+I for a supported platform, Media Composer A\+A\+X plug-\/ins must\+: 
+\begin{DoxyEnumerate}
+\item Be installed to the A\+A\+X plug-\/ins directory  
+\item Use a valid file name 
+\end{DoxyEnumerate}
+
+\hypertarget{a00361_subsection__media_composer_guide__install_directories}{}\subsubsection{Install directories}\label{a00361_subsection__media_composer_guide__install_directories}
+ A\+A\+X plug-\/ins must be installed in the system\textquotesingle{}s A\+A\+X Plug-\/\+Ins directory. See \hyperlink{a00372_aax_distributing_installer}{Building your plug-\/in installer} for more information about creating a plug-\/in installer.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000006}{Host Compatibility Notes}]Some early versions of Media Composer 8 do not search the system plug-\/ins directory recursively. If your plug-\/ins are installed into a sub-\/directory beneath this main directory then they will not be loaded by the affected versions of Media Composer.\end{DoxyRefDesc}
+
+
+Plug-\/ins that are uninstalled but still present on the system are placed into the \char`\"{}\+Plug-\/\+Ins (\+Unused)\char`\"{} directory, which is located next to the Plug-\/\+Ins directory.
+
+Media Composer will also search for a Plug-\/\+Ins directory next to the actual Media Composer application, and this directory will be used if present. This debug feature can be useful for testing specific plug-\/ins.
+
+\hypertarget{a00361_subsection__media_composer_guide__file_name}{}\subsubsection{Plug-\/in name and file structure}\label{a00361_subsection__media_composer_guide__file_name}
+ In order to be recognized by A\+A\+E, all A\+A\+X plug-\/in bundles must use the \char`\"{}.\+aaxplugin\char`\"{} file name suffix. On O\+S X, the plug-\/in bundle must use this suffix while the binary itself does not require a suffix. On Windows, the plug-\/in binary (D\+L\+L) must use this suffix.
+
+The directory structure of an A\+A\+X plug-\/in bundle is also important. See \hyperlink{a00331_commoninterface_formatspecification__aaxplugin_directory_structure}{.aaxplugin Directory Structure} in the \hyperlink{a00331}{A\+A\+X Format Specification} document for more information.
+
+
+
+ \hypertarget{a00361_aax_media_composer_guide__features}{}\subsection{A\+A\+X feature support in Media Composer}\label{a00361_aax_media_composer_guide__features}
+ Media Composer supports many of the same A\+A\+X features as Pro Tools. However, some features are not available in Media Composer, and other features are managed differently between the two applications. This section describes how Media Composer handles various optional A\+A\+X features.
+
+\hypertarget{a00361_subsection__aax_media_composer_guide__features__processing}{}\subsubsection{Processing configurations}\label{a00361_subsection__aax_media_composer_guide__features__processing}
+ Sample rates Media Composer operates at sample rates of 32000, 44100, 48000, 88200, 96000 Hz, as well as each rate\textquotesingle{}s film pulldown version scaled by a ratio of 1000/1001\+: approximately 31968, 40959, 47952, 88111, 95904 Hz.
+
+\begin{DoxyNote}{Note}
+The A\+A\+X A\+P\+I does not currently provide a selector for 32 k\+Hz sample rate support
+\end{DoxyNote}
+Track formats Media Composer supports only four track formats\+: 
+\begin{DoxyItemize}
+\item Mono 
+\item Stereo (interleaved L/\+R)  
+\item 5.\+1 surround in Pro Tools order (L, C, R, Ls, Rs, Lfe)  
+\item 7.\+1 surround in Pro Tools order (L, C, R, Lss, Rss, Lsr, Lsr, Lfe)  
+\end{DoxyItemize}
+
+Effects will only see these track formats on input.
+
+\begin{DoxyNote}{Note}
+Plug-\/ins that support width-\/changing configurations between supported and unsupported track formats are not compatible with Media Composer
+\end{DoxyNote}
+Channel ordering for plug-\/ins in Media Composer is identical to the channel ordering in Pro Tools. The channel ordering presentation to users may vary from the channel ordering that is used when sending audio buffers to Pro Tools; Media Composer re-\/orders channels to Pro Tools order prior to presenting the audio to the effect.
+
+\hypertarget{a00361_subsection__aax_media_composer_guide__features__presets}{}\subsubsection{Preset management}\label{a00361_subsection__aax_media_composer_guide__features__presets}
+ Media Composer stores plug-\/in presets in several locations within the app. Presets may be stored and accessed through the following workflows\+: 
+\begin{DoxyItemize}
+\item Presets can be stored in Media Composer bins by dragging the pink effect icon from the top of the effect editor window into a bin window.  
+\item Track effect presets are stored with their tracks in the sequence  
+\item Audio\+Suite presets are stored with their audio clips in the sequence  
+\end{DoxyItemize}
+
+The storage of Audio\+Suite presets with clips in Media Composer is very different from Pro Tools. To ensure compatibility with Media Composer, it is very important that any Audio\+Suite effect can be re-\/rendered from the source media at any time.
+
+\hypertarget{a00361_subsubsection__aax_media_composer_guide__features__presets__persistence_notes}{}\paragraph{Plug-\/in preset compatibility and persistance}\label{a00361_subsubsection__aax_media_composer_guide__features__presets__persistence_notes}
+ It is always important to design A\+A\+X plug-\/in preset data in a way that will be compatible across different systems and at different points in time. This is particularly true when designing an A\+A\+X plug-\/in to be compatible with Media Composer.
+
+Media Composer sequences carrying presets can be exported as A\+A\+F, and these sequences may be moved freely between Media Composer systems on different operating systems and platforms. Therefore, it is important that plug-\/in preset data is not platform specific. A plug-\/in loaded in any given Media Composer system must be able to successfully read, parse, and apply preset information that was created on a different system.
+
+Presets also persist for a long time in sequences, so preset information should be formatted in a way that newer plug-\/ins can read older version\textquotesingle{}s data, and older versions can read newer version\textquotesingle{}s data.
+
+In addition, Media Composer 8.\+4 and higher can access factory presets and user-\/created presets interoperably with Pro Tools. A user can save a preset in one application, and access it in the other.
+
+These preset compatibility considerations also apply to plug-\/ins carried over from legacy plug-\/in formats such as T\+D\+M/\+R\+T\+A\+S. Media Composer 8.\+1 and higher (with 64-\/bit A\+A\+X support) will match plug-\/in I\+Ds when loading sequence data saved with Media Composer 7 and below, which use older plug-\/in formats. The same system is used for matching plug-\/in I\+Ds when moving presets between different versions of Pro Tools, and between Pro Tools and Media Composer\+: in all cases, a preset saved for a particular plug-\/in I\+D must be compatible with all other plug-\/ins that use that I\+D, regardless of the plug-\/in format.
+
+\hypertarget{a00361_subsubsection__aax_media_composer_guide__features__presets__comparison}{}\paragraph{Plug-\/in preset data comparison}\label{a00361_subsubsection__aax_media_composer_guide__features__presets__comparison}
+ Media Composer\textquotesingle{}s rendered Audio\+Suite effect feature relies on a comparison of plug-\/in settings chunk data. Unlike in Pro Tools, this operation uses direct data comparison rather than \hyperlink{a00061_a1e86f849e970c9998313fc7d451ccf85}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Compare\+Active\+Chunk()}. Therefore, Media Composer compatibility and proper operation of Audio\+Suite rendering in Media Composer depends on the plug-\/in having fully consistent A\+A\+X preset contents from one run to the next.
+
+Two specific areas where problems can occur are\+:
+
+
+\begin{DoxyItemize}
+\item Uninitialized memory in the preset chunk data
+\item Floating point values in the preset chunk data
+\end{DoxyItemize}
+
+Both of these can result in differences between settings chunks representing the same plug-\/in state, which causes Media Composer to perpetually re-\/render the plug-\/in.
+
+The problem of uninitialized memory is obvious. Given a particular plug-\/in state, Media Composer expects that any retrieved settings chunk will contain matching data regardless of when the chunk is retrieved. When the chunk contains uninitialized data this data does not match between different retrieved chunks. The fix, of course, is to make sure the entire chunk is initialized, for example by setting the entire chunk to zeroes before filling in the data.
+
+The problem of floating point values is more subtle. Depending on the plug-\/in\textquotesingle{}s parameter implementation, floating point values may be slightly different in the lowest-\/order bits when set onto the plug-\/in as part of an incoming chunk and when subsequently read out. When this occurs, Media Composer sees a mismatch in the chunk data, which causes the Audio\+Suite plug-\/in to unexpectedly be seen as requiring a new render.
+
+A\+A\+X plug-\/in developers will need to avoid both of these conditions in order to maintain compatibility with Media Composer\textquotesingle{}s Audio\+Suite effect rendering model.
+
+\hypertarget{a00361_subsection__aax_media_composer_guide__features__unsupported}{}\subsubsection{Unsupported features}\label{a00361_subsection__aax_media_composer_guide__features__unsupported}
+ The following A\+A\+X features are not supported by Media Composer. Plug-\/ins that require these features will not be compatible with Media Composer. If your plug-\/ins use these features for advanced functionality but not for basic operation then you should document this restriction for Media Composer users.
+
+
+\begin{DoxyItemize}
+\item Advanced audio routing  Media Composer has a simplified audio topology with only tracks and a single master fader. There are no side chains, no busses, and no submasters. As a result, Media Composer does not support extended routing options such as \hyperlink{a00338}{Sidechain Inputs} or \hyperlink{a00339}{Auxiliary Output Stems}  
+\item Transport interface  Media Composer does not fully support the \hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} interface. In addition, early versions of Media Composer 8 that do not support this interface at all may incorrectly return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S} to method calls on this interface. More recent versions of Media Composer will either provide valid information or return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D}.  
+\item M\+I\+D\+I  Media Composer does not support M\+I\+D\+I routing to and from plug-\/in instances, and no \hyperlink{a00336}{A\+A\+X M\+I\+D\+I features} are supported by Media Composer.  
+\item External control surfaces  Although Media Composer does support external control surfaces for some editing functions, it is not currently possible to control plug-\/in parameters using external control surface hardware in Media Composer.  
+\end{DoxyItemize}
+
+\hypertarget{a00361_subsection__aax_media_composer_guide__features__additional_notes}{}\subsubsection{Additional feature support notes}\label{a00361_subsection__aax_media_composer_guide__features__additional_notes}
+ 
+\begin{DoxyItemize}
+\item \hyperlink{a00288}{A\+A\+X} plug-\/in notification support varies between Media Composer and Pro Tools. Media Composer does not support the following notifications, and may not support additional notifications as well\+: \begin{DoxyItemize}
+\item \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406eaa55c7e25741c0d4f81cc49394e96a43c}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+A\+S\+Processing\+State} \item \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea8ca3f7d5e93eecf945682f6fc55f5263}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+A\+S\+Preview\+State}. \item \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea013a21c2c111bac54b962b40f1b4bc1f}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Session\+Being\+Opened}\end{DoxyItemize}
+
+
+
+\item Media Composer does not support Audio\+Suite rendering to a separate track (see \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eadd8839e5678c8880215e318197cc8d3a}{A\+A\+X\+\_\+e\+Property\+\_\+\+Destination\+Track})  
+\end{DoxyItemize}
+
+
+
+ \hypertarget{a00361_aax_media_composer_guide__additional_information}{}\subsection{Additional Information}\label{a00361_aax_media_composer_guide__additional_information}
+ \hypertarget{a00361_subsection__aax_media_composer_guide__audio_engine}{}\subsubsection{Audio Engine features and behavior}\label{a00361_subsection__aax_media_composer_guide__audio_engine}
+Media Composer shares the same audio engine as Pro Tools (A\+A\+E) and both applications share the same advanced audio processing features. However, some aspects of plug-\/in operation are different between the two apps.
+
+Here are some important notes regarding how Media Composer handles plug-\/in instances within the audio engine\+: 
+\begin{DoxyItemize}
+\item Media Composer only runs plug-\/ins when Media Composer is playing. Unlike Pro Tools, Plug-\/ins stop processing when Media Composer stops playing.  
+\item Media Composer buffer sizes are always 1024 samples, and execution is not strictly linked to real-\/time. Processing is generally between four and eight frames ahead of when the audio is heard.  
+\item Media Composer will render, mix down, and export real-\/time effects as fast as the processor will allow, typically much faster than real-\/time, so be careful of introducing real-\/time dependencies.  
+\item Media Composer has a background render capability, so you cannot expect the G\+U\+I to be available, or even be possible on the system performing the render.  
+\item Plug-\/ins are frequently disposed and re-\/created on their preset data. This happens with every edit that changes the number, length, or position of playable clips in the timeline.  
+\end{DoxyItemize}
+
+For more detailed information about how A\+A\+E handles plug-\/in loading and processing, see \hyperlink{a00360_aax_pro_tools_guide_03_audio_engine_behavior}{Audio Engine Behavior and Features} in the \hyperlink{a00360}{Pro Tools Guide}.
+
+\hypertarget{a00361_subsection__aax_media_composer_guide__debugging}{}\subsubsection{Debugging A\+A\+X plug-\/ins in Media Composer}\label{a00361_subsection__aax_media_composer_guide__debugging}
+ Media Composer does not support attaching a debugger in order to debug plug-\/ins while they are loaded within the app. In addition, Avid does not currently provide debuggable \char`\"{}developer build\char`\"{} versions of Media Composer. You must therefore rely on logging information for debugging your plug-\/ins in Media Composer, or debug your plug-\/ins using other A\+A\+X hosts such as a Pro Tools development build or the Digi\+Shell command-\/line environment.
+
+For more information about debugging in Pro Tools and Digi\+Shell, see \hyperlink{a00360_aax_pro_tools_guide_06_debugging_aax_plugins}{Debugging A\+A\+X plug-\/ins} in the \hyperlink{a00360}{Pro Tools Guide}.
+
+ Collaboration diagram for Media Composer Guide\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{a00361}
+\end{center}
+\end{figure}

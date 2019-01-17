@@ -1,0 +1,861 @@
+\hypertarget{a00042}{}\section{A\+A\+X\+\_\+\+C\+String Class Reference}
+\label{a00042}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+String.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{a00473}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{a00474}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+A generic A\+A\+X string class with similar functionality to {\ttfamily std\+::string} \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uint32\+\_\+t \hyperlink{a00042_a72ac5c3649eda73815efb6deb139cee4}{Length} () const 
+\item 
+virtual uint32\+\_\+t \hyperlink{a00042_a2d4bc02baad1787f74d8a59d9c68d3a0}{Max\+Length} () const 
+\item 
+virtual const char $\ast$ \hyperlink{a00042_aa2fd3c16a7bc036d26b66159caa576f3}{Get} () const 
+\item 
+virtual void \hyperlink{a00042_a0cdc8c41b8badaa9bcde411db95ac84d}{Set} (const char $\ast$i\+String)
+\item 
+virtual \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \& \hyperlink{a00042_a16f7f37d975e9c6fe7a5d1ef97eb5247}{operator=} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&i\+Other)
+\item 
+virtual \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \& \hyperlink{a00042_a2beb6db60d5a5f1109ef84105da7b63d}{operator=} (const char $\ast$i\+String)
+\item 
+\hyperlink{a00042_aaa78b6da31e2540fefdd31f108262bef}{A\+A\+X\+\_\+\+C\+String} ()
+\item 
+\hyperlink{a00042_acfcad29d78267fd74592edf79bbe4b5d}{A\+A\+X\+\_\+\+C\+String} (const char $\ast$str)
+\item 
+\hyperlink{a00042_a048cec8f3bb8c1c1173f134232c01bf9}{A\+A\+X\+\_\+\+C\+String} (const std\+::string \&str)
+\item 
+\hyperlink{a00042_a5d27338ab3b3175c1e0e7e13bf6dab03}{A\+A\+X\+\_\+\+C\+String} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other)
+\item 
+\hyperlink{a00042_a46d28b14a31fca79480d2f4ce9446939}{A\+A\+X\+\_\+\+C\+String} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&other)
+\item 
+std\+::string \& \hyperlink{a00042_a4ce07d506cd4262a5e763c7d30c30740}{Std\+String} ()
+\item 
+const std\+::string \& \hyperlink{a00042_a56a549e3e136e2f3dbf94a15ee744fde}{Std\+String} () const 
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_ae62cc4543c9ac4d8682176474c46d8d2}{operator=} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_ad6db6f32c710ef0897ca09cb8ff9f3be}{operator=} (const std\+::string \&other)
+\item 
+void \hyperlink{a00042_a866d456c7cad181d1feda559a0ca3d07}{Clear} ()
+\item 
+bool \hyperlink{a00042_acade83c65b1324c7aaee835c7d54642d}{Empty} () const 
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a78ab9164c3b4aa17d13191fc7ea14fc0}{Erase} (uint32\+\_\+t pos, uint32\+\_\+t n)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a53b726507fec5a24ffb46e9af194a958}{Append} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a6ed6be18fcfa25acfeb7967e282d9fa8}{Append} (const char $\ast$str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a3b04d5d9e161a75be5bfe71cfb15d4dc}{Append\+Number} (double number, int32\+\_\+t precision)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a786e1ba24a2b7a893d1716884e887ef2}{Append\+Number} (int32\+\_\+t number)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a245305cf7cea6f5ba710bdbf7803b535}{Append\+Hex} (int32\+\_\+t number, int32\+\_\+t width)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_ac75c6fa9a9feca688723726752e276ef}{Insert} (uint32\+\_\+t pos, const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a5a5feb73f4187fddc7da0d1d8d821468}{Insert} (uint32\+\_\+t pos, const char $\ast$str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a4657b3b7b319a76dc6e0a2c0fd9f15f1}{Insert\+Number} (uint32\+\_\+t pos, double number, int32\+\_\+t precision)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a75f4b0d92de2f70405a115ff32546d99}{Insert\+Number} (uint32\+\_\+t pos, int32\+\_\+t number)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a997f5d35fe26da01fcd895d642a93c2e}{Insert\+Hex} (uint32\+\_\+t pos, int32\+\_\+t number, int32\+\_\+t width)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a5c9ce66b740633bf47505a3129e557c2}{Replace} (uint32\+\_\+t pos, uint32\+\_\+t n, const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a0042478ce045fd36b91a7cfc1122ffb6}{Replace} (uint32\+\_\+t pos, uint32\+\_\+t n, const char $\ast$str)
+\item 
+uint32\+\_\+t \hyperlink{a00042_ad09b3b479c72812c3b3ecbb0531856ea}{Find\+First} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&find\+Str) const 
+\item 
+uint32\+\_\+t \hyperlink{a00042_ad526e686544aba0ebec49abd3cc46ede}{Find\+First} (const char $\ast$find\+Str) const 
+\item 
+uint32\+\_\+t \hyperlink{a00042_a32708c0433461848c01e29c956c3deb7}{Find\+First} (char find\+Char) const 
+\item 
+uint32\+\_\+t \hyperlink{a00042_a2e4de3781d424e17b1c5773887c0f805}{Find\+Last} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&find\+Str) const 
+\item 
+uint32\+\_\+t \hyperlink{a00042_aaf25b0ada50d58a795c4407f173b8758}{Find\+Last} (const char $\ast$find\+Str) const 
+\item 
+uint32\+\_\+t \hyperlink{a00042_a5a76c8c89b46059d95fa677f0abf5d5e}{Find\+Last} (char find\+Char) const 
+\item 
+const char $\ast$ \hyperlink{a00042_abebd10e42f859dd4a986551e47dfd9c5}{C\+String} () const 
+\item 
+bool \hyperlink{a00042_a43f9f9e538c2da819b731de9de9b7db0}{To\+Double} (double $\ast$o\+Value) const 
+\item 
+bool \hyperlink{a00042_a1c22f5fd87d916ab2c655e8ee2783c25}{To\+Integer} (int32\+\_\+t $\ast$o\+Value) const 
+\item 
+void \hyperlink{a00042_a4247c1ab096405732f5d2ce39e0bc47a}{Sub\+String} (uint32\+\_\+t pos, uint32\+\_\+t n, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$output\+Str) const 
+\item 
+bool \hyperlink{a00042_a701d4edeef3ccf5f1820e190807ef53e}{Equals} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other) const 
+\item 
+bool \hyperlink{a00042_a5c86a60b0e57718e9c9c353b70fa9855}{Equals} (const char $\ast$other) const 
+\item 
+bool \hyperlink{a00042_a730350a9df26c1e8bf5adb29b31551bb}{Equals} (const std\+::string \&other) const 
+\item 
+bool \hyperlink{a00042_a341191f31630f76d8b5014800d185a27}{operator==} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other) const 
+\item 
+bool \hyperlink{a00042_a9a8d237f25c8f295dfe678975250af02}{operator==} (const char $\ast$other\+Str) const 
+\item 
+bool \hyperlink{a00042_a88207de6a00a25105c2517dc52b07441}{operator==} (const std\+::string \&other\+Str) const 
+\item 
+bool \hyperlink{a00042_a6c2a9046acc1cd7d60fbf8dff9ce607e}{operator!=} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other) const 
+\item 
+bool \hyperlink{a00042_a08f5a7612781332849b597d113f93674}{operator!=} (const char $\ast$other\+Str) const 
+\item 
+bool \hyperlink{a00042_a3db3523c82b471afd3e8ce99f9c42545}{operator!=} (const std\+::string \&other\+Str) const 
+\item 
+bool \hyperlink{a00042_a8d179fb0f0b52868545873969e5590c1}{operator$<$} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other) const 
+\item 
+bool \hyperlink{a00042_a38e578601bc3ef1f0b51ca93d7d435a5}{operator$>$} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&other) const 
+\item 
+const char \& \hyperlink{a00042_a48c5d06540798492ceb32307420f42cf}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index) const 
+\item 
+char \& \hyperlink{a00042_ac27c664f0dcca1d36e516b3678763e07}{operator\mbox{[}$\,$\mbox{]}} (uint32\+\_\+t index)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a38c818c2719546d7060504b586a38ab9}{operator+=} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_a771f06413be5ec1e228aaa2c9ea2b4fa}{operator+=} (const std\+::string \&str)
+\item 
+\hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \& \hyperlink{a00042_ae339e119bf41150c10e06f6912f8b14c}{operator+=} (const char $\ast$str)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t \hyperlink{a00042_afa6319e07e02639611c86e1606867564}{k\+Invalid\+Index} = static\+\_\+cast$<$uint32\+\_\+t$>$(-\/1)
+\item 
+static const uint32\+\_\+t \hyperlink{a00042_aac7fe2ef7191455a685602c9122ce515}{k\+Max\+String\+Length} = static\+\_\+cast$<$uint32\+\_\+t$>$(-\/2)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{a00042_a57df174f0327d832016b05ec17bcf87c}{m\+String}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{a00042_a96d2487d89ed481026b9d07ee7aab5d2}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\item 
+std\+::istream \& \hyperlink{a00042_a0aeba574cb25673bf03675a39fb7bbe0}{operator$>$$>$} (std\+::istream \&os, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00042_aaa78b6da31e2540fefdd31f108262bef}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+String\+::\+A\+A\+X\+\_\+\+C\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00042_aaa78b6da31e2540fefdd31f108262bef}
+Constructs an empty string. \hypertarget{a00042_acfcad29d78267fd74592edf79bbe4b5d}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+String\+::\+A\+A\+X\+\_\+\+C\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_acfcad29d78267fd74592edf79bbe4b5d}
+Implicit conversion constructor\+: Constructs a string with a const char$\ast$ pointer to copy. \hypertarget{a00042_a048cec8f3bb8c1c1173f134232c01bf9}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+String\+::\+A\+A\+X\+\_\+\+C\+String (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{a00042_a048cec8f3bb8c1c1173f134232c01bf9}
+Copy constructor\+: Constructs a string from a std\+::string. Beware of S\+T\+L variations across various binaries. \hypertarget{a00042_a5d27338ab3b3175c1e0e7e13bf6dab03}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+String\+::\+A\+A\+X\+\_\+\+C\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00042_a5d27338ab3b3175c1e0e7e13bf6dab03}
+Copy constructor\+: Constructs a string with another concrete \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String}. \hypertarget{a00042_a46d28b14a31fca79480d2f4ce9446939}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+String\+::\+A\+A\+X\+\_\+\+C\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00042_a46d28b14a31fca79480d2f4ce9446939}
+Copy constructor\+: Constructs a string from another string that meets the \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} interface. 
+
+\subsection{Member Function Documentation}
+\hypertarget{a00042_a72ac5c3649eda73815efb6deb139cee4}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Length@{Length}}
+\index{Length@{Length}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_a72ac5c3649eda73815efb6deb139cee4}
+Length methods 
+
+Implements \hyperlink{a00113_a4d4440bf68aa5ae4bf3dc6639cbf95c9}{A\+A\+X\+\_\+\+I\+String}.
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$\+::\+A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate(), A\+A\+X\+\_\+\+C\+String\+Abbreviations\+::\+Add(), A\+A\+X\+\_\+\+C\+String\+Abbreviations\+::\+Get(), A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+Value\+To\+String(), A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String(), and A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a72ac5c3649eda73815efb6deb139cee4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a2d4bc02baad1787f74d8a59d9c68d3a0}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Max\+Length@{Max\+Length}}
+\index{Max\+Length@{Max\+Length}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Max\+Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Max\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_a2d4bc02baad1787f74d8a59d9c68d3a0}
+
+
+Implements \hyperlink{a00113_aa898760d69880aeefbd42c0109889c59}{A\+A\+X\+\_\+\+I\+String}.
+
+\hypertarget{a00042_aa2fd3c16a7bc036d26b66159caa576f3}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Get@{Get}}
+\index{Get@{Get}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ A\+A\+X\+\_\+\+C\+String\+::\+Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_aa2fd3c16a7bc036d26b66159caa576f3}
+C string methods 
+
+Implements \hyperlink{a00113_a63ff078d3df0d2e0c16c078a2ac4921e}{A\+A\+X\+\_\+\+I\+String}.
+
+
+
+Referenced by A\+A\+X\+::\+Copy\+Page\+Table(), A\+A\+X\+::\+Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal(), and A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::\+Shortened\+Name().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_aa2fd3c16a7bc036d26b66159caa576f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a0cdc8c41b8badaa9bcde411db95ac84d}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Set@{Set}}
+\index{Set@{Set}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}virtual void A\+A\+X\+\_\+\+C\+String\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_a0cdc8c41b8badaa9bcde411db95ac84d}
+
+
+Implements \hyperlink{a00113_a9ad28fba3ccc952de495f055a10e3b19}{A\+A\+X\+\_\+\+I\+String}.
+
+\hypertarget{a00042_a16f7f37d975e9c6fe7a5d1ef97eb5247}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{i\+Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_a16f7f37d975e9c6fe7a5d1ef97eb5247}
+Assignment operators 
+
+Implements \hyperlink{a00113_aaaf335636d64612714ffa93859d1a39c}{A\+A\+X\+\_\+\+I\+String}.
+
+\hypertarget{a00042_a2beb6db60d5a5f1109ef84105da7b63d}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00042_a2beb6db60d5a5f1109ef84105da7b63d}
+
+
+Implements \hyperlink{a00113_abccb4049e229d265fdb8635342add574}{A\+A\+X\+\_\+\+I\+String}.
+
+\hypertarget{a00042_a4ce07d506cd4262a5e763c7d30c30740}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Std\+String@{Std\+String}}
+\index{Std\+String@{Std\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Std\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string\& A\+A\+X\+\_\+\+C\+String\+::\+Std\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00042_a4ce07d506cd4262a5e763c7d30c30740}
+Direct access to a std\+::string. \hypertarget{a00042_a56a549e3e136e2f3dbf94a15ee744fde}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Std\+String@{Std\+String}}
+\index{Std\+String@{Std\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Std\+String}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& A\+A\+X\+\_\+\+C\+String\+::\+Std\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00042_a56a549e3e136e2f3dbf94a15ee744fde}
+Direct access to a const std\+::string. \hypertarget{a00042_ae62cc4543c9ac4d8682176474c46d8d2}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00042_ae62cc4543c9ac4d8682176474c46d8d2}
+Assignment operator from another \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String}. This is kind of required or the compiler will make one for us. \hypertarget{a00042_ad6db6f32c710ef0897ca09cb8ff9f3be}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00042_ad6db6f32c710ef0897ca09cb8ff9f3be}
+Assignment operator from a std\+::string. Beware of S\+T\+L variations across various binaries. \hypertarget{a00042_a866d456c7cad181d1feda559a0ca3d07}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+String\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00042_a866d456c7cad181d1feda559a0ca3d07}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+Value\+To\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a866d456c7cad181d1feda559a0ca3d07_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_acade83c65b1324c7aaee835c7d54642d}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Empty@{Empty}}
+\index{Empty@{Empty}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00042_acade83c65b1324c7aaee835c7d54642d}
+\hypertarget{a00042_a78ab9164c3b4aa17d13191fc7ea14fc0}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Erase@{Erase}}
+\index{Erase@{Erase}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Erase (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{uint32\+\_\+t}]{n}
+\end{DoxyParamCaption}
+)}\label{a00042_a78ab9164c3b4aa17d13191fc7ea14fc0}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), and A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+Value\+To\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a78ab9164c3b4aa17d13191fc7ea14fc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a53b726507fec5a24ffb46e9af194a958}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Append@{Append}}
+\index{Append@{Append}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Append (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a53b726507fec5a24ffb46e9af194a958}
+
+
+Referenced by A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Message\+Info\+Delegate\+::\+To\+String\+\_\+\+Append\+Byte\+Range(), A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Message\+Info\+Delegate\+::\+To\+String\+\_\+\+Append\+C\+Str(), A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+Value\+To\+String(), and A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a53b726507fec5a24ffb46e9af194a958_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a6ed6be18fcfa25acfeb7967e282d9fa8}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Append@{Append}}
+\index{Append@{Append}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Append (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a6ed6be18fcfa25acfeb7967e282d9fa8}
+\hypertarget{a00042_a3b04d5d9e161a75be5bfe71cfb15d4dc}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Append\+Number@{Append\+Number}}
+\index{Append\+Number@{Append\+Number}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Append\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Append\+Number (
+\begin{DoxyParamCaption}
+\item[{double}]{number, }
+\item[{int32\+\_\+t}]{precision}
+\end{DoxyParamCaption}
+)}\label{a00042_a3b04d5d9e161a75be5bfe71cfb15d4dc}
+
+
+Referenced by A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Message\+Info\+Delegate\+::\+To\+String\+\_\+\+Append\+Number(), and A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+Value\+To\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a3b04d5d9e161a75be5bfe71cfb15d4dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a786e1ba24a2b7a893d1716884e887ef2}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Append\+Number@{Append\+Number}}
+\index{Append\+Number@{Append\+Number}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Append\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Append\+Number (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)}\label{a00042_a786e1ba24a2b7a893d1716884e887ef2}
+\hypertarget{a00042_a245305cf7cea6f5ba710bdbf7803b535}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Append\+Hex@{Append\+Hex}}
+\index{Append\+Hex@{Append\+Hex}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Append\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Append\+Hex (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{number, }
+\item[{int32\+\_\+t}]{width}
+\end{DoxyParamCaption}
+)}\label{a00042_a245305cf7cea6f5ba710bdbf7803b535}
+
+
+Referenced by A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Message\+Info\+Delegate\+::\+To\+String\+\_\+\+Append\+Byte\+Range().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a245305cf7cea6f5ba710bdbf7803b535_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_ac75c6fa9a9feca688723726752e276ef}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Insert@{Insert}}
+\index{Insert@{Insert}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Insert (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_ac75c6fa9a9feca688723726752e276ef}
+\hypertarget{a00042_a5a5feb73f4187fddc7da0d1d8d821468}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Insert@{Insert}}
+\index{Insert@{Insert}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Insert (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a5a5feb73f4187fddc7da0d1d8d821468}
+\hypertarget{a00042_a4657b3b7b319a76dc6e0a2c0fd9f15f1}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Insert\+Number@{Insert\+Number}}
+\index{Insert\+Number@{Insert\+Number}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Insert\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Insert\+Number (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{double}]{number, }
+\item[{int32\+\_\+t}]{precision}
+\end{DoxyParamCaption}
+)}\label{a00042_a4657b3b7b319a76dc6e0a2c0fd9f15f1}
+\hypertarget{a00042_a75f4b0d92de2f70405a115ff32546d99}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Insert\+Number@{Insert\+Number}}
+\index{Insert\+Number@{Insert\+Number}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Insert\+Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Insert\+Number (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{int32\+\_\+t}]{number}
+\end{DoxyParamCaption}
+)}\label{a00042_a75f4b0d92de2f70405a115ff32546d99}
+\hypertarget{a00042_a997f5d35fe26da01fcd895d642a93c2e}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Insert\+Hex@{Insert\+Hex}}
+\index{Insert\+Hex@{Insert\+Hex}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Insert\+Hex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Insert\+Hex (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{int32\+\_\+t}]{number, }
+\item[{int32\+\_\+t}]{width}
+\end{DoxyParamCaption}
+)}\label{a00042_a997f5d35fe26da01fcd895d642a93c2e}
+\hypertarget{a00042_a5c9ce66b740633bf47505a3129e557c2}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Replace@{Replace}}
+\index{Replace@{Replace}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Replace}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{uint32\+\_\+t}]{n, }
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a5c9ce66b740633bf47505a3129e557c2}
+\hypertarget{a00042_a0042478ce045fd36b91a7cfc1122ffb6}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Replace@{Replace}}
+\index{Replace@{Replace}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Replace}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::\+Replace (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{uint32\+\_\+t}]{n, }
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a0042478ce045fd36b91a7cfc1122ffb6}
+\hypertarget{a00042_ad09b3b479c72812c3b3ecbb0531856ea}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+First@{Find\+First}}
+\index{Find\+First@{Find\+First}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+First}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+First (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{find\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_ad09b3b479c72812c3b3ecbb0531856ea}
+\hypertarget{a00042_ad526e686544aba0ebec49abd3cc46ede}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+First@{Find\+First}}
+\index{Find\+First@{Find\+First}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+First}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+First (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{find\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_ad526e686544aba0ebec49abd3cc46ede}
+\hypertarget{a00042_a32708c0433461848c01e29c956c3deb7}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+First@{Find\+First}}
+\index{Find\+First@{Find\+First}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+First}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+First (
+\begin{DoxyParamCaption}
+\item[{char}]{find\+Char}
+\end{DoxyParamCaption}
+) const}\label{a00042_a32708c0433461848c01e29c956c3deb7}
+\hypertarget{a00042_a2e4de3781d424e17b1c5773887c0f805}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+Last@{Find\+Last}}
+\index{Find\+Last@{Find\+Last}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+Last}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+Last (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{find\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a2e4de3781d424e17b1c5773887c0f805}
+\hypertarget{a00042_aaf25b0ada50d58a795c4407f173b8758}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+Last@{Find\+Last}}
+\index{Find\+Last@{Find\+Last}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+Last}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+Last (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{find\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_aaf25b0ada50d58a795c4407f173b8758}
+\hypertarget{a00042_a5a76c8c89b46059d95fa677f0abf5d5e}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Find\+Last@{Find\+Last}}
+\index{Find\+Last@{Find\+Last}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Find\+Last}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::\+Find\+Last (
+\begin{DoxyParamCaption}
+\item[{char}]{find\+Char}
+\end{DoxyParamCaption}
+) const}\label{a00042_a5a76c8c89b46059d95fa677f0abf5d5e}
+\hypertarget{a00042_abebd10e42f859dd4a986551e47dfd9c5}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!C\+String@{C\+String}}
+\index{C\+String@{C\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{C\+String}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+A\+X\+\_\+\+C\+String\+::\+C\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00042_abebd10e42f859dd4a986551e47dfd9c5}
+
+
+Referenced by A\+A\+X\+::\+Copy\+Page\+Table(), and A\+A\+X\+\_\+\+C\+Stateless\+Parameter\+::\+Identifier().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_abebd10e42f859dd4a986551e47dfd9c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a43f9f9e538c2da819b731de9de9b7db0}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!To\+Double@{To\+Double}}
+\index{To\+Double@{To\+Double}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{To\+Double}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+To\+Double (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{o\+Value}
+\end{DoxyParamCaption}
+) const}\label{a00042_a43f9f9e538c2da819b731de9de9b7db0}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+::\+String\+To\+Value().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a43f9f9e538c2da819b731de9de9b7db0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a1c22f5fd87d916ab2c655e8ee2783c25}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!To\+Integer@{To\+Integer}}
+\index{To\+Integer@{To\+Integer}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{To\+Integer}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+To\+Integer (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{o\+Value}
+\end{DoxyParamCaption}
+) const}\label{a00042_a1c22f5fd87d916ab2c655e8ee2783c25}
+\hypertarget{a00042_a4247c1ab096405732f5d2ce39e0bc47a}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Sub\+String@{Sub\+String}}
+\index{Sub\+String@{Sub\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Sub\+String}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+String\+::\+Sub\+String (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{pos, }
+\item[{uint32\+\_\+t}]{n, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{output\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a4247c1ab096405732f5d2ce39e0bc47a}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), and A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a4247c1ab096405732f5d2ce39e0bc47a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a701d4edeef3ccf5f1820e190807ef53e}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Equals@{Equals}}
+\index{Equals@{Equals}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Equals}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+Equals (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00042_a701d4edeef3ccf5f1820e190807ef53e}
+
+
+References operator==().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a701d4edeef3ccf5f1820e190807ef53e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a5c86a60b0e57718e9c9c353b70fa9855}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Equals@{Equals}}
+\index{Equals@{Equals}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Equals}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+Equals (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00042_a5c86a60b0e57718e9c9c353b70fa9855}
+
+
+References operator==().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a5c86a60b0e57718e9c9c353b70fa9855_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a730350a9df26c1e8bf5adb29b31551bb}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!Equals@{Equals}}
+\index{Equals@{Equals}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{Equals}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::\+Equals (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00042_a730350a9df26c1e8bf5adb29b31551bb}
+
+
+References operator==().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a730350a9df26c1e8bf5adb29b31551bb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a341191f31630f76d8b5014800d185a27}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator==@{operator==}}
+\index{operator==@{operator==}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{a00042_a341191f31630f76d8b5014800d185a27}
+
+
+Referenced by Equals().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00042_a341191f31630f76d8b5014800d185a27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00042_a9a8d237f25c8f295dfe678975250af02}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator==@{operator==}}
+\index{operator==@{operator==}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{other\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a9a8d237f25c8f295dfe678975250af02}
+\hypertarget{a00042_a88207de6a00a25105c2517dc52b07441}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator==@{operator==}}
+\index{operator==@{operator==}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{other\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a88207de6a00a25105c2517dc52b07441}
+\hypertarget{a00042_a6c2a9046acc1cd7d60fbf8dff9ce607e}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{a00042_a6c2a9046acc1cd7d60fbf8dff9ce607e}
+\hypertarget{a00042_a08f5a7612781332849b597d113f93674}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{other\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a08f5a7612781332849b597d113f93674}
+\hypertarget{a00042_a3db3523c82b471afd3e8ce99f9c42545}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator!= (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{other\+Str}
+\end{DoxyParamCaption}
+) const}\label{a00042_a3db3523c82b471afd3e8ce99f9c42545}
+\hypertarget{a00042_a8d179fb0f0b52868545873969e5590c1}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{a00042_a8d179fb0f0b52868545873969e5590c1}
+\hypertarget{a00042_a38e578601bc3ef1f0b51ca93d7d435a5}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+String\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{a00042_a38e578601bc3ef1f0b51ca93d7d435a5}
+\hypertarget{a00042_a48c5d06540798492ceb32307420f42cf}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const char\& A\+A\+X\+\_\+\+C\+String\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{a00042_a48c5d06540798492ceb32307420f42cf}
+\hypertarget{a00042_ac27c664f0dcca1d36e516b3678763e07}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}char\& A\+A\+X\+\_\+\+C\+String\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{a00042_ac27c664f0dcca1d36e516b3678763e07}
+\hypertarget{a00042_a38c818c2719546d7060504b586a38ab9}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a38c818c2719546d7060504b586a38ab9}
+\hypertarget{a00042_a771f06413be5ec1e228aaa2c9ea2b4fa}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_a771f06413be5ec1e228aaa2c9ea2b4fa}
+\hypertarget{a00042_ae339e119bf41150c10e06f6912f8b14c}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+String}\& A\+A\+X\+\_\+\+C\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\label{a00042_ae339e119bf41150c10e06f6912f8b14c}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{a00042_a96d2487d89ed481026b9d07ee7aab5d2}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{a00042_a96d2487d89ed481026b9d07ee7aab5d2}
+output stream operator for concrete \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \hypertarget{a00042_a0aeba574cb25673bf03675a39fb7bbe0}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{os, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{a00042_a0aeba574cb25673bf03675a39fb7bbe0}
+input stream operator for concrete \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} 
+
+\subsection{Member Data Documentation}
+\hypertarget{a00042_afa6319e07e02639611c86e1606867564}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!k\+Invalid\+Index@{k\+Invalid\+Index}}
+\index{k\+Invalid\+Index@{k\+Invalid\+Index}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{k\+Invalid\+Index}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::k\+Invalid\+Index = static\+\_\+cast$<$uint32\+\_\+t$>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}}\label{a00042_afa6319e07e02639611c86e1606867564}
+\hypertarget{a00042_aac7fe2ef7191455a685602c9122ce515}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!k\+Max\+String\+Length@{k\+Max\+String\+Length}}
+\index{k\+Max\+String\+Length@{k\+Max\+String\+Length}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{k\+Max\+String\+Length}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\+\_\+t A\+A\+X\+\_\+\+C\+String\+::k\+Max\+String\+Length = static\+\_\+cast$<$uint32\+\_\+t$>$(-\/2)\hspace{0.3cm}{\ttfamily [static]}}\label{a00042_aac7fe2ef7191455a685602c9122ce515}
+\hypertarget{a00042_a57df174f0327d832016b05ec17bcf87c}{}\index{A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}!m\+String@{m\+String}}
+\index{m\+String@{m\+String}!A\+A\+X\+\_\+\+C\+String@{A\+A\+X\+\_\+\+C\+String}}
+\subsubsection[{m\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+\_\+\+C\+String\+::m\+String\hspace{0.3cm}{\ttfamily [protected]}}\label{a00042_a57df174f0327d832016b05ec17bcf87c}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00197}{A\+A\+X\+\_\+\+C\+String.\+h}\end{DoxyCompactItemize}

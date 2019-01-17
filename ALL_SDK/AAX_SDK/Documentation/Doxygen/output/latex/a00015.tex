@@ -1,0 +1,245 @@
+\hypertarget{a00015}{}\section{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$ Class Template Reference}
+\label{a00015}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{a00408}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{a00409}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T$>$class A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}
+
+A percent decorator conforming to \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. 
+
+This class is an \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}, meaning that it acts as a wrapper for other display delegates or concrete display types. For more information about display delegate decorators in \hyperlink{a00288}{A\+A\+X}, see \hyperlink{a00346_displaydelegates_decorators}{Display delegate decorators}
+
+The behavior of this class it to provide conversion to and from d\+B values. It performs a decibel conversion on the square of the provided value (i.\+e. 20 log) before passing the value on to a concrete display delegate to get a value string. This class then appends the \char`\"{}d\+B\char`\"{} suffix to signify that the value was converted. This allows something like a gain value to remain internally linear at all times even though its display is converted to decibels.
+
+The inverse is also supported; this class can convert a decibel-\/formatted string into its associated real value. The string will first be converted to a number, then that number will have the inverse d\+B calculation applied to it to retrieve the parameter\textquotesingle{}s real value. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00015_aac7fbdbd0ce453aac8fa78cc4d1cef19}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator} (const \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate}$<$ T $>$ \&display\+Delegate)
+\item 
+virtual \hyperlink{a00015}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$ $\ast$ \hyperlink{a00015_a2abd5f4d5a8d6db7db73fadfe8a2aa04}{Clone} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the display delegate decorator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}{Value\+To\+String} (T value, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00015_ab301958be3d376757bf1bb88ded1c911}{Value\+To\+String} (T value, int32\+\_\+t max\+Num\+Chars, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value with a size constraint. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00015_a7f4645d7e464d63ef22e93c4a99f3f09}{String\+To\+Value} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&value\+String, T $\ast$value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00015_aac7fbdbd0ce453aac8fa78cc4d1cef19}{}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$\+::{\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator} (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+Display\+Delegate}$<$ T $>$ \&}]{display\+Delegate}
+\end{DoxyParamCaption}
+)}\label{a00015_aac7fbdbd0ce453aac8fa78cc4d1cef19}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00015_a2abd5f4d5a8d6db7db73fadfe8a2aa04}{}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$ $\ast$ {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$\+::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00015_a2abd5f4d5a8d6db7db73fadfe8a2aa04}
+
+
+Constructs and returns a copy of the display delegate decorator. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+AAX\_CSubclassDisplayDelegate<T>*    AAX\_CSubclassDisplayDelegate<T>::Clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassDisplayDelegate(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+This is an idiomatic method in the decorator pattern, so watch for potential problems if this method is ever changed or removed. 
+\end{DoxyNote}
+
+
+Reimplemented from \hyperlink{a00094_a8e2ad7312467089a9112ba6460fe0e5b}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}.
+
+\hypertarget{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}{}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}
+
+
+Converts a string to a real parameter value. 
+
+Override of the \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate} implementation to call into the wrapped object. Display delegate decorators should call into this implementation to pass \hyperlink{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}{Value\+To\+String()} calls on to the wrapped object after applying their own value-\/to-\/string decoration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{a00094_ada5780cfa332ac7946bf95aa65ae96f5}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00015_a147cb1d0b62b0a62c6e3bb98daf80027_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00015_ab301958be3d376757bf1bb88ded1c911}{}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{int32\+\_\+t}]{max\+Num\+Chars, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00015_ab301958be3d376757bf1bb88ded1c911}
+
+
+Converts a string to a real parameter value with a size constraint. 
+
+Override of the \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate} implementation to call into the wrapped object. Display delegate decorators should call into this implementation to pass \hyperlink{a00015_a147cb1d0b62b0a62c6e3bb98daf80027}{Value\+To\+String()} calls on to the wrapped object after applying their own value-\/to-\/string decoration.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt in}  & {\em max\+Num\+Chars} & Size hint for the desired maximum number of characters in the string (not including null termination) \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{a00094_a29a49bb21a08c1c1e59758b08396d0a4}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+Append(), A\+A\+X\+\_\+\+C\+String\+::\+Length(), and A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00015_ab301958be3d376757bf1bb88ded1c911_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00015_a7f4645d7e464d63ef22e93c4a99f3f09}{}\index{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}!String\+To\+Value@{String\+To\+Value}}
+\index{String\+To\+Value@{String\+To\+Value}!A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator@{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}}
+\subsubsection[{String\+To\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator}$<$ T $>$\+::String\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{value\+String, }
+\item[{T $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00015_a7f4645d7e464d63ef22e93c4a99f3f09}
+
+
+Converts a string to a real parameter value. 
+
+Override of the Display\+Decorator implementation to call into the wrapped object. Display delegate decorators should call into this implementation to pass \hyperlink{a00015_a7f4645d7e464d63ef22e93c4a99f3f09}{String\+To\+Value()} calls on to the wrapped object after applying their own string-\/to-\/value decoding.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{a00094_a18d19293f3eca619cb5bb7f1ffde1a8d}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+Length(), A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$\+::\+String\+To\+Value(), and A\+A\+X\+\_\+\+C\+String\+::\+Sub\+String().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00015_a7f4645d7e464d63ef22e93c4a99f3f09_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00169}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator.\+h}\end{DoxyCompactItemize}

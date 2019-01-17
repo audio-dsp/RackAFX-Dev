@@ -1,0 +1,48 @@
+\hypertarget{a00333}{}\section{Direct data access interface}
+\label{a00333}\index{Direct data access interface@{Direct data access interface}}
+
+
+\subsection{ }
+A host interface providing direct access to a plug-\/in\textquotesingle{}s algorithm memory. 
+
+{\itshape This interface represents an optional component that you can add to your plug-\/in in order to support extended features of the A\+A\+X S\+D\+K.}
+
+Some plug-\/ins require the host to retrieve non-\/meter data from the decoupled algorithm module to display on a G\+U\+I or perform additional computation. For example, the result of computing the audio spectrum or pitch data in the algorithm can be delivered to the host to display on-\/screen. This is the purpose of the \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data} interface.
+
+The \hyperlink{a00097}{Direct Data interface} provides facilities for directly accessing a plug-\/in\textquotesingle{}s algorithm memory. This interface may be used to transfer private data from the algorithm to other plug-\/in components, such as the \hyperlink{a00329}{G\+U\+I}. It may also be used as an alternative to \hyperlink{a00090_ae5dd2b5925dbc181513bca1c4ac5e716}{Post\+Packet()} to perform direct writes to the algorithm\textquotesingle{}s private data memory.
+
+To set up Direct Data, the module must be registered with the host in the plug-\/in\textquotesingle{}s Description callback like other process pointers. To add this interface to your plug-\/in at describe time, call \hyperlink{a00096_ad1a286ef7cb869e6f79423dd774ec976}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor\+::\+Add\+Proc\+Ptr()} using the \hyperlink{a00163_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data} selector.
+
+The Direct\+Data module works for all plug-\/in types, including A\+A\+X Native, A\+A\+X D\+S\+P, and A\+A\+X Audio\+Suite.\hypertarget{a00333_auxinterface_directdata_convenienceclass}{}\subsection{Convenience class}\label{a00333_auxinterface_directdata_convenienceclass}
+\hyperlink{a00016}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}, the concrete implementation of \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data}, consists of a \hyperlink{a00016_addd263d3a410d5c26148cee306cc7297}{Timer\+Wakeup\+\_\+\+Private\+Data\+Access()} function that you subclass in order to access an algorithm\textquotesingle{}s private state data. This timer wakes up at a periodic interval. In this function you can read the algorithm\textquotesingle{}s private data port to pull the state of an algorithm. Note that the wakeup period is variable depending on the plug-\/in\textquotesingle{}s buffer size and running context (real time processing, Audio\+Suite, offline bounce, etc.) Care must be taken to ensure that any data retrieved from the algorithm is either buffered to handle the thread callback periods for the various running contexts or that the plug-\/in does not depend on the Direct Data timer catching every state update.
+
+\hyperlink{a00016}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data} also includes convenience accessors to the Controller and Data Model in order to help facilitate common access scenarios. Using these, you can do any computation necessary to handle the incoming algorithm state data and send results on to the Data Model and/or the G\+U\+I interface.\hypertarget{a00333_auxinterface_directdata_privatedataaccess}{}\subsection{Private data access interface}\label{a00333_auxinterface_directdata_privatedataaccess}
+The Direct Data A\+P\+I provides a \hyperlink{a00059_afb4fa2c566547d7bd303166cf50741bb}{Timer\+Wakeup} callback with access to \hyperlink{a00111}{A\+A\+X\+\_\+\+I\+Private\+Data\+Access}. This reference is only valid within the context of the wakeup callback and cannot be stored to provide private data access in other contexts.
+
+The Private Data Access interface can be used to directly read from and write to an algorithm\textquotesingle{}s private data. These operations are not synchronized with the algorithm\textquotesingle{}s processing callback, which may asynchronously pre-\/empt the read or write operations. Plug-\/ins that use this interface should buffer all access to their private data to ensure data integrity.\hypertarget{a00333_auxinterface_directdata_modulecommunication}{}\subsection{Communicating with other modules}\label{a00333_auxinterface_directdata_modulecommunication}
+The Direct Data A\+P\+I does not include any facilities for inter-\/module communication. In order to transfer data between a plug-\/in\textquotesingle{}s \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data} object and its other objects, dedicated custom data methods in those objects\textquotesingle{} interfaces should be used. For example, to communicate with the plug-\/in\textquotesingle{}s data model, use \hyperlink{a00061_a4728fcad006d921a07489144360f447e}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Custom\+Data()} and \hyperlink{a00061_aa838cad04781853ef2e0b9df22a05170}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Set\+Custom\+Data()}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00335}{Hybrid Processing architecture} for another approach to transferring large amounts of (audio) data between the algorithm callback and the plug-\/in\textquotesingle{}s data model. 
+\end{DoxySeeAlso}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00016}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}
+\begin{DoxyCompactList}\small\item\em Default implementation of the \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data} interface. \end{DoxyCompactList}\item 
+class \hyperlink{a00059}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}
+\begin{DoxyCompactList}\small\item\em Optional interface for direct access to a plug-\/in\textquotesingle{}s alg memory. \end{DoxyCompactList}\item 
+class \hyperlink{a00078}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}
+\begin{DoxyCompactList}\small\item\em Interface for the A\+A\+X host\textquotesingle{}s data access functionality. \end{DoxyCompactList}\item 
+class \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data}
+\begin{DoxyCompactList}\small\item\em The interface for a A\+A\+X Plug-\/in\textquotesingle{}s direct data interface. \end{DoxyCompactList}\item 
+class \hyperlink{a00111}{A\+A\+X\+\_\+\+I\+Private\+Data\+Access}
+\begin{DoxyCompactList}\small\item\em Interface to data access provided by host to plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for Direct data access interface\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{a00333}
+\end{center}
+\end{figure}

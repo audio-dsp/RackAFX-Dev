@@ -1,0 +1,78 @@
+\hypertarget{a00055}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3 Class Reference}
+\label{a00055}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{a00508}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{a00509}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface for the A\+A\+X host\textquotesingle{}s view of a single instance of an effect. Used by both clients of the A\+A\+X\+Host and by effect components. 
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00055_af2f012ae8fec830e52c5fca54b555a7b}{Get\+Plug\+In\+Target\+Platform} (\hyperlink{a00149_a8f2cefa455217fa9f3ce190fe5fd8033}{A\+A\+X\+\_\+\+C\+Target\+Platform} $\ast$out\+Target\+Platform) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns execution platform type, native or T\+I. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00055_a2511f4ddb2d0fd17f6f17fe8a6980add}{Get\+Is\+Audio\+Suite} (\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} $\ast$out\+Is\+Audio\+Suite) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns true for Audio\+Suite instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00055_af2f012ae8fec830e52c5fca54b555a7b}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3}!Get\+Plug\+In\+Target\+Platform@{Get\+Plug\+In\+Target\+Platform}}
+\index{Get\+Plug\+In\+Target\+Platform@{Get\+Plug\+In\+Target\+Platform}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3}}
+\subsubsection[{Get\+Plug\+In\+Target\+Platform}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3\+::\+Get\+Plug\+In\+Target\+Platform (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Target\+Platform} $\ast$}]{out\+Target\+Platform}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00055_af2f012ae8fec830e52c5fca54b555a7b}
+
+
+C\+A\+L\+L\+: Returns execution platform type, native or T\+I. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Target\+Platform} & The type of the current execution platform as one of \hyperlink{a00206_a19e8cc27f59bb9bb4039b00fadb3cb83}{A\+A\+X\+\_\+\+E\+Target\+Platform}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00055_a2511f4ddb2d0fd17f6f17fe8a6980add}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3}!Get\+Is\+Audio\+Suite@{Get\+Is\+Audio\+Suite}}
+\index{Get\+Is\+Audio\+Suite@{Get\+Is\+Audio\+Suite}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3}}
+\subsubsection[{Get\+Is\+Audio\+Suite}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+\_\+\+V3\+::\+Get\+Is\+Audio\+Suite (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean} $\ast$}]{out\+Is\+Audio\+Suite}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00055_a2511f4ddb2d0fd17f6f17fe8a6980add}
+
+
+C\+A\+L\+L\+: Returns true for Audio\+Suite instances. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Is\+Audio\+Suite} & The boolean flag which indicate true for Audio\+Suite instances. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00219}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller.\+h}\end{DoxyCompactItemize}

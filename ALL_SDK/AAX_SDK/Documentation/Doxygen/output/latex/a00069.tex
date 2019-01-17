@@ -1,0 +1,53 @@
+\hypertarget{a00069}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2 Class Reference}
+\label{a00069}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{a00550}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{a00551}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface for host methods specific to offline processing. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00069_a4eca04fe742cacbd49f5f32f68c4e3a6}{Force\+Analyze} ()=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Request an analysis pass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00069_a4eca04fe742cacbd49f5f32f68c4e3a6}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2}!Force\+Analyze@{Force\+Analyze}}
+\index{Force\+Analyze@{Force\+Analyze}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2}}
+\subsubsection[{Force\+Analyze}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V2\+::\+Force\+Analyze (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00069_a4eca04fe742cacbd49f5f32f68c4e3a6}
+
+
+C\+A\+L\+L\+: Request an analysis pass. 
+
+Call this method to request an analysis pass from within the plug-\/in. Most plug-\/ins should rely on the host to trigger analysis passes when appropriate. However, plug-\/ins that require an analysis pass a) outside of the context of host-\/driven render or analysis, or b) when internal plug-\/in data changes may need to call {\ttfamily \hyperlink{a00069_a4eca04fe742cacbd49f5f32f68c4e3a6}{Force\+Analyze()}}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00227}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate.\+h}\end{DoxyCompactItemize}

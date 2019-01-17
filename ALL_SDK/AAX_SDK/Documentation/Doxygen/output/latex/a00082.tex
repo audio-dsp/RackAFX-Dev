@@ -1,0 +1,275 @@
+\hypertarget{a00082}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport Class Reference}
+\label{a00082}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a00589}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{a00590}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface to information about the host\textquotesingle{}s transport state. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_ac0818801e66a6840216ac3657d7abcf1}{Get\+Current\+Tempo} (double $\ast$Tempo\+B\+P\+M) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Gets the current tempo. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_a8728c5cab60582e4a143f665a683ee7c}{Get\+Current\+Meter} (int32\+\_\+t $\ast$Meter\+Numerator, int32\+\_\+t $\ast$Meter\+Denominator) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Gets the current meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_adbcf084e01f37cb46fdb0f3024f02515}{Is\+Transport\+Playing} (bool $\ast$is\+Playing) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Indicates whether or not the transport is playing back. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_a3d60e3c360e1881bd5716a119d096769}{Get\+Current\+Tick\+Position} (int64\+\_\+t $\ast$Tick\+Position) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Gets the current tick position. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_aa59e02326a236afc153637d54f4789be}{Get\+Current\+Loop\+Position} (bool $\ast$b\+Looping, int64\+\_\+t $\ast$Loop\+Start\+Tick, int64\+\_\+t $\ast$Loop\+End\+Tick) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Gets current information on loop playback. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_ac76e3960bbc6c5cdabee9d70ad98491c}{Get\+Current\+Native\+Sample\+Location} (int64\+\_\+t $\ast$Sample\+Location) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Gets the current playback location of the native audio engine. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_ac4fb339830e4868adbd40910b5b72dc8}{Get\+Custom\+Tick\+Position} (int64\+\_\+t $\ast$o\+Tick\+Position, int64\+\_\+t i\+Sample\+Location) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Given an absolute sample position, gets the corresponding tick position. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_a008d750ca8181f6b300c2ed66d3b76f9}{Get\+Bar\+Beat\+Position} (int32\+\_\+t $\ast$Bars, int32\+\_\+t $\ast$Beats, int64\+\_\+t $\ast$Display\+Ticks, int64\+\_\+t Sample\+Location) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Given an absolute sample position, gets the corresponding bar and beat position. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_a0f4c97187d6aea3bab6a83645a965805}{Get\+Ticks\+Per\+Quarter} (uint32\+\_\+t $\ast$ticks) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the number of ticks per quarter note. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00082_a34ea33c3457f0480e99c47bde63f6a44}{Get\+Current\+Ticks\+Per\+Beat} (uint32\+\_\+t $\ast$ticks) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the number of ticks per beat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00082_ac0818801e66a6840216ac3657d7abcf1}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Tempo@{Get\+Current\+Tempo}}
+\index{Get\+Current\+Tempo@{Get\+Current\+Tempo}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Tempo}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Tempo (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{Tempo\+B\+P\+M}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_ac0818801e66a6840216ac3657d7abcf1}
+
+
+C\+A\+L\+L\+: Gets the current tempo. 
+
+Returns the tempo corresponding to the current position of the transport counter
+
+\begin{DoxyNote}{Note}
+The resolution of the tempo returned here is based on the host\textquotesingle{}s tempo resolution, so it will match the tempo displayed in the host. Use \hyperlink{a00116_aa5cfd6fef3e4950583ec1e050be692ec}{Get\+Current\+Ticks\+Per\+Beat()} to calculate the tempo resolution note.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Tempo\+B\+P\+M} & The current tempo in beats per minute \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_a8728c5cab60582e4a143f665a683ee7c}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Meter@{Get\+Current\+Meter}}
+\index{Get\+Current\+Meter@{Get\+Current\+Meter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Meter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Meter (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{Meter\+Numerator, }
+\item[{int32\+\_\+t $\ast$}]{Meter\+Denominator}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_a8728c5cab60582e4a143f665a683ee7c}
+
+
+C\+A\+L\+L\+: Gets the current meter. 
+
+Returns the meter corresponding to the current position of the transport counter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Meter\+Numerator} & The numerator portion of the meter \\
+\hline
+\mbox{\tt out}  & {\em Meter\+Denominator} & The denominator portion of the meter \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_adbcf084e01f37cb46fdb0f3024f02515}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Is\+Transport\+Playing@{Is\+Transport\+Playing}}
+\index{Is\+Transport\+Playing@{Is\+Transport\+Playing}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Is\+Transport\+Playing}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Is\+Transport\+Playing (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{is\+Playing}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_adbcf084e01f37cb46fdb0f3024f02515}
+
+
+C\+A\+L\+L\+: Indicates whether or not the transport is playing back. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em is\+Playing} & {\ttfamily true} if the transport is currently in playback \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_a3d60e3c360e1881bd5716a119d096769}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Tick\+Position@{Get\+Current\+Tick\+Position}}
+\index{Get\+Current\+Tick\+Position@{Get\+Current\+Tick\+Position}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Tick\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Tick\+Position (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t $\ast$}]{Tick\+Position}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_a3d60e3c360e1881bd5716a119d096769}
+
+
+C\+A\+L\+L\+: Gets the current tick position. 
+
+Returns the current tick position corresponding to the current transport position. One \char`\"{}\+Tick\char`\"{} is represented here as 1/960000 of a quarter note. That is, there are 960,000 of these ticks in a quarter note.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000057}{Host Compatibility Notes}]The tick resolution here is different than that of the tick displayed in Pro Tools. \char`\"{}\+Display ticks\char`\"{} (as they are called) are 1/960 of a quarter note.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Tick\+Position} & The tick position value \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_aa59e02326a236afc153637d54f4789be}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Loop\+Position@{Get\+Current\+Loop\+Position}}
+\index{Get\+Current\+Loop\+Position@{Get\+Current\+Loop\+Position}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Loop\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Loop\+Position (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{b\+Looping, }
+\item[{int64\+\_\+t $\ast$}]{Loop\+Start\+Tick, }
+\item[{int64\+\_\+t $\ast$}]{Loop\+End\+Tick}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_aa59e02326a236afc153637d54f4789be}
+
+
+C\+A\+L\+L\+: Gets current information on loop playback. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000058}{Host Compatibility Notes}]This does not indicate anything about the status of the \char`\"{}\+Loop Record\char`\"{} option. Even when the host is configured to loop playback, looping may not occur if certain conditions are not met (i.\+e. the length of the selection is too short)\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em b\+Looping} & {\ttfamily true} if the host is configured to loop playback \\
+\hline
+\mbox{\tt out}  & {\em Loop\+Start\+Tick} & The starting tick position of the selection being looped (see \hyperlink{a00116_a2d99dca311ddca98c4d455078edd42d5}{Get\+Current\+Tick\+Position()}) \\
+\hline
+\mbox{\tt out}  & {\em Loop\+End\+Tick} & The ending tick position of the selection being looped (see \hyperlink{a00116_a2d99dca311ddca98c4d455078edd42d5}{Get\+Current\+Tick\+Position()}) \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_ac76e3960bbc6c5cdabee9d70ad98491c}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Native\+Sample\+Location@{Get\+Current\+Native\+Sample\+Location}}
+\index{Get\+Current\+Native\+Sample\+Location@{Get\+Current\+Native\+Sample\+Location}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Native\+Sample\+Location}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Native\+Sample\+Location (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t $\ast$}]{Sample\+Location}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_ac76e3960bbc6c5cdabee9d70ad98491c}
+
+
+C\+A\+L\+L\+: Gets the current playback location of the native audio engine. 
+
+When called from a Process\+Proc render callback, this method will provide the absolute sample location at the beginning of the callback\textquotesingle{}s audio buffers.
+
+When called from \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Render\+Audio\+\_\+\+Hybrid()}, this method will provide the absolute sample location for the samples in the method\textquotesingle{}s {\bfseries output} audio buffers. To calculate the absolute sample location for the sampels in the method\textquotesingle{}s input buffers (i.\+e. the timelin location where the samples originated) subtract the value provided by \hyperlink{a00335_ga47b471c438fcad0798964b860d74609e}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Hybrid\+Signal\+Latency()} from this value.
+
+When called from a non-\/real-\/time thread, this method will provide the current location of the samples being processed by the plug-\/in\textquotesingle{}s Process\+Proc on its real-\/time processing thread.
+
+\begin{DoxyNote}{Note}
+This method only returns a value during playback. It cannot be used to determine, e.\+g., the location of the timeline selector while the host is not in playback.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Sample\+Location} & Absolute sample location of the first sample in the current native processing buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_ac4fb339830e4868adbd40910b5b72dc8}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Custom\+Tick\+Position@{Get\+Custom\+Tick\+Position}}
+\index{Get\+Custom\+Tick\+Position@{Get\+Custom\+Tick\+Position}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Custom\+Tick\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Custom\+Tick\+Position (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t $\ast$}]{o\+Tick\+Position, }
+\item[{int64\+\_\+t}]{i\+Sample\+Location}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_ac4fb339830e4868adbd40910b5b72dc8}
+
+
+C\+A\+L\+L\+: Given an absolute sample position, gets the corresponding tick position. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000059}{Host Compatibility Notes}]There is a minor performance cost associated with using this A\+P\+I in Pro Tools. It should not be used excessively without need.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Tick\+Position} & the timeline tick position corresponding to {\ttfamily i\+Sample\+Location} \\
+\hline
+\mbox{\tt in}  & {\em i\+Sample\+Location} & An absolute sample location (see \hyperlink{a00116_a8119233b03774528ffaa519771d792a0}{Get\+Current\+Native\+Sample\+Location()}) \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_a008d750ca8181f6b300c2ed66d3b76f9}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Bar\+Beat\+Position@{Get\+Bar\+Beat\+Position}}
+\index{Get\+Bar\+Beat\+Position@{Get\+Bar\+Beat\+Position}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Bar\+Beat\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Bar\+Beat\+Position (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{Bars, }
+\item[{int32\+\_\+t $\ast$}]{Beats, }
+\item[{int64\+\_\+t $\ast$}]{Display\+Ticks, }
+\item[{int64\+\_\+t}]{Sample\+Location}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_a008d750ca8181f6b300c2ed66d3b76f9}
+
+
+C\+A\+L\+L\+: Given an absolute sample position, gets the corresponding bar and beat position. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000060}{Host Compatibility Notes}]There is a minor performance cost associated with using this A\+P\+I in Pro Tools. It should not be used excessively without need.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em Bars} & The bar corresponding to {\ttfamily Sample\+Location} \\
+\hline
+\mbox{\tt out}  & {\em Beats} & The beat corresponding to {\ttfamily Sample\+Location} \\
+\hline
+\mbox{\tt out}  & {\em Display\+Ticks} & The ticks corresponding to {\ttfamily Sample\+Location} \\
+\hline
+\mbox{\tt in}  & {\em Sample\+Location} & An absolute sample location (see \hyperlink{a00116_a8119233b03774528ffaa519771d792a0}{Get\+Current\+Native\+Sample\+Location()}) \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_a0f4c97187d6aea3bab6a83645a965805}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Ticks\+Per\+Quarter@{Get\+Ticks\+Per\+Quarter}}
+\index{Get\+Ticks\+Per\+Quarter@{Get\+Ticks\+Per\+Quarter}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Ticks\+Per\+Quarter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Ticks\+Per\+Quarter (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{ticks}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_a0f4c97187d6aea3bab6a83645a965805}
+
+
+C\+A\+L\+L\+: Retrieves the number of ticks per quarter note. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ticks} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00082_a34ea33c3457f0480e99c47bde63f6a44}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}!Get\+Current\+Ticks\+Per\+Beat@{Get\+Current\+Ticks\+Per\+Beat}}
+\index{Get\+Current\+Ticks\+Per\+Beat@{Get\+Current\+Ticks\+Per\+Beat}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport}}
+\subsubsection[{Get\+Current\+Ticks\+Per\+Beat}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+::\+Get\+Current\+Ticks\+Per\+Beat (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{ticks}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00082_a34ea33c3457f0480e99c47bde63f6a44}
+
+
+C\+A\+L\+L\+: Retrieves the number of ticks per beat. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ticks} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00233}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport.\+h}\end{DoxyCompactItemize}

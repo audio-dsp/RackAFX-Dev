@@ -1,0 +1,5 @@
+<map id="AAX_CAtomicQueue::Push" name="AAX_CAtomicQueue::Push">
+<area shape="rect" id="node2" href="$a00026.html#ac9a3a7ac90562135ceb4b80301e12e92" title="Generates and dispatches new coefficient packets. " alt="" coords="237,5,432,47"/>
+<area shape="rect" id="node3" href="$a00026.html#aff6c9ac549ab88231759a9311b2a6640" title="AAX_CMonolithicParameters\l::StaticRenderAudio" alt="" coords="237,71,432,112"/>
+<area shape="rect" id="node4" href="$a00026.html#a69f9b80a70ecc6b7b2a7eec372d2502a" title="AAX_CMonolithicParameters\l::StaticDescribe" alt="" coords="480,71,675,112"/>
+</map>

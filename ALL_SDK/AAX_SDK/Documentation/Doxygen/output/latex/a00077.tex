@@ -1,0 +1,137 @@
+\hypertarget{a00077}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2 Class Reference}
+\label{a00077}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00574}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00575}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface for host operations related to the page tables for this plug-\/in. 
+
+\begin{DoxyNote}{Note}
+In the A\+A\+X Library, access to this interface is provided through \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00077_a6f5d2f9109b365c62c569b3dc344565f}{Copy\+Table\+For\+Effect\+From\+File} (const char $\ast$in\+Page\+Table\+File\+Path, \hyperlink{a00206_a8152e57310850693e4e7f00fc4922d74}{A\+A\+X\+\_\+\+E\+Text\+Encoding} in\+File\+Path\+Encoding, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Manufacturer\+I\+D, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Product\+I\+D, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Plug\+In\+I\+D, uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$o\+Page\+Table) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00077_a80c711274a466f9a0333ac0c322763db}{Copy\+Table\+Of\+Layout\+From\+File} (const char $\ast$in\+Page\+Table\+File\+Path, \hyperlink{a00206_a8152e57310850693e4e7f00fc4922d74}{A\+A\+X\+\_\+\+E\+Text\+Encoding} in\+File\+Path\+Encoding, const char $\ast$in\+Layout\+Name, uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$o\+Page\+Table) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00077_a6f5d2f9109b365c62c569b3dc344565f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2}!Copy\+Table\+For\+Effect\+From\+File@{Copy\+Table\+For\+Effect\+From\+File}}
+\index{Copy\+Table\+For\+Effect\+From\+File@{Copy\+Table\+For\+Effect\+From\+File}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2}}
+\subsubsection[{Copy\+Table\+For\+Effect\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2\+::\+Copy\+Table\+For\+Effect\+From\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Page\+Table\+File\+Path, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Text\+Encoding}}]{in\+File\+Path\+Encoding, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Manufacturer\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Product\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Plug\+In\+I\+D, }
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{o\+Page\+Table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00077_a6f5d2f9109b365c62c569b3dc344565f}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aa77cf0ad2d545c97b095d8bc19a7c969}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if {\ttfamily in\+Page\+Table\+File\+Path} or {\ttfamily o\+Page\+Table} is null
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a17a1fd40c029a9337ede3bad778eab3b}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G} if {\ttfamily in\+File\+Path\+Encoding} has unsupported encoding value
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a7d27a3bd88231e331c98d85f5b10e2eb}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if no valid page table mapping can be created due to the specified arguments
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Page\+Table\+File\+Path} & Path to X\+M\+L page table file. \\
+\hline
+\mbox{\tt in}  & {\em in\+File\+Path\+Encoding} & File path text encoding. \\
+\hline
+\mbox{\tt in}  & {\em in\+Manufacturer\+I\+D} & \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea996465cca29a2a15291d1c788ac5728c}{Manufacturer I\+D} of the desired plug-\/in type \\
+\hline
+\mbox{\tt in}  & {\em in\+Product\+I\+D} & \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{Product I\+D} of the desired plug-\/in type \\
+\hline
+\mbox{\tt in}  & {\em in\+Plug\+In\+I\+D} & Type I\+D of the desired plug-\/in type (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Native}, \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea75f174df4efbeca86eaada126c1d9214}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+T\+I}) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the requested table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the requested table. Some tables support multiple page sizes. \\
+\hline
+\mbox{\tt out}  & {\em o\+Page\+Table} & The page table object to which the page table data should be copied. {\ttfamily o\+Page\+Table} must support \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00090_acd6c896d35ee2c36e8f6685f0c8592ad}{A\+A\+X\+\_\+\+I\+Controller\+::\+Create\+Table\+Copy\+For\+Effect()} 
+\end{DoxySeeAlso}
+\hypertarget{a00077_a80c711274a466f9a0333ac0c322763db}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2}!Copy\+Table\+Of\+Layout\+From\+File@{Copy\+Table\+Of\+Layout\+From\+File}}
+\index{Copy\+Table\+Of\+Layout\+From\+File@{Copy\+Table\+Of\+Layout\+From\+File}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2}}
+\subsubsection[{Copy\+Table\+Of\+Layout\+From\+File}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+\_\+\+V2\+::\+Copy\+Table\+Of\+Layout\+From\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Page\+Table\+File\+Path, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Text\+Encoding}}]{in\+File\+Path\+Encoding, }
+\item[{const char $\ast$}]{in\+Layout\+Name, }
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{o\+Page\+Table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00077_a80c711274a466f9a0333ac0c322763db}
+
+
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aa77cf0ad2d545c97b095d8bc19a7c969}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if {\ttfamily in\+Page\+Table\+File\+Path}, {\ttfamily in\+Layout\+Name}, or {\ttfamily o\+Page\+Table} is null
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a17a1fd40c029a9337ede3bad778eab3b}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G} if {\ttfamily in\+File\+Path\+Encoding} has unsupported encoding value
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a7d27a3bd88231e331c98d85f5b10e2eb}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if no valid page table mapping can be created due to the specified arguments
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Page\+Table\+File\+Path} & Path to X\+M\+L page table file. \\
+\hline
+\mbox{\tt in}  & {\em in\+File\+Path\+Encoding} & File path text encoding. \\
+\hline
+\mbox{\tt in}  & {\em in\+Layout\+Name} & Page table layout name (\char`\"{}name\char`\"{} attribute of the {\ttfamily P\+T\+Layout} X\+M\+L tag) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the requested table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the requested table. Some tables support multiple page sizes. \\
+\hline
+\mbox{\tt out}  & {\em o\+Page\+Table} & The page table object to which the page table data should be copied. {\ttfamily o\+Page\+Table} must support \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00090_ab35931f5055849da04566d51e17665af}{A\+A\+X\+\_\+\+I\+Controller\+::\+Create\+Table\+Copy\+For\+Layout()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00230}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller.\+h}\end{DoxyCompactItemize}

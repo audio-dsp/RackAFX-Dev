@@ -1,0 +1,326 @@
+\hypertarget{a00181}{}\section{A\+A\+X\+\_\+\+Common\+Conversions.\+h File Reference}
+\label{a00181}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{a00181_a76f29f12e35c093e5c198b8d0e27b6f9}{Gain\+To\+D\+B} (double a\+Gain)
+\begin{DoxyCompactList}\small\item\em Convert Gain to d\+B. \end{DoxyCompactList}\item 
+double \hyperlink{a00181_a596d5ea393d43f6f798a838aefe3cecd}{D\+B\+To\+Gain} (double d\+B)
+\begin{DoxyCompactList}\small\item\em Convert d\+B to Gain. \end{DoxyCompactList}\item 
+double \hyperlink{a00181_a463cbd4685551c74125ff89060de20cd}{Long\+To\+Double} (int32\+\_\+t a\+Long)
+\begin{DoxyCompactList}\small\item\em Convert Long to Double. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00181_a59b4dba8d35a4837ab0afe3886bec74a}{Double\+To\+Long} (double a\+Double)
+\begin{DoxyCompactList}\small\item\em convert floating point equivalent back to int32\+\_\+t \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00181_a1567c2393df9139b20166027d0127195}{Double\+To\+D\+S\+P\+Coef} (double d, double max=\hyperlink{a00181_abc7ad084f4b51c70feeac700ab05f7a5}{k56k\+Float\+Pos\+Max}, double min=\hyperlink{a00181_ae1518eaa8f13def92b4c9daeedbbe002}{k56k\+Float\+Neg\+Max})
+\begin{DoxyCompactList}\small\item\em Convert Double to D\+S\+P\+Coef. \end{DoxyCompactList}\item 
+double \hyperlink{a00181_a5e9c399a10a03718eaaf71cfcddd583f}{D\+S\+P\+Coef\+To\+Double} (int32\+\_\+t c, int32\+\_\+t max=\hyperlink{a00181_aa1f75eeb19dad78b3045cb5778421b61}{k56k\+Frac\+Pos\+Max}, int32\+\_\+t min=\hyperlink{a00181_a3306ddeeab535815290a268837e276b1}{k56k\+Frac\+Neg\+Max})
+\begin{DoxyCompactList}\small\item\em Convert D\+S\+P\+Coef to Double. \end{DoxyCompactList}\item 
+double \hyperlink{a00181_a52514266bf44c844934aedcd6975037d}{Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double} (int32\+\_\+t c)
+\begin{DoxyCompactList}\small\item\em Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00181_ab8477bacb0294598f49057507fb17810}{Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd} (double d)
+\begin{DoxyCompactList}\small\item\em Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00181_ac7d80281cdc671669f3f2d523b2960cf}{Double\+To32\+Bit\+D\+S\+P\+Coef} (double d)
+\item 
+int32\+\_\+t \hyperlink{a00181_a3db78a10d239924fd403b9d2fed5b296}{Double\+To\+D\+S\+P\+Coef\+Rnd} (double d, double max, double min)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int32\+\_\+t \hyperlink{a00181_a6758dcc7fe73efcefb9980ff895c36d0}{k32\+Bit\+Pos\+Max} = 0x7\+F\+F\+F\+F\+F\+F\+F
+\item 
+const int32\+\_\+t \hyperlink{a00181_a19c3de953254f182959cb74c9f6ed055}{k32\+Bit\+Abs\+Max} = 0x80000000
+\item 
+const int32\+\_\+t \hyperlink{a00181_a4623748ef4a22daea8cbbf7557ecb60e}{k32\+Bit\+Neg\+Max} = 0x80000000
+\item 
+const int32\+\_\+t \hyperlink{a00181_aa1f75eeb19dad78b3045cb5778421b61}{k56k\+Frac\+Pos\+Max} = 0x007\+F\+F\+F\+F\+F
+\item 
+const int32\+\_\+t \hyperlink{a00181_ad6054f9b9b26d0b3ee01a6ef097afaea}{k56k\+Frac\+Abs\+Max} = 0x00800000
+\item 
+const int32\+\_\+t \hyperlink{a00181_a485384e2f324b1666ad9d8600c442d61}{k56k\+Frac\+Half} = 0x00400000
+\item 
+const int32\+\_\+t \hyperlink{a00181_affbe56efc7321622e3d4c1e2ef60cb28}{k56k\+Frac\+Neg\+One} = 0x\+F\+F800000
+\item 
+const int32\+\_\+t \hyperlink{a00181_a3306ddeeab535815290a268837e276b1}{k56k\+Frac\+Neg\+Max} = \hyperlink{a00181_affbe56efc7321622e3d4c1e2ef60cb28}{k56k\+Frac\+Neg\+One}
+\item 
+const int32\+\_\+t \hyperlink{a00181_aeb01246d63cd5b5d1b6c6eb5bcd08b8b}{k56k\+Frac\+Zero} = 0x00000000
+\item 
+const double \hyperlink{a00181_a5ad86b72eda6b0e72864ec774adad1cf}{k\+One\+Over56k\+Frac\+Abs\+Max} = 1.\+0/double(\hyperlink{a00181_ad6054f9b9b26d0b3ee01a6ef097afaea}{k56k\+Frac\+Abs\+Max})
+\item 
+const double \hyperlink{a00181_abc7ad084f4b51c70feeac700ab05f7a5}{k56k\+Float\+Pos\+Max} = double(\hyperlink{a00181_aa1f75eeb19dad78b3045cb5778421b61}{k56k\+Frac\+Pos\+Max})/double(\hyperlink{a00181_ad6054f9b9b26d0b3ee01a6ef097afaea}{k56k\+Frac\+Abs\+Max})
+\item 
+const double \hyperlink{a00181_ae1518eaa8f13def92b4c9daeedbbe002}{k56k\+Float\+Neg\+Max} = -\/1.\+0
+\item 
+const double \hyperlink{a00181_a2381bc3bc0a4c5e07bf67baf7d440137}{k\+Neg144\+D\+B} = -\/144.\+0
+\item 
+const double \hyperlink{a00181_a1baf8195909ae1265cbb609e6702d2b4}{k\+Neg144\+Gain} = 6.\+3095734448019324943436013662234e-\/8
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00181_a76f29f12e35c093e5c198b8d0e27b6f9}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Gain\+To\+D\+B@{Gain\+To\+D\+B}}
+\index{Gain\+To\+D\+B@{Gain\+To\+D\+B}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Gain\+To\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}double Gain\+To\+D\+B (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Gain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a76f29f12e35c093e5c198b8d0e27b6f9}
+
+
+Convert Gain to d\+B. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000016}{Todo}]This should be incorporated into parameters\textquotesingle{} tapers and not called separately \end{DoxyRefDesc}
+
+
+References k\+Neg144\+D\+B.
+
+\hypertarget{a00181_a596d5ea393d43f6f798a838aefe3cecd}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!D\+B\+To\+Gain@{D\+B\+To\+Gain}}
+\index{D\+B\+To\+Gain@{D\+B\+To\+Gain}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{D\+B\+To\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}double D\+B\+To\+Gain (
+\begin{DoxyParamCaption}
+\item[{double}]{d\+B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a596d5ea393d43f6f798a838aefe3cecd}
+
+
+Convert d\+B to Gain. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000017}{Todo}]This should be incorporated into parameters\textquotesingle{} tapers and not called separately \end{DoxyRefDesc}
+\hypertarget{a00181_a463cbd4685551c74125ff89060de20cd}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Long\+To\+Double@{Long\+To\+Double}}
+\index{Long\+To\+Double@{Long\+To\+Double}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Long\+To\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double Long\+To\+Double (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Long}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a463cbd4685551c74125ff89060de20cd}
+
+
+Convert Long to Double. 
+
+Long\+To\+Double\+: convert 24 bit fixed point in a int32\+\_\+t to floating point equivalent 
+
+References k56k\+Frac\+Neg\+Max, k56k\+Frac\+Pos\+Max, and k\+One\+Over56k\+Frac\+Abs\+Max.
+
+\hypertarget{a00181_a59b4dba8d35a4837ab0afe3886bec74a}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Double\+To\+Long@{Double\+To\+Long}}
+\index{Double\+To\+Long@{Double\+To\+Long}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Double\+To\+Long}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To\+Long (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Double}
+\end{DoxyParamCaption}
+)}\label{a00181_a59b4dba8d35a4837ab0afe3886bec74a}
+
+
+convert floating point equivalent back to int32\+\_\+t 
+
+\hypertarget{a00181_a1567c2393df9139b20166027d0127195}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Double\+To\+D\+S\+P\+Coef@{Double\+To\+D\+S\+P\+Coef}}
+\index{Double\+To\+D\+S\+P\+Coef@{Double\+To\+D\+S\+P\+Coef}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Double\+To\+D\+S\+P\+Coef}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To\+D\+S\+P\+Coef (
+\begin{DoxyParamCaption}
+\item[{double}]{d, }
+\item[{double}]{max = {\ttfamily {\bf k56k\+Float\+Pos\+Max}}, }
+\item[{double}]{min = {\ttfamily {\bf k56k\+Float\+Neg\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a1567c2393df9139b20166027d0127195}
+
+
+Convert Double to D\+S\+P\+Coef. 
+
+
+
+References k56k\+Frac\+Abs\+Max, k56k\+Frac\+Neg\+Max, and k56k\+Frac\+Pos\+Max.
+
+
+
+Referenced by Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00181_a1567c2393df9139b20166027d0127195_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00181_a5e9c399a10a03718eaaf71cfcddd583f}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!D\+S\+P\+Coef\+To\+Double@{D\+S\+P\+Coef\+To\+Double}}
+\index{D\+S\+P\+Coef\+To\+Double@{D\+S\+P\+Coef\+To\+Double}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{D\+S\+P\+Coef\+To\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double D\+S\+P\+Coef\+To\+Double (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{c, }
+\item[{int32\+\_\+t}]{max = {\ttfamily {\bf k56k\+Frac\+Pos\+Max}}, }
+\item[{int32\+\_\+t}]{min = {\ttfamily {\bf k56k\+Frac\+Neg\+Max}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a5e9c399a10a03718eaaf71cfcddd583f}
+
+
+Convert D\+S\+P\+Coef to Double. 
+
+
+
+References k56k\+Frac\+Neg\+Max, k56k\+Frac\+Pos\+Max, and k\+One\+Over56k\+Frac\+Abs\+Max.
+
+
+
+Referenced by Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00181_a5e9c399a10a03718eaaf71cfcddd583f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00181_a52514266bf44c844934aedcd6975037d}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double@{Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double}}
+\index{Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double@{Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_a52514266bf44c844934aedcd6975037d}
+
+
+Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double. 
+
+
+
+References D\+S\+P\+Coef\+To\+Double(), k32\+Bit\+Neg\+Max, and k32\+Bit\+Pos\+Max.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00181_a52514266bf44c844934aedcd6975037d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00181_ab8477bacb0294598f49057507fb17810}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd@{Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd}}
+\index{Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd@{Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00181_ab8477bacb0294598f49057507fb17810}
+
+
+Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd. 
+
+
+
+References Double\+To\+D\+S\+P\+Coef(), k32\+Bit\+Neg\+Max, and k32\+Bit\+Pos\+Max.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00181_ab8477bacb0294598f49057507fb17810_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00181_ac7d80281cdc671669f3f2d523b2960cf}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Double\+To32\+Bit\+D\+S\+P\+Coef@{Double\+To32\+Bit\+D\+S\+P\+Coef}}
+\index{Double\+To32\+Bit\+D\+S\+P\+Coef@{Double\+To32\+Bit\+D\+S\+P\+Coef}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Double\+To32\+Bit\+D\+S\+P\+Coef}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To32\+Bit\+D\+S\+P\+Coef (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)}\label{a00181_ac7d80281cdc671669f3f2d523b2960cf}
+\hypertarget{a00181_a3db78a10d239924fd403b9d2fed5b296}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!Double\+To\+D\+S\+P\+Coef\+Rnd@{Double\+To\+D\+S\+P\+Coef\+Rnd}}
+\index{Double\+To\+D\+S\+P\+Coef\+Rnd@{Double\+To\+D\+S\+P\+Coef\+Rnd}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{Double\+To\+D\+S\+P\+Coef\+Rnd}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To\+D\+S\+P\+Coef\+Rnd (
+\begin{DoxyParamCaption}
+\item[{double}]{d, }
+\item[{double}]{max, }
+\item[{double}]{min}
+\end{DoxyParamCaption}
+)}\label{a00181_a3db78a10d239924fd403b9d2fed5b296}
+
+
+\subsection{Variable Documentation}
+\hypertarget{a00181_a6758dcc7fe73efcefb9980ff895c36d0}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k32\+Bit\+Pos\+Max@{k32\+Bit\+Pos\+Max}}
+\index{k32\+Bit\+Pos\+Max@{k32\+Bit\+Pos\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k32\+Bit\+Pos\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k32\+Bit\+Pos\+Max = 0x7\+F\+F\+F\+F\+F\+F\+F}\label{a00181_a6758dcc7fe73efcefb9980ff895c36d0}
+
+
+Referenced by Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd(), and Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double().
+
+\hypertarget{a00181_a19c3de953254f182959cb74c9f6ed055}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k32\+Bit\+Abs\+Max@{k32\+Bit\+Abs\+Max}}
+\index{k32\+Bit\+Abs\+Max@{k32\+Bit\+Abs\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k32\+Bit\+Abs\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k32\+Bit\+Abs\+Max = 0x80000000}\label{a00181_a19c3de953254f182959cb74c9f6ed055}
+\hypertarget{a00181_a4623748ef4a22daea8cbbf7557ecb60e}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k32\+Bit\+Neg\+Max@{k32\+Bit\+Neg\+Max}}
+\index{k32\+Bit\+Neg\+Max@{k32\+Bit\+Neg\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k32\+Bit\+Neg\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k32\+Bit\+Neg\+Max = 0x80000000}\label{a00181_a4623748ef4a22daea8cbbf7557ecb60e}
+
+
+Referenced by Double\+To32\+Bit\+D\+S\+P\+Coef\+Rnd(), and Thirty\+Two\+Bit\+D\+S\+P\+Coef\+To\+Double().
+
+\hypertarget{a00181_aa1f75eeb19dad78b3045cb5778421b61}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Pos\+Max@{k56k\+Frac\+Pos\+Max}}
+\index{k56k\+Frac\+Pos\+Max@{k56k\+Frac\+Pos\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Pos\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Pos\+Max = 0x007\+F\+F\+F\+F\+F}\label{a00181_aa1f75eeb19dad78b3045cb5778421b61}
+
+
+Referenced by Double\+To\+D\+S\+P\+Coef(), D\+S\+P\+Coef\+To\+Double(), and Long\+To\+Double().
+
+\hypertarget{a00181_ad6054f9b9b26d0b3ee01a6ef097afaea}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Abs\+Max@{k56k\+Frac\+Abs\+Max}}
+\index{k56k\+Frac\+Abs\+Max@{k56k\+Frac\+Abs\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Abs\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Abs\+Max = 0x00800000}\label{a00181_ad6054f9b9b26d0b3ee01a6ef097afaea}
+
+
+Referenced by Double\+To\+D\+S\+P\+Coef().
+
+\hypertarget{a00181_a485384e2f324b1666ad9d8600c442d61}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Half@{k56k\+Frac\+Half}}
+\index{k56k\+Frac\+Half@{k56k\+Frac\+Half}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Half}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Half = 0x00400000}\label{a00181_a485384e2f324b1666ad9d8600c442d61}
+\hypertarget{a00181_affbe56efc7321622e3d4c1e2ef60cb28}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Neg\+One@{k56k\+Frac\+Neg\+One}}
+\index{k56k\+Frac\+Neg\+One@{k56k\+Frac\+Neg\+One}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Neg\+One}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Neg\+One = 0x\+F\+F800000}\label{a00181_affbe56efc7321622e3d4c1e2ef60cb28}
+\hypertarget{a00181_a3306ddeeab535815290a268837e276b1}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Neg\+Max@{k56k\+Frac\+Neg\+Max}}
+\index{k56k\+Frac\+Neg\+Max@{k56k\+Frac\+Neg\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Neg\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Neg\+Max = {\bf k56k\+Frac\+Neg\+One}}\label{a00181_a3306ddeeab535815290a268837e276b1}
+
+
+Referenced by Double\+To\+D\+S\+P\+Coef(), D\+S\+P\+Coef\+To\+Double(), and Long\+To\+Double().
+
+\hypertarget{a00181_aeb01246d63cd5b5d1b6c6eb5bcd08b8b}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Frac\+Zero@{k56k\+Frac\+Zero}}
+\index{k56k\+Frac\+Zero@{k56k\+Frac\+Zero}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Frac\+Zero}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t k56k\+Frac\+Zero = 0x00000000}\label{a00181_aeb01246d63cd5b5d1b6c6eb5bcd08b8b}
+\hypertarget{a00181_a5ad86b72eda6b0e72864ec774adad1cf}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k\+One\+Over56k\+Frac\+Abs\+Max@{k\+One\+Over56k\+Frac\+Abs\+Max}}
+\index{k\+One\+Over56k\+Frac\+Abs\+Max@{k\+One\+Over56k\+Frac\+Abs\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k\+One\+Over56k\+Frac\+Abs\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const double k\+One\+Over56k\+Frac\+Abs\+Max = 1.\+0/double({\bf k56k\+Frac\+Abs\+Max})}\label{a00181_a5ad86b72eda6b0e72864ec774adad1cf}
+
+
+Referenced by D\+S\+P\+Coef\+To\+Double(), and Long\+To\+Double().
+
+\hypertarget{a00181_abc7ad084f4b51c70feeac700ab05f7a5}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Float\+Pos\+Max@{k56k\+Float\+Pos\+Max}}
+\index{k56k\+Float\+Pos\+Max@{k56k\+Float\+Pos\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Float\+Pos\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const double k56k\+Float\+Pos\+Max = double({\bf k56k\+Frac\+Pos\+Max})/double({\bf k56k\+Frac\+Abs\+Max})}\label{a00181_abc7ad084f4b51c70feeac700ab05f7a5}
+\hypertarget{a00181_ae1518eaa8f13def92b4c9daeedbbe002}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k56k\+Float\+Neg\+Max@{k56k\+Float\+Neg\+Max}}
+\index{k56k\+Float\+Neg\+Max@{k56k\+Float\+Neg\+Max}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k56k\+Float\+Neg\+Max}]{\setlength{\rightskip}{0pt plus 5cm}const double k56k\+Float\+Neg\+Max = -\/1.\+0}\label{a00181_ae1518eaa8f13def92b4c9daeedbbe002}
+\hypertarget{a00181_a2381bc3bc0a4c5e07bf67baf7d440137}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k\+Neg144\+D\+B@{k\+Neg144\+D\+B}}
+\index{k\+Neg144\+D\+B@{k\+Neg144\+D\+B}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k\+Neg144\+D\+B}]{\setlength{\rightskip}{0pt plus 5cm}const double k\+Neg144\+D\+B = -\/144.\+0}\label{a00181_a2381bc3bc0a4c5e07bf67baf7d440137}
+
+
+Referenced by Gain\+To\+D\+B().
+
+\hypertarget{a00181_a1baf8195909ae1265cbb609e6702d2b4}{}\index{A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}!k\+Neg144\+Gain@{k\+Neg144\+Gain}}
+\index{k\+Neg144\+Gain@{k\+Neg144\+Gain}!A\+A\+X\+\_\+\+Common\+Conversions.\+h@{A\+A\+X\+\_\+\+Common\+Conversions.\+h}}
+\subsubsection[{k\+Neg144\+Gain}]{\setlength{\rightskip}{0pt plus 5cm}const double k\+Neg144\+Gain = 6.\+3095734448019324943436013662234e-\/8}\label{a00181_a1baf8195909ae1265cbb609e6702d2b4}

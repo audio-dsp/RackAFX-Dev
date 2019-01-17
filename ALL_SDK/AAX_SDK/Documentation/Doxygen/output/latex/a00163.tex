@@ -1,0 +1,158 @@
+\hypertarget{a00163}{}\section{A\+A\+X\+\_\+\+Callbacks.\+h File Reference}
+\label{a00163}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+A\+A\+X callback prototypes and Proc\+Ptr definitions 
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00029}{A\+A\+X\+\_\+\+Component$<$ a\+Context\+Type $>$}
+\begin{DoxyCompactList}\small\item\em Empty class containing type declarations for the A\+A\+X algorithm and associated callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$\hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} $\ast$ \hyperlink{a00163_ad02e57363d002e60ca822c728896a3c4}{A\+A\+X\+Create\+Object\+Proc}(void)
+\item 
+typedef \hyperlink{a00029}{A\+A\+X\+\_\+\+Component}$<$ void $>$\+::C\+Process\+Proc \hyperlink{a00163_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+A\+X calls to process data packets and/or audio. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00029}{A\+A\+X\+\_\+\+Component}$<$ void $>$\+::C\+Packet\+Allocator \hyperlink{a00163_a5c9c7cdc36d5459fa77e5dedb06d161a}{A\+A\+X\+\_\+\+C\+Packet\+Allocator}
+\begin{DoxyCompactList}\small\item\em Used by A\+A\+X\+\_\+\+Schedule\+Packet() \end{DoxyCompactList}\item 
+typedef \hyperlink{a00029}{A\+A\+X\+\_\+\+Component}$<$ void $>$\+::C\+Instance\+Init\+Proc \hyperlink{a00163_a3963a850079d3186e08c97a1a4d0ef1c}{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+A\+X calls to notify the component that an instance is being added or removed. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00029}{A\+A\+X\+\_\+\+Component}$<$ void $>$\+::C\+Background\+Proc \hyperlink{a00163_aa64561d963284a3124a0821e7dc79c9a}{A\+A\+X\+\_\+\+C\+Background\+Proc}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback that A\+A\+X calls in the A\+A\+X Idle time. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00029}{A\+A\+X\+\_\+\+Component}$<$ void $>$\+::C\+Init\+Private\+Data\+Proc \hyperlink{a00163_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}
+\begin{DoxyCompactList}\small\item\em A user-\/defined callback to initialize a private data block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00163_af0682195d377392ad356fd2b00c36892}{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D} \{ \hyperlink{a00163_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters} = 0, 
+\hyperlink{a00163_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I} = 1, 
+\hyperlink{a00163_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor} = 3, 
+\hyperlink{a00163_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data} = 5
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00163_ad02e57363d002e60ca822c728896a3c4}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+Create\+Object\+Proc@{A\+A\+X\+Create\+Object\+Proc}}
+\index{A\+A\+X\+Create\+Object\+Proc@{A\+A\+X\+Create\+Object\+Proc}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+Create\+Object\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf I\+A\+C\+F\+Unknown}$\ast$ {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}$\ast$ A\+A\+X\+Create\+Object\+Proc(void)}\label{a00163_ad02e57363d002e60ca822c728896a3c4}
+\hypertarget{a00163_ad6dd5e1aa5bd2f8462966685e3b26a6e}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Process\+Proc@{A\+A\+X\+\_\+\+C\+Process\+Proc}}
+\index{A\+A\+X\+\_\+\+C\+Process\+Proc@{A\+A\+X\+\_\+\+C\+Process\+Proc}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Process\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+Component}$<$void$>$\+::C\+Process\+Proc {\bf A\+A\+X\+\_\+\+C\+Process\+Proc}}\label{a00163_ad6dd5e1aa5bd2f8462966685e3b26a6e}
+
+
+A user-\/defined callback that A\+A\+X calls to process data packets and/or audio. 
+
+\begin{DoxyParagraph}{i\+Context\+Ptrs\+Begin}
+A vector of context pointers. Each element points to the context for one instance of this component. {\ttfamily i\+Context\+Ptrs\+End} gives the upper bound of the vector and {\ttfamily (in\+Context\+Ptrs\+End -\/ in\+Context\+Ptrs\+Begin)} gives the count.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{i\+Context\+Ptrs\+End}
+The upper bound of the vector at {\ttfamily i\+Context\+Ptrs\+Begin}. {\ttfamily (in\+Context\+Ptrs\+End -\/ i\+Context\+Ptrs\+Begin)} gives the count of this vector.
+\end{DoxyParagraph}
+The instance vector was originally N\+U\+L\+L-\/terminated in earlier versions of this A\+P\+I. However, the S\+T\+L-\/style begin/end pattern was suggested as a more general representation that could, for instance, allow a vector to be split for parallel processing. \hypertarget{a00163_a5c9c7cdc36d5459fa77e5dedb06d161a}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Packet\+Allocator@{A\+A\+X\+\_\+\+C\+Packet\+Allocator}}
+\index{A\+A\+X\+\_\+\+C\+Packet\+Allocator@{A\+A\+X\+\_\+\+C\+Packet\+Allocator}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Packet\+Allocator}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+Component}$<$void$>$\+::C\+Packet\+Allocator {\bf A\+A\+X\+\_\+\+C\+Packet\+Allocator}}\label{a00163_a5c9c7cdc36d5459fa77e5dedb06d161a}
+
+
+Used by A\+A\+X\+\_\+\+Schedule\+Packet() 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000002}{Deprecated}]\end{DoxyRefDesc}
+
+
+A A\+A\+X\+\_\+\+C\+Process\+Proc that calls A\+A\+X\+\_\+\+Schedule\+Packet() must include a A\+A\+X\+\_\+\+C\+Packet\+Allocator field in its context and register that field with \hyperlink{a00288}{A\+A\+X}. A\+A\+X will then populate that field with a A\+A\+X\+\_\+\+C\+Packet\+Allocator to pass to A\+A\+X\+\_\+\+Schedule\+Packet().
+
+\begin{DoxySeeAlso}{See also}
+A\+A\+X\+\_\+\+Schedule\+Packet() 
+\end{DoxySeeAlso}
+\hypertarget{a00163_a3963a850079d3186e08c97a1a4d0ef1c}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc@{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}}
+\index{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc@{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+Component}$<$void$>$\+::C\+Instance\+Init\+Proc {\bf A\+A\+X\+\_\+\+C\+Instance\+Init\+Proc}}\label{a00163_a3963a850079d3186e08c97a1a4d0ef1c}
+
+
+A user-\/defined callback that A\+A\+X calls to notify the component that an instance is being added or removed. 
+
+This optional callback allows the component to keep per-\/instance data. It\textquotesingle{}s called before the instance appears in the list supplied to C\+Process\+Proc, and then after the instance is removed from the list.
+
+\begin{DoxyParagraph}{i\+Instance\+Context\+Ptr}
+A pointer to the context data structure of the instance being added or removed from the processing list.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{i\+Action}
+Indicates the action that triggered the init callback, e.\+g. whether the instance is being added or removed.
+\end{DoxyParagraph}
+
+\begin{DoxyRetVals}{Return values}
+{\em Should} & return 0 on success, anything else on failure. Failure will prevent the instance from being created. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{a00163_aa64561d963284a3124a0821e7dc79c9a}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Background\+Proc@{A\+A\+X\+\_\+\+C\+Background\+Proc}}
+\index{A\+A\+X\+\_\+\+C\+Background\+Proc@{A\+A\+X\+\_\+\+C\+Background\+Proc}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Background\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+Component}$<$void$>$\+::C\+Background\+Proc {\bf A\+A\+X\+\_\+\+C\+Background\+Proc}}\label{a00163_aa64561d963284a3124a0821e7dc79c9a}
+
+
+A user-\/defined callback that A\+A\+X calls in the A\+A\+X Idle time. 
+
+This optional callback allows the component to do background processing in whatever manner the plug-\/in developer desires
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Should} & return 0 on success, anything else on failure. Failure will cause the A\+A\+X host to signal an error up the callchain. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{a00163_adfb5d89b9d957c541fc98fe42bc050c4}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc@{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}}
+\index{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc@{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+Component}$<$void$>$\+::C\+Init\+Private\+Data\+Proc {\bf A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}}\label{a00163_adfb5d89b9d957c541fc98fe42bc050c4}
+
+
+A user-\/defined callback to initialize a private data block. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000003}{Deprecated}]\end{DoxyRefDesc}
+
+
+A component that requires private data supplies \hyperlink{a00163_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc} callbacks to set its private data to the state it should be in at the start of audio. The component first declares one or more pointers to private data in its context. It then registers each such field with A\+A\+X along with its data size, various other attributes, and a \hyperlink{a00163_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc}. The A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc always runs on the host system, not the D\+S\+P. A\+A\+X allocates storage for each private data block and calls its associated \hyperlink{a00163_adfb5d89b9d957c541fc98fe42bc050c4}{A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc} to initialize it. If the component\textquotesingle{}s \hyperlink{a00163_ad6dd5e1aa5bd2f8462966685e3b26a6e}{A\+A\+X\+\_\+\+C\+Process\+Proc} runs on external hardware, A\+A\+X initializes private data blocks on the host system and copies them to the remote system.
+
+\begin{DoxySeeAlso}{See also}
+alg\+\_\+pd\+\_\+init
+\end{DoxySeeAlso}
+\begin{DoxyParagraph}{in\+Field\+Index}
+The port I\+D of the block to be initialized, as generated by \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X()}. A component can register a separate A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc for each of its private data blocks, or it can use fewer functions that switch on {\ttfamily in\+Field\+Index}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+New\+Block}
+A pointer to the block to be initialized. If the component runs externally, A\+A\+X will copy this block to the remote system after it is initialized.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+Size}
+The size of the block to be initialized. If a component has multiple private blocks that only need to be zeroed out, say, it can use a single A\+A\+X\+\_\+\+C\+Init\+Private\+Data\+Proc for all of these blocks that zeroes them out according to {\ttfamily in\+Size}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{in\+Controller}
+A pointer to the current Effect instance\textquotesingle{}s \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller}. 
+\end{DoxyParagraph}
+\begin{DoxyNote}{Note}
+Do not directly reference data from this interface when populating {\ttfamily i\+New\+Block}. The data in this block must be fully self-\/contained to ensure portability to a new device or memory space.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000004}{Deprecated}]\end{DoxyRefDesc}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00163_af0682195d377392ad356fd2b00c36892}{}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D@{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D@{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+\_\+\+C\+Proc\+Ptr\+I\+D}}\label{a00163_af0682195d377392ad356fd2b00c36892}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters}}\item[{\em 
+\hypertarget{a00163_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}{}k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Parameters\label{a00163_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}
+}]\hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} creation procedure \index{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I}}\item[{\em 
+\hypertarget{a00163_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}{}k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+G\+U\+I\label{a00163_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}
+}]\hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I} creation procedure \index{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor}}\item[{\em 
+\hypertarget{a00163_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}{}k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Host\+Processor\label{a00163_af0682195d377392ad356fd2b00c36892a04ce687ba05b8c7c2cce0b32d868f3db}
+}]\hyperlink{a00101}{A\+A\+X\+\_\+\+I\+Host\+Processor} creation procedure \index{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data}!A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}}\index{A\+A\+X\+\_\+\+Callbacks.\+h@{A\+A\+X\+\_\+\+Callbacks.\+h}!k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data@{k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data}}\item[{\em 
+\hypertarget{a00163_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}{}k\+A\+A\+X\+\_\+\+Proc\+Ptr\+I\+D\+\_\+\+Create\+\_\+\+Effect\+Direct\+Data\label{a00163_af0682195d377392ad356fd2b00c36892a2d3621474e9eeeda84309dad0a4d8d8e}
+}]\hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data} creation procedure, used by P\+Is that want direct access to their alg memory \end{description}
+\end{Desc}

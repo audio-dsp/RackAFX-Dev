@@ -1,0 +1,218 @@
+\hypertarget{a00028}{}\section{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$ Class Template Reference}
+\label{a00028}\index{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{a00438}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{a00439}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T, uint32\+\_\+t Precision = 2, uint32\+\_\+t Space\+After = 0$>$class A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate$<$ T, Precision, Space\+After $>$}
+
+A numeric display format conforming to \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate}. 
+
+This display delegate converts a parameter value to a numeric string using a specified precision. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00028}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate} $\ast$ \hyperlink{a00028_ab92a0973a7ed56034aa269c760d6b935}{Clone} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the display delegate. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00028_a260439b47a0890a008f7984958e11662}{Value\+To\+String} (T value, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00028_a8cb553887b6a334fbcb6432770c67ed8}{Value\+To\+String} (T value, int32\+\_\+t max\+Num\+Chars, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00028_ad7fba7856368f7ffe4398e6efd65dfa5}{String\+To\+Value} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&value\+String, T $\ast$value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00028_ab92a0973a7ed56034aa269c760d6b935}{}\index{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , uint32\+\_\+t Precision, uint32\+\_\+t Space\+After$>$ {\bf A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}$<$ T, Precision, Space\+After $>$ $\ast$ {\bf A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}$<$ T, Precision, Space\+After $>$\+::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00028_ab92a0973a7ed56034aa269c760d6b935}
+
+
+Constructs and returns a copy of the display delegate. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+AAX\_CSubclassDisplayDelegate<T>*    AAX\_CSubclassDisplayDelegate<T>::Clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassDisplayDelegate(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+ 
+
+Implements \hyperlink{a00092_a138a82c124ddda8255ce39194dfc1f3f}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00028_a260439b47a0890a008f7984958e11662}{}\index{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , uint32\+\_\+t Precision, uint32\+\_\+t Space\+After$>$ bool {\bf A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}$<$ T, Precision, Space\+After $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00028_a260439b47a0890a008f7984958e11662}
+
+
+Converts a real parameter value to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a7fd1e2f55055c817937bbfa66b73b2fd}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+Append(), A\+A\+X\+\_\+\+C\+String\+::\+Append\+Number(), and A\+A\+X\+\_\+\+C\+String\+::\+Clear().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00028_a260439b47a0890a008f7984958e11662_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00028_a8cb553887b6a334fbcb6432770c67ed8}{}\index{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , uint32\+\_\+t Precision, uint32\+\_\+t Space\+After$>$ bool {\bf A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}$<$ T, Precision, Space\+After $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{int32\+\_\+t}]{max\+Num\+Chars, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00028_a8cb553887b6a334fbcb6432770c67ed8}
+
+
+Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt in}  & {\em max\+Num\+Chars} & Size hint for the desired maximum number of characters in the string (not including null termination) \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a471c7381db773683b69216a9c3f5eda7}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+Append(), A\+A\+X\+\_\+\+C\+String\+::\+Append\+Number(), A\+A\+X\+\_\+\+C\+String\+::\+Clear(), A\+A\+X\+\_\+\+C\+String\+::\+Erase(), and A\+A\+X\+\_\+\+C\+String\+::\+Length().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00028_a8cb553887b6a334fbcb6432770c67ed8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00028_ad7fba7856368f7ffe4398e6efd65dfa5}{}\index{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}!String\+To\+Value@{String\+To\+Value}}
+\index{String\+To\+Value@{String\+To\+Value}!A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}}
+\subsubsection[{String\+To\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , uint32\+\_\+t Precision, uint32\+\_\+t Space\+After$>$ bool {\bf A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate}$<$ T, Precision, Space\+After $>$\+::String\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{value\+String, }
+\item[{T $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00028_ad7fba7856368f7ffe4398e6efd65dfa5}
+
+
+Converts a string to a real parameter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_aed5224775c9f733f091afddfba057d5e}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+To\+Double().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00028_ad7fba7856368f7ffe4398e6efd65dfa5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00180}{A\+A\+X\+\_\+\+C\+Number\+Display\+Delegate.\+h}\end{DoxyCompactItemize}

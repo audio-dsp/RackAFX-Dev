@@ -1,0 +1,72 @@
+\hypertarget{a00201}{}\section{A\+A\+X\+\_\+\+Denormal.\+h File Reference}
+\label{a00201}\index{A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Platform\+Optimization\+Constants.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+
+
+\subsection{Description}
+Signal processing utilities for denormal/subnormal floating point numbers. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00201_aebb709c3232ca8ebe6ea366ca8391dad}{A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H}
+\item 
+\#define \hyperlink{a00201_ad45309abfd0e2faa7a28c9ed753f7806}{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S}()~do \{\} while(0)
+\begin{DoxyCompactList}\small\item\em Sets the run-\/time environment to handle denormal floats within the scope of this macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00201_aeb63901cb0661447fb69b6d10f5f1cba}{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O}()~do \{\} while(0)
+\begin{DoxyCompactList}\small\item\em Sets the run-\/time environment to treat denormal floats as zero within the scope of this macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00288_aaf103dc75b68b6c4f6792dd26f9b4fd0}{A\+A\+X\+::\+De\+Denormal} (double \&i\+Value)
+\begin{DoxyCompactList}\small\item\em Clamps very small floating point values to zero. \end{DoxyCompactList}\item 
+void \hyperlink{a00288_aedfd1762f559291ceddd53f8ce8862a5}{A\+A\+X\+::\+De\+Denormal} (float \&i\+Value)
+\begin{DoxyCompactList}\small\item\em Clamps very small floating point values to zero. \end{DoxyCompactList}\item 
+void \hyperlink{a00288_ac52b6214a1de32e59b90ddbc1878e515}{A\+A\+X\+::\+De\+Denormal\+Fine} (float \&i\+Value)
+\item 
+void \hyperlink{a00288_a73dd9a17abecc28625c4d34279e4534f}{A\+A\+X\+::\+Filter\+Denormals} (float $\ast$in\+Samples, int32\+\_\+t in\+Length)
+\begin{DoxyCompactList}\small\item\em Round all denormal/subnormal samples in a buffer to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{a00288_a5c2e1bff2891a4b11252759e152cf520}{A\+A\+X\+::c\+Denormal\+Avoidance\+Offset} =3.\+0e-\/34
+\item 
+const float \hyperlink{a00288_ae3a66eee97cfe006ffbf11f901ddd286}{A\+A\+X\+::c\+Float\+Denormal\+Avoidance\+Offset} =3.\+0e-\/20f
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00201_aebb709c3232ca8ebe6ea366ca8391dad}{}\index{A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}!A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H@{A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H}}
+\index{A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H@{A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H}!A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+\_\+\+H}\label{a00201_aebb709c3232ca8ebe6ea366ca8391dad}
+\hypertarget{a00201_ad45309abfd0e2faa7a28c9ed753f7806}{}\index{A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}!A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S@{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S}}
+\index{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S@{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S}!A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+C\+O\+M\+P\+U\+T\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~do \{\} while(0)}\label{a00201_ad45309abfd0e2faa7a28c9ed753f7806}
+
+
+Sets the run-\/time environment to handle denormal floats within the scope of this macro. 
+
+The host sets the denormal policy for all \hyperlink{a00288}{A\+A\+X} threads and may use settings which treat denormal float values as zero (D\+A\+Z+\+F\+Z). This macro forces non-\/\+D\+A\+Z behavior. \hypertarget{a00201_aeb63901cb0661447fb69b6d10f5f1cba}{}\index{A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}!A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O@{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O}}
+\index{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O@{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O}!A\+A\+X\+\_\+\+Denormal.\+h@{A\+A\+X\+\_\+\+Denormal.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+C\+O\+P\+E\+\_\+\+D\+E\+N\+O\+R\+M\+A\+L\+S\+\_\+\+A\+S\+\_\+\+Z\+E\+R\+O(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~do \{\} while(0)}\label{a00201_aeb63901cb0661447fb69b6d10f5f1cba}
+
+
+Sets the run-\/time environment to treat denormal floats as zero within the scope of this macro. 
+
+The host sets the denormal policy for all \hyperlink{a00288}{A\+A\+X} threads and may already use settings which treat denormal float values as zero (D\+A\+Z+\+F\+Z). This macro forces D\+A\+Z behavior. 

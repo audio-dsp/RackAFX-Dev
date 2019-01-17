@@ -1,0 +1,62 @@
+\hypertarget{a00178}{}\section{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h File Reference}
+\label{a00178}\index{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+Effect\+Descriptor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+Component\+Descriptor.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+Property\+Map.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+C\+Atomic\+Queue.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+Parameter.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+String.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+
+
+\subsection{Description}
+A convenience class extending \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} for monolithic instruments. 
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00124}{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}
+\begin{DoxyCompactList}\small\item\em Information used to describe the instrument. \end{DoxyCompactList}\item 
+struct \hyperlink{a00122}{A\+A\+X\+\_\+\+S\+Instrument\+Private\+Data}
+\begin{DoxyCompactList}\small\item\em Utility struct for \hyperlink{a00026}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}. \end{DoxyCompactList}\item 
+struct \hyperlink{a00123}{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}
+\begin{DoxyCompactList}\small\item\em Information used to parameterize \hyperlink{a00026_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio()} \end{DoxyCompactList}\item 
+class \hyperlink{a00026}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}
+\begin{DoxyCompactList}\small\item\em Extension of the \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} class for monolithic V\+Is and effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00178_af66ae5854aedf3b38c6d6540670966b1}{k\+Max\+Additional\+M\+I\+D\+I\+Nodes}~15
+\item 
+\#define \hyperlink{a00178_a3ce9db1fba97512379a8715f9cb166e4}{k\+Max\+Aux\+Output\+Stems}~32
+\item 
+\#define \hyperlink{a00178_a38d74fc5f1b026749c9b225353b4eb24}{k\+Synchronized\+Parameter\+Queue\+Size}~32
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00178_af66ae5854aedf3b38c6d6540670966b1}{}\index{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}!k\+Max\+Additional\+M\+I\+D\+I\+Nodes@{k\+Max\+Additional\+M\+I\+D\+I\+Nodes}}
+\index{k\+Max\+Additional\+M\+I\+D\+I\+Nodes@{k\+Max\+Additional\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}
+\subsubsection[{k\+Max\+Additional\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+Max\+Additional\+M\+I\+D\+I\+Nodes~15}\label{a00178_af66ae5854aedf3b38c6d6540670966b1}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00178_a3ce9db1fba97512379a8715f9cb166e4}{}\index{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}!k\+Max\+Aux\+Output\+Stems@{k\+Max\+Aux\+Output\+Stems}}
+\index{k\+Max\+Aux\+Output\+Stems@{k\+Max\+Aux\+Output\+Stems}!A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}
+\subsubsection[{k\+Max\+Aux\+Output\+Stems}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+Max\+Aux\+Output\+Stems~32}\label{a00178_a3ce9db1fba97512379a8715f9cb166e4}
+
+
+Referenced by A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::\+A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info(), and A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00178_a38d74fc5f1b026749c9b225353b4eb24}{}\index{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}!k\+Synchronized\+Parameter\+Queue\+Size@{k\+Synchronized\+Parameter\+Queue\+Size}}
+\index{k\+Synchronized\+Parameter\+Queue\+Size@{k\+Synchronized\+Parameter\+Queue\+Size}!A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h@{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}}
+\subsubsection[{k\+Synchronized\+Parameter\+Queue\+Size}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+Synchronized\+Parameter\+Queue\+Size~32}\label{a00178_a38d74fc5f1b026749c9b225353b4eb24}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Add\+Synchronized\+Parameter().
+

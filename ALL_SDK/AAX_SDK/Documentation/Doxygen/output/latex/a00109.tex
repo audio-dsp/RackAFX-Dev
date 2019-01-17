@@ -1,0 +1,244 @@
+\hypertarget{a00109}{}\section{A\+A\+X\+\_\+\+I\+Parameter\+Value Class Reference}
+\label{a00109}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Parameter.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Parameter\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{a00650}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+An abstract interface representing a parameter value of arbitrary type. 
+
+\begin{DoxyRefDesc}{\+:\+Internal to the A\+A\+X S\+D\+K}
+\item[\hyperlink{a00006__aax_sdk_internal000001}{\+:\+Internal to the A\+A\+X S\+D\+K}]\end{DoxyRefDesc}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} 
+\end{DoxySeeAlso}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00109_a01435046395e84c47eef1e154b372823}{$\sim$\+A\+A\+X\+\_\+\+I\+Parameter\+Value} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00109}{A\+A\+X\+\_\+\+I\+Parameter\+Value} $\ast$ \hyperlink{a00109_a23ebf3322f5ded89954a5e220d2e717f}{Clone} () const =0
+\begin{DoxyCompactList}\small\item\em Clones the parameter object. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} \hyperlink{a00109_a5de1e79f1f0e7024f6f473d923b5dda2}{Identifier} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the parameter\textquotesingle{}s unique identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Typed accessors}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{a00109_a5d792ea5770ace586d5de9e32f35773d}{Get\+Value\+As\+Bool} (bool $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the parameter\textquotesingle{}s value as a bool. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00109_a94ff37ade5306ff8832a9848007c6397}{Get\+Value\+As\+Int32} (int32\+\_\+t $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the parameter\textquotesingle{}s value as an int32\+\_\+t. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00109_a4dc47beae09bee0025374e32ccae17fb}{Get\+Value\+As\+Float} (float $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the parameter\textquotesingle{}s value as a float. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00109_acb2b95aa6a7f95344b320f71ceb84a9d}{Get\+Value\+As\+Double} (double $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the parameter\textquotesingle{}s value as a double. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00109_ad58947974003a0296540d18849d4350c}{Get\+Value\+As\+String} (\hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$value) const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the parameter\textquotesingle{}s value as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00109_a01435046395e84c47eef1e154b372823}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!````~A\+A\+X\+\_\+\+I\+Parameter\+Value@{$\sim$\+A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\index{````~A\+A\+X\+\_\+\+I\+Parameter\+Value@{$\sim$\+A\+A\+X\+\_\+\+I\+Parameter\+Value}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Parameter\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+Parameter\+Value\+::$\sim$\+A\+A\+X\+\_\+\+I\+Parameter\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00109_a01435046395e84c47eef1e154b372823}
+
+
+Virtual destructor. 
+
+\begin{DoxyNote}{Note}
+This destructor M\+U\+S\+T be virtual to prevent memory leaks. 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00109_a23ebf3322f5ded89954a5e220d2e717f}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+Parameter\+Value}$\ast$ A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_a23ebf3322f5ded89954a5e220d2e717f}
+
+
+Clones the parameter object. 
+
+\begin{DoxyNote}{Note}
+Does N\+O\+T set the automation delegate on the clone; ownership of the automation delegate and parameter registration/unregistration stays with the original parameter 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{a00035_a234b97e3ab25aad807cff8b5332624f5}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_a5de1e79f1f0e7024f6f473d923b5dda2}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Identifier@{Identifier}}
+\index{Identifier@{Identifier}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Identifier}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+C\+Param\+I\+D} A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Identifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_a5de1e79f1f0e7024f6f473d923b5dda2}
+
+
+Returns the parameter\textquotesingle{}s unique identifier. 
+
+This unique I\+D is used by the \hyperlink{a00344}{Parameter Manager} and by outside applications to uniquely identify and target control messages. This value may not be changed after the parameter has been constructed. 
+
+Implemented in \hyperlink{a00035_a81029fe02250db20625b42f58b56659d}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_a5d792ea5770ace586d5de9e32f35773d}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Get\+Value\+As\+Bool@{Get\+Value\+As\+Bool}}
+\index{Get\+Value\+As\+Bool@{Get\+Value\+As\+Bool}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Get\+Value\+As\+Bool}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Get\+Value\+As\+Bool (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_a5d792ea5770ace586d5de9e32f35773d}
+
+
+Retrieves the parameter\textquotesingle{}s value as a bool. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & The parameter\textquotesingle{}s real value. Set only if conversion is successful.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The conversion to bool was successful \\
+\hline
+{\em false} & The conversion to bool was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{a00035_a10763c0784f9e5e62fdadae47a54cee2}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}, and \hyperlink{a00035_a7b299559a4cc6de5ef4a77dae32c99e3}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_a94ff37ade5306ff8832a9848007c6397}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Get\+Value\+As\+Int32@{Get\+Value\+As\+Int32}}
+\index{Get\+Value\+As\+Int32@{Get\+Value\+As\+Int32}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Get\+Value\+As\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Get\+Value\+As\+Int32 (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_a94ff37ade5306ff8832a9848007c6397}
+
+
+Retrieves the parameter\textquotesingle{}s value as an int32\+\_\+t. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & The parameter\textquotesingle{}s real value. Set only if conversion is successful.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The conversion to int32\+\_\+t was successful \\
+\hline
+{\em false} & The conversion to int32\+\_\+t was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{a00035_a8df0b77c93c527392e51e3d82d026d87}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}, and \hyperlink{a00035_a0688f74f24ea0b022b89e188c7e253da}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_a4dc47beae09bee0025374e32ccae17fb}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Get\+Value\+As\+Float@{Get\+Value\+As\+Float}}
+\index{Get\+Value\+As\+Float@{Get\+Value\+As\+Float}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Get\+Value\+As\+Float}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Get\+Value\+As\+Float (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_a4dc47beae09bee0025374e32ccae17fb}
+
+
+Retrieves the parameter\textquotesingle{}s value as a float. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & The parameter\textquotesingle{}s real value. Set only if conversion is successful.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The conversion to float was successful \\
+\hline
+{\em false} & The conversion to float was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{a00035_a8484adc259a40c25ac8414eac475eea3}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}, and \hyperlink{a00035_ac3301a3dc20e65906caa5610897a2a1a}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_acb2b95aa6a7f95344b320f71ceb84a9d}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Get\+Value\+As\+Double@{Get\+Value\+As\+Double}}
+\index{Get\+Value\+As\+Double@{Get\+Value\+As\+Double}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Get\+Value\+As\+Double}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Get\+Value\+As\+Double (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_acb2b95aa6a7f95344b320f71ceb84a9d}
+
+
+Retrieves the parameter\textquotesingle{}s value as a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & The parameter\textquotesingle{}s real value. Set only if conversion is successful.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The conversion to double was successful \\
+\hline
+{\em false} & The conversion to double was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{a00035_a1bb6bad348b137dd413abedd1de0c9ea}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}, and \hyperlink{a00035_a21e7a9e774cf81aa055d99cfb7f2a222}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+\hypertarget{a00109_ad58947974003a0296540d18849d4350c}{}\index{A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}!Get\+Value\+As\+String@{Get\+Value\+As\+String}}
+\index{Get\+Value\+As\+String@{Get\+Value\+As\+String}!A\+A\+X\+\_\+\+I\+Parameter\+Value@{A\+A\+X\+\_\+\+I\+Parameter\+Value}}
+\subsubsection[{Get\+Value\+As\+String}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool A\+A\+X\+\_\+\+I\+Parameter\+Value\+::\+Get\+Value\+As\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00109_ad58947974003a0296540d18849d4350c}
+
+
+Retrieves the parameter\textquotesingle{}s value as a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em value} & The parameter\textquotesingle{}s real value. Set only if conversion is successful.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The conversion to string was successful \\
+\hline
+{\em false} & The conversion to string was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{a00035_a96661507efdc490252bbfebe5d716c65}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}, and \hyperlink{a00035_a35153159e40183807eae373c21b38bcc}{A\+A\+X\+\_\+\+C\+Parameter\+Value$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00257}{A\+A\+X\+\_\+\+I\+Parameter.\+h}\end{DoxyCompactItemize}

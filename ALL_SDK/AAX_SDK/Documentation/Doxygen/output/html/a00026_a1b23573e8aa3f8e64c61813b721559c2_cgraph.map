@@ -1,0 +1,4 @@
+<map id="AAX_CMonolithicParameters::AddSynchronizedParameter" name="AAX_CMonolithicParameters::AddSynchronizedParameter">
+<area shape="rect" id="node2" href="$a00108.html#a253ff336b79cfb454f07d4fa21f2884f" title="Returns true if the parameter is automatable, false if it is not. " alt="" coords="249,5,453,32"/>
+<area shape="rect" id="node3" href="$a00108.html#a28807db424a720daa9880ed9ee5d4d21" title="Returns the parameter&#39;s unique identifier. " alt="" coords="261,56,441,83"/>
+</map>

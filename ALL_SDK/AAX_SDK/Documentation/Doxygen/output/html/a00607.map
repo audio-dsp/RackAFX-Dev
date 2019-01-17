@@ -1,0 +1,8 @@
+<map id="AAX_IContainer" name="AAX_IContainer">
+<area shape="rect" id="node2" href="$a00110.html" title="AAX_IPointerQueue\&lt; T \&gt;" alt="" coords="183,9,357,36"/>
+<area shape="rect" id="node4" href="$a00110.html" title="AAX_IPointerQueue\&lt;\l const TParamValPair \&gt;" alt="" coords="189,63,351,105"/>
+<area shape="rect" id="node6" href="$a00110.html" title="AAX_IPointerQueue\&lt;\l TNumberedParamStateList \&gt;" alt="" coords="171,133,369,174"/>
+<area shape="rect" id="node3" href="$a00010.html" title="AAX_CAtomicQueue\&lt; T \&gt;" alt="" coords="446,5,623,32"/>
+<area shape="rect" id="node5" href="$a00010.html" title="AAX_CAtomicQueue\&lt; const\l TParamValPair, 16 *kSynchronized\lParameterQueueSize \&gt;" alt="" coords="417,56,652,112"/>
+<area shape="rect" id="node7" href="$a00010.html" title="AAX_CAtomicQueue\&lt; TNumbered\lParamStateList, 256 \&gt;" alt="" coords="421,137,649,178"/>
+</map>

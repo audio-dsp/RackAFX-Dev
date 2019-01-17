@@ -1,0 +1,131 @@
+\hypertarget{a00123}{}\section{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info Struct Reference}
+\label{a00123}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h$>$}
+
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00676}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Information used to parameterize \hyperlink{a00026_a04f2f73d70ea28c17747c68fc3a20fc8}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Render\+Audio()} 
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$$\ast$ \hyperlink{a00123_a84a9670391f6c3ade12f8577e3c127a7}{m\+Audio\+Inputs}
+\begin{DoxyCompactList}\small\item\em Audio input buffers. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{a00123_a24be01ad79dac3d110302a4392a8c8cc}{m\+Audio\+Outputs}
+\begin{DoxyCompactList}\small\item\em Audio output buffers, including any aux output stems. \end{DoxyCompactList}\item 
+int32\+\_\+t $\ast$ \hyperlink{a00123_a7668a9950721f0a2819bee60fafc8e10}{m\+Num\+Samples}
+\begin{DoxyCompactList}\small\item\em Number of samples in each buffer. Bounded as per \hyperlink{a00206_aa1769ee466fd07659d8c7ef5ac61cd49}{A\+A\+E\+\_\+\+E\+Audio\+Buffer\+Length\+Native}. The exact value can vary from buffer to buffer. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aae7325dbfa53a983f208a68cb563fba5}{A\+A\+X\+\_\+\+C\+Timestamp} $\ast$ \hyperlink{a00123_a4db77b69a4d4993b0fa6a5ab3573eb05}{m\+Clock}
+\begin{DoxyCompactList}\small\item\em Pointer to the global running time clock. \end{DoxyCompactList}\item 
+\hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} $\ast$ \hyperlink{a00123_ab567e317ed0127a51bf0491a4d972f3b}{m\+Input\+Node}
+\begin{DoxyCompactList}\small\item\em Buffered local M\+I\+D\+I input node. Used for incoming M\+I\+D\+I messages directed to the instrument. \end{DoxyCompactList}\item 
+\hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} $\ast$ \hyperlink{a00123_a48eed53d672bf4c844ec501d5dfe1784}{m\+Global\+Node}
+\begin{DoxyCompactList}\small\item\em Buffered global M\+I\+D\+I input node. Used for global events like beat updates in metronomes. \end{DoxyCompactList}\item 
+\hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} $\ast$ \hyperlink{a00123_a60ea39a008cad2ecd97b2251787b3b38}{m\+Transport\+Node}
+\begin{DoxyCompactList}\small\item\em Transport M\+I\+D\+I node. Used for querying the state of the M\+I\+D\+I transport. \end{DoxyCompactList}\item 
+\hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} $\ast$ \hyperlink{a00123_ab90074855c83148226feb8a64ac0b354}{m\+Additional\+Input\+M\+I\+D\+I\+Nodes} \mbox{[}\hyperlink{a00178_af66ae5854aedf3b38c6d6540670966b1}{k\+Max\+Additional\+M\+I\+D\+I\+Nodes}\mbox{]}
+\begin{DoxyCompactList}\small\item\em List of additional input M\+I\+D\+I nodes, if your plugin needs them. \end{DoxyCompactList}\item 
+\hyperlink{a00122}{A\+A\+X\+\_\+\+S\+Instrument\+Private\+Data} $\ast$ \hyperlink{a00123_aff00dfa131d966478ab571ebcab7a86c}{m\+Private\+Data}
+\begin{DoxyCompactList}\small\item\em Struct containing private data relating to the instance. You should not need to use this data. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{a00123_a68ae865355f50537127d3e2e0efd585f}{m\+Meters}
+\begin{DoxyCompactList}\small\item\em Array of meter taps. One meter value should be entered per tap for each render call. \end{DoxyCompactList}\item 
+int64\+\_\+t $\ast$ \hyperlink{a00123_a846c5f9e518bb66bf1854a9eb77d54a7}{m\+Current\+State\+Num}
+\begin{DoxyCompactList}\small\item\em State counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00123_a84a9670391f6c3ade12f8577e3c127a7}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Audio\+Inputs@{m\+Audio\+Inputs}}
+\index{m\+Audio\+Inputs@{m\+Audio\+Inputs}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Audio\+Inputs}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Audio\+Inputs}\label{a00123_a84a9670391f6c3ade12f8577e3c127a7}
+
+
+Audio input buffers. 
+
+\hypertarget{a00123_a24be01ad79dac3d110302a4392a8c8cc}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Audio\+Outputs@{m\+Audio\+Outputs}}
+\index{m\+Audio\+Outputs@{m\+Audio\+Outputs}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Audio\+Outputs}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Audio\+Outputs}\label{a00123_a24be01ad79dac3d110302a4392a8c8cc}
+
+
+Audio output buffers, including any aux output stems. 
+
+\hypertarget{a00123_a7668a9950721f0a2819bee60fafc8e10}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Num\+Samples@{m\+Num\+Samples}}
+\index{m\+Num\+Samples@{m\+Num\+Samples}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Num\+Samples}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Num\+Samples}\label{a00123_a7668a9950721f0a2819bee60fafc8e10}
+
+
+Number of samples in each buffer. Bounded as per \hyperlink{a00206_aa1769ee466fd07659d8c7ef5ac61cd49}{A\+A\+E\+\_\+\+E\+Audio\+Buffer\+Length\+Native}. The exact value can vary from buffer to buffer. 
+
+\hypertarget{a00123_a4db77b69a4d4993b0fa6a5ab3573eb05}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Clock@{m\+Clock}}
+\index{m\+Clock@{m\+Clock}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Timestamp}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Clock}\label{a00123_a4db77b69a4d4993b0fa6a5ab3573eb05}
+
+
+Pointer to the global running time clock. 
+
+\hypertarget{a00123_ab567e317ed0127a51bf0491a4d972f3b}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Input\+Node@{m\+Input\+Node}}
+\index{m\+Input\+Node@{m\+Input\+Node}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Input\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Input\+Node}\label{a00123_ab567e317ed0127a51bf0491a4d972f3b}
+
+
+Buffered local M\+I\+D\+I input node. Used for incoming M\+I\+D\+I messages directed to the instrument. 
+
+\hypertarget{a00123_a48eed53d672bf4c844ec501d5dfe1784}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Global\+Node@{m\+Global\+Node}}
+\index{m\+Global\+Node@{m\+Global\+Node}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Global\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Global\+Node}\label{a00123_a48eed53d672bf4c844ec501d5dfe1784}
+
+
+Buffered global M\+I\+D\+I input node. Used for global events like beat updates in metronomes. 
+
+\hypertarget{a00123_a60ea39a008cad2ecd97b2251787b3b38}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Transport\+Node@{m\+Transport\+Node}}
+\index{m\+Transport\+Node@{m\+Transport\+Node}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Transport\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Transport\+Node}\label{a00123_a60ea39a008cad2ecd97b2251787b3b38}
+
+
+Transport M\+I\+D\+I node. Used for querying the state of the M\+I\+D\+I transport. 
+
+\hypertarget{a00123_ab90074855c83148226feb8a64ac0b354}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Additional\+Input\+M\+I\+D\+I\+Nodes@{m\+Additional\+Input\+M\+I\+D\+I\+Nodes}}
+\index{m\+Additional\+Input\+M\+I\+D\+I\+Nodes@{m\+Additional\+Input\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Additional\+Input\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Additional\+Input\+M\+I\+D\+I\+Nodes\mbox{[}{\bf k\+Max\+Additional\+M\+I\+D\+I\+Nodes}\mbox{]}}\label{a00123_ab90074855c83148226feb8a64ac0b354}
+
+
+List of additional input M\+I\+D\+I nodes, if your plugin needs them. 
+
+\hypertarget{a00123_aff00dfa131d966478ab571ebcab7a86c}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Private\+Data@{m\+Private\+Data}}
+\index{m\+Private\+Data@{m\+Private\+Data}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Private\+Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+S\+Instrument\+Private\+Data}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Private\+Data}\label{a00123_aff00dfa131d966478ab571ebcab7a86c}
+
+
+Struct containing private data relating to the instance. You should not need to use this data. 
+
+\hypertarget{a00123_a68ae865355f50537127d3e2e0efd585f}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Meters@{m\+Meters}}
+\index{m\+Meters@{m\+Meters}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Meters}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Meters}\label{a00123_a68ae865355f50537127d3e2e0efd585f}
+
+
+Array of meter taps. One meter value should be entered per tap for each render call. 
+
+\hypertarget{a00123_a846c5f9e518bb66bf1854a9eb77d54a7}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}!m\+Current\+State\+Num@{m\+Current\+State\+Num}}
+\index{m\+Current\+State\+Num@{m\+Current\+State\+Num}!A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info}}
+\subsubsection[{m\+Current\+State\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Render\+Info\+::m\+Current\+State\+Num}\label{a00123_a846c5f9e518bb66bf1854a9eb77d54a7}
+
+
+State counter. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00178}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}\end{DoxyCompactItemize}

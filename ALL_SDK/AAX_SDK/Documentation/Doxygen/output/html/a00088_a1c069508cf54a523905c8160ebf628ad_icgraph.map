@@ -1,0 +1,4 @@
+<map id="AAX_IComponentDescriptor::AddProcessProc_Native" name="AAX_IComponentDescriptor::AddProcessProc_Native">
+<area shape="rect" id="node2" href="$a00088.html#a38f0d50814689dc720147de1dfd324d2" title="Registers an algorithm processing entrypoint (process procedure) for the native architecture. " alt="" coords="245,5,435,47"/>
+<area shape="rect" id="node3" href="$a00026.html#a69f9b80a70ecc6b7b2a7eec372d2502a" title="AAX_CMonolithicParameters\l::StaticDescribe" alt="" coords="243,71,437,112"/>
+</map>

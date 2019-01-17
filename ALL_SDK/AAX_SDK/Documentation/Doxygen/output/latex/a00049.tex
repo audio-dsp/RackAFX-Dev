@@ -1,0 +1,144 @@
+\hypertarget{a00049}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection Class Reference}
+\label{a00049}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{a00490}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{a00491}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface to represent a plug-\/in binary\textquotesingle{}s static description. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00049_a0fdba73ff6279df807ceac3486ab7630}{Add\+Effect} (const char $\ast$in\+Effect\+I\+D, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$in\+Effect\+Descriptor)=0
+\begin{DoxyCompactList}\small\item\em Add an Effect description to the collection. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00049_af3758a6741780e575fa36b95e9716072}{Set\+Manufacturer\+Name} (const char $\ast$in\+Package\+Name)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in manufacturer name. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00049_ae8087ce7d0b9c4d1d2e6d14616a67208}{Add\+Package\+Name} (const char $\ast$in\+Package\+Name)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package name. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00049_a4276dc11c5036797a75a66fd49e12839}{Set\+Package\+Version} (uint32\+\_\+t in\+Version)=0
+\begin{DoxyCompactList}\small\item\em Set the plug-\/in package version number. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00049_a413165097cbab9087294a694d52cf12a}{Set\+Properties} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$in\+Properties)=0
+\begin{DoxyCompactList}\small\item\em Set the properties of the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00049_a0fdba73ff6279df807ceac3486ab7630}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}!Add\+Effect@{Add\+Effect}}
+\index{Add\+Effect@{Add\+Effect}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+\subsubsection[{Add\+Effect}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+::\+Add\+Effect (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Effect\+I\+D, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{in\+Effect\+Descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00049_a0fdba73ff6279df807ceac3486ab7630}
+
+
+Add an Effect description to the collection. 
+
+Each Effect that a plug-\/in registers with \hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Effect()} is considered a completely different user-\/facing product. For example, in Avid\textquotesingle{}s Dynamics I\+I\+I plug-\/in the Expander, Compressor, and De\+Esser are each registered as separate Effects. All stem format variations within each Effect are registered within that Effect\textquotesingle{}s \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} using \hyperlink{a00096_aec33938f50461dd5e7c1dcc25faf6917}{Add\+Component()}.
+
+The \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{A\+A\+X\+\_\+e\+Property\+\_\+\+Product\+I\+D} value for all Process\+Procs within a single Effect must be identical.
+
+This method passes ownership of an \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} object to the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection}. The \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} must not be deleted by the A\+A\+X plug-\/in, nor should it be edited in any way after it is passed to the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Effect\+I\+D} & The effect I\+D. \\
+\hline
+\mbox{\tt in}  & {\em in\+Effect\+Descriptor} & The Effect descriptor. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00049_af3758a6741780e575fa36b95e9716072}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}!Set\+Manufacturer\+Name@{Set\+Manufacturer\+Name}}
+\index{Set\+Manufacturer\+Name@{Set\+Manufacturer\+Name}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+\subsubsection[{Set\+Manufacturer\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+::\+Set\+Manufacturer\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Package\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00049_af3758a6741780e575fa36b95e9716072}
+
+
+Set the plug-\/in manufacturer name. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Package\+Name} & The name of the manufacturer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00049_ae8087ce7d0b9c4d1d2e6d14616a67208}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}!Add\+Package\+Name@{Add\+Package\+Name}}
+\index{Add\+Package\+Name@{Add\+Package\+Name}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+\subsubsection[{Add\+Package\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+::\+Add\+Package\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Package\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00049_ae8087ce7d0b9c4d1d2e6d14616a67208}
+
+
+Set the plug-\/in package name. 
+
+May be called multiple times to add abbreviated package names.
+
+\begin{DoxyNote}{Note}
+Every plug-\/in must include at least one name variant with 16 or fewer characters, plus a null terminating character. Used for Presets folder.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Package\+Name} & The name of the package. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00049_a4276dc11c5036797a75a66fd49e12839}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}!Set\+Package\+Version@{Set\+Package\+Version}}
+\index{Set\+Package\+Version@{Set\+Package\+Version}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+\subsubsection[{Set\+Package\+Version}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+::\+Set\+Package\+Version (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00049_a4276dc11c5036797a75a66fd49e12839}
+
+
+Set the plug-\/in package version number. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Version} & The package version numner. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00049_a413165097cbab9087294a694d52cf12a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}!Set\+Properties@{Set\+Properties}}
+\index{Set\+Properties@{Set\+Properties}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection}}
+\subsubsection[{Set\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection\+::\+Set\+Properties (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{in\+Properties}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00049_a413165097cbab9087294a694d52cf12a}
+
+
+Set the properties of the collection. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Properties} & Collection properties \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00217}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Collection.\+h}\end{DoxyCompactItemize}

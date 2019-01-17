@@ -1,0 +1,4 @@
+<map id="AAX_CMonolithicParameters::UpdateParameterNormalizedValue" name="AAX_CMonolithicParameters::UpdateParameterNormalizedValue">
+<area shape="rect" id="node2" href="$a00034.html#a405918dfca50993f8c0b5259b3c5ee95" title="Given a parameter ID, retrieves a reference to the requested parameter. " alt="" coords="301,5,481,47"/>
+<area shape="rect" id="node3" href="$a00018.html#a56a9f41a975b48f583655db7b43aae5a" title="Updates a single parameter&#39;s state to its current value. " alt="" coords="289,71,492,127"/>
+</map>

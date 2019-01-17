@@ -1,0 +1,58 @@
+\hypertarget{a00025}{}\section{A\+A\+X\+\_\+\+C\+Midi\+Stream Struct Reference}
+\label{a00025}\index{A\+A\+X\+\_\+\+C\+Midi\+Stream@{A\+A\+X\+\_\+\+C\+Midi\+Stream}}
+
+
+{\ttfamily \#include $<$A\+A\+X.\+h$>$}
+
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Midi\+Stream\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{a00432}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+M\+I\+D\+I stream data structure used by \hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}. 
+
+For \hyperlink{a00206_a5e1dffce35d05990dbbad651702678e4ae57de2b04978fe2e75f5bdeb034bda44}{M\+I\+D\+I input}, m\+Buffer\+Size is set by the A\+A\+X host when the buffer is filled.
+
+For \hyperlink{a00206_a5e1dffce35d05990dbbad651702678e4acc1b5f2109c508b20a65b5e0fdcd643f}{M\+I\+D\+I output}, the plug-\/in sets m\+Buffer\+Size with the number of \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} objects it has filled m\+Buffer with. The A\+A\+X host will reset m\+Buffer\+Size to 0 after it has received the buffer of M\+I\+D\+I.
+
+System Exclusive (Sys\+Ex) messages that are greater than 4 bytes in length can be transmitted via a series of concurrent \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} objects in m\+Buffer. In accordance with the M\+I\+D\+I Specification, {\ttfamily 0x\+F0} indicates the beginning of a Sys\+Ex message and {\ttfamily 0x\+F7} indicates its end.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000004}{Legacy Porting Notes}]Corresponds to Direct\+Midi\+Node in the legacy S\+D\+K \end{DoxyRefDesc}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{a00025_ad93c962a8278977f2a4f07b1e7490a90}{m\+Buffer\+Size}
+\begin{DoxyCompactList}\small\item\em The number of \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} objects contained in the node\textquotesingle{}s buffer. \end{DoxyCompactList}\item 
+\hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$ \hyperlink{a00025_a5011ea886dce57b382c23b82e56d3000}{m\+Buffer}
+\begin{DoxyCompactList}\small\item\em Pointer to the first element of the node\textquotesingle{}s buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00025_ad93c962a8278977f2a4f07b1e7490a90}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Stream@{A\+A\+X\+\_\+\+C\+Midi\+Stream}!m\+Buffer\+Size@{m\+Buffer\+Size}}
+\index{m\+Buffer\+Size@{m\+Buffer\+Size}!A\+A\+X\+\_\+\+C\+Midi\+Stream@{A\+A\+X\+\_\+\+C\+Midi\+Stream}}
+\subsubsection[{m\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+Midi\+Stream\+::m\+Buffer\+Size}\label{a00025_ad93c962a8278977f2a4f07b1e7490a90}
+
+
+The number of \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} objects contained in the node\textquotesingle{}s buffer. 
+
+\hypertarget{a00025_a5011ea886dce57b382c23b82e56d3000}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Stream@{A\+A\+X\+\_\+\+C\+Midi\+Stream}!m\+Buffer@{m\+Buffer}}
+\index{m\+Buffer@{m\+Buffer}!A\+A\+X\+\_\+\+C\+Midi\+Stream@{A\+A\+X\+\_\+\+C\+Midi\+Stream}}
+\subsubsection[{m\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet}$\ast$ A\+A\+X\+\_\+\+C\+Midi\+Stream\+::m\+Buffer}\label{a00025_a5011ea886dce57b382c23b82e56d3000}
+
+
+Pointer to the first element of the node\textquotesingle{}s buffer. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149}{A\+A\+X.\+h}\end{DoxyCompactItemize}

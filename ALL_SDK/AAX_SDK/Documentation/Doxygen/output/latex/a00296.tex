@@ -1,0 +1,58 @@
+\hypertarget{a00296}{}\section{A\+A\+X\+\_\+\+String\+Utilities.\+h File Reference}
+\label{a00296}\index{A\+A\+X\+\_\+\+String\+Utilities.\+h@{A\+A\+X\+\_\+\+String\+Utilities.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Enums.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+String\+Utilities.\+hpp\char`\"{}}\\*
+
+
+\subsection{Description}
+Various string utility definitions for A\+A\+X Native. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00296_aea61cbef0d0ebbae3c538af4531460df}{A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00288_aa3db8a743884054a6ac1ec2c2495e86f}{A\+A\+X\+::\+Get\+C\+String\+Of\+Length} (char $\ast$string\+Out, const char $\ast$string\+In, int32\+\_\+t a\+Max\+Chars)
+\begin{DoxyCompactList}\small\item\em ============================================================== \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_a5f092aff54cbd222fda57f5ea0a12189}{A\+A\+X\+::\+Caseless\+\_\+strcmp} (const char $\ast$cs, const char $\ast$ct)
+\item 
+std\+::string \hyperlink{a00288_a690ffc499da04ea963fff3bf8d6174fb}{A\+A\+X\+::\+Binary2\+String} (uint32\+\_\+t binary\+Value, int32\+\_\+t num\+Bits)
+\item 
+uint32\+\_\+t \hyperlink{a00288_a7b02e5d4a96f72213f0d1e4b52e13050}{A\+A\+X\+::\+String2\+Binary} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&s)
+\item 
+bool \hyperlink{a00288_aa8ebc6a8ee1232c4ffec828bff3c2998}{A\+A\+X\+::\+Is\+A\+S\+C\+I\+I} (char in\+Char)
+\item 
+bool \hyperlink{a00288_a00fbf59b268ca75214b2dad68be8ff77}{A\+A\+X\+::\+Is\+Four\+Char\+A\+S\+C\+I\+I} (uint32\+\_\+t in\+Four\+Char)
+\item 
+std\+::string \hyperlink{a00288_a22eda3cc42cb4ea2192b00bab7a69b02}{A\+A\+X\+::\+As\+String\+Four\+Char} (uint32\+\_\+t in\+Four\+Char)
+\item 
+std\+::string \hyperlink{a00288_a1b3d4b5a967f01922963876447644b15}{A\+A\+X\+::\+As\+String\+Property\+Value} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} in\+Property, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Property\+Value)
+\item 
+std\+::string \hyperlink{a00288_ab024a3d9ac9c68350b377b2c70ec4727}{A\+A\+X\+::\+As\+String\+Int32} (int32\+\_\+t in\+Int32)
+\item 
+std\+::string \hyperlink{a00288_ada4fd7cb0e04582a7615a76f6be7e404}{A\+A\+X\+::\+As\+String\+U\+Int32} (uint32\+\_\+t in\+U\+Int32)
+\item 
+std\+::string \hyperlink{a00288_a89e00fcb44e30c443bebba0f026ef62a}{A\+A\+X\+::\+As\+String\+I\+D\+Triad} (const \hyperlink{a00127}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} \&in\+I\+D\+Triad)
+\item 
+std\+::string \hyperlink{a00288_a34d219233eb5c9836b837fa2a67150d1}{A\+A\+X\+::\+As\+String\+Stem\+Format} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} in\+Stem\+Format, bool in\+Abbreviate=false)
+\item 
+std\+::string \hyperlink{a00288_adfab6bf193c09266ecec2069b8da0c5c}{A\+A\+X\+::\+As\+String\+Stem\+Channel} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} in\+Stem\+Format, uint32\+\_\+t in\+Channel\+Index, bool in\+Abbreviate)
+\item 
+std\+::string \hyperlink{a00288_a354029650cebc5f23636c9984a65ea0d}{A\+A\+X\+::\+As\+String\+Result} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00296_aea61cbef0d0ebbae3c538af4531460df}{}\index{A\+A\+X\+\_\+\+String\+Utilities.\+h@{A\+A\+X\+\_\+\+String\+Utilities.\+h}!A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h@{A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h}}
+\index{A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h@{A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h}!A\+A\+X\+\_\+\+String\+Utilities.\+h@{A\+A\+X\+\_\+\+String\+Utilities.\+h}}
+\subsubsection[{A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+Library\+\_\+\+A\+A\+X\+\_\+\+String\+Utilities\+\_\+h}\label{a00296_aea61cbef0d0ebbae3c538af4531460df}

@@ -1,0 +1,419 @@
+\hypertarget{a00053}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller Class Reference}
+\label{a00053}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{a00502}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{a00503}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface for the A\+A\+X host\textquotesingle{}s view of a single instance of an effect. Used by both clients of the A\+A\+X\+Host and by effect components. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_ae1ccab17cf8b38ab415a7f097cb7d683}{Get\+Effect\+I\+D} (\hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$out\+Effect\+I\+D) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a434883281a90e7bfa7cfe20d941bfa9a}{Get\+Sample\+Rate} (\hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} $\ast$out\+Sample\+Rate) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the current literal sample rate. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_ae2bdea915b0d7165afd000deb9d4defc}{Get\+Input\+Stem\+Format} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} $\ast$out\+Stem\+Format) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the plug-\/in\textquotesingle{}s input stem format. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a7d2a011577cf27d9e79f7537aa279bcb}{Get\+Output\+Stem\+Format} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} $\ast$out\+Stem\+Format) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the plug-\/in\textquotesingle{}s output stem format. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_ae4a19f971e0884aee6802ef0b3e0a020}{Get\+Signal\+Latency} (int32\+\_\+t $\ast$out\+Samples) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the most recent signal (algorithmic) latency that has been published by the plug-\/in. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a37c235cb6a27eab95686a009edeffabe}{Get\+Cycle\+Count} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} in\+Which\+Cycle\+Count, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} $\ast$out\+Num\+Cycles) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: returns the plug-\/in\textquotesingle{}s current real-\/time D\+S\+P cycle count. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_af34fa72c0e4043d5746adcf54e2299d7}{Get\+T\+O\+D\+Location} (\hyperlink{a00149_a46542a1dcccdcc3b4260a9926edf8a2a}{A\+A\+X\+\_\+\+C\+Time\+Of\+Day} $\ast$out\+T\+O\+D\+Location) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the current Time Of Day (T\+O\+D) of the system. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_aee931a52f15789d1b6a4e78cfd4f4961}{Set\+Signal\+Latency} (int32\+\_\+t in\+Num\+Samples)=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Submits a request to change the delay compensation value that the host uses to account for the plug-\/in\textquotesingle{}s signal (algorithmic) latency. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a452f047d471518a0ff5221887fd387df}{Set\+Cycle\+Count} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} $\ast$in\+Which\+Cycle\+Counts, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} $\ast$i\+Values, int32\+\_\+t num\+Values)=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Indicates a change in the plug-\/in\textquotesingle{}s real-\/time D\+S\+P cycle count. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a5bb3178980788c00cc2fe17729b5bf7b}{Post\+Packet} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, const void $\ast$in\+Payload\+P, uint32\+\_\+t in\+Payload\+Size)=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Posts a data packet to the host for routing between plug-\/in components. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a2010fae8eb08f24156ae2fc4a3698c9a}{Get\+Current\+Meter\+Value} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Meter\+I\+D, float $\ast$out\+Meter\+Value) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the current value of a host-\/managed plug-\/in meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_aec42969d56720ac54290250bc45f89fb}{Get\+Meter\+Peak\+Value} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Meter\+I\+D, float $\ast$out\+Meter\+Peak\+Value) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the currently held peak value of a host-\/managed plug-\/in meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_ae2bc5026d16796a8cb4294f1805302bc}{Clear\+Meter\+Peak\+Value} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Meter\+I\+D) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Clears the peak value from a host-\/managed plug-\/in meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a69fa28a0887223cce230d8380945ecb5}{Get\+Meter\+Clipped} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Meter\+I\+D, \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} $\ast$out\+Clipped) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the clipped flag from a host-\/managed plug-\/in meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a93d824d7415416028b2a7d5561deab58}{Clear\+Meter\+Clipped} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Meter\+I\+D) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Clears the clipped flag from a host-\/managed plug-\/in meter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_aaf316786f9f280cd5711848eeeec3d99}{Get\+Meter\+Count} (uint32\+\_\+t $\ast$out\+Meter\+Count) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the number of host-\/managed meters registered by a plug-\/in. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00053_a6a5c0cdfbe314476bdfd15caaee8d010}{Get\+Next\+M\+I\+D\+I\+Packet} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} $\ast$out\+Port, \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$out\+Packet)=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves M\+I\+D\+I packets for described M\+I\+D\+I nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00053_ae1ccab17cf8b38ab415a7f097cb7d683}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Effect\+I\+D@{Get\+Effect\+I\+D}}
+\index{Get\+Effect\+I\+D@{Get\+Effect\+I\+D}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Effect\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Effect\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{out\+Effect\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_ae1ccab17cf8b38ab415a7f097cb7d683}
+
+
+
+
+\hypertarget{a00053_a434883281a90e7bfa7cfe20d941bfa9a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Sample\+Rate@{Get\+Sample\+Rate}}
+\index{Get\+Sample\+Rate@{Get\+Sample\+Rate}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Sample\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Sample\+Rate (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Sample\+Rate} $\ast$}]{out\+Sample\+Rate}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a434883281a90e7bfa7cfe20d941bfa9a}
+
+
+C\+A\+L\+L\+: Returns the current literal sample rate. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Sample\+Rate} & The current sample rate \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_ae2bdea915b0d7165afd000deb9d4defc}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Input\+Stem\+Format@{Get\+Input\+Stem\+Format}}
+\index{Get\+Input\+Stem\+Format@{Get\+Input\+Stem\+Format}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Input\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Input\+Stem\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} $\ast$}]{out\+Stem\+Format}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_ae2bdea915b0d7165afd000deb9d4defc}
+
+
+C\+A\+L\+L\+: Returns the plug-\/in\textquotesingle{}s input stem format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Stem\+Format} & The current input stem format \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a7d2a011577cf27d9e79f7537aa279bcb}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Output\+Stem\+Format@{Get\+Output\+Stem\+Format}}
+\index{Get\+Output\+Stem\+Format@{Get\+Output\+Stem\+Format}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Output\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Output\+Stem\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} $\ast$}]{out\+Stem\+Format}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a7d2a011577cf27d9e79f7537aa279bcb}
+
+
+C\+A\+L\+L\+: Returns the plug-\/in\textquotesingle{}s output stem format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Stem\+Format} & The current output stem format \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_ae4a19f971e0884aee6802ef0b3e0a020}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Signal\+Latency@{Get\+Signal\+Latency}}
+\index{Get\+Signal\+Latency@{Get\+Signal\+Latency}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Signal\+Latency}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Signal\+Latency (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{out\+Samples}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_ae4a19f971e0884aee6802ef0b3e0a020}
+
+
+C\+A\+L\+L\+: Returns the most recent signal (algorithmic) latency that has been published by the plug-\/in. 
+
+This method provides the most recently published signal latency. The host may not have updated its delay compensation to match this signal latency yet, so plug-\/ins that dynamically change their latency using \hyperlink{a00090_af2c648879419d94971c1308d8698601f}{Set\+Signal\+Latency()} should always wait for an \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea06ab4b075ecb523d0dde3ec19b76a756}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Signal\+Latency\+Changed} notification before updating its algorithm to incur this latency.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00090_af2c648879419d94971c1308d8698601f}{Set\+Signal\+Latency()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Samples} & The number of samples of signal delay published by the plug-\/in \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a37c235cb6a27eab95686a009edeffabe}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Cycle\+Count@{Get\+Cycle\+Count}}
+\index{Get\+Cycle\+Count@{Get\+Cycle\+Count}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Cycle\+Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Cycle\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Property}}]{in\+Which\+Cycle\+Count, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value} $\ast$}]{out\+Num\+Cycles}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a37c235cb6a27eab95686a009edeffabe}
+
+
+C\+A\+L\+L\+: returns the plug-\/in\textquotesingle{}s current real-\/time D\+S\+P cycle count. 
+
+This method provides the number of cycles that the A\+A\+X host expects the D\+S\+P plug-\/in to consume. The host uses this value when allocating D\+S\+P resources for the plug-\/in.
+
+\begin{DoxyNote}{Note}
+A plug-\/in should never apply a D\+S\+P algorithm with more demanding resource requirements than what is currently accounted for by the host. To set a higher cycle count value, a plug-\/in must call \hyperlink{a00090_a1a654f682357d48bafd506cbbea2ae25}{A\+A\+X\+\_\+\+I\+Controller\+::\+Set\+Cycle\+Count()}, then poll \hyperlink{a00090_a26e009667f9cd6c3cccd45b862108bf4}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Cycle\+Count()} until the new value has been applied. Once the host has recognized the new cycle count value, the plug-\/in may apply the more demanding algorithm.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Which\+Cycle\+Count} & Selector for the requested cycle count metric. One of\+: \begin{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3e5b289333ba49f5a33de40d89fa4ade}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Shared\+Cycle\+Count} \item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5d8e5be9f3698a9c67a578c29da66405}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Instance\+Cycle\+Count} \item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5b85e213113b7f0f7ee4bac4f5eaa59d}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Max\+Instances\+Per\+Chip} \end{DoxyItemize}
+\\
+\hline
+\mbox{\tt in}  & {\em out\+Num\+Cycles} & The current value of the selected cycle count metric\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000046}{Todo}]P\+L\+A\+C\+E\+H\+O\+L\+D\+E\+R -\/ N\+O\+T C\+U\+R\+R\+E\+N\+T\+L\+Y I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D I\+N H\+O\+S\+T \end{DoxyRefDesc}
+\hypertarget{a00053_af34fa72c0e4043d5746adcf54e2299d7}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+T\+O\+D\+Location@{Get\+T\+O\+D\+Location}}
+\index{Get\+T\+O\+D\+Location@{Get\+T\+O\+D\+Location}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+T\+O\+D\+Location}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+T\+O\+D\+Location (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Time\+Of\+Day} $\ast$}]{out\+T\+O\+D\+Location}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_af34fa72c0e4043d5746adcf54e2299d7}
+
+
+C\+A\+L\+L\+: Returns the current Time Of Day (T\+O\+D) of the system. 
+
+This method provides a plug-\/in the T\+O\+D (in samples) of the current system. T\+O\+D is the number of samples that the playhead has traversed since the beginning of playback.
+
+\begin{DoxyNote}{Note}
+The T\+O\+D value is the immediate value of the audio engine playhead. This value is incremented within the audio engine\textquotesingle{}s real-\/time rendering context; it is not synchronized with non-\/real-\/time calls to plug-\/in interface methods.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+T\+O\+D\+Location} & The current Time Of Day as set by the host \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_aee931a52f15789d1b6a4e78cfd4f4961}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Set\+Signal\+Latency@{Set\+Signal\+Latency}}
+\index{Set\+Signal\+Latency@{Set\+Signal\+Latency}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Set\+Signal\+Latency}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Set\+Signal\+Latency (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Num\+Samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_aee931a52f15789d1b6a4e78cfd4f4961}
+
+
+C\+A\+L\+L\+: Submits a request to change the delay compensation value that the host uses to account for the plug-\/in\textquotesingle{}s signal (algorithmic) latency. 
+
+This method is used to request a change in the number of samples that the A\+A\+X host expects the plug-\/in to delay a signal.
+
+The host is not guaranteed to immediately apply the new latency value. A plug-\/in should avoid incurring an actual algorithmic latency that is different than the latency accounted for by the host.
+
+To set a new latency value, a plug-\/in must call \hyperlink{a00090_af2c648879419d94971c1308d8698601f}{A\+A\+X\+\_\+\+I\+Controller\+::\+Set\+Signal\+Latency()}, then wait for an \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea06ab4b075ecb523d0dde3ec19b76a756}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Signal\+Latency\+Changed} notification. Once this notification has been received, \hyperlink{a00090_ad50aa6fd54e39623a58debd63d9551e1}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Signal\+Latency()} will reflect the updated latency value and the plug-\/in should immediately apply any relevant algorithmic changes that alter its latency to this new value.
+
+\begin{DoxyWarning}{Warning}
+Parameters which affect the latency of a plug-\/in should not be made available for control through automation. This will result in audible glitches when delay compensation is adjusted while playing back automation for these parameters.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Num\+Samples} & The number of samples of signal delay that the plug-\/in requests to incur \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a452f047d471518a0ff5221887fd387df}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Set\+Cycle\+Count@{Set\+Cycle\+Count}}
+\index{Set\+Cycle\+Count@{Set\+Cycle\+Count}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Set\+Cycle\+Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Set\+Cycle\+Count (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Property} $\ast$}]{in\+Which\+Cycle\+Counts, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value} $\ast$}]{i\+Values, }
+\item[{int32\+\_\+t}]{num\+Values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a452f047d471518a0ff5221887fd387df}
+
+
+C\+A\+L\+L\+: Indicates a change in the plug-\/in\textquotesingle{}s real-\/time D\+S\+P cycle count. 
+
+This method is used to request a change in the number of cycles that the A\+A\+X host expects the D\+S\+P plug-\/in to consume.
+
+\begin{DoxyNote}{Note}
+A plug-\/in should never apply a D\+S\+P algorithm with more demanding resource requirements than what is currently accounted for by the host. To set a higher cycle count value, a plug-\/in must call \hyperlink{a00090_a1a654f682357d48bafd506cbbea2ae25}{A\+A\+X\+\_\+\+I\+Controller\+::\+Set\+Cycle\+Count()}, then poll \hyperlink{a00090_a26e009667f9cd6c3cccd45b862108bf4}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Cycle\+Count()} until the new value has been applied. Once the host has recognized the new cycle count value, the plug-\/in may apply the more demanding algorithm.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Which\+Cycle\+Counts} & Array of selectors indicating the specific cycle count metrics that should be set. Each selector must be one of\+: \begin{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3e5b289333ba49f5a33de40d89fa4ade}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Shared\+Cycle\+Count} \item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5d8e5be9f3698a9c67a578c29da66405}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Instance\+Cycle\+Count} \item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5b85e213113b7f0f7ee4bac4f5eaa59d}{A\+A\+X\+\_\+e\+Property\+\_\+\+T\+I\+\_\+\+Max\+Instances\+Per\+Chip} \end{DoxyItemize}
+\\
+\hline
+\mbox{\tt in}  & {\em i\+Values} & An array of values requested, one for each of the selected cycle count metrics. \\
+\hline
+\mbox{\tt in}  & {\em num\+Values} & The size of {\ttfamily i\+Values} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000047}{Todo}]P\+L\+A\+C\+E\+H\+O\+L\+D\+E\+R -\/ N\+O\+T C\+U\+R\+R\+E\+N\+T\+L\+Y I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D I\+N H\+O\+S\+T \end{DoxyRefDesc}
+\hypertarget{a00053_a5bb3178980788c00cc2fe17729b5bf7b}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Post\+Packet@{Post\+Packet}}
+\index{Post\+Packet@{Post\+Packet}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Post\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Post\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{const void $\ast$}]{in\+Payload\+P, }
+\item[{uint32\+\_\+t}]{in\+Payload\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a5bb3178980788c00cc2fe17729b5bf7b}
+
+
+C\+A\+L\+L\+: Posts a data packet to the host for routing between plug-\/in components. 
+
+The posted packet is identified with a \hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} packet index value, which is equivalent to the target data port\textquotesingle{}s identifier. The packet\textquotesingle{}s payload must have the expected size for the given packet index / data port, as defined when the port is created in \hyperlink{a00326}{Describe}. See \hyperlink{a00088_a230293b9f6bb413626cd487ca501df75}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Data\+In\+Port()}.
+
+\begin{DoxyWarning}{Warning}
+Any data structures that will be passed between platforms (for example, sent to a T\+I D\+S\+P in an A\+A\+X D\+S\+P plug-\/in) must be properly data-\/aligned for compatibility across both platforms. See \hyperlink{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G} for more information about guaranteeing cross-\/platform compatibility of data structures used for algorithm processing.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+All calls to this method should be made within the scope of \hyperlink{a00061_a083265b008921b6114ede387711694b7}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Generate\+Coefficients()}. Calls from outside this method may result in packets not being delivered. See \hyperlink{a00374_PT-206161}{P\+T-\/206161}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & The packet\textquotesingle{}s destination port \\
+\hline
+\mbox{\tt in}  & {\em in\+Payload\+P} & A pointer to the packet\textquotesingle{}s payload data \\
+\hline
+\mbox{\tt in}  & {\em in\+Payload\+Size} & The size, in bytes, of the payload data \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a2010fae8eb08f24156ae2fc4a3698c9a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Current\+Meter\+Value@{Get\+Current\+Meter\+Value}}
+\index{Get\+Current\+Meter\+Value@{Get\+Current\+Meter\+Value}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Current\+Meter\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Current\+Meter\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Meter\+I\+D, }
+\item[{float $\ast$}]{out\+Meter\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a2010fae8eb08f24156ae2fc4a3698c9a}
+
+
+C\+A\+L\+L\+: Retrieves the current value of a host-\/managed plug-\/in meter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Meter\+I\+D} & I\+D of the meter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em out\+Meter\+Value} & The queried meter\textquotesingle{}s current value \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_aec42969d56720ac54290250bc45f89fb}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Meter\+Peak\+Value@{Get\+Meter\+Peak\+Value}}
+\index{Get\+Meter\+Peak\+Value@{Get\+Meter\+Peak\+Value}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Meter\+Peak\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Meter\+Peak\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Meter\+I\+D, }
+\item[{float $\ast$}]{out\+Meter\+Peak\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_aec42969d56720ac54290250bc45f89fb}
+
+
+C\+A\+L\+L\+: Retrieves the currently held peak value of a host-\/managed plug-\/in meter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Meter\+I\+D} & I\+D of the meter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em out\+Meter\+Peak\+Value} & The queried meter\textquotesingle{}s currently held peak value \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_ae2bc5026d16796a8cb4294f1805302bc}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Clear\+Meter\+Peak\+Value@{Clear\+Meter\+Peak\+Value}}
+\index{Clear\+Meter\+Peak\+Value@{Clear\+Meter\+Peak\+Value}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Clear\+Meter\+Peak\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Clear\+Meter\+Peak\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Meter\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_ae2bc5026d16796a8cb4294f1805302bc}
+
+
+C\+A\+L\+L\+: Clears the peak value from a host-\/managed plug-\/in meter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Meter\+I\+D} & I\+D of the meter that is being cleared \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a69fa28a0887223cce230d8380945ecb5}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Meter\+Clipped@{Get\+Meter\+Clipped}}
+\index{Get\+Meter\+Clipped@{Get\+Meter\+Clipped}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Meter\+Clipped}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Meter\+Clipped (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Meter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean} $\ast$}]{out\+Clipped}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a69fa28a0887223cce230d8380945ecb5}
+
+
+C\+A\+L\+L\+: Retrieves the clipped flag from a host-\/managed plug-\/in meter. 
+
+See \hyperlink{a00088_a5e4a61afa3d6510891e16d7179bdaa64}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Meters()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Meter\+I\+D} & I\+D of the meter that is being queried. \\
+\hline
+\mbox{\tt out}  & {\em out\+Clipped} & The queried meter\textquotesingle{}s clipped flag. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a93d824d7415416028b2a7d5561deab58}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Clear\+Meter\+Clipped@{Clear\+Meter\+Clipped}}
+\index{Clear\+Meter\+Clipped@{Clear\+Meter\+Clipped}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Clear\+Meter\+Clipped}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Clear\+Meter\+Clipped (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Meter\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a93d824d7415416028b2a7d5561deab58}
+
+
+C\+A\+L\+L\+: Clears the clipped flag from a host-\/managed plug-\/in meter. 
+
+See \hyperlink{a00088_a5e4a61afa3d6510891e16d7179bdaa64}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Meters()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Meter\+I\+D} & I\+D of the meter that is being cleared. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_aaf316786f9f280cd5711848eeeec3d99}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Meter\+Count@{Get\+Meter\+Count}}
+\index{Get\+Meter\+Count@{Get\+Meter\+Count}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Meter\+Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Meter\+Count (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t $\ast$}]{out\+Meter\+Count}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_aaf316786f9f280cd5711848eeeec3d99}
+
+
+C\+A\+L\+L\+: Retrieves the number of host-\/managed meters registered by a plug-\/in. 
+
+See \hyperlink{a00088_a5e4a61afa3d6510891e16d7179bdaa64}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Meters()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Meter\+Count} & The number of registered plug-\/in meters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00053_a6a5c0cdfbe314476bdfd15caaee8d010}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}!Get\+Next\+M\+I\+D\+I\+Packet@{Get\+Next\+M\+I\+D\+I\+Packet}}
+\index{Get\+Next\+M\+I\+D\+I\+Packet@{Get\+Next\+M\+I\+D\+I\+Packet}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}}
+\subsubsection[{Get\+Next\+M\+I\+D\+I\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+::\+Get\+Next\+M\+I\+D\+I\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index} $\ast$}]{out\+Port, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{out\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00053_a6a5c0cdfbe314476bdfd15caaee8d010}
+
+
+C\+A\+L\+L\+: Retrieves M\+I\+D\+I packets for described M\+I\+D\+I nodes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Port} & port I\+D of the M\+I\+D\+I node that has unhandled packet \\
+\hline
+\mbox{\tt out}  & {\em out\+Packet} & The M\+I\+D\+I packet \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00219}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,340 @@
+\hypertarget{a00034}{}\section{A\+A\+X\+\_\+\+C\+Parameter\+Manager Class Reference}
+\label{a00034}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Parameter\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Parameter\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00450}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+A container object for plug-\/in parameters. 
+
+This implementation uses a S\+T\+L vector to store a plug-\/in\textquotesingle{}s set of parameters. This class contains a real implementation of the \hyperlink{a00344}{Parameter Manager} (as opposed to a proxy.)
+
+For more information, see \hyperlink{a00344}{Parameter Manager}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000018}{Todo}]Should the Parameter Manager return error codes?\end{DoxyRefDesc}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00034_a2464652c52cc61b437339a5268ee4f66}{A\+A\+X\+\_\+\+C\+Parameter\+Manager} ()
+\item 
+\hyperlink{a00034_a86e327094928b44b1ca11ef145d4f301}{$\sim$\+A\+A\+X\+\_\+\+C\+Parameter\+Manager} ()
+\item 
+void \hyperlink{a00034_ab7921f8b312d65917e3b38c5edfb57d8}{Initialize} (\hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} $\ast$i\+Automation\+Delegate\+Unknown)
+\begin{DoxyCompactList}\small\item\em Initialize the parameter manager. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00034_a33e7ac884dd492b51cfea3d8eb163626}{Num\+Parameters} () const 
+\begin{DoxyCompactList}\small\item\em Returns the number of parameters in this instance of the parameter manager. \end{DoxyCompactList}\item 
+void \hyperlink{a00034_a1c37068e235b493a6aa2a57fa26379ba}{Remove\+Parameter\+By\+I\+D} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} identifier)
+\begin{DoxyCompactList}\small\item\em Removes a parameter from the manager. \end{DoxyCompactList}\item 
+void \hyperlink{a00034_a6bbfed26d6dda840c89df90b66c196ac}{Remove\+All\+Parameters} ()
+\begin{DoxyCompactList}\small\item\em Removes all parameters from the manager. \end{DoxyCompactList}\item 
+\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_a405918dfca50993f8c0b5259b3c5ee95}{Get\+Parameter\+By\+I\+D} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} identifier)
+\begin{DoxyCompactList}\small\item\em Given a parameter I\+D, retrieves a reference to the requested parameter. \end{DoxyCompactList}\item 
+const \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_a8f4480191bec83fb7e50d157dd83ccab}{Get\+Parameter\+By\+I\+D} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} identifier) const 
+\begin{DoxyCompactList}\small\item\em Given a parameter I\+D, retrieves a const reference to the requested parameter. \end{DoxyCompactList}\item 
+\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_a65819f05cca51224d92ac0b620d2b354}{Get\+Parameter\+By\+Name} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Given a parameter name, retrieves a reference to the requested parameter. \end{DoxyCompactList}\item 
+const \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_a6e065995c36c5f1380ab29d16170ec48}{Get\+Parameter\+By\+Name} (const char $\ast$name) const 
+\begin{DoxyCompactList}\small\item\em Given a parameter name, retrieves a const reference to the requested parameter. \end{DoxyCompactList}\item 
+\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_aaee339546c6cf99e3b7c8a6061c7a4f3}{Get\+Parameter} (int32\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Given a parameter index, retrieves a reference to the requested parameter. \end{DoxyCompactList}\item 
+const \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ \hyperlink{a00034_acaa1d205cabd4f9b883440014e293608}{Get\+Parameter} (int32\+\_\+t index) const 
+\begin{DoxyCompactList}\small\item\em Given a parameter index, retrieves a const reference to the requested parameter. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00034_ae0f8bc23f8edee29b61de34e3a09b065}{Get\+Parameter\+Index} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} identifier) const 
+\item 
+void \hyperlink{a00034_ae2f9631b33c012f7a8c042df9655b28c}{Add\+Parameter} (\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$param)
+\item 
+void \hyperlink{a00034_ac3a21fe1267f8fb276aa08e9f492c5ed}{Remove\+Parameter} (\hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$param)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} $\ast$ \hyperlink{a00034_a3c8bc6b5a9210cb9703798dd644a3d70}{m\+Automation\+Delegate}
+\item 
+std\+::vector$<$ \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ $>$ \hyperlink{a00034_a59ea172cb668a4aaa990a66e2f67b0bb}{m\+Parameters}
+\item 
+std\+::map$<$ std\+::string, \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$ $>$ \hyperlink{a00034_a172b774237eadfd83d1ffa6b3d80bf09}{m\+Parameters\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00034_a2464652c52cc61b437339a5268ee4f66}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+A\+A\+X\+\_\+\+C\+Parameter\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00034_a2464652c52cc61b437339a5268ee4f66}
+\hypertarget{a00034_a86e327094928b44b1ca11ef145d4f301}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!````~A\+A\+X\+\_\+\+C\+Parameter\+Manager@{$\sim$\+A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\index{````~A\+A\+X\+\_\+\+C\+Parameter\+Manager@{$\sim$\+A\+A\+X\+\_\+\+C\+Parameter\+Manager}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+C\+Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::$\sim$\+A\+A\+X\+\_\+\+C\+Parameter\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00034_a86e327094928b44b1ca11ef145d4f301}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00034_ab7921f8b312d65917e3b38c5edfb57d8}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Automation\+Delegate} $\ast$}]{i\+Automation\+Delegate\+Unknown}
+\end{DoxyParamCaption}
+)}\label{a00034_ab7921f8b312d65917e3b38c5edfb57d8}
+
+
+Initialize the parameter manager. 
+
+Called when plug-\/in instance is first instantiated. This method will initialize the plug-\/in\textquotesingle{}s automation delegate, among other set-\/up tasks.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Automation\+Delegate\+Unknown} & A reference to the plug-\/in\textquotesingle{}s \hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} interface \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_a33e7ac884dd492b51cfea3d8eb163626}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Num\+Parameters@{Num\+Parameters}}
+\index{Num\+Parameters@{Num\+Parameters}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Num\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Num\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00034_a33e7ac884dd492b51cfea3d8eb163626}
+
+
+Returns the number of parameters in this instance of the parameter manager. 
+
+\hypertarget{a00034_a1c37068e235b493a6aa2a57fa26379ba}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Remove\+Parameter\+By\+I\+D@{Remove\+Parameter\+By\+I\+D}}
+\index{Remove\+Parameter\+By\+I\+D@{Remove\+Parameter\+By\+I\+D}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Remove\+Parameter\+By\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Remove\+Parameter\+By\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{identifier}
+\end{DoxyParamCaption}
+)}\label{a00034_a1c37068e235b493a6aa2a57fa26379ba}
+
+
+Removes a parameter from the manager. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000019}{Todo}]Should this method return success/failure code?\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em identifier} & I\+D of the parameter that will be removed \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_a6bbfed26d6dda840c89df90b66c196ac}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Remove\+All\+Parameters@{Remove\+All\+Parameters}}
+\index{Remove\+All\+Parameters@{Remove\+All\+Parameters}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Remove\+All\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Remove\+All\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00034_a6bbfed26d6dda840c89df90b66c196ac}
+
+
+Removes all parameters from the manager. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000020}{Todo}]Should this method return success/failure code? \end{DoxyRefDesc}
+\hypertarget{a00034_a405918dfca50993f8c0b5259b3c5ee95}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter\+By\+I\+D@{Get\+Parameter\+By\+I\+D}}
+\index{Get\+Parameter\+By\+I\+D@{Get\+Parameter\+By\+I\+D}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+By\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter\+By\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{identifier}
+\end{DoxyParamCaption}
+)}\label{a00034_a405918dfca50993f8c0b5259b3c5ee95}
+
+
+Given a parameter I\+D, retrieves a reference to the requested parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em identifier} & I\+D of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Update\+Parameter\+Normalized\+Value().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00034_a405918dfca50993f8c0b5259b3c5ee95_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00034_a8f4480191bec83fb7e50d157dd83ccab}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter\+By\+I\+D@{Get\+Parameter\+By\+I\+D}}
+\index{Get\+Parameter\+By\+I\+D@{Get\+Parameter\+By\+I\+D}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+By\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter\+By\+I\+D (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{identifier}
+\end{DoxyParamCaption}
+) const}\label{a00034_a8f4480191bec83fb7e50d157dd83ccab}
+
+
+Given a parameter I\+D, retrieves a const reference to the requested parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em identifier} & I\+D of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_a65819f05cca51224d92ac0b620d2b354}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter\+By\+Name@{Get\+Parameter\+By\+Name}}
+\index{Get\+Parameter\+By\+Name@{Get\+Parameter\+By\+Name}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+By\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\label{a00034_a65819f05cca51224d92ac0b620d2b354}
+
+
+Given a parameter name, retrieves a reference to the requested parameter. 
+
+\begin{DoxyNote}{Note}
+Parameter names may be ambiguous
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_a6e065995c36c5f1380ab29d16170ec48}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter\+By\+Name@{Get\+Parameter\+By\+Name}}
+\index{Get\+Parameter\+By\+Name@{Get\+Parameter\+By\+Name}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+By\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter\+By\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+) const}\label{a00034_a6e065995c36c5f1380ab29d16170ec48}
+
+
+Given a parameter name, retrieves a const reference to the requested parameter. 
+
+\begin{DoxyNote}{Note}
+Parameter names may be ambiguous
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & I\+D of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_aaee339546c6cf99e3b7c8a6061c7a4f3}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter@{Get\+Parameter}}
+\index{Get\+Parameter@{Get\+Parameter}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}\label{a00034_aaee339546c6cf99e3b7c8a6061c7a4f3}
+
+
+Given a parameter index, retrieves a reference to the requested parameter. 
+
+Parameter indices are incremented in the order that parameters are added to the manager. See \hyperlink{a00034_ae2f9631b33c012f7a8c042df9655b28c}{Add\+Parameter()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_acaa1d205cabd4f9b883440014e293608}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter@{Get\+Parameter}}
+\index{Get\+Parameter@{Get\+Parameter}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{index}
+\end{DoxyParamCaption}
+) const}\label{a00034_acaa1d205cabd4f9b883440014e293608}
+
+
+Given a parameter index, retrieves a const reference to the requested parameter. 
+
+Parameter indices are incremented in the order that parameters are added to the manager. See \hyperlink{a00034_ae2f9631b33c012f7a8c042df9655b28c}{Add\+Parameter()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & Index of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_ae0f8bc23f8edee29b61de34e3a09b065}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Get\+Parameter\+Index@{Get\+Parameter\+Index}}
+\index{Get\+Parameter\+Index@{Get\+Parameter\+Index}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Get\+Parameter\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Get\+Parameter\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{identifier}
+\end{DoxyParamCaption}
+) const}\label{a00034_ae0f8bc23f8edee29b61de34e3a09b065}
+Given a parameter I\+D, retrieves the index for the specified parameter
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em identifier} & I\+D of the parameter that will be retrieved \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_ae2f9631b33c012f7a8c042df9655b28c}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Add\+Parameter@{Add\+Parameter}}
+\index{Add\+Parameter@{Add\+Parameter}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Add\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Add\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Parameter} $\ast$}]{param}
+\end{DoxyParamCaption}
+)}\label{a00034_ae2f9631b33c012f7a8c042df9655b28c}
+Adds a parameter to the manager
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000021}{Todo}]Should this method return success/failure code?\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em param} & Reference to the parameter that will be added \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00034_ac3a21fe1267f8fb276aa08e9f492c5ed}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!Remove\+Parameter@{Remove\+Parameter}}
+\index{Remove\+Parameter@{Remove\+Parameter}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{Remove\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Remove\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Parameter} $\ast$}]{param}
+\end{DoxyParamCaption}
+)}\label{a00034_ac3a21fe1267f8fb276aa08e9f492c5ed}
+Removes a parameter to the manager
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000022}{Todo}]Should this method return success/failure code?\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em param} & Reference to the parameter that will be removed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00034_a3c8bc6b5a9210cb9703798dd644a3d70}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!m\+Automation\+Delegate@{m\+Automation\+Delegate}}
+\index{m\+Automation\+Delegate@{m\+Automation\+Delegate}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{m\+Automation\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Automation\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::m\+Automation\+Delegate\hspace{0.3cm}{\ttfamily [protected]}}\label{a00034_a3c8bc6b5a9210cb9703798dd644a3d70}
+\hypertarget{a00034_a59ea172cb668a4aaa990a66e2f67b0bb}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!m\+Parameters@{m\+Parameters}}
+\index{m\+Parameters@{m\+Parameters}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{m\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$$>$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::m\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}\label{a00034_a59ea172cb668a4aaa990a66e2f67b0bb}
+\hypertarget{a00034_a172b774237eadfd83d1ffa6b3d80bf09}{}\index{A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}!m\+Parameters\+Map@{m\+Parameters\+Map}}
+\index{m\+Parameters\+Map@{m\+Parameters\+Map}!A\+A\+X\+\_\+\+C\+Parameter\+Manager@{A\+A\+X\+\_\+\+C\+Parameter\+Manager}}
+\subsubsection[{m\+Parameters\+Map}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, {\bf A\+A\+X\+\_\+\+I\+Parameter}$\ast$$>$ A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::m\+Parameters\+Map\hspace{0.3cm}{\ttfamily [protected]}}\label{a00034_a172b774237eadfd83d1ffa6b3d80bf09}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00191}{A\+A\+X\+\_\+\+C\+Parameter\+Manager.\+h}\end{DoxyCompactItemize}

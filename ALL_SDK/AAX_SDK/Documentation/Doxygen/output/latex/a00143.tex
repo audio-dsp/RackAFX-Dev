@@ -1,0 +1,152 @@
+\hypertarget{a00143}{}\section{A\+A\+X\+:\+:Exception\+:\+:Any Class Reference}
+\label{a00143}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+Exception.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+:\+:Exception\+:\+:Any\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{a00731}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Base class for A\+A\+X exceptions
+
+This class is defined within the A\+A\+X Library and is always handled within the A\+A\+X plug-\/in. Objects of this class are never passed between the plug-\/in and the A\+A\+X host.
+
+The definition of this class may change between versions of the A\+A\+X S\+D\+K. This class does not include any form of version safety for cross-\/version compatibility.
+
+\begin{DoxyWarning}{Warning}
+Do not use multiple inheritance in any sub-\/classes within the \hyperlink{a00143}{A\+A\+X\+::\+Exception\+::\+Any} inheritance tree
+
+Never pass exceptions across the library boundary to the A\+A\+X host 
+\end{DoxyWarning}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00143_ac8a5ec0e754e887a46d89bc715f21913}{$\sim$\+Any} ()
+\item 
+{\footnotesize template$<$class C $>$ }\\\hyperlink{a00143_a35c51844258ed1c71259e98128fa1b49}{Any} (const C \&in\+What)
+\item 
+{\footnotesize template$<$class C1 , class C2 , class C3 $>$ }\\\hyperlink{a00143_a9578bed0d27f81be2908f93f19034474}{Any} (const C1 \&in\+What, const C2 \&in\+Function, const C3 \&in\+Line)
+\item 
+\hyperlink{a00143}{Any} \& \hyperlink{a00143_a249c609f463a981013d5799e9e86b08e}{operator=} (const \hyperlink{a00143}{Any} \&in\+Other)
+\item 
+\hyperlink{a00143_a9de3a5ad28f7b36c0930dcb71c585855}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R} (\hyperlink{a00143}{Any})
+\item 
+\hyperlink{a00143_a4a698473997da5ebf0c0092618715234}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R} (\hyperlink{a00143}{Any})
+\item 
+const std\+::string \& \hyperlink{a00143_af90aa9b56b22d8bb3f9fd55c17993bb9}{What} () const 
+\item 
+const std\+::string \& \hyperlink{a00143_a94edabf21577df253ad7bc9ec6e3f403}{Desc} () const 
+\item 
+const std\+::string \& \hyperlink{a00143_aa9434f3856b39a774a50a708713245cd}{Function} () const 
+\item 
+const std\+::string \& \hyperlink{a00143_ad68defaa96c9559724c8503b7231ec43}{Line} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00143_ac8a5ec0e754e887a46d89bc715f21913}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!````~Any@{$\sim$\+Any}}
+\index{````~Any@{$\sim$\+Any}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{$\sim$\+Any}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+::\+Exception\+::\+Any\+::$\sim$\+Any (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00143_ac8a5ec0e754e887a46d89bc715f21913}
+\hypertarget{a00143_a35c51844258ed1c71259e98128fa1b49}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!Any@{Any}}
+\index{Any@{Any}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{Any}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C $>$ A\+A\+X\+::\+Exception\+::\+Any\+::\+Any (
+\begin{DoxyParamCaption}
+\item[{const C \&}]{in\+What}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{a00143_a35c51844258ed1c71259e98128fa1b49}
+Explicit conversion from a string-\/like object \hypertarget{a00143_a9578bed0d27f81be2908f93f19034474}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!Any@{Any}}
+\index{Any@{Any}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{Any}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class C1 , class C2 , class C3 $>$ A\+A\+X\+::\+Exception\+::\+Any\+::\+Any (
+\begin{DoxyParamCaption}
+\item[{const C1 \&}]{in\+What, }
+\item[{const C2 \&}]{in\+Function, }
+\item[{const C3 \&}]{in\+Line}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{a00143_a9578bed0d27f81be2908f93f19034474}
+Explicit conversion from a string-\/like object with function name and line number 
+
+\subsection{Member Function Documentation}
+\hypertarget{a00143_a249c609f463a981013d5799e9e86b08e}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Any}\& A\+A\+X\+::\+Exception\+::\+Any\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Any} \&}]{in\+Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00143_a249c609f463a981013d5799e9e86b08e}
+\hypertarget{a00143_a9de3a5ad28f7b36c0930dcb71c585855}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+::\+Exception\+::\+Any\+::\+A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf Any}}]{}
+\end{DoxyParamCaption}
+)}\label{a00143_a9de3a5ad28f7b36c0930dcb71c585855}
+\hypertarget{a00143_a4a698473997da5ebf0c0092618715234}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+::\+Exception\+::\+Any\+::\+A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R (
+\begin{DoxyParamCaption}
+\item[{{\bf Any}}]{}
+\end{DoxyParamCaption}
+)}\label{a00143_a4a698473997da5ebf0c0092618715234}
+\hypertarget{a00143_af90aa9b56b22d8bb3f9fd55c17993bb9}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!What@{What}}
+\index{What@{What}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{What}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& A\+A\+X\+::\+Exception\+::\+Any\+::\+What (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00143_af90aa9b56b22d8bb3f9fd55c17993bb9}
+
+
+Referenced by A\+A\+X\+::\+As\+String().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{a00143_af90aa9b56b22d8bb3f9fd55c17993bb9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00143_a94edabf21577df253ad7bc9ec6e3f403}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!Desc@{Desc}}
+\index{Desc@{Desc}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{Desc}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& A\+A\+X\+::\+Exception\+::\+Any\+::\+Desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00143_a94edabf21577df253ad7bc9ec6e3f403}
+\hypertarget{a00143_aa9434f3856b39a774a50a708713245cd}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!Function@{Function}}
+\index{Function@{Function}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{Function}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& A\+A\+X\+::\+Exception\+::\+Any\+::\+Function (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00143_aa9434f3856b39a774a50a708713245cd}
+\hypertarget{a00143_ad68defaa96c9559724c8503b7231ec43}{}\index{A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}!Line@{Line}}
+\index{Line@{Line}!A\+A\+X\+::\+Exception\+::\+Any@{A\+A\+X\+::\+Exception\+::\+Any}}
+\subsubsection[{Line}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& A\+A\+X\+::\+Exception\+::\+Any\+::\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00143_ad68defaa96c9559724c8503b7231ec43}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00208}{A\+A\+X\+\_\+\+Exception.\+h}\end{DoxyCompactItemize}

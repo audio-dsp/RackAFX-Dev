@@ -1,0 +1,43 @@
+\hypertarget{a00212}{}\section{A\+A\+X\+\_\+\+Fast\+Pow.\+h File Reference}
+\label{a00212}\index{A\+A\+X\+\_\+\+Fast\+Pow.\+h@{A\+A\+X\+\_\+\+Fast\+Pow.\+h}}
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Set of functions to optimize pow. 
+
+To use\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{const} \textcolor{keywordtype}{int} kPowTableExtent = 9;      \textcolor{comment}{// Lower values are less precise. 9 is the maximum}
+\textcolor{keywordtype}{float} powTableH[\hyperlink{a00288_a59f1ab59ea51ed94f87e8d935870df9e}{kPowTableSize}];
+\textcolor{keywordtype}{float} powTableL[\hyperlink{a00288_a59f1ab59ea51ed94f87e8d935870df9e}{kPowTableSize}];
+\textcolor{keywordtype}{int} radix = 2;                      \textcolor{comment}{// This should be whatever radix you want. Ie: radix ^ exp}
+PowFastSetTable( powTableH, \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{kPowExtent}, \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{kPowExtent}, \textcolor{keyword}{false} ); \textcolor{comment}{// Set the high table}
+PowFastSetTable( powTableL, \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{kPowExtent}*2, \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{kPowExtent}, \textcolor{keyword}{true} );\textcolor{comment}{// Set the low table}
+..
+result = powFastLookup(exp, log(2) / log(radix), powTableH, powTableL);
+\end{DoxyCode}
+ \subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00212_ac6d8a45526d6683f24769be9e942fc4e}{\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{A\+A\+X\+::k\+Pow\+Extent} = 9
+\item 
+const unsigned int \hyperlink{a00288_a59f1ab59ea51ed94f87e8d935870df9e}{A\+A\+X\+::k\+Pow\+Table\+Size} = 1 $<$$<$ k\+Pow\+Extent
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00212_ac6d8a45526d6683f24769be9e942fc4e}{}\index{A\+A\+X\+\_\+\+Fast\+Pow.\+h@{A\+A\+X\+\_\+\+Fast\+Pow.\+h}!\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+}}
+\index{\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+}!A\+A\+X\+\_\+\+Fast\+Pow.\+h@{A\+A\+X\+\_\+\+Fast\+Pow.\+h}}
+\subsubsection[{\+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+A\+A\+X\+\_\+\+F\+A\+S\+T\+P\+O\+W\+\_\+\+H\+\_\+}\label{a00212_ac6d8a45526d6683f24769be9e942fc4e}

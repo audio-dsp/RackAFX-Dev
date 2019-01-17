@@ -1,0 +1,129 @@
+\hypertarget{a00357}{}\section{The Avid Component Framework (A\+C\+F)}
+\label{a00357}\index{The Avid Component Framework (\+A\+C\+F)@{The Avid Component Framework (\+A\+C\+F)}}
+
+
+\subsection{ }
+How the A\+A\+X C++ interfaces work. 
+
+The objects and interfaces in A\+A\+X are based on the Avid Component Framework (A\+C\+F). The A\+C\+F is Avid’s implementation of C\+O\+M, and is the framework that A\+A\+X, as well as A\+V\+X (Avid Video Externsions) plug-\/ins are built on.
+
+A\+C\+F can be considered an implementation detail of the A\+A\+X S\+D\+K; the S\+D\+K is written to protect plug-\/in developers from the intricacies of A\+C\+F, and it is not necessary to understand A\+C\+F or C\+O\+M in order to use the S\+D\+K.\hypertarget{a00357_details}{}\subsection{More details}\label{a00357_details}
+As in C\+O\+M, A\+C\+F draws a distinction between the concept of an object and the concept of an interface. An object is treated as a \char`\"{}black box\char`\"{} of code, whereas an interface is a class of pure virtual methods that allows one to access the functionality inside the object. An object in A\+C\+F is represented by the \hyperlink{a00146}{I\+A\+C\+F\+Unknown} interface, which is binary compatible with the C\+O\+M class I\+Unknown. (Likewise, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} follows the same reference counting rules as I\+Unknown objects.) This interface allows a client to get pointers to other interfaces on a given object using the \hyperlink{a00146_a8b7f0ae9c78d007ca76aa462ebe53135}{Query\+Interface()} method.
+
+Reference counting is an important aspect of both C\+O\+M and A\+C\+F. Simply put, reference counting is the practice of tracking all references to an object, so that a program can determine when the object can safely be deleted. The A\+A\+X S\+D\+K library handles this reference counting behind the scenes, so plug-\/ins that call into the S\+D\+K library to manage their component interfaces will not leak references.
+
+Many additional resources can be found both online and print that cover C\+O\+M and reference counting in greater detail.\hypertarget{a00357_acf_in_aax}{}\subsection{A\+C\+F interfaces in A\+A\+X}\label{a00357_acf_in_aax}
+The binary interface between an A\+A\+X plug-\/in and host is defined by a series of A\+C\+F interfaces. Each of these interfaces inherits from \hyperlink{a00146}{I\+A\+C\+F\+Unknown}. The implementation of each A\+C\+F interface typically uses {\ttfamily C\+A\+C\+F\+Unknown}, a utility class that provides basic reference counting and additional fundamental A\+C\+F details to satisfy \hyperlink{a00146}{I\+A\+C\+F\+Unknown}.
+
+These A\+C\+F interfaces may be implemented by either the A\+A\+X plug-\/in or the host. The host retains a reference to each interface that is implemented by the plug-\/in in order to call methods on the plug-\/in\textquotesingle{}s implementation. Correspondingly, the plug-\/in retains references to various interfaces that are implemented by the host, and may call host methods via these interfaces.
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_acf_versioning_plug-in}
+\caption{A\+C\+F interfaces\+: A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters and A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}
+\end{DoxyImage}
+ The figure above demonstrates this design\+: the plug-\/in implements \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters} directly, and retains a reference to an \hyperlink{a00053}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller} that is implemented by the host.
+
+In order to implement \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}, \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} inherits from {\ttfamily C\+A\+C\+F\+Unknown} and implements \hyperlink{a00146_a8b7f0ae9c78d007ca76aa462ebe53135}{Query\+Interface()} to ensure that the \hyperlink{a00146}{I\+A\+C\+F\+Unknown} interface is implemented. The rest of the implementation of \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters} is contained in \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} and the plug-\/in\textquotesingle{}s custom data model class.
+
+The reference to \hyperlink{a00053}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller} is managed by a versioned implementation class. For more information about this design, see below.\hypertarget{a00357_using_acf}{}\subsection{Using A\+C\+F interfaces}\label{a00357_using_acf}
+Depending on where an interface is implemented, there are two specific ways to acquire a reference to the underlying A\+A\+X object from an \hyperlink{a00146}{I\+A\+C\+F\+Unknown} pointer\+:
+
+\begin{DoxyItemize}
+\item \hyperlink{a00357_using_acf_host_provided_interfaces}{Host-\/provided interfaces} \item \hyperlink{a00357_using_acf_plug_in_interfaces}{Plug-\/in interfaces}\end{DoxyItemize}
+\hypertarget{a00357_using_acf_host_provided_interfaces}{}\subsubsection{Host-\/provided interfaces}\label{a00357_using_acf_host_provided_interfaces}
+Interfaces that are managed by the host must be carefully version-\/controlled in order to maintain compatibility with many different host versions. The A\+A\+X S\+D\+K includes \char`\"{}\+A\+A\+X\+\_\+\+V\char`\"{} classes to handle this versioning. A\+A\+X\+\_\+\+V classes are concrete classes that query the host for the correct version of the requested interface. These classes can also handle re-\/routing deprecated calls and other complicated versioning logic.
+
+To create an A\+A\+X\+\_\+\+V object, pass an \hyperlink{a00146}{I\+A\+C\+F\+Unknown} pointer to the underlying host-\/managed interface in to the A\+A\+X\+\_\+\+V class\textquotesingle{} constructor. A\+C\+F reference counting is handled automatically by the object\textquotesingle{}s construction and destruction routines, so no additional calls are necessary to acquire and release the reference.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{a00304}{AAX\_VController.h}"}
+
+\textcolor{keywordtype}{void} SomeFunction (\hyperlink{a00146}{IACFUnknown} * inController)
+\{
+    \textcolor{comment}{// When object is created, a reference is acquired}
+    \hyperlink{a00132}{AAX\_VController} theController (inController);
+    
+    \textcolor{comment}{//}
+    \textcolor{comment}{// ...}
+    \textcolor{comment}{//}
+    
+    \textcolor{comment}{// When object goes out of scope, the reference is released}
+\}
+\end{DoxyCode}
+\hypertarget{a00357_using_acf_plug_in_interfaces}{}\subsubsection{Plug-\/in interfaces}\label{a00357_using_acf_plug_in_interfaces}
+Interfaces to objects that are owned by the plug-\/in always have a known version and therefore do not require A\+A\+X\+\_\+\+V object management. Instead, these interfaces must be acquired and released directly using A\+C\+F.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{a00299}{AAX\_UIDs.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{a00158}{AAX\_Assert.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{a00247}{AAX\_IEffectParameters.h}"}
+\textcolor{preprocessor}{#include "acfunknown.h"}
+
+\textcolor{keywordtype}{void} SomeFunction (\hyperlink{a00146}{IACFUnknown} * inController)
+\{
+    \textcolor{comment}{// When interface is queried, a reference is acquired}
+    \textcolor{keywordflow}{if} ( inController )
+    \{
+        \hyperlink{a00099}{AAX\_IEffectParameters}* myEffectParameters = NULL;
+        ACFRESULT acfErr = ACF\_OK;
+        acfErr = inController->\hyperlink{a00146_a8b7f0ae9c78d007ca76aa462ebe53135}{QueryInterface}(
+            \hyperlink{a00299_a8379d320e9eabb19428d005fb6499f88}{IID\_IAAXEffectParametersV1},
+            (\textcolor{keywordtype}{void} **)&myEffectParameters);
+        
+        \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT}(ACFSUCCEEDED(acfErr));
+    \}   
+    
+    \textcolor{comment}{//}
+    \textcolor{comment}{// ...}
+    \textcolor{comment}{//}
+    
+    \textcolor{comment}{// The reference must be explicitly released when finished}
+    \textcolor{keywordflow}{if} (myEffectParameters)
+    \{
+        myEffectParameters->\hyperlink{a00146_afabd38cec0a9ed37f1d3e8644a70ac41}{Release}();
+        myEffectParameters = NULL;
+    \}
+\}
+\end{DoxyCode}
+\hypertarget{a00357_ACF}{}\subsection{Interface versioning in A\+A\+X}\label{a00357_ACF}
+The A\+C\+F-\/based interface used by A\+A\+X is designed to allow additional features to be added to the architecture. This can be achieved via the addition of new kinds of interfaces (e.\+g. \hyperlink{a00097}{A\+A\+X\+\_\+\+I\+Effect\+Direct\+Data}) or by extending the existing interfaces. In this section, we will describe an approach for interface extension.
+
+First, here is a more complete picture of \char`\"{}version 1\char`\"{} of the \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters} and \hyperlink{a00053}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller} interfaces, including a possible host implementation of \hyperlink{a00053}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller} \+:
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_acf_versioning_full}
+\caption{A\+C\+F interfaces\+: A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters and A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller (with possible host design)}
+\end{DoxyImage}
+ To extend these interfaces, new \char`\"{}version 2\char`\"{} interfaces are created that inherit from the original interface classes. Although any version 1 method could be called on the new version 2 class, references to each interface are retained by the client in order to clarify the specific version in which each method was introduced.
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_acf_versioning_plug-in_v2}
+\caption{Adding a new version to A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters and A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}
+\end{DoxyImage}
+ In this example, if the plug-\/in is loaded by an older host, the reference to {\ttfamily A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller\+V2} will return as {\ttfamily N\+U\+L\+L}, and calls to the V2 methods in \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} will return an \char`\"{}unimplemented\char`\"{} error code. Similarly, if a plug-\/in that only implements \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters} is loaded into a host that supports {\ttfamily A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+V2}, that host will receive a {\ttfamily N\+U\+L\+L} reference to the newer interface version and will only be able to call methods on the plug-\/in\textquotesingle{}s implementation of the original interface.
+
+As a final example, here is a possible design involving new versions of both \hyperlink{a00061}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters} and \hyperlink{a00053}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Controller}, with an example design for the host\textquotesingle{}s implementation as well as the plug-\/in\textquotesingle{}s\+:
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_acf_versioning_full_v2}
+\caption{Complete design example with versioned A\+C\+F interfaces}
+\end{DoxyImage}
+\subsection*{Documents}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00358}{A\+C\+F Elements}
+\begin{DoxyCompactList}\small\item\em A\+C\+F classes that are used by common A\+A\+X interfaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for The Avid Component Framework (A\+C\+F)\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00357}
+\end{center}
+\end{figure}

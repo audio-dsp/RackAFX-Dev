@@ -1,0 +1,199 @@
+\hypertarget{a00214}{}\section{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h File Reference}
+\label{a00214}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Constants and other definitions used by A\+A\+X plug-\/in G\+U\+Is. 
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00119}{A\+A\+X\+\_\+\+Point}
+\begin{DoxyCompactList}\small\item\em Data structure representing a two-\/dimensional coordinate point. \end{DoxyCompactList}\item 
+struct \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect}
+\begin{DoxyCompactList}\small\item\em Data structure representing a rectangle in a two-\/dimensional coordinate plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \hyperlink{a00214_aace06b5ca898ac66c68fe5f5c598f0b6}{A\+A\+X\+\_\+\+Point}
+\begin{DoxyCompactList}\small\item\em Data structure representing a two-\/dimensional coordinate point. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect} \hyperlink{a00214_a85ca9d563f37484d29b66a2e4ec6598f}{A\+A\+X\+\_\+\+Rect}
+\begin{DoxyCompactList}\small\item\em Data structure representing a rectangle in a two-\/dimensional coordinate plane. \end{DoxyCompactList}\item 
+typedef enum \hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764}{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type} \hyperlink{a00214_ab4c36de253fc80b541eb51074c64caef}{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}
+\begin{DoxyCompactList}\small\item\em Type of \hyperlink{a00117}{view container}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764}{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type} \{ \hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764adf9ab6d93d9a35fcab5f7a0d24a2c308}{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L} = 0, 
+\hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a7be25786681e17b1a30c62579ab8591a}{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View} = 1, 
+\hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764aaabb8401d78697a273fe3983c3f23160}{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View} = 2, 
+\hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a98a127ce6e567cb18c07ac347bb09255}{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Type of \hyperlink{a00117}{view container}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00214_a899f910710cb6ccc0a7558221b6662a2}{operator==} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_a0eb2e452ed0865872e0f0862dee6ca29}{operator!=} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_acf1fd6c19f55dafdee37e5ba34b24833}{operator$<$} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_a3e748786f6aec65c75791b067f5158d3}{operator$<$=} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_adc56c3178fe78676f64e658930a66afb}{operator$>$} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_aab8ccb30f5a16c24a5364804fb28478c}{operator$>$=} (const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p1, const \hyperlink{a00119}{A\+A\+X\+\_\+\+Point} \&p2)
+\item 
+bool \hyperlink{a00214_a94c3ae4ba9ec60e0ccb85c6b565908db}{operator==} (const \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect} \&r1, const \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect} \&r2)
+\item 
+bool \hyperlink{a00214_af834f4e14c1f9e811efa1921a520fdcb}{operator!=} (const \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect} \&r1, const \hyperlink{a00120}{A\+A\+X\+\_\+\+Rect} \&r2)
+\item 
+\hyperlink{a00214_a58a6a1f6c9c669ba3cbd788d290f1109}{A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K} (\hyperlink{a00214_a89d5cb8c7fdb11f34e695fb0e057b764}{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00214_aace06b5ca898ac66c68fe5f5c598f0b6}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+\+Point@{A\+A\+X\+\_\+\+Point}}
+\index{A\+A\+X\+\_\+\+Point@{A\+A\+X\+\_\+\+Point}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Point}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+Point}  {\bf A\+A\+X\+\_\+\+Point}}\label{a00214_aace06b5ca898ac66c68fe5f5c598f0b6}
+
+
+Data structure representing a two-\/dimensional coordinate point. 
+
+Comparison operators give preference to {\ttfamily vert} \hypertarget{a00214_a85ca9d563f37484d29b66a2e4ec6598f}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+\+Rect@{A\+A\+X\+\_\+\+Rect}}
+\index{A\+A\+X\+\_\+\+Rect@{A\+A\+X\+\_\+\+Rect}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+Rect}  {\bf A\+A\+X\+\_\+\+Rect}}\label{a00214_a85ca9d563f37484d29b66a2e4ec6598f}
+
+
+Data structure representing a rectangle in a two-\/dimensional coordinate plane. 
+
+\hypertarget{a00214_ab4c36de253fc80b541eb51074c64caef}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type@{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}}
+\index{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type@{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}  {\bf A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}}\label{a00214_ab4c36de253fc80b541eb51074c64caef}
+
+
+Type of \hyperlink{a00117}{view container}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00117_a1715c042ed8412a2135f4d9e5109e8fb}{A\+A\+X\+\_\+\+I\+View\+Container\+::\+Get\+Type()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00214_a89d5cb8c7fdb11f34e695fb0e057b764}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type@{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}}
+\index{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type@{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}}\label{a00214_a89d5cb8c7fdb11f34e695fb0e057b764}
+
+
+Type of \hyperlink{a00117}{view container}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00117_a1715c042ed8412a2135f4d9e5109e8fb}{A\+A\+X\+\_\+\+I\+View\+Container\+::\+Get\+Type()} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L}}\item[{\em 
+\hypertarget{a00214_a89d5cb8c7fdb11f34e695fb0e057b764adf9ab6d93d9a35fcab5f7a0d24a2c308}{}A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+U\+L\+L\label{a00214_a89d5cb8c7fdb11f34e695fb0e057b764adf9ab6d93d9a35fcab5f7a0d24a2c308}
+}]\index{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View}}\item[{\em 
+\hypertarget{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a7be25786681e17b1a30c62579ab8591a}{}A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+N\+S\+View\label{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a7be25786681e17b1a30c62579ab8591a}
+}]\index{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View}}\item[{\em 
+\hypertarget{a00214_a89d5cb8c7fdb11f34e695fb0e057b764aaabb8401d78697a273fe3983c3f23160}{}A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+U\+I\+View\label{a00214_a89d5cb8c7fdb11f34e695fb0e057b764aaabb8401d78697a273fe3983c3f23160}
+}]\index{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D@{A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D}}\item[{\em 
+\hypertarget{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a98a127ce6e567cb18c07ac347bb09255}{}A\+A\+X\+\_\+e\+View\+Container\+\_\+\+Type\+\_\+\+H\+W\+N\+D\label{a00214_a89d5cb8c7fdb11f34e695fb0e057b764a98a127ce6e567cb18c07ac347bb09255}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00214_a899f910710cb6ccc0a7558221b6662a2}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator==@{operator==}}
+\index{operator==@{operator==}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_a899f910710cb6ccc0a7558221b6662a2}
+
+
+References A\+A\+X\+\_\+\+Point\+::horz, and A\+A\+X\+\_\+\+Point\+::vert.
+
+\hypertarget{a00214_a0eb2e452ed0865872e0f0862dee6ca29}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_a0eb2e452ed0865872e0f0862dee6ca29}
+\hypertarget{a00214_acf1fd6c19f55dafdee37e5ba34b24833}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_acf1fd6c19f55dafdee37e5ba34b24833}
+
+
+References A\+A\+X\+\_\+\+Point\+::horz, and A\+A\+X\+\_\+\+Point\+::vert.
+
+\hypertarget{a00214_a3e748786f6aec65c75791b067f5158d3}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_a3e748786f6aec65c75791b067f5158d3}
+
+
+References A\+A\+X\+\_\+\+Point\+::horz, and A\+A\+X\+\_\+\+Point\+::vert.
+
+\hypertarget{a00214_adc56c3178fe78676f64e658930a66afb}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_adc56c3178fe78676f64e658930a66afb}
+\hypertarget{a00214_aab8ccb30f5a16c24a5364804fb28478c}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Point} \&}]{p2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_aab8ccb30f5a16c24a5364804fb28478c}
+\hypertarget{a00214_a94c3ae4ba9ec60e0ccb85c6b565908db}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator==@{operator==}}
+\index{operator==@{operator==}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Rect} \&}]{r1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Rect} \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_a94c3ae4ba9ec60e0ccb85c6b565908db}
+
+
+References A\+A\+X\+\_\+\+Rect\+::height, A\+A\+X\+\_\+\+Rect\+::left, A\+A\+X\+\_\+\+Rect\+::top, and A\+A\+X\+\_\+\+Rect\+::width.
+
+\hypertarget{a00214_af834f4e14c1f9e811efa1921a520fdcb}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{operator"!=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Rect} \&}]{r1, }
+\item[{const {\bf A\+A\+X\+\_\+\+Rect} \&}]{r2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00214_af834f4e14c1f9e811efa1921a520fdcb}
+\hypertarget{a00214_a58a6a1f6c9c669ba3cbd788d290f1109}{}\index{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}!A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K@{A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K}}
+\index{A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K@{A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K}!A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h@{A\+A\+X\+\_\+\+G\+U\+I\+Types.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+E\+N\+U\+M\+\_\+\+S\+I\+Z\+E\+\_\+\+C\+H\+E\+C\+K (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+View\+Container\+\_\+\+Type}}]{}
+\end{DoxyParamCaption}
+)}\label{a00214_a58a6a1f6c9c669ba3cbd788d290f1109}

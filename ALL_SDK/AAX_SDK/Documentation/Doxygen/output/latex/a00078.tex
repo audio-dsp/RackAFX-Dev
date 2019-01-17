@@ -1,0 +1,100 @@
+\hypertarget{a00078}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access Class Reference}
+\label{a00078}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{a00577}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{a00578}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface for the A\+A\+X host\textquotesingle{}s data access functionality. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00078_ac722af5542e8e2dd4a52c6ef621ed034}{Read\+Port\+Direct} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, const uint32\+\_\+t in\+Offset, const uint32\+\_\+t in\+Size, void $\ast$out\+Buffer)=0
+\begin{DoxyCompactList}\small\item\em Read data directly from D\+S\+P at the given port. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00078_adce9d27f8faacffeed2dc1ec28561bfc}{Write\+Port\+Direct} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, const uint32\+\_\+t in\+Offset, const uint32\+\_\+t in\+Size, const void $\ast$in\+Buffer)=0
+\begin{DoxyCompactList}\small\item\em Write data directly to D\+S\+P at the given port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00078_ac722af5542e8e2dd4a52c6ef621ed034}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}!Read\+Port\+Direct@{Read\+Port\+Direct}}
+\index{Read\+Port\+Direct@{Read\+Port\+Direct}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}}
+\subsubsection[{Read\+Port\+Direct}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access\+::\+Read\+Port\+Direct (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{const uint32\+\_\+t}]{in\+Offset, }
+\item[{const uint32\+\_\+t}]{in\+Size, }
+\item[{void $\ast$}]{out\+Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00078_ac722af5542e8e2dd4a52c6ef621ed034}
+
+
+Read data directly from D\+S\+P at the given port. 
+
+\begin{DoxyNote}{Note}
+Blocking
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & The port to read from. \\
+\hline
+\mbox{\tt in}  & {\em in\+Offset} & Offset into data to start reading. \\
+\hline
+\mbox{\tt in}  & {\em in\+Size} & Amount of data to read (in bytes). \\
+\hline
+\mbox{\tt out}  & {\em out\+Buffer} & Pointer to storage for data to be read into. \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00078_adce9d27f8faacffeed2dc1ec28561bfc}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}!Write\+Port\+Direct@{Write\+Port\+Direct}}
+\index{Write\+Port\+Direct@{Write\+Port\+Direct}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access}}
+\subsubsection[{Write\+Port\+Direct}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access\+::\+Write\+Port\+Direct (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{const uint32\+\_\+t}]{in\+Offset, }
+\item[{const uint32\+\_\+t}]{in\+Size, }
+\item[{const void $\ast$}]{in\+Buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00078_adce9d27f8faacffeed2dc1ec28561bfc}
+
+
+Write data directly to D\+S\+P at the given port. 
+
+\begin{DoxyNote}{Note}
+Blocking
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & The port to write to. \\
+\hline
+\mbox{\tt in}  & {\em in\+Offset} & Offset into data to begin writing. \\
+\hline
+\mbox{\tt in}  & {\em in\+Size} & Amount of data to write (in bytes). \\
+\hline
+\mbox{\tt in}  & {\em in\+Buffer} & Pointer to data being written. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00231}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Private\+Data\+Access.\+h}\end{DoxyCompactItemize}

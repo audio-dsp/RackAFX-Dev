@@ -1,0 +1,406 @@
+\hypertarget{a00014}{}\section{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser Class Reference}
+\label{a00014}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser.\+h$>$}
+
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{a00404}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Parser utility for plugin chunks. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000012}{Todo}]Update this documentation for \hyperlink{a00288}{A\+A\+X}\end{DoxyRefDesc}
+
+
+This class acts as generic repository for data that is stuffed into or extracted from a S\+Fic\+Plug\+In\+Chunk. It has an abstracted Add/\+Find interface to add or retrieve data values, each uniquely referenced by a c-\/string. In conjuction with the Effect Layer and the \char`\"{}\+Control\+Manager\char`\"{} aspects of the C\+Process class, this provides a more transparent \& resilent system for performing save-\/and-\/restore on settings that won\textquotesingle{}t break so easily from endian issues or from the hard-\/coded structs that have typically been used to build chunk data.
+
+\begin{DoxyParagraph}{Format of the Chunk Data}
+The first 4 bytes of the data are the version number (repeated 4 times to be immune to byte swapping). Data follows next.~\newline
+ ~\newline
+Example\+: \char`\"{}f\+\_\+bypa \%\$\#@d\+\_\+gain \#\$!\#@\$\%\$s\+\_\+omsi \#\$\char`\"{} 
+\begin{DoxyCode}
+type    name    value   
+----------------------------
+\textcolor{keywordtype}{float}   bypa    %$#@    
+\textcolor{keywordtype}{double}  gain    #$!#@$%$
+int16\_t omsi    #$
+\end{DoxyCode}
+ ~\newline
+\begin{DoxyItemize}
+\item The first character denotes the data type\+: 
+\begin{DoxyCode}
+\textcolor{charliteral}{'f'} = \textcolor{keywordtype}{float}
+\textcolor{charliteral}{'d'} = \textcolor{keywordtype}{double}
+\textcolor{charliteral}{'l'} = int32
+\textcolor{charliteral}{'s'} = int16
+\end{DoxyCode}
+ ~\newline
+\item \char`\"{}\+\_\+\char`\"{} is an empty placekeeper that could be used to addition future information. Currently, it\textquotesingle{}s ignored when a chunk is parsed.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The string name identifier follows next, and can up to 255 characters int32\+\_\+t. The Effect Layer builds chunks it always converts the A\+A\+X\+\_\+\+Four\+Char\+Code of the control to a string. So, this will always be 4 characters int32\+\_\+t. The string is null terminated to indicate the start of the data value.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The data value follows next, but is possible shifted to aligned word aligned. The size of is determined, of course, by the data type. \end{DoxyItemize}
+
+\end{DoxyParagraph}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00144}{Data\+Value}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00014_acf61d78b965c04e6af597379edad5a39}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser} ()
+\item 
+virtual \hyperlink{a00014_a4a31f21eaad9742482051f05f08fb72b}{$\sim$\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser} ()
+\item 
+void \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float} (const char $\ast$name, float value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Adds some data of type float with {\itshape name} and {\itshape value} to the current chunk. \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a3dc9ec20551559ac3bdae8bf981ace8a}{Add\+Double} (const char $\ast$name, double value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a6000b5c93362f3fe35d59d197f340306}{Add\+Int32} (const char $\ast$name, int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a06541319eb6f0628d33518b0485cd8cc}{Add\+Int16} (const char $\ast$name, int16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a8a06f076c8e1c93df9348857abf50e39}{Add\+String} (const char $\ast$name, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} value)
+\item 
+bool \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float} (const char $\ast$name, float $\ast$value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Finds some data of type float with {\itshape name} and {\itshape value} in the current chunk. \end{DoxyCompactList}\item 
+bool \hyperlink{a00014_ac853da85bf797172a8bc3db5bcf98e66}{Find\+Double} (const char $\ast$name, double $\ast$value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} \end{DoxyCompactList}\item 
+bool \hyperlink{a00014_ad6bbac0856350d4d1734cb7de594149a}{Find\+Int32} (const char $\ast$name, int32\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} \end{DoxyCompactList}\item 
+bool \hyperlink{a00014_aaa004cdaafabb16caf7c0bad7e71db8f}{Find\+Int16} (const char $\ast$name, int16\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} \end{DoxyCompactList}\item 
+bool \hyperlink{a00014_a4272b40bb46bb54c0083d7313b3d73f7}{Find\+String} (const char $\ast$name, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value)
+\item 
+bool \hyperlink{a00014_af394b04f20c198396c4a4090bdeff06c}{Replace\+Double} (const char $\ast$name, double value)
+\item 
+int32\+\_\+t \hyperlink{a00014_a7cc4e0325d71d6957cdd10c1eaf5d8bc}{Get\+Chunk\+Data} (\hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$chunk)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Fills passed in {\itshape chunk} with data from current chunk; returns 0 if successful. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00014_ac113458fcdec81f316014ea4c3d73582}{Get\+Chunk\+Data\+Size} ()
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns size of current chunk. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00014_a8203d58398537e3d254b43f9d321af4c}{Get\+Chunk\+Version} ()
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Lists f\+Version in chunk header for convenience. \end{DoxyCompactList}\item 
+bool \hyperlink{a00014_a88ab0773d25dad48ab6c693662243f47}{Is\+Empty} ()
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns true if no data is in the chunk. \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a5718452d41c2292ba338b23ffc6cf29b}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Resets chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{a00144}{Data\+Value} $>$ \hyperlink{a00014_af3963982859b42ddebdcaeba36dd1d29}{m\+Data\+Values}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{a00014_a3e08508e7f92c6e43dd2de6a38868e2f}{m\+Last\+Found\+Index}
+\begin{DoxyCompactList}\small\item\em The last index found in the chunk. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{a00014_a67054cdc2d8e55ff2c26947930784bc9}{m\+Chunk\+Data}
+\item 
+int32\+\_\+t \hyperlink{a00014_a5994e0adfb0189cbf5f9a3aa915b3f7d}{m\+Chunk\+Version}
+\begin{DoxyCompactList}\small\item\em Equal to f\+Version from the chunk header. Equal to -\/1 if no chunk is loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Internal Methods}
+\label{_amgrpafe66b15a1c39dd0e784226f4403c2d5}%
+An Effect Layer plugin can ignore these methods. They are handled by or used internally by the Effect Layer. \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00014_a25fc41a1060445db4d7bee7a2919460d}{Load\+Chunk} (const \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$chunk)
+\begin{DoxyCompactList}\small\item\em Sets current chunk to data in {\itshape chunk} parameter. \end{DoxyCompactList}\item 
+void \hyperlink{a00014_acaf10308e9758014bff6872b4260a9e1}{Word\+Align} (uint32\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em sets {\itshape index} to 4-\/byte boundary \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a90dc10c7cb3f1a9af70179be70a8d739}{Word\+Align} (int32\+\_\+t \&index)
+\begin{DoxyCompactList}\small\item\em sets {\itshape index} to 4-\/byte boundary \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00014_a66556bfad37d6541cf4d317a48d099c2}{Find\+Name} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&Name)
+\begin{DoxyCompactList}\small\item\em used by public Find methods \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00014_acf61d78b965c04e6af597379edad5a39}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00014_acf61d78b965c04e6af597379edad5a39}
+\hypertarget{a00014_a4a31f21eaad9742482051f05f08fb72b}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!````~A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{$\sim$\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\index{````~A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{$\sim$\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::$\sim$\+A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00014_a4a31f21eaad9742482051f05f08fb72b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00014_aa85606ec7ad6e142abceb1097dcd2480}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Add\+Float@{Add\+Float}}
+\index{Add\+Float@{Add\+Float}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Add\+Float}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Add\+Float (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_aa85606ec7ad6e142abceb1097dcd2480}
+
+
+C\+A\+L\+L\+: Adds some data of type float with {\itshape name} and {\itshape value} to the current chunk. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00014_a3dc9ec20551559ac3bdae8bf981ace8a}{Add\+Double()}, \hyperlink{a00014_a6000b5c93362f3fe35d59d197f340306}{Add\+Int32()}, and \hyperlink{a00014_a06541319eb6f0628d33518b0485cd8cc}{Add\+Int16()} are the same but with different data types. 
+\end{DoxySeeAlso}
+\hypertarget{a00014_a3dc9ec20551559ac3bdae8bf981ace8a}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Add\+Double@{Add\+Double}}
+\index{Add\+Double@{Add\+Double}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Add\+Double}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Add\+Double (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a3dc9ec20551559ac3bdae8bf981ace8a}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} 
+
+\hypertarget{a00014_a6000b5c93362f3fe35d59d197f340306}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Add\+Int32@{Add\+Int32}}
+\index{Add\+Int32@{Add\+Int32}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Add\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Add\+Int32 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int32\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a6000b5c93362f3fe35d59d197f340306}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} 
+
+\hypertarget{a00014_a06541319eb6f0628d33518b0485cd8cc}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Add\+Int16@{Add\+Int16}}
+\index{Add\+Int16@{Add\+Int16}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Add\+Int16}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Add\+Int16 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int16\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a06541319eb6f0628d33518b0485cd8cc}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_aa85606ec7ad6e142abceb1097dcd2480}{Add\+Float()} 
+
+\hypertarget{a00014_a8a06f076c8e1c93df9348857abf50e39}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Add\+String@{Add\+String}}
+\index{Add\+String@{Add\+String}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Add\+String}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Add\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String}}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a8a06f076c8e1c93df9348857abf50e39}
+\hypertarget{a00014_a0651792f378318532e5be3799b108e58}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+Float@{Find\+Float}}
+\index{Find\+Float@{Find\+Float}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+Float}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+Float (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{float $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a0651792f378318532e5be3799b108e58}
+
+
+C\+A\+L\+L\+: Finds some data of type float with {\itshape name} and {\itshape value} in the current chunk. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00014_ac853da85bf797172a8bc3db5bcf98e66}{Find\+Double()}, \hyperlink{a00014_ad6bbac0856350d4d1734cb7de594149a}{Find\+Int32()}, and \hyperlink{a00014_aaa004cdaafabb16caf7c0bad7e71db8f}{Find\+Int16()} are the same but with different data types. 
+\end{DoxySeeAlso}
+\hypertarget{a00014_ac853da85bf797172a8bc3db5bcf98e66}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+Double@{Find\+Double}}
+\index{Find\+Double@{Find\+Double}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+Double}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+Double (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{double $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_ac853da85bf797172a8bc3db5bcf98e66}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} 
+
+\hypertarget{a00014_ad6bbac0856350d4d1734cb7de594149a}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+Int32@{Find\+Int32}}
+\index{Find\+Int32@{Find\+Int32}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+Int32 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int32\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_ad6bbac0856350d4d1734cb7de594149a}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} 
+
+\hypertarget{a00014_aaa004cdaafabb16caf7c0bad7e71db8f}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+Int16@{Find\+Int16}}
+\index{Find\+Int16@{Find\+Int16}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+Int16}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+Int16 (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{int16\+\_\+t $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_aaa004cdaafabb16caf7c0bad7e71db8f}
+
+
+C\+A\+L\+L\+: See \hyperlink{a00014_a0651792f378318532e5be3799b108e58}{Find\+Float()} 
+
+\hypertarget{a00014_a4272b40bb46bb54c0083d7313b3d73f7}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+String@{Find\+String}}
+\index{Find\+String@{Find\+String}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+String}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_a4272b40bb46bb54c0083d7313b3d73f7}
+\hypertarget{a00014_af394b04f20c198396c4a4090bdeff06c}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Replace\+Double@{Replace\+Double}}
+\index{Replace\+Double@{Replace\+Double}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Replace\+Double}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Replace\+Double (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name, }
+\item[{double}]{value}
+\end{DoxyParamCaption}
+)}\label{a00014_af394b04f20c198396c4a4090bdeff06c}
+\hypertarget{a00014_a7cc4e0325d71d6957cdd10c1eaf5d8bc}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Get\+Chunk\+Data@{Get\+Chunk\+Data}}
+\index{Get\+Chunk\+Data@{Get\+Chunk\+Data}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Get\+Chunk\+Data}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Get\+Chunk\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$}]{chunk}
+\end{DoxyParamCaption}
+)}\label{a00014_a7cc4e0325d71d6957cdd10c1eaf5d8bc}
+
+
+C\+A\+L\+L\+: Fills passed in {\itshape chunk} with data from current chunk; returns 0 if successful. 
+
+\hypertarget{a00014_ac113458fcdec81f316014ea4c3d73582}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Get\+Chunk\+Data\+Size@{Get\+Chunk\+Data\+Size}}
+\index{Get\+Chunk\+Data\+Size@{Get\+Chunk\+Data\+Size}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Get\+Chunk\+Data\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Get\+Chunk\+Data\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00014_ac113458fcdec81f316014ea4c3d73582}
+
+
+C\+A\+L\+L\+: Returns size of current chunk. 
+
+\hypertarget{a00014_a8203d58398537e3d254b43f9d321af4c}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Get\+Chunk\+Version@{Get\+Chunk\+Version}}
+\index{Get\+Chunk\+Version@{Get\+Chunk\+Version}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Get\+Chunk\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Get\+Chunk\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00014_a8203d58398537e3d254b43f9d321af4c}
+
+
+C\+A\+L\+L\+: Lists f\+Version in chunk header for convenience. 
+
+
+
+References m\+Chunk\+Version.
+
+\hypertarget{a00014_a88ab0773d25dad48ab6c693662243f47}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00014_a88ab0773d25dad48ab6c693662243f47}
+
+
+C\+A\+L\+L\+: Returns true if no data is in the chunk. 
+
+\hypertarget{a00014_a5718452d41c2292ba338b23ffc6cf29b}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00014_a5718452d41c2292ba338b23ffc6cf29b}
+
+
+Resets chunk. 
+
+\hypertarget{a00014_a25fc41a1060445db4d7bee7a2919460d}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Load\+Chunk@{Load\+Chunk}}
+\index{Load\+Chunk@{Load\+Chunk}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Load\+Chunk}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Load\+Chunk (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$}]{chunk}
+\end{DoxyParamCaption}
+)}\label{a00014_a25fc41a1060445db4d7bee7a2919460d}
+
+
+Sets current chunk to data in {\itshape chunk} parameter. 
+
+\hypertarget{a00014_acaf10308e9758014bff6872b4260a9e1}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Word\+Align@{Word\+Align}}
+\index{Word\+Align@{Word\+Align}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Word\+Align}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Word\+Align (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t \&}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_acaf10308e9758014bff6872b4260a9e1}
+
+
+sets {\itshape index} to 4-\/byte boundary 
+
+\hypertarget{a00014_a90dc10c7cb3f1a9af70179be70a8d739}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Word\+Align@{Word\+Align}}
+\index{Word\+Align@{Word\+Align}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Word\+Align}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Word\+Align (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t \&}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_a90dc10c7cb3f1a9af70179be70a8d739}
+
+
+sets {\itshape index} to 4-\/byte boundary 
+
+\hypertarget{a00014_a66556bfad37d6541cf4d317a48d099c2}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!Find\+Name@{Find\+Name}}
+\index{Find\+Name@{Find\+Name}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{Find\+Name}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::\+Find\+Name (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_a66556bfad37d6541cf4d317a48d099c2}
+
+
+used by public Find methods 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00014_a3e08508e7f92c6e43dd2de6a38868e2f}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!m\+Last\+Found\+Index@{m\+Last\+Found\+Index}}
+\index{m\+Last\+Found\+Index@{m\+Last\+Found\+Index}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{m\+Last\+Found\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::m\+Last\+Found\+Index\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_a3e08508e7f92c6e43dd2de6a38868e2f}
+
+
+The last index found in the chunk. 
+
+Since control values in chunks should tend to stay in order and in sync with the way they\textquotesingle{}re checked with controls within the plug-\/in, we\textquotesingle{}ll keep track of the value index to speed up searching. \hypertarget{a00014_a67054cdc2d8e55ff2c26947930784bc9}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!m\+Chunk\+Data@{m\+Chunk\+Data}}
+\index{m\+Chunk\+Data@{m\+Chunk\+Data}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{m\+Chunk\+Data}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::m\+Chunk\+Data\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_a67054cdc2d8e55ff2c26947930784bc9}
+\hypertarget{a00014_a5994e0adfb0189cbf5f9a3aa915b3f7d}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!m\+Chunk\+Version@{m\+Chunk\+Version}}
+\index{m\+Chunk\+Version@{m\+Chunk\+Version}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{m\+Chunk\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::m\+Chunk\+Version\hspace{0.3cm}{\ttfamily [protected]}}\label{a00014_a5994e0adfb0189cbf5f9a3aa915b3f7d}
+
+
+Equal to f\+Version from the chunk header. Equal to -\/1 if no chunk is loaded. 
+
+
+
+Referenced by Get\+Chunk\+Version().
+
+\hypertarget{a00014_af3963982859b42ddebdcaeba36dd1d29}{}\index{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}!m\+Data\+Values@{m\+Data\+Values}}
+\index{m\+Data\+Values@{m\+Data\+Values}!A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser@{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser}}
+\subsubsection[{m\+Data\+Values}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Data\+Value}$>$ A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser\+::m\+Data\+Values}\label{a00014_af3963982859b42ddebdcaeba36dd1d29}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00168}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser.\+h}\end{DoxyCompactItemize}

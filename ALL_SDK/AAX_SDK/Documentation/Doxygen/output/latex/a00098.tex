@@ -1,0 +1,82 @@
+\hypertarget{a00098}{}\section{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I Class Reference}
+\label{a00098}\index{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{a00627}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{a00628}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+The interface for a A\+A\+X Plug-\/in\textquotesingle{}s user interface. 
+
+\begin{DoxyRefDesc}{\+:\+Implemented by the Plug-\/\+In}
+\item[\hyperlink{a00004__aax_plugin_implementation000002}{\+:\+Implemented by the Plug-\/\+In}]\end{DoxyRefDesc}
+
+
+This is the interface for an instance of a plug-\/in\textquotesingle{}s G\+U\+I that gets exposed to the host application. You need to inherit from this interface and override all of the virtual functions to create a plug-\/in G\+U\+I.
+
+To create the G\+U\+I for an A\+A\+X plug-\/in it is required that you inherit from this interface and override all of the virtual functions from \hyperlink{a00060}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+G\+U\+I}. In nearly all cases you will be able to take advantage of the implementations in the A\+A\+X library\textquotesingle{}s \hyperlink{a00017}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I} class and only override the few specific methods that you want to explicitly customize.
+
+\begin{DoxyNote}{Note}
+This class always inherits from the latest version of the interface and thus requires any subclass to implement all the methods in the latest version of the interface. 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00098_a8b48b2f7798aa1ad2ebb38a93ad409b9}{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N} () A\+C\+F\+M\+E\+T\+H\+O\+D(Internal\+Query\+Interface)(const \hyperlink{a00150_a59df0b41744eee7a066787aaedf97f67}{acf\+I\+I\+D} \&riid
+\item 
+\hyperlink{a00098_abee8b669ca6136a80364127f144d24c3}{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E} (\hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I} \&operator=(const \hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I} \&))
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$$\ast$ \hyperlink{a00098_afcb1be35487e2a63f50ef2bc56f74c3a}{ppv\+Obj\+Out}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00098_a8b48b2f7798aa1ad2ebb38a93ad409b9}{}\index{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}!A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N@{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}}
+\index{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N@{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}!A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}}
+\subsubsection[{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I\+::\+A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00098_a8b48b2f7798aa1ad2ebb38a93ad409b9}
+\hypertarget{a00098_abee8b669ca6136a80364127f144d24c3}{}\index{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}!A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}}
+\index{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}!A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I\+::\+A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I} \&}]{operator = {\ttfamily (const~{\bf A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}~\&)}}
+\end{DoxyParamCaption}
+)}\label{a00098_abee8b669ca6136a80364127f144d24c3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00098_afcb1be35487e2a63f50ef2bc56f74c3a}{}\index{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}!ppv\+Obj\+Out@{ppv\+Obj\+Out}}
+\index{ppv\+Obj\+Out@{ppv\+Obj\+Out}!A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I@{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}}
+\subsubsection[{ppv\+Obj\+Out}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I\+::ppv\+Obj\+Out}\label{a00098_afcb1be35487e2a63f50ef2bc56f74c3a}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00246}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I.\+h}\end{DoxyCompactItemize}

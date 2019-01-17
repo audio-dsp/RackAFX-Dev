@@ -1,0 +1,101 @@
+\hypertarget{a00099}{}\section{A\+A\+X\+\_\+\+I\+Effect\+Parameters Class Reference}
+\label{a00099}\index{A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Effect\+Parameters.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Effect\+Parameters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{a00630}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+Effect\+Parameters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{a00631}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+The interface for an A\+A\+X Plug-\/in\textquotesingle{}s data model. 
+
+\begin{DoxyRefDesc}{\+:\+Implemented by the Plug-\/\+In}
+\item[\hyperlink{a00004__aax_plugin_implementation000003}{\+:\+Implemented by the Plug-\/\+In}]\end{DoxyRefDesc}
+
+
+The interface for an instance of a plug-\/in\textquotesingle{}s data model. A plug-\/in\textquotesingle{}s implementation of this interface is responsible for creating the plug-\/in\textquotesingle{}s set of parameters and for defining how the plug-\/in will respond when these parameters are changed via control updates or preset loads. In order for information to be routed from the plug-\/in\textquotesingle{}s data model to its algorithm, the parameters that are created here must be registered with the host in the plug-\/in\textquotesingle{}s \hyperlink{a00326}{Description callback}.
+
+At \hyperlink{a00061_ad4db3c0ab67f8f41cdd042a915daabb4}{initialization}, the host provides this interface with a reference to \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller}, which provides access from the data model back to the host. This reference provides a means of querying information from the host such as stem format or sample rate, and is also responsible for communication between the data model and the plug-\/in\textquotesingle{}s (decoupled) algorithm. See \hyperlink{a00327}{Real-\/time algorithm callback}.
+
+You will most likely inherit your implementation of this interface from \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}, a default implementation that provides basic data model functionality such as adding custom parameters, setting control values, restoring state, generating coefficients, etc., which you can override and customize as needed.
+
+The following tags appear in the descriptions for methods of this class and its derived classes\+: \begin{DoxyItemize}
+\item {\ttfamily C\+A\+L\+L\+:} Components in the plug-\/in should call this method to get / set data in the data model.\end{DoxyItemize}
+\begin{DoxyNote}{Note}
+\begin{DoxyItemize}
+\item This class always inherits from the latest version of the interface and thus requires any subclass to implement all the methods in the latest version of the interface. The current version of \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} provides a convenient default implementation for all methods in the latest interface. \item Except where noted otherwise, the parameter values referenced by the methods in this interface are normalized values. See \hyperlink{a00344}{Parameter Manager} for more information.\end{DoxyItemize}
+
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000038}{Legacy Porting Notes}]In the legacy plug-\/in S\+D\+K, these methods were found in C\+Process and {\ttfamily C\+Effect\+Process}. For additional {\ttfamily C\+Process} methods, see \hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}.\end{DoxyRefDesc}
+\hypertarget{a00099_AAX_IEffectParameters_relclass}{}\subsection{Related classes}\label{a00099_AAX_IEffectParameters_relclass}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_ieffectparams_related}
+\caption{Classes related to A\+A\+X\+\_\+\+I\+Effect\+Parameters by inheritance or composition}
+\end{DoxyImage}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_ieffectparams_contained}
+\caption{Classes owned as member objects of A\+A\+X\+\_\+\+C\+Effect\+Parameters}
+\end{DoxyImage}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00099_a6be6ecdd9b96ca0d7723995e6dd4e478}{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N} () A\+C\+F\+M\+E\+T\+H\+O\+D(Internal\+Query\+Interface)(const \hyperlink{a00150_a59df0b41744eee7a066787aaedf97f67}{acf\+I\+I\+D} \&riid
+\item 
+\hyperlink{a00099_ac3fdd3463ee1eeef3fb4a47750f71511}{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E} (\hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} \&operator=(const \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} \&))
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$$\ast$ \hyperlink{a00099_ae2e7b2d7553902b3e8163e8d1ef640dc}{ppv\+Obj\+Out}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00099_a6be6ecdd9b96ca0d7723995e6dd4e478}{}\index{A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}!A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N@{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}}
+\index{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N@{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}!A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}
+\subsubsection[{A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+A\+C\+F\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+U\+N\+K\+N\+O\+W\+N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00099_a6be6ecdd9b96ca0d7723995e6dd4e478}
+\hypertarget{a00099_ac3fdd3463ee1eeef3fb4a47750f71511}{}\index{A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}!A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}}
+\index{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}!A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters} \&}]{operator = {\ttfamily (const~{\bf A\+A\+X\+\_\+\+I\+Effect\+Parameters}~\&)}}
+\end{DoxyParamCaption}
+)}\label{a00099_ac3fdd3463ee1eeef3fb4a47750f71511}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00099_ae2e7b2d7553902b3e8163e8d1ef640dc}{}\index{A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}!ppv\+Obj\+Out@{ppv\+Obj\+Out}}
+\index{ppv\+Obj\+Out@{ppv\+Obj\+Out}!A\+A\+X\+\_\+\+I\+Effect\+Parameters@{A\+A\+X\+\_\+\+I\+Effect\+Parameters}}
+\subsubsection[{ppv\+Obj\+Out}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$$\ast$ A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::ppv\+Obj\+Out}\label{a00099_ae2e7b2d7553902b3e8163e8d1ef640dc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00247}{A\+A\+X\+\_\+\+I\+Effect\+Parameters.\+h}\end{DoxyCompactItemize}

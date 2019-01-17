@@ -1,0 +1,308 @@
+\hypertarget{a00019}{}\section{A\+A\+X\+\_\+\+Checked\+Result Class Reference}
+\label{a00019}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+Exception.\+h$>$}
+
+
+
+\subsection{Description}
+Error checker convenience class for \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}
+
+Implicitly convertable to an \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}.
+
+Provides an overloaded {\ttfamily \hyperlink{a00019_af95bea6f011d9a779170fc6128dc7295}{operator=()}} which will throw an \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} if assigned a non-\/success result.
+
+\begin{DoxyWarning}{Warning}
+Never use this class outside of an exception catch scope
+\end{DoxyWarning}
+If the host supports \hyperlink{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E} tracing, a log is emitted when the exception is thrown. A stacktrace is added if the host\textquotesingle{}s trace priority filter level is set to \hyperlink{a00158_a68d0297c90a8d294e19ea781f8cda96a}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest}
+
+When an error is encountered, \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} throws an \hyperlink{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Exception} exception and clears its internal result value.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{a00208}{AAX\_Exception.h}"}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} SomeCheckedMethod()
+\{
+  \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+  \textcolor{keywordflow}{try} \{
+    \hyperlink{a00019}{AAX\_CheckedResult} cr;
+    cr = ResultFunc1();
+    cr = ResultFunc2();
+  \}
+  \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& ex)
+  \{
+    \textcolor{comment}{// handle exception; do not rethrow}
+    result = ex.\hyperlink{a00147_ab62fbe044cceea7c341ae4dfafb036cc}{Result}();
+  \}
+  \textcolor{keywordflow}{catch} (...)
+  \{
+    result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a48a5ec1530ce351b081413c73097928f}{AAX\_ERROR\_UNKNOWN\_EXCEPTION};
+  \}
+
+  \textcolor{keywordflow}{return} result;
+\}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+The \hyperlink{a00288}{A\+A\+X} Library method which calls {\ttfamily \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()}} on the plug-\/in includes an appropriate exception handler, so \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} objects may be used within a plug-\/in\textquotesingle{}s describe code without additional catch scopes.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include "\hyperlink{a00208}{AAX\_Exception.h}"}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{GetEffectDescriptions}( \hyperlink{a00087}{AAX\_ICollection} * 
+      outCollection )
+\{
+  \hyperlink{a00019}{AAX\_CheckedResult} cr;
+  cr = MyDescriptionSubroutine1();
+  cr = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}(...);
+  \textcolor{comment}{// etc.}
+  \textcolor{keywordflow}{return} cr;
+\}
+\end{DoxyCode}
+
+
+It is assumed that the exception handler will resolve any error state and that the \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} may therefore continue to be used from a clean state following the exception catch block.
+
+If the previous error value is required then it can be retrieved using \hyperlink{a00019_ab562025cfed2205f683deb011cbb9416}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Last\+Error()}.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// in this example, the exception is handled and}
+\textcolor{comment}{// success is returned from MyFunc1()}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} MyFunc1()
+\{
+  \hyperlink{a00019}{AAX\_CheckedResult} cr;
+
+  \textcolor{keywordflow}{try} \{
+    cr = MethodThatReturnsError();
+  \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX::Exception::ResultError}& ex) \{
+    \textcolor{comment}{// exception is fully handled here}
+  \}
+  
+  \textcolor{comment}{// cr now holds a success value}
+  \textcolor{keywordflow}{return} cr;
+\}
+
+\textcolor{comment}{// in this example, MyFunc2() returns the first}
+\textcolor{comment}{// non-successful value which was encountered}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} MyFunc2()
+\{
+  \hyperlink{a00019}{AAX\_CheckedResult} cr;
+
+  \textcolor{keywordflow}{try} \{
+    \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{AAX\_SWALLOW}(cr = MethodThatMayReturnError1());
+    \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{AAX\_SWALLOW}(cr = MethodThatMayReturnError2());
+    cr = MethodThatMayReturnError3();
+  \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX::Exception::ResultError}& ex) \{
+    \textcolor{comment}{// exception might not be fully handled}
+  \}
+  
+  \textcolor{comment}{// pass the last error on to the caller}
+  \textcolor{keywordflow}{return} cr.\hyperlink{a00019_ab562025cfed2205f683deb011cbb9416}{LastError}();
+\}
+\end{DoxyCode}
+
+
+It is possible to add one or more accepted non-\/success values to an \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} so that these values will not trigger exceptions\+:
+
+
+\begin{DoxyCode}
+\hyperlink{a00019}{AAX\_CheckedResult} cr;
+\textcolor{keywordflow}{try} \{
+  cr.\hyperlink{a00019_af6c4b10c55e959f5f8424514a3cbb68a}{AddAcceptedResult}(AcceptableErrCode);
+  cr = MethodThatReturnsAcceptedError();
+  cr = MethodThatReturnsAnotherError();
+\} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX::Exception::ResultError}& ex) \{
+  \textcolor{comment}{// handle the exception}
+\}
+\end{DoxyCode}
+ \subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} \hyperlink{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{Exception}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00019_ac8120ba01d2f25608d74533c9d1a9747}{$\sim$\+A\+A\+X\+\_\+\+Checked\+Result} ()
+\item 
+\hyperlink{a00019_aab8a1c36b9be4f6aac93d79d3160dde8}{A\+A\+X\+\_\+\+Checked\+Result} ()
+\begin{DoxyCompactList}\small\item\em Construct an \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} in a success state. \end{DoxyCompactList}\item 
+\hyperlink{a00019_a03a1d64b0bf359b6a23ae59f6d892859}{A\+A\+X\+\_\+\+Checked\+Result} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\begin{DoxyCompactList}\small\item\em Implicit conversion constructor from \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. \end{DoxyCompactList}\item 
+void \hyperlink{a00019_af6c4b10c55e959f5f8424514a3cbb68a}{Add\+Accepted\+Result} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\begin{DoxyCompactList}\small\item\em Add an expected result which will not result in a throw. \end{DoxyCompactList}\item 
+void \hyperlink{a00019_a14a7d7cab3e771a38481a7ab5447ea52}{Reset\+Accepted\+Results} ()
+\item 
+\hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} \& \hyperlink{a00019_af95bea6f011d9a779170fc6128dc7295}{operator=} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\begin{DoxyCompactList}\small\item\em Assignment to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. \end{DoxyCompactList}\item 
+\hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} \& \hyperlink{a00019_a5be1639dbab20f74265dfad8685e7f9f}{operator$\vert$=} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\begin{DoxyCompactList}\small\item\em bitwise-\/or assignment to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \end{DoxyCompactList}\item 
+\hyperlink{a00019_aa4587e68af030541fa88ed1065713328}{operator A\+A\+X\+\_\+\+Result} () const 
+\begin{DoxyCompactList}\small\item\em Conversion to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. \end{DoxyCompactList}\item 
+void \hyperlink{a00019_abacea9ed08e64315cb984fa630815dd7}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the current result state. \end{DoxyCompactList}\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00019_ab562025cfed2205f683deb011cbb9416}{Last\+Error} () const 
+\begin{DoxyCompactList}\small\item\em Get the last non-\/success result which was stored in this object, or A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S if no non-\/success result was ever stored in this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!Exception@{Exception}}
+\index{Exception@{Exception}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+::\+Exception\+::\+Result\+Error} {\bf A\+A\+X\+\_\+\+Checked\+Result\+::\+Exception}}\label{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00019_ac8120ba01d2f25608d74533c9d1a9747}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!````~A\+A\+X\+\_\+\+Checked\+Result@{$\sim$\+A\+A\+X\+\_\+\+Checked\+Result}}
+\index{````~A\+A\+X\+\_\+\+Checked\+Result@{$\sim$\+A\+A\+X\+\_\+\+Checked\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+Checked\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Checked\+Result\+::$\sim$\+A\+A\+X\+\_\+\+Checked\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_ac8120ba01d2f25608d74533c9d1a9747}
+\hypertarget{a00019_aab8a1c36b9be4f6aac93d79d3160dde8}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{A\+A\+X\+\_\+\+Checked\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Checked\+Result\+::\+A\+A\+X\+\_\+\+Checked\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_aab8a1c36b9be4f6aac93d79d3160dde8}
+
+
+Construct an \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} in a success state. 
+
+\hypertarget{a00019_a03a1d64b0bf359b6a23ae59f6d892859}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{A\+A\+X\+\_\+\+Checked\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Checked\+Result\+::\+A\+A\+X\+\_\+\+Checked\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_a03a1d64b0bf359b6a23ae59f6d892859}
+
+
+Implicit conversion constructor from \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. 
+
+Implicit conversion is O\+K in order to support \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} cr = Some\+Func() 
+
+\subsection{Member Function Documentation}
+\hypertarget{a00019_af6c4b10c55e959f5f8424514a3cbb68a}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!Add\+Accepted\+Result@{Add\+Accepted\+Result}}
+\index{Add\+Accepted\+Result@{Add\+Accepted\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{Add\+Accepted\+Result}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+Checked\+Result\+::\+Add\+Accepted\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_af6c4b10c55e959f5f8424514a3cbb68a}
+
+
+Add an expected result which will not result in a throw. 
+
+It is acceptable for some methods to return certain non-\/success values such as \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a400d9332b820436d544b658523dacbf0}{A\+A\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+T\+Y} or \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a00457e5c8c821b4f15f102b7c7154c97}{A\+A\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+N\+E\+W\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+O\+S\+T\+E\+D} \hypertarget{a00019_a14a7d7cab3e771a38481a7ab5447ea52}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!Reset\+Accepted\+Results@{Reset\+Accepted\+Results}}
+\index{Reset\+Accepted\+Results@{Reset\+Accepted\+Results}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{Reset\+Accepted\+Results}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+Checked\+Result\+::\+Reset\+Accepted\+Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_a14a7d7cab3e771a38481a7ab5447ea52}
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\hypertarget{a00019_af95bea6f011d9a779170fc6128dc7295}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Checked\+Result}\& A\+A\+X\+\_\+\+Checked\+Result\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_af95bea6f011d9a779170fc6128dc7295}
+
+
+Assignment to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. 
+
+
+
+Referenced by operator$\vert$=().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{a00019_af95bea6f011d9a779170fc6128dc7295_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00019_a5be1639dbab20f74265dfad8685e7f9f}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{operator\texttt{"|}=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Checked\+Result}\& A\+A\+X\+\_\+\+Checked\+Result\+::operator$\vert$= (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_a5be1639dbab20f74265dfad8685e7f9f}
+
+
+bitwise-\/or assignment to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} 
+
+Sometimes used in legacy code to aggregate results into a single A\+A\+X\+\_\+\+Result value 
+
+References operator=().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{a00019_a5be1639dbab20f74265dfad8685e7f9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00019_aa4587e68af030541fa88ed1065713328}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!operator A\+A\+X\+\_\+\+Result@{operator A\+A\+X\+\_\+\+Result}}
+\index{operator A\+A\+X\+\_\+\+Result@{operator A\+A\+X\+\_\+\+Result}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{operator A\+A\+X\+\_\+\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Checked\+Result\+::operator {\bf A\+A\+X\+\_\+\+Result} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_aa4587e68af030541fa88ed1065713328}
+
+
+Conversion to \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. 
+
+\hypertarget{a00019_abacea9ed08e64315cb984fa630815dd7}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+Checked\+Result\+::\+Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_abacea9ed08e64315cb984fa630815dd7}
+
+
+Clears the current result state. 
+
+Does not affect the set of accepted results 
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\hypertarget{a00019_ab562025cfed2205f683deb011cbb9416}{}\index{A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}!Last\+Error@{Last\+Error}}
+\index{Last\+Error@{Last\+Error}!A\+A\+X\+\_\+\+Checked\+Result@{A\+A\+X\+\_\+\+Checked\+Result}}
+\subsubsection[{Last\+Error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+Checked\+Result\+::\+Last\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00019_ab562025cfed2205f683deb011cbb9416}
+
+
+Get the last non-\/success result which was stored in this object, or A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S if no non-\/success result was ever stored in this object. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00208}{A\+A\+X\+\_\+\+Exception.\+h}\end{DoxyCompactItemize}

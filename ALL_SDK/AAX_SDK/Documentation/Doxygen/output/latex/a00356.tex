@@ -1,0 +1,153 @@
+\hypertarget{a00356}{}\section{Plug-\/in type conversion}
+\label{a00356}\index{Plug-\/in type conversion@{Plug-\/in type conversion}}
+Specification for valid conversions between plug-\/in types. 
+
+\hypertarget{a00356_advancedTopics_relatedTypes_about}{}\subsection{About this specification}\label{a00356_advancedTopics_relatedTypes_about}
+The specification on this page defines the valid A\+A\+X plug-\/in type conversions. An A\+A\+X host may use this specification to perform automatic type conversions. For example\+: 
+\begin{DoxyItemize}
+\item When a session that was saved with a D\+S\+P plug-\/in Type is opened on a Native system the saved D\+S\+P Type should be converted to its Native counterpart.  
+\item When a session saved with the free version of a plug-\/in is opened on a system that has the full version installed then the saved free Type may be converted to the full version.  
+\end{DoxyItemize}\hypertarget{a00356_advancedTopics_relatedTypes_terminology}{}\subsection{Terminology}\label{a00356_advancedTopics_relatedTypes_terminology}
+In this specification the term \char`\"{}\+Type\char`\"{} refers to a specific configuration of an A\+A\+X plug-\/in.
+
+Each Type is uniquely identified by a combination of five values\+: 
+\begin{DoxyItemize}
+\item Manufacturer I\+D  
+\item Product I\+D  
+\item Plug-\/\+In I\+D  
+\item Sample rate bit mask  
+\item Architecture  
+\end{DoxyItemize}
+
+Each Type is defined by a particular call to \hyperlink{a00088_a1c069508cf54a523905c8160ebf628ad}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Process\+Proc\+\_\+\+Native} or \hyperlink{a00088_aa8443e720e48046444a2e9f712f0864b}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Process\+Proc\+\_\+\+T\+I} in the plug-\/in\textquotesingle{}s description method.
+
+The Plug-\/\+In I\+D is defined as one of \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Native} or \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea75f174df4efbeca86eaada126c1d9214}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+T\+I}.
+
+In this specification, the format for describing an I\+D is\+:
+
+\mbox{[} I\+D triad + sample rate + architecture \mbox{]}
+
+Where the I\+D triad may be expanded to \mbox{[} \mbox{[}Manufacturer I\+D\mbox{]} \mbox{[}Product I\+D\mbox{]} \mbox{[}Plug-\/\+In I\+D\mbox{]} \mbox{]}
+
+
+\begin{DoxyItemize}
+\item Explicit values are given in plain face  
+\item Arbitrary constant values are given in {\itshape bold face}  
+\item Wildcard values are given in {\itshape italics}  
+\end{DoxyItemize}
+
+For example\+: 
+\begin{DoxyItemize}
+\item \mbox{[} {\itshape I\+D triad} + {\itshape any sample rate} + Native \mbox{]} 
+\begin{DoxyItemize}
+\item Defines all Type identifiers with the same I\+D triad and the Native architecture, regardless of sample rate.  
+\end{DoxyItemize}
+\item \mbox{[} \mbox{[} \mbox{[}{\itshape Manufacturer I\+D}\mbox{]} \mbox{[}{\itshape Product I\+D}\mbox{]} \mbox{[}{\itshape any I\+D}\mbox{]} \mbox{]} + {\itshape sample rate} + Native \mbox{]} 
+\begin{DoxyItemize}
+\item Defines all Type identifiers with the same Manufacturer and Product I\+Ds, the same sample rate, and the Native architecture, but with any plug-\/in I\+D.  
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{a00356_advancedTopics_relatedTypes_scope}{}\subsection{Scope of this specification}\label{a00356_advancedTopics_relatedTypes_scope}
+For the purposes of this specification we are not concerned with Audio\+Suite Types. Currently these Types are never type-\/converted.
+
+In theory, an A\+A\+X host may apply a \char`\"{}partial\char`\"{} type conversion by swapping between different Process\+Procs without destroying and re-\/building any of the plug-\/in\textquotesingle{}s objects (data model, G\+U\+I). For the purposes of this specification we are not concerned about whether a given conversion is \char`\"{}partial\char`\"{} or \char`\"{}total\char`\"{}; all conversions are treated the same.
+
+Plug-\/in conversions are also required between Types of different stem formats. In fact, the supported stem format is an integral part of a Type\textquotesingle{}s unique identifier. This specification ignores the question of stem formats entirely; we assume that each Type supports all necessary stem formats for legal conversion with other Types.
+
+In general, type swapping rules for deprecated types and related types are equivalent. See \hyperlink{a00356_advancedTopics_relatedTypes_deprecation}{Type deprecation} for more information about the differences between related and deprecated types.\hypertarget{a00356_advancedTopics_relatedTypes_constraints}{}\subsection{Topological constraints}\label{a00356_advancedTopics_relatedTypes_constraints}
+
+\begin{DoxyItemize}
+\item All Types included in a single \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} must have the same Manufacturer I\+D  
+\item All Types included in a single \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} must have the same Manufacturer I\+D and Product I\+D  
+\item The Sample rate bit masks for two Types that share all other identifiers must be non-\/overlapping. I.\+e. {\ttfamily 0x0 == sr\+\_\+mask1 \& sr\+\_\+mask2}  
+\item Two Types may not be registered that differ only in their Architecture  
+\item Type relationships may only be defined between mutually exclusive Types. Types are mutually exclusive if\+: 
+\begin{DoxyItemize}
+\item Their sample rate support is non-\/overlapping  
+\item The \char`\"{}before\char`\"{} Type\textquotesingle{}s I\+D triad is not associated with any Type in the plug-\/in  
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{a00356_advancedTopics_relatedTypes_implicitconversions}{}\subsection{Implicit conversions}\label{a00356_advancedTopics_relatedTypes_implicitconversions}
+The A\+A\+X host should automatically convert between Types within the following I\+Ds\+: 
+\begin{DoxyItemize}
+\item \mbox{[} {\itshape I\+D triad} + {\itshape any sample rate} + {\itshape Architecture} \mbox{]}  
+\item \mbox{[} \mbox{[} \mbox{[}{\itshape Manufacturer I\+D}\mbox{]} \mbox{[}{\itshape Product I\+D}\mbox{]} \mbox{[}{\itshape any I\+D}\mbox{]} \mbox{]} + {\itshape sample rate} + {\itshape any architecture} \mbox{]}  
+\end{DoxyItemize}
+
+These conversions occur only if both Types are included in the plug-\/in when the conversion is made. Consider the following scenario\+: 
+\begin{DoxyEnumerate}
+\item A session is saved including an plug-\/in instance with the following Type identifier\+: \mbox{[} My I\+D triad + 48 k\+Hz + T\+I \mbox{]}  
+\item The plug-\/in is updated to a version that does not include this Type identifier, but that does include \mbox{[} My I\+D triad + 48 k\+Hz + Native \mbox{]}  
+\item The session is opened on a Native system  
+\end{DoxyEnumerate}
+
+In this scenario, if the plug-\/in had not been updated then an automatic conversion would occur. However, since the plug-\/in no longer includes the saved Type identifier, no automatic conversion occurs.
+
+A plug-\/in can work around this situation by including the \char`\"{}old\char`\"{} Type identifier as a Related (or Deprecated) Type (see \hyperlink{a00356_advancedTopics_relatedTypes_explicitconversions}{Explicit conversions}.)
+
+When a plug-\/in instance is saved after making an implicit conversion, plug-\/ins may be saved with the session using their new Type identifier. This is not required. For example, Pro Tools will prefer to save plug-\/in instances that were converted from D\+S\+P types as D\+S\+P, even if they were converted to corresponding Native types when the session was loaded onto and saved from a native Pro Tools system.\hypertarget{a00356_advancedTopics_relatedTypes_explicitconversions}{}\subsection{Explicit conversions}\label{a00356_advancedTopics_relatedTypes_explicitconversions}
+A\+A\+X includes properties that allow a plug-\/in to define explicit relationships between different Types. These properties only operate on I\+D triads. Each property can be associated with an array of I\+D triads to define a one-\/to-\/one or a many-\/to-\/one association between the given I\+D triads and the specific Type to which the property is attached. 
+\begin{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea9dc35184d705e963f14f85df4d71193d}{A\+A\+X\+\_\+e\+Property\+\_\+\+Related\+\_\+\+D\+S\+P\+\_\+\+Plugin\+\_\+\+List} / \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eab102bc794f2770c14b1f0fe2dde6766a}{A\+A\+X\+\_\+e\+Property\+\_\+\+Deprecated\+\_\+\+D\+S\+P\+\_\+\+Plugin\+\_\+\+List} 
+\begin{DoxyItemize}
+\item All of the given I\+D triads specify T\+I Types  
+\end{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eae47f50370ae2f6bf29b8cacc6a41d924}{A\+A\+X\+\_\+e\+Property\+\_\+\+Related\+\_\+\+Native\+\_\+\+Plugin\+\_\+\+List} / \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3f1e690c987d601001a7cc1da8247399}{A\+A\+X\+\_\+e\+Property\+\_\+\+Deprecated\+\_\+\+Native\+\_\+\+Plugin\+\_\+\+List} 
+\begin{DoxyItemize}
+\item All of the given I\+D triads specify Native Types  
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The A\+A\+X host should convert between related Types within the following constraints\+: 
+\begin{DoxyItemize}
+\item \mbox{[} \mbox{[} \mbox{[}Manufacturer I\+D\mbox{]} \mbox{[}Related Product I\+D\mbox{]} \mbox{[}Related T\+I Plug-\/\+In I\+D\mbox{]} \mbox{]} + {\itshape sample rate} + T\+I \mbox{]} 
+\begin{DoxyItemize}
+\item -\/$>$ \mbox{[} \mbox{[} \mbox{[}Manufacturer I\+D\mbox{]} \mbox{[}New Product I\+D $\vert$ Related Product I\+D\mbox{]} \mbox{[}New Plug-\/\+In I\+D\mbox{]} \mbox{]} + {\itshape sample rate} + {\itshape any architecture} \mbox{]}  
+\end{DoxyItemize}
+\item \mbox{[} \mbox{[} \mbox{[}Manufacturer I\+D\mbox{]} \mbox{[}Related Product I\+D\mbox{]} \mbox{[}Related Native Plug-\/\+In I\+D\mbox{]} \mbox{]} + {\itshape sample rate} + Native \mbox{]} 
+\begin{DoxyItemize}
+\item -\/$>$ \mbox{[} \mbox{[} \mbox{[}Manufacturer I\+D\mbox{]} \mbox{[}New Product I\+D $\vert$ Related Product I\+D\mbox{]} \mbox{[}New Plug-\/\+In I\+D\mbox{]} \mbox{]} + {\itshape sample rate} + {\itshape any architecture} \mbox{]}  
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+These conversions will occur regardless of whether the related I\+D triad is used for any of the Types in the plug-\/in.
+
+When a plug-\/in instance is saved after making an explicit conversion, all plug-\/ins are saved with the session using their new Type identifier.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000007}{Host Compatibility Notes}]Pro Tools versions prior to Pro Tools 12.\+3 do not allow explicit type conversion between types with different product I\+D values. Beginning in Pro Tools 12.\+3 both the product I\+D and the plug-\/in I\+D may differ between explicitly related types.\end{DoxyRefDesc}
+\hypertarget{a00356_advancedTopics_relatedTypes_deprecation}{}\subsection{Type deprecation}\label{a00356_advancedTopics_relatedTypes_deprecation}
+There are two varieties of explicit plug-\/in type association\+: related types and deprecated types.
+
+Properties that create a related type association\+: 
+\begin{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eae47f50370ae2f6bf29b8cacc6a41d924}{A\+A\+X\+\_\+e\+Property\+\_\+\+Related\+\_\+\+Native\+\_\+\+Plugin\+\_\+\+List} 
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea9dc35184d705e963f14f85df4d71193d}{A\+A\+X\+\_\+e\+Property\+\_\+\+Related\+\_\+\+D\+S\+P\+\_\+\+Plugin\+\_\+\+List} 
+\end{DoxyItemize}
+
+Properties that create a deprecated type association\+: 
+\begin{DoxyItemize}
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3f1e690c987d601001a7cc1da8247399}{A\+A\+X\+\_\+e\+Property\+\_\+\+Deprecated\+\_\+\+Native\+\_\+\+Plugin\+\_\+\+List} 
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eab102bc794f2770c14b1f0fe2dde6766a}{A\+A\+X\+\_\+e\+Property\+\_\+\+Deprecated\+\_\+\+D\+S\+P\+\_\+\+Plugin\+\_\+\+List} 
+\item \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eadb254df9b6114516beed7a04675a22a3}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Deprecated} 
+\end{DoxyItemize}
+
+With a few exceptions, these two types of explicit association are treated identically. These are the ways in which deprecated plug-\/in type association differs from related plug-\/in type association\+: 
+\begin{DoxyItemize}
+\item If plug-\/in types A and B are both installed, and if type A deprecates type B, then type B will be excluded from all insert lists in Pro Tools and will be made invisible to the user. 
+\item If plug-\/in types A and B are both installed, and if type A deprecates type B, then instances of type B will be swapped to type A when a session containing saved instances of type B is opened. 
+\item Upon the next session save following a swap due to a deprecated type association, the plug-\/in instance will be saved into the session using the I\+D of the new plug-\/in type. Therefore deprecated type swaps do not round-\/trip when moving between multiple systems if some of the systems have the deprecated types, but not the deprecating types, installed. 
+\end{DoxyItemize}
+
+Type deprecation should only be used when a new version of an effect completely replaces an old version of the effect. For all other situations, type relationship should be used.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000008}{Host Compatibility Notes}]\begin{DoxyItemize}
+\item Pro Tools versions before Pro Tools 12.\+3 treat deprecated and related type associations identically and do not support type deprecation features \item Media Composer does not support type deprecation features \item V\+E\+N\+U\+E does not support type deprecation features \end{DoxyItemize}
+\end{DoxyRefDesc}
+Collaboration diagram for Plug-\/in type conversion\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{a00356}
+\end{center}
+\end{figure}

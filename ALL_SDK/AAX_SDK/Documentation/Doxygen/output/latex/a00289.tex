@@ -1,0 +1,50 @@
+\hypertarget{a00289}{}\section{A\+A\+X\+\_\+\+Random\+Gen.\+h File Reference}
+\label{a00289}\index{A\+A\+X\+\_\+\+Random\+Gen.\+h@{A\+A\+X\+\_\+\+Random\+Gen.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Platform\+Optimization\+Constants.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Constants.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Functions for calculating pseudo-\/random numbers. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00289_a037b85bd9c13c42dee11b4016fa2d90a}{A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{a00288_af3435129d3c94c5f3d5e671943b9bbe2}{A\+A\+X\+::\+Get\+Int32\+R\+P\+D\+F} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+int32\+\_\+t \hyperlink{a00288_ad12251899137d551b9f652b1ffee2f99}{A\+A\+X\+::\+Get\+Fast\+Int32\+R\+P\+D\+F} (int32\+\_\+t $\ast$i\+Seed)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Calculate pseudo-\/random 32 bit number based on linear congruential method. \end{DoxyCompactList}\item 
+float \hyperlink{a00288_a5a91375167236862abc93ad879639cab}{A\+A\+X\+::\+Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a51d7a263d9053276c6cef1dbd2018ebe}{A\+A\+X\+::\+Get\+R\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a145cc6d06cd682e2d234d07ce939760e}{A\+A\+X\+::\+Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a42cc414ea1b868e26c591041a66ad8af}{A\+A\+X\+::\+Get\+T\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \hyperlink{a00288_a0c975151f0d47cc80eef9ff5a7c80125}{A\+A\+X\+::c\+Seed\+Divisor} = 1/127773.\+0f
+\item 
+const int32\+\_\+t \hyperlink{a00288_a143d659ccb62ae0807e9902e751b14cf}{A\+A\+X\+::c\+Initial\+Seed\+Value} =0x00\+F54321
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00289_a037b85bd9c13c42dee11b4016fa2d90a}{}\index{A\+A\+X\+\_\+\+Random\+Gen.\+h@{A\+A\+X\+\_\+\+Random\+Gen.\+h}!A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H@{A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H}}
+\index{A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H@{A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H}!A\+A\+X\+\_\+\+Random\+Gen.\+h@{A\+A\+X\+\_\+\+Random\+Gen.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+R\+A\+N\+D\+O\+M\+G\+E\+N\+\_\+\+H}\label{a00289_a037b85bd9c13c42dee11b4016fa2d90a}

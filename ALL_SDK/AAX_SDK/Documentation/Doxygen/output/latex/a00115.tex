@@ -1,0 +1,69 @@
+\hypertarget{a00115}{}\section{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base Class Reference}
+\label{a00115}\index{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Taper\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00664}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Defines the taper conversion behavior for a parameter. 
+
+\begin{DoxyRefDesc}{\+:\+Internal to the A\+A\+X S\+D\+K}
+\item[\hyperlink{a00006__aax_sdk_internal000003}{\+:\+Internal to the A\+A\+X S\+D\+K}]\end{DoxyRefDesc}
+
+
+This interface represents a delegate class to be used in conjunction with \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}. \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} delegates all conversion operations between normalized and real parameter values to classes that meet this interface. You can think of \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate} subclasses as simple taper conversion routines that enable a specific taper or range conversion function on an arbitrary parameter.
+
+To demonstrate the use of this interface, we will examine a simple call routine into a parameter\+:
+
+\begin{DoxyParagraph}{}
+1. The host application calls into the plug-\/in\textquotesingle{}s \hyperlink{a00034}{A\+A\+X\+\_\+\+C\+Parameter\+Manager} with a Parameter I\+D and a new normalized parameter value. This new value could be coming from an automation lane, a control surface, or any other parameter control; from the plug-\/in\textquotesingle{}s perspective, these are all identical.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+2. The \hyperlink{a00034}{A\+A\+X\+\_\+\+C\+Parameter\+Manager} finds the specified \hyperlink{a00033}{A\+A\+X\+\_\+\+C\+Parameter} and calls \hyperlink{a00108_ad4b9a53e4e972d1a840ef094036e5a70}{A\+A\+X\+\_\+\+I\+Parameter\+::\+Set\+Normalized\+Value()} on that parameter
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+3. \hyperlink{a00108_ad4b9a53e4e972d1a840ef094036e5a70}{A\+A\+X\+\_\+\+I\+Parameter\+::\+Set\+Normalized\+Value()} results in a call into the parameter\textquotesingle{}s concrete taper delegate to convert the normalized value to a real value.
+\end{DoxyParagraph}
+Using this pattern, the parameter manager is able to use real parameter values without actually knowing how to perform the conversion between normalized and real values.
+
+The inverse of the above example can also happen, e.\+g. when a control is updated from within the data model. In this case, the parameter can call into its concrete taper delegate in order to normalize the updated value, which can then be passed on to any observers that require normalized values, such as the host app.
+
+For more information about the parameter manager, see the \hyperlink{a00344}{Parameter Manager} documentation page. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00115_a38bf3326334b9bc248c62faff2492d38}{$\sim$\+A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00115_a38bf3326334b9bc248c62faff2492d38}{}\index{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}!````~A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base@{$\sim$\+A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}}
+\index{````~A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base@{$\sim$\+A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}!A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base\+::$\sim$\+A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00115_a38bf3326334b9bc248c62faff2492d38}
+
+
+Virtual destructor. 
+
+\begin{DoxyNote}{Note}
+This destructor M\+U\+S\+T be virtual to prevent memory leaks. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00262}{A\+A\+X\+\_\+\+I\+Taper\+Delegate.\+h}\end{DoxyCompactItemize}

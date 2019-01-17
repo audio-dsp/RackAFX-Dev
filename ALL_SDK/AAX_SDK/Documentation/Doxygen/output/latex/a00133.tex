@@ -1,0 +1,144 @@
+\hypertarget{a00133}{}\section{A\+A\+X\+\_\+\+V\+Description\+Host Class Reference}
+\label{a00133}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+V\+Description\+Host.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+V\+Description\+Host\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{a00695}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+V\+Description\+Host\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{a00696}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned wrapper for access to host service interfaces provided during plug-\/in description
+
+This object aggregates access to \hyperlink{a00056}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host} and \hyperlink{a00145}{I\+A\+C\+F\+Definition}, with support depending on the interface support level of the \hyperlink{a00146}{I\+A\+C\+F\+Unknown} which is passed to this object upon creation. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00133_a07eba69ed3cbafb4f9cd5c04030903c1}{A\+A\+X\+\_\+\+V\+Description\+Host} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unknown)
+\item 
+virtual \hyperlink{a00133_ae62fcaae41a924a81a16d50a6c76109b}{$\sim$\+A\+A\+X\+\_\+\+V\+Description\+Host} ()
+\item 
+virtual const \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} $\ast$ \hyperlink{a00133_a794b4e57c1260ff9b438733a7cf9882b}{Acquire\+Feature\+Properties} (const \hyperlink{a00149_a53d6cf8a08224b3e813333e411ce798e}{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D} \&in\+Feature\+I\+D) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\item 
+bool \hyperlink{a00133_aa5a445922084bc6c140d7e6c6f550f7f}{Supported} () const 
+\item 
+\hyperlink{a00056}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host} $\ast$ \hyperlink{a00133_a92f91b44add592e217499c1674ee76df}{Description\+Host} ()
+\item 
+const \hyperlink{a00056}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host} $\ast$ \hyperlink{a00133_a8a5254f9eb7db920b9aaa38e68beaa17}{Description\+Host} () const 
+\item 
+\hyperlink{a00145}{I\+A\+C\+F\+Definition} $\ast$ \hyperlink{a00133_aea691adb8d4c3e88c436301f8f47c272}{Host\+Definition} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00133_a07eba69ed3cbafb4f9cd5c04030903c1}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{A\+A\+X\+\_\+\+V\+Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+V\+Description\+Host\+::\+A\+A\+X\+\_\+\+V\+Description\+Host (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unknown}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{a00133_a07eba69ed3cbafb4f9cd5c04030903c1}
+\hypertarget{a00133_ae62fcaae41a924a81a16d50a6c76109b}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!````~A\+A\+X\+\_\+\+V\+Description\+Host@{$\sim$\+A\+A\+X\+\_\+\+V\+Description\+Host}}
+\index{````~A\+A\+X\+\_\+\+V\+Description\+Host@{$\sim$\+A\+A\+X\+\_\+\+V\+Description\+Host}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+V\+Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+V\+Description\+Host\+::$\sim$\+A\+A\+X\+\_\+\+V\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00133_ae62fcaae41a924a81a16d50a6c76109b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00133_a794b4e57c1260ff9b438733a7cf9882b}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!Acquire\+Feature\+Properties@{Acquire\+Feature\+Properties}}
+\index{Acquire\+Feature\+Properties@{Acquire\+Feature\+Properties}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{Acquire\+Feature\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf A\+A\+X\+\_\+\+I\+Feature\+Info}$\ast$ A\+A\+X\+\_\+\+V\+Description\+Host\+::\+Acquire\+Feature\+Properties (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D} \&}]{in\+Feature\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00133_a794b4e57c1260ff9b438733a7cf9882b}
+
+
+
+
+Get the client\textquotesingle{}s feature object for a given feature I\+D
+
+Similar to {\ttfamily Query\+Interface()} but uses a feature identifier rather than a true I\+I\+D
+
+Ownership of the returned object is passed to the caller; the caller is responsible for destroying the object, e.\+g. by capturing the returned object in a smart pointer.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// AAX\_IDescriptionHost* descHost}
+std::unique\_ptr<const AAX\_IFeatureInfo> featureInfoPtr(descHost->AcquireFeatureProperties(someFeatureUID);
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+An \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} interface with access to the host\textquotesingle{}s feature properties for this feature. 
+
+{\ttfamily N\+U\+L\+L} if the desired feature was not found or if an error occurred
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+May return an \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} object with limited method support, which would return an error such as \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a647cce13fa531e3a46c6eab694048a9c}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+C\+T} or \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} to interface calls.
+
+If no \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} is provided then that may mean that the host is unaware of the feature, or it may mean that the host is aware of the feature but has not implemented the A\+A\+X feature support interface for this feature yet.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Feature\+I\+D} & Identifier of the requested feature \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00091_aa0d9e27d0207113f98c217d870bfa5e9}{A\+A\+X\+\_\+\+I\+Description\+Host}.
+
+\hypertarget{a00133_aa5a445922084bc6c140d7e6c6f550f7f}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!Supported@{Supported}}
+\index{Supported@{Supported}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{Supported}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+V\+Description\+Host\+::\+Supported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00133_aa5a445922084bc6c140d7e6c6f550f7f}
+\hypertarget{a00133_a92f91b44add592e217499c1674ee76df}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!Description\+Host@{Description\+Host}}
+\index{Description\+Host@{Description\+Host}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host}$\ast$ A\+A\+X\+\_\+\+V\+Description\+Host\+::\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00133_a92f91b44add592e217499c1674ee76df}
+\hypertarget{a00133_a8a5254f9eb7db920b9aaa38e68beaa17}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!Description\+Host@{Description\+Host}}
+\index{Description\+Host@{Description\+Host}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+A\+C\+F\+Description\+Host}$\ast$ A\+A\+X\+\_\+\+V\+Description\+Host\+::\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00133_a8a5254f9eb7db920b9aaa38e68beaa17}
+\hypertarget{a00133_aea691adb8d4c3e88c436301f8f47c272}{}\index{A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}!Host\+Definition@{Host\+Definition}}
+\index{Host\+Definition@{Host\+Definition}!A\+A\+X\+\_\+\+V\+Description\+Host@{A\+A\+X\+\_\+\+V\+Description\+Host}}
+\subsubsection[{Host\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+A\+C\+F\+Definition}$\ast$ A\+A\+X\+\_\+\+V\+Description\+Host\+::\+Host\+Definition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00133_aea691adb8d4c3e88c436301f8f47c272}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00305}{A\+A\+X\+\_\+\+V\+Description\+Host.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,135 @@
+\hypertarget{a00271}{}\section{A\+A\+X\+\_\+\+Misc\+Utils.\+h File Reference}
+\label{a00271}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Platform\+Optimization\+Constants.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Constants.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Denormal.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Miscellaneous signal processing utilities. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00271_a89034ace563ff82face40a019fc93063}{A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H}
+\item 
+\#define \hyperlink{a00271_a7eb399409be7572c8bd589395c450cdc}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T}(a,  b)
+\begin{DoxyCompactList}\small\item\em Currently only functional on T\+I, these word alignments will provide better performance on T\+I. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00271_a61b7ad0861da92bf265b94334b9b042f}{A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}(a)
+\item 
+\#define \hyperlink{a00271_a31858c8aae0329f66ac1bfbc2fadd013}{A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}(a)
+\item 
+\#define \hyperlink{a00271_a30b9af679d91539e6aa0871d36c4b024}{A\+A\+X\+\_\+\+L\+O}(x)~x
+\begin{DoxyCompactList}\small\item\em These macros are used on T\+I to convert 2 single words accesses to one double word access to provide additional optimization. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00271_a51ea059e820f6ca326531adb132183c3}{A\+A\+X\+\_\+\+H\+I}(x)~$\ast$((const\+\_\+cast$<$float$\ast$$>$(\&x))+1)
+\item 
+\#define \hyperlink{a00271_a28c81661236c242d6ed7a3050033bba7}{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O}(x)~x
+\item 
+\#define \hyperlink{a00271_a6160eaa64818bfff43404b5c057f5f5f}{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I}(x)~$\ast$((const\+\_\+cast$<$int32\+\_\+t$\ast$$>$(reinterpret\+\_\+cast$<$const int32\+\_\+t$\ast$$>$(\&x)))+1)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class G\+F\+L\+O\+A\+T $>$ }\\G\+F\+L\+O\+A\+T \hyperlink{a00288_a6b1f85f5d8c5837ff52212e13b84e6d0}{A\+A\+X\+::\+Clamp\+To\+Zero} (G\+F\+L\+O\+A\+T i\+Value, G\+F\+L\+O\+A\+T i\+Clamp\+Threshold)
+\item 
+void \hyperlink{a00288_ae9c9b3862c1b63dc4fb4e3c901d42935}{A\+A\+X\+::\+Zero\+Memory} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+void \hyperlink{a00288_a0e598e79488a12354e9dbc340fa99b5a}{A\+A\+X\+::\+Zero\+Memory\+D\+W} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+{\footnotesize template$<$typename T , int N$>$ }\\void \hyperlink{a00288_a1e72222769ecdf34fa73ae38c0c709df}{A\+A\+X\+::\+Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\void \hyperlink{a00288_a480beff32ac0847c665f735fd8f78c0a}{A\+A\+X\+::\+Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+{\footnotesize template$<$typename T , int L, int M, int N$>$ }\\void \hyperlink{a00288_a114e6f06cf5789da4aad7ae0d786876e}{A\+A\+X\+::\+Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+double \hyperlink{a00288_aa4fa4d0765a764b020102cdbff8b45b0}{A\+A\+X\+::fabs} (double i\+Val)
+\item 
+float \hyperlink{a00288_af486dfb226661e4a47d7b42eca881759}{A\+A\+X\+::fabs} (float i\+Val)
+\item 
+float \hyperlink{a00288_a7fc4d4cd59850b8b875d085467ff5850}{A\+A\+X\+::fabsf} (float i\+Val)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_aa4cbb7d8707ad89fc5ba5169ebb75201}{A\+A\+X\+::\+Abs\+Max} (const T \&i\+Value, const T \&i\+Max)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_aca59c4cdf56130ee251118c02a9963e3}{A\+A\+X\+::\+Min\+Max} (const T \&i\+Value, const T \&i\+Min, const T \&i\+Max)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_a55ac62cf1b543338c58f8dd0d747c56c}{A\+A\+X\+::\+Max} (const T \&i\+Value1, const T \&i\+Value2)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_a38c17ad30c1eb394bfa06e662d8d2598}{A\+A\+X\+::\+Min} (const T \&i\+Value1, const T \&i\+Value2)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_ab6a3e1aef81cd84dec2eee9a27755bb0}{A\+A\+X\+::\+Sign} (const T \&i\+Value)
+\item 
+double \hyperlink{a00288_aa0094a6a87ca0c48f58b48ce5eea636e}{A\+A\+X\+::\+Poly\+Eval} (double x, const double $\ast$coefs, int num\+Coefs)
+\item 
+double \hyperlink{a00288_aad5df8c4502619ca12136a2f7b8d8a06}{A\+A\+X\+::\+Ceil\+Log2} (double i\+Value)
+\item 
+void \hyperlink{a00288_a3826233eb62186c03bb093f1031ca8f4}{A\+A\+X\+::\+Sin\+Cos\+Mix} (float a\+Linear\+Mix, float \&a\+Sin\+Mix, float \&a\+Cos\+Mix)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00271_a89034ace563ff82face40a019fc93063}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H@{A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H}}
+\index{A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H@{A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+M\+I\+S\+C\+U\+T\+I\+L\+S\+\_\+\+H}\label{a00271_a89034ace563ff82face40a019fc93063}
+\hypertarget{a00271_a7eb399409be7572c8bd589395c450cdc}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T}}
+\index{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+M\+E\+N\+T\+\_\+\+H\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)}\label{a00271_a7eb399409be7572c8bd589395c450cdc}
+
+
+Currently only functional on T\+I, these word alignments will provide better performance on T\+I. 
+
+\hypertarget{a00271_a61b7ad0861da92bf265b94334b9b042f}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}}
+\index{A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\label{a00271_a61b7ad0861da92bf265b94334b9b042f}
+\hypertarget{a00271_a31858c8aae0329f66ac1bfbc2fadd013}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}}
+\index{A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T@{A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+W\+O\+R\+D\+\_\+\+A\+L\+I\+G\+N\+E\+D\+\_\+\+H\+I\+N\+T(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)}\label{a00271_a31858c8aae0329f66ac1bfbc2fadd013}
+\hypertarget{a00271_a30b9af679d91539e6aa0871d36c4b024}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+L\+O@{A\+A\+X\+\_\+\+L\+O}}
+\index{A\+A\+X\+\_\+\+L\+O@{A\+A\+X\+\_\+\+L\+O}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+L\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+L\+O(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~x}\label{a00271_a30b9af679d91539e6aa0871d36c4b024}
+
+
+These macros are used on T\+I to convert 2 single words accesses to one double word access to provide additional optimization. 
+
+\hypertarget{a00271_a51ea059e820f6ca326531adb132183c3}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+H\+I@{A\+A\+X\+\_\+\+H\+I}}
+\index{A\+A\+X\+\_\+\+H\+I@{A\+A\+X\+\_\+\+H\+I}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+H\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+H\+I(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~$\ast$((const\+\_\+cast$<$float$\ast$$>$(\&x))+1)}\label{a00271_a51ea059e820f6ca326531adb132183c3}
+\hypertarget{a00271_a28c81661236c242d6ed7a3050033bba7}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O@{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O}}
+\index{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O@{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+L\+O(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~x}\label{a00271_a28c81661236c242d6ed7a3050033bba7}
+\hypertarget{a00271_a6160eaa64818bfff43404b5c057f5f5f}{}\index{A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}!A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I@{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I}}
+\index{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I@{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I}!A\+A\+X\+\_\+\+Misc\+Utils.\+h@{A\+A\+X\+\_\+\+Misc\+Utils.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+I\+N\+T\+\_\+\+H\+I(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~$\ast$((const\+\_\+cast$<$int32\+\_\+t$\ast$$>$(reinterpret\+\_\+cast$<$const int32\+\_\+t$\ast$$>$(\&x)))+1)}\label{a00271_a6160eaa64818bfff43404b5c057f5f5f}

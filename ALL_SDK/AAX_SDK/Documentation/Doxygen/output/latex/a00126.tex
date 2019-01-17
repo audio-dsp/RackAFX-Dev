@@ -1,0 +1,98 @@
+\hypertarget{a00126}{}\section{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header Struct Reference}
+\label{a00126}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+
+
+{\ttfamily \#include $<$A\+A\+X.\+h$>$}
+
+
+
+\subsection{Description}
+Plug-\/in chunk header. 
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000002}{Legacy Porting Notes}]To ensure compatibility with T\+D\+M/\+R\+T\+A\+S plug-\/ins whose implementation requires {\ttfamily f\+Size} to be equal to the size of the chunk\textquotesingle{}s header plus its data, A\+A\+E performs some behind-\/the-\/scenes record keeping. ~\newline
+ ~\newline
+ The following actions are only taken for A\+A\+X plug-\/ins, so, e.\+g., if a chunk is stored by an R\+T\+A\+S or T\+D\+M plug-\/in that reports data+header size in {\ttfamily f\+Size} and this chunk is then loaded by the A\+A\+X version of the plug-\/in, the header size will be cached as-\/is from the legacy plug-\/in and will be subtracted out before the chunk data is passed to the A\+A\+X plug-\/in. If a chunk is stored by an A\+A\+X plug-\/in and is then loaded by a legacy plug-\/in, the legacy plug-\/in will receive the cached plug-\/in header with {\ttfamily f\+Size} equal to the data+header size. ~\newline
+ ~\newline
+ These are the special actions that A\+A\+E takes to ensure backwards-\/compatibility when handling A\+A\+X chunk data\+:
+\begin{DoxyItemize}
+\item When A\+A\+E retrieves the size of a chunk from an A\+A\+X plug-\/in using \hyperlink{a00061_aa986711cd372febcaae803e86ae08f63}{Get\+Chunk\+Size()}, it adds the chunk header size to the amount of memory that it allocates for the chunk ~\newline
+
+\item When A\+A\+E retrieves a chunk from an A\+A\+X plug-\/in using \hyperlink{a00061_ab977041a440a9cd6f3e631c059ee8b99}{Get\+Chunk()}, it adds the chunk header size to {\ttfamily f\+Chunk\+Size} before caching the chunk ~\newline
+
+\item Before calling \hyperlink{a00061_a2d780ebc594683e24302871b809602e8}{Set\+Chunk()} or \hyperlink{a00061_a1e86f849e970c9998313fc7d451ccf85}{Compare\+Active\+Chunk()}, A\+A\+E subtracts the chunk header size from the cached chunk\textquotesingle{}s header\textquotesingle{}s {\ttfamily f\+Chunk\+Size} member
+\end{DoxyItemize}\end{DoxyRefDesc}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{a00126_abaea87174a6d0dd1260644f6440591a6}{f\+Size}
+\begin{DoxyCompactList}\small\item\em The size of the chunk\textquotesingle{}s \hyperlink{a00125_abc76d66fffa4a59ee5cfdbdd992c532c}{f\+Data} member. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00126_a543b3299cad8fd9a4de599d97a069a35}{f\+Version}
+\begin{DoxyCompactList}\small\item\em The chunk\textquotesingle{}s version. \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00126_a569567884784354c6be2824199ccb194}{f\+Manufacturer\+I\+D}
+\begin{DoxyCompactList}\small\item\em The Plug-\/\+In\textquotesingle{}s manufacturer I\+D. \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00126_afbed1db12ae1f7cb3204dad3fd66070e}{f\+Product\+I\+D}
+\begin{DoxyCompactList}\small\item\em The Plug-\/\+In file\textquotesingle{}s product I\+D. \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00126_a34e98621d17821659efb8ecdb4847ec5}{f\+Plug\+In\+I\+D}
+\begin{DoxyCompactList}\small\item\em The I\+D of a particular Plug-\/\+In within the file. \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00126_a01307400067d1777c304624ffb5e0a8c}{f\+Chunk\+I\+D}
+\begin{DoxyCompactList}\small\item\em The I\+D of a particular Plug-\/\+In chunk. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{a00126_a84bee19fce5aeb2c429d872430cb8dab}{f\+Name} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em A user defined name for this chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00126_abaea87174a6d0dd1260644f6440591a6}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Size@{f\+Size}}
+\index{f\+Size@{f\+Size}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Size}\label{a00126_abaea87174a6d0dd1260644f6440591a6}
+
+
+The size of the chunk\textquotesingle{}s \hyperlink{a00125_abc76d66fffa4a59ee5cfdbdd992c532c}{f\+Data} member. 
+
+\hypertarget{a00126_a543b3299cad8fd9a4de599d97a069a35}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Version@{f\+Version}}
+\index{f\+Version@{f\+Version}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Version}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Version}\label{a00126_a543b3299cad8fd9a4de599d97a069a35}
+
+
+The chunk\textquotesingle{}s version. 
+
+\hypertarget{a00126_a569567884784354c6be2824199ccb194}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Manufacturer\+I\+D@{f\+Manufacturer\+I\+D}}
+\index{f\+Manufacturer\+I\+D@{f\+Manufacturer\+I\+D}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Manufacturer\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Manufacturer\+I\+D}\label{a00126_a569567884784354c6be2824199ccb194}
+
+
+The Plug-\/\+In\textquotesingle{}s manufacturer I\+D. 
+
+\hypertarget{a00126_afbed1db12ae1f7cb3204dad3fd66070e}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Product\+I\+D@{f\+Product\+I\+D}}
+\index{f\+Product\+I\+D@{f\+Product\+I\+D}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Product\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Product\+I\+D}\label{a00126_afbed1db12ae1f7cb3204dad3fd66070e}
+
+
+The Plug-\/\+In file\textquotesingle{}s product I\+D. 
+
+\hypertarget{a00126_a34e98621d17821659efb8ecdb4847ec5}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Plug\+In\+I\+D@{f\+Plug\+In\+I\+D}}
+\index{f\+Plug\+In\+I\+D@{f\+Plug\+In\+I\+D}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Plug\+In\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Plug\+In\+I\+D}\label{a00126_a34e98621d17821659efb8ecdb4847ec5}
+
+
+The I\+D of a particular Plug-\/\+In within the file. 
+
+\hypertarget{a00126_a01307400067d1777c304624ffb5e0a8c}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Chunk\+I\+D@{f\+Chunk\+I\+D}}
+\index{f\+Chunk\+I\+D@{f\+Chunk\+I\+D}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Chunk\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Chunk\+I\+D}\label{a00126_a01307400067d1777c304624ffb5e0a8c}
+
+
+The I\+D of a particular Plug-\/\+In chunk. 
+
+\hypertarget{a00126_a84bee19fce5aeb2c429d872430cb8dab}{}\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!f\+Name@{f\+Name}}
+\index{f\+Name@{f\+Name}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\subsubsection[{f\+Name}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header\+::f\+Name\mbox{[}32\mbox{]}}\label{a00126_a84bee19fce5aeb2c429d872430cb8dab}
+
+
+A user defined name for this chunk. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149}{A\+A\+X.\+h}\end{DoxyCompactItemize}

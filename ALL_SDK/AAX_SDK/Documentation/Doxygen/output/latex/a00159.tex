@@ -1,0 +1,248 @@
+\hypertarget{a00159}{}\section{A\+A\+X\+\_\+\+Atomic.\+h File Reference}
+\label{a00159}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+
+
+\subsection{Description}
+Atomic operation utilities. 
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00159_a95d8ffad4ab4b65ff2d28aa76e167daf}{\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_ad971a8dca9cea34ca7b3a0082c1c4795}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32} (register uint32\+\_\+t \&io\+Data)
+\begin{DoxyCompactList}\small\item\em Increments a 32-\/bit value and returns the result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_a1802487e752c85c59d097b0863bdf471}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32} (register uint32\+\_\+t \&io\+Data)
+\begin{DoxyCompactList}\small\item\em Decrements a 32-\/bit value and returns the result. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_a44eb82707be40dd559db9051317c10d0}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32} (volatile uint32\+\_\+t \&io\+Value, uint32\+\_\+t in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Return the original value of io\+Value and then set it to in\+Exchange\+Value. \end{DoxyCompactList}\item 
+uint64\+\_\+t \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_a0a683337ef8627f1e2b01e69d5f11cb0}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64} (volatile uint64\+\_\+t \&io\+Value, uint64\+\_\+t in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Return the original value of io\+Value and then set it to in\+Exchange\+Value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T\+Pointer $>$ }\\T\+Pointer $\ast$\hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_a02803b3ea269d4ed4758a91eec9fa46c}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer} (T\+Pointer $\ast$\&io\+Value, T\+Pointer $\ast$in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Perform an exchange operation on a pointer value. \end{DoxyCompactList}\item 
+bool \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_a74a2bdb895976193bdfe4cd2fe31e21e}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32} (volatile uint32\+\_\+t \&io\+Value, uint32\+\_\+t in\+Compare\+Value, uint32\+\_\+t in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Perform a compare and exchange operation on a 32-\/bit value. \end{DoxyCompactList}\item 
+bool \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_ae1e5b0cf8d8c7a301e13772a57a3d2fd}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64} (volatile uint64\+\_\+t \&io\+Value, uint64\+\_\+t in\+Compare\+Value, uint64\+\_\+t in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Perform a compare and exchange operation on a 64-\/bit value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T\+Pointer $>$ }\\bool \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_ab1c7611e7c95fd61900b8e5a44c36e63}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer} (T\+Pointer $\ast$\&io\+Value, T\+Pointer $\ast$in\+Compare\+Value, T\+Pointer $\ast$in\+Exchange\+Value)
+\begin{DoxyCompactList}\small\item\em Perform a compare and exchange operation on a pointer value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T\+Pointer $>$ }\\T\+Pointer $\ast$\hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} \hyperlink{a00159_af4fc59eed399acba13a88ca2d46cad92}{A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer} (T\+Pointer const $\ast$const volatile $\ast$in\+Value)
+\begin{DoxyCompactList}\small\item\em Atomically loads a pointer value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00159_a95d8ffad4ab4b65ff2d28aa76e167daf}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+}}
+\index{\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{\+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+A\+A\+X\+\_\+\+A\+T\+O\+M\+I\+C\+\_\+\+H\+\_\+}\label{a00159_a95d8ffad4ab4b65ff2d28aa76e167daf}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00159_ad971a8dca9cea34ca7b3a0082c1c4795}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Inc\+Then\+Get\+\_\+32 (
+\begin{DoxyParamCaption}
+\item[{register uint32\+\_\+t \&}]{io\+Data}
+\end{DoxyParamCaption}
+)}\label{a00159_ad971a8dca9cea34ca7b3a0082c1c4795}
+
+
+Increments a 32-\/bit value and returns the result. 
+
+\hypertarget{a00159_a1802487e752c85c59d097b0863bdf471}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Dec\+Then\+Get\+\_\+32 (
+\begin{DoxyParamCaption}
+\item[{register uint32\+\_\+t \&}]{io\+Data}
+\end{DoxyParamCaption}
+)}\label{a00159_a1802487e752c85c59d097b0863bdf471}
+
+
+Decrements a 32-\/bit value and returns the result. 
+
+\hypertarget{a00159_a44eb82707be40dd559db9051317c10d0}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32 (
+\begin{DoxyParamCaption}
+\item[{volatile uint32\+\_\+t \&}]{io\+Value, }
+\item[{uint32\+\_\+t}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_a44eb82707be40dd559db9051317c10d0}
+
+
+Return the original value of io\+Value and then set it to in\+Exchange\+Value. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_a44eb82707be40dd559db9051317c10d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_a0a683337ef8627f1e2b01e69d5f11cb0}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64 (
+\begin{DoxyParamCaption}
+\item[{volatile uint64\+\_\+t \&}]{io\+Value, }
+\item[{uint64\+\_\+t}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_a0a683337ef8627f1e2b01e69d5f11cb0}
+
+
+Return the original value of io\+Value and then set it to in\+Exchange\+Value. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_a0a683337ef8627f1e2b01e69d5f11cb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_a02803b3ea269d4ed4758a91eec9fa46c}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T\+Pointer $>$ T\+Pointer$\ast$ {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+\+Pointer (
+\begin{DoxyParamCaption}
+\item[{T\+Pointer $\ast$\&}]{io\+Value, }
+\item[{T\+Pointer $\ast$}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_a02803b3ea269d4ed4758a91eec9fa46c}
+
+
+Perform an exchange operation on a pointer value. 
+
+
+
+References A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+32(), and A\+A\+X\+\_\+\+Atomic\+\_\+\+Exchange\+\_\+64().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_a02803b3ea269d4ed4758a91eec9fa46c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_a74a2bdb895976193bdfe4cd2fe31e21e}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32 (
+\begin{DoxyParamCaption}
+\item[{volatile uint32\+\_\+t \&}]{io\+Value, }
+\item[{uint32\+\_\+t}]{in\+Compare\+Value, }
+\item[{uint32\+\_\+t}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_a74a2bdb895976193bdfe4cd2fe31e21e}
+
+
+Perform a compare and exchange operation on a 32-\/bit value. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_a74a2bdb895976193bdfe4cd2fe31e21e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_ae1e5b0cf8d8c7a301e13772a57a3d2fd}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64 (
+\begin{DoxyParamCaption}
+\item[{volatile uint64\+\_\+t \&}]{io\+Value, }
+\item[{uint64\+\_\+t}]{in\+Compare\+Value, }
+\item[{uint64\+\_\+t}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_ae1e5b0cf8d8c7a301e13772a57a3d2fd}
+
+
+Perform a compare and exchange operation on a 64-\/bit value. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_ae1e5b0cf8d8c7a301e13772a57a3d2fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_ab1c7611e7c95fd61900b8e5a44c36e63}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T\+Pointer $>$ bool {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+\+Pointer (
+\begin{DoxyParamCaption}
+\item[{T\+Pointer $\ast$\&}]{io\+Value, }
+\item[{T\+Pointer $\ast$}]{in\+Compare\+Value, }
+\item[{T\+Pointer $\ast$}]{in\+Exchange\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_ab1c7611e7c95fd61900b8e5a44c36e63}
+
+
+Perform a compare and exchange operation on a pointer value. 
+
+
+
+References A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+32(), and A\+A\+X\+\_\+\+Atomic\+\_\+\+Compare\+And\+Exchange\+\_\+64().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00159_ab1c7611e7c95fd61900b8e5a44c36e63_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00159_af4fc59eed399acba13a88ca2d46cad92}{}\index{A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}!A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer}}
+\index{A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer@{A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer}!A\+A\+X\+\_\+\+Atomic.\+h@{A\+A\+X\+\_\+\+Atomic.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T\+Pointer $>$ T\+Pointer$\ast$ {\bf A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K} A\+A\+X\+\_\+\+Atomic\+\_\+\+Load\+\_\+\+Pointer (
+\begin{DoxyParamCaption}
+\item[{T\+Pointer const $\ast$const volatile $\ast$}]{in\+Value}
+\end{DoxyParamCaption}
+)}\label{a00159_af4fc59eed399acba13a88ca2d46cad92}
+
+
+Atomically loads a pointer value. 
+

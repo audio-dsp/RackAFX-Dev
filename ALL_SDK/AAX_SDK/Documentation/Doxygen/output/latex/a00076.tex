@@ -1,0 +1,132 @@
+\hypertarget{a00076}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller Class Reference}
+\label{a00076}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00571}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{a00572}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface for host operations related to the page tables for this plug-\/in. 
+
+\begin{DoxyNote}{Note}
+In the A\+A\+X Library, access to this interface is provided through \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00076_a30b6356226881d6d60fb26aabea19d76}{Copy\+Table\+For\+Effect} (\hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Manufacturer\+I\+D, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Product\+I\+D, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Plug\+In\+I\+D, uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$o\+Page\+Table) const =0
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00076_a75965c6121b8041746e0a39f46d6fa8d}{Copy\+Table\+Of\+Layout\+For\+Effect} (const char $\ast$in\+Effect\+I\+D, const char $\ast$in\+Layout\+Name, uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$o\+Page\+Table) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00076_a30b6356226881d6d60fb26aabea19d76}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller}!Copy\+Table\+For\+Effect@{Copy\+Table\+For\+Effect}}
+\index{Copy\+Table\+For\+Effect@{Copy\+Table\+For\+Effect}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller}}
+\subsubsection[{Copy\+Table\+For\+Effect}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+::\+Copy\+Table\+For\+Effect (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Manufacturer\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Product\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Plug\+In\+I\+D, }
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{o\+Page\+Table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00076_a30b6356226881d6d60fb26aabea19d76}
+Copy the current page table data for a particular plug-\/in type.
+
+The host will reject the copy and return an error if the requested plug-\/in type is unkown, if {\ttfamily in\+Table\+Type} is unknown or if {\ttfamily in\+Table\+Page\+Size} is not a supported size for the given table type.
+
+The host may also restrict plug-\/ins to only copying page table data from certain plug-\/in types, such as plug-\/ins from the same manufacturer or plug-\/in types within the same effect.
+
+See \hyperlink{a00363}{Page Table Guide} for more information about page tables.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aa77cf0ad2d545c97b095d8bc19a7c969}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if {\ttfamily o\+Page\+Table} is null
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a7d27a3bd88231e331c98d85f5b10e2eb}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if no valid page table mapping can be created due to the specified arguments
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Manufacturer\+I\+D} & \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea996465cca29a2a15291d1c788ac5728c}{Manufacturer I\+D} of the desired plug-\/in type \\
+\hline
+\mbox{\tt in}  & {\em in\+Product\+I\+D} & \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{Product I\+D} of the desired plug-\/in type \\
+\hline
+\mbox{\tt in}  & {\em in\+Plug\+In\+I\+D} & Type I\+D of the desired plug-\/in type (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+Native}, \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea75f174df4efbeca86eaada126c1d9214}{A\+A\+X\+\_\+e\+Property\+\_\+\+Plug\+In\+I\+D\+\_\+\+T\+I}) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the requested table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the requested table. Some tables support multiple page sizes. \\
+\hline
+\mbox{\tt out}  & {\em o\+Page\+Table} & The page table object to which the page table data should be copied. {\ttfamily o\+Page\+Table} must support \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00090_acd6c896d35ee2c36e8f6685f0c8592ad}{A\+A\+X\+\_\+\+I\+Controller\+::\+Create\+Table\+Copy\+For\+Effect()} 
+\end{DoxySeeAlso}
+\hypertarget{a00076_a75965c6121b8041746e0a39f46d6fa8d}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller}!Copy\+Table\+Of\+Layout\+For\+Effect@{Copy\+Table\+Of\+Layout\+For\+Effect}}
+\index{Copy\+Table\+Of\+Layout\+For\+Effect@{Copy\+Table\+Of\+Layout\+For\+Effect}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller}}
+\subsubsection[{Copy\+Table\+Of\+Layout\+For\+Effect}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller\+::\+Copy\+Table\+Of\+Layout\+For\+Effect (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Effect\+I\+D, }
+\item[{const char $\ast$}]{in\+Layout\+Name, }
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{o\+Page\+Table}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00076_a75965c6121b8041746e0a39f46d6fa8d}
+Copy the current page table data for a particular plug-\/in effect and page table layout.
+
+The host will reject the copy and return an error if the requested effect I\+D is unkown or if {\ttfamily in\+Layout\+Name} is not a valid layout name for the page tables registered for the effect.
+
+The host may also restrict plug-\/ins to only copying page table data from certain effects, such as effects registered within the current \hyperlink{a00288}{A\+A\+X} plug-\/in bundle.
+
+See \hyperlink{a00363}{Page Table Guide} for more information about page tables.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aa77cf0ad2d545c97b095d8bc19a7c969}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if {\ttfamily in\+Effect\+I\+D}, {\ttfamily in\+Layout\+Name}, or {\ttfamily o\+Page\+Table} is null
+
+\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a7d27a3bd88231e331c98d85f5b10e2eb}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T} if no valid page table mapping can be created due to the specified arguments
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Effect\+I\+D} & Effect I\+D for the desired effect. See \hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Effect()} \\
+\hline
+\mbox{\tt in}  & {\em in\+Layout\+Name} & Page table layout name (\char`\"{}name\char`\"{} attribute of the {\ttfamily P\+T\+Layout} X\+M\+L tag) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the requested table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the requested table. Some tables support multiple page sizes. \\
+\hline
+\mbox{\tt out}  & {\em o\+Page\+Table} & The page table object to which the page table data should be copied. {\ttfamily o\+Page\+Table} must support \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00090_ab35931f5055849da04566d51e17665af}{A\+A\+X\+\_\+\+I\+Controller\+::\+Create\+Table\+Copy\+For\+Layout()} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00230}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table\+Controller.\+h}\end{DoxyCompactItemize}

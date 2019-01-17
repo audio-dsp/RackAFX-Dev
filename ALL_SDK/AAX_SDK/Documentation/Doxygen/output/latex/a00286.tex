@@ -1,0 +1,39 @@
+\hypertarget{a00286}{}\section{A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h File Reference}
+\label{a00286}\index{A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h@{A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h}}
+
+
+\subsection{Description}
+Set the struct alignment to 8-\/byte. 
+
+When setting the alignment for a struct in order to match a particular environment (e.\+g. host/plug-\/in binary compatibility) the following macros are recommended\+: \begin{DoxyItemize}
+\item \hyperlink{a00149_acbef7ed7d077bc9812cb56417e1ad325}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T} \item \hyperlink{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G} \item \hyperlink{a00149_a8aaaefcc3d87025e84d5ccb99b650a87}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T}\end{DoxyItemize}
+\hypertarget{a00286_AAX_Push8ByteStructAlignment_usagenotes}{}\subsection{Usage notes}\label{a00286_AAX_Push8ByteStructAlignment_usagenotes}
+\begin{DoxyItemize}
+\item Always follow an inclusion of this file with a matching inclusion of \hyperlink{a00281}{A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h}\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Do not place other file {\ttfamily \#include} after this file. For example\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// HeaderFile1.h}
+\textcolor{preprocessor}{    #include AAX\_Push8ByteStructAlignment.h}
+\textcolor{preprocessor}{    #include HeaderFile2.h  // this file now has 8-byte alignment also!!}
+    \textcolor{comment}{// HeaderFile1.h definitions...}
+\textcolor{preprocessor}{    #include AAX\_PopStructAlignment.h}
+\textcolor{preprocessor}{// end HeaderFile1.h}
+\end{DoxyCode}
+ This will cause problems if Header\+File2.\+h is included elsewhere without the 8-\/byte alignment which will manifest as hard to find run-\/time bugs. The proper usage is\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// HeaderFile1.h}
+\textcolor{preprocessor}{    #include HeaderFile2.h}
+\textcolor{preprocessor}{    #include AAX\_Push8ByteStructAlignment.h}
+        \textcolor{comment}{// HeaderFile1.h definitions...}
+\textcolor{preprocessor}{    #include AAX\_PopStructAlignment.h}
+\textcolor{preprocessor}{// end HeaderFile1.h}
+\end{DoxyCode}
+\end{DoxyItemize}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00284}{A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.\+h} 
+
+\hyperlink{a00285}{A\+A\+X\+\_\+\+Push4\+Byte\+Struct\+Alignment.\+h} 
+
+\hyperlink{a00281}{A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h}
+\end{DoxySeeAlso}

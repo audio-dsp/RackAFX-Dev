@@ -1,0 +1,63 @@
+\hypertarget{a00370}{}\section{Other Extensions}
+\label{a00370}\index{Other Extensions@{Other Extensions}}
+
+
+\subsection{ }
+\subsection*{M\+I\+D\+I logging utilities}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00370_ga5b2751acd531f46a0e4dd68cd0863f46}{A\+A\+X\+::\+As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug} (const \hyperlink{a00025}{A\+A\+X\+\_\+\+C\+Midi\+Stream} \&in\+Stream, char $\ast$out\+Buffer, int32\+\_\+t in\+Buffer\+Size)
+\end{DoxyCompactItemize}
+\subsection*{Filesystem utilities}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00370_ga0bf6aab757ecbd440276bb001de89f19}{A\+A\+X\+::\+Get\+Path\+To\+Plug\+In\+Bundle} (const char $\ast$i\+Bundle\+Name, int i\+Max\+Length, char $\ast$o\+Module\+Name)
+\begin{DoxyCompactList}\small\item\em Retrieve the file path of the .aaxplugin bundle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00370_ga5b2751acd531f46a0e4dd68cd0863f46}{}\index{Other Extensions@{Other Extensions}!As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug@{As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug}}
+\index{As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug@{As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug}!Other Extensions@{Other Extensions}}
+\subsubsection[{As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Stream} \&}]{in\+Stream, }
+\item[{char $\ast$}]{out\+Buffer, }
+\item[{int32\+\_\+t}]{in\+Buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{a00370_ga5b2751acd531f46a0e4dd68cd0863f46}
+Print a M\+I\+D\+I stream as a C-\/string
+
+Sets an empty string in release builds \hypertarget{a00370_ga0bf6aab757ecbd440276bb001de89f19}{}\index{Other Extensions@{Other Extensions}!Get\+Path\+To\+Plug\+In\+Bundle@{Get\+Path\+To\+Plug\+In\+Bundle}}
+\index{Get\+Path\+To\+Plug\+In\+Bundle@{Get\+Path\+To\+Plug\+In\+Bundle}!Other Extensions@{Other Extensions}}
+\subsubsection[{Get\+Path\+To\+Plug\+In\+Bundle}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Get\+Path\+To\+Plug\+In\+Bundle (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+Bundle\+Name, }
+\item[{int}]{i\+Max\+Length, }
+\item[{char $\ast$}]{o\+Module\+Name}
+\end{DoxyParamCaption}
+)}\label{a00370_ga0bf6aab757ecbd440276bb001de89f19}
+
+
+Retrieve the file path of the .aaxplugin bundle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Bundle\+Name} & 
+\begin{DoxyItemize}
+\item O\+S X\+: The {\ttfamily C\+F\+Bundle\+Identifier} value set in the plug-\/in\textquotesingle{}s .plist file
+\item Other\+: This parameter is ignored 
+\end{DoxyItemize}\\
+\hline
+\mbox{\tt in}  & {\em i\+Max\+Length} & \\
+\hline
+\mbox{\tt out}  & {\em o\+Module\+Name} & A preallocated buffer of size {\ttfamily i\+Max\+Length} \\
+\hline
+\end{DoxyParams}
+Collaboration diagram for Other Extensions\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{a00370}
+\end{center}
+\end{figure}

@@ -1,0 +1,120 @@
+\hypertarget{a00344}{}\section{Parameter Manager}
+\label{a00344}\index{Parameter Manager@{Parameter Manager}}
+
+
+\subsection{ }
+Optional (but recommended) system for managing A\+A\+X plug-\/in parameters. 
+
+
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_cparammgr_contained}}
+\end{DoxyImageNoCaption}
+
+
+The Parameter Manager is a generic container for a plug-\/in\textquotesingle{}s parameters, which constitute the complete externally-\/facing state of a plug-\/in\textquotesingle{}s data model. Additional internal state data may be stored via settings chunks. The Parameter Manager is owned and operated by the plug-\/in\textquotesingle{}s \hyperlink{a00328}{Data model interface}.
+
+The Parameter Manager provides a convenient and consistent interface by which a plug-\/in\textquotesingle{}s data model implementation may access its parameters. Other plug-\/in components that require access to the data model may also use this interface, or a proxy of it, to view the current state of the plug-\/in.
+
+In the Parameter Manager, implementation-\/specific parameter behaviors such as taper and display formatting are modular and are applied through delegation. Because of this model, it is possible to easily create a wide variety of behavior combinations without additional subclassing; any display behavior may be combined with any taper behavior, and a newly written behavior can be quickly \char`\"{}mixed in\char`\"{} to many parameters.\hypertarget{a00344_concepts}{}\subsection{Parameter concepts}\label{a00344_concepts}
+\begin{DoxyItemize}
+\item \hyperlink{a00344_parameter_value_domains}{Parameter value domains} \item \hyperlink{a00344_taper}{Taper} \item \hyperlink{a00344_delegates}{Delegates} \item \hyperlink{a00344_model_view_controller}{Model-\/\+View-\/\+Controller}\end{DoxyItemize}
+\hypertarget{a00344_parameter_value_domains}{}\subsubsection{Parameter value domains}\label{a00344_parameter_value_domains}
+In A\+A\+X, parameter values can be represented in one of two \char`\"{}domains\char`\"{}. Developers work with parameters in the {\itshape real} domain, while the host handles parameters in a scaled, {\itshape normalized} format.
+
+\begin{DoxyParagraph}{Real (or \char`\"{}logical\char`\"{}) domain}
+A\+A\+X plug-\/ins and parameter controllers work with typed parameter values that represent the {\itshape real} (logical) state of the parameter. The type, form, and meaning of this value is dependent on the parameter\textquotesingle{}s implementation and is unknown to the host.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Normalized domain}
+The A\+A\+X host works with parameter values that have been scaled ({\itshape normalized}) to a type-\/agnostic format. Although normalized values make little logical sense, they provide the host with a consistent means of handling, storing, and communicating parameters\textquotesingle{} values without having to worry about the actual implementation or meaning of the parameters. Normalized parameter values are 64-\/bit floating point and are scaled to a range of \mbox{[}0, 1\mbox{]}.
+\end{DoxyParagraph}
+For more information about conversion between parameter domains, see \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}.
+
+\begin{DoxyNote}{Note}
+The \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} interface currently utilizes a secondary normalization to full-\/scale int32\+\_\+t values. In the future, this will be unified with the double precision floating point normalization documented above.
+\end{DoxyNote}
+\hypertarget{a00344_taper}{}\subsubsection{Taper}\label{a00344_taper}
+A {\itshape taper} is the conversion function that translates a parameter\textquotesingle{}s value between its real and normalized forms.
+
+For example, a taper could be created that converts between a normalized value (\mbox{[}0, 1\mbox{]}) and a real frequency value ranging from \mbox{[}20 2000\mbox{]}. The conversion between these two ranges could be linear or logarithmic, or could use any other desired mapping. This mapping, as well as the specific range of the possible logical values, is defined by the taper.
+
+For more information about tapers in A\+A\+X, see \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate}.\hypertarget{a00344_delegates}{}\subsubsection{Delegates}\label{a00344_delegates}
+In A\+A\+X, individual parameters achieve their own unique behavior by being associated with behavioral delegates.
+
+For example, when \hyperlink{a00033_ac4f8ae8c5ecb2cd04ebc3aa2523449f7}{A\+A\+X\+\_\+\+C\+Parameter\+::\+Set\+Normalized\+Value()} is called on a particular parameter through its \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} interface, the \hyperlink{a00033}{A\+A\+X\+\_\+\+C\+Parameter} calls into a \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate} that it owns in order to convert the normalized value to its real equivalent. This real value is then set as the parameter\textquotesingle{}s new state.
+
+For more information about how delegates are used to create a parameter\textquotesingle{}s behavior see \hyperlink{a00033}{A\+A\+X\+\_\+\+C\+Parameter}\hypertarget{a00344_model_view_controller}{}\subsubsection{Model-\/\+View-\/\+Controller}\label{a00344_model_view_controller}
+A\+A\+X adheres roughly to a Model-\/\+View-\/\+Controller pattern. The Parameter Manager functions within the context of \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}, which in turn acts as an A\+A\+X plug-\/in\textquotesingle{}s Data Model in an M\+V\+C sense. Views, such as the plug-\/in\textquotesingle{}s G\+U\+I, attached control surfaces, or the automation facilities in the A\+A\+X host, are given access to the Data Model via a central Controller, which is represented by the \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} interface.
+
+For more information about how M\+V\+C applies to A\+A\+X, see the \hyperlink{a00328}{Data model interface} documentation page. \subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00033}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Generic implementation of an \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}. \end{DoxyCompactList}\item 
+class \hyperlink{a00034}{A\+A\+X\+\_\+\+C\+Parameter\+Manager}
+\begin{DoxyCompactList}\small\item\em A container object for plug-\/in parameters. \end{DoxyCompactList}\item 
+class \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}
+\begin{DoxyCompactList}\small\item\em The base interface for all normalizable plug-\/in parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Documents}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00345}{Taper delegates}
+\begin{DoxyCompactList}\small\item\em Classes for conversion to and from normalized parameter values. \end{DoxyCompactList}\item 
+\hyperlink{a00346}{Display delegates}
+\begin{DoxyCompactList}\small\item\em Classes for parameter value string conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00344_ga04704f13b4367b9e7430217d06c5e4bd}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::\+Type} \{ \\*
+\hyperlink{a00344_gga04704f13b4367b9e7430217d06c5e4bda15a8b9cd0a4d3acf30c476c7924b1753}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Type\+Undefined} = 0, 
+\hyperlink{a00344_gga04704f13b4367b9e7430217d06c5e4bda9ae3d0eca8e95a572dba6daaf52144c0}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Type\+Bool} = 1, 
+\hyperlink{a00344_gga04704f13b4367b9e7430217d06c5e4bda28e7aa1254f43cd377f0a0b9d2f29306}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Type\+Int32} = 2, 
+\hyperlink{a00344_gga04704f13b4367b9e7430217d06c5e4bda82c99fa80b68022242f17adbc1dbf0dc}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Type\+Float} = 3, 
+\\*
+\hyperlink{a00344_gga04704f13b4367b9e7430217d06c5e4bda3503351122f63c767ca33d70aef69557}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Type\+Custom} = 4
+ \}
+\item 
+enum \hyperlink{a00344_ga6bd5a5ddc796fa3a9de77157bf444ca8}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::\+Defaults} \{ \hyperlink{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a511ee79dc3b6322b2facb41b2663be30}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Default\+Num\+Steps\+Discrete} = 2, 
+\hyperlink{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a54c0d050e5b34d4eb85c840168ec4567}{A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::e\+Parameter\+Default\+Num\+Steps\+Continuous} = 128
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00344_ga04704f13b4367b9e7430217d06c5e4bd}{}\index{Parameter Manager@{Parameter Manager}!Type@{Type}}
+\index{Type@{Type}!Parameter Manager@{Parameter Manager}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ enum {\bf A\+A\+X\+\_\+\+C\+Parameter\+::\+Type}}\label{a00344_ga04704f13b4367b9e7430217d06c5e4bd}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Parameter\+Type\+Undefined@{e\+Parameter\+Type\+Undefined}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Type\+Undefined@{e\+Parameter\+Type\+Undefined}}\item[{\em 
+\hypertarget{a00344_gga04704f13b4367b9e7430217d06c5e4bda15a8b9cd0a4d3acf30c476c7924b1753}{}e\+Parameter\+Type\+Undefined\label{a00344_gga04704f13b4367b9e7430217d06c5e4bda15a8b9cd0a4d3acf30c476c7924b1753}
+}]\index{e\+Parameter\+Type\+Bool@{e\+Parameter\+Type\+Bool}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Type\+Bool@{e\+Parameter\+Type\+Bool}}\item[{\em 
+\hypertarget{a00344_gga04704f13b4367b9e7430217d06c5e4bda9ae3d0eca8e95a572dba6daaf52144c0}{}e\+Parameter\+Type\+Bool\label{a00344_gga04704f13b4367b9e7430217d06c5e4bda9ae3d0eca8e95a572dba6daaf52144c0}
+}]\index{e\+Parameter\+Type\+Int32@{e\+Parameter\+Type\+Int32}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Type\+Int32@{e\+Parameter\+Type\+Int32}}\item[{\em 
+\hypertarget{a00344_gga04704f13b4367b9e7430217d06c5e4bda28e7aa1254f43cd377f0a0b9d2f29306}{}e\+Parameter\+Type\+Int32\label{a00344_gga04704f13b4367b9e7430217d06c5e4bda28e7aa1254f43cd377f0a0b9d2f29306}
+}]\index{e\+Parameter\+Type\+Float@{e\+Parameter\+Type\+Float}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Type\+Float@{e\+Parameter\+Type\+Float}}\item[{\em 
+\hypertarget{a00344_gga04704f13b4367b9e7430217d06c5e4bda82c99fa80b68022242f17adbc1dbf0dc}{}e\+Parameter\+Type\+Float\label{a00344_gga04704f13b4367b9e7430217d06c5e4bda82c99fa80b68022242f17adbc1dbf0dc}
+}]\index{e\+Parameter\+Type\+Custom@{e\+Parameter\+Type\+Custom}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Type\+Custom@{e\+Parameter\+Type\+Custom}}\item[{\em 
+\hypertarget{a00344_gga04704f13b4367b9e7430217d06c5e4bda3503351122f63c767ca33d70aef69557}{}e\+Parameter\+Type\+Custom\label{a00344_gga04704f13b4367b9e7430217d06c5e4bda3503351122f63c767ca33d70aef69557}
+}]\end{description}
+\end{Desc}
+\hypertarget{a00344_ga6bd5a5ddc796fa3a9de77157bf444ca8}{}\index{Parameter Manager@{Parameter Manager}!Defaults@{Defaults}}
+\index{Defaults@{Defaults}!Parameter Manager@{Parameter Manager}}
+\subsubsection[{Defaults}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ enum {\bf A\+A\+X\+\_\+\+C\+Parameter\+::\+Defaults}}\label{a00344_ga6bd5a5ddc796fa3a9de77157bf444ca8}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Parameter\+Default\+Num\+Steps\+Discrete@{e\+Parameter\+Default\+Num\+Steps\+Discrete}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Default\+Num\+Steps\+Discrete@{e\+Parameter\+Default\+Num\+Steps\+Discrete}}\item[{\em 
+\hypertarget{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a511ee79dc3b6322b2facb41b2663be30}{}e\+Parameter\+Default\+Num\+Steps\+Discrete\label{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a511ee79dc3b6322b2facb41b2663be30}
+}]\index{e\+Parameter\+Default\+Num\+Steps\+Continuous@{e\+Parameter\+Default\+Num\+Steps\+Continuous}!Parameter Manager@{Parameter Manager}}\index{Parameter Manager@{Parameter Manager}!e\+Parameter\+Default\+Num\+Steps\+Continuous@{e\+Parameter\+Default\+Num\+Steps\+Continuous}}\item[{\em 
+\hypertarget{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a54c0d050e5b34d4eb85c840168ec4567}{}e\+Parameter\+Default\+Num\+Steps\+Continuous\label{a00344_gga6bd5a5ddc796fa3a9de77157bf444ca8a54c0d050e5b34d4eb85c840168ec4567}
+}]\end{description}
+\end{Desc}
+Collaboration diagram for Parameter Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00344}
+\end{center}
+\end{figure}

@@ -1,0 +1,118 @@
+\hypertarget{a00062}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2 Class Reference}
+\label{a00062}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00529}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00530}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Supplemental interface for an A\+A\+X Plug-\/in\textquotesingle{}s data model. 
+
+This is a supplemental interface for an instance of a plug-\/in\textquotesingle{}s data model. This interface gets exposed to the host application. Host applications that support A\+A\+X versioned features may call into these methods. See \hyperlink{a00328}{Data model interface}.
+
+\begin{DoxyNote}{Note}
+Your implementation of this interface must inherit from \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000032}{Todo}]Add documentation for expected error state return values\end{DoxyRefDesc}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Hybrid audio methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{Render\+Audio\+\_\+\+Hybrid} (\hyperlink{a00121}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info} $\ast$io\+Render\+Info)=0
+\begin{DoxyCompactList}\small\item\em Hybrid audio render function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf M\+I\+D\+I methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00062_a229029f0d4bd758538c48931b9f9a9ad}{Update\+M\+I\+D\+I\+Nodes} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} \&i\+Packet)=0
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I update callback. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00062_ab4ec161f64086070083c21b566354861}{Update\+Control\+M\+I\+D\+I\+Nodes} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} node\+I\+D, \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} \&i\+Packet)=0
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I update callback for control M\+I\+D\+I nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00062_a229029f0d4bd758538c48931b9f9a9ad}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}!Update\+M\+I\+D\+I\+Nodes@{Update\+M\+I\+D\+I\+Nodes}}
+\index{Update\+M\+I\+D\+I\+Nodes@{Update\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}
+\subsubsection[{Update\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+::\+Update\+M\+I\+D\+I\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} \&}]{i\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00062_a229029f0d4bd758538c48931b9f9a9ad}
+
+
+M\+I\+D\+I update callback. 
+
+This method is called by the host for each pending M\+I\+D\+I packet for M\+I\+D\+I nodes in algorithm context structure. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+D\+I data packets directly in the data model. M\+I\+D\+I data will also be delivered to the Effect algorithm.
+
+The host calls this method in Effects that register one or more M\+I\+D\+I nodes using \hyperlink{a00088_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node()}. Effects that do not require M\+I\+D\+I data to be sent to the plug-\/in algorithm should override \hyperlink{a00062_ab4ec161f64086070083c21b566354861}{Update\+Control\+M\+I\+D\+I\+Nodes()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & M\+I\+D\+I node field index in algorithm context structure \\
+\hline
+\mbox{\tt in}  & {\em i\+Packet} & The incoming M\+I\+D\+I packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00018_a900a8fcf7d2e0bebda33e5ac393019c2}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+\hypertarget{a00062_ab4ec161f64086070083c21b566354861}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}!Update\+Control\+M\+I\+D\+I\+Nodes@{Update\+Control\+M\+I\+D\+I\+Nodes}}
+\index{Update\+Control\+M\+I\+D\+I\+Nodes@{Update\+Control\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}}
+\subsubsection[{Update\+Control\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+::\+Update\+Control\+M\+I\+D\+I\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{node\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} \&}]{i\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00062_ab4ec161f64086070083c21b566354861}
+
+
+M\+I\+D\+I update callback for control M\+I\+D\+I nodes. 
+
+This method is called by the host for each pending M\+I\+D\+I packet for Control M\+I\+D\+I nodes. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+D\+I data packets directly in the data model.
+
+The host calls this method in Effects that register one or more Control M\+I\+D\+I nodes using \hyperlink{a00096_aa7709de005e0256feb522758ccc5b582}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor\+::\+Add\+Control\+M\+I\+D\+I\+Node()}. Effects with algorithms that use M\+I\+D\+I data nodes should override \hyperlink{a00062_a229029f0d4bd758538c48931b9f9a9ad}{Update\+M\+I\+D\+I\+Nodes()}.
+
+\begin{DoxyNote}{Note}
+This method will not be called if an Effect includes any M\+I\+D\+I nodes in its algorithm context structure.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node\+I\+D} & Identifier for the M\+I\+D\+I node \\
+\hline
+\mbox{\tt in}  & {\em i\+Packet} & The incoming M\+I\+D\+I packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00018_aeaaaad6ff1a84c8fc66dcdfd8bc430c5}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00224}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h}\end{DoxyCompactItemize}

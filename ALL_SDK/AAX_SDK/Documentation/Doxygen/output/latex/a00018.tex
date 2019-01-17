@@ -1,0 +1,1977 @@
+\hypertarget{a00018}{}\section{A\+A\+X\+\_\+\+C\+Effect\+Parameters Class Reference}
+\label{a00018}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Effect\+Parameters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{a00417}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Effect\+Parameters\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00418}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Default implementation of the \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} interface. 
+
+This class provides a default implementation of the \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} interface. In nearly all cases, your plug-\/in\textquotesingle{}s data model should inherit from this class and override only those functions that you wish to explicitly customize.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000006}{Legacy Porting Notes}]The default implementations in this class are mostly derived from their equivalent implementations in C\+Process and C\+Effect\+Process. For additional C\+Process-\/derived implementations, see \hyperlink{a00017}{A\+A\+X\+\_\+\+C\+Effect\+G\+U\+I}.\end{DoxyRefDesc}
+\hypertarget{a00018_AAX_CEffectParameters_relclass}{}\subsection{Related classes}\label{a00018_AAX_CEffectParameters_relclass}
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_ieffectparams_related}
+\caption{Classes related to A\+A\+X\+\_\+\+I\+Effect\+Parameters by inheritance or composition}
+\end{DoxyImage}
+ 
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_ieffectparams_contained}
+\caption{Classes owned as member objects of A\+A\+X\+\_\+\+C\+Effect\+Parameters}
+\end{DoxyImage}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00018_a35be0a247836ce95e3c6d04a3d756a9f}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} (void)
+\item 
+virtual \hyperlink{a00018_a9cf56e3654a429ed41bb0653d181109f}{$\sim$\+A\+A\+X\+\_\+\+C\+Effect\+Parameters} (void)
+\item 
+\hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} \& \hyperlink{a00018_aea47eeb638da0d670fb92d3f1e0f9419}{operator=} (const \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} \&other)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ac36930c5177d982a30164c0b0477d012}{Initialize} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Controller) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Main data model initialization. Called when plug-\/in instance is first instantiated. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a378252f43a26158950ee04fc41c11b1c}{Uninitialize} (void) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Main data model uninitialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf A\+A\+X host and plug-\/in event notification}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a696fb53ee9a3943e6bd1e2b3601eac02}{Notification\+Received} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Notification\+Type, const void $\ast$in\+Notification\+Data, uint32\+\_\+t in\+Notification\+Data\+Size) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Notification Hook. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Parameter information}\par
+{\em These methods are used by the A\+A\+X host to retrieve information about the plug-\/in\textquotesingle{}s data model. For information about adding parameters to the plug-\/in and otherwise modifying the plug-\/in\textquotesingle{}s data model, see \hyperlink{a00034}{A\+A\+X\+\_\+\+C\+Parameter\+Manager}. For information about parameters, see \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}. }\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ac14b0cce50da5f84113eb733ea0152e0}{Get\+Number\+Of\+Parameters} (int32\+\_\+t $\ast$o\+Num\+Controls) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the total number of plug-\/in parameters. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a607f91328cfc175cda2d339807a9c7cf}{Get\+Master\+Bypass\+Parameter} (\hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+I\+D\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the I\+D of the plug-\/in\textquotesingle{}s Master Bypass parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a55ef1ec4a29ac0fa92b3b3a7883ae927}{Get\+Parameter\+Is\+Automatable} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} $\ast$o\+Automatable) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves information about a parameter\textquotesingle{}s automatable status. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a9b116dc0d30cc44191b3e3a63e4bcf17}{Get\+Parameter\+Number\+Of\+Steps} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, int32\+\_\+t $\ast$o\+Num\+Steps) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the number of discrete steps for a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a3c983df7435d24d8c4c54c35f36c30b1}{Get\+Parameter\+Name} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+Name) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the full name for a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a16356608f6cd2748ebee908427db7a0f}{Get\+Parameter\+Name\+Of\+Length} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+Name, int32\+\_\+t i\+Name\+Length) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves an abbreviated name for a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_acb39f28a1c0c8bb0da9e8bd542664af3}{Get\+Parameter\+Default\+Normalized\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double $\ast$o\+Value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves default value of a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a22916f61a1daaf20b5167eb2b2858efc}{Set\+Parameter\+Default\+Normalized\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Sets the default value of a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a758b3d167753a1e2100295761a26aac4}{Get\+Parameter\+Type} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00206_a4cd0f189daa9a60cf36883c56344bb2e}{A\+A\+X\+\_\+\+E\+Parameter\+Type} $\ast$o\+Parameter\+Type) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the type of a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a67413692bcabae516426f7fc595bbce8}{Get\+Parameter\+Orientation} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00206_a52f91d1c14aa5dceedabfb9d2de31bf0}{A\+A\+X\+\_\+\+E\+Parameter\+Orientation} $\ast$o\+Parameter\+Orientation) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the orientation that should be applied to a parameter\textquotesingle{}s controls. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a233b96bc5ef4ff7749f207296bf8b6a3}{Get\+Parameter} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} $\ast$$\ast$o\+Parameter) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves an arbitrary setting within a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a35b6c87b8dd3e77b2f3aa453c98d1fa7}{Get\+Parameter\+Index} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, int32\+\_\+t $\ast$o\+Control\+Index) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the index of a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a125ae1e198e6c2e7f599f855f3fbc367}{Get\+Parameter\+I\+D\+From\+Index} (int32\+\_\+t i\+Control\+Index, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+Parameter\+I\+D\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the I\+D of a parameter. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a8f0a38e7445a97282ea3a295979bbbea}{Get\+Parameter\+Value\+Info} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, int32\+\_\+t i\+Selector, int32\+\_\+t $\ast$o\+Value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves a property of a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Parameter setters and getters}\par
+{\em These methods are used by the A\+A\+X host and by the plug-\/in\textquotesingle{}s U\+I to retrieve and modify the values of the plug-\/in\textquotesingle{}s parameters.
+
+\begin{DoxyNote}{Note}
+The parameter setters in this section may generate asynchronous requests. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a0e444bd3f3bf19ba7b98633e08c880c1}{Get\+Parameter\+Value\+From\+String} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double $\ast$o\+Value, const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&i\+Value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Converts a value string to a value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ab75588b6a1361661f58bea7afc358989}{Get\+Parameter\+String\+From\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+Value\+String, int32\+\_\+t i\+Max\+Length) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Converts a normalized parameter value into a string representing its corresponding real value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ae2ab6846aa92e0eab377b7a6efc08a17}{Get\+Parameter\+Value\+String} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$o\+Value\+String, int32\+\_\+t i\+Max\+Length) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the value string associated with a parameter\textquotesingle{}s current value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a1ba2eadb31d2bf42016266585ad1b00a}{Get\+Parameter\+Normalized\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double $\ast$o\+Value\+Ptr) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves a parameter\textquotesingle{}s current value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_aa705736fbe6b2cd8cc5721677cea6c20}{Set\+Parameter\+Normalized\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Sets the specified parameter to a new value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a5aac0f17339a337df23f4be9a126c950}{Set\+Parameter\+Normalized\+Relative} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Sets the specified parameter to a new value relative to its current value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Automated parameter helpers}\par
+{\em These methods are used to lock and unlock automation system \textquotesingle{}resources\textquotesingle{} when updating automatable parameters.
+
+\begin{DoxyNote}{Note}
+You should never need to override these methods to extend their behavior beyond what is provided in \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} and \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a499b3321339916de81721eba238a8e44}{Touch\+Parameter} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em \char`\"{}\+Touches\char`\"{} (locks) a parameter in the automation system to a particular control in preparation for updates \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a65f060a365b8fdf03ba3942f1f7cb7c9}{Release\+Parameter} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Releases a parameter from a \char`\"{}touched\char`\"{} state. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a1555fe9834764330bd264941a1d6ebc3}{Update\+Parameter\+Touch} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} i\+Touch\+State) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Sets a \char`\"{}touched\char`\"{} state on a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Asynchronous parameter update methods}\par
+{\em These methods are called by the A\+A\+X host when parameter values have been updated. They are called by the host and can be triggered by other plug-\/in modules via calls to \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}\textquotesingle{}s {\ttfamily Set\+Value} methods, e.\+g. \hyperlink{a00108_a1d37b80bc3a9c4e53fc2c1684f47dfb7}{Set\+Value\+With\+Float()}
+
+These methods are responsible for updating parameter values.
+
+Do not call these methods directly! To ensure proper synchronization and to avoid problematic dependency chains, other methods (e.\+g. \hyperlink{a00018_aa705736fbe6b2cd8cc5721677cea6c20}{Set\+Parameter\+Normalized\+Value()}) and components (e.\+g. \hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}) should always call a {\ttfamily Set\+Value} method on \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} to update parameter values. The {\ttfamily Set\+Value} method will properly manage automation locks and other system resources. }\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a56a9f41a975b48f583655db7b43aae5a}{Update\+Parameter\+Normalized\+Value} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value, \hyperlink{a00206_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source} i\+Source) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Updates a single parameter\textquotesingle{}s state to its current value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a29bbbafe19a5a53b4accbb963dd7d0a6}{Update\+Parameter\+Normalized\+Relative} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, double i\+Value) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Updates a single parameter\textquotesingle{}s state to its current value, as a difference with the parameter\textquotesingle{}s previous value. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a7f85327b464a4a7f9b66155f37961bf3}{Generate\+Coefficients} (void) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Generates and dispatches new coefficient packets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf State reset handlers}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_accef965824c9b158cafb65e59e216b6a}{Reset\+Field\+Data} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, void $\ast$o\+Data, uint32\+\_\+t in\+Data\+Size) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Chunk methods}\par
+{\em These methods are used to save and restore collections of plug-\/in state information, known as chunks. Chunks are used by the host when saving or restoring presets and session settings and when providing \char`\"{}compare\char`\"{} functionality for plug-\/ins.
+
+The default implementation of these methods in \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} supports a single chunk that includes state information for all of the plug-\/in\textquotesingle{}s registered parameters. Override all of these methods to add support for additional chunks in your plug-\/in, for example if your plug-\/ni contains any persistent state that is not encapsulated by its set of registered parameters.
+
+For reference, see also\+: \begin{DoxyItemize}
+\item \hyperlink{a00014}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser} \item \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} \end{DoxyItemize}
+}\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a901448cbb416cbe3c169a8577de554e4}{Get\+Number\+Of\+Chunks} (int32\+\_\+t $\ast$o\+Num\+Chunks) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Retrieves the number of chunks used by this plug-\/in. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a39f0deaae61b977a3c05a4b3fb606b8d}{Get\+Chunk\+I\+D\+From\+Index} (int32\+\_\+t i\+Index, \hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} $\ast$o\+Chunk\+I\+D) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Retrieves the I\+D associated with a chunk index. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Chunk\+I\+D, uint32\+\_\+t $\ast$o\+Size) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Get the size of the data structure that can hold all of a chunk\textquotesingle{}s information. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{Get\+Chunk} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Chunk\+I\+D, \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$o\+Chunk) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Fills a block of data with chunk information representing the plug-\/in\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_af80a63ce88a2e95afb77aaca71dcb73f}{Set\+Chunk} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Chunk\+I\+D, const \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$i\+Chunk) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Restores a set of plug-\/in parameters based on chunk information. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_af9d1e4ffec9dabf9fe8e71f89d3d18b2}{Compare\+Active\+Chunk} (const \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$i\+Chunk\+P, \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} $\ast$o\+Is\+Equal) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Determine if a chunk represents settings that are equivalent to the plug-\/in\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a01b7a09da773ca60d2cd02bc9fa14f95}{Get\+Number\+Of\+Changes} (int32\+\_\+t $\ast$o\+Num\+Changes) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Retrieves the number of parameter changes made since the plug-\/in\textquotesingle{}s creation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Threads}\par
+{\em Threading functions }\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a075602c75297cbb136d888ffa5d97ddd}{Timer\+Wakeup} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Auxiliary U\+I methods}\par
+{\em Methods defining the presentation of the plug-\/in on auxiliary U\+Is such as control surfaces }\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a41deeb0825a1c07f9b77c62215cb4de7}{Get\+Curve\+Data} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, const float $\ast$i\+Values, uint32\+\_\+t i\+Num\+Values, float $\ast$o\+Values) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Generate a set of output values based on a set of given input values. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_abd41a9d952b3ef1db63b5f00bad03bb0}{Get\+Curve\+Data\+Meter\+Ids} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, uint32\+\_\+t $\ast$o\+X\+Meter\+Id, uint32\+\_\+t $\ast$o\+Y\+Meter\+Id) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Indicates which meters correspond to the X and Y axes of the E\+Q or Dynamics graph. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_aaa02d76800a2a0dad30587e13c89da7d}{Get\+Curve\+Data\+Display\+Range} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, float $\ast$o\+X\+Min, float $\ast$o\+X\+Max, float $\ast$o\+Y\+Min, float $\ast$o\+Y\+Max) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Determines the range of the graph shown by the plug-\/in. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}{Update\+Page\+Table} (uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Host\+Unknown, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$io\+Page\+Table\+Unknown) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E} \hyperlink{a00149_aa4da4a09e940c332a2205e34e0677f40}{A\+A\+X\+\_\+\+F\+I\+N\+A\+L}
+\begin{DoxyCompactList}\small\item\em Allow the plug-\/in to update its page tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Custom Data Methods}\par
+{\em These functions exist as a proxiable way to move data between different modules (e.\+g. \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} and \hyperlink{a00098}{A\+A\+X\+\_\+\+I\+Effect\+G\+U\+I}.) Using these, the G\+U\+I can query any data through \hyperlink{a00018_a6ee0e83b601dd8a7bec2c94139965a06}{Get\+Custom\+Data()} with a plug-\/in defined {\ttfamily type\+I\+D}, {\ttfamily void$\ast$} and size. This has an advantage over just sharing memory in that this function can work as a remote proxy as we enable those sorts of features later in the platform. Likewise, the G\+U\+I can also set arbitrary data on the data model by using the \hyperlink{a00018_a4fed39f4a0e6527808b7355bb34b1710}{Set\+Custom\+Data()} function with the same idea.
+
+\begin{DoxyNote}{Note}
+These are plug-\/in internal only. They are not called from the host right now, or likely ever. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a6ee0e83b601dd8a7bec2c94139965a06}{Get\+Custom\+Data} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Data\+Block\+I\+D, uint32\+\_\+t in\+Data\+Size, void $\ast$o\+Data, uint32\+\_\+t $\ast$o\+Data\+Written) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em An optional interface hook for getting custom data from another module. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a4fed39f4a0e6527808b7355bb34b1710}{Set\+Custom\+Data} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Data\+Block\+I\+D, uint32\+\_\+t in\+Data\+Size, const void $\ast$i\+Data) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em An optional interface hook for setting custom data for use by another module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf M\+I\+D\+I methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ae5c1dca13e08cedbbcaca50767dc19e8}{Do\+M\+I\+D\+I\+Transfers} () \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I update callback. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a900a8fcf7d2e0bebda33e5ac393019c2}{Update\+M\+I\+D\+I\+Nodes} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} \&i\+Packet) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I update callback. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_aeaaaad6ff1a84c8fc66dcdfd8bc430c5}{Update\+Control\+M\+I\+D\+I\+Nodes} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} node\+I\+D, \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} \&i\+Packet) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I update callback for control M\+I\+D\+I nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Hybrid audio methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a70c1cf315915535cb593860ed42b6cbe}{Render\+Audio\+\_\+\+Hybrid} (\hyperlink{a00121}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info} $\ast$io\+Render\+Info) \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Hybrid audio render function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Private data accessors}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} $\ast$ \hyperlink{a00018_a2aad1f84d38b40fee029629c53273a56}{Controller} ()
+\begin{DoxyCompactList}\small\item\em Access to the Effect controller. \end{DoxyCompactList}\item 
+const \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} $\ast$ \hyperlink{a00018_a9a03ffd16b2dab5f5b53eabf8e2a8556}{Controller} () const 
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Effect controller \end{DoxyCompactList}\item 
+\hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} $\ast$ \hyperlink{a00018_af003e341f47eb1f170529db63066eca3}{Transport} ()
+\begin{DoxyCompactList}\small\item\em Access to the Transport object. \end{DoxyCompactList}\item 
+const \hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} $\ast$ \hyperlink{a00018_a08bda19fadbe73f041de99190e06e4c1}{Transport} () const 
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Transport object \end{DoxyCompactList}\item 
+\hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} $\ast$ \hyperlink{a00018_ab88816d6dd3a86ae3db189e3b0d662b8}{Automation\+Delegate} ()
+\begin{DoxyCompactList}\small\item\em Access to the Effect\textquotesingle{}s automation delegate. \end{DoxyCompactList}\item 
+const \hyperlink{a00086}{A\+A\+X\+\_\+\+I\+Automation\+Delegate} $\ast$ \hyperlink{a00018_a8cfd9173a91c44533cb5bf2df97bda5f}{Automation\+Delegate} () const 
+\begin{DoxyCompactList}\small\item\em {\ttfamily const} access to the Effect\textquotesingle{}s automation delegate \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00018_a190f0573f8959ac5397565e198c485d4}{Build\+Chunk\+Data} (void) const 
+\begin{DoxyCompactList}\small\item\em Clears out the current chunk in Chunk Parser and adds all of the new values. Used by default implementations of \hyperlink{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{Get\+Chunk()} and \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Parameter management methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a363be3503435a8619f6cba787ee678ac}{Set\+Taper\+Delegate} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00115}{A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base} \&i\+Taper\+Delegate, bool i\+Preserve\+Value)
+\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ad4aeb081bffb2414182251d4e41c1ed2}{Set\+Display\+Delegate} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D, \hyperlink{a00093}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base} \&i\+Display\+Delegate)
+\item 
+bool \hyperlink{a00018_af5445bb9f40ccf826227199647e140ee}{Is\+Parameter\+Touched} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Parameter\+I\+D) const 
+\item 
+bool \hyperlink{a00018_ae105f2a8a00facc2a190ef3ea86c5328}{Is\+Parameter\+Link\+Ready} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} in\+Parameter\+I\+D, \hyperlink{a00206_a30be0398faf20c6b121239eb9399f3f7}{A\+A\+X\+\_\+\+E\+Update\+Source} in\+Source) const 
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Convenience functions}\par
+{\em These convenience functions provide quick access to various aspects of the default \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} implementation. }\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization helper routine. Called from \hyperlink{a00018_ac36930c5177d982a30164c0b0477d012}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00018_ae407277e6f76cbc217da5811c6f216a9}{Update\+Page\+Table} (uint32\+\_\+t, int32\+\_\+t, \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table} \&) const 
+\item 
+void \hyperlink{a00018_a06251bbdd6ad5d6ccee160ce4cb5ee8c}{Filter\+Parameter\+I\+D\+On\+Save} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} control\+I\+D)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Indicates the indices of parameters that should not be saved in the default \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{a00018_a1d9f79117c9075f47b00a7af34113b22}{m\+Num\+Plug\+In\+Changes}
+\item 
+int32\+\_\+t \hyperlink{a00018_a8c792ec58dc073534348004f0c0c09dd}{m\+Chunk\+Size}
+\item 
+\hyperlink{a00014}{A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser} \hyperlink{a00018_a71e52a24c8cd8853c768417aa181b41f}{m\+Chunk\+Parser}
+\item 
+int32\+\_\+t \hyperlink{a00018_ad6a57b4e98161c28b55b250e0234c4ba}{m\+Num\+Chunked\+Parameters}
+\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00018_ad1f88737300c7685cbd0dda4f65cdbb7}{m\+Clipped}
+\begin{DoxyCompactList}\small\item\em Set by Set\+Clipped() and returned by Get\+Clipped(). \end{DoxyCompactList}\item 
+\hyperlink{a00031}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher} \hyperlink{a00018_a1e4a92cdd947d35eb4382f0b5c4c8dae}{m\+Packet\+Dispatcher}
+\item 
+\hyperlink{a00034}{A\+A\+X\+\_\+\+C\+Parameter\+Manager} \hyperlink{a00018_afbb31a7a131b227ddd8bbd920aafbfb8}{m\+Parameter\+Manager}
+\item 
+std\+::set$<$ std\+::string $>$ \hyperlink{a00018_a353f5472e4eaefd348f20f9ff07a13a0}{m\+Filtered\+Parameters}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00018_a35be0a247836ce95e3c6d04a3d756a9f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+A\+A\+X\+\_\+\+C\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{a00018_a35be0a247836ce95e3c6d04a3d756a9f}
+\hypertarget{a00018_a9cf56e3654a429ed41bb0653d181109f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!````~A\+A\+X\+\_\+\+C\+Effect\+Parameters@{$\sim$\+A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\index{````~A\+A\+X\+\_\+\+C\+Effect\+Parameters@{$\sim$\+A\+A\+X\+\_\+\+C\+Effect\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+C\+Effect\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::$\sim$\+A\+A\+X\+\_\+\+C\+Effect\+Parameters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a9cf56e3654a429ed41bb0653d181109f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00018_aea47eeb638da0d670fb92d3f1e0f9419}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Effect\+Parameters}\& A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Effect\+Parameters} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00018_aea47eeb638da0d670fb92d3f1e0f9419}
+\hypertarget{a00018_ac36930c5177d982a30164c0b0477d012}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_ac36930c5177d982a30164c0b0477d012}
+
+
+Main data model initialization. Called when plug-\/in instance is first instantiated. 
+
+\begin{DoxyNote}{Note}
+Most plug-\/ins should override \hyperlink{a00018_a2e302fd758d39a6a855023bf825fe148}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Effect\+Init()} rather than directly overriding this method
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Controller} & A versioned reference that resolves to an \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} interface\\
+\hline
+\end{DoxyParams}
+This default implementation calls \hyperlink{a00018_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init()}. Only override \hyperlink{a00018_ac36930c5177d982a30164c0b0477d012}{Initialize()} when additional initialization steps must be performed prior to \hyperlink{a00018_a2e302fd758d39a6a855023bf825fe148}{Effect\+Init()}. 
+
+Implements \hyperlink{a00061_ad4db3c0ab67f8f41cdd042a915daabb4}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a378252f43a26158950ee04fc41c11b1c}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Uninitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Uninitialize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a378252f43a26158950ee04fc41c11b1c}
+
+
+Main data model uninitialization. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000035}{Todo}]Docs\+: When exactly is \hyperlink{a00061_a711969adc95624fb9ac8a3e3b2c23696}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+::\+Uninitialize()} called, and under what conditions?\end{DoxyRefDesc}
+
+
+Implements \hyperlink{a00061_a711969adc95624fb9ac8a3e3b2c23696}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a696fb53ee9a3943e6bd1e2b3601eac02}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Notification\+Received@{Notification\+Received}}
+\index{Notification\+Received@{Notification\+Received}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Notification\+Received}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Notification\+Received (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Notification\+Type, }
+\item[{const void $\ast$}]{in\+Notification\+Data, }
+\item[{uint32\+\_\+t}]{in\+Notification\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a696fb53ee9a3943e6bd1e2b3601eac02}
+
+
+Notification Hook. 
+
+Called from the host to deliver notifications to this object.
+
+Look at the \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event} enumeration to see a description of events you can listen for and the data they come with.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+some notifications are sent only to the plug-\/in G\+U\+I while other notifications are sent only to the plug-\/in data model. If you are not seeing an expected notification, try checking the other plug-\/in objects\textquotesingle{} {\ttfamily \hyperlink{a00018_a696fb53ee9a3943e6bd1e2b3601eac02}{Notification\+Received()}} methods.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+the host may dispatch notifications synchronously or asynchronously, and calls to this method may occur concurrently on multiple threads.
+\end{DoxyNote}
+A plug-\/in may also dispatch custom notifications using \hyperlink{a00090_a0384f820cecf8cf7671057060bf5ba4f}{A\+A\+X\+\_\+\+I\+Controller\+::\+Send\+Notification()}. Custom notifications will be posted back to the plug-\/in\textquotesingle{}s other objects which support a {\ttfamily \hyperlink{a00018_a696fb53ee9a3943e6bd1e2b3601eac02}{Notification\+Received()}} method (e.\+g. the G\+U\+I).
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Notification\+Type} & Type of notification being received. Notifications form the host are one of \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406e}{A\+A\+X\+\_\+\+E\+Notification\+Event} \\
+\hline
+\mbox{\tt in}  & {\em in\+Notification\+Data} & Block of incoming notification data \\
+\hline
+\mbox{\tt in}  & {\em in\+Notification\+Data\+Size} & Size of {\ttfamily in\+Notification\+Data}, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_aa3eaeb292d2ca84086a5a058171994fd}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_ac14b0cce50da5f84113eb733ea0152e0}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Number\+Of\+Parameters@{Get\+Number\+Of\+Parameters}}
+\index{Get\+Number\+Of\+Parameters@{Get\+Number\+Of\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Number\+Of\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Parameters (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{o\+Num\+Controls}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_ac14b0cce50da5f84113eb733ea0152e0}
+
+
+C\+A\+L\+L\+: Retrieves the total number of plug-\/in parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Num\+Controls} & The number of parameters in the plug-\/in\textquotesingle{}s Parameter Manager \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a8af398b1e308849464aee5a6713a3965}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a607f91328cfc175cda2d339807a9c7cf}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Master\+Bypass\+Parameter@{Get\+Master\+Bypass\+Parameter}}
+\index{Get\+Master\+Bypass\+Parameter@{Get\+Master\+Bypass\+Parameter}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Master\+Bypass\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Master\+Bypass\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+I\+D\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a607f91328cfc175cda2d339807a9c7cf}
+
+
+C\+A\+L\+L\+: Retrieves the I\+D of the plug-\/in\textquotesingle{}s Master Bypass parameter. 
+
+This is required if you want our master bypass functionality in the host to hook up to your bypass parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+I\+D\+String} & The I\+D of the plug-\/in\textquotesingle{}s Master Bypass control \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_ab967122337b61064492024f8bf695ed4}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a55ef1ec4a29ac0fa92b3b3a7883ae927}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Is\+Automatable@{Get\+Parameter\+Is\+Automatable}}
+\index{Get\+Parameter\+Is\+Automatable@{Get\+Parameter\+Is\+Automatable}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Is\+Automatable}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Is\+Automatable (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean} $\ast$}]{o\+Automatable}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a55ef1ec4a29ac0fa92b3b3a7883ae927}
+
+
+C\+A\+L\+L\+: Retrieves information about a parameter\textquotesingle{}s automatable status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Automatable} & True if the queried parameter is automatable, false if it is not \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a4e6eeef25a797ea4c6961df45174b169}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a9b116dc0d30cc44191b3e3a63e4bcf17}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Number\+Of\+Steps@{Get\+Parameter\+Number\+Of\+Steps}}
+\index{Get\+Parameter\+Number\+Of\+Steps@{Get\+Parameter\+Number\+Of\+Steps}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Number\+Of\+Steps}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Number\+Of\+Steps (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{int32\+\_\+t $\ast$}]{o\+Num\+Steps}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a9b116dc0d30cc44191b3e3a63e4bcf17}
+
+
+C\+A\+L\+L\+: Retrieves the number of discrete steps for a parameter. 
+
+\begin{DoxyNote}{Note}
+The value returned for {\ttfamily o\+Num\+Steps} M\+U\+S\+T be greater than zero. All other values will be considered an error by the host.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Num\+Steps} & The number of steps for this parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a2a8d8d200383204db9bb780a4cc8ef6f}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a3c983df7435d24d8c4c54c35f36c30b1}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Name@{Get\+Parameter\+Name}}
+\index{Get\+Parameter\+Name@{Get\+Parameter\+Name}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Name (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a3c983df7435d24d8c4c54c35f36c30b1}
+
+
+C\+A\+L\+L\+: Retrieves the full name for a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Name} & Reference to an \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} owned by the host. The plug-\/in must set this string equal to the parameter\textquotesingle{}s full name. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a8f8ae4b4346e708ec6de612ef99e5a92}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a16356608f6cd2748ebee908427db7a0f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Name\+Of\+Length@{Get\+Parameter\+Name\+Of\+Length}}
+\index{Get\+Parameter\+Name\+Of\+Length@{Get\+Parameter\+Name\+Of\+Length}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Name\+Of\+Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Name\+Of\+Length (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+Name, }
+\item[{int32\+\_\+t}]{i\+Name\+Length}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a16356608f6cd2748ebee908427db7a0f}
+
+
+C\+A\+L\+L\+: Retrieves an abbreviated name for a parameter. 
+
+In general, lengths of 3 through 8 and 31 should be specifically addressed.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000048}{Host Compatibility Notes}]In most cases, the A\+A\+X host will call \hyperlink{a00061_a8f8ae4b4346e708ec6de612ef99e5a92}{Get\+Parameter\+Name()} or \hyperlink{a00061_a5d556ae1fa4617a6439ef347139d70eb}{Get\+Parameter\+Name\+Of\+Length()} to retrieve parameter names for display. However, when Pro Tools is retrieving a plug-\/in name for display on a control surface the X\+M\+L data stored in the plug-\/in\textquotesingle{}s page tables will be used in preference to values retrieved from these methods.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Name} & Reference to an \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} owned by the host. The plug-\/in must set this string equal to an abbreviated name for the parameter, using {\ttfamily i\+Name\+Length} characters or fewer. \\
+\hline
+\mbox{\tt in}  & {\em i\+Name\+Length} & The maximum number of characters in {\ttfamily o\+Name} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a5d556ae1fa4617a6439ef347139d70eb}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_acb39f28a1c0c8bb0da9e8bd542664af3}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Default\+Normalized\+Value@{Get\+Parameter\+Default\+Normalized\+Value}}
+\index{Get\+Parameter\+Default\+Normalized\+Value@{Get\+Parameter\+Default\+Normalized\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Default\+Normalized\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Default\+Normalized\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double $\ast$}]{o\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_acb39f28a1c0c8bb0da9e8bd542664af3}
+
+
+C\+A\+L\+L\+: Retrieves default value of a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Value} & The parameter\textquotesingle{}s default value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a858f07ba021f8c9912bf91735b10314b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a22916f61a1daaf20b5167eb2b2858efc}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Parameter\+Default\+Normalized\+Value@{Set\+Parameter\+Default\+Normalized\+Value}}
+\index{Set\+Parameter\+Default\+Normalized\+Value@{Set\+Parameter\+Default\+Normalized\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Parameter\+Default\+Normalized\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Default\+Normalized\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a22916f61a1daaf20b5167eb2b2858efc}
+
+
+C\+A\+L\+L\+: Sets the default value of a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being updated \\
+\hline
+\mbox{\tt out}  & {\em i\+Value} & The parameter\textquotesingle{}s new default value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000036}{Todo}]T\+H\+I\+S I\+S N\+O\+T C\+A\+L\+L\+E\+D F\+R\+O\+M H\+O\+S\+T. U\+S\+E\+F\+U\+L F\+O\+R I\+N\+T\+E\+R\+N\+A\+L U\+S\+E O\+N\+L\+Y?\end{DoxyRefDesc}
+
+
+Implements \hyperlink{a00061_a333b83bc6f37b0103ce0de65be02fede}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a758b3d167753a1e2100295761a26aac4}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Type@{Get\+Parameter\+Type}}
+\index{Get\+Parameter\+Type@{Get\+Parameter\+Type}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Type (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Parameter\+Type} $\ast$}]{o\+Parameter\+Type}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a758b3d167753a1e2100295761a26aac4}
+
+
+C\+A\+L\+L\+: Retrieves the type of a parameter. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000037}{Todo}]The concept of parameter type needs more documentation\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Parameter\+Type} & The parameter\textquotesingle{}s type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_ae7f6d803fa9a472a4bad583868e3b951}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a67413692bcabae516426f7fc595bbce8}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Orientation@{Get\+Parameter\+Orientation}}
+\index{Get\+Parameter\+Orientation@{Get\+Parameter\+Orientation}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Orientation}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Orientation (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Parameter\+Orientation} $\ast$}]{o\+Parameter\+Orientation}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a67413692bcabae516426f7fc595bbce8}
+
+
+C\+A\+L\+L\+: Retrieves the orientation that should be applied to a parameter\textquotesingle{}s controls. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000038}{Todo}]update this documentation\end{DoxyRefDesc}
+
+
+This method allows you to specify the orientation of knob controls that are managed by the host (e.\+g. knobs on an attached control surface.)
+
+Here is an example override of this method that reverses the orientation of a control for a parameter\+:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// AAX\_IParameter* myBackwardsParameter}
+\textcolor{keywordflow}{if} (iParameterID == myBackwardsParameter->Identifier())
+\{
+     *oParameterType =
+       \hyperlink{a00206_aa5ffa1ed828630b6b7a13c049d93ae87a0df7361517b3c7939f67647e873cb4d9}{AAX\_eParameterOrientation\_BottomMinTopMax} |
+       \hyperlink{a00206_aa5ffa1ed828630b6b7a13c049d93ae87a4e074c855fdeb439e2623d920173e752}{AAX\_eParameterOrientation\_LeftMinRightMax} |
+       \hyperlink{a00206_aa5ffa1ed828630b6b7a13c049d93ae87ab42ad685ac842d36bc7d1717c537c10a}{AAX\_eParameterOrientation\_RotaryWrapMode} |
+       \hyperlink{a00206_aa5ffa1ed828630b6b7a13c049d93ae87a9f441bb5192bd7b7162ba588c8f4fea8}{AAX\_eParameterOrientation\_RotaryLeftMinRightMax};
+ \}
+\end{DoxyCode}
+
+
+The orientation options are set according to \hyperlink{a00206_aa5ffa1ed828630b6b7a13c049d93ae87}{A\+A\+X\+\_\+\+E\+Parameter\+Orientation\+Bits}
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000032}{Legacy Porting Notes}]\hyperlink{a00061_ac122e1a693296b059dca4350a5ff1dfe}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Get\+Parameter\+Orientation()} corresponds to the Get\+Control\+Orientation() method in the legacy R\+T\+A\+S/\+T\+D\+M S\+D\+K.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Parameter\+Orientation} & The orientation of the parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_ac122e1a693296b059dca4350a5ff1dfe}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a233b96bc5ef4ff7749f207296bf8b6a3}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter@{Get\+Parameter}}
+\index{Get\+Parameter@{Get\+Parameter}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Parameter} $\ast$$\ast$}]{o\+Parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a233b96bc5ef4ff7749f207296bf8b6a3}
+
+
+C\+A\+L\+L\+: Retrieves an arbitrary setting within a parameter. 
+
+This is a convenience function for accessing the richer parameter interface from the plug-\/in\textquotesingle{}s other modules.
+
+\begin{DoxyNote}{Note}
+This function must not be called by the host; \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} is not safe for passing across the binary boundary with the host!
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Parameter} & A pointer to the returned parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a169b7e9fe64f2d86d20fffc152b5e365}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a35b6c87b8dd3e77b2f3aa453c98d1fa7}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Index@{Get\+Parameter\+Index}}
+\index{Get\+Parameter\+Index@{Get\+Parameter\+Index}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{int32\+\_\+t $\ast$}]{o\+Control\+Index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a35b6c87b8dd3e77b2f3aa453c98d1fa7}
+
+
+C\+A\+L\+L\+: Retrieves the index of a parameter. 
+
+Although parameters are normally referenced by their A\+A\+X\+\_\+\+C\+Param\+I\+D, each parameter is also associated with a unique numeric index.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Control\+Index} & The parameter\textquotesingle{}s numeric index \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_aff1ff6b27973200429f057dc003f30a8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a125ae1e198e6c2e7f599f855f3fbc367}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+I\+D\+From\+Index@{Get\+Parameter\+I\+D\+From\+Index}}
+\index{Get\+Parameter\+I\+D\+From\+Index@{Get\+Parameter\+I\+D\+From\+Index}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+I\+D\+From\+Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+I\+D\+From\+Index (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{i\+Control\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+Parameter\+I\+D\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a125ae1e198e6c2e7f599f855f3fbc367}
+
+
+C\+A\+L\+L\+: Retrieves the I\+D of a parameter. 
+
+This method can be used to convert a parameter\textquotesingle{}s unique numeric index to its A\+A\+X\+\_\+\+C\+Param\+I\+D
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Control\+Index} & The numeric index of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Parameter\+I\+D\+String} & Reference to an \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} owned by the host. The plug-\/in must set this string equal to the parameter\textquotesingle{}s I\+D. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a5387b83e0f684a5bf0e09b24cae257d9}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a8f0a38e7445a97282ea3a295979bbbea}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Value\+Info@{Get\+Parameter\+Value\+Info}}
+\index{Get\+Parameter\+Value\+Info@{Get\+Parameter\+Value\+Info}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Value\+Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{int32\+\_\+t}]{i\+Selector, }
+\item[{int32\+\_\+t $\ast$}]{o\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a8f0a38e7445a97282ea3a295979bbbea}
+
+
+C\+A\+L\+L\+: Retrieves a property of a parameter. 
+
+This is a general purpose query that is specialized based on the value of {\ttfamily i\+Selector}. The currently supported selector values are described by \hyperlink{a00206_aa169208a2ce713fa021e20deb2eaf608}{A\+A\+X\+\_\+\+E\+Parameter\+Value\+Info\+Selector} . The meaning of {\ttfamily o\+Value} is dependent upon {\ttfamily i\+Selector} .
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt in}  & {\em i\+Selector} & The selector of the parameter value to retrieve. See \hyperlink{a00206_aa169208a2ce713fa021e20deb2eaf608}{A\+A\+X\+\_\+\+E\+Parameter\+Value\+Info\+Selector} \\
+\hline
+\mbox{\tt out}  & {\em o\+Value} & The value of the specified parameter \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a1702de6d62b5b41b6a8b2f510300392b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a0e444bd3f3bf19ba7b98633e08c880c1}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Value\+From\+String@{Get\+Parameter\+Value\+From\+String}}
+\index{Get\+Parameter\+Value\+From\+String@{Get\+Parameter\+Value\+From\+String}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Value\+From\+String}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+From\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double $\ast$}]{o\+Value, }
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{i\+Value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a0e444bd3f3bf19ba7b98633e08c880c1}
+
+
+C\+A\+L\+L\+: Converts a value string to a value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert a {\ttfamily char$\ast$} string into its corresponding value. The formatting of value\+String must be supported by the parameter\textquotesingle{}s display delegate in order for this call to succeed.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000033}{Legacy Porting Notes}]This method corresponds to C\+Process\+::\+Map\+Control\+String\+To\+Val() in the R\+T\+A\+S/\+T\+D\+M S\+D\+K\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Value} & The value associated with value\+String \\
+\hline
+\mbox{\tt in}  & {\em i\+Value\+String} & The formatted value string that will be converted into a value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a54bb12c9798e4f9a3a5b5d6f30ace992}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_ab75588b6a1361661f58bea7afc358989}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+String\+From\+Value@{Get\+Parameter\+String\+From\+Value}}
+\index{Get\+Parameter\+String\+From\+Value@{Get\+Parameter\+String\+From\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+String\+From\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+String\+From\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+Value\+String, }
+\item[{int32\+\_\+t}]{i\+Max\+Length}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_ab75588b6a1361661f58bea7afc358989}
+
+
+C\+A\+L\+L\+: Converts a normalized parameter value into a string representing its corresponding real value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert a normalized value into the corresponding {\ttfamily char$\ast$} value string for its real value.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000034}{Legacy Porting Notes}]This method corresponds to C\+Process\+::\+Map\+Control\+Val\+To\+String() in the R\+T\+A\+S/\+T\+D\+M S\+D\+K\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & The normalized value that will be converted to a formatted value\+String \\
+\hline
+\mbox{\tt out}  & {\em o\+Value\+String} & The formatted value string associated with value \\
+\hline
+\mbox{\tt in}  & {\em i\+Max\+Length} & The maximum length of value\+String \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_add995f2eb5a3967c48dd9f3e21f003aa}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_ae2ab6846aa92e0eab377b7a6efc08a17}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Value\+String@{Get\+Parameter\+Value\+String}}
+\index{Get\+Parameter\+Value\+String@{Get\+Parameter\+Value\+String}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Value\+String}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Value\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{o\+Value\+String, }
+\item[{int32\+\_\+t}]{i\+Max\+Length}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_ae2ab6846aa92e0eab377b7a6efc08a17}
+
+
+C\+A\+L\+L\+: Retrieves the value string associated with a parameter\textquotesingle{}s current value. 
+
+This method uses the queried parameter\textquotesingle{}s display delegate and taper to convert its current value into a corresponding {\ttfamily char$\ast$} value string.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Value\+String} & The formatted value string associated with the parameter\textquotesingle{}s current value \\
+\hline
+\mbox{\tt in}  & {\em i\+Max\+Length} & The maximum length of value\+String \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_aacb54e6522561fe91fe12d0d99734abf}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a1ba2eadb31d2bf42016266585ad1b00a}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Parameter\+Normalized\+Value@{Get\+Parameter\+Normalized\+Value}}
+\index{Get\+Parameter\+Normalized\+Value@{Get\+Parameter\+Normalized\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Parameter\+Normalized\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Parameter\+Normalized\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double $\ast$}]{o\+Value\+Ptr}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a1ba2eadb31d2bf42016266585ad1b00a}
+
+
+C\+A\+L\+L\+: Retrieves a parameter\textquotesingle{}s current value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt out}  & {\em o\+Value\+Ptr} & The parameter\textquotesingle{}s current value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a18e3407bac178a9b0339bd6f95e74a17}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_aa705736fbe6b2cd8cc5721677cea6c20}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Parameter\+Normalized\+Value@{Set\+Parameter\+Normalized\+Value}}
+\index{Set\+Parameter\+Normalized\+Value@{Set\+Parameter\+Normalized\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Parameter\+Normalized\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Normalized\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_aa705736fbe6b2cd8cc5721677cea6c20}
+
+
+C\+A\+L\+L\+: Sets the specified parameter to a new value. 
+
+\hyperlink{a00018_aa705736fbe6b2cd8cc5721677cea6c20}{Set\+Parameter\+Normalized\+Value()} is responsible for initiating any process that is required in order to update all of the parameter\textquotesingle{}s controls (e.\+g. in the plug-\/in\textquotesingle{}s G\+U\+I, on control surfaces, in automation lanes, etc.) In most cases, the parameter manager will handle this initiation step.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being set \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & The value to which the parameter should be set \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a368b0f5a761d1eda4c41b420f153a077}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a5aac0f17339a337df23f4be9a126c950}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Parameter\+Normalized\+Relative@{Set\+Parameter\+Normalized\+Relative}}
+\index{Set\+Parameter\+Normalized\+Relative@{Set\+Parameter\+Normalized\+Relative}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Parameter\+Normalized\+Relative}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Parameter\+Normalized\+Relative (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a5aac0f17339a337df23f4be9a126c950}
+
+
+C\+A\+L\+L\+: Sets the specified parameter to a new value relative to its current value. 
+
+This method is used in cases when a relative control value is more convenient, for example when updating a G\+U\+I control using a mouse wheel or the arrow keys. Note that the host may apply the parameter\textquotesingle{}s step size prior to calling \hyperlink{a00018_a5aac0f17339a337df23f4be9a126c950}{Set\+Parameter\+Normalized\+Relative()} in order to determine the correct value for a\+Value.
+
+\hyperlink{a00018_a5aac0f17339a337df23f4be9a126c950}{Set\+Parameter\+Normalized\+Relative()} can be used to incorporate \char`\"{}wrapping\char`\"{} behavior in a parameter\textquotesingle{}s controls, if desired. If this behavior is not desired, then this method must properly account for overflow of the parameter\textquotesingle{}s normalized value.
+
+\hyperlink{a00018_a5aac0f17339a337df23f4be9a126c950}{Set\+Parameter\+Normalized\+Relative()} is responsible for initiating any process that is required in order to update all of the parameter\textquotesingle{}s controls (e.\+g. in the plug-\/in\textquotesingle{}s G\+U\+I, on control surfaces, in automation lanes, etc.) In most cases, the parameter manager will handle this initiation step.
+
+See also \hyperlink{a00018_a29bbbafe19a5a53b4accbb963dd7d0a6}{Update\+Parameter\+Normalized\+Relative()}.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000039}{Todo}]R\+E\+M\+O\+V\+E T\+H\+I\+S M\+E\+T\+H\+O\+D (?)\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being queried \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & The change in value that should be applied to the parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000040}{Todo}]N\+O\+T C\+U\+R\+R\+E\+N\+T\+L\+Y C\+A\+L\+L\+E\+D F\+R\+O\+M T\+H\+E H\+O\+S\+T. U\+S\+E\+F\+U\+L F\+O\+R I\+N\+T\+E\+R\+N\+A\+L U\+S\+E O\+N\+L\+Y?\end{DoxyRefDesc}
+
+
+Implements \hyperlink{a00061_a6e28a427a0d7d0c8df69dd5eb88cff6c}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a499b3321339916de81721eba238a8e44}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Touch\+Parameter@{Touch\+Parameter}}
+\index{Touch\+Parameter@{Touch\+Parameter}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Touch\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Touch\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a499b3321339916de81721eba238a8e44}
+
+
+\char`\"{}\+Touches\char`\"{} (locks) a parameter in the automation system to a particular control in preparation for updates 
+
+This method is called by the Parameter Manager to prime a parameter for receiving new automation data. When an automatable parameter is touched by a control, it will reject input from other controls until it is released.
+
+\begin{DoxyNote}{Note}
+You should never need to override this method when using \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The parameter that is being touched \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_ae82e80cbfd9cb837f8101a85f06856ba}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a65f060a365b8fdf03ba3942f1f7cb7c9}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Release\+Parameter@{Release\+Parameter}}
+\index{Release\+Parameter@{Release\+Parameter}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Release\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Release\+Parameter (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a65f060a365b8fdf03ba3942f1f7cb7c9}
+
+
+Releases a parameter from a \char`\"{}touched\char`\"{} state. 
+
+This method is called by the Parameter Manager to release a parameter so that any control may send updates to the parameter.
+
+\begin{DoxyNote}{Note}
+You should never need to override this method when using \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The parameter that is being released \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a2caf1b7b8e2dad62cf96f144479dee60}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a1555fe9834764330bd264941a1d6ebc3}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Parameter\+Touch@{Update\+Parameter\+Touch}}
+\index{Update\+Parameter\+Touch@{Update\+Parameter\+Touch}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Parameter\+Touch}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Touch (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean}}]{i\+Touch\+State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a1555fe9834764330bd264941a1d6ebc3}
+
+
+Sets a \char`\"{}touched\char`\"{} state on a parameter. 
+
+\begin{DoxyNote}{Note}
+This method should be overriden when dealing with linked parameters. Do N\+O\+T use this method to keep track of touch states. Use the \hyperlink{a00048}{automation delegate} for that.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The parameter that is changing touch states. \\
+\hline
+\mbox{\tt in}  & {\em i\+Touch\+State} & The touch state of the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a93483f44315bdf3adf60bf5bf773fbb8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a56a9f41a975b48f583655db7b43aae5a}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Parameter\+Normalized\+Value@{Update\+Parameter\+Normalized\+Value}}
+\index{Update\+Parameter\+Normalized\+Value@{Update\+Parameter\+Normalized\+Value}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Parameter\+Normalized\+Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Normalized\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Update\+Source}}]{i\+Source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a56a9f41a975b48f583655db7b43aae5a}
+
+
+Updates a single parameter\textquotesingle{}s state to its current value. 
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} interface.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000041}{Todo}]F\+L\+A\+G\+G\+E\+D F\+O\+R C\+O\+N\+S\+I\+D\+E\+R\+A\+T\+I\+O\+N O\+F R\+E\+V\+I\+S\+I\+O\+N\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being updated \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & The parameter\textquotesingle{}s current value, to which its internal state must be updated \\
+\hline
+\mbox{\tt in}  & {\em i\+Source} & The source of the update \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a685858711efb8634ce66c327f2865c71}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+
+
+Reimplemented in \hyperlink{a00026_a2ebeb6e1cc24277c7e72abbbfbebb5e9}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}.
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Update\+Parameter\+Normalized\+Value().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00018_a56a9f41a975b48f583655db7b43aae5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00018_a29bbbafe19a5a53b4accbb963dd7d0a6}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Parameter\+Normalized\+Relative@{Update\+Parameter\+Normalized\+Relative}}
+\index{Update\+Parameter\+Normalized\+Relative@{Update\+Parameter\+Normalized\+Relative}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Parameter\+Normalized\+Relative}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Parameter\+Normalized\+Relative (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{double}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a29bbbafe19a5a53b4accbb963dd7d0a6}
+
+
+Updates a single parameter\textquotesingle{}s state to its current value, as a difference with the parameter\textquotesingle{}s previous value. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000013}{Deprecated}]This is not called from the host. It {\itshape may} still be useful for internal calls within the plug-\/in, though it should only ever be used to update non-\/automatable parameters. Automatable parameters should always be updated through the \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} interface, which will ensure proper coordination with other automation clients.\end{DoxyRefDesc}
+
+
+\hyperlink{a00018_a29bbbafe19a5a53b4accbb963dd7d0a6}{Update\+Parameter\+Normalized\+Relative()} can be used to incorporate \char`\"{}wraparound\char`\"{} behavior in a parameter\textquotesingle{}s controls, if desired. If this behavior is not desired, then this method must properly account for overflow of the parameter\textquotesingle{}s normalized value.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00018_a5aac0f17339a337df23f4be9a126c950}{Set\+Parameter\+Normalized\+Relative()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Parameter\+I\+D} & The I\+D of the parameter that is being updated \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & The difference between the parameter\textquotesingle{}s current value and its previous value (normalized). The parameter\textquotesingle{}s state must be updated to reflect this difference. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a54403bec090fcc999a93f54c01bca0c9}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a7f85327b464a4a7f9b66155f37961bf3}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Generate\+Coefficients@{Generate\+Coefficients}}
+\index{Generate\+Coefficients@{Generate\+Coefficients}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Generate\+Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Generate\+Coefficients (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a7f85327b464a4a7f9b66155f37961bf3}
+
+
+Generates and dispatches new coefficient packets. 
+
+This method is responsible for updating the coefficient packets associated with all parameters whose states have changed since the last call to \hyperlink{a00061_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}. The host may call this method once for every parameter update, or it may \char`\"{}batch\char`\"{} parameter updates such that changes for several parameters are all handled by a single call to \hyperlink{a00061_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}.
+
+For more information on tracking parameters\textquotesingle{} statuses using the \hyperlink{a00031}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher}, helper class, see \hyperlink{a00031_a6d4254a842eeee46a227ec761619efb5}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Set\+Dirty()}.
+
+\begin{DoxyNote}{Note}
+Do {\itshape not} call this method from the plug-\/in. This method should be called by the host only. To set parameter values from within the plug-\/in, use the \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} interface. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{a00061_a083265b008921b6114ede387711694b7}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+
+
+Reimplemented in \hyperlink{a00026_ac9a3a7ac90562135ceb4b80301e12e92}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}.
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Generate\+Coefficients().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00018_a7f85327b464a4a7f9b66155f37961bf3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00018_accef965824c9b158cafb65e59e216b6a}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Reset\+Field\+Data@{Reset\+Field\+Data}}
+\index{Reset\+Field\+Data@{Reset\+Field\+Data}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Reset\+Field\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Reset\+Field\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{void $\ast$}]{o\+Data, }
+\item[{uint32\+\_\+t}]{in\+Data\+Size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_accef965824c9b158cafb65e59e216b6a}
+
+
+Called by the host to reset a private data field in the plug-\/in\textquotesingle{}s algorithm. 
+
+This method is called sequentially for all private data fields on Effect initialization and during any \char`\"{}reset\char`\"{} event, such as priming for a non-\/real-\/time render. This method is called before the algorithm\textquotesingle{}s optional initialization callback, and the initialized private data will be available within that callback via its context block.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00327_alg_initialization}{Algorithm initialization}.
+\end{DoxySeeAlso}
+\begin{DoxyWarning}{Warning}
+Any data structures that will be passed between platforms (for example, sent to a T\+I D\+S\+P in an A\+A\+X D\+S\+P plug-\/in) must be properly data-\/aligned for compatibility across both platforms. See \hyperlink{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G} for more information about guaranteeing cross-\/platform compatibility of data structures used for algorithm processing.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & The index of the field that is being initialized \\
+\hline
+\mbox{\tt out}  & {\em o\+Data} & The pre-\/allocated block of data that should be initialized \\
+\hline
+\mbox{\tt in}  & {\em in\+Data\+Size} & The size of the data block, in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a6e87e40d42c7431e52ae5ebd4f631964}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+
+
+Reimplemented in \hyperlink{a00026_a9b28c682b0495cf0d0eaa4c6c71e3f83}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}.
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Reset\+Field\+Data().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00018_accef965824c9b158cafb65e59e216b6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00018_a901448cbb416cbe3c169a8577de554e4}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Number\+Of\+Chunks@{Get\+Number\+Of\+Chunks}}
+\index{Get\+Number\+Of\+Chunks@{Get\+Number\+Of\+Chunks}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Number\+Of\+Chunks}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Chunks (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{o\+Num\+Chunks}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a901448cbb416cbe3c169a8577de554e4}
+
+
+Retrieves the number of chunks used by this plug-\/in. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Num\+Chunks} & The number of distinct chunks used by this plug-\/in \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a37e546c6dbb4d5a16fedb9f465de2599}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a39f0deaae61b977a3c05a4b3fb606b8d}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Chunk\+I\+D\+From\+Index@{Get\+Chunk\+I\+D\+From\+Index}}
+\index{Get\+Chunk\+I\+D\+From\+Index@{Get\+Chunk\+I\+D\+From\+Index}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Chunk\+I\+D\+From\+Index}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk\+I\+D\+From\+Index (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{i\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} $\ast$}]{o\+Chunk\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a39f0deaae61b977a3c05a4b3fb606b8d}
+
+
+Retrieves the I\+D associated with a chunk index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Index} & Index of the queried chunk \\
+\hline
+\mbox{\tt out}  & {\em o\+Chunk\+I\+D} & I\+D of the queried chunk \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a10409113cb781002551b878e4c0edd5a}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Chunk\+Size@{Get\+Chunk\+Size}}
+\index{Get\+Chunk\+Size@{Get\+Chunk\+Size}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Chunk\+Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Chunk\+I\+D, }
+\item[{uint32\+\_\+t $\ast$}]{o\+Size}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a9e4afba12f3e778a91f9afec9ef44c78}
+
+
+Get the size of the data structure that can hold all of a chunk\textquotesingle{}s information. 
+
+If {\itshape chunk\+I\+D} is one of the plug-\/in\textquotesingle{}s custom chunks, initialize {\itshape $\ast$size} to the size of the chunk\textquotesingle{}s data in bytes.
+
+This method is invoked every time a chunk is saved, therefore it is possible to have dynamically sized chunks. However, note that each call to \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size()} will correspond to a following call to \hyperlink{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{Get\+Chunk()}. The chunk provided in \hyperlink{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{Get\+Chunk()} {\itshape must} have the same size as the {\itshape size} provided by \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size()}.
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000035}{Legacy Porting Notes}]In \hyperlink{a00288}{A\+A\+X}, the value provided by \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size()} should {\itshape N\+O\+T} include the size of the chunk header. The value should {\itshape O\+N\+L\+Y} reflect the size of the chunk\textquotesingle{}s data.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Chunk\+I\+D} & I\+D of the queried chunk \\
+\hline
+\mbox{\tt out}  & {\em o\+Size} & The chunk\textquotesingle{}s size in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_aa986711cd372febcaae803e86ae08f63}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Chunk@{Get\+Chunk}}
+\index{Get\+Chunk@{Get\+Chunk}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Chunk}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Chunk (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Chunk\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$}]{o\+Chunk}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a2526332264a5a0c7b06ecf76e58a67d9}
+
+
+Fills a block of data with chunk information representing the plug-\/in\textquotesingle{}s current state. 
+
+By calling this method, the host is requesting information about the current state of the plug-\/in. The following chunk fields should be explicitly populated in this method. Other fields will be populated by the host.
+
+\begin{DoxyItemize}
+\item \hyperlink{a00125_abc76d66fffa4a59ee5cfdbdd992c532c}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Data} \item \hyperlink{a00125_ac114fd94e7b12c235f9c18bcbbc46f06}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Version} \item \hyperlink{a00125_a1b07e29358b5549739f674e04653a6bc}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Name} (Optional) \item \hyperlink{a00125_ac08f37f1ed50eac8ac3ca4bf5494c84d}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+::f\+Size} (Data size only)\end{DoxyItemize}
+\begin{DoxyWarning}{Warning}
+Remember that this chunk data may be loaded on a different platform from the one where it is saved. All data structures in the chunk must be properly data-\/aligned for compatibility across all platforms that the plug-\/in supports. See \hyperlink{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G} for notes about common cross-\/platform pitfalls for data structure alignment.
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Chunk\+I\+D} & I\+D of the chunk that should be provided \\
+\hline
+\mbox{\tt out}  & {\em o\+Chunk} & A preallocated block of memory that should be populated with the chunk\textquotesingle{}s data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_ab977041a440a9cd6f3e631c059ee8b99}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_af80a63ce88a2e95afb77aaca71dcb73f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Chunk@{Set\+Chunk}}
+\index{Set\+Chunk@{Set\+Chunk}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Chunk}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Chunk (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Chunk\+I\+D, }
+\item[{const {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$}]{i\+Chunk}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_af80a63ce88a2e95afb77aaca71dcb73f}
+
+
+Restores a set of plug-\/in parameters based on chunk information. 
+
+By calling this method, the host is attempting to update the plug-\/in\textquotesingle{}s current state to match the data stored in a chunk. The plug-\/in should initialize itself to this new state by calling \hyperlink{a00018_aa705736fbe6b2cd8cc5721677cea6c20}{Set\+Parameter\+Normalized\+Value()} for each of the relevant parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Chunk\+I\+D} & I\+D of the chunk that is being set \\
+\hline
+\mbox{\tt in}  & {\em i\+Chunk} & The chunk \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a2d780ebc594683e24302871b809602e8}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_af9d1e4ffec9dabf9fe8e71f89d3d18b2}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Compare\+Active\+Chunk@{Compare\+Active\+Chunk}}
+\index{Compare\+Active\+Chunk@{Compare\+Active\+Chunk}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Compare\+Active\+Chunk}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Compare\+Active\+Chunk (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$}]{i\+Chunk\+P, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Boolean} $\ast$}]{o\+Is\+Equal}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_af9d1e4ffec9dabf9fe8e71f89d3d18b2}
+
+
+Determine if a chunk represents settings that are equivalent to the plug-\/in\textquotesingle{}s current state. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000049}{Host Compatibility Notes}]In Pro Tools, this method will only be called if a prior call to \hyperlink{a00061_a17b96da201d9a242d3662e87525a7227}{Get\+Number\+Of\+Changes()} has indicated that the plug-\/in\textquotesingle{}s state has changed. If the plug-\/in\textquotesingle{}s current settings are different from the settings in {\ttfamily a\+Chunk\+P} then the plug-\/in\textquotesingle{}s Compare Light will be illuminated in the plug-\/in header, allowing users to toggle between the plug-\/in\textquotesingle{}s custom state and its saved state.\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Chunk\+P} & The chunk that is to be tested \\
+\hline
+\mbox{\tt out}  & {\em o\+Is\+Equal} & True if the chunk represents equivalent settings when compared with the plug-\/in\textquotesingle{}s current state. False if the chunk represents non-\/equivalent settings \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a1e86f849e970c9998313fc7d451ccf85}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a01b7a09da773ca60d2cd02bc9fa14f95}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Number\+Of\+Changes@{Get\+Number\+Of\+Changes}}
+\index{Get\+Number\+Of\+Changes@{Get\+Number\+Of\+Changes}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Number\+Of\+Changes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Number\+Of\+Changes (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{o\+Num\+Changes}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a01b7a09da773ca60d2cd02bc9fa14f95}
+
+
+Retrieves the number of parameter changes made since the plug-\/in\textquotesingle{}s creation. 
+
+This method is polled regularly by the host, and can additionally be triggered by some events such as mouse clicks. When the number provided by this method changes, the host subsequently calls \hyperlink{a00018_af9d1e4ffec9dabf9fe8e71f89d3d18b2}{Compare\+Active\+Chunk()} to determine if the plug-\/in\textquotesingle{}s Compare light should be activated.
+
+The value provided by this method should increment with each call to \hyperlink{a00061_a685858711efb8634ce66c327f2865c71}{Update\+Parameter\+Normalized\+Value()}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Num\+Changes} & Must be set to indicate the number of parameter changes that have occurred since plug-\/in initialization. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a17b96da201d9a242d3662e87525a7227}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a075602c75297cbb136d888ffa5d97ddd}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Timer\+Wakeup@{Timer\+Wakeup}}
+\index{Timer\+Wakeup@{Timer\+Wakeup}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Timer\+Wakeup}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Timer\+Wakeup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a075602c75297cbb136d888ffa5d97ddd}
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+This method is called from the host using a non-\/main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup thread runs continuously and cannot be armed/disarmed or by the plug-\/in. 
+
+Implements \hyperlink{a00061_ab5b8da9e1a9d778d327ac04f4ab8d139}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+
+
+Reimplemented in \hyperlink{a00026_a397819655fb094188ca4af6543f435f7}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters}.
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Timer\+Wakeup().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00018_a075602c75297cbb136d888ffa5d97ddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00018_a41deeb0825a1c07f9b77c62215cb4de7}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Curve\+Data@{Get\+Curve\+Data}}
+\index{Get\+Curve\+Data@{Get\+Curve\+Data}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Curve\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{const float $\ast$}]{i\+Values, }
+\item[{uint32\+\_\+t}]{i\+Num\+Values, }
+\item[{float $\ast$}]{o\+Values}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a41deeb0825a1c07f9b77c62215cb4de7}
+
+
+Generate a set of output values based on a set of given input values. 
+
+This method is used by the host to generate graphical curves. Given a set of input values, e.\+g. frequencies in Hz, this method should generate a corresponding set of output values, e.\+g. d\+B gain at each frequency. The semantics of these input and output values are dictated by {\ttfamily i\+Curve\+Type}. See \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type}.
+
+Plug-\/ins may also define custom curve type I\+Ds to use this method internally. For example, the plug-\/in\textquotesingle{}s G\+U\+I could use this method to request curve data in an arbitrary format.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyNote}{Note}
+This method may be called by the host simultaneously from multiple threads with differents {\ttfamily i\+Values}.
+\end{DoxyNote}
+
+\item \begin{DoxyNote}{Note}
+{\ttfamily o\+Values} must be allocated by caller with the same size as {\ttfamily i\+Values} ({\ttfamily i\+Num\+Values}).
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000050}{Host Compatibility Notes}]Versions of S6 software which support the \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()} method will not display a plug-\/in\textquotesingle{}s curve data unless both \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{Get\+Curve\+Data()} and \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range()} are supported by the plug-\/in.\end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+S6 currently polls this method to update a plug-\/in\textquotesingle{}s E\+Q or dynamics curves based on changes to the parameters mapped to the plug-\/in\textquotesingle{}s E\+Q or dynamics center section page tables. Parameters that are not included in these page tables will not trigger updates to the curves displayed on S6. (G\+W\+S\+W-\/7314, \hyperlink{a00374_PTSW-195316}{P\+T\+S\+W-\/195316 / P\+T-\/218485})
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt in}  & {\em i\+Values} & An array of input values \\
+\hline
+\mbox{\tt in}  & {\em i\+Num\+Values} & The size of {\ttfamily i\+Values} \\
+\hline
+\mbox{\tt out}  & {\em o\+Values} & An array of ouptut values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method must return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not support curve data for the requested {\ttfamily i\+Curve\+Type} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{a00342_gaa85bda4027342eb644a9c92a17da6d49}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_abd41a9d952b3ef1db63b5f00bad03bb0}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Curve\+Data\+Meter\+Ids@{Get\+Curve\+Data\+Meter\+Ids}}
+\index{Get\+Curve\+Data\+Meter\+Ids@{Get\+Curve\+Data\+Meter\+Ids}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Curve\+Data\+Meter\+Ids}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Meter\+Ids (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{uint32\+\_\+t $\ast$}]{o\+X\+Meter\+Id, }
+\item[{uint32\+\_\+t $\ast$}]{o\+Y\+Meter\+Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_abd41a9d952b3ef1db63b5f00bad03bb0}
+
+
+Indicates which meters correspond to the X and Y axes of the E\+Q or Dynamics graph. 
+
+These meters can be used by attached control surfaces to present an indicator in the same X/\+Y coordinate plane as the plug-\/in\textquotesingle{}s curve data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Meter\+Id} & Id of the X-\/axis meter \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Meter\+Id} & Id of the Y-\/axis meter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3}.
+
+\hypertarget{a00018_aaa02d76800a2a0dad30587e13c89da7d}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Curve\+Data\+Display\+Range@{Get\+Curve\+Data\+Display\+Range}}
+\index{Get\+Curve\+Data\+Display\+Range@{Get\+Curve\+Data\+Display\+Range}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Curve\+Data\+Display\+Range}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Curve\+Data\+Display\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Curve\+Type, }
+\item[{float $\ast$}]{o\+X\+Min, }
+\item[{float $\ast$}]{o\+X\+Max, }
+\item[{float $\ast$}]{o\+Y\+Min, }
+\item[{float $\ast$}]{o\+Y\+Max}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_aaa02d76800a2a0dad30587e13c89da7d}
+
+
+Determines the range of the graph shown by the plug-\/in. 
+
+Min/max arguments define the range of the axes of the graph.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Curve\+Type} & One of \hyperlink{a00342_ga59c73d8f51c5c55d54a728eff39da884}{A\+A\+X\+\_\+\+E\+Curve\+Type} \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Min} & Min value of X-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+X\+Max} & Max value of X-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Min} & Min value of Y-\/axis range \\
+\hline
+\mbox{\tt out}  & {\em o\+Y\+Max} & Max value of Y-\/axis range\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3}.
+
+\hypertarget{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Page\+Table@{Update\+Page\+Table}}
+\index{Update\+Page\+Table@{Update\+Page\+Table}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Page\+Table (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Host\+Unknown, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{io\+Page\+Table\+Unknown}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}
+
+
+Allow the plug-\/in to update its page tables. 
+
+Called by the plug-\/in host, usually in response to a \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed} notification sent from the plug-\/in.
+
+Use this method to change the page table mapping for the plug-\/in instance or to apply other changes to auxiliary U\+Is which use the plug-\/in page tables, such as setting focus to a new page.
+
+See \hyperlink{a00363}{Page Table Guide} for more information about page tables.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the table \\
+\hline
+\mbox{\tt in}  & {\em i\+Host\+Unknown} & Unknown interface from the host which may support interfaces providing additional features or information.
+
+All interfaces queried from this unknown will be valid only within the scope of this \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()} execution and will be relevant for only the current plug-\/in instance. \\
+\hline
+\mbox{\tt in,out}  & {\em io\+Page\+Table\+Unknown} & Unknown interface which supports \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}. This object represents the page table data which is currently stored by the host for this plug-\/in instance for the given table type and page size. This data and may be edited within the scope of \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()} to change the page table mapping for this plug-\/in instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it or when no change is requested by the plug-\/in. This allows optimizations to be used in the host when no U\+I update is required following this call.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+For convenience, do not override this method. Instead, override the \hyperlink{a00018_ae407277e6f76cbc217da5811c6f216a9}{protected overload} which provides a prepared copy of the relevant \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table} host interface. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4}.
+
+\hypertarget{a00018_a6ee0e83b601dd8a7bec2c94139965a06}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Get\+Custom\+Data@{Get\+Custom\+Data}}
+\index{Get\+Custom\+Data@{Get\+Custom\+Data}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Get\+Custom\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Get\+Custom\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Data\+Block\+I\+D, }
+\item[{uint32\+\_\+t}]{in\+Data\+Size, }
+\item[{void $\ast$}]{o\+Data, }
+\item[{uint32\+\_\+t $\ast$}]{o\+Data\+Written}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a6ee0e83b601dd8a7bec2c94139965a06}
+
+
+An optional interface hook for getting custom data from another module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Data\+Block\+I\+D} & Identifier for the requested block of custom data \\
+\hline
+\mbox{\tt in}  & {\em in\+Data\+Size} & Size of provided buffer, in bytes \\
+\hline
+\mbox{\tt out}  & {\em o\+Data} & Pointer to an allocated buffer. Data will be written here. \\
+\hline
+\mbox{\tt out}  & {\em o\+Data\+Written} & The number of bytes actually written \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_a4728fcad006d921a07489144360f447e}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_a4fed39f4a0e6527808b7355bb34b1710}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Custom\+Data@{Set\+Custom\+Data}}
+\index{Set\+Custom\+Data@{Set\+Custom\+Data}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Custom\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Custom\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{i\+Data\+Block\+I\+D, }
+\item[{uint32\+\_\+t}]{in\+Data\+Size, }
+\item[{const void $\ast$}]{i\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a4fed39f4a0e6527808b7355bb34b1710}
+
+
+An optional interface hook for setting custom data for use by another module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Data\+Block\+I\+D} & Identifier for the provided block of custom data \\
+\hline
+\mbox{\tt in}  & {\em in\+Data\+Size} & Size of provided buffer, in bytes \\
+\hline
+\mbox{\tt in}  & {\em i\+Data} & Pointer to the data buffer \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00061_aa838cad04781853ef2e0b9df22a05170}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+\hypertarget{a00018_ae5c1dca13e08cedbbcaca50767dc19e8}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Do\+M\+I\+D\+I\+Transfers@{Do\+M\+I\+D\+I\+Transfers}}
+\index{Do\+M\+I\+D\+I\+Transfers@{Do\+M\+I\+D\+I\+Transfers}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Do\+M\+I\+D\+I\+Transfers}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Do\+M\+I\+D\+I\+Transfers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00018_ae5c1dca13e08cedbbcaca50767dc19e8}
+
+
+M\+I\+D\+I update callback. 
+
+Call \hyperlink{a00090_a2896ba3a1ed86ce2813b1736d316d275}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Next\+M\+I\+D\+I\+Packet()} from within this method to retrieve and process M\+I\+D\+I packets directly within the Effect\textquotesingle{}s data model. M\+I\+D\+I data will also be delivered to the Effect algorithm.
+
+This method is called regularly by the host, similarly to \hyperlink{a00061_ab5b8da9e1a9d778d327ac04f4ab8d139}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Timer\+Wakeup()} 
+
+Implements \hyperlink{a00061_af376aef3d3ecdc6287f820b4e01f5c9b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters}.
+
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\hypertarget{a00018_a900a8fcf7d2e0bebda33e5ac393019c2}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+M\+I\+D\+I\+Nodes@{Update\+M\+I\+D\+I\+Nodes}}
+\index{Update\+M\+I\+D\+I\+Nodes@{Update\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+M\+I\+D\+I\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} \&}]{i\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a900a8fcf7d2e0bebda33e5ac393019c2}
+
+
+M\+I\+D\+I update callback. 
+
+This method is called by the host for each pending M\+I\+D\+I packet for M\+I\+D\+I nodes in algorithm context structure. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+D\+I data packets directly in the data model. M\+I\+D\+I data will also be delivered to the Effect algorithm.
+
+The host calls this method in Effects that register one or more M\+I\+D\+I nodes using \hyperlink{a00088_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node()}. Effects that do not require M\+I\+D\+I data to be sent to the plug-\/in algorithm should override \hyperlink{a00062_ab4ec161f64086070083c21b566354861}{Update\+Control\+M\+I\+D\+I\+Nodes()}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & M\+I\+D\+I node field index in algorithm context structure \\
+\hline
+\mbox{\tt in}  & {\em i\+Packet} & The incoming M\+I\+D\+I packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00062_a229029f0d4bd758538c48931b9f9a9ad}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}.
+
+\hypertarget{a00018_aeaaaad6ff1a84c8fc66dcdfd8bc430c5}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Control\+M\+I\+D\+I\+Nodes@{Update\+Control\+M\+I\+D\+I\+Nodes}}
+\index{Update\+Control\+M\+I\+D\+I\+Nodes@{Update\+Control\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Control\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Control\+M\+I\+D\+I\+Nodes (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{node\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} \&}]{i\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_aeaaaad6ff1a84c8fc66dcdfd8bc430c5}
+
+
+M\+I\+D\+I update callback for control M\+I\+D\+I nodes. 
+
+This method is called by the host for each pending M\+I\+D\+I packet for Control M\+I\+D\+I nodes. Overwrite this method in Plug-\/\+In\textquotesingle{}s Effect\+Parameter class if you want to receive M\+I\+D\+I data packets directly in the data model.
+
+The host calls this method in Effects that register one or more Control M\+I\+D\+I nodes using \hyperlink{a00096_aa7709de005e0256feb522758ccc5b582}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor\+::\+Add\+Control\+M\+I\+D\+I\+Node()}. Effects with algorithms that use M\+I\+D\+I data nodes should override \hyperlink{a00062_a229029f0d4bd758538c48931b9f9a9ad}{Update\+M\+I\+D\+I\+Nodes()}.
+
+\begin{DoxyNote}{Note}
+This method will not be called if an Effect includes any M\+I\+D\+I nodes in its algorithm context structure.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em node\+I\+D} & Identifier for the M\+I\+D\+I node \\
+\hline
+\mbox{\tt in}  & {\em i\+Packet} & The incoming M\+I\+D\+I packet for the node \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00062_ab4ec161f64086070083c21b566354861}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}.
+
+\hypertarget{a00018_a70c1cf315915535cb593860ed42b6cbe}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Render\+Audio\+\_\+\+Hybrid@{Render\+Audio\+\_\+\+Hybrid}}
+\index{Render\+Audio\+\_\+\+Hybrid@{Render\+Audio\+\_\+\+Hybrid}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Render\+Audio\+\_\+\+Hybrid}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Render\+Audio\+\_\+\+Hybrid (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info} $\ast$}]{io\+Render\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00018_a70c1cf315915535cb593860ed42b6cbe}
+
+
+Hybrid audio render function. 
+
+This method is called from the host to render audio for the hybrid piece of the algorithm.
+
+\begin{DoxyNote}{Note}
+To use this method plug-\/in should register some hybrid inputs and ouputs in \char`\"{}\+Describe\char`\"{} 
+\end{DoxyNote}
+
+
+Implements \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2}.
+
+\hypertarget{a00018_a2aad1f84d38b40fee029629c53273a56}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Controller@{Controller}}
+\index{Controller@{Controller}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Controller}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00018_a2aad1f84d38b40fee029629c53273a56}
+
+
+Access to the Effect controller. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Generate\+Coefficients().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00018_a2aad1f84d38b40fee029629c53273a56_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00018_a9a03ffd16b2dab5f5b53eabf8e2a8556}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Controller@{Controller}}
+\index{Controller@{Controller}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Controller}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Controller}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00018_a9a03ffd16b2dab5f5b53eabf8e2a8556}
+
+
+{\ttfamily const} access to the Effect controller 
+
+\hypertarget{a00018_af003e341f47eb1f170529db63066eca3}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Transport@{Transport}}
+\index{Transport@{Transport}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Transport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Transport}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Transport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00018_af003e341f47eb1f170529db63066eca3}
+
+
+Access to the Transport object. 
+
+\hypertarget{a00018_a08bda19fadbe73f041de99190e06e4c1}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Transport@{Transport}}
+\index{Transport@{Transport}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Transport}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Transport}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Transport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00018_a08bda19fadbe73f041de99190e06e4c1}
+
+
+{\ttfamily const} access to the Transport object 
+
+\hypertarget{a00018_ab88816d6dd3a86ae3db189e3b0d662b8}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Automation\+Delegate@{Automation\+Delegate}}
+\index{Automation\+Delegate@{Automation\+Delegate}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Automation\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+I\+Automation\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Automation\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00018_ab88816d6dd3a86ae3db189e3b0d662b8}
+
+
+Access to the Effect\textquotesingle{}s automation delegate. 
+
+\hypertarget{a00018_a8cfd9173a91c44533cb5bf2df97bda5f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Automation\+Delegate@{Automation\+Delegate}}
+\index{Automation\+Delegate@{Automation\+Delegate}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Automation\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+I\+Automation\+Delegate}$\ast$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Automation\+Delegate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{a00018_a8cfd9173a91c44533cb5bf2df97bda5f}
+
+
+{\ttfamily const} access to the Effect\textquotesingle{}s automation delegate 
+
+\hypertarget{a00018_a363be3503435a8619f6cba787ee678ac}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Taper\+Delegate@{Set\+Taper\+Delegate}}
+\index{Set\+Taper\+Delegate@{Set\+Taper\+Delegate}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Taper\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Taper\+Delegate (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Taper\+Delegate\+Base} \&}]{i\+Taper\+Delegate, }
+\item[{bool}]{i\+Preserve\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a363be3503435a8619f6cba787ee678ac}
+\hypertarget{a00018_ad4aeb081bffb2414182251d4e41c1ed2}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Set\+Display\+Delegate@{Set\+Display\+Delegate}}
+\index{Set\+Display\+Delegate@{Set\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Set\+Display\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Set\+Display\+Delegate (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base} \&}]{i\+Display\+Delegate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_ad4aeb081bffb2414182251d4e41c1ed2}
+\hypertarget{a00018_af5445bb9f40ccf826227199647e140ee}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Is\+Parameter\+Touched@{Is\+Parameter\+Touched}}
+\index{Is\+Parameter\+Touched@{Is\+Parameter\+Touched}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Is\+Parameter\+Touched}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Is\+Parameter\+Touched (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_af5445bb9f40ccf826227199647e140ee}
+\hypertarget{a00018_ae105f2a8a00facc2a190ef3ea86c5328}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Is\+Parameter\+Link\+Ready@{Is\+Parameter\+Link\+Ready}}
+\index{Is\+Parameter\+Link\+Ready@{Is\+Parameter\+Link\+Ready}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Is\+Parameter\+Link\+Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Is\+Parameter\+Link\+Ready (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{in\+Parameter\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Update\+Source}}]{in\+Source}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_ae105f2a8a00facc2a190ef3ea86c5328}
+\hypertarget{a00018_a2e302fd758d39a6a855023bf825fe148}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Effect\+Init@{Effect\+Init}}
+\index{Effect\+Init@{Effect\+Init}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Effect\+Init}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Effect\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{a00018_a2e302fd758d39a6a855023bf825fe148}
+
+
+Initialization helper routine. Called from \hyperlink{a00018_ac36930c5177d982a30164c0b0477d012}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Initialize}. 
+
+Override to add parameters, packets, meters, and to do any other custom initialization.
+
+Add custom parameters\+: \begin{DoxyItemize}
+\item Create an \hyperlink{a00033}{A\+A\+X\+\_\+\+C\+Parameter} for each parameter in the plug-\/in \item Call \hyperlink{a00034_ae2f9631b33c012f7a8c042df9655b28c}{A\+A\+X\+\_\+\+C\+Parameter\+Manager\+::\+Add\+Parameter()} using m\+Parameter\+Manager to add parameters to the Parameter Manager\end{DoxyItemize}
+Register packets\+: \begin{DoxyItemize}
+\item Call \hyperlink{a00031_a1848f0bfa473b54e9ee8e32872c89cb1}{A\+A\+X\+\_\+\+C\+Packet\+Dispatcher\+::\+Register\+Packet()} using m\+Packet\+Dispatcher to register a packet and handling callback. \end{DoxyItemize}
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\hypertarget{a00018_ae407277e6f76cbc217da5811c6f216a9}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Update\+Page\+Table@{Update\+Page\+Table}}
+\index{Update\+Page\+Table@{Update\+Page\+Table}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Update\+Page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+Page\+Table (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{, }
+\item[{int32\+\_\+t}]{, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+Page\+Table} \&}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{a00018_ae407277e6f76cbc217da5811c6f216a9}
+Protected overload of \hyperlink{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}{Update\+Page\+Table()}
+
+Override this version of the method for convenience. This allows the default \hyperlink{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}{Update\+Page\+Table()} implementation to handle the interface conversion from \hyperlink{a00146}{I\+A\+C\+F\+Unknown} to \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}.
+
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it or when no change is made by the plug-\/in. This allows optimizations to be used in the host when no U\+I update is required following this call. 
+\end{DoxyReturn}
+
+
+References A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D.
+
+\hypertarget{a00018_a06251bbdd6ad5d6ccee160ce4cb5ee8c}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Filter\+Parameter\+I\+D\+On\+Save@{Filter\+Parameter\+I\+D\+On\+Save}}
+\index{Filter\+Parameter\+I\+D\+On\+Save@{Filter\+Parameter\+I\+D\+On\+Save}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Filter\+Parameter\+I\+D\+On\+Save}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Filter\+Parameter\+I\+D\+On\+Save (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{control\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a06251bbdd6ad5d6ccee160ce4cb5ee8c}
+
+
+C\+A\+L\+L\+: Indicates the indices of parameters that should not be saved in the default \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} chunk. 
+
+Allows specific parameters to filtered out of the default \hyperlink{a00018}{A\+A\+X\+\_\+\+C\+Effect\+Parameters} \char`\"{}\+Save
+\+Settings\char`\"{} functionality. This call is automatically invoked on the Master Bypass control when specified by the Define\+Master\+Bypass\+Control\+Index() call.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em control\+I\+D} & The I\+D of the parameter that should be removed from the default chunk \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00018_a190f0573f8959ac5397565e198c485d4}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!Build\+Chunk\+Data@{Build\+Chunk\+Data}}
+\index{Build\+Chunk\+Data@{Build\+Chunk\+Data}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{Build\+Chunk\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Build\+Chunk\+Data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a190f0573f8959ac5397565e198c485d4}
+
+
+Clears out the current chunk in Chunk Parser and adds all of the new values. Used by default implementations of \hyperlink{a00018_a2526332264a5a0c7b06ecf76e58a67d9}{Get\+Chunk()} and \hyperlink{a00018_a9e4afba12f3e778a91f9afec9ef44c78}{Get\+Chunk\+Size()}. 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00018_a1d9f79117c9075f47b00a7af34113b22}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Num\+Plug\+In\+Changes@{m\+Num\+Plug\+In\+Changes}}
+\index{m\+Num\+Plug\+In\+Changes@{m\+Num\+Plug\+In\+Changes}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Num\+Plug\+In\+Changes}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Num\+Plug\+In\+Changes\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a1d9f79117c9075f47b00a7af34113b22}
+\hypertarget{a00018_a8c792ec58dc073534348004f0c0c09dd}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Chunk\+Size@{m\+Chunk\+Size}}
+\index{m\+Chunk\+Size@{m\+Chunk\+Size}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Chunk\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Chunk\+Size\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}\label{a00018_a8c792ec58dc073534348004f0c0c09dd}
+\hypertarget{a00018_a71e52a24c8cd8853c768417aa181b41f}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Chunk\+Parser@{m\+Chunk\+Parser}}
+\index{m\+Chunk\+Parser@{m\+Chunk\+Parser}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Chunk\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Chunk\+Data\+Parser} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Chunk\+Parser\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [protected]}}\label{a00018_a71e52a24c8cd8853c768417aa181b41f}
+\hypertarget{a00018_ad6a57b4e98161c28b55b250e0234c4ba}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Num\+Chunked\+Parameters@{m\+Num\+Chunked\+Parameters}}
+\index{m\+Num\+Chunked\+Parameters@{m\+Num\+Chunked\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Num\+Chunked\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Num\+Chunked\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_ad6a57b4e98161c28b55b250e0234c4ba}
+\hypertarget{a00018_ad1f88737300c7685cbd0dda4f65cdbb7}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Clipped@{m\+Clipped}}
+\index{m\+Clipped@{m\+Clipped}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Clipped}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Clipped\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_ad1f88737300c7685cbd0dda4f65cdbb7}
+
+
+Set by Set\+Clipped() and returned by Get\+Clipped(). 
+
+\hypertarget{a00018_a1e4a92cdd947d35eb4382f0b5c4c8dae}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Packet\+Dispatcher@{m\+Packet\+Dispatcher}}
+\index{m\+Packet\+Dispatcher@{m\+Packet\+Dispatcher}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Packet\+Dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Packet\+Dispatcher} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Packet\+Dispatcher\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a1e4a92cdd947d35eb4382f0b5c4c8dae}
+\hypertarget{a00018_afbb31a7a131b227ddd8bbd920aafbfb8}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Parameter\+Manager@{m\+Parameter\+Manager}}
+\index{m\+Parameter\+Manager@{m\+Parameter\+Manager}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Parameter\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Parameter\+Manager} A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Parameter\+Manager\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_afbb31a7a131b227ddd8bbd920aafbfb8}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Update\+Parameter\+Normalized\+Value().
+
+\hypertarget{a00018_a353f5472e4eaefd348f20f9ff07a13a0}{}\index{A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}!m\+Filtered\+Parameters@{m\+Filtered\+Parameters}}
+\index{m\+Filtered\+Parameters@{m\+Filtered\+Parameters}!A\+A\+X\+\_\+\+C\+Effect\+Parameters@{A\+A\+X\+\_\+\+C\+Effect\+Parameters}}
+\subsubsection[{m\+Filtered\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$std\+::string$>$ A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::m\+Filtered\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}\label{a00018_a353f5472e4eaefd348f20f9ff07a13a0}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00172}{A\+A\+X\+\_\+\+C\+Effect\+Parameters.\+h}\end{DoxyCompactItemize}

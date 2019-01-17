@@ -1,0 +1,156 @@
+\hypertarget{a00113}{}\section{A\+A\+X\+\_\+\+I\+String Class Reference}
+\label{a00113}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+String.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+String\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{a00659}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+A simple string container that can be passed across a binary boundary. This class, for simplicity, is not versioned and thus can never change. 
+
+For a real string implementation, see \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String}, which inherits from this interface, but provides a much richer string interface.
+
+This object is not versioned with A\+C\+F for a variety of reasons, but the biggest implication of that is that T\+H\+I\+S I\+N\+T\+E\+R\+F\+A\+C\+E C\+A\+N N\+E\+V\+E\+R C\+H\+A\+N\+G\+E! \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00113_a5930db58f3ca89eeccf141ac2bcfe155}{$\sim$\+A\+A\+X\+\_\+\+I\+String} ()
+\item 
+virtual uint32\+\_\+t \hyperlink{a00113_a4d4440bf68aa5ae4bf3dc6639cbf95c9}{Length} () const =0
+\item 
+virtual uint32\+\_\+t \hyperlink{a00113_aa898760d69880aeefbd42c0109889c59}{Max\+Length} () const =0
+\item 
+virtual const char $\ast$ \hyperlink{a00113_a63ff078d3df0d2e0c16c078a2ac4921e}{Get} () const =0
+\item 
+virtual void \hyperlink{a00113_a9ad28fba3ccc952de495f055a10e3b19}{Set} (const char $\ast$i\+String)=0
+\item 
+virtual \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \& \hyperlink{a00113_aaaf335636d64612714ffa93859d1a39c}{operator=} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&i\+Other)=0
+\item 
+virtual \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \& \hyperlink{a00113_abccb4049e229d265fdb8635342add574}{operator=} (const char $\ast$i\+String)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00113_a5930db58f3ca89eeccf141ac2bcfe155}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!````~A\+A\+X\+\_\+\+I\+String@{$\sim$\+A\+A\+X\+\_\+\+I\+String}}
+\index{````~A\+A\+X\+\_\+\+I\+String@{$\sim$\+A\+A\+X\+\_\+\+I\+String}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+String}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+String\+::$\sim$\+A\+A\+X\+\_\+\+I\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00113_a5930db58f3ca89eeccf141ac2bcfe155}
+Virtual Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{a00113_a4d4440bf68aa5ae4bf3dc6639cbf95c9}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!Length@{Length}}
+\index{Length@{Length}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\+\_\+t A\+A\+X\+\_\+\+I\+String\+::\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_a4d4440bf68aa5ae4bf3dc6639cbf95c9}
+Length methods 
+
+Implemented in \hyperlink{a00042_a72ac5c3649eda73815efb6deb139cee4}{A\+A\+X\+\_\+\+C\+String}.
+
+
+
+Referenced by A\+A\+X\+::\+String2\+Binary().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{a00113_a4d4440bf68aa5ae4bf3dc6639cbf95c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00113_aa898760d69880aeefbd42c0109889c59}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!Max\+Length@{Max\+Length}}
+\index{Max\+Length@{Max\+Length}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{Max\+Length}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\+\_\+t A\+A\+X\+\_\+\+I\+String\+::\+Max\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_aa898760d69880aeefbd42c0109889c59}
+
+
+Implemented in \hyperlink{a00042_a2d4bc02baad1787f74d8a59d9c68d3a0}{A\+A\+X\+\_\+\+C\+String}.
+
+\hypertarget{a00113_a63ff078d3df0d2e0c16c078a2ac4921e}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!Get@{Get}}
+\index{Get@{Get}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ A\+A\+X\+\_\+\+I\+String\+::\+Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_a63ff078d3df0d2e0c16c078a2ac4921e}
+C string methods 
+
+Implemented in \hyperlink{a00042_aa2fd3c16a7bc036d26b66159caa576f3}{A\+A\+X\+\_\+\+C\+String}.
+
+
+
+Referenced by A\+A\+X\+::\+Is\+Effect\+I\+D\+Equal(), and A\+A\+X\+::\+String2\+Binary().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{a00113_a63ff078d3df0d2e0c16c078a2ac4921e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00113_a9ad28fba3ccc952de495f055a10e3b19}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!Set@{Set}}
+\index{Set@{Set}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}virtual void A\+A\+X\+\_\+\+I\+String\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_a9ad28fba3ccc952de495f055a10e3b19}
+
+
+Implemented in \hyperlink{a00042_a0cdc8c41b8badaa9bcde411db95ac84d}{A\+A\+X\+\_\+\+C\+String}.
+
+\hypertarget{a00113_aaaf335636d64612714ffa93859d1a39c}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+String}\& A\+A\+X\+\_\+\+I\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{i\+Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_aaaf335636d64612714ffa93859d1a39c}
+Assignment operators 
+
+Implemented in \hyperlink{a00042_a16f7f37d975e9c6fe7a5d1ef97eb5247}{A\+A\+X\+\_\+\+C\+String}.
+
+\hypertarget{a00113_abccb4049e229d265fdb8635342add574}{}\index{A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+I\+String@{A\+A\+X\+\_\+\+I\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+String}\& A\+A\+X\+\_\+\+I\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+String}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00113_abccb4049e229d265fdb8635342add574}
+
+
+Implemented in \hyperlink{a00042_a2beb6db60d5a5f1109ef84105da7b63d}{A\+A\+X\+\_\+\+C\+String}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00261}{A\+A\+X\+\_\+\+I\+String.\+h}\end{DoxyCompactItemize}

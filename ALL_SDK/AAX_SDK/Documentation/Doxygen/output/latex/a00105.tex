@@ -1,0 +1,98 @@
+\hypertarget{a00105}{}\section{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node Class Reference}
+\label{a00105}\index{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h$>$}
+
+
+
+\subsection{Description}
+Interface for accessing information in a M\+I\+D\+I node. 
+
+\begin{DoxyRefDesc}{\+:\+Implemented by the A\+A\+X Host}
+\item[\hyperlink{a00001__aax_host_implementation000009}{\+:\+Implemented by the A\+A\+X Host}]\end{DoxyRefDesc}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00088_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node} 
+\end{DoxySeeAlso}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00105_ad9b4ebff12e979094504e8630f7b861a}{$\sim$\+A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node} ()
+\item 
+virtual \hyperlink{a00025}{A\+A\+X\+\_\+\+C\+Midi\+Stream} $\ast$ \hyperlink{a00105_a794f1c0d19ac6720382c23b0a4dc2b17}{Get\+Node\+Buffer} ()=0
+\begin{DoxyCompactList}\small\item\em Returns a M\+I\+D\+I stream data structure. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00105_a5e1c5409158164f57376f908c9693a8b}{Post\+M\+I\+D\+I\+Packet} (\hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$packet)=0
+\begin{DoxyCompactList}\small\item\em Posts an \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} to an output M\+I\+D\+I node. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} $\ast$ \hyperlink{a00105_a57bd132ee74047e25298b157c0bff2f9}{Get\+Transport} ()=0
+\begin{DoxyCompactList}\small\item\em Returns a transport object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00105_ad9b4ebff12e979094504e8630f7b861a}{}\index{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}!````~A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{$\sim$\+A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+\index{````~A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{$\sim$\+A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}!A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::$\sim$\+A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00105_ad9b4ebff12e979094504e8630f7b861a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00105_a794f1c0d19ac6720382c23b0a4dc2b17}{}\index{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}!Get\+Node\+Buffer@{Get\+Node\+Buffer}}
+\index{Get\+Node\+Buffer@{Get\+Node\+Buffer}!A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+\subsubsection[{Get\+Node\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+C\+Midi\+Stream}$\ast$ A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Get\+Node\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00105_a794f1c0d19ac6720382c23b0a4dc2b17}
+
+
+Returns a M\+I\+D\+I stream data structure. 
+
+\hypertarget{a00105_a5e1c5409158164f57376f908c9693a8b}{}\index{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}!Post\+M\+I\+D\+I\+Packet@{Post\+M\+I\+D\+I\+Packet}}
+\index{Post\+M\+I\+D\+I\+Packet@{Post\+M\+I\+D\+I\+Packet}!A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+\subsubsection[{Post\+M\+I\+D\+I\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Post\+M\+I\+D\+I\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00105_a5e1c5409158164f57376f908c9693a8b}
+
+
+Posts an \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} to an output M\+I\+D\+I node. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000056}{Host Compatibility Notes}]Pro Tools supports the following M\+I\+D\+I events from plug-\/ins\+:
+\begin{DoxyItemize}
+\item Note\+On
+\item Note\+Off
+\item Pitch bend
+\item Polyphonic key pressure
+\item Bank select (controller \#0)
+\item Program change (no bank)
+\item Channel pressure
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em packet} & The M\+I\+D\+I packet to be pushed to a M\+I\+D\+I output node \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00105_a57bd132ee74047e25298b157c0bff2f9}{}\index{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}!Get\+Transport@{Get\+Transport}}
+\index{Get\+Transport@{Get\+Transport}!A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node@{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}}
+\subsubsection[{Get\+Transport}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+I\+Transport}$\ast$ A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node\+::\+Get\+Transport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00105_a57bd132ee74047e25298b157c0bff2f9}
+
+
+Returns a transport object. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00252}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node.\+h}\end{DoxyCompactItemize}

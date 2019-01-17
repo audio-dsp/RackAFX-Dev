@@ -1,0 +1,11 @@
+<map id="AAX Host Guides" name="AAX Host Guides">
+<area shape="rect" id="node1" href="$a00323.html" title="AAX SDK Manual" alt="" coords="5,183,132,209"/>
+<area shape="rect" id="node3" href="$a00366.html" title="How to automate different test scenarios for DSH. " alt="" coords="391,5,478,32"/>
+<area shape="rect" id="node4" href="$a00364.html" title="How to add tracing to your plug&#45;ins and view logging from the plug&#45;in host. " alt="" coords="375,56,494,83"/>
+<area shape="rect" id="node5" href="$a00362.html" title="How to write AAX plug&#45;ins for Avid&#39;s TI&#45;based platforms. " alt="" coords="398,107,471,133"/>
+<area shape="rect" id="node6" href="$a00365.html" title="How to test basic functionality of AAX plug&#45;ins using DSH test tool. " alt="" coords="390,157,479,184"/>
+<area shape="rect" id="node7" href="$a00360.html" title="Details about using AAX plug&#45;ins in Pro Tools. " alt="" coords="375,208,494,235"/>
+<area shape="rect" id="node8" href="$a00361.html" title="Details about using AAX plug&#45;ins in Media Composer. " alt="" coords="353,259,516,285"/>
+<area shape="rect" id="node9" href="$a00377.html" title="Details about using AAX plug&#45;ins in VENUE live sound systems. " alt="" coords="381,309,488,336"/>
+<area shape="rect" id="node10" href="$a00363.html" title="How to map a plug&#45;in&#39;s parameters to control surfaces. " alt="" coords="370,360,499,387"/>
+</map>

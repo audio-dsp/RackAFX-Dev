@@ -1,0 +1,161 @@
+\hypertarget{a00295}{}\section{A\+A\+X\+\_\+\+Slider\+Conversions.\+h File Reference}
+\label{a00295}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+
+
+\subsection{Description}
+Legacy utilities for converting parameter values to and from the normalized full-\/scale 32-\/bit fixed domain that was used for R\+T\+A\+S/\+T\+D\+M plug-\/ins. 
+
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000060}{Legacy Porting Notes}]These utilities may be required in order to maintain settings chunk compatibility with plug-\/ins that were ported from the legacy R\+T\+A\+S/\+T\+D\+M format.\end{DoxyRefDesc}
+
+
+\begin{DoxyNote}{Note}
+A\+A\+X does not provide facilities for converting to and from extended80 data types. If you use these types in your plug-\/in settings then you must provide your own chunk data parsing routines. 
+\end{DoxyNote}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00295_a8676d067980b7fb9a1f53cfa5dbc048a}{A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H}
+\item 
+\#define \hyperlink{a00295_af5bd671969b131ba73e1651befa4f51f}{A\+A\+X\+\_\+\+L\+I\+M\+I\+T}(v1,  first\+Val,  second\+Val)~( (second\+Val $>$ first\+Val) ? (std\+::max)((std\+::min)(v1,second\+Val),first\+Val) \+:  (std\+::min)((std\+::max)(v1,second\+Val),first\+Val) )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \hyperlink{a00295_a5125f531cd70d1d4049c99335989a0ee}{Long\+Control\+To\+New\+Range} (int32\+\_\+t a\+Value, int32\+\_\+t range\+Min, int32\+\_\+t range\+Max)
+\item 
+int32\+\_\+t \hyperlink{a00295_abb594c44cd5d4dee1ec236f7c69adacb}{Long\+To\+Long\+Control} (int32\+\_\+t a\+Value, int32\+\_\+t range\+Min, int32\+\_\+t range\+Max)
+\begin{DoxyCompactList}\small\item\em Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to a int32\+\_\+t ranging from range\+Min to range\+Max (linear) \end{DoxyCompactList}\item 
+double \hyperlink{a00295_a8c8994b0486ed20075fd7808dc0bc01e}{Long\+Control\+To\+Double} (int32\+\_\+t a\+Value, double first\+Val, double second\+Val)
+\begin{DoxyCompactList}\small\item\em Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to an double ranging from first\+Val to second\+Val (linear) \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00295_a285ce2bf578a7ceb8c12eabbd5e5ad37}{Double\+To\+Long\+Control} (double a\+Value, double first\+Val, double second\+Val)
+\begin{DoxyCompactList}\small\item\em Convert from an double ranging from first\+Val to second\+Val (linear) to int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00295_a76082aa640489b279cd7683c12fcbd33}{Double\+To\+Long\+Control\+Nonlinear} (double a\+Value, double $\ast$min\+Val, double $\ast$range\+Percent, int32\+\_\+t num\+Ranges)
+\item 
+double \hyperlink{a00295_a81279cd99c7d7193e4f79d5c74dccf54}{Long\+Control\+To\+Double\+Nonlinear} (int32\+\_\+t a\+Value, double $\ast$min\+Val, double $\ast$range\+Percent, int32\+\_\+t num\+Ranges)
+\item 
+double \hyperlink{a00295_ae8dc426096379e56390b687762c79665}{Long\+Control\+To\+Log\+Double} (int32\+\_\+t a\+Value, double min\+Val, double max\+Val)
+\begin{DoxyCompactList}\small\item\em Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to an double ranging from min\+Val to max\+Val (logarithmic) \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00295_ad5428b221d38f3503f1c168b6873d2c2}{Log\+Double\+To\+Long\+Control} (double a\+Value, double min\+Val, double max\+Val)
+\begin{DoxyCompactList}\small\item\em Convert from an double ranging from min\+Val to max\+Val (logarithmic) to int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00295_a8676d067980b7fb9a1f53cfa5dbc048a}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H@{A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H}}
+\index{A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H@{A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+L\+I\+D\+E\+R\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N\+S\+\_\+\+H}\label{a00295_a8676d067980b7fb9a1f53cfa5dbc048a}
+\hypertarget{a00295_af5bd671969b131ba73e1651befa4f51f}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!A\+A\+X\+\_\+\+L\+I\+M\+I\+T@{A\+A\+X\+\_\+\+L\+I\+M\+I\+T}}
+\index{A\+A\+X\+\_\+\+L\+I\+M\+I\+T@{A\+A\+X\+\_\+\+L\+I\+M\+I\+T}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+L\+I\+M\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+L\+I\+M\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{v1, }
+\item[{}]{first\+Val, }
+\item[{}]{second\+Val}
+\end{DoxyParamCaption}
+)~( (second\+Val $>$ first\+Val) ? (std\+::max)((std\+::min)(v1,second\+Val),first\+Val) \+:  (std\+::min)((std\+::max)(v1,second\+Val),first\+Val) )}\label{a00295_af5bd671969b131ba73e1651befa4f51f}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00295_a5125f531cd70d1d4049c99335989a0ee}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Long\+Control\+To\+New\+Range@{Long\+Control\+To\+New\+Range}}
+\index{Long\+Control\+To\+New\+Range@{Long\+Control\+To\+New\+Range}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Long\+Control\+To\+New\+Range}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Long\+Control\+To\+New\+Range (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Value, }
+\item[{int32\+\_\+t}]{range\+Min, }
+\item[{int32\+\_\+t}]{range\+Max}
+\end{DoxyParamCaption}
+)}\label{a00295_a5125f531cd70d1d4049c99335989a0ee}
+\hypertarget{a00295_abb594c44cd5d4dee1ec236f7c69adacb}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Long\+To\+Long\+Control@{Long\+To\+Long\+Control}}
+\index{Long\+To\+Long\+Control@{Long\+To\+Long\+Control}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Long\+To\+Long\+Control}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Long\+To\+Long\+Control (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Value, }
+\item[{int32\+\_\+t}]{range\+Min, }
+\item[{int32\+\_\+t}]{range\+Max}
+\end{DoxyParamCaption}
+)}\label{a00295_abb594c44cd5d4dee1ec236f7c69adacb}
+
+
+Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to a int32\+\_\+t ranging from range\+Min to range\+Max (linear) 
+
+\hypertarget{a00295_a8c8994b0486ed20075fd7808dc0bc01e}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Long\+Control\+To\+Double@{Long\+Control\+To\+Double}}
+\index{Long\+Control\+To\+Double@{Long\+Control\+To\+Double}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Long\+Control\+To\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double Long\+Control\+To\+Double (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Value, }
+\item[{double}]{first\+Val, }
+\item[{double}]{second\+Val}
+\end{DoxyParamCaption}
+)}\label{a00295_a8c8994b0486ed20075fd7808dc0bc01e}
+
+
+Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to an double ranging from first\+Val to second\+Val (linear) 
+
+\hypertarget{a00295_a285ce2bf578a7ceb8c12eabbd5e5ad37}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Double\+To\+Long\+Control@{Double\+To\+Long\+Control}}
+\index{Double\+To\+Long\+Control@{Double\+To\+Long\+Control}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Double\+To\+Long\+Control}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To\+Long\+Control (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Value, }
+\item[{double}]{first\+Val, }
+\item[{double}]{second\+Val}
+\end{DoxyParamCaption}
+)}\label{a00295_a285ce2bf578a7ceb8c12eabbd5e5ad37}
+
+
+Convert from an double ranging from first\+Val to second\+Val (linear) to int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F. 
+
+\hypertarget{a00295_a76082aa640489b279cd7683c12fcbd33}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Double\+To\+Long\+Control\+Nonlinear@{Double\+To\+Long\+Control\+Nonlinear}}
+\index{Double\+To\+Long\+Control\+Nonlinear@{Double\+To\+Long\+Control\+Nonlinear}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Double\+To\+Long\+Control\+Nonlinear}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Double\+To\+Long\+Control\+Nonlinear (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Value, }
+\item[{double $\ast$}]{min\+Val, }
+\item[{double $\ast$}]{range\+Percent, }
+\item[{int32\+\_\+t}]{num\+Ranges}
+\end{DoxyParamCaption}
+)}\label{a00295_a76082aa640489b279cd7683c12fcbd33}
+\hypertarget{a00295_a81279cd99c7d7193e4f79d5c74dccf54}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Long\+Control\+To\+Double\+Nonlinear@{Long\+Control\+To\+Double\+Nonlinear}}
+\index{Long\+Control\+To\+Double\+Nonlinear@{Long\+Control\+To\+Double\+Nonlinear}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Long\+Control\+To\+Double\+Nonlinear}]{\setlength{\rightskip}{0pt plus 5cm}double Long\+Control\+To\+Double\+Nonlinear (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Value, }
+\item[{double $\ast$}]{min\+Val, }
+\item[{double $\ast$}]{range\+Percent, }
+\item[{int32\+\_\+t}]{num\+Ranges}
+\end{DoxyParamCaption}
+)}\label{a00295_a81279cd99c7d7193e4f79d5c74dccf54}
+\hypertarget{a00295_ae8dc426096379e56390b687762c79665}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Long\+Control\+To\+Log\+Double@{Long\+Control\+To\+Log\+Double}}
+\index{Long\+Control\+To\+Log\+Double@{Long\+Control\+To\+Log\+Double}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Long\+Control\+To\+Log\+Double}]{\setlength{\rightskip}{0pt plus 5cm}double Long\+Control\+To\+Log\+Double (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{a\+Value, }
+\item[{double}]{min\+Val, }
+\item[{double}]{max\+Val}
+\end{DoxyParamCaption}
+)}\label{a00295_ae8dc426096379e56390b687762c79665}
+
+
+Convert from int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F to an double ranging from min\+Val to max\+Val (logarithmic) 
+
+\begin{DoxyNote}{Note}
+This is L\+O\+G\+A\+R\+I\+T\+H\+M\+I\+C, so min\+Val \& max\+Val have to be $>$ zero! 
+\end{DoxyNote}
+\hypertarget{a00295_ad5428b221d38f3503f1c168b6873d2c2}{}\index{A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}!Log\+Double\+To\+Long\+Control@{Log\+Double\+To\+Long\+Control}}
+\index{Log\+Double\+To\+Long\+Control@{Log\+Double\+To\+Long\+Control}!A\+A\+X\+\_\+\+Slider\+Conversions.\+h@{A\+A\+X\+\_\+\+Slider\+Conversions.\+h}}
+\subsubsection[{Log\+Double\+To\+Long\+Control}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t Log\+Double\+To\+Long\+Control (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Value, }
+\item[{double}]{min\+Val, }
+\item[{double}]{max\+Val}
+\end{DoxyParamCaption}
+)}\label{a00295_ad5428b221d38f3503f1c168b6873d2c2}
+
+
+Convert from an double ranging from min\+Val to max\+Val (logarithmic) to int32\+\_\+t control value 0x80000000...0x7\+F\+F\+F\+F\+F\+F\+F. 
+
+\begin{DoxyNote}{Note}
+This is L\+O\+G\+A\+R\+I\+T\+H\+M\+I\+C, so min\+Val \& max\+Val have to be $>$ zero! 
+\end{DoxyNote}

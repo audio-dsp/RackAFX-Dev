@@ -1,0 +1,105 @@
+\hypertarget{a00335}{}\section{Hybrid Processing architecture}
+\label{a00335}\index{Hybrid Processing architecture@{Hybrid Processing architecture}}
+
+
+\subsection{ }
+An architecture combining low-\/latency and high-\/latency audio processing. 
+
+ \hypertarget{a00335_additionalFeatures_Hybrid_overview}{}\subsection{Overview of Hybrid}\label{a00335_additionalFeatures_Hybrid_overview}
+Hybrid processing is an optional feature that allows a single plug-\/in to simultaneously render data on the host\textquotesingle{}s low-\/ and high-\/latency signal networks. In many large plug-\/ins this can be very useful. For example, consider a reverb algorithm with both early reflection and tail processing. With A\+A\+X Hybrid, this plug-\/in can process the early reflections at low latency while allowing the tail algorithm to be handled at higher latency (and thus higher efficiency.) Other kinds of algorithms that could benefit from Hybrid processing are noise reductions, analyzers, multi-\/effect suites, and instruments.
+
+Because the low-\/latency A\+A\+X signal network may be run on D\+S\+P hardware, A\+A\+X D\+S\+P plug-\/ins that incorporate Hybrid processing can split audio processing between the D\+S\+P and the host. This provides the benefits of low latency, highly deterministic D\+S\+P-\/based processing while also allowing the plug-\/in to leverage the high-\/latency power of the Intel core where appropriate.
+
+A\+A\+X Hybrid is an internal feature and is not exposed to users, except in terms of better plug-\/in performance and more efficient D\+S\+P usage.
+
+\begin{DoxyNote}{Note}
+A\+A\+X Hybrid may be protected by one or more U.\+S. and non-\/\+U.\+S. patents. Details are available at \href{https://www.avid.com/patents}{\tt www.\+avid.\+com/patents}.
+\end{DoxyNote}
+\hypertarget{a00335_additionalFeatures_Hybrid_adding}{}\subsection{Implementing Hybrid processing}\label{a00335_additionalFeatures_Hybrid_adding}
+{\itshape For an example of Hybrid processing, see the \hyperlink{a00376_DemoDelay_Hybrid}{Demo\+Delay\+\_\+\+Hybrid} example plug-\/in}
+
+To register for Hybrid processing, a plug-\/in should add values for \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249ea33a950bc2e02d38fc3be0a0ad8cc89b1}{A\+A\+X\+\_\+e\+Property\+\_\+\+Hybrid\+Input\+Stem\+Format} and \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249eac30a4e73772e37267dfef39ae3122705}{A\+A\+X\+\_\+e\+Property\+\_\+\+Hybrid\+Output\+Stem\+Format} to the associated Process\+Proc property map. Once these values have been registered, both the Process\+Proc callback and the Hybrid render function in the plug-\/in\textquotesingle{}s data model will be invoked during processing.
+
+Hybrid processing context information is provided via a dedicated \hyperlink{a00121}{Hybrid processing context structure}. It is not possible to register additional fields on this context. However, unlike a normal algorithm Process\+Proc, the Hybrid render method is implemented directly within the plug-\/in\textquotesingle{}s effect parameters object and has direct access to the data model memory. This is possible since the render method will always run on the host, and makes it easier to implement algorithms that require access to the data model, e.\+g. for direct access to impulse responses, etc.
+
+The A\+A\+X host provides dedicated audio buffers in both the Process\+Proc context and the Hybrid processing context. These buffers can be used to pass audio data between the low-\/latency Proces\+Proc and the Hybrid render contexts. \begin{DoxyItemize}
+\item The plug-\/in may pass output from the low-\/latency Process\+Proc to the Hybrid render method using additional audio buffers that are added at the end of the Process\+Proc context\textquotesingle{}s normal output buffer array. The Process\+Proc may perform any pre-\/processing that is desired before passing audio to the Hybrid render context via these buffers. The \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249eac30a4e73772e37267dfef39ae3122705}{A\+A\+X\+\_\+e\+Property\+\_\+\+Hybrid\+Output\+Stem\+Format} property defines how many buffers will be sent from the Process\+Proc to the Hybrid render method. \item Similarly, the plug-\/in may pass samples from the Hybrid processing callback to the low-\/latency Process\+Proc using additional audio buffers that are added at the end of the Process\+Proc context\textquotesingle{}s normal input buffer array. The \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249ea33a950bc2e02d38fc3be0a0ad8cc89b1}{A\+A\+X\+\_\+e\+Property\+\_\+\+Hybrid\+Input\+Stem\+Format} property defines how many buffers will be sent from the Hybrid render method to the Process\+Proc.\end{DoxyItemize}
+Samples which are sent from the Process\+Proc to the Hybrid processing callback and back to the Process\+Proc are delayed by a fixed amount relative to the normal input samples that are processed directly by the Process\+Proc to its output buffers. The number of samples of delay that are added in this round-\/trip is available to the plug-\/in via \hyperlink{a00335_ga47b471c438fcad0798964b860d74609e}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Hybrid\+Signal\+Latency()} .\hypertarget{a00335_additionalFeatures_Hybrid_subtleties}{}\subsection{Additional information}\label{a00335_additionalFeatures_Hybrid_subtleties}
+\hypertarget{a00335_additionalFeatures_Hybrid_parametertiming}{}\subsubsection{Parameter update timing}\label{a00335_additionalFeatures_Hybrid_parametertiming}
+Because updates are not passed to the \hyperlink{a00121}{Hybrid processing context} using the normal A\+A\+X port infrastructure, any parameter updates from automation will be reflected in this context a little bit ahead of time ($\sim$21 ms at 44.\+1 k\+Hz.) See the \hyperlink{a00351}{Parameter update timing} page for a discussion of parameter timing accuracy and some suggestions of how you can maintain accurate parameter update timing.\hypertarget{a00335_additionalFeatures_Hybrid_hostsupport}{}\subsubsection{Host support and alternatives}\label{a00335_additionalFeatures_Hybrid_hostsupport}
+Not all \hyperlink{a00288}{A\+A\+X} hosts support \hyperlink{a00288}{A\+A\+X} Hybrid processing. See the \hyperlink{a00373}{Host Support} page for additional information.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00333}{Direct data access interface} for another approach for transferring non-\/audio data between the algorithm callback and the plug-\/in\textquotesingle{}s data model. 
+\end{DoxySeeAlso}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00121}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info}
+\begin{DoxyCompactList}\small\item\em Hybrid render processing context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00335_ga47b471c438fcad0798964b860d74609e}{A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Hybrid\+Signal\+Latency} (int32\+\_\+t $\ast$out\+Samples) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Returns the latency between the algorithm normal input samples and the inputs returning from the hyrbid component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Hybrid audio methods}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+::\+Render\+Audio\+\_\+\+Hybrid} (\hyperlink{a00121}{A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info} $\ast$io\+Render\+Info)=0
+\begin{DoxyCompactList}\small\item\em Hybrid audio render function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00335_gae6139041de22f51f3146d26a01c54c1b}{}\index{Hybrid Processing architecture@{Hybrid Processing architecture}!Render\+Audio\+\_\+\+Hybrid@{Render\+Audio\+\_\+\+Hybrid}}
+\index{Render\+Audio\+\_\+\+Hybrid@{Render\+Audio\+\_\+\+Hybrid}!Hybrid Processing architecture@{Hybrid Processing architecture}}
+\subsubsection[{Render\+Audio\+\_\+\+Hybrid}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+::\+Render\+Audio\+\_\+\+Hybrid (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+S\+Hybrid\+Render\+Info} $\ast$}]{io\+Render\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00335_gae6139041de22f51f3146d26a01c54c1b}
+
+
+Hybrid audio render function. 
+
+This method is called from the host to render audio for the hybrid piece of the algorithm.
+
+\begin{DoxyNote}{Note}
+To use this method plug-\/in should register some hybrid inputs and ouputs in \char`\"{}\+Describe\char`\"{} 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{a00018_a70c1cf315915535cb593860ed42b6cbe}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+\hypertarget{a00335_ga47b471c438fcad0798964b860d74609e}{}\index{Hybrid Processing architecture@{Hybrid Processing architecture}!Get\+Hybrid\+Signal\+Latency@{Get\+Hybrid\+Signal\+Latency}}
+\index{Get\+Hybrid\+Signal\+Latency@{Get\+Hybrid\+Signal\+Latency}!Hybrid Processing architecture@{Hybrid Processing architecture}}
+\subsubsection[{Get\+Hybrid\+Signal\+Latency}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+Controller\+::\+Get\+Hybrid\+Signal\+Latency (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{out\+Samples}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00335_ga47b471c438fcad0798964b860d74609e}
+
+
+C\+A\+L\+L\+: Returns the latency between the algorithm normal input samples and the inputs returning from the hyrbid component. 
+
+This method provides the number of samples that the A\+A\+X host expects the plug-\/in to delay a signal. The host will use this value when accounting for latency across the system.
+
+\begin{DoxyNote}{Note}
+This value will generally scale up with sample rate, although it\textquotesingle{}s not a simple multiple due to some fixed overhead. This value will be fixed for any given sample rate regardless of other buffer size settings in the host app.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em out\+Samples} & The number of samples of hybrid signal delay \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00132_abd2f38749bd13d2cf54b79d007dd993f}{A\+A\+X\+\_\+\+V\+Controller}.
+
+Collaboration diagram for Hybrid Processing architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00335}
+\end{center}
+\end{figure}

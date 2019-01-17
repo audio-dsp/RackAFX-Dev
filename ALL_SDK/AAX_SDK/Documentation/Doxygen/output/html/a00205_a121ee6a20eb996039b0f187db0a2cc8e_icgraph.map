@@ -1,0 +1,10 @@
+<map id="AAX_EndianSwapInPlace" name="AAX_EndianSwapInPlace">
+<area shape="rect" id="node2" href="$a00205.html#a2aa4dc892c77aa0ed29e84a5f29c9538" title="Convert data in&#45;place between Big Endian and native byte ordering. " alt="" coords="231,5,430,47"/>
+<area shape="rect" id="node4" href="$a00205.html#a5caa5e68dec3f028697b64ad04f0cb5c" title="Make a byte&#45;swapped copy of data. " alt="" coords="265,71,396,98"/>
+<area shape="rect" id="node5" href="$a00205.html#ae58f8ce3c8247e07d49e17c011ec5366" title="Byte swap a sequence of data in&#45;place. " alt="" coords="229,123,432,164"/>
+<area shape="rect" id="node8" href="$a00205.html#af4164bdfb3807edcd582e0289a6ed59a" title="Convert data in&#45;place from the native byte ordering to Little Endian byte ordering. " alt="" coords="232,188,429,229"/>
+<area shape="rect" id="node3" href="$a00205.html#a7387790d73eed6c54af682c7afd9e463" title="Copy and convert data between Big Endian and native byte ordering. " alt="" coords="510,13,698,39"/>
+<area shape="rect" id="node6" href="$a00205.html#ae9e72785a26249cd3e3c05baf8c9ce70" title="Convert an sequence of data in&#45;place between Big Endian and native byte ordering. ..." alt="" coords="480,64,728,105"/>
+<area shape="rect" id="node7" href="$a00205.html#a4d8bcdfb048c8124f1f2886537e65678" title="Convert an sequence of data in&#45;place from the native byte ordering to Little Endian byte ordering..." alt="" coords="505,129,703,171"/>
+<area shape="rect" id="node9" href="$a00205.html#a49f57c502ff278b26260b1744da99633" title="Copy and convert data from the native byte ordering to Little Endian byte ordering. " alt="" coords="505,195,703,222"/>
+</map>

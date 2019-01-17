@@ -1,0 +1,96 @@
+\hypertarget{a00064}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4 Class Reference}
+\label{a00064}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00535}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00536}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Supplemental interface for an A\+A\+X Plug-\/in\textquotesingle{}s data model. 
+
+This is a supplemental interface for an instance of a plug-\/in\textquotesingle{}s data model. This interface gets exposed to the host application. Host applications that support A\+A\+X versioned features may call into these methods. See \hyperlink{a00328}{Data model interface}.
+
+\begin{DoxyNote}{Note}
+Your implementation of this interface must inherit from \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000034}{Todo}]Add documentation for expected error state return values\end{DoxyRefDesc}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Auxiliary U\+I methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table} (uint32\+\_\+t in\+Table\+Type, int32\+\_\+t in\+Table\+Page\+Size, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Host\+Unknown, \hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$io\+Page\+Table\+Unknown) const =0
+\begin{DoxyCompactList}\small\item\em Allow the plug-\/in to update its page tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4}!Update\+Page\+Table@{Update\+Page\+Table}}
+\index{Update\+Page\+Table@{Update\+Page\+Table}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4}}
+\subsubsection[{Update\+Page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V4\+::\+Update\+Page\+Table (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Table\+Type, }
+\item[{int32\+\_\+t}]{in\+Table\+Page\+Size, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Host\+Unknown, }
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{io\+Page\+Table\+Unknown}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}
+
+
+Allow the plug-\/in to update its page tables. 
+
+Called by the plug-\/in host, usually in response to a \hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed} notification sent from the plug-\/in.
+
+Use this method to change the page table mapping for the plug-\/in instance or to apply other changes to auxiliary U\+Is which use the plug-\/in page tables, such as setting focus to a new page.
+
+See \hyperlink{a00363}{Page Table Guide} for more information about page tables.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Table\+Type} & Four-\/char type identifier for the table type (e.\+g. {\ttfamily \textquotesingle{}Pg\+T\+L\textquotesingle{}}, {\ttfamily \textquotesingle{}Av81\textquotesingle{}}, etc.) \\
+\hline
+\mbox{\tt in}  & {\em in\+Table\+Page\+Size} & Page size for the table \\
+\hline
+\mbox{\tt in}  & {\em i\+Host\+Unknown} & Unknown interface from the host which may support interfaces providing additional features or information.
+
+All interfaces queried from this unknown will be valid only within the scope of this \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()} execution and will be relevant for only the current plug-\/in instance. \\
+\hline
+\mbox{\tt in,out}  & {\em io\+Page\+Table\+Unknown} & Unknown interface which supports \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}. This object represents the page table data which is currently stored by the host for this plug-\/in instance for the given table type and page size. This data and may be edited within the scope of \hyperlink{a00064_a4cdb043ffbdca6f6c4a7e9a96a4347a2}{Update\+Page\+Table()} to change the page table mapping for this plug-\/in instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This method should return \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} if the plug-\/in does not implement it or when no change is requested by the plug-\/in. This allows optimizations to be used in the host when no U\+I update is required following this call.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00206_afab5ea2cfd731fc8f163b6caa685406ea92f2ef0cec96b2654789e708d1a1b5e3}{A\+A\+X\+\_\+e\+Notification\+Event\+\_\+\+Parameter\+Mapping\+Changed} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{a00018_ab3ae4c63bed249f30ee21df29d0cba6d}{A\+A\+X\+\_\+\+C\+Effect\+Parameters}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00224}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h}\end{DoxyCompactItemize}

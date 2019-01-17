@@ -1,0 +1,1950 @@
+\hypertarget{a00288}{}\section{A\+A\+X Namespace Reference}
+\label{a00288}\index{A\+A\+X@{A\+A\+X}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00320}{Exception}
+\begin{DoxyCompactList}\small\item\em A\+A\+X exception classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30}{E\+Status\+Nibble} \{ \\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a879656d38da19be8e39951bb7037fdf6}{e\+Status\+Nibble\+\_\+\+Note\+Off} = 0x80, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}{e\+Status\+Nibble\+\_\+\+Note\+On} = 0x90, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ac58c4a1d24d65b2aa83dd8958ab5c79f}{e\+Status\+Nibble\+\_\+\+Key\+Pressure} = 0x\+A0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30aad9f788bf727d8a2e29ed267f0c63c54}{e\+Status\+Nibble\+\_\+\+Control\+Change} = 0x\+B0, 
+\\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30acfa2f6c1f419ab8f84b18305cd182c05}{e\+Status\+Nibble\+\_\+\+Channel\+Mode} = 0x\+B0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30af1211ef53c1f40ee06aff0a624b42d2f}{e\+Status\+Nibble\+\_\+\+Program\+Change} = 0x\+C0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a2f3c65a49b997078c50d7210a775f06c}{e\+Status\+Nibble\+\_\+\+Channel\+Pressure} = 0x\+D0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a508ff1dbd19ad390f85611922fc81433}{e\+Status\+Nibble\+\_\+\+Pitch\+Bend} = 0x\+E0, 
+\\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a046a282d622e11711878fcad5b713c8d}{e\+Status\+Nibble\+\_\+\+System\+Common} = 0x\+F0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab036cdb470fde61d5a397be9a1b036a5}{e\+Status\+Nibble\+\_\+\+System\+Real\+Time} = 0x\+F0
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the status nibble in a M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0}{E\+Status\+Byte} \{ \\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afe46f6c375435e0cddbcb9efda89b9ca}{e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin} = 0x\+F0, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a05d918c77b03e9be5378d487d6ef56de}{e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame} = 0x\+F1, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0ae7680a77d66673ac2900d2dac14270a0}{e\+Status\+Byte\+\_\+\+Song\+Position} = 0x\+F2, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a50a0b1fcddf5b5e29ee71320edd520eb}{e\+Status\+Byte\+\_\+\+Song\+Select} = 0x\+F3, 
+\\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a221fd3d2a1f7b77fea14a357f0f9fd7f}{e\+Status\+Byte\+\_\+\+Tune\+Request} = 0x\+F6, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af9541f1f98702a20d7d9a7a25589b3a1}{e\+Status\+Byte\+\_\+\+Sys\+Ex\+End} = 0x\+F7, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af301c0c5c67e4e67ff30ecff79713ddc}{e\+Status\+Byte\+\_\+\+Timing\+Clock} = 0x\+F8, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afd1a3d5e51ff91a7ed408905daafb292}{e\+Status\+Byte\+\_\+\+Start} = 0x\+F\+A, 
+\\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a0c7a5ef4d50503e4b1c15f67fd4da75f}{e\+Status\+Byte\+\_\+\+Continue} = 0x\+F\+B, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a5d405fc8e8ffd1a5fdf6179933d945e3}{e\+Status\+Byte\+\_\+\+Stop} = 0x\+F\+C, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a3efefd89a761be230e693dc4794611df}{e\+Status\+Byte\+\_\+\+Active\+Sensing} = 0x\+F\+E, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af4d1ba261ba284f8c08bc6d2a65c287c}{e\+Status\+Byte\+\_\+\+Reset} = 0x\+F\+F
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the status byte in a M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461}{E\+Channel\+Mode\+Data} \{ \\*
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac068c1ac0762ad50b948d99f21ac09f5}{e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off} = 120, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a540ae94290aa31508a9060e1b9676891}{e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers} = 121, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461addf1f5adef10e202e8378fc15521f1ff}{e\+Channel\+Mode\+Data\+\_\+\+Local\+Control} = 122, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461af57995480ec44ebcb6b936042a471979}{e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off} = 123, 
+\\*
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a5e2dba641939d400e47d9320b0db306a}{e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off} = 124, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a3defca7d2a1dc6940bbc00a14eadd2d0}{e\+Channel\+Mode\+Data\+\_\+\+Omni\+On} = 125, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac2819c2b9eeec76609fa42609b2fd878}{e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off} = 126, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ada14fa008d32a84173ed0f0e9d416a49}{e\+Channel\+Mode\+Data\+\_\+\+Poly\+On} = 127
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the first data byte in a Channel Mode Message M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199}{E\+Special\+Data} \{ \hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199a52061b5587075953631c1389016cb0cf}{e\+Special\+Data\+\_\+\+Accented\+Click} = 0x00, 
+\hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199a35a276fca410721fc1c39adb01be7af3}{e\+Special\+Data\+\_\+\+Unaccented\+Click} = 0x01
+ \}
+\begin{DoxyCompactList}\small\item\em Special message data for the first data byte in a message. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2d}{E\+Sample\+Rates} \{ \\*
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2da0fabb364c77d1597745ea7faede310a9}{e44100\+Sample\+Rate} = 44100, 
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2dabf618a3399a754a6ec3a367c102f8850}{e48000\+Sample\+Rate} = 48000, 
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2da6b2f92d94b3c151993d544d924321620}{e88200\+Sample\+Rate} = 88200, 
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2da1161e560e2b301b8b45d17083696915e}{e96000\+Sample\+Rate} = 96000, 
+\\*
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2da17be0028e4f2ca09f095573240cef263}{e176400\+Sample\+Rate} = 176400, 
+\hyperlink{a00288_a60daf5874c02a01d2af8c582c0643e2da755a96e92d23adf2ad3546551e2ad49c}{e192000\+Sample\+Rate} = 192000
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{a00288_a8fbde5607de487515bcb55631bc1377d}{As\+String} (const char $\ast$in\+Str)
+\item 
+const std\+::string \& \hyperlink{a00288_a1bdf9d0d3be5b5f11d47df256a2e9490}{As\+String} (const std\+::string \&in\+Str)
+\item 
+const std\+::string \& \hyperlink{a00288_a9d87a7ed401f9deb8386a14c7bd8aaae}{As\+String} (const \hyperlink{a00143}{Exception\+::\+Any} \&in\+Str)
+\item 
+bool \hyperlink{a00288_a1561efb3b1dbe3d13ef18f4b4d9dee40}{Is\+Note\+On} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a Note On message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a91041690c271a718ef9451f66a7f6bb2}{Is\+Note\+Off} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a Note Off message, or a Note On message with velocity zero. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a509974acde19fde832cd5fdeb5eaabe2}{Is\+All\+Notes\+Off} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is an All Sound Off or All Notes Off message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_afd05400c946e625772428cad4be7d552}{Is\+Accented\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools accented click message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a4f915a56cb150638f036cb7ed33facd8}{Is\+Unaccented\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools unaccented click message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a8f9544e49b4473862e0c1382f6963ce7}{Is\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools click message. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T1 , class T2 $>$ }\\bool \hyperlink{a00288_a6615318d686a57585ba69565f8e6a99b}{Page\+Table\+Parameter\+Mappings\+Are\+Equal} (const T1 \&in\+L, const T2 \&in\+R)
+\item 
+{\footnotesize template$<$class T1 , class T2 $>$ }\\bool \hyperlink{a00288_a2e75756c486e5db4ffa91579bb486a6a}{Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal} (const T1 \&in\+L, const T2 \&in\+R)
+\item 
+{\footnotesize template$<$class T1 , class T2 $>$ }\\bool \hyperlink{a00288_a315085bafc0ddf4e7043a69d070da2fb}{Page\+Tables\+Are\+Equal} (const T1 \&in\+L, const T2 \&in\+R)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{a00288_a99fe28eb20cfcef49e99710060c5ebe0}{Copy\+Page\+Table} (T \&to, const T \&from)
+\item 
+{\footnotesize template$<$class T $>$ }\\std\+::vector$<$ std\+::pair$<$ int32\+\_\+t, int32\+\_\+t $>$ $>$ \hyperlink{a00288_ac87bacdbc6323ab3f099c16ed8b508be}{Find\+Parameter\+Mappings\+In\+Page\+Table} (const T \&in\+Table, \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} in\+Parameter\+I\+D)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{a00288_ae583643c21c696c4d094a500b4e6d77e}{Clear\+Mapped\+Parameter\+By\+I\+D} (T \&io\+Table, \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} in\+Parameter\+I\+D)
+\item 
+void \hyperlink{a00288_aa3db8a743884054a6ac1ec2c2495e86f}{Get\+C\+String\+Of\+Length} (char $\ast$string\+Out, const char $\ast$string\+In, int32\+\_\+t a\+Max\+Chars)
+\begin{DoxyCompactList}\small\item\em ============================================================== \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_a5f092aff54cbd222fda57f5ea0a12189}{Caseless\+\_\+strcmp} (const char $\ast$cs, const char $\ast$ct)
+\item 
+std\+::string \hyperlink{a00288_a690ffc499da04ea963fff3bf8d6174fb}{Binary2\+String} (uint32\+\_\+t binary\+Value, int32\+\_\+t num\+Bits)
+\item 
+uint32\+\_\+t \hyperlink{a00288_a7b02e5d4a96f72213f0d1e4b52e13050}{String2\+Binary} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} \&s)
+\item 
+bool \hyperlink{a00288_aa8ebc6a8ee1232c4ffec828bff3c2998}{Is\+A\+S\+C\+I\+I} (char in\+Char)
+\item 
+bool \hyperlink{a00288_a00fbf59b268ca75214b2dad68be8ff77}{Is\+Four\+Char\+A\+S\+C\+I\+I} (uint32\+\_\+t in\+Four\+Char)
+\item 
+std\+::string \hyperlink{a00288_a22eda3cc42cb4ea2192b00bab7a69b02}{As\+String\+Four\+Char} (uint32\+\_\+t in\+Four\+Char)
+\item 
+std\+::string \hyperlink{a00288_a1b3d4b5a967f01922963876447644b15}{As\+String\+Property\+Value} (\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249e}{A\+A\+X\+\_\+\+E\+Property} in\+Property, \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} in\+Property\+Value)
+\item 
+std\+::string \hyperlink{a00288_ab024a3d9ac9c68350b377b2c70ec4727}{As\+String\+Int32} (int32\+\_\+t in\+Int32)
+\item 
+std\+::string \hyperlink{a00288_ada4fd7cb0e04582a7615a76f6be7e404}{As\+String\+U\+Int32} (uint32\+\_\+t in\+U\+Int32)
+\item 
+std\+::string \hyperlink{a00288_a89e00fcb44e30c443bebba0f026ef62a}{As\+String\+I\+D\+Triad} (const \hyperlink{a00127}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} \&in\+I\+D\+Triad)
+\item 
+std\+::string \hyperlink{a00288_a34d219233eb5c9836b837fa2a67150d1}{As\+String\+Stem\+Format} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} in\+Stem\+Format, bool in\+Abbreviate=false)
+\item 
+std\+::string \hyperlink{a00288_adfab6bf193c09266ecec2069b8da0c5c}{As\+String\+Stem\+Channel} (\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} in\+Stem\+Format, uint32\+\_\+t in\+Channel\+Index, bool in\+Abbreviate)
+\item 
+std\+::string \hyperlink{a00288_a354029650cebc5f23636c9984a65ea0d}{As\+String\+Result} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\item 
+double \hyperlink{a00288_ae8de30637f08cd29bb0e27526ce9e21b}{Safe\+Log} (double a\+Value)
+\begin{DoxyCompactList}\small\item\em Double-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. \end{DoxyCompactList}\item 
+float \hyperlink{a00288_ad762727aac31ad8b7bba8b67a4bc2edc}{Safe\+Logf} (float a\+Value)
+\begin{DoxyCompactList}\small\item\em Single-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_ae4d1a0a925aa954899fec653dc041b75}{Is\+Parameter\+I\+D\+Equal} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Param1, \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Param2)
+\begin{DoxyCompactList}\small\item\em Helper function to check if two parameter I\+Ds are equivalent. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_aef81989128dcac01f2be8fd25096540f}{Is\+Effect\+I\+D\+Equal} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$i\+Effect\+I\+D1, const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$i\+Effect\+I\+D2)
+\begin{DoxyCompactList}\small\item\em Helper function to check if two Effect I\+Ds are equivalent. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_ab63efd791ab1cbbcdb004302b106c45c}{Is\+Avid\+Notification} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Notification\+I\+D)
+\begin{DoxyCompactList}\small\item\em Helper function to check if a notification I\+D is reserved for host notifications. \end{DoxyCompactList}\item 
+void \hyperlink{a00288_aa7d7e69902012a6272de3ea9aa0264a9}{align\+Free} (void $\ast$p)
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \hyperlink{a00288_aaa3236d90a0dbbf30150d8a181f2d66b}{align\+Malloc} (int i\+Array\+Size, int i\+Alignment)
+\item 
+void \hyperlink{a00288_aaf103dc75b68b6c4f6792dd26f9b4fd0}{De\+Denormal} (double \&i\+Value)
+\begin{DoxyCompactList}\small\item\em Clamps very small floating point values to zero. \end{DoxyCompactList}\item 
+void \hyperlink{a00288_aedfd1762f559291ceddd53f8ce8862a5}{De\+Denormal} (float \&i\+Value)
+\begin{DoxyCompactList}\small\item\em Clamps very small floating point values to zero. \end{DoxyCompactList}\item 
+void \hyperlink{a00288_ac52b6214a1de32e59b90ddbc1878e515}{De\+Denormal\+Fine} (float \&i\+Value)
+\item 
+void \hyperlink{a00288_a73dd9a17abecc28625c4d34279e4534f}{Filter\+Denormals} (float $\ast$in\+Samples, int32\+\_\+t in\+Length)
+\begin{DoxyCompactList}\small\item\em Round all denormal/subnormal samples in a buffer to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class G\+F\+L\+O\+A\+T $>$ }\\G\+F\+L\+O\+A\+T \hyperlink{a00288_a6b1f85f5d8c5837ff52212e13b84e6d0}{Clamp\+To\+Zero} (G\+F\+L\+O\+A\+T i\+Value, G\+F\+L\+O\+A\+T i\+Clamp\+Threshold)
+\item 
+void \hyperlink{a00288_ae9c9b3862c1b63dc4fb4e3c901d42935}{Zero\+Memory} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+void \hyperlink{a00288_a0e598e79488a12354e9dbc340fa99b5a}{Zero\+Memory\+D\+W} (void $\ast$i\+Pointer, int i\+Num\+Bytes)
+\item 
+{\footnotesize template$<$typename T , int N$>$ }\\void \hyperlink{a00288_a1e72222769ecdf34fa73ae38c0c709df}{Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+{\footnotesize template$<$typename T , int M, int N$>$ }\\void \hyperlink{a00288_a480beff32ac0847c665f735fd8f78c0a}{Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+{\footnotesize template$<$typename T , int L, int M, int N$>$ }\\void \hyperlink{a00288_a114e6f06cf5789da4aad7ae0d786876e}{Fill} (T $\ast$i\+Array, const T $\ast$i\+Val)
+\item 
+double \hyperlink{a00288_aa4fa4d0765a764b020102cdbff8b45b0}{fabs} (double i\+Val)
+\item 
+float \hyperlink{a00288_af486dfb226661e4a47d7b42eca881759}{fabs} (float i\+Val)
+\item 
+float \hyperlink{a00288_a7fc4d4cd59850b8b875d085467ff5850}{fabsf} (float i\+Val)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_aa4cbb7d8707ad89fc5ba5169ebb75201}{Abs\+Max} (const T \&i\+Value, const T \&i\+Max)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_aca59c4cdf56130ee251118c02a9963e3}{Min\+Max} (const T \&i\+Value, const T \&i\+Min, const T \&i\+Max)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_a55ac62cf1b543338c58f8dd0d747c56c}{Max} (const T \&i\+Value1, const T \&i\+Value2)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_a38c17ad30c1eb394bfa06e662d8d2598}{Min} (const T \&i\+Value1, const T \&i\+Value2)
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{a00288_ab6a3e1aef81cd84dec2eee9a27755bb0}{Sign} (const T \&i\+Value)
+\item 
+double \hyperlink{a00288_aa0094a6a87ca0c48f58b48ce5eea636e}{Poly\+Eval} (double x, const double $\ast$coefs, int num\+Coefs)
+\item 
+double \hyperlink{a00288_aad5df8c4502619ca12136a2f7b8d8a06}{Ceil\+Log2} (double i\+Value)
+\item 
+void \hyperlink{a00288_a3826233eb62186c03bb093f1031ca8f4}{Sin\+Cos\+Mix} (float a\+Linear\+Mix, float \&a\+Sin\+Mix, float \&a\+Cos\+Mix)
+\item 
+int32\+\_\+t \hyperlink{a00288_af0bbeabd87aa74be4ecca4f767aedc41}{Fast\+Round2\+Int32} (double i\+Val)
+\begin{DoxyCompactList}\small\item\em Round to Int32. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_a56cd923aeae2bd544f1fb43fff6b0b3d}{Fast\+Round2\+Int32} (float i\+Val)
+\begin{DoxyCompactList}\small\item\em Round to Int32. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_ae690c060a5ff4cb96e77335231a29673}{Fast\+Rnd\+Dbl2\+Int32} (double i\+Val)
+\item 
+int32\+\_\+t \hyperlink{a00288_ad2b2872b49146cf0859c403fea702a39}{Fast\+Trunc2\+Int32} (double i\+Val)
+\begin{DoxyCompactList}\small\item\em Float to Int conversion with truncation. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_a9a8bc8a47f13b4cb1bb84e45bf43fe82}{Fast\+Trunc2\+Int32} (float i\+Val)
+\begin{DoxyCompactList}\small\item\em Float to Int conversion with truncation. \end{DoxyCompactList}\item 
+int64\+\_\+t \hyperlink{a00288_a7df6b095ea2469f2adce2a895038212e}{Fast\+Round2\+Int64} (double i\+Val)
+\begin{DoxyCompactList}\small\item\em Round to Int64. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00288_af3435129d3c94c5f3d5e671943b9bbe2}{Get\+Int32\+R\+P\+D\+F} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+int32\+\_\+t \hyperlink{a00288_ad12251899137d551b9f652b1ffee2f99}{Get\+Fast\+Int32\+R\+P\+D\+F} (int32\+\_\+t $\ast$i\+Seed)
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Calculate pseudo-\/random 32 bit number based on linear congruential method. \end{DoxyCompactList}\item 
+float \hyperlink{a00288_a5a91375167236862abc93ad879639cab}{Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a51d7a263d9053276c6cef1dbd2018ebe}{Get\+R\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a145cc6d06cd682e2d234d07ce939760e}{Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\item 
+float \hyperlink{a00288_a42cc414ea1b868e26c591041a66ad8af}{Get\+T\+P\+D\+F\+With\+Amplitude\+One} (int32\+\_\+t $\ast$i\+Seed)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf M\+I\+D\+I logging utilities}\par
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00370_ga5b2751acd531f46a0e4dd68cd0863f46}{As\+String\+M\+I\+D\+I\+Stream\+\_\+\+Debug} (const \hyperlink{a00025}{A\+A\+X\+\_\+\+C\+Midi\+Stream} \&in\+Stream, char $\ast$out\+Buffer, int32\+\_\+t in\+Buffer\+Size)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Filesystem utilities}\par
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00370_ga0bf6aab757ecbd440276bb001de89f19}{Get\+Path\+To\+Plug\+In\+Bundle} (const char $\ast$i\+Bundle\+Name, int i\+Max\+Length, char $\ast$o\+Module\+Name)
+\begin{DoxyCompactList}\small\item\em Retrieve the file path of the .aaxplugin bundle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{a00288_af4c24d9d2042fe4252db5431ef126d00}{c\+Big\+Endian} =0
+\item 
+const int \hyperlink{a00288_af7fcadf3ad159bf29bbe5a1c494827f2}{c\+Little\+Endian} =1
+\item 
+const double \hyperlink{a00288_a8e084631426285b3771b32dd9bb0d1a0}{c\+Pi} = 3.\+1415926535897932384626433832795
+\item 
+const double \hyperlink{a00288_a13d2c593bc19660c60caf48961f16361}{c\+Two\+Pi} = 6.\+2831853071795862319959269370884
+\item 
+const double \hyperlink{a00288_a5496b80979f89206ab4966721ef09e07}{c\+Half\+Pi} = 1.\+5707963267948965579989817342721
+\item 
+const double \hyperlink{a00288_ad4d53f57051266ed14dc1632e95cb04e}{c\+Quarter\+Pi} = 0.\+78539816339744827899949086713605
+\item 
+const double \hyperlink{a00288_af5ff0caa18f36334fd5c52e97f4a0cad}{c\+Root\+Two} = 1.\+4142135623730950488016887242097
+\item 
+const double \hyperlink{a00288_a0ae4975165aaf788ed120dbdd82a3cd7}{c\+One\+Over\+Root\+Two} = 0.\+70710678118654752440084436210485
+\item 
+const double \hyperlink{a00288_ad25c51177cb216caae3b4747b028d8ba}{c\+Pos3d\+B} =1.\+4142135623730950488016887242097
+\item 
+const double \hyperlink{a00288_af6f212fd5bb0df08db615fffe4445a3d}{c\+Neg3d\+B} =0.\+70710678118654752440084436210485
+\item 
+const double \hyperlink{a00288_aade00875e4e88b00d991197f574c42ed}{c\+Pos6d\+B} =2.\+0
+\item 
+const double \hyperlink{a00288_aca5925abc898233b406504d92ee9ef4c}{c\+Neg6d\+B} =0.\+5
+\item 
+const double \hyperlink{a00288_a93ce2d3935dc06b1c4c887568df84788}{c\+Normalize\+Long\+To\+Amplitude\+One\+Half} = 0.\+00000000023283064365386962890625
+\item 
+const double \hyperlink{a00288_ad30333177ff94148492a02325045a827}{c\+Normalize\+Long\+To\+Amplitude\+One} = 1.\+0/double(1$<$$<$31)
+\item 
+const double \hyperlink{a00288_a1b66f305f76b3f27b75c275c805c3d9b}{c\+Milli} =0.\+001
+\item 
+const double \hyperlink{a00288_a661c2b5af007244eb8ffcefdae2608d0}{c\+Micro} =0.\+001$\ast$0.\+001
+\item 
+const double \hyperlink{a00288_a3227cf335c40f4afcc72efd8f774ac92}{c\+Nano} =0.\+001$\ast$0.\+001$\ast$0.\+001
+\item 
+const double \hyperlink{a00288_a480023c4a430fed889626b81c66d7589}{c\+Pico} =0.\+001$\ast$0.\+001$\ast$0.\+001$\ast$0.\+001
+\item 
+const double \hyperlink{a00288_aa151b1429ed5eabb4000d1b13e47a5c2}{c\+Kilo} =1000.\+0
+\item 
+const double \hyperlink{a00288_ad20650c749492b31ef48b41ac84f57e9}{c\+Mega} =1000.\+0$\ast$1000.\+0
+\item 
+const double \hyperlink{a00288_ae5910a5df81de70f784c2fd073f70422}{c\+Giga} =1000.\+0$\ast$1000.\+0$\ast$1000.\+0
+\item 
+const double \hyperlink{a00288_a5c2e1bff2891a4b11252759e152cf520}{c\+Denormal\+Avoidance\+Offset} =3.\+0e-\/34
+\item 
+const float \hyperlink{a00288_ae3a66eee97cfe006ffbf11f901ddd286}{c\+Float\+Denormal\+Avoidance\+Offset} =3.\+0e-\/20f
+\item 
+const unsigned int \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{k\+Pow\+Extent} = 9
+\item 
+const unsigned int \hyperlink{a00288_a59f1ab59ea51ed94f87e8d935870df9e}{k\+Pow\+Table\+Size} = 1 $<$$<$ \hyperlink{a00288_a4e6fcac015bb083018e8897563966cf6}{k\+Pow\+Extent}
+\item 
+const float \hyperlink{a00288_a0c975151f0d47cc80eef9ff5a7c80125}{c\+Seed\+Divisor} = 1/127773.\+0f
+\item 
+const int32\+\_\+t \hyperlink{a00288_a143d659ccb62ae0807e9902e751b14cf}{c\+Initial\+Seed\+Value} =0x00\+F54321
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30}{}\index{A\+A\+X@{A\+A\+X}!E\+Status\+Nibble@{E\+Status\+Nibble}}
+\index{E\+Status\+Nibble@{E\+Status\+Nibble}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{E\+Status\+Nibble}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+::\+E\+Status\+Nibble}}\label{a00288_a128e460fdb72f04a5d077f77c02b3c30}
+
+
+Values for the status nibble in a M\+I\+D\+I packet. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Status\+Nibble\+\_\+\+Note\+Off@{e\+Status\+Nibble\+\_\+\+Note\+Off}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Note\+Off@{e\+Status\+Nibble\+\_\+\+Note\+Off}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30a879656d38da19be8e39951bb7037fdf6}{}e\+Status\+Nibble\+\_\+\+Note\+Off\label{a00288_a128e460fdb72f04a5d077f77c02b3c30a879656d38da19be8e39951bb7037fdf6}
+}]\index{e\+Status\+Nibble\+\_\+\+Note\+On@{e\+Status\+Nibble\+\_\+\+Note\+On}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Note\+On@{e\+Status\+Nibble\+\_\+\+Note\+On}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}{}e\+Status\+Nibble\+\_\+\+Note\+On\label{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}
+}]\index{e\+Status\+Nibble\+\_\+\+Key\+Pressure@{e\+Status\+Nibble\+\_\+\+Key\+Pressure}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Key\+Pressure@{e\+Status\+Nibble\+\_\+\+Key\+Pressure}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30ac58c4a1d24d65b2aa83dd8958ab5c79f}{}e\+Status\+Nibble\+\_\+\+Key\+Pressure\label{a00288_a128e460fdb72f04a5d077f77c02b3c30ac58c4a1d24d65b2aa83dd8958ab5c79f}
+}]\index{e\+Status\+Nibble\+\_\+\+Control\+Change@{e\+Status\+Nibble\+\_\+\+Control\+Change}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Control\+Change@{e\+Status\+Nibble\+\_\+\+Control\+Change}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30aad9f788bf727d8a2e29ed267f0c63c54}{}e\+Status\+Nibble\+\_\+\+Control\+Change\label{a00288_a128e460fdb72f04a5d077f77c02b3c30aad9f788bf727d8a2e29ed267f0c63c54}
+}]\index{e\+Status\+Nibble\+\_\+\+Channel\+Mode@{e\+Status\+Nibble\+\_\+\+Channel\+Mode}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Channel\+Mode@{e\+Status\+Nibble\+\_\+\+Channel\+Mode}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30acfa2f6c1f419ab8f84b18305cd182c05}{}e\+Status\+Nibble\+\_\+\+Channel\+Mode\label{a00288_a128e460fdb72f04a5d077f77c02b3c30acfa2f6c1f419ab8f84b18305cd182c05}
+}]\index{e\+Status\+Nibble\+\_\+\+Program\+Change@{e\+Status\+Nibble\+\_\+\+Program\+Change}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Program\+Change@{e\+Status\+Nibble\+\_\+\+Program\+Change}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30af1211ef53c1f40ee06aff0a624b42d2f}{}e\+Status\+Nibble\+\_\+\+Program\+Change\label{a00288_a128e460fdb72f04a5d077f77c02b3c30af1211ef53c1f40ee06aff0a624b42d2f}
+}]\index{e\+Status\+Nibble\+\_\+\+Channel\+Pressure@{e\+Status\+Nibble\+\_\+\+Channel\+Pressure}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Channel\+Pressure@{e\+Status\+Nibble\+\_\+\+Channel\+Pressure}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30a2f3c65a49b997078c50d7210a775f06c}{}e\+Status\+Nibble\+\_\+\+Channel\+Pressure\label{a00288_a128e460fdb72f04a5d077f77c02b3c30a2f3c65a49b997078c50d7210a775f06c}
+}]\index{e\+Status\+Nibble\+\_\+\+Pitch\+Bend@{e\+Status\+Nibble\+\_\+\+Pitch\+Bend}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+Pitch\+Bend@{e\+Status\+Nibble\+\_\+\+Pitch\+Bend}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30a508ff1dbd19ad390f85611922fc81433}{}e\+Status\+Nibble\+\_\+\+Pitch\+Bend\label{a00288_a128e460fdb72f04a5d077f77c02b3c30a508ff1dbd19ad390f85611922fc81433}
+}]\index{e\+Status\+Nibble\+\_\+\+System\+Common@{e\+Status\+Nibble\+\_\+\+System\+Common}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+System\+Common@{e\+Status\+Nibble\+\_\+\+System\+Common}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30a046a282d622e11711878fcad5b713c8d}{}e\+Status\+Nibble\+\_\+\+System\+Common\label{a00288_a128e460fdb72f04a5d077f77c02b3c30a046a282d622e11711878fcad5b713c8d}
+}]\index{e\+Status\+Nibble\+\_\+\+System\+Real\+Time@{e\+Status\+Nibble\+\_\+\+System\+Real\+Time}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Nibble\+\_\+\+System\+Real\+Time@{e\+Status\+Nibble\+\_\+\+System\+Real\+Time}}\item[{\em 
+\hypertarget{a00288_a128e460fdb72f04a5d077f77c02b3c30ab036cdb470fde61d5a397be9a1b036a5}{}e\+Status\+Nibble\+\_\+\+System\+Real\+Time\label{a00288_a128e460fdb72f04a5d077f77c02b3c30ab036cdb470fde61d5a397be9a1b036a5}
+}]\end{description}
+\end{Desc}
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0}{}\index{A\+A\+X@{A\+A\+X}!E\+Status\+Byte@{E\+Status\+Byte}}
+\index{E\+Status\+Byte@{E\+Status\+Byte}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{E\+Status\+Byte}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+::\+E\+Status\+Byte}}\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0}
+
+
+Values for the status byte in a M\+I\+D\+I packet. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin@{e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin@{e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afe46f6c375435e0cddbcb9efda89b9ca}{}e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afe46f6c375435e0cddbcb9efda89b9ca}
+}]\index{e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame@{e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame@{e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a05d918c77b03e9be5378d487d6ef56de}{}e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a05d918c77b03e9be5378d487d6ef56de}
+}]\index{e\+Status\+Byte\+\_\+\+Song\+Position@{e\+Status\+Byte\+\_\+\+Song\+Position}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Song\+Position@{e\+Status\+Byte\+\_\+\+Song\+Position}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0ae7680a77d66673ac2900d2dac14270a0}{}e\+Status\+Byte\+\_\+\+Song\+Position\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0ae7680a77d66673ac2900d2dac14270a0}
+}]\index{e\+Status\+Byte\+\_\+\+Song\+Select@{e\+Status\+Byte\+\_\+\+Song\+Select}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Song\+Select@{e\+Status\+Byte\+\_\+\+Song\+Select}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a50a0b1fcddf5b5e29ee71320edd520eb}{}e\+Status\+Byte\+\_\+\+Song\+Select\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a50a0b1fcddf5b5e29ee71320edd520eb}
+}]\index{e\+Status\+Byte\+\_\+\+Tune\+Request@{e\+Status\+Byte\+\_\+\+Tune\+Request}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Tune\+Request@{e\+Status\+Byte\+\_\+\+Tune\+Request}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a221fd3d2a1f7b77fea14a357f0f9fd7f}{}e\+Status\+Byte\+\_\+\+Tune\+Request\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a221fd3d2a1f7b77fea14a357f0f9fd7f}
+}]\index{e\+Status\+Byte\+\_\+\+Sys\+Ex\+End@{e\+Status\+Byte\+\_\+\+Sys\+Ex\+End}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Sys\+Ex\+End@{e\+Status\+Byte\+\_\+\+Sys\+Ex\+End}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af9541f1f98702a20d7d9a7a25589b3a1}{}e\+Status\+Byte\+\_\+\+Sys\+Ex\+End\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af9541f1f98702a20d7d9a7a25589b3a1}
+}]\index{e\+Status\+Byte\+\_\+\+Timing\+Clock@{e\+Status\+Byte\+\_\+\+Timing\+Clock}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Timing\+Clock@{e\+Status\+Byte\+\_\+\+Timing\+Clock}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af301c0c5c67e4e67ff30ecff79713ddc}{}e\+Status\+Byte\+\_\+\+Timing\+Clock\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af301c0c5c67e4e67ff30ecff79713ddc}
+}]\index{e\+Status\+Byte\+\_\+\+Start@{e\+Status\+Byte\+\_\+\+Start}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Start@{e\+Status\+Byte\+\_\+\+Start}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afd1a3d5e51ff91a7ed408905daafb292}{}e\+Status\+Byte\+\_\+\+Start\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afd1a3d5e51ff91a7ed408905daafb292}
+}]\index{e\+Status\+Byte\+\_\+\+Continue@{e\+Status\+Byte\+\_\+\+Continue}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Continue@{e\+Status\+Byte\+\_\+\+Continue}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a0c7a5ef4d50503e4b1c15f67fd4da75f}{}e\+Status\+Byte\+\_\+\+Continue\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a0c7a5ef4d50503e4b1c15f67fd4da75f}
+}]\index{e\+Status\+Byte\+\_\+\+Stop@{e\+Status\+Byte\+\_\+\+Stop}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Stop@{e\+Status\+Byte\+\_\+\+Stop}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a5d405fc8e8ffd1a5fdf6179933d945e3}{}e\+Status\+Byte\+\_\+\+Stop\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a5d405fc8e8ffd1a5fdf6179933d945e3}
+}]\index{e\+Status\+Byte\+\_\+\+Active\+Sensing@{e\+Status\+Byte\+\_\+\+Active\+Sensing}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Active\+Sensing@{e\+Status\+Byte\+\_\+\+Active\+Sensing}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a3efefd89a761be230e693dc4794611df}{}e\+Status\+Byte\+\_\+\+Active\+Sensing\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a3efefd89a761be230e693dc4794611df}
+}]\index{e\+Status\+Byte\+\_\+\+Reset@{e\+Status\+Byte\+\_\+\+Reset}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Status\+Byte\+\_\+\+Reset@{e\+Status\+Byte\+\_\+\+Reset}}\item[{\em 
+\hypertarget{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af4d1ba261ba284f8c08bc6d2a65c287c}{}e\+Status\+Byte\+\_\+\+Reset\label{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af4d1ba261ba284f8c08bc6d2a65c287c}
+}]\end{description}
+\end{Desc}
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461}{}\index{A\+A\+X@{A\+A\+X}!E\+Channel\+Mode\+Data@{E\+Channel\+Mode\+Data}}
+\index{E\+Channel\+Mode\+Data@{E\+Channel\+Mode\+Data}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{E\+Channel\+Mode\+Data}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+::\+E\+Channel\+Mode\+Data}}\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461}
+
+
+Values for the first data byte in a Channel Mode Message M\+I\+D\+I packet. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off@{e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off@{e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac068c1ac0762ad50b948d99f21ac09f5}{}e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac068c1ac0762ad50b948d99f21ac09f5}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers@{e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers@{e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461a540ae94290aa31508a9060e1b9676891}{}e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461a540ae94290aa31508a9060e1b9676891}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Local\+Control@{e\+Channel\+Mode\+Data\+\_\+\+Local\+Control}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Local\+Control@{e\+Channel\+Mode\+Data\+\_\+\+Local\+Control}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461addf1f5adef10e202e8378fc15521f1ff}{}e\+Channel\+Mode\+Data\+\_\+\+Local\+Control\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461addf1f5adef10e202e8378fc15521f1ff}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off@{e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off@{e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461af57995480ec44ebcb6b936042a471979}{}e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461af57995480ec44ebcb6b936042a471979}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off@{e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off@{e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461a5e2dba641939d400e47d9320b0db306a}{}e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461a5e2dba641939d400e47d9320b0db306a}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Omni\+On@{e\+Channel\+Mode\+Data\+\_\+\+Omni\+On}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Omni\+On@{e\+Channel\+Mode\+Data\+\_\+\+Omni\+On}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461a3defca7d2a1dc6940bbc00a14eadd2d0}{}e\+Channel\+Mode\+Data\+\_\+\+Omni\+On\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461a3defca7d2a1dc6940bbc00a14eadd2d0}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off@{e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off@{e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac2819c2b9eeec76609fa42609b2fd878}{}e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac2819c2b9eeec76609fa42609b2fd878}
+}]\index{e\+Channel\+Mode\+Data\+\_\+\+Poly\+On@{e\+Channel\+Mode\+Data\+\_\+\+Poly\+On}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Channel\+Mode\+Data\+\_\+\+Poly\+On@{e\+Channel\+Mode\+Data\+\_\+\+Poly\+On}}\item[{\em 
+\hypertarget{a00288_a51c6649733dc2e7ce2364c7b52ddf461ada14fa008d32a84173ed0f0e9d416a49}{}e\+Channel\+Mode\+Data\+\_\+\+Poly\+On\label{a00288_a51c6649733dc2e7ce2364c7b52ddf461ada14fa008d32a84173ed0f0e9d416a49}
+}]\end{description}
+\end{Desc}
+\hypertarget{a00288_a6884ba464f3e76eb758d45daf1395199}{}\index{A\+A\+X@{A\+A\+X}!E\+Special\+Data@{E\+Special\+Data}}
+\index{E\+Special\+Data@{E\+Special\+Data}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{E\+Special\+Data}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+::\+E\+Special\+Data}}\label{a00288_a6884ba464f3e76eb758d45daf1395199}
+
+
+Special message data for the first data byte in a message. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+Special\+Data\+\_\+\+Accented\+Click@{e\+Special\+Data\+\_\+\+Accented\+Click}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Special\+Data\+\_\+\+Accented\+Click@{e\+Special\+Data\+\_\+\+Accented\+Click}}\item[{\em 
+\hypertarget{a00288_a6884ba464f3e76eb758d45daf1395199a52061b5587075953631c1389016cb0cf}{}e\+Special\+Data\+\_\+\+Accented\+Click\label{a00288_a6884ba464f3e76eb758d45daf1395199a52061b5587075953631c1389016cb0cf}
+}]For use when the high status nibble is \hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}{e\+Status\+Nibble\+\_\+\+Note\+On} and the low status nibble is zero. \index{e\+Special\+Data\+\_\+\+Unaccented\+Click@{e\+Special\+Data\+\_\+\+Unaccented\+Click}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e\+Special\+Data\+\_\+\+Unaccented\+Click@{e\+Special\+Data\+\_\+\+Unaccented\+Click}}\item[{\em 
+\hypertarget{a00288_a6884ba464f3e76eb758d45daf1395199a35a276fca410721fc1c39adb01be7af3}{}e\+Special\+Data\+\_\+\+Unaccented\+Click\label{a00288_a6884ba464f3e76eb758d45daf1395199a35a276fca410721fc1c39adb01be7af3}
+}]For use when the high status nibble is \hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}{e\+Status\+Nibble\+\_\+\+Note\+On} and the low status nibble is zero. \end{description}
+\end{Desc}
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2d}{}\index{A\+A\+X@{A\+A\+X}!E\+Sample\+Rates@{E\+Sample\+Rates}}
+\index{E\+Sample\+Rates@{E\+Sample\+Rates}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{E\+Sample\+Rates}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf A\+A\+X\+::\+E\+Sample\+Rates}}\label{a00288_a60daf5874c02a01d2af8c582c0643e2d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e44100\+Sample\+Rate@{e44100\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e44100\+Sample\+Rate@{e44100\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2da0fabb364c77d1597745ea7faede310a9}{}e44100\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2da0fabb364c77d1597745ea7faede310a9}
+}]\index{e48000\+Sample\+Rate@{e48000\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e48000\+Sample\+Rate@{e48000\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2dabf618a3399a754a6ec3a367c102f8850}{}e48000\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2dabf618a3399a754a6ec3a367c102f8850}
+}]\index{e88200\+Sample\+Rate@{e88200\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e88200\+Sample\+Rate@{e88200\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2da6b2f92d94b3c151993d544d924321620}{}e88200\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2da6b2f92d94b3c151993d544d924321620}
+}]\index{e96000\+Sample\+Rate@{e96000\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e96000\+Sample\+Rate@{e96000\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2da1161e560e2b301b8b45d17083696915e}{}e96000\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2da1161e560e2b301b8b45d17083696915e}
+}]\index{e176400\+Sample\+Rate@{e176400\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e176400\+Sample\+Rate@{e176400\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2da17be0028e4f2ca09f095573240cef263}{}e176400\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2da17be0028e4f2ca09f095573240cef263}
+}]\index{e192000\+Sample\+Rate@{e192000\+Sample\+Rate}!A\+A\+X@{A\+A\+X}}\index{A\+A\+X@{A\+A\+X}!e192000\+Sample\+Rate@{e192000\+Sample\+Rate}}\item[{\em 
+\hypertarget{a00288_a60daf5874c02a01d2af8c582c0643e2da755a96e92d23adf2ad3546551e2ad49c}{}e192000\+Sample\+Rate\label{a00288_a60daf5874c02a01d2af8c582c0643e2da755a96e92d23adf2ad3546551e2ad49c}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00288_a8fbde5607de487515bcb55631bc1377d}{}\index{A\+A\+X@{A\+A\+X}!As\+String@{As\+String}}
+\index{As\+String@{As\+String}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a8fbde5607de487515bcb55631bc1377d}
+Generic conversion of a string-\/like object to a std\+::string \hypertarget{a00288_a1bdf9d0d3be5b5f11d47df256a2e9490}{}\index{A\+A\+X@{A\+A\+X}!As\+String@{As\+String}}
+\index{As\+String@{As\+String}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& A\+A\+X\+::\+As\+String (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{in\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a1bdf9d0d3be5b5f11d47df256a2e9490}
+
+
+
+
+Generic conversion of a string-\/like object to a std\+::string \hypertarget{a00288_a9d87a7ed401f9deb8386a14c7bd8aaae}{}\index{A\+A\+X@{A\+A\+X}!As\+String@{As\+String}}
+\index{As\+String@{As\+String}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& A\+A\+X\+::\+As\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Exception\+::\+Any} \&}]{in\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a9d87a7ed401f9deb8386a14c7bd8aaae}
+
+
+
+
+Generic conversion of a string-\/like object to a std\+::string 
+
+References A\+A\+X\+::\+Exception\+::\+Any\+::\+What().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{a00288_a9d87a7ed401f9deb8386a14c7bd8aaae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a1561efb3b1dbe3d13ef18f4b4d9dee40}{}\index{A\+A\+X@{A\+A\+X}!Is\+Note\+On@{Is\+Note\+On}}
+\index{Is\+Note\+On@{Is\+Note\+On}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Note\+On}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Note\+On (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a1561efb3b1dbe3d13ef18f4b4d9dee40}
+
+
+Returns true if {\ttfamily in\+Packet} is a Note On message. 
+
+
+
+References e\+Status\+Nibble\+\_\+\+Note\+On, and A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data.
+
+\hypertarget{a00288_a91041690c271a718ef9451f66a7f6bb2}{}\index{A\+A\+X@{A\+A\+X}!Is\+Note\+Off@{Is\+Note\+Off}}
+\index{Is\+Note\+Off@{Is\+Note\+Off}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Note\+Off}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Note\+Off (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a91041690c271a718ef9451f66a7f6bb2}
+
+
+Returns true if {\ttfamily in\+Packet} is a Note Off message, or a Note On message with velocity zero. 
+
+
+
+References e\+Status\+Nibble\+\_\+\+Note\+Off, e\+Status\+Nibble\+\_\+\+Note\+On, and A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data.
+
+\hypertarget{a00288_a509974acde19fde832cd5fdeb5eaabe2}{}\index{A\+A\+X@{A\+A\+X}!Is\+All\+Notes\+Off@{Is\+All\+Notes\+Off}}
+\index{Is\+All\+Notes\+Off@{Is\+All\+Notes\+Off}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+All\+Notes\+Off}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+All\+Notes\+Off (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a509974acde19fde832cd5fdeb5eaabe2}
+
+
+Returns true if {\ttfamily in\+Packet} is an All Sound Off or All Notes Off message. 
+
+
+
+References e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off, e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off, e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off, e\+Channel\+Mode\+Data\+\_\+\+Omni\+On, e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off, e\+Channel\+Mode\+Data\+\_\+\+Poly\+On, e\+Status\+Nibble\+\_\+\+Channel\+Mode, and A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data.
+
+\hypertarget{a00288_afd05400c946e625772428cad4be7d552}{}\index{A\+A\+X@{A\+A\+X}!Is\+Accented\+Click@{Is\+Accented\+Click}}
+\index{Is\+Accented\+Click@{Is\+Accented\+Click}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Accented\+Click}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Accented\+Click (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_afd05400c946e625772428cad4be7d552}
+
+
+Returns true if {\ttfamily in\+Packet} is a special Pro Tools accented click message. 
+
+
+
+References e\+Special\+Data\+\_\+\+Accented\+Click, e\+Status\+Nibble\+\_\+\+Note\+On, and A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data.
+
+
+
+Referenced by Is\+Click().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{a00288_afd05400c946e625772428cad4be7d552_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a4f915a56cb150638f036cb7ed33facd8}{}\index{A\+A\+X@{A\+A\+X}!Is\+Unaccented\+Click@{Is\+Unaccented\+Click}}
+\index{Is\+Unaccented\+Click@{Is\+Unaccented\+Click}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Unaccented\+Click}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Unaccented\+Click (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a4f915a56cb150638f036cb7ed33facd8}
+
+
+Returns true if {\ttfamily in\+Packet} is a special Pro Tools unaccented click message. 
+
+
+
+References e\+Special\+Data\+\_\+\+Unaccented\+Click, e\+Status\+Nibble\+\_\+\+Note\+On, and A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data.
+
+
+
+Referenced by Is\+Click().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{a00288_a4f915a56cb150638f036cb7ed33facd8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a8f9544e49b4473862e0c1382f6963ce7}{}\index{A\+A\+X@{A\+A\+X}!Is\+Click@{Is\+Click}}
+\index{Is\+Click@{Is\+Click}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Click}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Click (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$}]{in\+Packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a8f9544e49b4473862e0c1382f6963ce7}
+
+
+Returns true if {\ttfamily in\+Packet} is a special Pro Tools click message. 
+
+
+
+References Is\+Accented\+Click(), and Is\+Unaccented\+Click().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{a00288_a8f9544e49b4473862e0c1382f6963ce7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a6615318d686a57585ba69565f8e6a99b}{}\index{A\+A\+X@{A\+A\+X}!Page\+Table\+Parameter\+Mappings\+Are\+Equal@{Page\+Table\+Parameter\+Mappings\+Are\+Equal}}
+\index{Page\+Table\+Parameter\+Mappings\+Are\+Equal@{Page\+Table\+Parameter\+Mappings\+Are\+Equal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Page\+Table\+Parameter\+Mappings\+Are\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ bool A\+A\+X\+::\+Page\+Table\+Parameter\+Mappings\+Are\+Equal (
+\begin{DoxyParamCaption}
+\item[{const T1 \&}]{in\+L, }
+\item[{const T2 \&}]{in\+R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a6615318d686a57585ba69565f8e6a99b}
+Compare the parameter mappings in two page tables
+
+{\ttfamily T1} and {\ttfamily T2\+:} Page table class types (e.\+g. \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}, \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}) 
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+
+
+Referenced by Page\+Tables\+Are\+Equal().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a6615318d686a57585ba69565f8e6a99b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a2e75756c486e5db4ffa91579bb486a6a}{}\index{A\+A\+X@{A\+A\+X}!Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal@{Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal}}
+\index{Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal@{Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ bool A\+A\+X\+::\+Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal (
+\begin{DoxyParamCaption}
+\item[{const T1 \&}]{in\+L, }
+\item[{const T2 \&}]{in\+R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a2e75756c486e5db4ffa91579bb486a6a}
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S, and A\+A\+X\+\_\+\+C\+String\+::\+Get().
+
+
+
+Referenced by Page\+Tables\+Are\+Equal().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a2e75756c486e5db4ffa91579bb486a6a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a2e75756c486e5db4ffa91579bb486a6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a315085bafc0ddf4e7043a69d070da2fb}{}\index{A\+A\+X@{A\+A\+X}!Page\+Tables\+Are\+Equal@{Page\+Tables\+Are\+Equal}}
+\index{Page\+Tables\+Are\+Equal@{Page\+Tables\+Are\+Equal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Page\+Tables\+Are\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T1 , class T2 $>$ bool A\+A\+X\+::\+Page\+Tables\+Are\+Equal (
+\begin{DoxyParamCaption}
+\item[{const T1 \&}]{in\+L, }
+\item[{const T2 \&}]{in\+R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a315085bafc0ddf4e7043a69d070da2fb}
+
+
+References Page\+Table\+Parameter\+Mappings\+Are\+Equal(), and Page\+Table\+Parameter\+Name\+Variations\+Are\+Equal().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a315085bafc0ddf4e7043a69d070da2fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a99fe28eb20cfcef49e99710060c5ebe0}{}\index{A\+A\+X@{A\+A\+X}!Copy\+Page\+Table@{Copy\+Page\+Table}}
+\index{Copy\+Page\+Table@{Copy\+Page\+Table}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Copy\+Page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void A\+A\+X\+::\+Copy\+Page\+Table (
+\begin{DoxyParamCaption}
+\item[{T \&}]{to, }
+\item[{const T \&}]{from}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a99fe28eb20cfcef49e99710060c5ebe0}
+Copy a page table
+
+{\ttfamily T\+:} A page table class type (e.\+g. \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}, \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}) 
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S, A\+A\+X\+\_\+\+C\+String\+::\+C\+String(), and A\+A\+X\+\_\+\+C\+String\+::\+Get().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{a00288_a99fe28eb20cfcef49e99710060c5ebe0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ac87bacdbc6323ab3f099c16ed8b508be}{}\index{A\+A\+X@{A\+A\+X}!Find\+Parameter\+Mappings\+In\+Page\+Table@{Find\+Parameter\+Mappings\+In\+Page\+Table}}
+\index{Find\+Parameter\+Mappings\+In\+Page\+Table@{Find\+Parameter\+Mappings\+In\+Page\+Table}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Find\+Parameter\+Mappings\+In\+Page\+Table}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$std\+::pair$<$int32\+\_\+t, int32\+\_\+t$>$ $>$ A\+A\+X\+::\+Find\+Parameter\+Mappings\+In\+Page\+Table (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{in\+Table, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{in\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ac87bacdbc6323ab3f099c16ed8b508be}
+Find all slots where a particular parameter is mapped
+
+{\ttfamily T\+:} A page table class type (e.\+g. \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}, \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table})
+
+\begin{DoxyReturn}{Returns}
+A vector of pairs of \mbox{[}page index, slot index\mbox{]} each representing a single mapping of the parameter 
+\end{DoxyReturn}
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+
+
+Referenced by Clear\+Mapped\+Parameter\+By\+I\+D().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ac87bacdbc6323ab3f099c16ed8b508be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ae583643c21c696c4d094a500b4e6d77e}{}\index{A\+A\+X@{A\+A\+X}!Clear\+Mapped\+Parameter\+By\+I\+D@{Clear\+Mapped\+Parameter\+By\+I\+D}}
+\index{Clear\+Mapped\+Parameter\+By\+I\+D@{Clear\+Mapped\+Parameter\+By\+I\+D}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Clear\+Mapped\+Parameter\+By\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void A\+A\+X\+::\+Clear\+Mapped\+Parameter\+By\+I\+D (
+\begin{DoxyParamCaption}
+\item[{T \&}]{io\+Table, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{in\+Parameter\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ae583643c21c696c4d094a500b4e6d77e}
+Remove all mappings of a particular from a page table
+
+{\ttfamily T\+:} A page table class type (e.\+g. \hyperlink{a00074}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Page\+Table}, \hyperlink{a00107}{A\+A\+X\+\_\+\+I\+Page\+Table}) 
+
+References Find\+Parameter\+Mappings\+In\+Page\+Table().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ae583643c21c696c4d094a500b4e6d77e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_aa3db8a743884054a6ac1ec2c2495e86f}{}\index{A\+A\+X@{A\+A\+X}!Get\+C\+String\+Of\+Length@{Get\+C\+String\+Of\+Length}}
+\index{Get\+C\+String\+Of\+Length@{Get\+C\+String\+Of\+Length}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+C\+String\+Of\+Length}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+Get\+C\+String\+Of\+Length (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string\+Out, }
+\item[{const char $\ast$}]{string\+In, }
+\item[{int32\+\_\+t}]{a\+Max\+Chars}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa3db8a743884054a6ac1ec2c2495e86f}
+
+
+============================================================== 
+
+
+
+References A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T.
+
+\hypertarget{a00288_a5f092aff54cbd222fda57f5ea0a12189}{}\index{A\+A\+X@{A\+A\+X}!Caseless\+\_\+strcmp@{Caseless\+\_\+strcmp}}
+\index{Caseless\+\_\+strcmp@{Caseless\+\_\+strcmp}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Caseless\+\_\+strcmp}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Caseless\+\_\+strcmp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{cs, }
+\item[{const char $\ast$}]{ct}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a5f092aff54cbd222fda57f5ea0a12189}
+\hypertarget{a00288_a690ffc499da04ea963fff3bf8d6174fb}{}\index{A\+A\+X@{A\+A\+X}!Binary2\+String@{Binary2\+String}}
+\index{Binary2\+String@{Binary2\+String}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Binary2\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+Binary2\+String (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{binary\+Value, }
+\item[{int32\+\_\+t}]{num\+Bits}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a690ffc499da04ea963fff3bf8d6174fb}
+
+
+Referenced by As\+String\+Property\+Value().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a690ffc499da04ea963fff3bf8d6174fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a7b02e5d4a96f72213f0d1e4b52e13050}{}\index{A\+A\+X@{A\+A\+X}!String2\+Binary@{String2\+Binary}}
+\index{String2\+Binary@{String2\+Binary}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{String2\+Binary}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+::\+String2\+Binary (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a7b02e5d4a96f72213f0d1e4b52e13050}
+
+
+References A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T, A\+A\+X\+\_\+\+I\+String\+::\+Get(), and A\+A\+X\+\_\+\+I\+String\+::\+Length().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{a00288_a7b02e5d4a96f72213f0d1e4b52e13050_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_aa8ebc6a8ee1232c4ffec828bff3c2998}{}\index{A\+A\+X@{A\+A\+X}!Is\+A\+S\+C\+I\+I@{Is\+A\+S\+C\+I\+I}}
+\index{Is\+A\+S\+C\+I\+I@{Is\+A\+S\+C\+I\+I}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+A\+S\+C\+I\+I}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+A\+S\+C\+I\+I (
+\begin{DoxyParamCaption}
+\item[{char}]{in\+Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa8ebc6a8ee1232c4ffec828bff3c2998}
+
+
+Referenced by As\+String\+Four\+Char(), and Is\+Four\+Char\+A\+S\+C\+I\+I().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_aa8ebc6a8ee1232c4ffec828bff3c2998_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a00fbf59b268ca75214b2dad68be8ff77}{}\index{A\+A\+X@{A\+A\+X}!Is\+Four\+Char\+A\+S\+C\+I\+I@{Is\+Four\+Char\+A\+S\+C\+I\+I}}
+\index{Is\+Four\+Char\+A\+S\+C\+I\+I@{Is\+Four\+Char\+A\+S\+C\+I\+I}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Four\+Char\+A\+S\+C\+I\+I}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+::\+Is\+Four\+Char\+A\+S\+C\+I\+I (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Four\+Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a00fbf59b268ca75214b2dad68be8ff77}
+
+
+References Is\+A\+S\+C\+I\+I().
+
+
+
+Referenced by As\+String\+Property\+Value().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{a00288_a00fbf59b268ca75214b2dad68be8ff77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a00fbf59b268ca75214b2dad68be8ff77_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a22eda3cc42cb4ea2192b00bab7a69b02}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Four\+Char@{As\+String\+Four\+Char}}
+\index{As\+String\+Four\+Char@{As\+String\+Four\+Char}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Four\+Char}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Four\+Char (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+Four\+Char}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a22eda3cc42cb4ea2192b00bab7a69b02}
+
+
+References Is\+A\+S\+C\+I\+I().
+
+
+
+Referenced by As\+String\+I\+D\+Triad(), and As\+String\+Property\+Value().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{a00288_a22eda3cc42cb4ea2192b00bab7a69b02_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a22eda3cc42cb4ea2192b00bab7a69b02_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a1b3d4b5a967f01922963876447644b15}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Property\+Value@{As\+String\+Property\+Value}}
+\index{As\+String\+Property\+Value@{As\+String\+Property\+Value}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Property\+Value}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Property\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Property}}]{in\+Property, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Property\+Value}}]{in\+Property\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a1b3d4b5a967f01922963876447644b15}
+
+
+References A\+A\+X\+\_\+e\+Property\+\_\+\+Constraint\+\_\+\+Location, A\+A\+X\+\_\+e\+Property\+\_\+\+Sample\+Rate, As\+String\+Four\+Char(), Binary2\+String(), and Is\+Four\+Char\+A\+S\+C\+I\+I().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a1b3d4b5a967f01922963876447644b15_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ab024a3d9ac9c68350b377b2c70ec4727}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Int32@{As\+String\+Int32}}
+\index{As\+String\+Int32@{As\+String\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Int32 (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Int32}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ab024a3d9ac9c68350b377b2c70ec4727}
+
+
+Referenced by A\+A\+X\+::\+Exception\+::\+Result\+Error\+::\+Format\+Result().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ab024a3d9ac9c68350b377b2c70ec4727_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ada4fd7cb0e04582a7615a76f6be7e404}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+U\+Int32@{As\+String\+U\+Int32}}
+\index{As\+String\+U\+Int32@{As\+String\+U\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+U\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+U\+Int32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{in\+U\+Int32}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ada4fd7cb0e04582a7615a76f6be7e404}
+\hypertarget{a00288_a89e00fcb44e30c443bebba0f026ef62a}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+I\+D\+Triad@{As\+String\+I\+D\+Triad}}
+\index{As\+String\+I\+D\+Triad@{As\+String\+I\+D\+Triad}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+I\+D\+Triad}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+I\+D\+Triad (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} \&}]{in\+I\+D\+Triad}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a89e00fcb44e30c443bebba0f026ef62a}
+
+
+References As\+String\+Four\+Char(), A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+::m\+Manufacturer\+I\+D, A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+::m\+Plug\+In\+I\+D, and A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+::m\+Product\+I\+D.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a89e00fcb44e30c443bebba0f026ef62a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a34d219233eb5c9836b837fa2a67150d1}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Stem\+Format@{As\+String\+Stem\+Format}}
+\index{As\+String\+Stem\+Format@{As\+String\+Stem\+Format}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Stem\+Format (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Stem\+Format}}]{in\+Stem\+Format, }
+\item[{bool}]{in\+Abbreviate = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a34d219233eb5c9836b837fa2a67150d1}
+
+
+References A\+A\+X\+\_\+e\+Stem\+Format\+\_\+5\+\_\+0, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+5\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+6\+\_\+0, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+6\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+\+D\+T\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+\+S\+D\+D\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+\+D\+T\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+\+S\+D\+D\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+1\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+2\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+3\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Any, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+I\+N\+T32\+\_\+\+M\+A\+X, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+L\+C\+R, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+L\+C\+R\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Mono, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+None, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Quad, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+3, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Stereo, and A\+A\+X\+\_\+e\+Stem\+Format\+Num.
+
+\hypertarget{a00288_adfab6bf193c09266ecec2069b8da0c5c}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Stem\+Channel@{As\+String\+Stem\+Channel}}
+\index{As\+String\+Stem\+Channel@{As\+String\+Stem\+Channel}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Stem\+Channel}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Stem\+Channel (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Stem\+Format}}]{in\+Stem\+Format, }
+\item[{uint32\+\_\+t}]{in\+Channel\+Index, }
+\item[{bool}]{in\+Abbreviate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_adfab6bf193c09266ecec2069b8da0c5c}
+
+
+References A\+A\+X\+\_\+e\+Stem\+Format\+\_\+5\+\_\+0, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+5\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+6\+\_\+0, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+6\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+\+D\+T\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+0\+\_\+\+S\+D\+D\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+\+D\+T\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+7\+\_\+1\+\_\+\+S\+D\+D\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+1\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+2\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Ambi\+\_\+3\+\_\+\+A\+C\+N, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Any, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+I\+N\+T32\+\_\+\+M\+A\+X, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+L\+C\+R, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+L\+C\+R\+S, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Mono, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+None, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Quad, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+1, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+2, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Reserved\+\_\+3, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Stereo, and A\+A\+X\+\_\+e\+Stem\+Format\+Num.
+
+\hypertarget{a00288_a354029650cebc5f23636c9984a65ea0d}{}\index{A\+A\+X@{A\+A\+X}!As\+String\+Result@{As\+String\+Result}}
+\index{As\+String\+Result@{As\+String\+Result}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{As\+String\+Result}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string A\+A\+X\+::\+As\+String\+Result (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a354029650cebc5f23636c9984a65ea0d}
+
+
+References A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+F\+\_\+\+E\+R\+R\+O\+R, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+T\+E\+X\+T\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+H\+A\+S\+\_\+\+M\+E\+T\+E\+R\+S, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+B\+O\+U\+N\+D\+S, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+I\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+U\+P\+L\+I\+C\+A\+T\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+P\+T\+Y\+\_\+\+E\+F\+F\+E\+C\+T\+\_\+\+N\+A\+M\+E, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+P\+E\+\_\+\+D\+O\+E\+S\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+\_\+\+D\+I\+R\+E\+C\+T\+\_\+\+A\+C\+C\+E\+S\+S, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+I\+F\+O\+\_\+\+F\+U\+L\+L, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+C\+O\+R\+R\+E\+C\+T\+\_\+\+C\+H\+U\+N\+K\+\_\+\+S\+I\+Z\+E, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+I\+N\+G\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+T\+H\+R\+E\+A\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+U\+N\+K\+\_\+\+I\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+H\+U\+N\+K\+\_\+\+I\+N\+D\+E\+X, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+D\+A\+T\+A, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+T\+E\+R\+\_\+\+I\+N\+D\+E\+X, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+E\+T\+E\+R\+\_\+\+T\+Y\+P\+E, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+I\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R\+\_\+\+I\+N\+D\+E\+X, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+T\+H, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+N\+V\+E\+R\+S\+I\+O\+N, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+V\+I\+E\+W\+\_\+\+S\+I\+Z\+E, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+A\+L\+F\+O\+R\+M\+E\+D\+\_\+\+C\+H\+U\+N\+K, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+M\+I\+X\+E\+R\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+F\+A\+L\+L\+I\+N\+G\+\_\+\+B\+E\+H\+I\+N\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T\+S, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+I\+F\+I\+C\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+A\+R\+G\+U\+M\+E\+N\+T, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+C\+O\+M\+P\+O\+N\+E\+N\+T, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+C\+T, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+L\+D\+E\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+N\+O\+T\+\_\+\+A\+U\+T\+H\+O\+R\+I\+Z\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+N\+U\+L\+L\+\_\+\+P\+A\+R\+A\+M\+E\+T\+E\+R, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+O\+R\+T\+\_\+\+I\+D\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+R\+A\+N\+G\+E, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+O\+S\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+F\+A\+I\+L\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+U\+N\+D\+E\+F\+I\+N\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+I\+G\+N\+E\+D\+\_\+\+I\+N\+T\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+O\+D\+\_\+\+B\+E\+H\+I\+N\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+N, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+I\+D, A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+K\+N\+O\+W\+N\+\_\+\+P\+L\+U\+G\+I\+N, A\+A\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+A\+D\+D\+\_\+\+F\+I\+E\+L\+D\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+F\+I\+E\+L\+D\+\_\+\+T\+Y\+P\+E, A\+A\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+N\+E\+W\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+P\+O\+S\+T\+E\+D, A\+A\+X\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+N\+O\+T\+\_\+\+E\+M\+P\+T\+Y, A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S, and D\+E\+F\+I\+N\+E\+\_\+\+A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G.
+
+
+
+Referenced by A\+A\+X\+::\+Exception\+::\+Result\+Error\+::\+Format\+Result().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a354029650cebc5f23636c9984a65ea0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ae8de30637f08cd29bb0e27526ce9e21b}{}\index{A\+A\+X@{A\+A\+X}!Safe\+Log@{Safe\+Log}}
+\index{Safe\+Log@{Safe\+Log}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Safe\+Log}]{\setlength{\rightskip}{0pt plus 5cm}double A\+A\+X\+::\+Safe\+Log (
+\begin{DoxyParamCaption}
+\item[{double}]{a\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ae8de30637f08cd29bb0e27526ce9e21b}
+
+
+Double-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Log\+Taper\+Delegate$<$ T, Real\+Precision $>$\+::\+Normalized\+To\+Real(), and A\+A\+X\+\_\+\+C\+Log\+Taper\+Delegate$<$ T, Real\+Precision $>$\+::\+Real\+To\+Normalized().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{a00288_ae8de30637f08cd29bb0e27526ce9e21b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ad762727aac31ad8b7bba8b67a4bc2edc}{}\index{A\+A\+X@{A\+A\+X}!Safe\+Logf@{Safe\+Logf}}
+\index{Safe\+Logf@{Safe\+Logf}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Safe\+Logf}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::\+Safe\+Logf (
+\begin{DoxyParamCaption}
+\item[{float}]{a\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ad762727aac31ad8b7bba8b67a4bc2edc}
+
+
+Single-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. 
+
+\hypertarget{a00288_ae4d1a0a925aa954899fec653dc041b75}{}\index{A\+A\+X@{A\+A\+X}!Is\+Parameter\+I\+D\+Equal@{Is\+Parameter\+I\+D\+Equal}}
+\index{Is\+Parameter\+I\+D\+Equal@{Is\+Parameter\+I\+D\+Equal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Parameter\+I\+D\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+::\+Is\+Parameter\+I\+D\+Equal (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Param1, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}]{i\+Param2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ae4d1a0a925aa954899fec653dc041b75}
+
+
+Helper function to check if two parameter I\+Ds are equivalent. 
+
+\hypertarget{a00288_aef81989128dcac01f2be8fd25096540f}{}\index{A\+A\+X@{A\+A\+X}!Is\+Effect\+I\+D\+Equal@{Is\+Effect\+I\+D\+Equal}}
+\index{Is\+Effect\+I\+D\+Equal@{Is\+Effect\+I\+D\+Equal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Effect\+I\+D\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+::\+Is\+Effect\+I\+D\+Equal (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{i\+Effect\+I\+D1, }
+\item[{const {\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{i\+Effect\+I\+D2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aef81989128dcac01f2be8fd25096540f}
+
+
+Helper function to check if two Effect I\+Ds are equivalent. 
+
+
+
+References A\+A\+X\+\_\+\+I\+String\+::\+Get().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{a00288_aef81989128dcac01f2be8fd25096540f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ab63efd791ab1cbbcdb004302b106c45c}{}\index{A\+A\+X@{A\+A\+X}!Is\+Avid\+Notification@{Is\+Avid\+Notification}}
+\index{Is\+Avid\+Notification@{Is\+Avid\+Notification}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Is\+Avid\+Notification}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+::\+Is\+Avid\+Notification (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Notification\+I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ab63efd791ab1cbbcdb004302b106c45c}
+
+
+Helper function to check if a notification I\+D is reserved for host notifications. 
+
+\hypertarget{a00288_aa7d7e69902012a6272de3ea9aa0264a9}{}\index{A\+A\+X@{A\+A\+X}!align\+Free@{align\+Free}}
+\index{align\+Free@{align\+Free}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{align\+Free}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::align\+Free (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa7d7e69902012a6272de3ea9aa0264a9}
+\hypertarget{a00288_aaa3236d90a0dbbf30150d8a181f2d66b}{}\index{A\+A\+X@{A\+A\+X}!align\+Malloc@{align\+Malloc}}
+\index{align\+Malloc@{align\+Malloc}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{align\+Malloc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T$\ast$ A\+A\+X\+::align\+Malloc (
+\begin{DoxyParamCaption}
+\item[{int}]{i\+Array\+Size, }
+\item[{int}]{i\+Alignment}
+\end{DoxyParamCaption}
+)}\label{a00288_aaa3236d90a0dbbf30150d8a181f2d66b}
+\hypertarget{a00288_aaf103dc75b68b6c4f6792dd26f9b4fd0}{}\index{A\+A\+X@{A\+A\+X}!De\+Denormal@{De\+Denormal}}
+\index{De\+Denormal@{De\+Denormal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{De\+Denormal}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+De\+Denormal (
+\begin{DoxyParamCaption}
+\item[{double \&}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aaf103dc75b68b6c4f6792dd26f9b4fd0}
+
+
+Clamps very small floating point values to zero. 
+
+On Pentiums and Pentium I\+Is the generation of denormal floats causes enormous performance losses. This routine removes denormals by clamping very small values to zero. The clamping threshold is very small, but is not the absolute minimum. If absolute minimum clamping is desired, use \hyperlink{a00288_ac52b6214a1de32e59b90ddbc1878e515}{A\+A\+X\+::\+De\+Denormal\+Fine()} \hypertarget{a00288_aedfd1762f559291ceddd53f8ce8862a5}{}\index{A\+A\+X@{A\+A\+X}!De\+Denormal@{De\+Denormal}}
+\index{De\+Denormal@{De\+Denormal}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{De\+Denormal}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+De\+Denormal (
+\begin{DoxyParamCaption}
+\item[{float \&}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aedfd1762f559291ceddd53f8ce8862a5}
+
+
+Clamps very small floating point values to zero. 
+
+On Pentiums and Pentium I\+Is the generation of denormal floats causes enormous performance losses. This routine removes denormals by clamping very small values to zero. The clamping threshold is very small, but is not the absolute minimum. If absolute minimum clamping is desired, use \hyperlink{a00288_ac52b6214a1de32e59b90ddbc1878e515}{A\+A\+X\+::\+De\+Denormal\+Fine()} \hypertarget{a00288_ac52b6214a1de32e59b90ddbc1878e515}{}\index{A\+A\+X@{A\+A\+X}!De\+Denormal\+Fine@{De\+Denormal\+Fine}}
+\index{De\+Denormal\+Fine@{De\+Denormal\+Fine}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{De\+Denormal\+Fine}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+De\+Denormal\+Fine (
+\begin{DoxyParamCaption}
+\item[{float \&}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ac52b6214a1de32e59b90ddbc1878e515}
+Similar to \hyperlink{a00288_aaf103dc75b68b6c4f6792dd26f9b4fd0}{A\+A\+X\+::\+De\+Denormal()}, but uses the minimum possible normal float value as the clamping threshold \hypertarget{a00288_a73dd9a17abecc28625c4d34279e4534f}{}\index{A\+A\+X@{A\+A\+X}!Filter\+Denormals@{Filter\+Denormals}}
+\index{Filter\+Denormals@{Filter\+Denormals}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Filter\+Denormals}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+Filter\+Denormals (
+\begin{DoxyParamCaption}
+\item[{float $\ast$}]{in\+Samples, }
+\item[{int32\+\_\+t}]{in\+Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a73dd9a17abecc28625c4d34279e4534f}
+
+
+Round all denormal/subnormal samples in a buffer to zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Samples} & Samples to convert \\
+\hline
+\mbox{\tt in}  & {\em in\+Length} & Number of samples in in\+Samples \\
+\hline
+\end{DoxyParams}
+
+
+References fabsf().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a73dd9a17abecc28625c4d34279e4534f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a6b1f85f5d8c5837ff52212e13b84e6d0}{}\index{A\+A\+X@{A\+A\+X}!Clamp\+To\+Zero@{Clamp\+To\+Zero}}
+\index{Clamp\+To\+Zero@{Clamp\+To\+Zero}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Clamp\+To\+Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class G\+F\+L\+O\+A\+T $>$ G\+F\+L\+O\+A\+T A\+A\+X\+::\+Clamp\+To\+Zero (
+\begin{DoxyParamCaption}
+\item[{G\+F\+L\+O\+A\+T}]{i\+Value, }
+\item[{G\+F\+L\+O\+A\+T}]{i\+Clamp\+Threshold}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a6b1f85f5d8c5837ff52212e13b84e6d0}
+\hypertarget{a00288_ae9c9b3862c1b63dc4fb4e3c901d42935}{}\index{A\+A\+X@{A\+A\+X}!Zero\+Memory@{Zero\+Memory}}
+\index{Zero\+Memory@{Zero\+Memory}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Zero\+Memory}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+Zero\+Memory (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{i\+Pointer, }
+\item[{int}]{i\+Num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ae9c9b3862c1b63dc4fb4e3c901d42935}
+\hypertarget{a00288_a0e598e79488a12354e9dbc340fa99b5a}{}\index{A\+A\+X@{A\+A\+X}!Zero\+Memory\+D\+W@{Zero\+Memory\+D\+W}}
+\index{Zero\+Memory\+D\+W@{Zero\+Memory\+D\+W}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Zero\+Memory\+D\+W}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+Zero\+Memory\+D\+W (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{i\+Pointer, }
+\item[{int}]{i\+Num\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a0e598e79488a12354e9dbc340fa99b5a}
+\hypertarget{a00288_a1e72222769ecdf34fa73ae38c0c709df}{}\index{A\+A\+X@{A\+A\+X}!Fill@{Fill}}
+\index{Fill@{Fill}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int N$>$ void A\+A\+X\+::\+Fill (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{i\+Array, }
+\item[{const T $\ast$}]{i\+Val}
+\end{DoxyParamCaption}
+)}\label{a00288_a1e72222769ecdf34fa73ae38c0c709df}
+
+
+Referenced by Fill().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{a00288_a1e72222769ecdf34fa73ae38c0c709df_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a480beff32ac0847c665f735fd8f78c0a}{}\index{A\+A\+X@{A\+A\+X}!Fill@{Fill}}
+\index{Fill@{Fill}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int M, int N$>$ void A\+A\+X\+::\+Fill (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{i\+Array, }
+\item[{const T $\ast$}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a480beff32ac0847c665f735fd8f78c0a}
+
+
+References Fill().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{a00288_a480beff32ac0847c665f735fd8f78c0a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a114e6f06cf5789da4aad7ae0d786876e}{}\index{A\+A\+X@{A\+A\+X}!Fill@{Fill}}
+\index{Fill@{Fill}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , int L, int M, int N$>$ void A\+A\+X\+::\+Fill (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{i\+Array, }
+\item[{const T $\ast$}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a114e6f06cf5789da4aad7ae0d786876e}
+
+
+References Fill().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{a00288_a114e6f06cf5789da4aad7ae0d786876e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_aa4fa4d0765a764b020102cdbff8b45b0}{}\index{A\+A\+X@{A\+A\+X}!fabs@{fabs}}
+\index{fabs@{fabs}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{fabs}]{\setlength{\rightskip}{0pt plus 5cm}double A\+A\+X\+::fabs (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa4fa4d0765a764b020102cdbff8b45b0}
+
+
+References fabs().
+
+
+
+Referenced by fabsf().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{a00288_aa4fa4d0765a764b020102cdbff8b45b0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_aa4fa4d0765a764b020102cdbff8b45b0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_af486dfb226661e4a47d7b42eca881759}{}\index{A\+A\+X@{A\+A\+X}!fabs@{fabs}}
+\index{fabs@{fabs}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{fabs}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::fabs (
+\begin{DoxyParamCaption}
+\item[{float}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_af486dfb226661e4a47d7b42eca881759}
+
+
+Referenced by Abs\+Max(), and fabs().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_af486dfb226661e4a47d7b42eca881759_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a7fc4d4cd59850b8b875d085467ff5850}{}\index{A\+A\+X@{A\+A\+X}!fabsf@{fabsf}}
+\index{fabsf@{fabsf}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{fabsf}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::fabsf (
+\begin{DoxyParamCaption}
+\item[{float}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a7fc4d4cd59850b8b875d085467ff5850}
+
+
+References fabs().
+
+
+
+Referenced by Filter\+Denormals(), and A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$\+::\+Value\+To\+String().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{a00288_a7fc4d4cd59850b8b875d085467ff5850_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{a00288_a7fc4d4cd59850b8b875d085467ff5850_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_aa4cbb7d8707ad89fc5ba5169ebb75201}{}\index{A\+A\+X@{A\+A\+X}!Abs\+Max@{Abs\+Max}}
+\index{Abs\+Max@{Abs\+Max}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Abs\+Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+::\+Abs\+Max (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{i\+Value, }
+\item[{const T \&}]{i\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa4cbb7d8707ad89fc5ba5169ebb75201}
+
+
+References fabs().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{a00288_aa4cbb7d8707ad89fc5ba5169ebb75201_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_aca59c4cdf56130ee251118c02a9963e3}{}\index{A\+A\+X@{A\+A\+X}!Min\+Max@{Min\+Max}}
+\index{Min\+Max@{Min\+Max}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Min\+Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+::\+Min\+Max (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{i\+Value, }
+\item[{const T \&}]{i\+Min, }
+\item[{const T \&}]{i\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aca59c4cdf56130ee251118c02a9963e3}
+\hypertarget{a00288_a55ac62cf1b543338c58f8dd0d747c56c}{}\index{A\+A\+X@{A\+A\+X}!Max@{Max}}
+\index{Max@{Max}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+::\+Max (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{i\+Value1, }
+\item[{const T \&}]{i\+Value2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a55ac62cf1b543338c58f8dd0d747c56c}
+\hypertarget{a00288_a38c17ad30c1eb394bfa06e662d8d2598}{}\index{A\+A\+X@{A\+A\+X}!Min@{Min}}
+\index{Min@{Min}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+::\+Min (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{i\+Value1, }
+\item[{const T \&}]{i\+Value2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a38c17ad30c1eb394bfa06e662d8d2598}
+\hypertarget{a00288_ab6a3e1aef81cd84dec2eee9a27755bb0}{}\index{A\+A\+X@{A\+A\+X}!Sign@{Sign}}
+\index{Sign@{Sign}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Sign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T A\+A\+X\+::\+Sign (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ab6a3e1aef81cd84dec2eee9a27755bb0}
+\hypertarget{a00288_aa0094a6a87ca0c48f58b48ce5eea636e}{}\index{A\+A\+X@{A\+A\+X}!Poly\+Eval@{Poly\+Eval}}
+\index{Poly\+Eval@{Poly\+Eval}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Poly\+Eval}]{\setlength{\rightskip}{0pt plus 5cm}double A\+A\+X\+::\+Poly\+Eval (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{const double $\ast$}]{coefs, }
+\item[{int}]{num\+Coefs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aa0094a6a87ca0c48f58b48ce5eea636e}
+\hypertarget{a00288_aad5df8c4502619ca12136a2f7b8d8a06}{}\index{A\+A\+X@{A\+A\+X}!Ceil\+Log2@{Ceil\+Log2}}
+\index{Ceil\+Log2@{Ceil\+Log2}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Ceil\+Log2}]{\setlength{\rightskip}{0pt plus 5cm}double A\+A\+X\+::\+Ceil\+Log2 (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_aad5df8c4502619ca12136a2f7b8d8a06}
+\hypertarget{a00288_a3826233eb62186c03bb093f1031ca8f4}{}\index{A\+A\+X@{A\+A\+X}!Sin\+Cos\+Mix@{Sin\+Cos\+Mix}}
+\index{Sin\+Cos\+Mix@{Sin\+Cos\+Mix}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Sin\+Cos\+Mix}]{\setlength{\rightskip}{0pt plus 5cm}void A\+A\+X\+::\+Sin\+Cos\+Mix (
+\begin{DoxyParamCaption}
+\item[{float}]{a\+Linear\+Mix, }
+\item[{float \&}]{a\+Sin\+Mix, }
+\item[{float \&}]{a\+Cos\+Mix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a3826233eb62186c03bb093f1031ca8f4}
+
+
+References c\+Half\+Pi.
+
+\hypertarget{a00288_af0bbeabd87aa74be4ecca4f767aedc41}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Round2\+Int32@{Fast\+Round2\+Int32}}
+\index{Fast\+Round2\+Int32@{Fast\+Round2\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Round2\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Fast\+Round2\+Int32 (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_af0bbeabd87aa74be4ecca4f767aedc41}
+
+
+Round to Int32. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Val} & Value to convert \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Fast\+Rnd\+Dbl2\+Int32(), Fast\+Round2\+Int32(), and Fast\+Trunc2\+Int32().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_af0bbeabd87aa74be4ecca4f767aedc41_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a56cd923aeae2bd544f1fb43fff6b0b3d}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Round2\+Int32@{Fast\+Round2\+Int32}}
+\index{Fast\+Round2\+Int32@{Fast\+Round2\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Round2\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Fast\+Round2\+Int32 (
+\begin{DoxyParamCaption}
+\item[{float}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a56cd923aeae2bd544f1fb43fff6b0b3d}
+
+
+Round to Int32. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Val} & Value to convert \\
+\hline
+\end{DoxyParams}
+
+
+References Fast\+Round2\+Int32().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a56cd923aeae2bd544f1fb43fff6b0b3d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ae690c060a5ff4cb96e77335231a29673}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Rnd\+Dbl2\+Int32@{Fast\+Rnd\+Dbl2\+Int32}}
+\index{Fast\+Rnd\+Dbl2\+Int32@{Fast\+Rnd\+Dbl2\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Rnd\+Dbl2\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Fast\+Rnd\+Dbl2\+Int32 (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ae690c060a5ff4cb96e77335231a29673}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000019}{Deprecated}]\end{DoxyRefDesc}
+
+
+References Fast\+Round2\+Int32().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ae690c060a5ff4cb96e77335231a29673_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ad2b2872b49146cf0859c403fea702a39}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Trunc2\+Int32@{Fast\+Trunc2\+Int32}}
+\index{Fast\+Trunc2\+Int32@{Fast\+Trunc2\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Trunc2\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Fast\+Trunc2\+Int32 (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ad2b2872b49146cf0859c403fea702a39}
+
+
+Float to Int conversion with truncation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Val} & Value to convert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This truncation is N\+O\+T identical to C style casting. Because the Intel (and I would assume Power\+P\+C) processors use convergent rounding by default, exactly whole odd numbers will truncate down by 1.\+0 (e.\+g. 0.\+0-\/$>$0, 1.\+0-\/$>$0, 2.\+0-\/$>$2, 3.\+0-\/$>$2). Surprisingly, even with these limitations this fast float to int conversion is often very useful in practice, as long as one is aware of these issues. 
+\end{DoxyNote}
+
+
+References Fast\+Round2\+Int32().
+
+
+
+Referenced by A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::\+Do\+Table\+Lookup\+Extra\+Fast(), and A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::\+Do\+Table\+Lookup\+Extra\+Fast\+Multi().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ad2b2872b49146cf0859c403fea702a39_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ad2b2872b49146cf0859c403fea702a39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a9a8bc8a47f13b4cb1bb84e45bf43fe82}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Trunc2\+Int32@{Fast\+Trunc2\+Int32}}
+\index{Fast\+Trunc2\+Int32@{Fast\+Trunc2\+Int32}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Trunc2\+Int32}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Fast\+Trunc2\+Int32 (
+\begin{DoxyParamCaption}
+\item[{float}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a9a8bc8a47f13b4cb1bb84e45bf43fe82}
+
+
+Float to Int conversion with truncation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Val} & Value to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00288_a7df6b095ea2469f2adce2a895038212e}{}\index{A\+A\+X@{A\+A\+X}!Fast\+Round2\+Int64@{Fast\+Round2\+Int64}}
+\index{Fast\+Round2\+Int64@{Fast\+Round2\+Int64}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Fast\+Round2\+Int64}]{\setlength{\rightskip}{0pt plus 5cm}int64\+\_\+t A\+A\+X\+::\+Fast\+Round2\+Int64 (
+\begin{DoxyParamCaption}
+\item[{double}]{i\+Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a7df6b095ea2469f2adce2a895038212e}
+
+
+Round to Int64. 
+
+Taken from Paul V\textquotesingle{}s implementation in Sys\+\_\+\+Vec\+Utils. This only works on values smaller than 2$^\wedge$52.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Val} & Value to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00288_af3435129d3c94c5f3d5e671943b9bbe2}{}\index{A\+A\+X@{A\+A\+X}!Get\+Int32\+R\+P\+D\+F@{Get\+Int32\+R\+P\+D\+F}}
+\index{Get\+Int32\+R\+P\+D\+F@{Get\+Int32\+R\+P\+D\+F}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+Int32\+R\+P\+D\+F}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Get\+Int32\+R\+P\+D\+F (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_af3435129d3c94c5f3d5e671943b9bbe2}
+
+
+Referenced by Get\+R\+P\+D\+F\+With\+Amplitude\+One(), and Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_af3435129d3c94c5f3d5e671943b9bbe2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_ad12251899137d551b9f652b1ffee2f99}{}\index{A\+A\+X@{A\+A\+X}!Get\+Fast\+Int32\+R\+P\+D\+F@{Get\+Fast\+Int32\+R\+P\+D\+F}}
+\index{Get\+Fast\+Int32\+R\+P\+D\+F@{Get\+Fast\+Int32\+R\+P\+D\+F}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+Fast\+Int32\+R\+P\+D\+F}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+::\+Get\+Fast\+Int32\+R\+P\+D\+F (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_ad12251899137d551b9f652b1ffee2f99}
+
+
+C\+A\+L\+L\+: Calculate pseudo-\/random 32 bit number based on linear congruential method. 
+
+This is required if you want our master bypass functionality in the host to hook up to your bypass parameters.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Seed} & Seed for random generator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This method produces lower quality random numbers (i.\+e. less random) than plain old Get\+Int32\+R\+P\+D\+F, but in many cases it should be plenty good. 
+\end{DoxyNote}
+
+
+Referenced by Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One(), and Get\+T\+P\+D\+F\+With\+Amplitude\+One().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_ad12251899137d551b9f652b1ffee2f99_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a5a91375167236862abc93ad879639cab}{}\index{A\+A\+X@{A\+A\+X}!Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half@{Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half}}
+\index{Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half@{Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::\+Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a5a91375167236862abc93ad879639cab}
+
+
+References c\+Normalize\+Long\+To\+Amplitude\+One\+Half, and Get\+Int32\+R\+P\+D\+F().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a5a91375167236862abc93ad879639cab_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a51d7a263d9053276c6cef1dbd2018ebe}{}\index{A\+A\+X@{A\+A\+X}!Get\+R\+P\+D\+F\+With\+Amplitude\+One@{Get\+R\+P\+D\+F\+With\+Amplitude\+One}}
+\index{Get\+R\+P\+D\+F\+With\+Amplitude\+One@{Get\+R\+P\+D\+F\+With\+Amplitude\+One}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+R\+P\+D\+F\+With\+Amplitude\+One}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::\+Get\+R\+P\+D\+F\+With\+Amplitude\+One (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a51d7a263d9053276c6cef1dbd2018ebe}
+
+
+References c\+Normalize\+Long\+To\+Amplitude\+One, and Get\+Int32\+R\+P\+D\+F().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a51d7a263d9053276c6cef1dbd2018ebe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a145cc6d06cd682e2d234d07ce939760e}{}\index{A\+A\+X@{A\+A\+X}!Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One@{Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One}}
+\index{Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One@{Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::\+Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a145cc6d06cd682e2d234d07ce939760e}
+
+
+References c\+Normalize\+Long\+To\+Amplitude\+One, and Get\+Fast\+Int32\+R\+P\+D\+F().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a145cc6d06cd682e2d234d07ce939760e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00288_a42cc414ea1b868e26c591041a66ad8af}{}\index{A\+A\+X@{A\+A\+X}!Get\+T\+P\+D\+F\+With\+Amplitude\+One@{Get\+T\+P\+D\+F\+With\+Amplitude\+One}}
+\index{Get\+T\+P\+D\+F\+With\+Amplitude\+One@{Get\+T\+P\+D\+F\+With\+Amplitude\+One}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{Get\+T\+P\+D\+F\+With\+Amplitude\+One}]{\setlength{\rightskip}{0pt plus 5cm}float A\+A\+X\+::\+Get\+T\+P\+D\+F\+With\+Amplitude\+One (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{i\+Seed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00288_a42cc414ea1b868e26c591041a66ad8af}
+
+
+References c\+Normalize\+Long\+To\+Amplitude\+One, and Get\+Fast\+Int32\+R\+P\+D\+F().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00288_a42cc414ea1b868e26c591041a66ad8af_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{a00288_af4c24d9d2042fe4252db5431ef126d00}{}\index{A\+A\+X@{A\+A\+X}!c\+Big\+Endian@{c\+Big\+Endian}}
+\index{c\+Big\+Endian@{c\+Big\+Endian}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Big\+Endian}]{\setlength{\rightskip}{0pt plus 5cm}const int A\+A\+X\+::c\+Big\+Endian =0}\label{a00288_af4c24d9d2042fe4252db5431ef126d00}
+\hypertarget{a00288_af7fcadf3ad159bf29bbe5a1c494827f2}{}\index{A\+A\+X@{A\+A\+X}!c\+Little\+Endian@{c\+Little\+Endian}}
+\index{c\+Little\+Endian@{c\+Little\+Endian}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Little\+Endian}]{\setlength{\rightskip}{0pt plus 5cm}const int A\+A\+X\+::c\+Little\+Endian =1}\label{a00288_af7fcadf3ad159bf29bbe5a1c494827f2}
+\hypertarget{a00288_a8e084631426285b3771b32dd9bb0d1a0}{}\index{A\+A\+X@{A\+A\+X}!c\+Pi@{c\+Pi}}
+\index{c\+Pi@{c\+Pi}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Pi}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Pi = 3.\+1415926535897932384626433832795}\label{a00288_a8e084631426285b3771b32dd9bb0d1a0}
+\hypertarget{a00288_a13d2c593bc19660c60caf48961f16361}{}\index{A\+A\+X@{A\+A\+X}!c\+Two\+Pi@{c\+Two\+Pi}}
+\index{c\+Two\+Pi@{c\+Two\+Pi}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Two\+Pi}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Two\+Pi = 6.\+2831853071795862319959269370884}\label{a00288_a13d2c593bc19660c60caf48961f16361}
+\hypertarget{a00288_a5496b80979f89206ab4966721ef09e07}{}\index{A\+A\+X@{A\+A\+X}!c\+Half\+Pi@{c\+Half\+Pi}}
+\index{c\+Half\+Pi@{c\+Half\+Pi}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Half\+Pi}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Half\+Pi = 1.\+5707963267948965579989817342721}\label{a00288_a5496b80979f89206ab4966721ef09e07}
+
+
+Referenced by Sin\+Cos\+Mix().
+
+\hypertarget{a00288_ad4d53f57051266ed14dc1632e95cb04e}{}\index{A\+A\+X@{A\+A\+X}!c\+Quarter\+Pi@{c\+Quarter\+Pi}}
+\index{c\+Quarter\+Pi@{c\+Quarter\+Pi}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Quarter\+Pi}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Quarter\+Pi = 0.\+78539816339744827899949086713605}\label{a00288_ad4d53f57051266ed14dc1632e95cb04e}
+\hypertarget{a00288_af5ff0caa18f36334fd5c52e97f4a0cad}{}\index{A\+A\+X@{A\+A\+X}!c\+Root\+Two@{c\+Root\+Two}}
+\index{c\+Root\+Two@{c\+Root\+Two}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Root\+Two}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Root\+Two = 1.\+4142135623730950488016887242097}\label{a00288_af5ff0caa18f36334fd5c52e97f4a0cad}
+\hypertarget{a00288_a0ae4975165aaf788ed120dbdd82a3cd7}{}\index{A\+A\+X@{A\+A\+X}!c\+One\+Over\+Root\+Two@{c\+One\+Over\+Root\+Two}}
+\index{c\+One\+Over\+Root\+Two@{c\+One\+Over\+Root\+Two}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+One\+Over\+Root\+Two}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+One\+Over\+Root\+Two = 0.\+70710678118654752440084436210485}\label{a00288_a0ae4975165aaf788ed120dbdd82a3cd7}
+\hypertarget{a00288_ad25c51177cb216caae3b4747b028d8ba}{}\index{A\+A\+X@{A\+A\+X}!c\+Pos3d\+B@{c\+Pos3d\+B}}
+\index{c\+Pos3d\+B@{c\+Pos3d\+B}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Pos3d\+B}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Pos3d\+B =1.\+4142135623730950488016887242097}\label{a00288_ad25c51177cb216caae3b4747b028d8ba}
+\hypertarget{a00288_af6f212fd5bb0df08db615fffe4445a3d}{}\index{A\+A\+X@{A\+A\+X}!c\+Neg3d\+B@{c\+Neg3d\+B}}
+\index{c\+Neg3d\+B@{c\+Neg3d\+B}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Neg3d\+B}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Neg3d\+B =0.\+70710678118654752440084436210485}\label{a00288_af6f212fd5bb0df08db615fffe4445a3d}
+\hypertarget{a00288_aade00875e4e88b00d991197f574c42ed}{}\index{A\+A\+X@{A\+A\+X}!c\+Pos6d\+B@{c\+Pos6d\+B}}
+\index{c\+Pos6d\+B@{c\+Pos6d\+B}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Pos6d\+B}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Pos6d\+B =2.\+0}\label{a00288_aade00875e4e88b00d991197f574c42ed}
+\hypertarget{a00288_aca5925abc898233b406504d92ee9ef4c}{}\index{A\+A\+X@{A\+A\+X}!c\+Neg6d\+B@{c\+Neg6d\+B}}
+\index{c\+Neg6d\+B@{c\+Neg6d\+B}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Neg6d\+B}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Neg6d\+B =0.\+5}\label{a00288_aca5925abc898233b406504d92ee9ef4c}
+\hypertarget{a00288_a93ce2d3935dc06b1c4c887568df84788}{}\index{A\+A\+X@{A\+A\+X}!c\+Normalize\+Long\+To\+Amplitude\+One\+Half@{c\+Normalize\+Long\+To\+Amplitude\+One\+Half}}
+\index{c\+Normalize\+Long\+To\+Amplitude\+One\+Half@{c\+Normalize\+Long\+To\+Amplitude\+One\+Half}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Normalize\+Long\+To\+Amplitude\+One\+Half}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Normalize\+Long\+To\+Amplitude\+One\+Half = 0.\+00000000023283064365386962890625}\label{a00288_a93ce2d3935dc06b1c4c887568df84788}
+
+
+Referenced by Get\+R\+P\+D\+F\+With\+Amplitude\+One\+Half().
+
+\hypertarget{a00288_ad30333177ff94148492a02325045a827}{}\index{A\+A\+X@{A\+A\+X}!c\+Normalize\+Long\+To\+Amplitude\+One@{c\+Normalize\+Long\+To\+Amplitude\+One}}
+\index{c\+Normalize\+Long\+To\+Amplitude\+One@{c\+Normalize\+Long\+To\+Amplitude\+One}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Normalize\+Long\+To\+Amplitude\+One}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Normalize\+Long\+To\+Amplitude\+One = 1.\+0/double(1$<$$<$31)}\label{a00288_ad30333177ff94148492a02325045a827}
+
+
+Referenced by Get\+Fast\+R\+P\+D\+F\+With\+Amplitude\+One(), Get\+R\+P\+D\+F\+With\+Amplitude\+One(), and Get\+T\+P\+D\+F\+With\+Amplitude\+One().
+
+\hypertarget{a00288_a1b66f305f76b3f27b75c275c805c3d9b}{}\index{A\+A\+X@{A\+A\+X}!c\+Milli@{c\+Milli}}
+\index{c\+Milli@{c\+Milli}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Milli}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Milli =0.\+001}\label{a00288_a1b66f305f76b3f27b75c275c805c3d9b}
+\hypertarget{a00288_a661c2b5af007244eb8ffcefdae2608d0}{}\index{A\+A\+X@{A\+A\+X}!c\+Micro@{c\+Micro}}
+\index{c\+Micro@{c\+Micro}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Micro}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Micro =0.\+001$\ast$0.\+001}\label{a00288_a661c2b5af007244eb8ffcefdae2608d0}
+\hypertarget{a00288_a3227cf335c40f4afcc72efd8f774ac92}{}\index{A\+A\+X@{A\+A\+X}!c\+Nano@{c\+Nano}}
+\index{c\+Nano@{c\+Nano}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Nano}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Nano =0.\+001$\ast$0.\+001$\ast$0.\+001}\label{a00288_a3227cf335c40f4afcc72efd8f774ac92}
+\hypertarget{a00288_a480023c4a430fed889626b81c66d7589}{}\index{A\+A\+X@{A\+A\+X}!c\+Pico@{c\+Pico}}
+\index{c\+Pico@{c\+Pico}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Pico}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Pico =0.\+001$\ast$0.\+001$\ast$0.\+001$\ast$0.\+001}\label{a00288_a480023c4a430fed889626b81c66d7589}
+\hypertarget{a00288_aa151b1429ed5eabb4000d1b13e47a5c2}{}\index{A\+A\+X@{A\+A\+X}!c\+Kilo@{c\+Kilo}}
+\index{c\+Kilo@{c\+Kilo}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Kilo}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Kilo =1000.\+0}\label{a00288_aa151b1429ed5eabb4000d1b13e47a5c2}
+\hypertarget{a00288_ad20650c749492b31ef48b41ac84f57e9}{}\index{A\+A\+X@{A\+A\+X}!c\+Mega@{c\+Mega}}
+\index{c\+Mega@{c\+Mega}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Mega}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Mega =1000.\+0$\ast$1000.\+0}\label{a00288_ad20650c749492b31ef48b41ac84f57e9}
+\hypertarget{a00288_ae5910a5df81de70f784c2fd073f70422}{}\index{A\+A\+X@{A\+A\+X}!c\+Giga@{c\+Giga}}
+\index{c\+Giga@{c\+Giga}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Giga}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Giga =1000.\+0$\ast$1000.\+0$\ast$1000.\+0}\label{a00288_ae5910a5df81de70f784c2fd073f70422}
+\hypertarget{a00288_a5c2e1bff2891a4b11252759e152cf520}{}\index{A\+A\+X@{A\+A\+X}!c\+Denormal\+Avoidance\+Offset@{c\+Denormal\+Avoidance\+Offset}}
+\index{c\+Denormal\+Avoidance\+Offset@{c\+Denormal\+Avoidance\+Offset}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Denormal\+Avoidance\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}const double A\+A\+X\+::c\+Denormal\+Avoidance\+Offset =3.\+0e-\/34}\label{a00288_a5c2e1bff2891a4b11252759e152cf520}
+\hypertarget{a00288_ae3a66eee97cfe006ffbf11f901ddd286}{}\index{A\+A\+X@{A\+A\+X}!c\+Float\+Denormal\+Avoidance\+Offset@{c\+Float\+Denormal\+Avoidance\+Offset}}
+\index{c\+Float\+Denormal\+Avoidance\+Offset@{c\+Float\+Denormal\+Avoidance\+Offset}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Float\+Denormal\+Avoidance\+Offset}]{\setlength{\rightskip}{0pt plus 5cm}const float A\+A\+X\+::c\+Float\+Denormal\+Avoidance\+Offset =3.\+0e-\/20f}\label{a00288_ae3a66eee97cfe006ffbf11f901ddd286}
+\hypertarget{a00288_a4e6fcac015bb083018e8897563966cf6}{}\index{A\+A\+X@{A\+A\+X}!k\+Pow\+Extent@{k\+Pow\+Extent}}
+\index{k\+Pow\+Extent@{k\+Pow\+Extent}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{k\+Pow\+Extent}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int A\+A\+X\+::k\+Pow\+Extent = 9}\label{a00288_a4e6fcac015bb083018e8897563966cf6}
+\hypertarget{a00288_a59f1ab59ea51ed94f87e8d935870df9e}{}\index{A\+A\+X@{A\+A\+X}!k\+Pow\+Table\+Size@{k\+Pow\+Table\+Size}}
+\index{k\+Pow\+Table\+Size@{k\+Pow\+Table\+Size}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{k\+Pow\+Table\+Size}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int A\+A\+X\+::k\+Pow\+Table\+Size = 1 $<$$<$ {\bf k\+Pow\+Extent}}\label{a00288_a59f1ab59ea51ed94f87e8d935870df9e}
+\hypertarget{a00288_a0c975151f0d47cc80eef9ff5a7c80125}{}\index{A\+A\+X@{A\+A\+X}!c\+Seed\+Divisor@{c\+Seed\+Divisor}}
+\index{c\+Seed\+Divisor@{c\+Seed\+Divisor}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Seed\+Divisor}]{\setlength{\rightskip}{0pt plus 5cm}const float A\+A\+X\+::c\+Seed\+Divisor = 1/127773.\+0f}\label{a00288_a0c975151f0d47cc80eef9ff5a7c80125}
+\hypertarget{a00288_a143d659ccb62ae0807e9902e751b14cf}{}\index{A\+A\+X@{A\+A\+X}!c\+Initial\+Seed\+Value@{c\+Initial\+Seed\+Value}}
+\index{c\+Initial\+Seed\+Value@{c\+Initial\+Seed\+Value}!A\+A\+X@{A\+A\+X}}
+\subsubsection[{c\+Initial\+Seed\+Value}]{\setlength{\rightskip}{0pt plus 5cm}const int32\+\_\+t A\+A\+X\+::c\+Initial\+Seed\+Value =0x00\+F54321}\label{a00288_a143d659ccb62ae0807e9902e751b14cf}

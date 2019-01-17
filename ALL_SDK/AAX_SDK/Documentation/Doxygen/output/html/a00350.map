@@ -1,0 +1,8 @@
+<map id="Parameter updates" name="Parameter updates">
+<area shape="rect" id="node1" href="$a00353.html" title="Sequence diagrams for some common parameter update scenarios. " alt="" coords="365,5,529,47"/>
+<area shape="rect" id="node3" href="$a00351.html" title="Details about parameter timing and how to keep parameter updates in sync. " alt="" coords="363,71,531,98"/>
+<area shape="rect" id="node4" href="$a00354.html" title="How to link parameters. " alt="" coords="381,122,513,149"/>
+<area shape="rect" id="node6" href="$a00352.html" title="Communicating parameter state with the host. " alt="" coords="391,173,502,199"/>
+<area shape="rect" id="node7" href="$a00355.html" title="Sequence diagrams for some common linked parameter update scenarios. " alt="" coords="361,224,532,265"/>
+<area shape="rect" id="node5" href="$a00348.html" title="Additional information about the AAX design. " alt="" coords="5,122,129,149"/>
+</map>

@@ -1,0 +1,202 @@
+\hypertarget{a00013}{}\section{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$ Class Template Reference}
+\label{a00013}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{a00399}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{a00400}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T$>$class A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate$<$ T $>$}
+
+A binary taper conforming to \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate}. 
+
+This taper maps positive real values to 1 and negative or zero real values to 0. This is the standard taper used on all bool parameters.
+
+When this taper is constructed with a bool template type, its normalized values are automatically typecast to the proper boolean value. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00013_aae24e1f477f843ddb351838931a3e6b5}{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate} ()
+\begin{DoxyCompactList}\small\item\em Constructs a Binary Taper. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate}$<$ T $>$ $\ast$ \hyperlink{a00013_a433b33f4b290fe03846b2044014ae994}{Clone} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the taper delegate. \end{DoxyCompactList}\item 
+virtual T \hyperlink{a00013_a1abc18860a0c404676c52d8d1d8b7724}{Get\+Maximum\+Value} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Returns the taper\textquotesingle{}s maximum real value. \end{DoxyCompactList}\item 
+virtual T \hyperlink{a00013_af4c360e6bef8fc945d838715c5f965c7}{Get\+Minimum\+Value} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Returns the taper\textquotesingle{}s minimum real value. \end{DoxyCompactList}\item 
+virtual T \hyperlink{a00013_a91622c9c4cfaaf3b08e39095a26d182a}{Constrain\+Real\+Value} (T value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Applies a contraint to the value and returns the constrained value. \end{DoxyCompactList}\item 
+virtual T \hyperlink{a00013_ac50e2d93aeacf6a0293eb0098c8258ba}{Normalized\+To\+Real} (double normalized\+Value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a normalized value to a real value. \end{DoxyCompactList}\item 
+virtual double \hyperlink{a00013_aa27dfc33b38aef729c4cd499d90317a1}{Real\+To\+Normalized} (T real\+Value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Normalizes a real parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00013_aae24e1f477f843ddb351838931a3e6b5}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::{\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{a00013_aae24e1f477f843ddb351838931a3e6b5}
+
+
+Constructs a Binary Taper. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00013_a433b33f4b290fe03846b2044014ae994}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+I\+Taper\+Delegate}$<$ T $>$ $\ast$ {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_a433b33f4b290fe03846b2044014ae994}
+
+
+Constructs and returns a copy of the taper delegate. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+AAX\_CSubclassTaperDelegate<T>*  AAX\_CSubclassTaperDelegate<T>::Clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassTaperDelegate(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+ 
+
+Implements \hyperlink{a00114_a80ce054ca716147155fe0682adf4e469}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+\hypertarget{a00013_a1abc18860a0c404676c52d8d1d8b7724}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Get\+Maximum\+Value@{Get\+Maximum\+Value}}
+\index{Get\+Maximum\+Value@{Get\+Maximum\+Value}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Get\+Maximum\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Get\+Maximum\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_a1abc18860a0c404676c52d8d1d8b7724}
+
+
+Returns the taper\textquotesingle{}s maximum real value. 
+
+
+
+Implements \hyperlink{a00114_a9b14f7d73d614b6c012ed03fadb9f0eb}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+\hypertarget{a00013_af4c360e6bef8fc945d838715c5f965c7}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Get\+Minimum\+Value@{Get\+Minimum\+Value}}
+\index{Get\+Minimum\+Value@{Get\+Minimum\+Value}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Get\+Minimum\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Get\+Minimum\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_af4c360e6bef8fc945d838715c5f965c7}
+
+
+Returns the taper\textquotesingle{}s minimum real value. 
+
+
+
+Implements \hyperlink{a00114_ac51bda25adc6f4ce320c0dd41fa332c7}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+\hypertarget{a00013_a91622c9c4cfaaf3b08e39095a26d182a}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Constrain\+Real\+Value@{Constrain\+Real\+Value}}
+\index{Constrain\+Real\+Value@{Constrain\+Real\+Value}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Constrain\+Real\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Constrain\+Real\+Value (
+\begin{DoxyParamCaption}
+\item[{T}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_a91622c9c4cfaaf3b08e39095a26d182a}
+
+
+Applies a contraint to the value and returns the constrained value. 
+
+This method is useful if the taper requires a contraint beyond simple minimum and maximum real value limits.
+
+\begin{DoxyNote}{Note}
+This is the function that should actually enforces the constraints in Normalize\+To\+Real() and \hyperlink{a00013_aa27dfc33b38aef729c4cd499d90317a1}{Real\+To\+Normalized()}.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The unconstrained value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00114_a1de7acdc2b3e114b6686bf845c2465f1}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+\hypertarget{a00013_ac50e2d93aeacf6a0293eb0098c8258ba}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Normalized\+To\+Real@{Normalized\+To\+Real}}
+\index{Normalized\+To\+Real@{Normalized\+To\+Real}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Normalized\+To\+Real}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Normalized\+To\+Real (
+\begin{DoxyParamCaption}
+\item[{double}]{normalized\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_ac50e2d93aeacf6a0293eb0098c8258ba}
+
+
+Converts a normalized value to a real value. 
+
+This is where the actual taper algorithm is implemented.
+
+This function should perform the exact inverse of \hyperlink{a00013_aa27dfc33b38aef729c4cd499d90317a1}{Real\+To\+Normalized()}, to within the roundoff precision of the individual taper implementation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em normalized\+Value} & The normalized value that will be converted \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00114_a0aea0765b42855205bfab84673a2de33}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+\hypertarget{a00013_aa27dfc33b38aef729c4cd499d90317a1}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}!Real\+To\+Normalized@{Real\+To\+Normalized}}
+\index{Real\+To\+Normalized@{Real\+To\+Normalized}!A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}}
+\subsubsection[{Real\+To\+Normalized}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ double {\bf A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate}$<$ T $>$\+::Real\+To\+Normalized (
+\begin{DoxyParamCaption}
+\item[{T}]{real\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00013_aa27dfc33b38aef729c4cd499d90317a1}
+
+
+Normalizes a real parameter value. 
+
+This is where the actual taper algorithm is implemented.
+
+This function should perform the exact inverse of \hyperlink{a00013_ac50e2d93aeacf6a0293eb0098c8258ba}{Normalized\+To\+Real()}, to within the roundoff precision of the individual taper implementation.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em real\+Value} & The real parameter value that will be normalized \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{a00114_ab017fe7e1c1dcf6191f8b4e8b09f8add}{A\+A\+X\+\_\+\+I\+Taper\+Delegate$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00167}{A\+A\+X\+\_\+\+C\+Binary\+Taper\+Delegate.\+h}\end{DoxyCompactItemize}

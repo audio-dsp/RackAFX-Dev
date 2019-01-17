@@ -1,0 +1,303 @@
+\hypertarget{a00158}{}\section{A\+A\+X\+\_\+\+Assert.\+h File Reference}
+\label{a00158}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Enums.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+C\+Host\+Services.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Declarations for cross-\/platform A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T, A\+A\+X\+\_\+\+T\+R\+A\+C\+E and related facilities. 
+
+
+\begin{DoxyItemize}
+\item \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T( condition )} -\/ If the condition is {\ttfamily false} triggers some manner of warning, e.\+g. a dialog in a developer build or a Digi\+Trace log in a shipping build. May be used on host or T\+I.
+\item \hyperlink{a00158_aa0253bd2994036fcfd6629ecf465d543}{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T( condition )} -\/ Variant of \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T} which is only active in debug builds of the plug-\/in.
+\item \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}( i\+Priority, i\+Message\+Str \mbox{[},params...\mbox{]} ) -\/ Traces a printf-\/ style message to the Digi\+Trace log file. Enabled using the {\ttfamily D\+T\+F\+\_\+\+A\+A\+X\+P\+L\+U\+G\+I\+N\+S} Digi\+Trace facility.
+\item \hyperlink{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E}( i\+Priority, i\+Message\+Str \mbox{[}, params...\mbox{]} ) -\/ Variant of \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} which only emits logs in debug builds of the plug-\/in.
+\item \hyperlink{a00158_a51f7dcc4ce960ab8855ec97f031a1463}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}( i\+Priority, i\+Message\+Str \mbox{[},params...\mbox{]} ) -\/ Similar to \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} but prints a stack trace as well as a log message
+\item \hyperlink{a00158_ae871829dd7297e4a5ae6c7094f6b5398}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}( i\+Priority, i\+Message\+Str \mbox{[},params...\mbox{]} ) -\/ Variant of \hyperlink{a00158_a51f7dcc4ce960ab8855ec97f031a1463}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} which only emits logs in debug builds of the plug-\/in.
+\item \hyperlink{a00158_a74f610a8e4359a5fc3eae89be3eb3a4b}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}( i\+Trace\+Priority, i\+Stack\+Trace\+Priority, i\+Message\+Str \mbox{[},params...\mbox{]} ) -\/ Combination of \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} and \hyperlink{a00158_a51f7dcc4ce960ab8855ec97f031a1463}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}; a stack trace is emitted if logging is enabled at {\ttfamily i\+Stack\+Trace\+Priority}. Otherwise, if logging is enabled at {\ttfamily i\+Trace\+Priority} then emits a log.
+\end{DoxyItemize}
+
+For all trace macros\+:
+
+{\ttfamily in\+Priority} is one of \begin{DoxyItemize}
+\item \hyperlink{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low} \item \hyperlink{a00158_a8a6953f26f36747357d5d95f96dcf68d}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal} \item \hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High}\end{DoxyItemize}
+These correspond to how the trace messages are filtered using \hyperlink{a00364}{Digi\+Trace}.
+
+\begin{DoxyNote}{Note}
+Disabling the {\ttfamily D\+T\+F\+\_\+\+A\+A\+X\+P\+L\+U\+G\+I\+N\+S} facility will slightly reduce the overhead of trace statements and chip communication on H\+D\+X systems.
+\end{DoxyNote}
+============================================================================== \subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00158_a262e3b6568764baa53f893d9dc6bbc23}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None}~\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1ba906b1198b124fa17cd5821cbb140a63f}{A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+None}
+\item 
+\#define \hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High}~\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1baac76cc64a1379931edbc2bdc0f8aad66}{A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+High}
+\item 
+\#define \hyperlink{a00158_a8a6953f26f36747357d5d95f96dcf68d}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}~\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1ba327226d6962ad7f297506697c2001ce0}{A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Normal}
+\item 
+\#define \hyperlink{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}~\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1ba78edfc70bf7ba33fc5277e4146498c17}{A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Low}
+\item 
+\#define \hyperlink{a00158_a68d0297c90a8d294e19ea781f8cda96a}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest}~\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1baf101af483c232de54b31eba274a07c4c}{A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Lowest}
+\item 
+\#define \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}(i\+Priority, ...)
+\begin{DoxyCompactList}\small\item\em Print a trace statement to the log. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_a51f7dcc4ce960ab8855ec97f031a1463}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}(i\+Priority, ...)
+\begin{DoxyCompactList}\small\item\em Print a stack trace statement to the log. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_a74f610a8e4359a5fc3eae89be3eb3a4b}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}(i\+Trace\+Priority,  i\+Stack\+Trace\+Priority, ...)
+\begin{DoxyCompactList}\small\item\em Print a trace statement with an optional stack trace to the log. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T}(condition)
+\begin{DoxyCompactList}\small\item\em Asserts that a condition is true and logs an error if the condition is false. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_aa0253bd2994036fcfd6629ecf465d543}{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T}(condition)~do \{ ; \} while (0)
+\begin{DoxyCompactList}\small\item\em Asserts that a condition is true and logs an error if the condition is false (debug plug-\/in builds only) \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E}(i\+Priority, ...)~do \{ ; \} while (0)
+\begin{DoxyCompactList}\small\item\em Print a trace statement to the log (debug plug-\/in builds only) \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_ae871829dd7297e4a5ae6c7094f6b5398}{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}(i\+Priority, ...)~do \{ ; \} while (0)
+\begin{DoxyCompactList}\small\item\em Print a stack trace statement to the log (debug builds only) \end{DoxyCompactList}\item 
+\#define \hyperlink{a00158_a96862f9cb28b6a49eb5dbd6da9975ed1}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}(i\+Trace\+Priority,  i\+Stack\+Trace\+Priority, ...)~do \{ ; \} while (0)
+\begin{DoxyCompactList}\small\item\em Print a trace statement with an optional stack trace to the log (debug builds only) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host} \hyperlink{a00158_a28ae6ea1f243f005a891c5c77a5a5211}{A\+A\+X\+\_\+\+E\+Trace\+Priority}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00158_a262e3b6568764baa53f893d9dc6bbc23}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None}}
+\index{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+None~{\bf A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+None}}\label{a00158_a262e3b6568764baa53f893d9dc6bbc23}
+\hypertarget{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High}}
+\index{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High~{\bf A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+High}}\label{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}
+\hypertarget{a00158_a8a6953f26f36747357d5d95f96dcf68d}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}}
+\index{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal~{\bf A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Normal}}\label{a00158_a8a6953f26f36747357d5d95f96dcf68d}
+\hypertarget{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}}
+\index{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low~{\bf A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Low}}\label{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}
+\hypertarget{a00158_a68d0297c90a8d294e19ea781f8cda96a}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest}}
+\index{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest@{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest}]{\setlength{\rightskip}{0pt plus 5cm}\#define k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Lowest~{\bf A\+A\+X\+\_\+e\+Trace\+Priority\+Host\+\_\+\+Lowest}}\label{a00158_a68d0297c90a8d294e19ea781f8cda96a}
+\hypertarget{a00158_ac2aa820ece56bb59140ad561218db4b3}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}}
+\index{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00158_ac2aa820ece56bb59140ad561218db4b3}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \hyperlink{a00021_ad724c59469bd8a08fee0816539a08997}{\(\backslash\)}
+\hyperlink{a00021_ad724c59469bd8a08fee0816539a08997}{            AAX\_CHostServices::Trace} ( iPriority, \_\_VA\_ARGS\_\_ ); \(\backslash\)
+        \};
+\end{DoxyCode}
+
+
+Print a trace statement to the log. 
+
+Use this macro to print a trace statement to the log file. This macro will be included in all builds of the plug-\/in.
+
+{\bfseries Notes }
+\begin{DoxyItemize}
+\item This macro is compatible with bost host and embedded (\hyperlink{a00288}{A\+A\+X} D\+S\+P) environments
+\item Subject to a total line limit of 256 chars
+\end{DoxyItemize}
+
+{\bfseries Usage } Each invocation of this macro takes a trace priority and a {\ttfamily printf}-\/style logging string.
+
+Because output from this macro will be enabled on end users\textquotesingle{} systems under certain tracing configurations, logs should always be formatted with some standard information to avoid confusion between logs from different plug-\/ins. This is the recommended formatting for A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E logs\+:
+
+{\ttfamily \mbox{[}Manufacturer name\mbox{]} \mbox{[}Plug-\/in name\mbox{]} \mbox{[}Plug-\/in version\mbox{]}\mbox{[}logging text (indented)\mbox{]} }
+
+For example\+:
+
+
+\begin{DoxyCode}
+1 AAX\_TRACE\_RELEASE(kAAX\_Trace\_Priority\_Normal, "%s %s %s;\(\backslash\)tMy float: %f, My C-string: %s",
+2     "MyCompany", "MyPlugIn", "1.0.2", myFloat, myCString);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00364}{Digi\+Trace Guide} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_a51f7dcc4ce960ab8855ec97f031a1463}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}}
+\index{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00158_a51f7dcc4ce960ab8855ec97f031a1463}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \hyperlink{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{\(\backslash\)}
+\hyperlink{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{            AAX\_CHostServices::StackTrace} ( iPriority, iPriority, 
+      \_\_VA\_ARGS\_\_ ); \(\backslash\)
+        \};
+\end{DoxyCode}
+
+
+Print a stack trace statement to the log. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_a74f610a8e4359a5fc3eae89be3eb3a4b}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}}
+\index{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Trace\+Priority, }
+\item[{}]{i\+Stack\+Trace\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00158_a74f610a8e4359a5fc3eae89be3eb3a4b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \hyperlink{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{\(\backslash\)}
+\hyperlink{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{            AAX\_CHostServices::StackTrace} ( iTracePriority, 
+      iStackTracePriority, \_\_VA\_ARGS\_\_ ); \(\backslash\)
+        \};
+\end{DoxyCode}
+
+
+Print a trace statement with an optional stack trace to the log. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Trace\+Priority} & The log priority at which the trace statement will be printed \\
+\hline
+\mbox{\tt in}  & {\em i\+Stack\+Trace\+Priority} & The log priority at which the stack trace will be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_a168ee44fd7a5485ab50160db36fb2988}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T@{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T}}
+\index{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T@{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)}\label{a00158_a168ee44fd7a5485ab50160db36fb2988}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{ \(\backslash\)
+                if( ! ( condition ) ) \{ \hyperlink{a00021_a17f333ba14d681bc84309b8a5632e6a4}{\(\backslash\)}
+\hyperlink{a00021_a17f333ba14d681bc84309b8a5632e6a4}{                    AAX\_CHostServices::HandleAssertFailure}( 
+      \_\_FILE\_\_, \_\_LINE\_\_, #condition, (int32\_t)\hyperlink{a00206_ab87a565fcd58c3d860d50a210b264985a1c2b5df0614f69507692c604a83e76f4}{AAX\_eAssertFlags\_Log} ); \(\backslash\)
+                \} \(\backslash\)
+            \};
+\end{DoxyCode}
+
+
+Asserts that a condition is true and logs an error if the condition is false. 
+
+{\bfseries Notes }
+\begin{DoxyItemize}
+\item This macro will be compiled out of release builds.
+\item This macro is compatible with bost host and embedded (\hyperlink{a00288}{A\+A\+X} D\+S\+P) environments.
+\end{DoxyItemize}
+
+{\bfseries Usage } Each invocation of this macro takes a single argument, which is interpreted as a {\ttfamily bool}.
+
+
+\begin{DoxyCode}
+1 AAX\_ASSERT(desiredValue == variableUnderTest);
+\end{DoxyCode}
+ 
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Add\+Synchronized\+Parameter(), A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Generate\+Coefficients(), A\+A\+X\+::\+Get\+C\+String\+Of\+Length(), A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Reset\+Field\+Data(), A\+A\+X\+\_\+\+C\+Parameter$<$ T $>$\+::\+Set\+Number\+Of\+Steps(), A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe(), A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Render\+Audio(), and A\+A\+X\+::\+String2\+Binary().
+
+\hypertarget{a00158_aa0253bd2994036fcfd6629ecf465d543}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T@{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T}}
+\index{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T@{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+B\+U\+G\+A\+S\+S\+E\+R\+T(
+\begin{DoxyParamCaption}
+\item[{}]{condition}
+\end{DoxyParamCaption}
+)~do \{ ; \} while (0)}\label{a00158_aa0253bd2994036fcfd6629ecf465d543}
+
+
+Asserts that a condition is true and logs an error if the condition is false (debug plug-\/in builds only) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{A\+A\+X\+\_\+\+A\+S\+S\+E\+R\+T} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E}}
+\index{A\+A\+X\+\_\+\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+T\+R\+A\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+T\+R\+A\+C\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do \{ ; \} while (0)}\label{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}
+
+
+Print a trace statement to the log (debug plug-\/in builds only) 
+
+Use this macro to print a trace statement to the log file from debug builds of a plug-\/in.
+
+{\bfseries Notes }
+\begin{DoxyItemize}
+\item This macro will be compiled out of release builds
+\item This macro is compatible with bost host and embedded (\hyperlink{a00288}{A\+A\+X} D\+S\+P) environments
+\item Subject to a total line limit of 256 chars
+\end{DoxyItemize}
+
+{\bfseries Usage } Each invocation of this macro takes a trace priority and a {\ttfamily printf}-\/style logging string. For example\+:
+
+
+\begin{DoxyCode}
+1 AAX\_TRACE(kAAX\_Trace\_Priority\_Normal, "My float: %f, My C-string: %s", myFloat, myCString);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00364}{Digi\+Trace Guide} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_ae871829dd7297e4a5ae6c7094f6b5398}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}}
+\index{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do \{ ; \} while (0)}\label{a00158_ae871829dd7297e4a5ae6c7094f6b5398}
+
+
+Print a stack trace statement to the log (debug builds only) 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E} 
+\end{DoxySeeAlso}
+\hypertarget{a00158_a96862f9cb28b6a49eb5dbd6da9975ed1}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}}
+\index{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E@{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+O\+R\+S\+T\+A\+C\+K\+T\+R\+A\+C\+E(
+\begin{DoxyParamCaption}
+\item[{}]{i\+Trace\+Priority, }
+\item[{}]{i\+Stack\+Trace\+Priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~do \{ ; \} while (0)}\label{a00158_a96862f9cb28b6a49eb5dbd6da9975ed1}
+
+
+Print a trace statement with an optional stack trace to the log (debug builds only) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Trace\+Priority} & The log priority at which the trace statement will be printed \\
+\hline
+\mbox{\tt in}  & {\em i\+Stack\+Trace\+Priority} & The log priority at which the stack trace will be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00158_ab53f1d6a94f8b6ebb3a101f71bfe4e82}{A\+A\+X\+\_\+\+T\+R\+A\+C\+E} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00158_a28ae6ea1f243f005a891c5c77a5a5211}{}\index{A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}!A\+A\+X\+\_\+\+E\+Trace\+Priority@{A\+A\+X\+\_\+\+E\+Trace\+Priority}}
+\index{A\+A\+X\+\_\+\+E\+Trace\+Priority@{A\+A\+X\+\_\+\+E\+Trace\+Priority}!A\+A\+X\+\_\+\+Assert.\+h@{A\+A\+X\+\_\+\+Assert.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+E\+Trace\+Priority}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host} {\bf A\+A\+X\+\_\+\+E\+Trace\+Priority}}\label{a00158_a28ae6ea1f243f005a891c5c77a5a5211}

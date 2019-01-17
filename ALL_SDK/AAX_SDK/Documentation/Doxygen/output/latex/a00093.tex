@@ -1,0 +1,55 @@
+\hypertarget{a00093}{}\section{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base Class Reference}
+\label{a00093}\index{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Display\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00616}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Defines the display behavior for a parameter. 
+
+This interface represents a delegate class to be used in conjunction with \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter}. \hyperlink{a00108}{A\+A\+X\+\_\+\+I\+Parameter} delegates all conversion operations between strings and real parameter values to classes that meet this interface. You can think of \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate} subclasses as simple string serialization routines that enable a specific string conversions for an arbitrary parameter.
+
+For more information about how parameter delegates operate, see the \hyperlink{a00114}{A\+A\+X\+\_\+\+I\+Taper\+Delegate} and \hyperlink{a00344}{Parameter Manager} documentation.
+
+\begin{DoxyNote}{Note}
+This class is {\itshape not} part of the A\+A\+X A\+B\+I and must not be passed between the plug-\/in and the host. 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00093_a0fdaa922b4356fb4a246053bb441a840}{$\sim$\+A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00093_a0fdaa922b4356fb4a246053bb441a840}{}\index{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}!````~A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base@{$\sim$\+A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}}
+\index{````~A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base@{$\sim$\+A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}!A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base@{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base\+::$\sim$\+A\+A\+X\+\_\+\+I\+Display\+Delegate\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00093_a0fdaa922b4356fb4a246053bb441a840}
+
+
+Virtual destructor. 
+
+\begin{DoxyNote}{Note}
+This destructor M\+U\+S\+T be virtual to prevent memory leaks. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00241}{A\+A\+X\+\_\+\+I\+Display\+Delegate.\+h}\end{DoxyCompactItemize}

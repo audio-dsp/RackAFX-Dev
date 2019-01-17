@@ -1,0 +1,79 @@
+\hypertarget{a00270}{}\section{A\+A\+X\+\_\+\+M\+I\+D\+I\+Utilities.\+h File Reference}
+\label{a00270}\index{A\+A\+X\+\_\+\+M\+I\+D\+I\+Utilities.\+h@{A\+A\+X\+\_\+\+M\+I\+D\+I\+Utilities.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Utilities for managing M\+I\+D\+I data. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30}{A\+A\+X\+::\+E\+Status\+Nibble} \{ \\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a879656d38da19be8e39951bb7037fdf6}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Note\+Off} = 0x80, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab269085f7106b0ba07ffaab0b7e6a713}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Note\+On} = 0x90, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ac58c4a1d24d65b2aa83dd8958ab5c79f}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Key\+Pressure} = 0x\+A0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30aad9f788bf727d8a2e29ed267f0c63c54}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Control\+Change} = 0x\+B0, 
+\\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30acfa2f6c1f419ab8f84b18305cd182c05}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Channel\+Mode} = 0x\+B0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30af1211ef53c1f40ee06aff0a624b42d2f}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Program\+Change} = 0x\+C0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a2f3c65a49b997078c50d7210a775f06c}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Channel\+Pressure} = 0x\+D0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a508ff1dbd19ad390f85611922fc81433}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+Pitch\+Bend} = 0x\+E0, 
+\\*
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30a046a282d622e11711878fcad5b713c8d}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+System\+Common} = 0x\+F0, 
+\hyperlink{a00288_a128e460fdb72f04a5d077f77c02b3c30ab036cdb470fde61d5a397be9a1b036a5}{A\+A\+X\+::e\+Status\+Nibble\+\_\+\+System\+Real\+Time} = 0x\+F0
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the status nibble in a M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0}{A\+A\+X\+::\+E\+Status\+Byte} \{ \\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afe46f6c375435e0cddbcb9efda89b9ca}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Sys\+Ex\+Begin} = 0x\+F0, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a05d918c77b03e9be5378d487d6ef56de}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+M\+T\+C\+Quarter\+Frame} = 0x\+F1, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0ae7680a77d66673ac2900d2dac14270a0}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Song\+Position} = 0x\+F2, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a50a0b1fcddf5b5e29ee71320edd520eb}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Song\+Select} = 0x\+F3, 
+\\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a221fd3d2a1f7b77fea14a357f0f9fd7f}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Tune\+Request} = 0x\+F6, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af9541f1f98702a20d7d9a7a25589b3a1}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Sys\+Ex\+End} = 0x\+F7, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af301c0c5c67e4e67ff30ecff79713ddc}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Timing\+Clock} = 0x\+F8, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0afd1a3d5e51ff91a7ed408905daafb292}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Start} = 0x\+F\+A, 
+\\*
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a0c7a5ef4d50503e4b1c15f67fd4da75f}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Continue} = 0x\+F\+B, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a5d405fc8e8ffd1a5fdf6179933d945e3}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Stop} = 0x\+F\+C, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0a3efefd89a761be230e693dc4794611df}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Active\+Sensing} = 0x\+F\+E, 
+\hyperlink{a00288_a007db6cfa461dbbb87e49e2ec52e18b0af4d1ba261ba284f8c08bc6d2a65c287c}{A\+A\+X\+::e\+Status\+Byte\+\_\+\+Reset} = 0x\+F\+F
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the status byte in a M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461}{A\+A\+X\+::\+E\+Channel\+Mode\+Data} \{ \\*
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac068c1ac0762ad50b948d99f21ac09f5}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+All\+Sound\+Off} = 120, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a540ae94290aa31508a9060e1b9676891}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Reset\+Controllers} = 121, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461addf1f5adef10e202e8378fc15521f1ff}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Local\+Control} = 122, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461af57995480ec44ebcb6b936042a471979}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+All\+Notes\+Off} = 123, 
+\\*
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a5e2dba641939d400e47d9320b0db306a}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Omni\+Off} = 124, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461a3defca7d2a1dc6940bbc00a14eadd2d0}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Omni\+On} = 125, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ac2819c2b9eeec76609fa42609b2fd878}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Poly\+Off} = 126, 
+\hyperlink{a00288_a51c6649733dc2e7ce2364c7b52ddf461ada14fa008d32a84173ed0f0e9d416a49}{A\+A\+X\+::e\+Channel\+Mode\+Data\+\_\+\+Poly\+On} = 127
+ \}
+\begin{DoxyCompactList}\small\item\em Values for the first data byte in a Channel Mode Message M\+I\+D\+I packet. \end{DoxyCompactList}\item 
+enum \hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199}{A\+A\+X\+::\+E\+Special\+Data} \{ \hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199a52061b5587075953631c1389016cb0cf}{A\+A\+X\+::e\+Special\+Data\+\_\+\+Accented\+Click} = 0x00, 
+\hyperlink{a00288_a6884ba464f3e76eb758d45daf1395199a35a276fca410721fc1c39adb01be7af3}{A\+A\+X\+::e\+Special\+Data\+\_\+\+Unaccented\+Click} = 0x01
+ \}
+\begin{DoxyCompactList}\small\item\em Special message data for the first data byte in a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00288_a1561efb3b1dbe3d13ef18f4b4d9dee40}{A\+A\+X\+::\+Is\+Note\+On} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a Note On message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a91041690c271a718ef9451f66a7f6bb2}{A\+A\+X\+::\+Is\+Note\+Off} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a Note Off message, or a Note On message with velocity zero. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a509974acde19fde832cd5fdeb5eaabe2}{A\+A\+X\+::\+Is\+All\+Notes\+Off} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is an All Sound Off or All Notes Off message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_afd05400c946e625772428cad4be7d552}{A\+A\+X\+::\+Is\+Accented\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools accented click message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a4f915a56cb150638f036cb7ed33facd8}{A\+A\+X\+::\+Is\+Unaccented\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools unaccented click message. \end{DoxyCompactList}\item 
+bool \hyperlink{a00288_a8f9544e49b4473862e0c1382f6963ce7}{A\+A\+X\+::\+Is\+Click} (const \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet} $\ast$in\+Packet)
+\begin{DoxyCompactList}\small\item\em Returns true if {\ttfamily in\+Packet} is a special Pro Tools click message. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,203 @@
+\hypertarget{a00208}{}\section{A\+A\+X\+\_\+\+Exception.\+h File Reference}
+\label{a00208}\index{A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Assert.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+String\+Utilities.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+
+
+\subsection{Description}
+A\+A\+X S\+D\+K exception classes and utilities 
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00143}{A\+A\+X\+::\+Exception\+::\+Any}
+\item 
+class \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error}
+\item 
+class \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result}
+\item 
+class \hyperlink{a00009}{A\+A\+X\+\_\+\+Aggregate\+Result}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\item 
+ \hyperlink{a00320}{A\+A\+X\+::\+Exception}
+\begin{DoxyCompactList}\small\item\em A\+A\+X exception classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W}(...)
+\begin{DoxyCompactList}\small\item\em Executes {\itshape X} in a try/catch block that catches \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} exceptions. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T}(...)
+\begin{DoxyCompactList}\small\item\em Executes {\itshape X} in a try/catch block that catches \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} exceptions. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00208_af9972551e4546e894010f99eade68c94}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E}(X, ...)
+\begin{DoxyCompactList}\small\item\em Executes {\itshape Y} in a try/catch block that catches \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions and captures the result. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00208_a078be92d3d19a5a4b3da2b55ae5ac1c9}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T}(X, ...)
+\begin{DoxyCompactList}\small\item\em Executes {\itshape Y} in a try/catch block that catches \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions and captures the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{a00288_a8fbde5607de487515bcb55631bc1377d}{A\+A\+X\+::\+As\+String} (const char $\ast$in\+Str)
+\item 
+const std\+::string \& \hyperlink{a00288_a1bdf9d0d3be5b5f11d47df256a2e9490}{A\+A\+X\+::\+As\+String} (const std\+::string \&in\+Str)
+\item 
+const std\+::string \& \hyperlink{a00288_a9d87a7ed401f9deb8386a14c7bd8aaae}{A\+A\+X\+::\+As\+String} (const Exception\+::\+Any \&in\+Str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00208_a8f177823e9388c5163d1b402a9069bce}{}\index{A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}!A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W@{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W}}
+\index{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W@{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W}!A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00208_a8f177823e9388c5163d1b402a9069bce}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{try} \{ \textcolor{keywordflow}{if}(\textcolor{keyword}{true}) \{ ( \_\_VA\_ARGS\_\_ ); \} \} \(\backslash\)
+  catch (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_)) \{ \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{\(\backslash\)}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{    AAX\_TRACE\_RELEASE}(\hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{kAAX\_Trace\_Priority\_High}, \textcolor{stringliteral}{"%s line %d
+       (%s) exception caught: %s (swallowed)"}, \_\_FILE\_\_, \_\_LINE\_\_, \_\_FUNCTION\_\_, 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).What().c\_str()); \(\backslash\)
+  \} \textcolor{keywordflow}{do} \{\} \textcolor{keywordflow}{while} (\textcolor{keyword}{false})
+\end{DoxyCode}
+
+
+Executes {\itshape X} in a try/catch block that catches \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} exceptions. 
+
+Catches exceptions thrown from \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} only -\/ other exceptions require an explicit catch.
+
+
+\begin{DoxyCode}
+1 AAX\_CheckedResult cr;
+2 cr = NecessaryFunc1();
+3 AAX\_SWALLOW(cr = FailableFunc());
+4 cr = NecessaryFunc2();
+\end{DoxyCode}
+ \hypertarget{a00208_aef6db72a3774d079609f94720928cdd6}{}\index{A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}!A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T@{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T}}
+\index{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T@{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T}!A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00208_aef6db72a3774d079609f94720928cdd6}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{try} \{ \textcolor{keywordflow}{if}(\textcolor{keyword}{true}) \{ \_\_VA\_ARGS\_\_ \} \} \(\backslash\)
+catch (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_)) \{ \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{\(\backslash\)}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{AAX\_TRACE\_RELEASE}(\hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{kAAX\_Trace\_Priority\_High}, \textcolor{stringliteral}{"%s line %d (%s)
+       exception caught: %s (swallowed)"}, \_\_FILE\_\_, \_\_LINE\_\_, \_\_FUNCTION\_\_, 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).What().c\_str()); \(\backslash\)
+\} \textcolor{keywordflow}{do} \{\} \textcolor{keywordflow}{while} (\textcolor{keyword}{false})
+\end{DoxyCode}
+
+
+Executes {\itshape X} in a try/catch block that catches \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} exceptions. 
+
+Version of \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W} for multi-\/line input.
+
+Catches exceptions thrown from \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} only -\/ other exceptions require an explicit catch.
+
+
+\begin{DoxyCode}
+1 AAX\_CheckedResult cr;
+2 cr = NecessaryFunc();
+3 AAX\_SWALLOW\_MULT(
+4   cr = FailableFunc1();
+5   cr = FailableFunc2(); // may not execute
+6   cr = FailableFunc3(); // may not execute
+7 );
+8 cr = NecessaryFunc2();
+\end{DoxyCode}
+ \hypertarget{a00208_af9972551e4546e894010f99eade68c94}{}\index{A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}!A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E@{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E}}
+\index{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E@{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E}!A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00208_af9972551e4546e894010f99eade68c94}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{try} \{ \textcolor{keywordflow}{if}(\textcolor{keyword}{true}) \{ ( \_\_VA\_ARGS\_\_ ); \} \} \(\backslash\)
+catch (\textcolor{keyword}{const} \hyperlink{a00147}{AAX::Exception::ResultError}& 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_)) \{ \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{\(\backslash\)}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{AAX\_TRACE\_RELEASE}(\hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{kAAX\_Trace\_Priority\_High}, \textcolor{stringliteral}{"%s line %d (%s)
+       exception caught: %s (captured)"}, \_\_FILE\_\_, \_\_LINE\_\_, \_\_FUNCTION\_\_, 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).What().c\_str()); \(\backslash\)
+(X) = \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).Result(); \(\backslash\)
+\} \textcolor{keywordflow}{do} \{\} \textcolor{keywordflow}{while} (\textcolor{keyword}{false})
+\end{DoxyCode}
+
+
+Executes {\itshape Y} in a try/catch block that catches \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions and captures the result. 
+
+Catches exceptions thrown from \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} and other \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions.
+
+{\itshape X} must be an \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}
+
+
+\begin{DoxyCode}
+1 AAX\_Result result = AAX\_SUCCESS;
+2 AAX\_CAPTURE(result, ResultErrorThrowingFunc());
+3 // result now holds the error code thrown by ThrowingFunc()
+4 
+5 AAX\_CheckedResult cr;
+6 AAX\_CAPTURE(result, cr = FailableFunc());
+\end{DoxyCode}
+ \hypertarget{a00208_a078be92d3d19a5a4b3da2b55ae5ac1c9}{}\index{A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}!A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T@{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T}}
+\index{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T@{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T}!A\+A\+X\+\_\+\+Exception.\+h@{A\+A\+X\+\_\+\+Exception.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\label{a00208_a078be92d3d19a5a4b3da2b55ae5ac1c9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{try} \{ \textcolor{keywordflow}{if}(\textcolor{keyword}{true}) \{ \_\_VA\_ARGS\_\_ \} \} \(\backslash\)
+catch (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_)) \{ \hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{\(\backslash\)}
+\hyperlink{a00158_ac2aa820ece56bb59140ad561218db4b3}{AAX\_TRACE\_RELEASE}(\hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{kAAX\_Trace\_Priority\_High}, \textcolor{stringliteral}{"%s line %d (%s)
+       exception caught: %s (captured)"}, \_\_FILE\_\_, \_\_LINE\_\_, \_\_FUNCTION\_\_, 
+      \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).What().c\_str()); \(\backslash\)
+(X) = \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{AAX\_PREPROCESSOR\_CONCAT}(ex,\_\_LINE\_\_).Result(); \(\backslash\)
+\} \textcolor{keywordflow}{do} \{\} \textcolor{keywordflow}{while} (\textcolor{keyword}{false})
+\end{DoxyCode}
+
+
+Executes {\itshape Y} in a try/catch block that catches \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions and captures the result. 
+
+Version of \hyperlink{a00208_af9972551e4546e894010f99eade68c94}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E} for multi-\/line input.
+
+Catches exceptions thrown from \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} and other \hyperlink{a00147}{A\+A\+X\+::\+Exception\+::\+Result\+Error} exceptions.
+
+{\itshape X} must be an \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} or an implicitly convertable type
+
+
+\begin{DoxyCode}
+1 AAX\_Result result = AAX\_SUCCESS;
+2 AAX\_CAPTURE\_MULT(result,
+3   MaybeThrowingFunc1();
+4   MaybeThrowingFunc2();
+5   
+6   // can use AAX\_CheckedResult within AAX\_CAPTURE\_MULT
+7   AAX\_CheckedResult cr;
+8   cr = FailableFunc1();
+9   cr = FailableFunc2();
+10   cr = FailableFunc3();
+11 );
+12 
+13 // result now holds the value of the last thrown error
+14 return result;
+\end{DoxyCode}
+ 

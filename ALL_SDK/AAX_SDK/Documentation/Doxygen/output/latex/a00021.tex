@@ -1,0 +1,111 @@
+\hypertarget{a00021}{}\section{A\+A\+X\+\_\+\+C\+Host\+Services Class Reference}
+\label{a00021}\index{A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Host\+Services.\+h$>$}
+
+
+
+\subsection{Description}
+Method access to a singleton implementation of the \hyperlink{a00103}{A\+A\+X\+\_\+\+I\+Host\+Services} interface. \subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{a00021_af927887d03f4f978fb90d8ac3df1f205}{Set} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host)
+\item 
+static \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00021_a17f333ba14d681bc84309b8a5632e6a4}{Handle\+Assert\+Failure} (const char $\ast$i\+File, int32\+\_\+t i\+Line, const char $\ast$i\+Note, int32\+\_\+t i\+Flags=\hyperlink{a00206_ab87a565fcd58c3d860d50a210b264985a46c4ae37bd14e71bfd34781038f5f508}{A\+A\+X\+\_\+e\+Assert\+Flags\+\_\+\+Default})
+\begin{DoxyCompactList}\small\item\em Handle an assertion failure. \end{DoxyCompactList}\item 
+static \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00021_ad724c59469bd8a08fee0816539a08997}{Trace} (\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host} i\+Priority, const char $\ast$i\+Message,...)
+\begin{DoxyCompactList}\small\item\em Log a trace message. \end{DoxyCompactList}\item 
+static \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{Stack\+Trace} (\hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host} i\+Trace\+Priority, \hyperlink{a00206_a2dd667e4dea5781f38832fd9f1725f1b}{A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host} i\+Stack\+Trace\+Priority, const char $\ast$i\+Message,...)
+\begin{DoxyCompactList}\small\item\em Log a trace message or a stack trace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00021_af927887d03f4f978fb90d8ac3df1f205}{}\index{A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}!Set@{Set}}
+\index{Set@{Set}!A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}static void A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Set (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{a00021_af927887d03f4f978fb90d8ac3df1f205}
+\hypertarget{a00021_a17f333ba14d681bc84309b8a5632e6a4}{}\index{A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}!Handle\+Assert\+Failure@{Handle\+Assert\+Failure}}
+\index{Handle\+Assert\+Failure@{Handle\+Assert\+Failure}!A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}}
+\subsubsection[{Handle\+Assert\+Failure}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Handle\+Assert\+Failure (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+File, }
+\item[{int32\+\_\+t}]{i\+Line, }
+\item[{const char $\ast$}]{i\+Note, }
+\item[{int32\+\_\+t}]{i\+Flags = {\ttfamily {\bf A\+A\+X\+\_\+e\+Assert\+Flags\+\_\+\+Default}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{a00021_a17f333ba14d681bc84309b8a5632e6a4}
+
+
+Handle an assertion failure. 
+
+Use this method to delegate assertion failure handling to the host
+
+Use {\ttfamily in\+Flags} to request that specific behavior be included when handling the failure. This request may not be fulfilled by the host, and absence of a flag does not preclude the host from using that behavior when handling the failure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+File} & The name of the file containing the assert check. Usually {\ttfamily \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+} \\
+\hline
+\mbox{\tt in}  & {\em i\+Line} & The line number of the assert check. Usually {\ttfamily \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+} \\
+\hline
+\mbox{\tt in}  & {\em i\+Note} & Text to display related to the assert. Usually the condition which failed \\
+\hline
+\mbox{\tt in}  & {\em i\+Flags} & Bitfield of \hyperlink{a00206_ab87a565fcd58c3d860d50a210b264985}{A\+A\+X\+\_\+\+E\+Assert\+Flags} to request specific handling behavior \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00021_ad724c59469bd8a08fee0816539a08997}{}\index{A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}!Trace@{Trace}}
+\index{Trace@{Trace}!A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}}
+\subsubsection[{Trace}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Trace (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}]{i\+Priority, }
+\item[{const char $\ast$}]{i\+Message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{a00021_ad724c59469bd8a08fee0816539a08997}
+
+
+Log a trace message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Priority} & Priority of the trace, used for log filtering. One of \hyperlink{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}, \hyperlink{a00158_a8a6953f26f36747357d5d95f96dcf68d}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}, \hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High} \\
+\hline
+\mbox{\tt in}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}{}\index{A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}!Stack\+Trace@{Stack\+Trace}}
+\index{Stack\+Trace@{Stack\+Trace}!A\+A\+X\+\_\+\+C\+Host\+Services@{A\+A\+X\+\_\+\+C\+Host\+Services}}
+\subsubsection[{Stack\+Trace}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+C\+Host\+Services\+::\+Stack\+Trace (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}]{i\+Trace\+Priority, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+Trace\+Priority\+Host}}]{i\+Stack\+Trace\+Priority, }
+\item[{const char $\ast$}]{i\+Message, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{a00021_a9edeb9a0dfebf147f9e87dee521ec2c7}
+
+
+Log a trace message or a stack trace. 
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Stack\+Trace\+Priority} then both the logging message and a stack trace will be emitted, regardless of {\ttfamily i\+Trace\+Priority}.
+
+If the logging output filtering is set to include logs with {\ttfamily i\+Trace\+Priority} but to exclude logs with {\ttfamily i\+Stack\+Trace\+Priority} then this will emit a normal log with no stack trace.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Trace\+Priority} & Priority of the trace, used for log filtering. One of \hyperlink{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}, \hyperlink{a00158_a8a6953f26f36747357d5d95f96dcf68d}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}, \hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High} \\
+\hline
+\mbox{\tt in}  & {\em i\+Stack\+Trace\+Priority} & Priority of the stack trace, used for log filtering. One of \hyperlink{a00158_abd6b80f2e0a26581086b21b7e7ad0ce9}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Low}, \hyperlink{a00158_a8a6953f26f36747357d5d95f96dcf68d}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+Normal}, \hyperlink{a00158_a5edd9a4ac559a4ef99a948c2ebd422db}{k\+A\+A\+X\+\_\+\+Trace\+\_\+\+Priority\+\_\+\+High} \\
+\hline
+\mbox{\tt in}  & {\em i\+Message} & Message string to log \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00174}{A\+A\+X\+\_\+\+C\+Host\+Services.\+h}\end{DoxyCompactItemize}

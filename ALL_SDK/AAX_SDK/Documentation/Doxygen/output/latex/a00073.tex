@@ -1,0 +1,71 @@
+\hypertarget{a00073}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3 Class Reference}
+\label{a00073}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{a00562}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{a00563}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+V3 of versioned interface to diagnostic and debugging services provided by the A\+A\+X host. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00073_aaaddbd89dd3d6dd2e9e9def5b99c579f}{Handle\+Assert\+Failure} (const char $\ast$i\+File, int32\+\_\+t i\+Line, const char $\ast$i\+Note, int32\+\_\+t i\+Flags) const =0
+\begin{DoxyCompactList}\small\item\em Handle an assertion failure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00073_aaaddbd89dd3d6dd2e9e9def5b99c579f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3}!Handle\+Assert\+Failure@{Handle\+Assert\+Failure}}
+\index{Handle\+Assert\+Failure@{Handle\+Assert\+Failure}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3}}
+\subsubsection[{Handle\+Assert\+Failure}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services\+\_\+\+V3\+::\+Handle\+Assert\+Failure (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{i\+File, }
+\item[{int32\+\_\+t}]{i\+Line, }
+\item[{const char $\ast$}]{i\+Note, }
+\item[{int32\+\_\+t}]{i\+Flags}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00073_aaaddbd89dd3d6dd2e9e9def5b99c579f}
+
+
+Handle an assertion failure. 
+
+Use this method to delegate assertion failure handling to the host
+
+Use {\ttfamily in\+Flags} to request that specific behavior be included when handling the failure. This request may not be fulfilled by the host, and absence of a flag does not preclude the host from using that behavior when handling the failure.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+File} & The name of the file containing the assert check. Usually {\ttfamily \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+} \\
+\hline
+\mbox{\tt in}  & {\em i\+Line} & The line number of the assert check. Usually {\ttfamily \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+} \\
+\hline
+\mbox{\tt in}  & {\em i\+Note} & Text to display related to the assert. Usually the condition which failed \\
+\hline
+\mbox{\tt in}  & {\em i\+Flags} & Bitfield of \hyperlink{a00206_ab87a565fcd58c3d860d50a210b264985}{A\+A\+X\+\_\+\+E\+Assert\+Flags} to request specific handling behavior \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00228}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Services.\+h}\end{DoxyCompactItemize}

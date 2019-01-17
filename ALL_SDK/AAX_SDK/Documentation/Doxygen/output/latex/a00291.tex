@@ -1,0 +1,147 @@
+\hypertarget{a00291}{}\section{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h File Reference}
+\label{a00291}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}
+
+
+\subsection{Description}
+Description. 
+
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3e}{E\+S\+R\+Utils} \{ \\*
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eae974abf255ac5507a0c8163d0ebf9bcb}{e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse} = 48000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3ea376e9c46e970aa93e789445670b1d45f}{e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse} = 96000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eadc3653ea09f8a83c8222afc5a386e28f}{e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse} = 192000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eaec0fdd5b4e84f205ff16852740f18ea2}{e\+S\+R\+Utils\+\_\+48k\+Range\+Min} = 0, 
+\\*
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3ea1676c77c5473c1f0b7e820150869d413}{e\+S\+R\+Utils\+\_\+48k\+Range\+Max} = 51000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3ea858679d6660025243d5e9b0f06797f7f}{e\+S\+R\+Utils\+\_\+96k\+Range\+Min} = e\+S\+R\+Utils\+\_\+48k\+Range\+Max+1, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eabc1086d9707a35f99ed52f59b6b14934}{e\+S\+R\+Utils\+\_\+96k\+Range\+Max} = 102000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3ea675774f7e038af726de7561dcd3f314b}{e\+S\+R\+Utils\+\_\+192k\+Range\+Min} = e\+S\+R\+Utils\+\_\+96k\+Range\+Max+1, 
+\\*
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eaac7e670dc4a1cc396be2fd024f6a237f}{e\+S\+R\+Utils\+\_\+192k\+Range\+Max} = 204000, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eaa501e86b22b5be0d003d73ad5fd4e1f5}{e\+S\+R\+Utils\+\_\+48k\+Index} = 0, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3ea0cb96ccca8f89676f461df0054ee2678}{e\+S\+R\+Utils\+\_\+96k\+Index} = 1, 
+\hyperlink{a00291_a65f189058b3204334c2c13d368d8ce3eafdb7fb04ad5032eeccbeec8d26a4a04c}{e\+S\+R\+Utils\+\_\+192k\+Index} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{a00291_ab463c18c13ba2c75b89da6c90f02d0f0}{Coarse\+Sample\+Rate} (int i\+Rate)
+\item 
+int \hyperlink{a00291_a781f007f979a98d27156a4675fd853fa}{Coarse\+Sample\+Rate\+Factor} (int i\+Rate)
+\item 
+int \hyperlink{a00291_a149fe437454807a2d3edacf8de72c2a1}{Coarse\+Sample\+Rate\+Index} (int i\+Rate)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3e}{}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!E\+S\+R\+Utils@{E\+S\+R\+Utils}}
+\index{E\+S\+R\+Utils@{E\+S\+R\+Utils}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}
+\subsubsection[{E\+S\+R\+Utils}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf E\+S\+R\+Utils}}\label{a00291_a65f189058b3204334c2c13d368d8ce3e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eae974abf255ac5507a0c8163d0ebf9bcb}{}e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse\label{a00291_a65f189058b3204334c2c13d368d8ce3eae974abf255ac5507a0c8163d0ebf9bcb}
+}]\index{e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3ea376e9c46e970aa93e789445670b1d45f}{}e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse\label{a00291_a65f189058b3204334c2c13d368d8ce3ea376e9c46e970aa93e789445670b1d45f}
+}]\index{e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse@{e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eadc3653ea09f8a83c8222afc5a386e28f}{}e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse\label{a00291_a65f189058b3204334c2c13d368d8ce3eadc3653ea09f8a83c8222afc5a386e28f}
+}]\index{e\+S\+R\+Utils\+\_\+48k\+Range\+Min@{e\+S\+R\+Utils\+\_\+48k\+Range\+Min}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+48k\+Range\+Min@{e\+S\+R\+Utils\+\_\+48k\+Range\+Min}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eaec0fdd5b4e84f205ff16852740f18ea2}{}e\+S\+R\+Utils\+\_\+48k\+Range\+Min\label{a00291_a65f189058b3204334c2c13d368d8ce3eaec0fdd5b4e84f205ff16852740f18ea2}
+}]\index{e\+S\+R\+Utils\+\_\+48k\+Range\+Max@{e\+S\+R\+Utils\+\_\+48k\+Range\+Max}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+48k\+Range\+Max@{e\+S\+R\+Utils\+\_\+48k\+Range\+Max}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3ea1676c77c5473c1f0b7e820150869d413}{}e\+S\+R\+Utils\+\_\+48k\+Range\+Max\label{a00291_a65f189058b3204334c2c13d368d8ce3ea1676c77c5473c1f0b7e820150869d413}
+}]\index{e\+S\+R\+Utils\+\_\+96k\+Range\+Min@{e\+S\+R\+Utils\+\_\+96k\+Range\+Min}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+96k\+Range\+Min@{e\+S\+R\+Utils\+\_\+96k\+Range\+Min}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3ea858679d6660025243d5e9b0f06797f7f}{}e\+S\+R\+Utils\+\_\+96k\+Range\+Min\label{a00291_a65f189058b3204334c2c13d368d8ce3ea858679d6660025243d5e9b0f06797f7f}
+}]\index{e\+S\+R\+Utils\+\_\+96k\+Range\+Max@{e\+S\+R\+Utils\+\_\+96k\+Range\+Max}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+96k\+Range\+Max@{e\+S\+R\+Utils\+\_\+96k\+Range\+Max}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eabc1086d9707a35f99ed52f59b6b14934}{}e\+S\+R\+Utils\+\_\+96k\+Range\+Max\label{a00291_a65f189058b3204334c2c13d368d8ce3eabc1086d9707a35f99ed52f59b6b14934}
+}]\index{e\+S\+R\+Utils\+\_\+192k\+Range\+Min@{e\+S\+R\+Utils\+\_\+192k\+Range\+Min}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+192k\+Range\+Min@{e\+S\+R\+Utils\+\_\+192k\+Range\+Min}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3ea675774f7e038af726de7561dcd3f314b}{}e\+S\+R\+Utils\+\_\+192k\+Range\+Min\label{a00291_a65f189058b3204334c2c13d368d8ce3ea675774f7e038af726de7561dcd3f314b}
+}]\index{e\+S\+R\+Utils\+\_\+192k\+Range\+Max@{e\+S\+R\+Utils\+\_\+192k\+Range\+Max}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+192k\+Range\+Max@{e\+S\+R\+Utils\+\_\+192k\+Range\+Max}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eaac7e670dc4a1cc396be2fd024f6a237f}{}e\+S\+R\+Utils\+\_\+192k\+Range\+Max\label{a00291_a65f189058b3204334c2c13d368d8ce3eaac7e670dc4a1cc396be2fd024f6a237f}
+}]\index{e\+S\+R\+Utils\+\_\+48k\+Index@{e\+S\+R\+Utils\+\_\+48k\+Index}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+48k\+Index@{e\+S\+R\+Utils\+\_\+48k\+Index}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eaa501e86b22b5be0d003d73ad5fd4e1f5}{}e\+S\+R\+Utils\+\_\+48k\+Index\label{a00291_a65f189058b3204334c2c13d368d8ce3eaa501e86b22b5be0d003d73ad5fd4e1f5}
+}]\index{e\+S\+R\+Utils\+\_\+96k\+Index@{e\+S\+R\+Utils\+\_\+96k\+Index}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+96k\+Index@{e\+S\+R\+Utils\+\_\+96k\+Index}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3ea0cb96ccca8f89676f461df0054ee2678}{}e\+S\+R\+Utils\+\_\+96k\+Index\label{a00291_a65f189058b3204334c2c13d368d8ce3ea0cb96ccca8f89676f461df0054ee2678}
+}]\index{e\+S\+R\+Utils\+\_\+192k\+Index@{e\+S\+R\+Utils\+\_\+192k\+Index}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!e\+S\+R\+Utils\+\_\+192k\+Index@{e\+S\+R\+Utils\+\_\+192k\+Index}}\item[{\em 
+\hypertarget{a00291_a65f189058b3204334c2c13d368d8ce3eafdb7fb04ad5032eeccbeec8d26a4a04c}{}e\+S\+R\+Utils\+\_\+192k\+Index\label{a00291_a65f189058b3204334c2c13d368d8ce3eafdb7fb04ad5032eeccbeec8d26a4a04c}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00291_ab463c18c13ba2c75b89da6c90f02d0f0}{}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!Coarse\+Sample\+Rate@{Coarse\+Sample\+Rate}}
+\index{Coarse\+Sample\+Rate@{Coarse\+Sample\+Rate}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}
+\subsubsection[{Coarse\+Sample\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}int Coarse\+Sample\+Rate (
+\begin{DoxyParamCaption}
+\item[{int}]{i\+Rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00291_ab463c18c13ba2c75b89da6c90f02d0f0}
+
+
+References e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse, e\+S\+R\+Utils\+\_\+192k\+Range\+Max, e\+S\+R\+Utils\+\_\+192k\+Range\+Min, e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse, e\+S\+R\+Utils\+\_\+48k\+Range\+Max, e\+S\+R\+Utils\+\_\+48k\+Range\+Min, e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse, e\+S\+R\+Utils\+\_\+96k\+Range\+Max, and e\+S\+R\+Utils\+\_\+96k\+Range\+Min.
+
+
+
+Referenced by Coarse\+Sample\+Rate\+Factor(), and Coarse\+Sample\+Rate\+Index().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00291_ab463c18c13ba2c75b89da6c90f02d0f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00291_a781f007f979a98d27156a4675fd853fa}{}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!Coarse\+Sample\+Rate\+Factor@{Coarse\+Sample\+Rate\+Factor}}
+\index{Coarse\+Sample\+Rate\+Factor@{Coarse\+Sample\+Rate\+Factor}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}
+\subsubsection[{Coarse\+Sample\+Rate\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}int Coarse\+Sample\+Rate\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{i\+Rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00291_a781f007f979a98d27156a4675fd853fa}
+
+
+References Coarse\+Sample\+Rate(), and e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00291_a781f007f979a98d27156a4675fd853fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00291_a149fe437454807a2d3edacf8de72c2a1}{}\index{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}!Coarse\+Sample\+Rate\+Index@{Coarse\+Sample\+Rate\+Index}}
+\index{Coarse\+Sample\+Rate\+Index@{Coarse\+Sample\+Rate\+Index}!A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h@{A\+A\+X\+\_\+\+Sample\+Rate\+Utils.\+h}}
+\subsubsection[{Coarse\+Sample\+Rate\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int Coarse\+Sample\+Rate\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{i\+Rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00291_a149fe437454807a2d3edacf8de72c2a1}
+
+
+References Coarse\+Sample\+Rate(), e\+S\+R\+Utils\+\_\+192k\+Range\+Coarse, e\+S\+R\+Utils\+\_\+48k\+Range\+Coarse, and e\+S\+R\+Utils\+\_\+96k\+Range\+Coarse.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{a00291_a149fe437454807a2d3edacf8de72c2a1_cgraph}
+\end{center}
+\end{figure}
+
+

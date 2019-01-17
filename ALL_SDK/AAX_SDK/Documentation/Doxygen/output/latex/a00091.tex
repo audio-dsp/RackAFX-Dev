@@ -1,0 +1,83 @@
+\hypertarget{a00091}{}\section{A\+A\+X\+\_\+\+I\+Description\+Host Class Reference}
+\label{a00091}\index{A\+A\+X\+\_\+\+I\+Description\+Host@{A\+A\+X\+\_\+\+I\+Description\+Host}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Description\+Host.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Description\+Host\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{a00611}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Interface to host services provided during plug-\/in description \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00091_a16245728ae5f26a67c2932f2e6a12f26}{$\sim$\+A\+A\+X\+\_\+\+I\+Description\+Host} ()
+\item 
+virtual const \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} $\ast$ \hyperlink{a00091_aa0d9e27d0207113f98c217d870bfa5e9}{Acquire\+Feature\+Properties} (const \hyperlink{a00149_a53d6cf8a08224b3e813333e411ce798e}{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D} \&in\+Feature\+I\+D) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00091_a16245728ae5f26a67c2932f2e6a12f26}{}\index{A\+A\+X\+\_\+\+I\+Description\+Host@{A\+A\+X\+\_\+\+I\+Description\+Host}!````~A\+A\+X\+\_\+\+I\+Description\+Host@{$\sim$\+A\+A\+X\+\_\+\+I\+Description\+Host}}
+\index{````~A\+A\+X\+\_\+\+I\+Description\+Host@{$\sim$\+A\+A\+X\+\_\+\+I\+Description\+Host}!A\+A\+X\+\_\+\+I\+Description\+Host@{A\+A\+X\+\_\+\+I\+Description\+Host}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Description\+Host}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+A\+X\+\_\+\+I\+Description\+Host\+::$\sim$\+A\+A\+X\+\_\+\+I\+Description\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00091_a16245728ae5f26a67c2932f2e6a12f26}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00091_aa0d9e27d0207113f98c217d870bfa5e9}{}\index{A\+A\+X\+\_\+\+I\+Description\+Host@{A\+A\+X\+\_\+\+I\+Description\+Host}!Acquire\+Feature\+Properties@{Acquire\+Feature\+Properties}}
+\index{Acquire\+Feature\+Properties@{Acquire\+Feature\+Properties}!A\+A\+X\+\_\+\+I\+Description\+Host@{A\+A\+X\+\_\+\+I\+Description\+Host}}
+\subsubsection[{Acquire\+Feature\+Properties}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf A\+A\+X\+\_\+\+I\+Feature\+Info}$\ast$ A\+A\+X\+\_\+\+I\+Description\+Host\+::\+Acquire\+Feature\+Properties (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D} \&}]{in\+Feature\+I\+D}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00091_aa0d9e27d0207113f98c217d870bfa5e9}
+Get the client\textquotesingle{}s feature object for a given feature I\+D
+
+Similar to {\ttfamily Query\+Interface()} but uses a feature identifier rather than a true I\+I\+D
+
+Ownership of the returned object is passed to the caller; the caller is responsible for destroying the object, e.\+g. by capturing the returned object in a smart pointer.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// AAX\_IDescriptionHost* descHost}
+std::unique\_ptr<const AAX\_IFeatureInfo> featureInfoPtr(descHost->AcquireFeatureProperties(someFeatureUID);
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+An \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} interface with access to the host\textquotesingle{}s feature properties for this feature. 
+
+{\ttfamily N\+U\+L\+L} if the desired feature was not found or if an error occurred
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+May return an \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} object with limited method support, which would return an error such as \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a647cce13fa531e3a46c6eab694048a9c}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+U\+L\+L\+\_\+\+O\+B\+J\+E\+C\+T} or \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a3b76994b32b97fcd56b19ef8032245df}{A\+A\+X\+\_\+\+E\+R\+R\+O\+R\+\_\+\+U\+N\+I\+M\+P\+L\+E\+M\+E\+N\+T\+E\+D} to interface calls.
+
+If no \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} is provided then that may mean that the host is unaware of the feature, or it may mean that the host is aware of the feature but has not implemented the A\+A\+X feature support interface for this feature yet.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Feature\+I\+D} & Identifier of the requested feature \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00133_a794b4e57c1260ff9b438733a7cf9882b}{A\+A\+X\+\_\+\+V\+Description\+Host}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00240}{A\+A\+X\+\_\+\+I\+Description\+Host.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{a00063}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3 Class Reference}
+\label{a00063}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00532}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{a00533}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Supplemental interface for an A\+A\+X Plug-\/in\textquotesingle{}s data model. 
+
+This is a supplemental interface for an instance of a plug-\/in\textquotesingle{}s data model. This interface gets exposed to the host application. Host applications that support A\+A\+X versioned features may call into these methods. See \hyperlink{a00328}{Data model interface}.
+
+\begin{DoxyNote}{Note}
+Your implementation of this interface must inherit from \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters}.
+\end{DoxyNote}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000033}{Todo}]Add documentation for expected error state return values\end{DoxyRefDesc}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Auxiliary U\+I methods}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00342_gac7ba3c1063c35d761fdeba9c9a6cc0d1}{Get\+Curve\+Data\+Meter\+Ids} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, uint32\+\_\+t $\ast$o\+X\+Meter\+Id, uint32\+\_\+t $\ast$o\+Y\+Meter\+Id) const =0
+\begin{DoxyCompactList}\small\item\em Indicates which meters correspond to the X and Y axes of the E\+Q or Dynamics graph. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00342_ga38d1ac0c15a7052904077ef0e2527e0d}{Get\+Curve\+Data\+Display\+Range} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} i\+Curve\+Type, float $\ast$o\+X\+Min, float $\ast$o\+X\+Max, float $\ast$o\+Y\+Min, float $\ast$o\+Y\+Max) const =0
+\begin{DoxyCompactList}\small\item\em Determines the range of the graph shown by the plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00224}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters.\+h}\end{DoxyCompactItemize}

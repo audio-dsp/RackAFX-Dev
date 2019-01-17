@@ -1,0 +1,145 @@
+\hypertarget{a00047}{}\section{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$ Class Template Reference}
+\label{a00047}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00047_a74f25a087c55a337d8cdff14c73df7cb}{Set\+Parameters} (int i\+Table\+Size, T\+F\+L\+O\+A\+T i\+Min=0.\+0, T\+F\+L\+O\+A\+T i\+Max=1.\+0, int i\+Num\+Tables=1)
+\begin{DoxyCompactList}\small\item\em Set the table lookup parameters. \end{DoxyCompactList}\item 
+D\+F\+L\+O\+A\+T \hyperlink{a00047_a9cf82c7a9b110f02e258707ce27f940c}{Do\+Table\+Lookup\+Extra\+Fast} (const T\+F\+L\+O\+A\+T $\ast$const i\+Table, D\+F\+L\+O\+A\+T i\+Value) const 
+\begin{DoxyCompactList}\small\item\em Perform an extra fast table lookup \+:) \end{DoxyCompactList}\item 
+void \hyperlink{a00047_a4ead74bb72df82c5fbcb8aae85785c8d}{Do\+Table\+Lookup\+Extra\+Fast\+Multi} (const T\+F\+L\+O\+A\+T $\ast$i\+Table, D\+F\+L\+O\+A\+T i\+Value, D\+F\+L\+O\+A\+T $\ast$o\+Values) const 
+\item 
+void \hyperlink{a00047_a11b9680510916ee500ced08d3da3fcb2}{Do\+Table\+Lookup\+Extra\+Fast} (const T\+F\+L\+O\+A\+T $\ast$const i\+Table, const T\+F\+L\+O\+A\+T $\ast$const inp\+Buf, D\+F\+L\+O\+A\+T $\ast$const out\+Buf, int block\+Size)
+\item 
+T\+F\+L\+O\+A\+T \hyperlink{a00047_aabf15d98a86ea76bccbb0eab444bfab5}{Get\+Min} ()
+\item 
+T\+F\+L\+O\+A\+T \hyperlink{a00047_a7824f358e11c2ee1637f631230a8d967}{Get\+Max\+Minus\+Min} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00047_a74f25a087c55a337d8cdff14c73df7cb}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Set\+Parameters@{Set\+Parameters}}
+\index{Set\+Parameters@{Set\+Parameters}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Set\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ void {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Set\+Parameters (
+\begin{DoxyParamCaption}
+\item[{int}]{i\+Table\+Size, }
+\item[{T\+F\+L\+O\+A\+T}]{i\+Min = {\ttfamily 0.0}, }
+\item[{T\+F\+L\+O\+A\+T}]{i\+Max = {\ttfamily 1.0}, }
+\item[{int}]{i\+Num\+Tables = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_a74f25a087c55a337d8cdff14c73df7cb}
+
+
+Set the table lookup parameters. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Table\+Size} & Size of the lookup table \\
+\hline
+\mbox{\tt in}  & {\em i\+Min} & Minimum input value \\
+\hline
+\mbox{\tt in}  & {\em i\+Max} & Maximum input value \\
+\hline
+\mbox{\tt in}  & {\em i\+Num\+Tables} & Number of tables to index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+For future use... 
+\end{DoxyNote}
+\hypertarget{a00047_a9cf82c7a9b110f02e258707ce27f940c}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Do\+Table\+Lookup\+Extra\+Fast@{Do\+Table\+Lookup\+Extra\+Fast}}
+\index{Do\+Table\+Lookup\+Extra\+Fast@{Do\+Table\+Lookup\+Extra\+Fast}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Do\+Table\+Lookup\+Extra\+Fast}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ D\+F\+L\+O\+A\+T {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Do\+Table\+Lookup\+Extra\+Fast (
+\begin{DoxyParamCaption}
+\item[{const T\+F\+L\+O\+A\+T $\ast$const}]{i\+Table, }
+\item[{D\+F\+L\+O\+A\+T}]{i\+Value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_a9cf82c7a9b110f02e258707ce27f940c}
+
+
+Perform an extra fast table lookup \+:) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Table} & Lookup table \\
+\hline
+\mbox{\tt in}  & {\em i\+Value} & Table value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This version requires that the lookup table is padded with one extra location so we can avoid one of the checks to see if our pointers are out of bounds. 
+\end{DoxyNote}
+
+
+References A\+A\+X\+::\+Fast\+Trunc2\+Int32().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00047_a9cf82c7a9b110f02e258707ce27f940c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00047_a4ead74bb72df82c5fbcb8aae85785c8d}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Do\+Table\+Lookup\+Extra\+Fast\+Multi@{Do\+Table\+Lookup\+Extra\+Fast\+Multi}}
+\index{Do\+Table\+Lookup\+Extra\+Fast\+Multi@{Do\+Table\+Lookup\+Extra\+Fast\+Multi}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Do\+Table\+Lookup\+Extra\+Fast\+Multi}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ void {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Do\+Table\+Lookup\+Extra\+Fast\+Multi (
+\begin{DoxyParamCaption}
+\item[{const T\+F\+L\+O\+A\+T $\ast$}]{i\+Table, }
+\item[{D\+F\+L\+O\+A\+T}]{i\+Value, }
+\item[{D\+F\+L\+O\+A\+T $\ast$}]{o\+Values}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_a4ead74bb72df82c5fbcb8aae85785c8d}
+
+
+References A\+A\+X\+::\+Fast\+Trunc2\+Int32().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00047_a4ead74bb72df82c5fbcb8aae85785c8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00047_a11b9680510916ee500ced08d3da3fcb2}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Do\+Table\+Lookup\+Extra\+Fast@{Do\+Table\+Lookup\+Extra\+Fast}}
+\index{Do\+Table\+Lookup\+Extra\+Fast@{Do\+Table\+Lookup\+Extra\+Fast}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Do\+Table\+Lookup\+Extra\+Fast}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ void {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Do\+Table\+Lookup\+Extra\+Fast (
+\begin{DoxyParamCaption}
+\item[{const T\+F\+L\+O\+A\+T $\ast$const}]{i\+Table, }
+\item[{const T\+F\+L\+O\+A\+T $\ast$const}]{inp\+Buf, }
+\item[{D\+F\+L\+O\+A\+T $\ast$const}]{out\+Buf, }
+\item[{int}]{block\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_a11b9680510916ee500ced08d3da3fcb2}
+\hypertarget{a00047_aabf15d98a86ea76bccbb0eab444bfab5}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Get\+Min@{Get\+Min}}
+\index{Get\+Min@{Get\+Min}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Get\+Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ T\+F\+L\+O\+A\+T {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Get\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_aabf15d98a86ea76bccbb0eab444bfab5}
+\hypertarget{a00047_a7824f358e11c2ee1637f631230a8d967}{}\index{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}!Get\+Max\+Minus\+Min@{Get\+Max\+Minus\+Min}}
+\index{Get\+Max\+Minus\+Min@{Get\+Max\+Minus\+Min}!A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup@{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}}
+\subsubsection[{Get\+Max\+Minus\+Min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+F\+L\+O\+A\+T , class D\+F\+L\+O\+A\+T $>$ T\+F\+L\+O\+A\+T {\bf A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup}$<$ T\+F\+L\+O\+A\+T, D\+F\+L\+O\+A\+T $>$\+::Get\+Max\+Minus\+Min (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00047_a7824f358e11c2ee1637f631230a8d967}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00210}{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup.\+h}\item 
+\hyperlink{a00211}{A\+A\+X\+\_\+\+Fast\+Interpolated\+Table\+Lookup.\+hpp}\end{DoxyCompactItemize}

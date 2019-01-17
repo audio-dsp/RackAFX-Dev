@@ -1,0 +1,76 @@
+\hypertarget{a00058}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2 Class Reference}
+\label{a00058}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{a00517}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{a00518}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface for an \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00058_a2ac5294b1db8881bb125e7ee6e4b4f4f}{Add\+Control\+M\+I\+D\+I\+Node} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Node\+I\+D, \hyperlink{a00206_a5e1dffce35d05990dbbad651702678e4}{A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type} in\+Node\+Type, const char in\+Node\+Name\mbox{[}$\,$\mbox{]}, uint32\+\_\+t in\+Channel\+Mask)=0
+\begin{DoxyCompactList}\small\item\em Add a control M\+I\+D\+I node to the plug-\/in data model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00058_a2ac5294b1db8881bb125e7ee6e4b4f4f}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2}!Add\+Control\+M\+I\+D\+I\+Node@{Add\+Control\+M\+I\+D\+I\+Node}}
+\index{Add\+Control\+M\+I\+D\+I\+Node@{Add\+Control\+M\+I\+D\+I\+Node}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2}}
+\subsubsection[{Add\+Control\+M\+I\+D\+I\+Node}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor\+\_\+\+V2\+::\+Add\+Control\+M\+I\+D\+I\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}]{in\+Node\+I\+D, }
+\item[{{\bf A\+A\+X\+\_\+\+E\+M\+I\+D\+I\+Node\+Type}}]{in\+Node\+Type, }
+\item[{const char}]{in\+Node\+Name\mbox{[}$\,$\mbox{]}, }
+\item[{uint32\+\_\+t}]{in\+Channel\+Mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00058_a2ac5294b1db8881bb125e7ee6e4b4f4f}
+
+
+Add a control M\+I\+D\+I node to the plug-\/in data model. 
+
+
+\begin{DoxyItemize}
+\item This M\+I\+D\+I node may receive note data as well as control data.
+\item To send M\+I\+D\+I data to the plug-\/in\textquotesingle{}s algorithm, use \hyperlink{a00088_a6284dda9ccca898e33075de29dad4e39}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+M\+I\+D\+I\+Node()}.
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00062_ab4ec161f64086070083c21b566354861}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Parameters\+\_\+\+V2\+::\+Update\+Control\+M\+I\+D\+I\+Nodes()}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Node\+I\+D} & The I\+D for the new control M\+I\+D\+I node. \\
+\hline
+\mbox{\tt in}  & {\em in\+Node\+Type} & The type of the node. \\
+\hline
+\mbox{\tt in}  & {\em in\+Node\+Name} & The name of the node. \\
+\hline
+\mbox{\tt in}  & {\em in\+Channel\+Mask} & The bit mask for required nodes channels (up to 16) or required global events for global node. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00221}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Descriptor.\+h}\end{DoxyCompactItemize}

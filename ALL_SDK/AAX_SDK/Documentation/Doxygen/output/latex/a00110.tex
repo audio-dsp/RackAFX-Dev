@@ -1,0 +1,164 @@
+\hypertarget{a00110}{}\section{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$ Class Template Reference}
+\label{a00110}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$@{A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+Pointer\+Queue.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{a00652}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{a00653}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T$>$class A\+A\+X\+\_\+\+I\+Pointer\+Queue$<$ T $>$}
+
+Abstract interface for a basic F\+I\+F\+O queue of pointers-\/to-\/objects \subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{a00110_ae37a600f078ca0ee6f24b9f45aadc254}{template\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type used for this template instance. \end{DoxyCompactList}\item 
+typedef T $\ast$ \hyperlink{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}{value\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The type of values stored in this queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00110_a6e5e9c6bc4f527d35506236dd41a093a}{$\sim$\+A\+A\+X\+\_\+\+I\+Pointer\+Queue} ()
+\item 
+virtual void \hyperlink{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}{Clear} ()=0
+\item 
+virtual \hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7}{A\+A\+X\+\_\+\+I\+Container\+::\+E\+Status} \hyperlink{a00110_a6f8185d83cac520021bbca7054c57d38}{Push} (\hyperlink{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}{value\+\_\+type} in\+Elem)=0
+\item 
+virtual \hyperlink{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}{value\+\_\+type} \hyperlink{a00110_a49990f21819f0f4493183ea0770d4125}{Pop} ()=0
+\item 
+virtual \hyperlink{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}{value\+\_\+type} \hyperlink{a00110_a005cd2626fb8db4d5d708f255b48a0be}{Peek} () const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{a00110_ae37a600f078ca0ee6f24b9f45aadc254}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!template\+\_\+type@{template\+\_\+type}}
+\index{template\+\_\+type@{template\+\_\+type}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{template\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef T {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::{\bf template\+\_\+type}}\label{a00110_ae37a600f078ca0ee6f24b9f45aadc254}
+
+
+The type used for this template instance. 
+
+\hypertarget{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{value\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ typedef T$\ast$ {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::{\bf value\+\_\+type}}\label{a00110_a2d28a2dffe8dc2b7fe218c41b46734e9}
+
+
+The type of values stored in this queue. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00110_a6e5e9c6bc4f527d35506236dd41a093a}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!````~A\+A\+X\+\_\+\+I\+Pointer\+Queue@{$\sim$\+A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\index{````~A\+A\+X\+\_\+\+I\+Pointer\+Queue@{$\sim$\+A\+A\+X\+\_\+\+I\+Pointer\+Queue}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+I\+Pointer\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::$\sim${\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{a00110_a6e5e9c6bc4f527d35506236dd41a093a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!Clear@{Clear}}
+\index{Clear@{Clear}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual void {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00110_a42bdf5794a2481d0ae3f294fd8f8203e}
+
+
+
+
+\begin{DoxyNote}{Note}
+This operation is N\+O\+T atomic 
+
+This does N\+O\+T call the destructor for any pointed-\/to elements; it only clears the pointer values in the queue 
+\end{DoxyNote}
+
+
+Implements \hyperlink{a00089_a35280907fac53883d3501beef8c30596}{A\+A\+X\+\_\+\+I\+Container}.
+
+
+
+Implemented in \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T, S $>$}, \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T\+Numbered\+Param\+State\+List, 256 $>$}, and \hyperlink{a00010_a9819ff531e285f2acd2c9fd2351617c4}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ const T\+Param\+Val\+Pair, 16 $\ast$k\+Synchronized\+Parameter\+Queue\+Size $>$}.
+
+\hypertarget{a00110_a6f8185d83cac520021bbca7054c57d38}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!Push@{Push}}
+\index{Push@{Push}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{Push}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf A\+A\+X\+\_\+\+I\+Container\+::\+E\+Status} {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::Push (
+\begin{DoxyParamCaption}
+\item[{{\bf value\+\_\+type}}]{in\+Elem}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00110_a6f8185d83cac520021bbca7054c57d38}
+Push an element onto the queue
+
+Call from\+: Write thread
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{a00089_aea020100f0b06636ce7cb25c2fdb0af7add595169a28f04ed79be4f1c5974eb48}{A\+A\+X\+\_\+\+I\+Container\+::e\+Status\+\_\+\+Success} if the push succeeded 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{a00010_a2304d6ba1f1026b6a42de48056ab3050}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T, S $>$}.
+
+\hypertarget{a00110_a49990f21819f0f4493183ea0770d4125}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!Pop@{Pop}}
+\index{Pop@{Pop}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf value\+\_\+type} {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::Pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00110_a49990f21819f0f4493183ea0770d4125}
+Pop the front element from the queue
+
+Call from\+: Read thread
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily N\+U\+L\+L} if no element is available 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{a00010_a0c64180813c16b4952761f82e32d7edd}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T, S $>$}, \hyperlink{a00010_a0c64180813c16b4952761f82e32d7edd}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T\+Numbered\+Param\+State\+List, 256 $>$}, and \hyperlink{a00010_a0c64180813c16b4952761f82e32d7edd}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ const T\+Param\+Val\+Pair, 16 $\ast$k\+Synchronized\+Parameter\+Queue\+Size $>$}.
+
+\hypertarget{a00110_a005cd2626fb8db4d5d708f255b48a0be}{}\index{A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}!Peek@{Peek}}
+\index{Peek@{Peek}!A\+A\+X\+\_\+\+I\+Pointer\+Queue@{A\+A\+X\+\_\+\+I\+Pointer\+Queue}}
+\subsubsection[{Peek}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual {\bf value\+\_\+type} {\bf A\+A\+X\+\_\+\+I\+Pointer\+Queue}$<$ T $>$\+::Peek (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00110_a005cd2626fb8db4d5d708f255b48a0be}
+Get the current top element without popping it off of the queue
+
+Call from\+: Read thread
+
+\begin{DoxyNote}{Note}
+This value will change if another thread calls \hyperlink{a00110_a49990f21819f0f4493183ea0770d4125}{Pop()} 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{a00010_a0b82e81edc0d63a81c1b41acaf2a493d}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T, S $>$}, \hyperlink{a00010_a0b82e81edc0d63a81c1b41acaf2a493d}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ T\+Numbered\+Param\+State\+List, 256 $>$}, and \hyperlink{a00010_a0b82e81edc0d63a81c1b41acaf2a493d}{A\+A\+X\+\_\+\+C\+Atomic\+Queue$<$ const T\+Param\+Val\+Pair, 16 $\ast$k\+Synchronized\+Parameter\+Queue\+Size $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00258}{A\+A\+X\+\_\+\+I\+Pointer\+Queue.\+h}\end{DoxyCompactItemize}

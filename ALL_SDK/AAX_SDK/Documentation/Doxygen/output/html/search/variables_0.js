@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['aax_5fcompid_5fdescriptionhost',['AAX_CompID_DescriptionHost',['../a00299.html#a9a13fa824d749a47cab7e7d9f7482600',1,'AAX_UIDs.h']]],
+  ['aax_5fcompid_5ffeatureinfo',['AAX_CompID_FeatureInfo',['../a00299.html#aae0f0aac0bf016668407259eb98a0c81',1,'AAX_UIDs.h']]],
+  ['aaxattr_5fclient_5flevel',['AAXATTR_Client_Level',['../a00299.html#a1bbc82d62cf23079e92826874381a891',1,'AAX_UIDs.h']]],
+  ['aaxattr_5fclientfeature_5fauxoutputstem',['AAXATTR_ClientFeature_AuxOutputStem',['../a00299.html#aa6369eb43ac68152d30ec665de5ea603',1,'AAX_UIDs.h']]],
+  ['aaxattr_5fclientfeature_5fmidi',['AAXATTR_ClientFeature_MIDI',['../a00299.html#ab018f9c736d0ffd41f1f67e77fa96773',1,'AAX_UIDs.h']]],
+  ['aaxattr_5fclientfeature_5fsidechaininput',['AAXATTR_ClientFeature_SideChainInput',['../a00299.html#ad130c555cc62e4fbc5c8101d8d10ae45',1,'AAX_UIDs.h']]],
+  ['aaxattr_5fclientfeature_5fstemformat',['AAXATTR_ClientFeature_StemFormat',['../a00299.html#a0a8849a8e49eca48475bb88a1da25d5d',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5faaxcollection',['AAXCompID_AAXCollection',['../a00299.html#adce9a55e7654b4bb7e41cdc8d91d119d',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5faaxcomponentdescriptor',['AAXCompID_AAXComponentDescriptor',['../a00299.html#a765e040fc408fdf5c21f7078d3a38566',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5faaxeffectdescriptor',['AAXCompID_AAXEffectDescriptor',['../a00299.html#afd8738bffaa66c1178a0ca1172861773',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5faaxpropertymap',['AAXCompID_AAXPropertyMap',['../a00299.html#a83d2267df335ec2976f28c1739252da0',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fautomationdelegate',['AAXCompID_AutomationDelegate',['../a00299.html#aa22fc51d81b9a4f8fab4f819ca3f85d9',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fcontroller',['AAXCompID_Controller',['../a00299.html#a5c927ea96aceac064ced592799c4070c',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5feffectdirectdata',['AAXCompID_EffectDirectData',['../a00299.html#a738ef512d18e611e103c797e2d3cfd3a',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5feffectgui',['AAXCompID_EffectGUI',['../a00299.html#aefb6e005966bfdb62469adea5fc55237',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5feffectparameters',['AAXCompID_EffectParameters',['../a00299.html#a0f9ba8a7c2177a0fa5042461968fa8ad',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fhostprocessor',['AAXCompID_HostProcessor',['../a00299.html#a166521f91afbd59c15651f6cd6c50948',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fhostprocessordelegate',['AAXCompID_HostProcessorDelegate',['../a00299.html#a40a355114433e32688af311798bbede0',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fhostservices',['AAXCompID_HostServices',['../a00299.html#a0790e4ae407d6560ce1f605f29df324f',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fpagetable',['AAXCompID_PageTable',['../a00299.html#ab7a7eb58fd2e7fb243dd7deaf9416faa',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fpagetablecontroller',['AAXCompID_PageTableController',['../a00299.html#afbda44f63aecda768b6935e79226ce63',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fprivatedataaccess',['AAXCompID_PrivateDataAccess',['../a00299.html#a4d947cbe546fdaa1397264c47ddb96d2',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5ftransport',['AAXCompID_Transport',['../a00299.html#aa407c13a2ddcc4c1078acb837c76003e',1,'AAX_UIDs.h']]],
+  ['aaxcompid_5fviewcontainer',['AAXCompID_ViewContainer',['../a00299.html#a2e198bb97b311f9919ad1f61862be5e9',1,'AAX_UIDs.h']]]
+];

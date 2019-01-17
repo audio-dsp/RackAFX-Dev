@@ -1,0 +1,130 @@
+\hypertarget{a00083}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2 Class Reference}
+\label{a00083}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a00592}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{a00593}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface to information about the host\textquotesingle{}s transport state. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00083_a2ed1e7eb242706350126e1f0f80ef89a}{Get\+Timeline\+Selection\+Start\+Position} (int64\+\_\+t $\ast$o\+Sample\+Location) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the current absolute sample position of the beginning of the current transport selection. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00083_a3190f47a60f2b99d3a6b904f0eada0bf}{Get\+Time\+Code\+Info} (\hyperlink{a00206_a1271a51553bf508de59864334111aa8f}{A\+A\+X\+\_\+\+E\+Frame\+Rate} $\ast$o\+Frame\+Rate, int32\+\_\+t $\ast$o\+Offset) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the current time code frame rate and offset. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00083_af56a07926c753c6b225c316c5b516aa5}{Get\+Feet\+Frames\+Info} (\hyperlink{a00206_a8a0c9dafef741a26ee8c06f7285a0dfa}{A\+A\+X\+\_\+\+E\+Feet\+Frames\+Rate} $\ast$o\+Feet\+Frames\+Rate, int64\+\_\+t $\ast$o\+Offset) const =0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Retrieves the current timecode feet/frames rate and offset. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00083_a64bc3e6707297e32190e7aa290513521}{Is\+Metronome\+Enabled} (int32\+\_\+t $\ast$is\+Enabled) const =0
+\begin{DoxyCompactList}\small\item\em Sets is\+Enabled to true if the metronome is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00083_a2ed1e7eb242706350126e1f0f80ef89a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}!Get\+Timeline\+Selection\+Start\+Position@{Get\+Timeline\+Selection\+Start\+Position}}
+\index{Get\+Timeline\+Selection\+Start\+Position@{Get\+Timeline\+Selection\+Start\+Position}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}}
+\subsubsection[{Get\+Timeline\+Selection\+Start\+Position}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+::\+Get\+Timeline\+Selection\+Start\+Position (
+\begin{DoxyParamCaption}
+\item[{int64\+\_\+t $\ast$}]{o\+Sample\+Location}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00083_a2ed1e7eb242706350126e1f0f80ef89a}
+
+
+C\+A\+L\+L\+: Retrieves the current absolute sample position of the beginning of the current transport selection. 
+
+\begin{DoxyNote}{Note}
+This method is part of the \hyperlink{a00083}{version 2 transport interface}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Sample\+Location} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00083_a3190f47a60f2b99d3a6b904f0eada0bf}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}!Get\+Time\+Code\+Info@{Get\+Time\+Code\+Info}}
+\index{Get\+Time\+Code\+Info@{Get\+Time\+Code\+Info}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}}
+\subsubsection[{Get\+Time\+Code\+Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+::\+Get\+Time\+Code\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Frame\+Rate} $\ast$}]{o\+Frame\+Rate, }
+\item[{int32\+\_\+t $\ast$}]{o\+Offset}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00083_a3190f47a60f2b99d3a6b904f0eada0bf}
+
+
+C\+A\+L\+L\+: Retrieves the current time code frame rate and offset. 
+
+\begin{DoxyNote}{Note}
+This method is part of the \hyperlink{a00083}{version 2 transport interface}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Frame\+Rate} & \\
+\hline
+\mbox{\tt out}  & {\em o\+Offset} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00083_af56a07926c753c6b225c316c5b516aa5}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}!Get\+Feet\+Frames\+Info@{Get\+Feet\+Frames\+Info}}
+\index{Get\+Feet\+Frames\+Info@{Get\+Feet\+Frames\+Info}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}}
+\subsubsection[{Get\+Feet\+Frames\+Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+::\+Get\+Feet\+Frames\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+E\+Feet\+Frames\+Rate} $\ast$}]{o\+Feet\+Frames\+Rate, }
+\item[{int64\+\_\+t $\ast$}]{o\+Offset}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00083_af56a07926c753c6b225c316c5b516aa5}
+
+
+C\+A\+L\+L\+: Retrieves the current timecode feet/frames rate and offset. 
+
+\begin{DoxyNote}{Note}
+This method is part of the \hyperlink{a00083}{version 2 transport interface}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em o\+Feet\+Frames\+Rate} & \\
+\hline
+\mbox{\tt out}  & {\em o\+Offset} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00083_a64bc3e6707297e32190e7aa290513521}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}!Is\+Metronome\+Enabled@{Is\+Metronome\+Enabled}}
+\index{Is\+Metronome\+Enabled@{Is\+Metronome\+Enabled}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2}}
+\subsubsection[{Is\+Metronome\+Enabled}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport\+\_\+\+V2\+::\+Is\+Metronome\+Enabled (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t $\ast$}]{is\+Enabled}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00083_a64bc3e6707297e32190e7aa290513521}
+
+
+Sets is\+Enabled to true if the metronome is enabled. 
+
+\begin{DoxyNote}{Note}
+This method is part of the \hyperlink{a00083}{version 2 transport interface}
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em is\+Enabled} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00233}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Transport.\+h}\end{DoxyCompactItemize}

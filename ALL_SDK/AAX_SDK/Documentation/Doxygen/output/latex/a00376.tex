@@ -1,0 +1,59 @@
+\hypertarget{a00376}{}\section{Example Plug-\/\+Ins}
+\label{a00376}\index{Example Plug-\/\+Ins@{Example Plug-\/\+Ins}}
+Descriptions of the S\+D\+K\textquotesingle{}s example plug-\/ins. 
+
+\hypertarget{a00376_examples}{}\subsection{S\+D\+K Example plug-\/ins}\label{a00376_examples}
+This S\+D\+K includes the following example plug-\/ins. These plug-\/ins are designed to demonstrate good A\+A\+X plug-\/in design with varying levels of complexity.
+
+In general, the S\+D\+K includes one basic version of each example plug-\/in, as well as multiple variations on this basic version. Each of these variations demonstrates a particular feature or design approach. To see the specific changes that were made to implement a feature, compare the example plug-\/in variant that demonstrates the feature to the basic version of the plug-\/in.
+
+Aside from the G\+U\+I Extension examples, which are designed to work with third-\/party G\+U\+I frameworks, each sample plug-\/in should successfully compile \char`\"{}out of the box\char`\"{}. However, you may receive compilation errors during the plug-\/ins\textquotesingle{} post-\/build copy step due to the fact that compiled T\+I D\+L\+Ls are not included with this S\+D\+K.\hypertarget{a00376_basic_examples}{}\subsubsection{Basic examples}\label{a00376_basic_examples}
+These plug-\/ins provide complete working examples of A\+A\+X plug-\/ins without a lot of extra features. Use these plug-\/ins as a starting point for understanding \hyperlink{a00288}{A\+A\+X}.\hypertarget{a00376_DemoGain}{}\paragraph{Demo\+Gain}\label{a00376_DemoGain}
+Demo\+Gain is the simplest example plug-\/in, incorporating a mono algorithm with gain and bypass parameters.\hypertarget{a00376_DemoDist}{}\paragraph{Demo\+Dist}\label{a00376_DemoDist}
+Demo\+Dist demonstrates some more sophisticated techniques such as coefficient calculation and packaging, private data allocation, and multiple stem format support. Demo\+Dist also demonstrates some basic optimization strategies for improving real-\/time algorithmic performance.\hypertarget{a00376_DemoDelay}{}\paragraph{Demo\+Delay}\label{a00376_DemoDelay}
+Demo\+Delay implements a basic delay algorithm. The variants of this example demonstrate a variety of alternative processing features provided by \hyperlink{a00288}{A\+A\+X}.\hypertarget{a00376_DemoMIDI_NoteOn}{}\paragraph{Demo\+M\+I\+D\+I\+\_\+\+Note\+On}\label{a00376_DemoMIDI_NoteOn}
+Demo\+M\+I\+D\+I\+\_\+\+Note on demonstrates basic M\+I\+D\+I input functionality. The example will create a step function with every Note On and Note Off message it receives. It also shows how to handle M\+I\+D\+I packages in the Data Model by overriding the \hyperlink{a00018_a900a8fcf7d2e0bebda33e5ac393019c2}{A\+A\+X\+\_\+\+C\+Effect\+Parameters\+::\+Update\+M\+I\+D\+I\+Nodes()} method.\hypertarget{a00376_RectiFi}{}\paragraph{Recti\+Fi}\label{a00376_RectiFi}
+This is a fully ported version of the Recti-\/\+Fi plug-\/in from Avid\textquotesingle{}s D-\/\+Fi suite. For more information about Recti-\/\+Fi, see \href{http://www.avid.com/plugins/d-fi}{\tt http\+://www.\+avid.\+com/plugins/d-\/fi}
+
+\begin{DoxyNote}{Note}
+The S\+D\+K\textquotesingle{}s Recti-\/\+Fi example plug-\/in is currently out of date and does not accurately represent Avid\textquotesingle{}s shipping Recti-\/\+Fi plug-\/in.
+\end{DoxyNote}
+\hypertarget{a00376_feature_examples}{}\subsubsection{Feature examples}\label{a00376_feature_examples}
+Each of these plug-\/ins is a slight variation on one of the \hyperlink{a00376_basic_examples}{Basic examples}. Each feature example plug-\/in demonstrates a specific feature or a possible alternative design approach for the plug-\/in. Compare these plug-\/ins with the corresponding basic example plug-\/in when you want to understand how a feature or design should be applied to your own A\+A\+X plug-\/ins.\hypertarget{a00376_DemoGain_GUIExtensions}{}\paragraph{Demo\+Gain\+\_\+\+G\+U\+I\+Extensions}\label{a00376_DemoGain_GUIExtensions}
+These examples demonstrate the use of various native and third-\/party G\+U\+I frameworks with \hyperlink{a00288}{A\+A\+X}. The examples that use third-\/party frameworks are configured to link to static libraries that combine the S\+D\+K\textquotesingle{}s \hyperlink{a00368}{G\+U\+I Extensions} (located in /\+Extensions/\+G\+U\+I) and the applicable third-\/party G\+U\+I framework. These libraries are not included in the S\+D\+K, and you will need to install the applicable framework S\+D\+K before it will be possible to compile these example plug-\/ins.\hypertarget{a00376_DemoGain_LinkedParameters}{}\paragraph{Demo\+Gain\+\_\+\+Linked\+Parameters}\label{a00376_DemoGain_LinkedParameters}
+This example demonstrates parameter linking. The plug-\/in is a stereo version of Demo\+Gain, with options to link the left and right channels in two different modes.\hypertarget{a00376_DemoGain_Smoothed}{}\paragraph{Demo\+Gain\+\_\+\+Smoothed}\label{a00376_DemoGain_Smoothed}
+This example demonstrates efficient algorithmic coefficient smoothing using a slight variation on the basic Demo\+Gain plug-\/in algorithm.\hypertarget{a00376_DemoGain_Background}{}\paragraph{Demo\+Gain\+\_\+\+Background}\label{a00376_DemoGain_Background}
+This example demonstrates a background routine for algorithm processing. This example also uses the A\+A\+X \hyperlink{a00333}{direct data interface} for communicating algorithmic delay to the plug-\/in\textquotesingle{}s controller.\hypertarget{a00376_DemoGain_DMA}{}\paragraph{Demo\+Gain\+\_\+\+D\+M\+A}\label{a00376_DemoGain_DMA}
+This example includes two Effects that demonstrate use of the Scatter/\+Gather and Burst D\+M\+A facilities in \hyperlink{a00288}{A\+A\+X}.\hypertarget{a00376_DemoGain_Multichannel}{}\paragraph{Demo\+Gain\+\_\+\+Multichannel}\label{a00376_DemoGain_Multichannel}
+This example demonstrates a multichannel plug-\/in configuration supporting all available point source stem formats.
+
+This plug-\/in also includes a simple example of gain-\/reduction metering, which can be used to test host features which use this data such as the \hyperlink{a00360_subsubsection__external_metering_and_internal_clip_}{gain reduction meters} in Pro Tools.\hypertarget{a00376_DemoGain_UpMixer}{}\paragraph{Demo\+Gain\+\_\+\+Up\+Mixer}\label{a00376_DemoGain_UpMixer}
+This example demonstrates conversion between different stem formats\hypertarget{a00376_DemoGain_ParamValueInfo}{}\paragraph{Demo\+Gain\+\_\+\+Param\+Value\+Info}\label{a00376_DemoGain_ParamValueInfo}
+This example demonstrates an implementation of the \hyperlink{a00061_a1702de6d62b5b41b6a8b2f510300392b}{Get\+Parameter\+Value\+Info()} method, which is used to properly display certain parameter details on attached control surfaces. See \hyperlink{a00363_aax_page_table_guide_04_avid_center_section_page_tables}{Avid Center Section Page Tables} in the \hyperlink{a00363}{Page Table Guide}.\hypertarget{a00376_DemoDist_GenCoef}{}\paragraph{Demo\+Dist\+\_\+\+Gen\+Coef}\label{a00376_DemoDist_GenCoef}
+This example demonstrates an alternative approach to parameter update handling. It bypasses the packet dispatcher helper class and directly overrides \hyperlink{a00061_a685858711efb8634ce66c327f2865c71}{Update\+Parameter\+Normalized\+Value()} and \hyperlink{a00061_a083265b008921b6114ede387711694b7}{Generate\+Coefficients()}. This approach may be appropriate for plug-\/ins that involve complex mapping between parameter updates, coefficient generation algorithms, and coefficient data packets.\hypertarget{a00376_DemoDelay_HostProcessor}{}\paragraph{Demo\+Delay\+\_\+\+Host\+Processor}\label{a00376_DemoDelay_HostProcessor}
+This example includes two Effects that demonstrate the optional \hyperlink{a00334}{Offline processing interface} for advanced offline processing features. One Effect implements a simple offline delay line, while the other Effect implements the same delay line but compensates for its delay when rendering to the timeline. This demonstrates how to manually compensate for inherent algorithmic delay in an offline processor.
+
+\begin{DoxyNote}{Note}
+The output of offline plug-\/ins that do not use the \hyperlink{a00334}{Offline processing interface} will be automatically adjusted by the host host to account for any declared latency. The manual compensation technique demonstrated by Demo\+Delay\+\_\+\+Host\+Processor is {\bfseries only} necessary in plug-\/ins that implement the \hyperlink{a00334}{Offline processing interface}, e.\+g. plug-\/ins that require nonlinear offline processing features.
+\end{DoxyNote}
+\hypertarget{a00376_DemoDelay_Hybrid}{}\paragraph{Demo\+Delay\+\_\+\+Hybrid}\label{a00376_DemoDelay_Hybrid}
+This example demonstrates the optional \hyperlink{a00335}{Hybrid Processing architecture} architecture for A\+A\+X plug-\/ins. This plug-\/in implements a short delay line that is rendered in the high-\/latency hybrid context. It can be built and run for either A\+A\+X Native or A\+A\+X D\+S\+P.\hypertarget{a00376_DemoDelay_DynamicLatencyComp}{}\paragraph{Demo\+Delay\+\_\+\+Dynamic\+Latency\+Comp}\label{a00376_DemoDelay_DynamicLatencyComp}
+This example demonstrates how to properly handle algorithmic latency changes at run-\/time. It uses a delay line to emulate a latency-\/inducing algorithm with varying latency based on the delay parameter setting. When the plug-\/in\textquotesingle{}s latency compensation feature is enabled it declares this latency to the host.
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000009}{Host Compatibility Notes}]The Demo\+Delay\+\_\+\+Dynamic\+Latency\+Comp example is compatible with Pro Tools 11.\+1 and higher.\end{DoxyRefDesc}
+\hypertarget{a00376_DemoMIDI_Synth}{}\paragraph{Demo\+M\+I\+D\+I\+\_\+\+Synth}\label{a00376_DemoMIDI_Synth}
+A basic synthesizer plug-\/in demonstrating use of an external object to manage the plug-\/in\textquotesingle{}s state. A\+A\+X Native plug-\/ins that are designed to work with a cross-\/format framework may use a similar design. This plug-\/in uses \hyperlink{a00026}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters} and therefore is A\+A\+X Native only.\hypertarget{a00376_DemoMIDI_Synth_AuxOutput}{}\paragraph{Demo\+M\+I\+D\+I\+\_\+\+Synth\+\_\+\+Aux\+Output}\label{a00376_DemoMIDI_Synth_AuxOutput}
+A variation on \hyperlink{a00376_DemoMIDI_Synth}{Demo\+M\+I\+D\+I\+\_\+\+Synth} demonstrating the \hyperlink{a00339}{Auxiliary Output Stems} feature. This instrument plug-\/in supports four independently-\/routable synthesizer objects.\hypertarget{a00376_DemoMIDI_Sampler}{}\paragraph{Demo\+M\+I\+D\+I\+\_\+\+Sampler}\label{a00376_DemoMIDI_Sampler}
+This simple \char`\"{}drum machine\char`\"{} style sampler plug-\/in demonstrates sample-\/accurate global and local M\+I\+D\+I input and the M\+I\+D\+I Transport interface. This plug-\/in uses \hyperlink{a00026}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters} and therefore is A\+A\+X Native only.\hypertarget{a00376_deprecated_examples}{}\subsubsection{deprecated\+\_\+examples}\label{a00376_deprecated_examples}
+\hypertarget{a00376_DemoGain_Delay}{}\paragraph{Demo\+Gain\+\_\+\+Delay}\label{a00376_DemoGain_Delay}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{a00386__deprecated000001}{Deprecated}]The Demo\+Gain\+\_\+\+Delay example is deprecated. See Demo\+Delay\+\_\+\+Host\+Processor\end{DoxyRefDesc}
+Collaboration diagram for Example Plug-\/\+Ins\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{a00376}
+\end{center}
+\end{figure}

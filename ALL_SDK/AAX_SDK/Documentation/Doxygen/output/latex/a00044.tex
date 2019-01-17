@@ -1,0 +1,224 @@
+\hypertarget{a00044}{}\section{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$ Class Template Reference}
+\label{a00044}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+String\+Display\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{a00477}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00478}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T$>$class A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$}
+
+A string, or list, display format conforming to \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate}. 
+
+This display delegate uses a string map to associate parameter values with specific strings. This kind of display delegate is most often used for control string or list parameters, which would internally use an integer parameter type. The int value would then be used as a lookup into this delegate, which would return a string for each valid int value. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00044_a675d5d95e04e023b0650c621ddaf4972}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate} (const std\+::map$<$ T, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $>$ \&string\+Map)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00044}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$ $\ast$ \hyperlink{a00044_a011fc2e134ffa0469ee995232922bcb2}{Clone} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the display delegate. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00044_a96ae6bc68f2a2df5224539b4b07f914b}{Value\+To\+String} (T value, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00044_a5b5af0bb407230879e3cf7f952ad4de9}{Value\+To\+String} (T value, int32\+\_\+t max\+Num\+Chars, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00044_a465943be762c4c273eb19f2272800ed0}{String\+To\+Value} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&value\+String, T $\ast$value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ T, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $>$ \hyperlink{a00044_aba142c61f06272adbaed051751d96123}{m\+String\+Map}
+\item 
+std\+::map$<$ \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String}, T $>$ \hyperlink{a00044_a388606665c60b57c16152b0424c54e2e}{m\+Inverse\+String\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00044_a675d5d95e04e023b0650c621ddaf4972}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::{\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate} (
+\begin{DoxyParamCaption}
+\item[{const std\+::map$<$ T, {\bf A\+A\+X\+\_\+\+C\+String} $>$ \&}]{string\+Map}
+\end{DoxyParamCaption}
+)}\label{a00044_a675d5d95e04e023b0650c621ddaf4972}
+
+
+Constructor. 
+
+Constructs a String Display Delegate with a provided string map.
+
+\begin{DoxyNote}{Note}
+The string map should already be populated with value-\/string pairs, as this constructor will copy the provided map into the delegate object\textquotesingle{}s own memory.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em string\+Map} & A populated map of value-\/string pairs \\
+\hline
+\end{DoxyParams}
+
+
+References A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+::m\+Inverse\+String\+Map, and A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+::m\+String\+Map.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00044_a011fc2e134ffa0469ee995232922bcb2}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$ $\ast$ {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00044_a011fc2e134ffa0469ee995232922bcb2}
+
+
+Constructs and returns a copy of the display delegate. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+AAX\_CSubclassDisplayDelegate<T>*    AAX\_CSubclassDisplayDelegate<T>::Clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassDisplayDelegate(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+ 
+
+Implements \hyperlink{a00092_a138a82c124ddda8255ce39194dfc1f3f}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00044_a96ae6bc68f2a2df5224539b4b07f914b}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00044_a96ae6bc68f2a2df5224539b4b07f914b}
+
+
+Converts a real parameter value to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a7fd1e2f55055c817937bbfa66b73b2fd}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00044_a5b5af0bb407230879e3cf7f952ad4de9}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{int32\+\_\+t}]{max\+Num\+Chars, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00044_a5b5af0bb407230879e3cf7f952ad4de9}
+
+
+Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt in}  & {\em max\+Num\+Chars} & Size hint for the desired maximum number of characters in the string (not including null termination) \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a471c7381db773683b69216a9c3f5eda7}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00044_a465943be762c4c273eb19f2272800ed0}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!String\+To\+Value@{String\+To\+Value}}
+\index{String\+To\+Value@{String\+To\+Value}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{String\+To\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::String\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{value\+String, }
+\item[{T $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00044_a465943be762c4c273eb19f2272800ed0}
+
+
+Converts a string to a real parameter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_aed5224775c9f733f091afddfba057d5e}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00044_aba142c61f06272adbaed051751d96123}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!m\+String\+Map@{m\+String\+Map}}
+\index{m\+String\+Map@{m\+String\+Map}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{m\+String\+Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std\+::map$<$T, {\bf A\+A\+X\+\_\+\+C\+String}$>$ {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::m\+String\+Map\hspace{0.3cm}{\ttfamily [protected]}}\label{a00044_aba142c61f06272adbaed051751d96123}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+::\+A\+A\+X\+\_\+\+C\+String\+Display\+Delegate().
+
+\hypertarget{a00044_a388606665c60b57c16152b0424c54e2e}{}\index{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}!m\+Inverse\+String\+Map@{m\+Inverse\+String\+Map}}
+\index{m\+Inverse\+String\+Map@{m\+Inverse\+String\+Map}!A\+A\+X\+\_\+\+C\+String\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}}
+\subsubsection[{m\+Inverse\+String\+Map}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ std\+::map$<${\bf A\+A\+X\+\_\+\+C\+String}, T$>$ {\bf A\+A\+X\+\_\+\+C\+String\+Display\+Delegate}$<$ T $>$\+::m\+Inverse\+String\+Map\hspace{0.3cm}{\ttfamily [protected]}}\label{a00044_a388606665c60b57c16152b0424c54e2e}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+String\+Display\+Delegate$<$ T $>$\+::\+A\+A\+X\+\_\+\+C\+String\+Display\+Delegate().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00198}{A\+A\+X\+\_\+\+C\+String\+Display\+Delegate.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,72 @@
+\hypertarget{a00067}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2 Class Reference}
+\label{a00067}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{a00544}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{a00545}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Supplemental interface for an A\+A\+X host processing component. 
+
+\begin{DoxyNote}{Note}
+This interface gets exposed to the host application. See \hyperlink{a00020}{A\+A\+X\+\_\+\+C\+Host\+Processor} for method documentation. 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00067_a60a29fda8490f240ecf869ff14fabf0e}{Get\+Clip\+Name\+Suffix} (int32\+\_\+t in\+Max\+Length, \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$out\+String) const =0
+\begin{DoxyCompactList}\small\item\em Called by host application to retrieve a custom string to be appended to the clip name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00067_a60a29fda8490f240ecf869ff14fabf0e}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2}!Get\+Clip\+Name\+Suffix@{Get\+Clip\+Name\+Suffix}}
+\index{Get\+Clip\+Name\+Suffix@{Get\+Clip\+Name\+Suffix}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2}}
+\subsubsection[{Get\+Clip\+Name\+Suffix}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+\_\+\+V2\+::\+Get\+Clip\+Name\+Suffix (
+\begin{DoxyParamCaption}
+\item[{int32\+\_\+t}]{in\+Max\+Length, }
+\item[{{\bf A\+A\+X\+\_\+\+I\+String} $\ast$}]{out\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00067_a60a29fda8490f240ecf869ff14fabf0e}
+
+
+Called by host application to retrieve a custom string to be appended to the clip name. 
+
+If no string is provided then the host\textquotesingle{}s default will be used.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Max\+Length} & The maximum allowed string length, not including the N\+U\+L\+L terminating char\\
+\hline
+\mbox{\tt out}  & {\em out\+String} & Add a value to this string to provide a custom clip suffix \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00020_a97b29831dde192bdc2e9e0290f60e8c6}{A\+A\+X\+\_\+\+C\+Host\+Processor}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00226}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor.\+h}\end{DoxyCompactItemize}

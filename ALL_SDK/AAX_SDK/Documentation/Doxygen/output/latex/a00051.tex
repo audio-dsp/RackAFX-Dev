@@ -1,0 +1,65 @@
+\hypertarget{a00051}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2 Class Reference}
+\label{a00051}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{a00496}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{a00497}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned description interface for an A\+A\+X plug-\/in algorithm callback. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00051_acbd4eb771c30fad8cf7a821941a7490e}{Add\+Temporary\+Data} (\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index} in\+Field\+Index, uint32\+\_\+t in\+Data\+Element\+Size)=0
+\begin{DoxyCompactList}\small\item\em Adds a block of data to a context that is not saved between callbacks and is scaled by the system buffer size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00051_acbd4eb771c30fad8cf7a821941a7490e}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2}!Add\+Temporary\+Data@{Add\+Temporary\+Data}}
+\index{Add\+Temporary\+Data@{Add\+Temporary\+Data}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2}}
+\subsubsection[{Add\+Temporary\+Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor\+\_\+\+V2\+::\+Add\+Temporary\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Field\+Index}}]{in\+Field\+Index, }
+\item[{uint32\+\_\+t}]{in\+Data\+Element\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00051_acbd4eb771c30fad8cf7a821941a7490e}
+
+
+Adds a block of data to a context that is not saved between callbacks and is scaled by the system buffer size. 
+
+This can be very useful if you use block processing and need to store intermediate results. Just specify your base element size and the system will scale the overall block size by the buffer size. For example, to create a buffer of floats that is the length of the block, specify 4 bytes as the elementsize.
+
+This data block does not retain state across callback and can also be reused across instances on memory contrained systems.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\+Field\+Index} & Unique identifier for the port, generated using \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} \\
+\hline
+\mbox{\tt in}  & {\em in\+Data\+Element\+Size} & The size of a single piece of data in the block. This number will be multipied by the processing block size to determine total block size. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00218}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Component\+Descriptor.\+h}\end{DoxyCompactItemize}

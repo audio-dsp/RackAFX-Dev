@@ -1,0 +1,5 @@
+<map id="AAX_CStatelessParameter::Release" name="AAX_CStatelessParameter::Release">
+<area shape="rect" id="node2" href="$a00040.html#a446167294c50fd5761fcd41fa493f753" title="Returns the parameter&#39;s unique identifier. " alt="" coords="236,5,419,47"/>
+<area shape="rect" id="node4" href="$a00086.html#a89049fae2c35a4b99cfeb6585898bb69" title="AAX_IAutomationDelegate\l::PostReleaseRequest" alt="" coords="237,71,417,112"/>
+<area shape="rect" id="node3" href="$a00042.html#abebd10e42f859dd4a986551e47dfd9c5" title="AAX_CString::CString" alt="" coords="467,13,619,39"/>
+</map>

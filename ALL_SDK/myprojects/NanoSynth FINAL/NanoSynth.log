@@ -1,0 +1,16 @@
+﻿  NanoSynth.cpp
+  plugin.cpp
+  pluginobjects.cpp
+  RackAFXDLL.cpp
+  DCA.cpp
+  EnvelopeGenerator.cpp
+  Filter.cpp
+  LFO.cpp
+  ModulationMatrix.cpp
+  MoogLadderFilter.cpp
+  Oscillator.cpp
+  QBLimitedOscillator.cpp
+  VAOnePoleFilter.cpp
+  Generating Code...
+     Creating library x64\NanoSynth.lib and object x64\NanoSynth.exp
+  NanoSynth.vcxproj -> D:\Workspace\ALL_SDK\myprojects\NanoSynth FINAL\x64\NanoSynth.dll

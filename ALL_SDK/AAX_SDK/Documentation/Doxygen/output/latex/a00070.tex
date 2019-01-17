@@ -1,0 +1,53 @@
+\hypertarget{a00070}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3 Class Reference}
+\label{a00070}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{a00553}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{a00554}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Versioned interface for host methods specific to offline processing. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00070_a0da1cb9fc37e23f513e6890845b92b53}{Force\+Process} ()=0
+\begin{DoxyCompactList}\small\item\em C\+A\+L\+L\+: Request a process pass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00070_a0da1cb9fc37e23f513e6890845b92b53}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3}!Force\+Process@{Force\+Process}}
+\index{Force\+Process@{Force\+Process}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3}}
+\subsubsection[{Force\+Process}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate\+\_\+\+V3\+::\+Force\+Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00070_a0da1cb9fc37e23f513e6890845b92b53}
+
+
+C\+A\+L\+L\+: Request a process pass. 
+
+Call this method to request a process pass from within the plug-\/in. If \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea925c49bb79454b33bf1d5f4cb09d373f}{A\+A\+X\+\_\+e\+Property\+\_\+\+Requires\+Analysis} is defined, the resulting process pass will be preceded by an analysis pass. This method should only be used in rare circumstances by plug-\/ins that must launch processing outside of the normal host Audio\+Suite workflow. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00227}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Host\+Processor\+Delegate.\+h}\end{DoxyCompactItemize}

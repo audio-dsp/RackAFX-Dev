@@ -1,0 +1,121 @@
+\hypertarget{a00009}{}\section{A\+A\+X\+\_\+\+Aggregate\+Result Class Reference}
+\label{a00009}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+Exception.\+h$>$}
+
+
+
+\subsection{Description}
+R\+A\+I\+I failure count convenience class for use with \hyperlink{a00208_af9972551e4546e894010f99eade68c94}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E()} or \hyperlink{a00208_a078be92d3d19a5a4b3da2b55ae5ac1c9}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T()}
+
+Pass this object as the first argument in a series of \hyperlink{a00208_af9972551e4546e894010f99eade68c94}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E()} calls to count the number of failures that occur and to re-\/throw the last error if zero of the attempted calls succeed.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// example A: throw if all operations fail}
+\hyperlink{a00009}{AAX\_AggregateResult} agg;
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, RegisterThingA(); );
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, RegisterThingB(); );
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, RegisterThingC(); );
+\end{DoxyCode}
+
+
+In this example, when {\ttfamily agg} goes out of scope it checks whether any of A, B, or C succeeded. If none succeeded then the last error that was encountered is raised via an \hyperlink{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Exception}. If at least one of the calls succeeded then any failures are swallowed and execution continues as normal. This approach can be useful in cases where you want to run every operation in a group and you only want a failure to be returned if all of the operations failed.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// example B: throw if any operation fails}
+\hyperlink{a00009}{AAX\_AggregateResult} agg;
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, ImportantOperationW(); );
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, ImportantOperationX(); );
+\hyperlink{a00208_af9972551e4546e894010f99eade68c94}{AAX\_CAPTURE}( agg, ImportantOperationY(); );
+\hyperlink{a00019}{AAX\_CheckedResult} err = agg.\hyperlink{a00009_aedeb567f840d34ad2332c92f248efe6e}{LastFailure}();
+\end{DoxyCode}
+
+
+In this example, the last error encountered by {\ttfamily agg} is converted to an \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result}. This will result in an \hyperlink{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Exception} even if at least one of the attempted operations succeeded. This approach can be useful in cases where you want all operations in a group to be executed before an error is raised for any failure within the group. \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00009_a3e17eec78bd6568cf167a86be008e081}{A\+A\+X\+\_\+\+Aggregate\+Result} ()
+\item 
+\hyperlink{a00009_a09e9058ca4ec5df47741cef7e44cf165}{$\sim$\+A\+A\+X\+\_\+\+Aggregate\+Result} ()
+\item 
+\hyperlink{a00009}{A\+A\+X\+\_\+\+Aggregate\+Result} \& \hyperlink{a00009_a352314f927d81c236d8022b277853155}{operator=} (\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} in\+Result)
+\begin{DoxyCompactList}\small\item\em Overloaded {\ttfamily \hyperlink{a00009_a352314f927d81c236d8022b277853155}{operator=()}} for conversion from \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. \end{DoxyCompactList}\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00009_aedeb567f840d34ad2332c92f248efe6e}{Last\+Failure} () const 
+\item 
+int \hyperlink{a00009_a1f1a21e08269fd16cf97b5b6bc26643a}{Num\+Failed} () const 
+\item 
+int \hyperlink{a00009_a57659c5fddcb7fd4c7fcdfcc381b9af8}{Num\+Succeeded} () const 
+\item 
+int \hyperlink{a00009_a66bfecf5ea3313c1414311760a50aa56}{Num\+Attempted} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00009_a3e17eec78bd6568cf167a86be008e081}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{A\+A\+X\+\_\+\+Aggregate\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Aggregate\+Result\+::\+A\+A\+X\+\_\+\+Aggregate\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a3e17eec78bd6568cf167a86be008e081}
+\hypertarget{a00009_a09e9058ca4ec5df47741cef7e44cf165}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!````~A\+A\+X\+\_\+\+Aggregate\+Result@{$\sim$\+A\+A\+X\+\_\+\+Aggregate\+Result}}
+\index{````~A\+A\+X\+\_\+\+Aggregate\+Result@{$\sim$\+A\+A\+X\+\_\+\+Aggregate\+Result}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{$\sim$\+A\+A\+X\+\_\+\+Aggregate\+Result}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+Aggregate\+Result\+::$\sim$\+A\+A\+X\+\_\+\+Aggregate\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a09e9058ca4ec5df47741cef7e44cf165}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00009_a352314f927d81c236d8022b277853155}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!operator=@{operator=}}
+\index{operator=@{operator=}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Aggregate\+Result}\& A\+A\+X\+\_\+\+Aggregate\+Result\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+Result}}]{in\+Result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a352314f927d81c236d8022b277853155}
+
+
+Overloaded {\ttfamily \hyperlink{a00009_a352314f927d81c236d8022b277853155}{operator=()}} for conversion from \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}. 
+
+
+
+References A\+A\+X\+\_\+\+S\+U\+C\+C\+E\+S\+S.
+
+\hypertarget{a00009_aedeb567f840d34ad2332c92f248efe6e}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!Last\+Failure@{Last\+Failure}}
+\index{Last\+Failure@{Last\+Failure}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{Last\+Failure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+Aggregate\+Result\+::\+Last\+Failure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_aedeb567f840d34ad2332c92f248efe6e}
+\hypertarget{a00009_a1f1a21e08269fd16cf97b5b6bc26643a}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!Num\+Failed@{Num\+Failed}}
+\index{Num\+Failed@{Num\+Failed}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{Num\+Failed}]{\setlength{\rightskip}{0pt plus 5cm}int A\+A\+X\+\_\+\+Aggregate\+Result\+::\+Num\+Failed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a1f1a21e08269fd16cf97b5b6bc26643a}
+\hypertarget{a00009_a57659c5fddcb7fd4c7fcdfcc381b9af8}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!Num\+Succeeded@{Num\+Succeeded}}
+\index{Num\+Succeeded@{Num\+Succeeded}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{Num\+Succeeded}]{\setlength{\rightskip}{0pt plus 5cm}int A\+A\+X\+\_\+\+Aggregate\+Result\+::\+Num\+Succeeded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a57659c5fddcb7fd4c7fcdfcc381b9af8}
+\hypertarget{a00009_a66bfecf5ea3313c1414311760a50aa56}{}\index{A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}!Num\+Attempted@{Num\+Attempted}}
+\index{Num\+Attempted@{Num\+Attempted}!A\+A\+X\+\_\+\+Aggregate\+Result@{A\+A\+X\+\_\+\+Aggregate\+Result}}
+\subsubsection[{Num\+Attempted}]{\setlength{\rightskip}{0pt plus 5cm}int A\+A\+X\+\_\+\+Aggregate\+Result\+::\+Num\+Attempted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{a00009_a66bfecf5ea3313c1414311760a50aa56}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00208}{A\+A\+X\+\_\+\+Exception.\+h}\end{DoxyCompactItemize}

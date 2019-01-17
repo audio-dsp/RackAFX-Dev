@@ -1,0 +1,42 @@
+\hypertarget{a00300}{}\section{A\+A\+X\+\_\+\+Utils\+Native.\+h File Reference}
+\label{a00300}\index{A\+A\+X\+\_\+\+Utils\+Native.\+h@{A\+A\+X\+\_\+\+Utils\+Native.\+h}}
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+C\+String.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+I\+String.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Assert.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+
+
+\subsection{Description}
+Various utility definitions for A\+A\+X Native. 
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00288}{A\+A\+X}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00300_a965532f32e277e8db47e16180161827e}{\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{a00288_ae8de30637f08cd29bb0e27526ce9e21b}{A\+A\+X\+::\+Safe\+Log} (double a\+Value)
+\begin{DoxyCompactList}\small\item\em Double-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. \end{DoxyCompactList}\item 
+float \hyperlink{a00288_ad762727aac31ad8b7bba8b67a4bc2edc}{A\+A\+X\+::\+Safe\+Logf} (float a\+Value)
+\begin{DoxyCompactList}\small\item\em Single-\/precision safe log function. Returns zero for input values that are $<$= 0.\+0. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_ae4d1a0a925aa954899fec653dc041b75}{A\+A\+X\+::\+Is\+Parameter\+I\+D\+Equal} (\hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Param1, \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} i\+Param2)
+\begin{DoxyCompactList}\small\item\em Helper function to check if two parameter I\+Ds are equivalent. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_aef81989128dcac01f2be8fd25096540f}{A\+A\+X\+::\+Is\+Effect\+I\+D\+Equal} (const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$i\+Effect\+I\+D1, const \hyperlink{a00113}{A\+A\+X\+\_\+\+I\+String} $\ast$i\+Effect\+I\+D2)
+\begin{DoxyCompactList}\small\item\em Helper function to check if two Effect I\+Ds are equivalent. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00288_ab63efd791ab1cbbcdb004302b106c45c}{A\+A\+X\+::\+Is\+Avid\+Notification} (\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} in\+Notification\+I\+D)
+\begin{DoxyCompactList}\small\item\em Helper function to check if a notification I\+D is reserved for host notifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00300_a965532f32e277e8db47e16180161827e}{}\index{A\+A\+X\+\_\+\+Utils\+Native.\+h@{A\+A\+X\+\_\+\+Utils\+Native.\+h}!\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+}}
+\index{\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+@{\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+}!A\+A\+X\+\_\+\+Utils\+Native.\+h@{A\+A\+X\+\_\+\+Utils\+Native.\+h}}
+\subsubsection[{\+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+A\+A\+X\+\_\+\+U\+T\+I\+L\+S\+N\+A\+T\+I\+V\+E\+\_\+\+H\+\_\+}\label{a00300_a965532f32e277e8db47e16180161827e}

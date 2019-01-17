@@ -1,0 +1,133 @@
+\hypertarget{a00145}{}\section{I\+A\+C\+F\+Definition Interface Reference}
+\label{a00145}\index{I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}}
+
+
+Inheritance diagram for I\+A\+C\+F\+Definition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{a00725}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for I\+A\+C\+F\+Definition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{a00726}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Publicly inherits from I\+A\+C\+F\+Unknown.\+This abstract interface is used to indentify all of the plug-\/in components in the host. 
+
+\begin{DoxyRemark}{Remarks}
+This interface is the base class for both plug-\/in and component definitions. All defined attributes are read only.
+\end{DoxyRemark}
+\begin{DoxyNote}{Note}
+This interface does not provide any attribute enumeration. You must know the uid of the associated with the attribute that you need to find. 
+
+This interface is implemented by the host. The plug-\/in will use this interface to define optional attributes for both plug-\/in and component implementations classes. 
+\end{DoxyNote}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E \hyperlink{a00145_abf9f28b14b95f0835857a9096d108989}{Define\+Attribute} (const \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \&attribute\+I\+D, const \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \&type\+I\+D, const void $\ast$attr\+Data, acf\+U\+Int32 attr\+Data\+Size)=0
+\begin{DoxyCompactList}\small\item\em Add a read only attribute to the definition. \end{DoxyCompactList}\item 
+virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E \hyperlink{a00145_a067fc04f95d5b558634f8df3bc266815}{Get\+Attribute\+Info} (const \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \&attribute\+I\+D, \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} $\ast$type\+I\+D, acf\+U\+Int32 $\ast$attr\+Data\+Size)=0
+\begin{DoxyCompactList}\small\item\em Returns information about the given attribute. \end{DoxyCompactList}\item 
+virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E \hyperlink{a00145_a8dd0017a8c9bfd837d8938e09995c6bb}{Copy\+Attribute} (const \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \&attribute\+I\+D, const \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \&type\+I\+D, void $\ast$attr\+Data, acf\+U\+Int32 attr\+Data\+Size)=0
+\begin{DoxyCompactList}\small\item\em Copy the a given attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00145_abf9f28b14b95f0835857a9096d108989}{}\index{I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}!Define\+Attribute@{Define\+Attribute}}
+\index{Define\+Attribute@{Define\+Attribute}!I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}}
+\subsubsection[{Define\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E I\+A\+C\+F\+Definition\+::\+Define\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf acf\+U\+I\+D} \&}]{attribute\+I\+D, }
+\item[{const {\bf acf\+U\+I\+D} \&}]{type\+I\+D, }
+\item[{const void $\ast$}]{attr\+Data, }
+\item[{acf\+U\+Int32}]{attr\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00145_abf9f28b14b95f0835857a9096d108989}
+
+
+Add a read only attribute to the definition. 
+
+{\bfseries Define\+Attribute} \begin{DoxyRemark}{Remarks}
+Use the method to define additional global attributes for you component. This method will fail if the attribute has already been defined.
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+I\+D} & Unique identifier for attribute \\
+\hline
+{\em type\+I\+D} & Indicates the type of the attribute data \\
+\hline
+{\em attr\+Data} & Pointer to buffer that contains the attribute data \\
+\hline
+{\em attr\+Data\+Size} & Size of the attribute buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00145_a067fc04f95d5b558634f8df3bc266815}{}\index{I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}!Get\+Attribute\+Info@{Get\+Attribute\+Info}}
+\index{Get\+Attribute\+Info@{Get\+Attribute\+Info}!I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}}
+\subsubsection[{Get\+Attribute\+Info}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E I\+A\+C\+F\+Definition\+::\+Get\+Attribute\+Info (
+\begin{DoxyParamCaption}
+\item[{const {\bf acf\+U\+I\+D} \&}]{attribute\+I\+D, }
+\item[{{\bf acf\+U\+I\+D} $\ast$}]{type\+I\+D, }
+\item[{acf\+U\+Int32 $\ast$}]{attr\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00145_a067fc04f95d5b558634f8df3bc266815}
+
+
+Returns information about the given attribute. 
+
+\begin{DoxyRemark}{Remarks}
+Use this method to retrieve the type and size of a given attribute. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+I\+D} & Unique identifier for attribute \\
+\hline
+{\em type\+I\+D} & Indicates the type of the attribute data \\
+\hline
+{\em attr\+Data\+Size} & Size of the attribute data \\
+\hline
+\end{DoxyParams}
+\hypertarget{a00145_a8dd0017a8c9bfd837d8938e09995c6bb}{}\index{I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}!Copy\+Attribute@{Copy\+Attribute}}
+\index{Copy\+Attribute@{Copy\+Attribute}!I\+A\+C\+F\+Definition@{I\+A\+C\+F\+Definition}}
+\subsubsection[{Copy\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}virtual A\+C\+F\+R\+E\+S\+U\+L\+T A\+C\+F\+M\+E\+T\+H\+O\+D\+C\+A\+L\+L\+T\+Y\+P\+E I\+A\+C\+F\+Definition\+::\+Copy\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf acf\+U\+I\+D} \&}]{attribute\+I\+D, }
+\item[{const {\bf acf\+U\+I\+D} \&}]{type\+I\+D, }
+\item[{void $\ast$}]{attr\+Data, }
+\item[{acf\+U\+Int32}]{attr\+Data\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00145_a8dd0017a8c9bfd837d8938e09995c6bb}
+
+
+Copy the a given attribute. 
+
+{\bfseries Copy\+Attribute} \begin{DoxyRemark}{Remarks}
+Use this method to access the contents of a given attribute. 
+\end{DoxyRemark}
+
+\begin{DoxyParams}{Parameters}
+{\em attribute\+I\+D} & Unique identifier for attribute \\
+\hline
+{\em type\+I\+D} & Indicates the type of the attribute data \\
+\hline
+{\em attr\+Data} & Pointer to buffer to copy the attribute data \\
+\hline
+{\em attr\+Data\+Size} & Size of the attribute buffer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00150}{A\+A\+X\+\_\+\+A\+C\+F\+Interface.\+dox}\end{DoxyCompactItemize}

@@ -1,0 +1,630 @@
+\hypertarget{a00149}{}\section{A\+A\+X.\+h File Reference}
+\label{a00149}\index{A\+A\+X.\+h@{A\+A\+X.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$stddef.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Version.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Enums.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Errors.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Properties.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h\char`\"{}}\\*
+
+
+\subsection{Description}
+Various utility definitions for A\+A\+X. 
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00126}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}
+\begin{DoxyCompactList}\small\item\em Plug-\/in chunk header. \end{DoxyCompactList}\item 
+struct \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}
+\begin{DoxyCompactList}\small\item\em Plug-\/in chunk header + data. \end{DoxyCompactList}\item 
+struct \hyperlink{a00127}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}
+\begin{DoxyCompactList}\small\item\em Plug-\/in Identifier Triad. \end{DoxyCompactList}\item 
+struct \hyperlink{a00024}{A\+A\+X\+\_\+\+C\+Midi\+Packet}
+\begin{DoxyCompactList}\small\item\em Packet structure for M\+I\+D\+I data. \end{DoxyCompactList}\item 
+struct \hyperlink{a00025}{A\+A\+X\+\_\+\+C\+Midi\+Stream}
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I stream data structure used by \hyperlink{a00105}{A\+A\+X\+\_\+\+I\+M\+I\+D\+I\+Node}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00149_aaa22112139aa627574b1ef562f579d43}{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}
+\item 
+\#define \hyperlink{a00149_ab4f95cd2e83b3c871f47c24a4fbaae7a}{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}(X,  Y)~X \#\# Y
+\item 
+\#define \hyperlink{a00149_af135db633628741ce84c57c6ee8dd1ce}{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T}(X,  Y)~\hyperlink{a00149_ab4f95cd2e83b3c871f47c24a4fbaae7a}{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}(X,Y)
+\item 
+\#define \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X}(a\+Context\+Type,  a\+Member)~((\hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}) (offsetof (a\+Context\+Type, a\+Member) / sizeof (void $\ast$)))
+\begin{DoxyCompactList}\small\item\em Compute the index used to address a context field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf C++ compiler macros}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00149_a5f58f7770d463d262cc28b0e7b88747b}{T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}~0
+\begin{DoxyCompactList}\small\item\em Preprocessor flag indicating compilation for T\+I. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a2da185ff8aad77278f985a6fe5ee07ba}{A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T}~1
+\begin{DoxyCompactList}\small\item\em Preprocessor toggle for code which requires C++11 compiler support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf C++ keyword macros}\par
+{\em Use these macros for keywords which may not be supported on all compilers
+
+\begin{DoxyWarning}{Warning}
+Be careful when using these macros; they are a workaround and the fallback versions of the macros are not guaranteed to provide identical behavior to the fully-\/supported versions. Always consider the code which will be generated in each case!
+
+If your code is protected with P\+A\+C\+E Fusion and you are using a P\+A\+C\+E S\+D\+K prior to v4 then you must explicitly define {\ttfamily A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T 0} in your project\textquotesingle{}s preprocessor settings to avoid encountering source failover caused by A\+A\+X header includes with exotic syntax.
+\end{DoxyWarning}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}~override
+\begin{DoxyCompactList}\small\item\em {\ttfamily override} keyword macro \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_aa4da4a09e940c332a2205e34e0677f40}{A\+A\+X\+\_\+\+F\+I\+N\+A\+L}~final
+\begin{DoxyCompactList}\small\item\em {\ttfamily final} keyword macro \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a5ed9499b8cd7549adf991d46dfbe749b}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R}(X)~X() = default
+\begin{DoxyCompactList}\small\item\em {\ttfamily default} keyword macro for a class default constructor \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a608ab9e59f8f54c32e68fe0d32e9b991}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R}(X)~X(const X\&) = default
+\begin{DoxyCompactList}\small\item\em {\ttfamily default} keyword macro for a class copy constructor \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_aded8c9ff9a00f3780ae99be88573a5ce}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R}(X)~X\& operator=(const X\&) = default
+\begin{DoxyCompactList}\small\item\em {\ttfamily default} keyword macro for a class assignment operator \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a2511e9b022e49caf594bca6fa6bff74c}{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}(X)~X = delete
+\begin{DoxyCompactList}\small\item\em {\ttfamily delete} keyword macro \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a25bcd6f9d38bd2c9ffbf8aff01b4a274}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}(X)~X(X\&\&) = default
+\begin{DoxyCompactList}\small\item\em {\ttfamily default} keyword macro for a class move constructor \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a0478af896a79eddf2ddee1cfd403e6b0}{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}(X)~X\& operator=(X\&\&) = default
+\begin{DoxyCompactList}\small\item\em {\ttfamily default} keyword macro for a class move-\/assignment operator \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_aa7cfdcabcfd72ca9b829e6cea9ea6470}{A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R}~constexpr
+\begin{DoxyCompactList}\small\item\em {\ttfamily constexpr} keyword macro \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Pointer definitions}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00149_a3310096b753437bda7ec67de445cf9cb}{A\+A\+X\+Pointer\+\_\+32bit}~1
+\begin{DoxyCompactList}\small\item\em When A\+A\+X\+\_\+\+Pointer\+Size == A\+A\+X\+Pointer\+\_\+32bit this is a 32-\/bit build. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a1a53e919284726babb582d3bb105b08b}{A\+A\+X\+Pointer\+\_\+64bit}~2
+\begin{DoxyCompactList}\small\item\em When A\+A\+X\+\_\+\+Pointer\+Size == A\+A\+X\+Pointer\+\_\+64bit this is a 64-\/bit build. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a078a28903a34f1bd25f1e23d65df6212}{A\+A\+X\+\_\+\+Pointer\+Size}~\hyperlink{a00149_a3310096b753437bda7ec67de445cf9cb}{A\+A\+X\+Pointer\+\_\+32bit}
+\begin{DoxyCompactList}\small\item\em Use this definition to check the pointer size in the current build. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Alignment macros}\par
+{\em Use these macros to define struct packing alignment for data structures that will be sent across binary or platform boundaries.
+
+
+\begin{DoxyCode}
+\textcolor{preprocessor}{#include AAX\_ALIGN\_FILE\_HOST}
+    \textcolor{comment}{// Structure definition}
+\textcolor{preprocessor}{#include AAX\_ALIGN\_FILE\_RESET}
+\end{DoxyCode}
+
+
+See the documentation for each macro for individual usage notes and warnings }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00149_acbef7ed7d077bc9812cb56417e1ad325}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T}~\char`\"{}A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.\+h\char`\"{}
+\begin{DoxyCompactList}\small\item\em Macro to set alignment for data structures that are shared with the host. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G}~\char`\"{}A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h\char`\"{}
+\begin{DoxyCompactList}\small\item\em Macro to set alignment for data structures that are used in the alg. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00149_a8aaaefcc3d87025e84d5ccb99b650a87}{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T}~\char`\"{}A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h\char`\"{}
+\begin{DoxyCompactList}\small\item\em Macro to reset alignment back to default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int32\+\_\+t \hyperlink{a00149_a24ac375fa55ccadbc3126e6d81146c28}{A\+A\+X\+\_\+\+C\+Index}
+\item 
+typedef \hyperlink{a00149_a24ac375fa55ccadbc3126e6d81146c28}{A\+A\+X\+\_\+\+C\+Index} \hyperlink{a00149_a9a9a14ab1486fa8c6734b96976be3056}{A\+A\+X\+\_\+\+C\+Count}
+\item 
+typedef uint8\+\_\+t \hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean}
+\begin{DoxyCompactList}\small\item\em Cross-\/compiler boolean type used by A\+A\+X interfaces. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \hyperlink{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector}
+\item 
+typedef int64\+\_\+t \hyperlink{a00149_aae7325dbfa53a983f208a68cb563fba5}{A\+A\+X\+\_\+\+C\+Timestamp}
+\begin{DoxyCompactList}\small\item\em Time stamp value. Measured against the D\+A\+E clock (see \hyperlink{a00088_a59727dee1043fcd7f14da130ab254445}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Clock()} ) \end{DoxyCompactList}\item 
+typedef int64\+\_\+t \hyperlink{a00149_a46542a1dcccdcc3b4260a9926edf8a2a}{A\+A\+X\+\_\+\+C\+Time\+Of\+Day}
+\begin{DoxyCompactList}\small\item\em Hardware running clock value. M\+I\+D\+I packet time stamps are measured against this clock. This is actually the same as Transport\+Counter, but kept for compatibility. \end{DoxyCompactList}\item 
+typedef int64\+\_\+t \hyperlink{a00149_ac09cd6857748cc296ac0f8bcc20dc74b}{A\+A\+X\+\_\+\+C\+Transport\+Counter}
+\begin{DoxyCompactList}\small\item\em Offset of samples from transport start. Same as Time\+Of\+Day, but added for new interfaces as Time\+Of\+Day is a confusing name. \end{DoxyCompactList}\item 
+typedef float \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate}
+\begin{DoxyCompactList}\small\item\em Literal sample rate value used by the \hyperlink{a00088_adbd57beaa0a3143d3cf44b93ecdb59ec}{sample rate field}. For \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eac5294e2feb18587d57b6ca0216a6bb1e}{A\+A\+X\+\_\+e\+Property\+\_\+\+Sample\+Rate}, use a mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask}. \end{DoxyCompactList}\item 
+typedef uint32\+\_\+t \hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D}
+\begin{DoxyCompactList}\small\item\em Matches type of O\+S\+Type used in classic plugins. \end{DoxyCompactList}\item 
+typedef int32\+\_\+t \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result}
+\item 
+typedef int32\+\_\+t \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value}
+\begin{DoxyCompactList}\small\item\em 32-\/bit property values \end{DoxyCompactList}\item 
+typedef int64\+\_\+t \hyperlink{a00149_a49471789032304f99ac1af8c15a87313}{A\+A\+X\+\_\+\+C\+Property\+Value64}
+\begin{DoxyCompactList}\small\item\em 64-\/bit property values \end{DoxyCompactList}\item 
+typedef \hyperlink{a00149_ab247c0d8686c14e05cbb567ef276f249}{A\+A\+X\+\_\+\+C\+Property\+Value} \hyperlink{a00149_a7abe263a7521e988ed4ee4ac691ed5f9}{A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value}
+\begin{DoxyCompactList}\small\item\em Pointer-\/sized property values. \end{DoxyCompactList}\item 
+typedef int32\+\_\+t \hyperlink{a00149_a8f2cefa455217fa9f3ce190fe5fd8033}{A\+A\+X\+\_\+\+C\+Target\+Platform}
+\begin{DoxyCompactList}\small\item\em Matches type of \hyperlink{a00206_a19e8cc27f59bb9bb4039b00fadb3cb83}{target platform.}\end{DoxyCompactList}\item 
+typedef \hyperlink{a00149_a24ac375fa55ccadbc3126e6d81146c28}{A\+A\+X\+\_\+\+C\+Index} \hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}
+\begin{DoxyCompactList}\small\item\em Not used by A\+A\+X plug-\/ins (except in \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} macro) \end{DoxyCompactList}\item 
+typedef \hyperlink{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector} \hyperlink{a00149_a7e697acf597bd7024de6bb13b9845ce7}{A\+A\+X\+\_\+\+C\+Component\+I\+D}
+\item 
+typedef \hyperlink{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{A\+A\+X\+\_\+\+C\+Selector} \hyperlink{a00149_a6d976263b5f3dd5d01a89d65a3b98ded}{A\+A\+X\+\_\+\+C\+Meter\+I\+D}
+\item 
+typedef const char $\ast$ \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D}
+\begin{DoxyCompactList}\small\item\em Parameter identifier. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00149_a1440c756fe5cb158b78193b2fc1780d1}{A\+A\+X\+\_\+\+C\+Param\+I\+D} \hyperlink{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}
+\begin{DoxyCompactList}\small\item\em Parameter identifier used in a page table. \end{DoxyCompactList}\item 
+typedef const char $\ast$ \hyperlink{a00149_a4b8f04e1a56624da97ace7a28d550dcc}{A\+A\+X\+\_\+\+C\+Effect\+I\+D}
+\begin{DoxyCompactList}\small\item\em U\+R\+L-\/style Effect identifier. Must be unique among all registered effects in the collection. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00008}{\+\_\+acf\+U\+I\+D} \hyperlink{a00149_a66d978418e20352380f1c775c9180a93}{acf\+U\+I\+D}
+\item 
+typedef \hyperlink{a00150_ab19414382287ff80930c48a196145214}{acf\+U\+I\+D} \hyperlink{a00149_a53d6cf8a08224b3e813333e411ce798e}{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D}
+\item 
+typedef const float $\ast$const $\ast$ \hyperlink{a00149_a901605fce9f6c52b770f95916a5db4cf}{A\+A\+X\+\_\+\+C\+Audio\+In\+Port}
+\begin{DoxyCompactList}\small\item\em A\+A\+X algorithm audio input port data type \end{DoxyCompactList}\item 
+typedef float $\ast$const $\ast$ \hyperlink{a00149_a650727644637144afc13344e7996c947}{A\+A\+X\+\_\+\+C\+Audio\+Out\+Port}
+\begin{DoxyCompactList}\small\item\em A\+A\+X algorithm audio output port data type \end{DoxyCompactList}\item 
+typedef float $\ast$const \hyperlink{a00149_aa6f40c5c3f36ede060fca61535ea8464}{A\+A\+X\+\_\+\+C\+Meter\+Port}
+\begin{DoxyCompactList}\small\item\em A\+A\+X algorithm meter port data type \end{DoxyCompactList}\item 
+typedef struct \hyperlink{a00126}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header} \hyperlink{a00149_a5a7e5322afe0c3b98da933557ae0cbba}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}
+\item 
+typedef struct \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} \hyperlink{a00149_af52a5fe2ae79f803234d089889b7e481}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}
+\item 
+typedef struct \hyperlink{a00125}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$ \hyperlink{a00149_ab215ba217e7d757be9ef167dfd8fa23a}{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr}
+\item 
+typedef struct \hyperlink{a00127}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} \hyperlink{a00149_aa20951c2f27c7f5ff8ea4f92a893e29c}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}
+\item 
+typedef struct \hyperlink{a00127}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} $\ast$ \hyperlink{a00149_af0e64ac48db3c92acf98646b97a69f88}{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00149_adec37d03995016a9e25490d5785f0d8b}{sample\+Rate\+In\+Mask} (\hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} in\+S\+R, uint32\+\_\+t i\+Mask)
+\begin{DoxyCompactList}\small\item\em Determines whether a particular \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} is present in a given mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask}. \end{DoxyCompactList}\item 
+\hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} \hyperlink{a00149_a7ed6789141267c2270b49ef9a38bd55a}{get\+Lowest\+Sample\+Rate\+In\+Mask} (uint32\+\_\+t i\+Mask)
+\begin{DoxyCompactList}\small\item\em Converts from a mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask} to the lowest supported \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} value in Hz. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00149_a35608eb248567091abba77878fb87eab}{get\+Mask\+For\+Sample\+Rate} (float in\+S\+R)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask} selector for a literal sample rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{a00149_a5f58f7770d463d262cc28b0e7b88747b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N@{T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}}
+\index{T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N@{T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+\_\+\+V\+E\+R\+S\+I\+O\+N~0}\label{a00149_a5f58f7770d463d262cc28b0e7b88747b}
+
+
+Preprocessor flag indicating compilation for T\+I. 
+
+\hypertarget{a00149_a2da185ff8aad77278f985a6fe5ee07ba}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T@{A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T}}
+\index{A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T@{A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+C\+P\+P11\+\_\+\+S\+U\+P\+P\+O\+R\+T~1}\label{a00149_a2da185ff8aad77278f985a6fe5ee07ba}
+
+
+Preprocessor toggle for code which requires C++11 compiler support. 
+
+\hypertarget{a00149_ac2f24a5172689ae684344abdcce55463}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E@{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}}
+\index{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E@{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E~override}\label{a00149_ac2f24a5172689ae684344abdcce55463}
+
+
+{\ttfamily override} keyword macro 
+
+\hypertarget{a00149_aa4da4a09e940c332a2205e34e0677f40}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+F\+I\+N\+A\+L@{A\+A\+X\+\_\+\+F\+I\+N\+A\+L}}
+\index{A\+A\+X\+\_\+\+F\+I\+N\+A\+L@{A\+A\+X\+\_\+\+F\+I\+N\+A\+L}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+F\+I\+N\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+F\+I\+N\+A\+L~final}\label{a00149_aa4da4a09e940c332a2205e34e0677f40}
+
+
+{\ttfamily final} keyword macro 
+
+\hypertarget{a00149_a5ed9499b8cd7549adf991d46dfbe749b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+T\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X() = default}\label{a00149_a5ed9499b8cd7549adf991d46dfbe749b}
+
+
+{\ttfamily default} keyword macro for a class default constructor 
+
+\hypertarget{a00149_a608ab9e59f8f54c32e68fe0d32e9b991}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+P\+Y\+\_\+\+C\+T\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X(const X\&) = default}\label{a00149_a608ab9e59f8f54c32e68fe0d32e9b991}
+
+
+{\ttfamily default} keyword macro for a class copy constructor 
+
+\hypertarget{a00149_aded8c9ff9a00f3780ae99be88573a5ce}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+S\+G\+N\+\_\+\+O\+P\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X\& operator=(const X\&) = default}\label{a00149_aded8c9ff9a00f3780ae99be88573a5ce}
+
+
+{\ttfamily default} keyword macro for a class assignment operator 
+
+\hypertarget{a00149_a2511e9b022e49caf594bca6fa6bff74c}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}}
+\index{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E@{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+L\+E\+T\+E(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X = delete}\label{a00149_a2511e9b022e49caf594bca6fa6bff74c}
+
+
+{\ttfamily delete} keyword macro 
+
+\begin{DoxyWarning}{Warning}
+The non-\/\+C++11 version of this macro assumes {\ttfamily public} declaration access 
+\end{DoxyWarning}
+\hypertarget{a00149_a25bcd6f9d38bd2c9ffbf8aff01b4a274}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+C\+T\+O\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X(X\&\&) = default}\label{a00149_a25bcd6f9d38bd2c9ffbf8aff01b4a274}
+
+
+{\ttfamily default} keyword macro for a class move constructor 
+
+\hypertarget{a00149_a0478af896a79eddf2ddee1cfd403e6b0}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}}
+\index{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R@{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+O\+V\+E\+\_\+\+O\+P\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~X\& operator=(X\&\&) = default}\label{a00149_a0478af896a79eddf2ddee1cfd403e6b0}
+
+
+{\ttfamily default} keyword macro for a class move-\/assignment operator 
+
+\hypertarget{a00149_aa7cfdcabcfd72ca9b829e6cea9ea6470}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R@{A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R}}
+\index{A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R@{A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+C\+O\+N\+S\+T\+E\+X\+P\+R~constexpr}\label{a00149_aa7cfdcabcfd72ca9b829e6cea9ea6470}
+
+
+{\ttfamily constexpr} keyword macro 
+
+\hypertarget{a00149_a3310096b753437bda7ec67de445cf9cb}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+Pointer\+\_\+32bit@{A\+A\+X\+Pointer\+\_\+32bit}}
+\index{A\+A\+X\+Pointer\+\_\+32bit@{A\+A\+X\+Pointer\+\_\+32bit}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+Pointer\+\_\+32bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+Pointer\+\_\+32bit~1}\label{a00149_a3310096b753437bda7ec67de445cf9cb}
+
+
+When A\+A\+X\+\_\+\+Pointer\+Size == A\+A\+X\+Pointer\+\_\+32bit this is a 32-\/bit build. 
+
+\hypertarget{a00149_a1a53e919284726babb582d3bb105b08b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+Pointer\+\_\+64bit@{A\+A\+X\+Pointer\+\_\+64bit}}
+\index{A\+A\+X\+Pointer\+\_\+64bit@{A\+A\+X\+Pointer\+\_\+64bit}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+Pointer\+\_\+64bit}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+Pointer\+\_\+64bit~2}\label{a00149_a1a53e919284726babb582d3bb105b08b}
+
+
+When A\+A\+X\+\_\+\+Pointer\+Size == A\+A\+X\+Pointer\+\_\+64bit this is a 64-\/bit build. 
+
+\hypertarget{a00149_a078a28903a34f1bd25f1e23d65df6212}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+Pointer\+Size@{A\+A\+X\+\_\+\+Pointer\+Size}}
+\index{A\+A\+X\+\_\+\+Pointer\+Size@{A\+A\+X\+\_\+\+Pointer\+Size}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Pointer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+Pointer\+Size~{\bf A\+A\+X\+Pointer\+\_\+32bit}}\label{a00149_a078a28903a34f1bd25f1e23d65df6212}
+
+
+Use this definition to check the pointer size in the current build. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00149_a3310096b753437bda7ec67de445cf9cb}{A\+A\+X\+Pointer\+\_\+32bit} 
+
+\hyperlink{a00149_a1a53e919284726babb582d3bb105b08b}{A\+A\+X\+Pointer\+\_\+64bit} 
+\end{DoxySeeAlso}
+\hypertarget{a00149_acbef7ed7d077bc9812cb56417e1ad325}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T}}
+\index{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+H\+O\+S\+T~\char`\"{}A\+A\+X\+\_\+\+Push2\+Byte\+Struct\+Alignment.\+h\char`\"{}}\label{a00149_acbef7ed7d077bc9812cb56417e1ad325}
+
+
+Macro to set alignment for data structures that are shared with the host. 
+
+This macro is used to set alignment for data structures that are part of the A\+A\+X A\+B\+I. You should not need to use this macro for any custom data structures in your plug-\/in. \hypertarget{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G}}
+\index{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+A\+L\+G~\char`\"{}A\+A\+X\+\_\+\+Push8\+Byte\+Struct\+Alignment.\+h\char`\"{}}\label{a00149_a8fbeac3c5db5ac694e85a021ed74dc9e}
+
+
+Macro to set alignment for data structures that are used in the alg. 
+
+I\+M\+P\+O\+R\+T\+A\+N\+T\+: Be very careful to maintain correct data alignment when sending data structures between platforms.
+
+\begin{DoxyWarning}{Warning}
+\begin{DoxyItemize}
+\item This macro does not guarantee data alignment compatibility for data structures which include base classes/structs or virtual functions. The M\+S\+V\+C, G\+C\+C and L\+L\+V\+M/clang, and C\+C\+S (T\+I) compilers do not support data structure cross-\/compatibility for these types of structures. clang will now present a warning when these macros are used on any such structures\+: {\ttfamily \#pragma ms\+\_\+struct can not be used with dynamic classes or structures} \item Struct Member Alignment (/\+Zp) on Microsoft compilers must be set to a minimum of 8-\/byte packing in order for this macro to function properly. For more information, see this M\+S\+D\+N article\+:~\newline
+\href{http://msdn.microsoft.com/en-us/library/ms253935.aspx}{\tt http\+://msdn.\+microsoft.\+com/en-\/us/library/ms253935.\+aspx} \end{DoxyItemize}
+
+\end{DoxyWarning}
+\hypertarget{a00149_a8aaaefcc3d87025e84d5ccb99b650a87}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T}}
+\index{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T@{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+A\+L\+I\+G\+N\+\_\+\+F\+I\+L\+E\+\_\+\+R\+E\+S\+E\+T~\char`\"{}A\+A\+X\+\_\+\+Pop\+Struct\+Alignment.\+h\char`\"{}}\label{a00149_a8aaaefcc3d87025e84d5ccb99b650a87}
+
+
+Macro to reset alignment back to default. 
+
+\hypertarget{a00149_aaa22112139aa627574b1ef562f579d43}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K@{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}}
+\index{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K@{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+C\+A\+L\+L\+B\+A\+C\+K}\label{a00149_aaa22112139aa627574b1ef562f579d43}
+\hypertarget{a00149_ab4f95cd2e83b3c871f47c24a4fbaae7a}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R@{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}}
+\index{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R@{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y}
+\end{DoxyParamCaption}
+)~X \#\# Y}\label{a00149_ab4f95cd2e83b3c871f47c24a4fbaae7a}
+\hypertarget{a00149_af135db633628741ce84c57c6ee8dd1ce}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T@{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T}}
+\index{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T@{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y}
+\end{DoxyParamCaption}
+)~{\bf A\+A\+X\+\_\+\+P\+R\+E\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+C\+O\+N\+C\+A\+T\+\_\+\+H\+E\+L\+P\+E\+R}(X,Y)}\label{a00149_af135db633628741ce84c57c6ee8dd1ce}
+\hypertarget{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X@{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X}}
+\index{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X@{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X(
+\begin{DoxyParamCaption}
+\item[{}]{a\+Context\+Type, }
+\item[{}]{a\+Member}
+\end{DoxyParamCaption}
+)~(({\bf A\+A\+X\+\_\+\+C\+Field\+Index}) (offsetof (a\+Context\+Type, a\+Member) / sizeof (void $\ast$)))}\label{a00149_acf807247ecd6e5899dc9dc31644e9a1d}
+
+
+Compute the index used to address a context field. 
+
+This macro expands to a constant expression suitable for use in enumerator definitions and case labels so int32\+\_\+t as {\ttfamily a\+Member} is a constant specifier.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Context\+Type} & The name of context type\\
+\hline
+\mbox{\tt in}  & {\em a\+Member} & The name or other specifier of a field of that context type \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Generate\+Coefficients(), A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Reset\+Field\+Data(), and A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00149_a24ac375fa55ccadbc3126e6d81146c28}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Index@{A\+A\+X\+\_\+\+C\+Index}}
+\index{A\+A\+X\+\_\+\+C\+Index@{A\+A\+X\+\_\+\+C\+Index}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Index}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Index}}\label{a00149_a24ac375fa55ccadbc3126e6d81146c28}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000003}{Todo}]Not used by A\+A\+X plug-\/ins (except as \hyperlink{a00149_ae807f8986143820cfb5d6da32165c9c7}{A\+A\+X\+\_\+\+C\+Field\+Index}) \end{DoxyRefDesc}
+\hypertarget{a00149_a9a9a14ab1486fa8c6734b96976be3056}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Count@{A\+A\+X\+\_\+\+C\+Count}}
+\index{A\+A\+X\+\_\+\+C\+Count@{A\+A\+X\+\_\+\+C\+Count}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Count}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Index} {\bf A\+A\+X\+\_\+\+C\+Count}}\label{a00149_a9a9a14ab1486fa8c6734b96976be3056}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000004}{Todo}]Not used by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_aa216506530f1d19a2965931ced2b274b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Boolean@{A\+A\+X\+\_\+\+C\+Boolean}}
+\index{A\+A\+X\+\_\+\+C\+Boolean@{A\+A\+X\+\_\+\+C\+Boolean}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Boolean}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Boolean}}\label{a00149_aa216506530f1d19a2965931ced2b274b}
+
+
+Cross-\/compiler boolean type used by A\+A\+X interfaces. 
+
+\hypertarget{a00149_aeaf9b387f902c50a8360ff423f4a1f23}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Selector@{A\+A\+X\+\_\+\+C\+Selector}}
+\index{A\+A\+X\+\_\+\+C\+Selector@{A\+A\+X\+\_\+\+C\+Selector}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Selector}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Selector}}\label{a00149_aeaf9b387f902c50a8360ff423f4a1f23}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000005}{Todo}]Clean up usage; currently used for a variety of I\+D-\/related values \end{DoxyRefDesc}
+\hypertarget{a00149_aae7325dbfa53a983f208a68cb563fba5}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Timestamp@{A\+A\+X\+\_\+\+C\+Timestamp}}
+\index{A\+A\+X\+\_\+\+C\+Timestamp@{A\+A\+X\+\_\+\+C\+Timestamp}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}typedef int64\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Timestamp}}\label{a00149_aae7325dbfa53a983f208a68cb563fba5}
+
+
+Time stamp value. Measured against the D\+A\+E clock (see \hyperlink{a00088_a59727dee1043fcd7f14da130ab254445}{A\+A\+X\+\_\+\+I\+Component\+Descriptor\+::\+Add\+Clock()} ) 
+
+\hypertarget{a00149_a46542a1dcccdcc3b4260a9926edf8a2a}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Time\+Of\+Day@{A\+A\+X\+\_\+\+C\+Time\+Of\+Day}}
+\index{A\+A\+X\+\_\+\+C\+Time\+Of\+Day@{A\+A\+X\+\_\+\+C\+Time\+Of\+Day}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Time\+Of\+Day}]{\setlength{\rightskip}{0pt plus 5cm}typedef int64\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Time\+Of\+Day}}\label{a00149_a46542a1dcccdcc3b4260a9926edf8a2a}
+
+
+Hardware running clock value. M\+I\+D\+I packet time stamps are measured against this clock. This is actually the same as Transport\+Counter, but kept for compatibility. 
+
+\hypertarget{a00149_ac09cd6857748cc296ac0f8bcc20dc74b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Transport\+Counter@{A\+A\+X\+\_\+\+C\+Transport\+Counter}}
+\index{A\+A\+X\+\_\+\+C\+Transport\+Counter@{A\+A\+X\+\_\+\+C\+Transport\+Counter}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Transport\+Counter}]{\setlength{\rightskip}{0pt plus 5cm}typedef int64\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Transport\+Counter}}\label{a00149_ac09cd6857748cc296ac0f8bcc20dc74b}
+
+
+Offset of samples from transport start. Same as Time\+Of\+Day, but added for new interfaces as Time\+Of\+Day is a confusing name. 
+
+\hypertarget{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Sample\+Rate@{A\+A\+X\+\_\+\+C\+Sample\+Rate}}
+\index{A\+A\+X\+\_\+\+C\+Sample\+Rate@{A\+A\+X\+\_\+\+C\+Sample\+Rate}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Sample\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}typedef float {\bf A\+A\+X\+\_\+\+C\+Sample\+Rate}}\label{a00149_a3d9eea08f47e0b0a23432e15baa4e885}
+
+
+Literal sample rate value used by the \hyperlink{a00088_adbd57beaa0a3143d3cf44b93ecdb59ec}{sample rate field}. For \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eac5294e2feb18587d57b6ca0216a6bb1e}{A\+A\+X\+\_\+e\+Property\+\_\+\+Sample\+Rate}, use a mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00149_adec37d03995016a9e25490d5785f0d8b}{sample\+Rate\+In\+Mask} 
+\end{DoxySeeAlso}
+\hypertarget{a00149_ac678f9c1fbcc26315d209f71a147a175}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Type\+I\+D@{A\+A\+X\+\_\+\+C\+Type\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Type\+I\+D@{A\+A\+X\+\_\+\+C\+Type\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Type\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}}\label{a00149_ac678f9c1fbcc26315d209f71a147a175}
+
+
+Matches type of O\+S\+Type used in classic plugins. 
+
+\hypertarget{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+Result@{A\+A\+X\+\_\+\+Result}}
+\index{A\+A\+X\+\_\+\+Result@{A\+A\+X\+\_\+\+Result}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Result}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf A\+A\+X\+\_\+\+Result}}\label{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}
+\hypertarget{a00149_ab247c0d8686c14e05cbb567ef276f249}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Property\+Value@{A\+A\+X\+\_\+\+C\+Property\+Value}}
+\index{A\+A\+X\+\_\+\+C\+Property\+Value@{A\+A\+X\+\_\+\+C\+Property\+Value}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Property\+Value}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Property\+Value}}\label{a00149_ab247c0d8686c14e05cbb567ef276f249}
+
+
+32-\/bit property values 
+
+Use this property value type for all properties unless otherwise specified by the property documentation \hypertarget{a00149_a49471789032304f99ac1af8c15a87313}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Property\+Value64@{A\+A\+X\+\_\+\+C\+Property\+Value64}}
+\index{A\+A\+X\+\_\+\+C\+Property\+Value64@{A\+A\+X\+\_\+\+C\+Property\+Value64}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Property\+Value64}]{\setlength{\rightskip}{0pt plus 5cm}typedef int64\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Property\+Value64}}\label{a00149_a49471789032304f99ac1af8c15a87313}
+
+
+64-\/bit property values 
+
+Do not use this value type unless specified explicitly in the property documentation \hypertarget{a00149_a7abe263a7521e988ed4ee4ac691ed5f9}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value@{A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value}}
+\index{A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value@{A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Property\+Value} {\bf A\+A\+X\+\_\+\+C\+Pointer\+Property\+Value}}\label{a00149_a7abe263a7521e988ed4ee4ac691ed5f9}
+
+
+Pointer-\/sized property values. 
+
+Do not use this value type unless specified explicitly in the property documentation \hypertarget{a00149_a8f2cefa455217fa9f3ce190fe5fd8033}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Target\+Platform@{A\+A\+X\+\_\+\+C\+Target\+Platform}}
+\index{A\+A\+X\+\_\+\+C\+Target\+Platform@{A\+A\+X\+\_\+\+C\+Target\+Platform}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Target\+Platform}]{\setlength{\rightskip}{0pt plus 5cm}typedef int32\+\_\+t {\bf A\+A\+X\+\_\+\+C\+Target\+Platform}}\label{a00149_a8f2cefa455217fa9f3ce190fe5fd8033}
+
+
+Matches type of \hyperlink{a00206_a19e8cc27f59bb9bb4039b00fadb3cb83}{target platform.}
+
+\hypertarget{a00149_ae807f8986143820cfb5d6da32165c9c7}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Field\+Index@{A\+A\+X\+\_\+\+C\+Field\+Index}}
+\index{A\+A\+X\+\_\+\+C\+Field\+Index@{A\+A\+X\+\_\+\+C\+Field\+Index}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Field\+Index}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Index} {\bf A\+A\+X\+\_\+\+C\+Field\+Index}}\label{a00149_ae807f8986143820cfb5d6da32165c9c7}
+
+
+Not used by A\+A\+X plug-\/ins (except in \hyperlink{a00149_acf807247ecd6e5899dc9dc31644e9a1d}{A\+A\+X\+\_\+\+F\+I\+E\+L\+D\+\_\+\+I\+N\+D\+E\+X} macro) 
+
+\hypertarget{a00149_a7e697acf597bd7024de6bb13b9845ce7}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Component\+I\+D@{A\+A\+X\+\_\+\+C\+Component\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Component\+I\+D@{A\+A\+X\+\_\+\+C\+Component\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Component\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Selector} {\bf A\+A\+X\+\_\+\+C\+Component\+I\+D}}\label{a00149_a7e697acf597bd7024de6bb13b9845ce7}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000006}{Todo}]Not used by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_a6d976263b5f3dd5d01a89d65a3b98ded}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Meter\+I\+D@{A\+A\+X\+\_\+\+C\+Meter\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Meter\+I\+D@{A\+A\+X\+\_\+\+C\+Meter\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Meter\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Selector} {\bf A\+A\+X\+\_\+\+C\+Meter\+I\+D}}\label{a00149_a6d976263b5f3dd5d01a89d65a3b98ded}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000007}{Todo}]Not used by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_a1440c756fe5cb158b78193b2fc1780d1}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Param\+I\+D@{A\+A\+X\+\_\+\+C\+Param\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Param\+I\+D@{A\+A\+X\+\_\+\+C\+Param\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Param\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef const char$\ast$ {\bf A\+A\+X\+\_\+\+C\+Param\+I\+D}}\label{a00149_a1440c756fe5cb158b78193b2fc1780d1}
+
+
+Parameter identifier. 
+
+\begin{DoxyNote}{Note}
+While this is a string, it must be less than 32 characters in length. (strlen of 31 or less) 
+\end{DoxyNote}
+\hypertarget{a00149_ab4e01b971dac1b25632fd9f710dd8f77}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D@{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D@{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf A\+A\+X\+\_\+\+C\+Param\+I\+D} {\bf A\+A\+X\+\_\+\+C\+Page\+Table\+Param\+I\+D}}\label{a00149_ab4e01b971dac1b25632fd9f710dd8f77}
+
+
+Parameter identifier used in a page table. 
+
+May be a parameter I\+D or a parameter name string depending on the page table formatting. Must be less than 32 characters in length (strlen of 31 or less.) \begin{DoxySeeAlso}{See also}
+\hyperlink{a00363_subsection_parameter_identifiers}{Parameter identifiers} in the \hyperlink{a00363}{Page Table Guide} 
+\end{DoxySeeAlso}
+\hypertarget{a00149_a4b8f04e1a56624da97ace7a28d550dcc}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Effect\+I\+D@{A\+A\+X\+\_\+\+C\+Effect\+I\+D}}
+\index{A\+A\+X\+\_\+\+C\+Effect\+I\+D@{A\+A\+X\+\_\+\+C\+Effect\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Effect\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef const char$\ast$ {\bf A\+A\+X\+\_\+\+C\+Effect\+I\+D}}\label{a00149_a4b8f04e1a56624da97ace7a28d550dcc}
+
+
+U\+R\+L-\/style Effect identifier. Must be unique among all registered effects in the collection. 
+
+\hypertarget{a00149_a66d978418e20352380f1c775c9180a93}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!acf\+U\+I\+D@{acf\+U\+I\+D}}
+\index{acf\+U\+I\+D@{acf\+U\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{acf\+U\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \+\_\+acf\+U\+I\+D} {\bf acf\+U\+I\+D}}\label{a00149_a66d978418e20352380f1c775c9180a93}
+\hypertarget{a00149_a53d6cf8a08224b3e813333e411ce798e}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D@{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D}}
+\index{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D@{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf acf\+U\+I\+D} {\bf A\+A\+X\+\_\+\+Feature\+\_\+\+U\+I\+D}}\label{a00149_a53d6cf8a08224b3e813333e411ce798e}
+Identifier for A\+A\+X features
+
+See \hyperlink{a00091_aa0d9e27d0207113f98c217d870bfa5e9}{A\+A\+X\+\_\+\+I\+Description\+Host\+::\+Acquire\+Feature\+Properties()} and \hyperlink{a00100}{A\+A\+X\+\_\+\+I\+Feature\+Info} \hypertarget{a00149_a901605fce9f6c52b770f95916a5db4cf}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Audio\+In\+Port@{A\+A\+X\+\_\+\+C\+Audio\+In\+Port}}
+\index{A\+A\+X\+\_\+\+C\+Audio\+In\+Port@{A\+A\+X\+\_\+\+C\+Audio\+In\+Port}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Audio\+In\+Port}]{\setlength{\rightskip}{0pt plus 5cm}typedef const float$\ast$ const$\ast$ {\bf A\+A\+X\+\_\+\+C\+Audio\+In\+Port}}\label{a00149_a901605fce9f6c52b770f95916a5db4cf}
+
+
+A\+A\+X algorithm audio input port data type 
+
+Audio input ports are provided with a pointer to an array of const audio buffers, with one buffer provided per input or side chain channel.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000009}{Todo}]Not used directly by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_a650727644637144afc13344e7996c947}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Audio\+Out\+Port@{A\+A\+X\+\_\+\+C\+Audio\+Out\+Port}}
+\index{A\+A\+X\+\_\+\+C\+Audio\+Out\+Port@{A\+A\+X\+\_\+\+C\+Audio\+Out\+Port}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Audio\+Out\+Port}]{\setlength{\rightskip}{0pt plus 5cm}typedef float$\ast$ const$\ast$ {\bf A\+A\+X\+\_\+\+C\+Audio\+Out\+Port}}\label{a00149_a650727644637144afc13344e7996c947}
+
+
+A\+A\+X algorithm audio output port data type 
+
+Audio output ports are provided with a pointer to an array of audio buffers, with one buffer provided per output or auxiliary output channel.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000010}{Todo}]Not used directly by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_aa6f40c5c3f36ede060fca61535ea8464}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+C\+Meter\+Port@{A\+A\+X\+\_\+\+C\+Meter\+Port}}
+\index{A\+A\+X\+\_\+\+C\+Meter\+Port@{A\+A\+X\+\_\+\+C\+Meter\+Port}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Meter\+Port}]{\setlength{\rightskip}{0pt plus 5cm}typedef float$\ast$ const {\bf A\+A\+X\+\_\+\+C\+Meter\+Port}}\label{a00149_aa6f40c5c3f36ede060fca61535ea8464}
+
+
+A\+A\+X algorithm meter port data type 
+
+Meter output ports are provided with a pointer to an array of floats, with one float provided per meter tap. The algorithm is responsible for setting these to the corresponding per-\/buffer peak sample values.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{a00382__todo000011}{Todo}]Not used directly by A\+A\+X plug-\/ins \end{DoxyRefDesc}
+\hypertarget{a00149_a5a7e5322afe0c3b98da933557ae0cbba}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}
+\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header} {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Header}}\label{a00149_a5a7e5322afe0c3b98da933557ae0cbba}
+\hypertarget{a00149_af52a5fe2ae79f803234d089889b7e481}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}}
+\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk}}\label{a00149_af52a5fe2ae79f803234d089889b7e481}
+\hypertarget{a00149_ab215ba217e7d757be9ef167dfd8fa23a}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr}}
+\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr@{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk} $\ast$ {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Chunk\+Ptr}}\label{a00149_ab215ba217e7d757be9ef167dfd8fa23a}
+\hypertarget{a00149_aa20951c2f27c7f5ff8ea4f92a893e29c}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad@{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}}
+\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad@{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad}}\label{a00149_aa20951c2f27c7f5ff8ea4f92a893e29c}
+\hypertarget{a00149_af0e64ac48db3c92acf98646b97a69f88}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr@{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr}}
+\index{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr@{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad} $\ast$ {\bf A\+A\+X\+\_\+\+S\+Plug\+In\+Identifier\+Triad\+Ptr}}\label{a00149_af0e64ac48db3c92acf98646b97a69f88}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00149_adec37d03995016a9e25490d5785f0d8b}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!sample\+Rate\+In\+Mask@{sample\+Rate\+In\+Mask}}
+\index{sample\+Rate\+In\+Mask@{sample\+Rate\+In\+Mask}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{sample\+Rate\+In\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} sample\+Rate\+In\+Mask (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+C\+Sample\+Rate}}]{in\+S\+R, }
+\item[{uint32\+\_\+t}]{i\+Mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00149_adec37d03995016a9e25490d5785f0d8b}
+
+
+Determines whether a particular \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} is present in a given mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask}. 
+
+\begin{DoxySeeAlso}{See also}
+k\+A\+A\+X\+\_\+\+Property\+\_\+\+Sample\+Rate 
+\end{DoxySeeAlso}
+
+
+References A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+176400, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+192000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+44100, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+48000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+88200, and A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+96000.
+
+\hypertarget{a00149_a7ed6789141267c2270b49ef9a38bd55a}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!get\+Lowest\+Sample\+Rate\+In\+Mask@{get\+Lowest\+Sample\+Rate\+In\+Mask}}
+\index{get\+Lowest\+Sample\+Rate\+In\+Mask@{get\+Lowest\+Sample\+Rate\+In\+Mask}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{get\+Lowest\+Sample\+Rate\+In\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Sample\+Rate} get\+Lowest\+Sample\+Rate\+In\+Mask (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{i\+Mask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00149_a7ed6789141267c2270b49ef9a38bd55a}
+
+
+Converts from a mask of \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask} to the lowest supported \hyperlink{a00149_a3d9eea08f47e0b0a23432e15baa4e885}{A\+A\+X\+\_\+\+C\+Sample\+Rate} value in Hz. 
+
+
+
+References A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+176400, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+192000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+44100, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+48000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+88200, and A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+96000.
+
+\hypertarget{a00149_a35608eb248567091abba77878fb87eab}{}\index{A\+A\+X.\+h@{A\+A\+X.\+h}!get\+Mask\+For\+Sample\+Rate@{get\+Mask\+For\+Sample\+Rate}}
+\index{get\+Mask\+For\+Sample\+Rate@{get\+Mask\+For\+Sample\+Rate}!A\+A\+X.\+h@{A\+A\+X.\+h}}
+\subsubsection[{get\+Mask\+For\+Sample\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t get\+Mask\+For\+Sample\+Rate (
+\begin{DoxyParamCaption}
+\item[{float}]{in\+S\+R}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00149_a35608eb248567091abba77878fb87eab}
+
+
+Returns the \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7}{A\+A\+X\+\_\+\+E\+Sample\+Rate\+Mask} selector for a literal sample rate. 
+
+The given rate must be an exact match with one of the available selectors. If no exact match is found then \hyperlink{a00206_a5bb98259de21d2c4d04a2d6010d757c7a458fc436e77f902b77b7b983a851219f}{A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+\+No} is returned. 
+
+References A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+176400, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+192000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+44100, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+48000, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+88200, A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+96000, and A\+A\+X\+\_\+e\+Sample\+Rate\+Mask\+\_\+\+No.
+

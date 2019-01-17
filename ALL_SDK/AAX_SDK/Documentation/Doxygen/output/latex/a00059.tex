@@ -1,0 +1,125 @@
+\hypertarget{a00059}{}\section{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data Class Reference}
+\label{a00059}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{a00520}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{a00521}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+Optional interface for direct access to a plug-\/in\textquotesingle{}s alg memory. 
+
+Direct data access allows a plug-\/in to directly manipulate the data in its algorithm\textquotesingle{}s private data blocks. The callback methods in this interface provide a safe context from which this kind of access may be attempted. \subsection*{Public Member Functions}
+\begin{Indent}{\bf Initialization and uninitialization}\par
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00059_adefbc617c71ea5ea6512fb79a116dbf7}{Initialize} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Controller)=0
+\begin{DoxyCompactList}\small\item\em Main initialization. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00059_ad56406a13dd691db6f1117ab97cfc90a}{Uninitialize} ()=0
+\begin{DoxyCompactList}\small\item\em Main uninitialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Safe data update callbacks}\par
+{\em These callbacks provide a safe context from which to directly access the algorithm\textquotesingle{}s private data blocks. Each callback is called regularly with roughly the schedule of its corresponding \hyperlink{a00099}{A\+A\+X\+\_\+\+I\+Effect\+Parameters} counterpart.
+
+\begin{DoxyNote}{Note}
+Do not attempt to directly access the algorithm\textquotesingle{}s data from outside these callbacks. Instead, use the packet system to route data to the algorithm using the A\+A\+X host\textquotesingle{}s buffered data transfer facilities. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00059_afb4fa2c566547d7bd303166cf50741bb}{Timer\+Wakeup} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$i\+Data\+Access\+Interface)=0
+\begin{DoxyCompactList}\small\item\em Periodic wakeup callback for idle-\/time operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00059_adefbc617c71ea5ea6512fb79a116dbf7}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00059_adefbc617c71ea5ea6512fb79a116dbf7}
+
+
+Main initialization. 
+
+Called when the interface is created
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Controller} & A versioned reference that resolves to an \hyperlink{a00090}{A\+A\+X\+\_\+\+I\+Controller} interface \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{a00016_ad89ee93781539d8df3b0710a186c7e0d}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}.
+
+\hypertarget{a00059_ad56406a13dd691db6f1117ab97cfc90a}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}!Uninitialize@{Uninitialize}}
+\index{Uninitialize@{Uninitialize}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}}
+\subsubsection[{Uninitialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Uninitialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00059_ad56406a13dd691db6f1117ab97cfc90a}
+
+
+Main uninitialization. 
+
+Called when the interface is destroyed. 
+
+Implemented in \hyperlink{a00016_a3263ebf2e9e71dbb71c0b54177051f8a}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}.
+
+\hypertarget{a00059_afb4fa2c566547d7bd303166cf50741bb}{}\index{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}!Timer\+Wakeup@{Timer\+Wakeup}}
+\index{Timer\+Wakeup@{Timer\+Wakeup}!A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data@{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data}}
+\subsubsection[{Timer\+Wakeup}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data\+::\+Timer\+Wakeup (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{i\+Data\+Access\+Interface}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{a00059_afb4fa2c566547d7bd303166cf50741bb}
+
+
+Periodic wakeup callback for idle-\/time operations. 
+
+Direct alg data updates must be triggered from this method.
+
+This method is called from the host using a non-\/main thread. In general, it should be driven at approximately one call per 30 ms. However, the wakeup is not guaranteed to be called at any regular interval -\/ for example, it could be held off by a high real-\/time processing load -\/ and there is no host contract regarding maximum latency between wakeup calls.
+
+This wakeup thread runs continuously and cannot be armed/disarmed or by the plug-\/in.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i\+Data\+Access\+Interface} & Reference to the direct access interface.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It is not safe to save this address or call the methods in this interface from other threads. 
+\end{DoxyNote}
+
+
+Implemented in \hyperlink{a00016_a3ed665cfbece195524e208e61b4d1937}{A\+A\+X\+\_\+\+C\+Effect\+Direct\+Data}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00222}{A\+A\+X\+\_\+\+I\+A\+C\+F\+Effect\+Direct\+Data.\+h}\end{DoxyCompactItemize}

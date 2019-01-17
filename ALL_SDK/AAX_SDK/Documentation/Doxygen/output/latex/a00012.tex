@@ -1,0 +1,230 @@
+\hypertarget{a00012}{}\section{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$ Class Template Reference}
+\label{a00012}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate.\+h$>$}
+
+
+
+Inheritance diagram for A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00396}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{a00397}
+\end{center}
+\end{figure}
+
+
+\subsection{Description}
+\subsubsection*{template$<$typename T$>$class A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate$<$ T $>$}
+
+A binary display format conforming to \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate}. 
+
+This display delegate converts a parameter value to one of two provided strings (e.\+g. \char`\"{}\+True\char`\"{} and \char`\"{}\+False\char`\"{}.) \subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00012_a7261174f82f961b2573bfbf334ed064c}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate} (const char $\ast$false\+String, const char $\ast$true\+String)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00012_a5b7d4d97d370445390d5d79218d868d9}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate} (const \hyperlink{a00012}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate} \&other)
+\item 
+virtual \hyperlink{a00092}{A\+A\+X\+\_\+\+I\+Display\+Delegate}$<$ T $>$ $\ast$ \hyperlink{a00012_ac0f060429501b13e2f79babbcfdda9ab}{Clone} () const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Constructs and returns a copy of the display delegate. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00012_a37fc0647f758a9ff0d47595ba110ecdd}{Value\+To\+String} (T value, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00012_ad499fa03159aec7df8da1be67aae82c7}{Value\+To\+String} (T value, int32\+\_\+t max\+Num\+Chars, \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} $\ast$value\+String) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{a00012_ac707b7ca0e5fafdc4133959d8b7c5035}{String\+To\+Value} (const \hyperlink{a00042}{A\+A\+X\+\_\+\+C\+String} \&value\+String, T $\ast$value) const \hyperlink{a00149_ac2f24a5172689ae684344abdcce55463}{A\+A\+X\+\_\+\+O\+V\+E\+R\+R\+I\+D\+E}
+\begin{DoxyCompactList}\small\item\em Converts a string to a real parameter value. \end{DoxyCompactList}\item 
+virtual void \hyperlink{a00012_a3e6702d7c53a7f0a0f29ecf1ecd4b9b7}{Add\+Shortened\+Strings} (const char $\ast$false\+String, const char $\ast$true\+String, int i\+Str\+Length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00012_a7261174f82f961b2573bfbf334ed064c}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::{\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{false\+String, }
+\item[{const char $\ast$}]{true\+String}
+\end{DoxyParamCaption}
+)}\label{a00012_a7261174f82f961b2573bfbf334ed064c}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em false\+String} & The string that will be associated with false parameter values \\
+\hline
+\mbox{\tt in}  & {\em true\+String} & The string that will be associated with true parameter values \\
+\hline
+\end{DoxyParams}
+
+
+References A\+A\+X\+\_\+\+C\+String\+::\+Length().
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00012_a7261174f82f961b2573bfbf334ed064c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00012_a5b7d4d97d370445390d5d79218d868d9}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::{\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate} (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{a00012_a5b7d4d97d370445390d5d79218d868d9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00012_ac0f060429501b13e2f79babbcfdda9ab}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!Clone@{Clone}}
+\index{Clone@{Clone}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf A\+A\+X\+\_\+\+I\+Display\+Delegate}$<$ T $>$ $\ast$ {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00012_ac0f060429501b13e2f79babbcfdda9ab}
+
+
+Constructs and returns a copy of the display delegate. 
+
+In general, this method\textquotesingle{}s implementation can use a simple copy constructor\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{template} <\textcolor{keyword}{typename} T>
+AAX\_CSubclassDisplayDelegate<T>*    AAX\_CSubclassDisplayDelegate<T>::Clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+    \textcolor{keywordflow}{return} \textcolor{keyword}{new} AAX\_CSubclassDisplayDelegate(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+ 
+
+Implements \hyperlink{a00092_a138a82c124ddda8255ce39194dfc1f3f}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00012_a37fc0647f758a9ff0d47595ba110ecdd}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00012_a37fc0647f758a9ff0d47595ba110ecdd}
+
+
+Converts a real parameter value to a string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a7fd1e2f55055c817937bbfa66b73b2fd}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00012_ad499fa03159aec7df8da1be67aae82c7}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!Value\+To\+String@{Value\+To\+String}}
+\index{Value\+To\+String@{Value\+To\+String}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{Value\+To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::Value\+To\+String (
+\begin{DoxyParamCaption}
+\item[{T}]{value, }
+\item[{int32\+\_\+t}]{max\+Num\+Chars, }
+\item[{{\bf A\+A\+X\+\_\+\+C\+String} $\ast$}]{value\+String}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00012_ad499fa03159aec7df8da1be67aae82c7}
+
+
+Converts a real parameter value to a string representation using a size hint, useful for control surfaces and other character limited displays. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The real parameter value that will be converted \\
+\hline
+\mbox{\tt in}  & {\em max\+Num\+Chars} & Size hint for the desired maximum number of characters in the string (not including null termination) \\
+\hline
+\mbox{\tt out}  & {\em value\+String} & A string corresponding to value\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_a471c7381db773683b69216a9c3f5eda7}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00012_ac707b7ca0e5fafdc4133959d8b7c5035}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!String\+To\+Value@{String\+To\+Value}}
+\index{String\+To\+Value@{String\+To\+Value}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{String\+To\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::String\+To\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+A\+X\+\_\+\+C\+String} \&}]{value\+String, }
+\item[{T $\ast$}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00012_ac707b7ca0e5fafdc4133959d8b7c5035}
+
+
+Converts a string to a real parameter value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value\+String} & The string that will be converted \\
+\hline
+\mbox{\tt out}  & {\em value} & The real parameter value corresponding to value\+String\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & The string conversion was successful \\
+\hline
+{\em false} & The string conversion was unsuccessful \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{a00092_aed5224775c9f733f091afddfba057d5e}{A\+A\+X\+\_\+\+I\+Display\+Delegate$<$ T $>$}.
+
+\hypertarget{a00012_a3e6702d7c53a7f0a0f29ecf1ecd4b9b7}{}\index{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}!Add\+Shortened\+Strings@{Add\+Shortened\+Strings}}
+\index{Add\+Shortened\+Strings@{Add\+Shortened\+Strings}!A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate@{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}}
+\subsubsection[{Add\+Shortened\+Strings}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate}$<$ T $>$\+::Add\+Shortened\+Strings (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{false\+String, }
+\item[{const char $\ast$}]{true\+String, }
+\item[{int}]{i\+Str\+Length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{a00012_a3e6702d7c53a7f0a0f29ecf1ecd4b9b7}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00166}{A\+A\+X\+\_\+\+C\+Binary\+Display\+Delegate.\+h}\end{DoxyCompactItemize}

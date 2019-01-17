@@ -1,0 +1,69 @@
+\hypertarget{a00024}{}\section{A\+A\+X\+\_\+\+C\+Midi\+Packet Struct Reference}
+\label{a00024}\index{A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}}
+
+
+{\ttfamily \#include $<$A\+A\+X.\+h$>$}
+
+
+
+\subsection{Description}
+Packet structure for M\+I\+D\+I data. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00025}{A\+A\+X\+\_\+\+C\+Midi\+Stream}
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Legacy Porting Notes}
+\item[\hyperlink{a00384__porting_notes000003}{Legacy Porting Notes}]Corresponds to Direct\+Midi\+Packet in the legacy S\+D\+K \end{DoxyRefDesc}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{a00024_a76df0e71968aa1416b93015ebf23ddc5}{m\+Timestamp}
+\begin{DoxyCompactList}\small\item\em This is the playback time at which the M\+I\+D\+I event should occur, relative to the beginning of the current audio buffer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00024_aa0f16872a37737488aa42f1d9614d6a5}{m\+Length}
+\begin{DoxyCompactList}\small\item\em The length of M\+I\+D\+I message, in terms of bytes. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{a00024_aac7229afc36006bc673eb219b18d8220}{m\+Data} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em The M\+I\+D\+I message itself. Each array element is one byte of the message, with the 0th element being the first byte. \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00024_ab6fce0aee8fb08695ac8a112b3c3e7fa}{m\+Is\+Immediate}
+\begin{DoxyCompactList}\small\item\em Indicates that the message is to be sent as soon as possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00024_a76df0e71968aa1416b93015ebf23ddc5}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}!m\+Timestamp@{m\+Timestamp}}
+\index{m\+Timestamp@{m\+Timestamp}!A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}}
+\subsubsection[{m\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Timestamp}\label{a00024_a76df0e71968aa1416b93015ebf23ddc5}
+
+
+This is the playback time at which the M\+I\+D\+I event should occur, relative to the beginning of the current audio buffer. 
+
+\hypertarget{a00024_aa0f16872a37737488aa42f1d9614d6a5}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}!m\+Length@{m\+Length}}
+\index{m\+Length@{m\+Length}!A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}}
+\subsubsection[{m\+Length}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Length}\label{a00024_aa0f16872a37737488aa42f1d9614d6a5}
+
+
+The length of M\+I\+D\+I message, in terms of bytes. 
+
+\hypertarget{a00024_aac7229afc36006bc673eb219b18d8220}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}!m\+Data@{m\+Data}}
+\index{m\+Data@{m\+Data}!A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}}
+\subsubsection[{m\+Data}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Data\mbox{[}4\mbox{]}}\label{a00024_aac7229afc36006bc673eb219b18d8220}
+
+
+The M\+I\+D\+I message itself. Each array element is one byte of the message, with the 0th element being the first byte. 
+
+
+
+Referenced by A\+A\+X\+::\+Is\+Accented\+Click(), A\+A\+X\+::\+Is\+All\+Notes\+Off(), A\+A\+X\+::\+Is\+Note\+Off(), A\+A\+X\+::\+Is\+Note\+On(), and A\+A\+X\+::\+Is\+Unaccented\+Click().
+
+\hypertarget{a00024_ab6fce0aee8fb08695ac8a112b3c3e7fa}{}\index{A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}!m\+Is\+Immediate@{m\+Is\+Immediate}}
+\index{m\+Is\+Immediate@{m\+Is\+Immediate}!A\+A\+X\+\_\+\+C\+Midi\+Packet@{A\+A\+X\+\_\+\+C\+Midi\+Packet}}
+\subsubsection[{m\+Is\+Immediate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+\_\+\+C\+Midi\+Packet\+::m\+Is\+Immediate}\label{a00024_ab6fce0aee8fb08695ac8a112b3c3e7fa}
+
+
+Indicates that the message is to be sent as soon as possible. 
+
+\begin{DoxyRefDesc}{Host Compatibility Notes}
+\item[\hyperlink{a00380__compatibility_notes000023}{Host Compatibility Notes}]This value is not currently set. Use {\ttfamily m\+Timestamp == 0} to detect immediate packets \end{DoxyRefDesc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149}{A\+A\+X.\+h}\end{DoxyCompactItemize}

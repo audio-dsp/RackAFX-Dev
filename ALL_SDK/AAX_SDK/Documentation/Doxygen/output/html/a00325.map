@@ -1,0 +1,9 @@
+<map id="Core AAX Interface" name="Core AAX Interface">
+<area shape="rect" id="node1" href="$a00323.html" title="AAX SDK Manual" alt="" coords="5,148,132,175"/>
+<area shape="rect" id="node2" href="$a00328.html" title="The interface for an AAX Plug&#45;in&#39;s data model. " alt="" coords="393,5,538,32"/>
+<area shape="rect" id="node3" href="$a00327.html" title="A plug&#45;in&#39;s audio processing core. " alt="" coords="397,57,534,98"/>
+<area shape="rect" id="node4" href="$a00326.html" title="Static configuration for an AAX plug&#45;in. " alt="" coords="395,123,535,149"/>
+<area shape="rect" id="node6" href="$a00330.html" title="How to transfer data between different parts of an AAX plug&#45;in. " alt="" coords="365,173,565,200"/>
+<area shape="rect" id="node7" href="$a00329.html" title="The interface for a AAX Plug&#45;in&#39;s user interface. " alt="" coords="415,224,515,251"/>
+<area shape="rect" id="node8" href="$a00331.html" title="Additional requirements for AAX plug&#45;ins. " alt="" coords="379,275,552,301"/>
+</map>

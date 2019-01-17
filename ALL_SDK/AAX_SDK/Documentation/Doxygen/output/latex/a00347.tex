@@ -1,0 +1,30 @@
+\hypertarget{a00347}{}\section{Display delegate decorators}
+\label{a00347}\index{Display delegate decorators@{Display delegate decorators}}
+
+
+\subsection{ }
+Classes for adapting parameter value strings. 
+
+The A\+A\+X parameter display strategy uses a decorator pattern for parameter value formatting. This approach allows developers to maximize code re-\/use across display delegates with many different kinds of varying formatting, all without creating interdependencies between the different display delegates themselves.
+
+For more information, see \hyperlink{a00346_displaydelegates_decorators}{Display delegate decorators}. For even more information, about the Decorator design pattern, please consult the G\+O\+F design patterns book. \subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00015}{A\+A\+X\+\_\+\+C\+Decibel\+Display\+Delegate\+Decorator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A percent decorator conforming to \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. \end{DoxyCompactList}\item 
+class \hyperlink{a00036}{A\+A\+X\+\_\+\+C\+Percent\+Display\+Delegate\+Decorator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A percent decorator conforming to \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. \end{DoxyCompactList}\item 
+class \hyperlink{a00045}{A\+A\+X\+\_\+\+C\+Unit\+Display\+Delegate\+Decorator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A unit type decorator conforming to \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. \end{DoxyCompactList}\item 
+class \hyperlink{a00046}{A\+A\+X\+\_\+\+C\+Unit\+Prefix\+Display\+Delegate\+Decorator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A unit prefix decorator conforming to \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator}. \end{DoxyCompactList}\item 
+class \hyperlink{a00094}{A\+A\+X\+\_\+\+I\+Display\+Delegate\+Decorator$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em The base class for all concrete display delegate decorators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+Collaboration diagram for Display delegate decorators\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{a00347}
+\end{center}
+\end{figure}

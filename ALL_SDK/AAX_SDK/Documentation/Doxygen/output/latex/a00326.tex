@@ -1,0 +1,588 @@
+\hypertarget{a00326}{}\section{Description callback}
+\label{a00326}\index{Description callback@{Description callback}}
+
+
+\subsection{ }
+Static configuration for an A\+A\+X plug-\/in. 
+
+\hypertarget{a00326_describe_contents}{}\subsection{On this page}\label{a00326_describe_contents}
+\begin{DoxyItemize}
+\item \hyperlink{a00326_describe_about}{About the Describe callback and A\+A\+X descriptor interfaces} \item \hyperlink{a00326_describe_collection}{Top level\+: Collection} \item \hyperlink{a00326_describe_effects}{Middle level\+: Effects} \item \hyperlink{a00326_describe_component}{Lowest level\+: Algorithm components} \item \hyperlink{a00326_describe_checking_results}{Checking Results} \item \hyperlink{a00326_describe_validation}{Describe Validation} \item \hyperlink{a00326_describe_additionaltopics}{Additional Topics}\end{DoxyItemize}
+ \hypertarget{a00326_describe_about}{}\subsection{About the Describe callback and A\+A\+X descriptor interfaces}\label{a00326_describe_about}
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{dot_aax_desc_interfaces}}
+\end{DoxyImageNoCaption}
+
+
+ In Describe, a plug-\/in declares its static (or default) configuration and any properties that the host will need in order to manage the plug-\/in.
+
+ A plug-\/in\textquotesingle{}s Describe callback ties the Algorithm, G\+U\+I, and Data Model together. In this callback, the plug-\/in provides a description of its algorithm callbacks, data connections, and other static plug-\/in properties using a set of host-\/provided description interfaces. The plug-\/in uses a tiered hierarchy of these description interfaces to complete its description\+: 
+\begin{DoxyItemize}
+\item At the top level, a single Collection interface represents properties that apply to the plug-\/in binary.  
+\item The Collection interface is populated with one or more Effect descriptors, each of which represents a single kind of effect. For example, a single dynamics plug-\/in binary may include both single-\/band and multi-\/band Effects. Each Effect represents a different plug-\/in \char`\"{}product\char`\"{} available to users.  
+\item Each Effect is registered with a set of one or more algorithm components that represent the specific processing configurations (e.\+g. stem formats, sample rates) that the plug-\/in supports. The set of components in a single Effect provide possible variations of the single plug-\/in \char`\"{}product\char`\"{}, and as such these variations are mostly transparent to users.  
+\end{DoxyItemize}
+
+ The actual description callback entrypoint is \hyperlink{a00209_aa455fa4d9a2236334d0fd959b4919788}{A\+C\+F\+Register\+Plugin()}, which is declared in \hyperlink{a00209}{A\+A\+X\+\_\+\+Exports.\+cpp}. This method is implemented inside of the A\+A\+X Library, where it calls the plug-\/in\textquotesingle{}s custom implementation of the \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} callback.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// ***************************************************************************}
+\textcolor{comment}{// ROUTINE: GetEffectDescriptions}
+\textcolor{comment}{// ***************************************************************************}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{GetEffectDescriptions}( \hyperlink{a00087}{AAX\_ICollection} * 
+      outCollection )
+\{
+    \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result}                result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+    \hyperlink{a00096}{AAX\_IEffectDescriptor} *    plugInDescriptor = outCollection->
+      \hyperlink{a00087_afab70588134a065a5b4d6ea6ddd5ddff}{NewDescriptor}();
+    \textcolor{keywordflow}{if} ( plugInDescriptor )
+    \{
+        result = DemoGain\_GetPlugInDescription( plugInDescriptor );
+        \textcolor{keywordflow}{if} ( result == \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} )
+            outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( kEffectID\_DemoGain, plugInDescriptor );
+    \}
+    \textcolor{keywordflow}{else} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a647cce13fa531e3a46c6eab694048a9c}{AAX\_ERROR\_NULL\_OBJECT};
+
+    outCollection->\hyperlink{a00087_a7fbeab9630460b9bf4525512609855f0}{SetManufacturerName}( \textcolor{stringliteral}{"Avid, Inc."} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DemoGain Plug-In"} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DemoGain"} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DmGi"} );      
+    outCollection->\hyperlink{a00087_a4e69ac93eaac9c285c2bc3ac5b25880b}{SetPackageVersion}( 1 );     
+
+    \textcolor{keywordflow}{return} result;
+
+\}
+\end{DoxyCode}
+ \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} from the Demo\+Gain example plug-\/in
+
+ In general, the following procedure is used when describing an A\+A\+X plug-\/in\+: 
+\begin{DoxyEnumerate}
+\item Create an Effect description interface from the Collection interface provided by the host  
+\item Use the Effect description interface to create references to one or more component description interfaces.  
+\item Describe each algorithm component by populating the component descriptions.  
+\item Add the components to the Effect description 
+\item Add additional modules and properties to the Effect description.  
+\item Add the completed Effect to the Collection  
+\item Repeat for any additional Effects included in the plug-\/in binary.  
+\item Return the completed Collection interface to the host and exit.  
+\end{DoxyEnumerate}
+
+ \begin{DoxyNote}{Note}
+The host owns all memory associated with any descriptors that the plug-\/in returns via this callback.
+\end{DoxyNote}
+
+
+ \hypertarget{a00326_describe_collection}{}\subsection{Top level\+: Collection}\label{a00326_describe_collection}
+ The \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} interface provides a creation function (\hyperlink{a00087_afab70588134a065a5b4d6ea6ddd5ddff}{A\+A\+X\+\_\+\+I\+Collection\+::\+New\+Descriptor()}) for new plug-\/in descriptors, which in turn provides access to the various interfaces necessary for describing a plug-\/in (see the {\ttfamily Demo\+Gain\+\_\+\+Get\+Plug\+In\+Description()} and {\ttfamily Describe\+Algorithm\+Component()} listings below).
+
+ When a plug-\/in description is complete, it is added to the collection via the \hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{A\+A\+X\+\_\+\+I\+Collection\+::\+Add\+Effect()} method. The \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} interface also provides some additional description methods that are used to describe the overall plug-\/in package. These methods can be used to describe the plug-\/in package\textquotesingle{}s name, the name of the plug-\/in\textquotesingle{}s manufacturer, and the plug-\/in package version. Once these have been described, the completed description interface is returned to the host and exits.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// ***************************************************************************}
+\textcolor{comment}{// ROUTINE: GetEffectDescriptions}
+\textcolor{comment}{// ***************************************************************************}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{GetEffectDescriptions}( \hyperlink{a00087}{AAX\_ICollection} * 
+      outCollection )
+\{
+                    .
+                    .
+                    .
+    \hyperlink{a00096}{AAX\_IEffectDescriptor} *    plugInDescriptor = outCollection->
+      \hyperlink{a00087_afab70588134a065a5b4d6ea6ddd5ddff}{NewDescriptor}();
+                    .
+                    .
+                    .
+        result = DemoGain\_GetPlugInDescription( plugInDescriptor );
+                    .
+                    .
+                    .
+            outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( kEffectID\_DemoGain, plugInDescriptor );
+                    .
+                    .
+                    .
+    outCollection->\hyperlink{a00087_a7fbeab9630460b9bf4525512609855f0}{SetManufacturerName}( \textcolor{stringliteral}{"Avid, Inc."} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DemoGain Plug-In"} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DemoGain"} );
+    outCollection->\hyperlink{a00087_acf7410e0d06cf64bea36bf7d18b3456c}{AddPackageName}( \textcolor{stringliteral}{"DmGi"} );      
+    outCollection->\hyperlink{a00087_a4e69ac93eaac9c285c2bc3ac5b25880b}{SetPackageVersion}( 1 );     
+                    .
+                    .
+                    .
+    \textcolor{keywordflow}{return} result;
+\}
+\end{DoxyCode}
+ Populating the \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} interface
+
+
+
+ \hypertarget{a00326_describe_effects}{}\subsection{Middle level\+: Effects}\label{a00326_describe_effects}
+ The \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} interface provides description methods that are used to describe the Effect, such as its name, category, associated page table, and, importantly, creation methods for its data model, G\+U\+I, and other A\+A\+X modules.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// ***************************************************************************}
+\textcolor{comment}{// ROUTINE: DemoGain\_GetPlugInDescription}
+\textcolor{comment}{// ***************************************************************************}
+\textcolor{keyword}{static} \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} DemoGain\_GetPlugInDescription( \hyperlink{a00096}{AAX\_IEffectDescriptor} * 
+      outDescriptor )
+\{
+    \textcolor{keywordtype}{int}                         err;
+    \hyperlink{a00088}{AAX\_IComponentDescriptor} *  compDesc = outDescriptor->
+      \hyperlink{a00096_a2102ea4391f5b60e4d5e860a997383e4}{NewComponentDescriptor} ();
+    \textcolor{keywordflow}{if} ( !compDesc )
+        \textcolor{keywordflow}{return} \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937a647cce13fa531e3a46c6eab694048a9c}{AAX\_ERROR\_NULL\_OBJECT};
+
+    \textcolor{comment}{// Add empty component descriptors to the host, register a processing}
+    \textcolor{comment}{// entrypoint for each, and populate with description information. }
+    \textcolor{comment}{//}
+    \textcolor{comment}{// Alg component}
+    DescribeAlgorithmComponent( compDesc );
+    err = outDescriptor->\hyperlink{a00096_aec33938f50461dd5e7c1dcc25faf6917}{AddComponent}( compDesc ); \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"Demo Gain AAX"} );
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"Demo Gain"} );
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"DemoGain"} );
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"DmGain"} );
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"DGpr"} );
+    outDescriptor->AddPlugInName ( \textcolor{stringliteral}{"Dn"} );
+    outDescriptor->AddPlugInCategory ( \hyperlink{a00206_aef9637518fb1ac0e2f403444c73aba4aa1e8d5202983c58aa0346a9a547f55bd9}{AAX\_ePlugInCategory\_Dynamics} );
+    outDescriptor->\hyperlink{a00096_ad1a286ef7cb869e6f79423dd774ec976}{AddProcPtr}( (\textcolor{keywordtype}{void} *) DemoGain\_Parameters::Create, 
+      \hyperlink{a00163_af0682195d377392ad356fd2b00c36892a86aab4af036f1087b4f31bbac234ac3d}{kAAX\_ProcPtrID\_Create\_EffectParameters} );
+    outDescriptor->\hyperlink{a00096_a3326bd8e29690a352408539029a50a61}{AddResourceInfo} ( \hyperlink{a00206_ae2805e88175d975589153a04e42898bbab0028d7fb45564dc4afa0f0a50296043}{AAX\_eResourceType\_PageTable},
+       \textcolor{stringliteral}{"DemoGainPages.xml"} );
+
+\textcolor{preprocessor}{#if PLUGGUI != 0}
+    outDescriptor->\hyperlink{a00096_ad1a286ef7cb869e6f79423dd774ec976}{AddProcPtr}( (\textcolor{keywordtype}{void} *) DemoGain\_GUI::Create, 
+      \hyperlink{a00163_af0682195d377392ad356fd2b00c36892a102df0cf99f7423a7997dd283eed7a88}{kAAX\_ProcPtrID\_Create\_EffectGUI} );
+\textcolor{preprocessor}{#endif}
+
+    \textcolor{keywordflow}{return} \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+\}
+\end{DoxyCode}
+ Populating an \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor} interface
+
+ All components in an Effect must share the same A\+A\+X modules; for example, it is not possible to use one data model definition for one sample rate and another data model definition for a different sample rate. Therefore, a plug-\/in\textquotesingle{}s A\+A\+X modules are defined in its Effect description.
+
+\hypertarget{a00326_describe_effects_multiple}{}\subsubsection{Registering multiple Effects}\label{a00326_describe_effects_multiple}
+ A single plug-\/in package may include multiple Effects, which are added in turn in the description method. Once these connections are made, Describe passes the host a populated description interface and returns.
+
+ For example, consider an E\+Q plug-\/in that contains both one-\/band and four-\/band variations, each of which the user should see as a distinct plug-\/in. These Effects would be described and added separately to the collection object and would appear as separate products to the user.
+
+
+\begin{DoxyCode}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} GetEffectsDescriptions ( \hyperlink{a00087}{AAX\_ICollection} * outCollection )
+\{
+    \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} ;
+    \textcolor{keywordflow}{if} ( result == \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} )
+    \{
+        \hyperlink{a00096}{AAX\_IEffectDescriptor} * aDesc1 = outCollection -> NewDescriptor ();
+        \textcolor{comment}{// ...}
+        \textcolor{comment}{// Populate aDesc1 with one - band EQ description}
+        \textcolor{comment}{// ...}
+        result = outCollection -> AddEffect ( kEffectID\_MyOneBandEQ , aDesc1 );
+    \}
+    \textcolor{keywordflow}{if} ( result == \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} )
+    \{
+        \hyperlink{a00096}{AAX\_IEffectDescriptor} * aDesc4 = outCollection -> NewDescriptor ();
+        \textcolor{comment}{// ...}
+        \textcolor{comment}{// Populate aDesc4 with four - band EQ description}
+        \textcolor{comment}{// ...}
+        result = outCollection -> AddEffect ( kEffectID\_MyFourBandEQ , aDesc4 );
+    \}
+    \textcolor{keywordflow}{if} ( result == \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} )
+    \{
+        outCollection -> SetManufacturerName ( \textcolor{stringliteral}{"My Plug -Ins ,  Inc."} );
+        outCollection -> AddPackageName ( \textcolor{stringliteral}{" MyEQ  Plug -In"} );
+        outCollection -> AddPackageName ( \textcolor{stringliteral}{" MyQ"} ); \textcolor{comment}{// Short name}
+        outCollection -> SetPackageVersion ( 1 );
+    \}
+    \textcolor{keywordflow}{return} result ;
+\}
+\end{DoxyCode}
+ Registering multiple Effects in a single Collection
+
+
+
+ \hypertarget{a00326_describe_component}{}\subsection{Lowest level\+: Algorithm components}\label{a00326_describe_component}
+ In order to register an algorithm component, a plug-\/in must describe the component\textquotesingle{}s external interface. This includes each of the component\textquotesingle{}s ports and any other fields in its context structure, a reference to its processing function entrypoint (its \char`\"{}\+Process Procedure\char`\"{}, or Process\+Proc,) and any other special properties that the host should know about.
+
+ The description of a context structure involves a set of port definitions, which can be \char`\"{}hard-\/wired\char`\"{} to receive data from the host (such as audio buffers), from the plug-\/in\textquotesingle{}s data model (such as packets of coefficients), or even from past calls to the algorithm (private, persistent algorithm state). See \hyperlink{a00327}{Real-\/time algorithm callback} for more information on an algorithm\textquotesingle{}s context structure.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} DescribeAlgorithmComponent( \hyperlink{a00088}{AAX\_IComponentDescriptor} * outDesc )
+\{
+                    .
+                    .
+                    .
+    \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result}                    err;
+
+    \textcolor{comment}{// Subscribe context fields to host-provided services or information}
+    err = outDesc->AddField ( eAlgFieldID\_AudioIn, kAAX\_FieldTypeAudioIn ); 
+      \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT}(err == 0);
+    err = outDesc->AddField ( eAlgFieldID\_AudioOut, kAAX\_FieldTypeAudioOut ); 
+      \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+    err = outDesc->AddField ( eAlgFieldID\_BufferSize, kAAX\_FieldTypeAudioBufferLength ); 
+      \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+
+    \textcolor{comment}{// Register context fields as communications destinations}
+    err = outDesc->\hyperlink{a00088_a230293b9f6bb413626cd487ca501df75}{AddDataInPort} ( eAlgPortID\_BypassIn, \textcolor{keyword}{sizeof} (int32\_t) ); 
+      \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+    err = outDesc->\hyperlink{a00088_a230293b9f6bb413626cd487ca501df75}{AddDataInPort} ( eAlgPortID\_CoefsGainIn, \textcolor{keyword}{sizeof} (SDemoGain\_CoefsGain) ); 
+      \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+                    .
+                    .
+                    .
+\}
+\end{DoxyCode}
+ Populating a single \hyperlink{a00088}{A\+A\+X\+\_\+\+I\+Component\+Descriptor} interface
+
+\hypertarget{a00326_describe_component_properties}{}\subsubsection{Algorithm callback properties}\label{a00326_describe_component_properties}
+ A set of callback properties is required when adding a Process Procedure to an algorithm component. This is done via the \hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map} interface. Using distinct property maps, a single component may register multiple versions of its callback. For example, an audio processing component might register mono and stereo callbacks, or Native and T\+I callbacks, assigning each the applicable property mapping. This allows the host to determine the correct callback to use depending on the environment in which the plug-\/in is instantiated.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keywordtype}{void} DescribeAlgorithmComponent( \hyperlink{a00088}{AAX\_IComponentDescriptor} * outDesc )
+\{
+    \hyperlink{a00112}{AAX\_IPropertyMap} *          properties = outDesc->
+      \hyperlink{a00088_a0d7dd21daa8bc588d6a1145c3eb7ef98}{NewPropertyMap}();
+                    .
+                    .
+                    .       
+    properties->Clear ();
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea996465cca29a2a15291d1c788ac5728c}{AAX\_eProperty\_ManufacturerID}, 
+      cDemoGain\_ManufactureID );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{AAX\_eProperty\_ProductID}, 
+      cDemoGain\_ProductID );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eadebf03028b758123965a8b988fa2df99}{AAX\_eProperty\_InputStemFormat}, 
+      \hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85a0cc08ddb9923a4093c820efe84588947}{AAX\_eStemFormat\_Mono} );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea211fdc6277e7fa652b5d482e810b0bc9}{AAX\_eProperty\_OutputStemFormat}, 
+      \hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85a0cc08ddb9923a4093c820efe84588947}{AAX\_eStemFormat\_Mono} );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea6819867a9e86913e59decf318416d755}{AAX\_eProperty\_CanBypass}, \textcolor{keyword}{true} );
+
+    \textcolor{comment}{// Native and AudioSuite versions}
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{AAX\_eProperty\_PlugInID\_Native}, 
+      cDemoGain\_PlugInID\_Native );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ead3344696b8298a8b254add3d039ea927}{AAX\_eProperty\_PlugInID\_AudioSuite}
+      , cDemoGain\_PlugInID\_AudioSuite );   \textcolor{comment}{// Since this is a linear plug-in the RTAS version can also be an
+       AudioSuite version.}
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea09fbd1cbcae0e86ad81005258dc1b67e}{AAX\_eProperty\_DSP\_AudioBufferLength}
+      , kAAX\_NativeAudioBufferLength\_Default);
+    err = outDesc->\hyperlink{a00088_a1c069508cf54a523905c8160ebf628ad}{AddProcessProc\_Native} ( DemoGain\_AlgorithmProcessFunction <1, 1, 1
+      <<kAAX\_NativeAudioBufferLength\_Default>, properties ); \hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT} (err == 0);
+
+    \textcolor{comment}{// TI DSP Version}
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea75f174df4efbeca86eaada126c1d9214}{AAX\_eProperty\_PlugInID\_TI}, 
+      cDemoGain\_PlugInID\_TI );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea09fbd1cbcae0e86ad81005258dc1b67e}{AAX\_eProperty\_DSP\_AudioBufferLength}
+      , \hyperlink{a00206_ab33e0f1ecf04ca4161fa8d8de5845d67ad1a72546e5300b5c64a19e8e41d12e15}{AAX\_eAudioBufferLengthDSP\_Default} );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea5d8e5be9f3698a9c67a578c29da66405}{AAX\_eProperty\_TI\_InstanceCycleCount}
+      , 1055 );
+    properties->\hyperlink{a00112_a0997671afce9a2367662c764c1d055dd}{AddProperty} ( \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3e5b289333ba49f5a33de40d89fa4ade}{AAX\_eProperty\_TI\_SharedCycleCount}
+      , 58 );
+\}
+\end{DoxyCode}
+ Adding properties to a component description
+
+ A\+A\+X does not require that every value in \hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map} be assigned by the developer. However, if a specic value is not assigned to one of an element\textquotesingle{}s properties then the element must support any value for that property. For example, if an audio processing component does not provide any stem format properties then the host will assume that the callback will support any stem format.
+
+
+
+ \hypertarget{a00326_describe_checking_results}{}\subsection{Checking Results}\label{a00326_describe_checking_results}
+\hypertarget{a00326_describe_checking_results_summary}{}\subsubsection{Summary}\label{a00326_describe_checking_results_summary}
+
+\begin{DoxyItemize}
+\item Use \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} to store result values from all method calls in Describe.
+\item Use the \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W} and \hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T} macros to encapsulate independent describe code, such as registration logic for separate Effects or for separate Process\+Proc variations within a single Effect.
+\end{DoxyItemize}
+
+\hypertarget{a00326_describe_checking_results_problem}{}\subsubsection{The Problem}\label{a00326_describe_checking_results_problem}
+ With plain \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} values it can be challenging to properly detect and handle error states. Each description method call returns an \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} to indicate success or failure, and often problems in a plug-\/in\textquotesingle{}s configuration can be addressed by properly detecting and resolving errors that occur here. However, adding a return value check after ever method and providing conditional logic in the case of a failure is onerous, ugly, and difficult to maintain.
+
+
+\begin{DoxyCode}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+
+result = descriptor->SomeMethod();
+result = descriptor->AnotherMethod(); \textcolor{comment}{// oops! might ignore an error}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// --------------------------------------------------}
+\textcolor{comment}{// Safer, but not a good solution:}
+\textcolor{comment}{// Information about the errors is lost, the}
+\textcolor{comment}{// merged error code is meaningless, and}
+\textcolor{comment}{// debugging to find the location of the}
+\textcolor{comment}{// failure is hard.}
+\textcolor{comment}{//}
+result |= descriptor->SomeMethod();
+result |= descriptor->AnotherMethod();
+\textcolor{comment}{// ...}
+\textcolor{keywordflow}{if} (\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} != result)
+\{
+  \textcolor{comment}{// handle the merged error code}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// --------------------------------------------------}
+\textcolor{comment}{// This is also not a good solution:}
+\textcolor{comment}{// There is no actual handling of errors}
+\textcolor{comment}{// (from the SDK example plug-ins)}
+\textcolor{comment}{//}
+result = descriptor->SomeMethod();
+\hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT}(\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} == result);
+result = descriptor->AnotherMethod();
+\hyperlink{a00158_a168ee44fd7a5485ab50160db36fb2988}{AAX\_ASSERT}(\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} == result);
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// --------------------------------------------------}
+\textcolor{comment}{// This is correct but is too hard}
+\textcolor{comment}{//}
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{AAX\_Result} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+result = descriptor->SomeMethod();
+\textcolor{keywordflow}{if} (\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} != result) \{
+  \textcolor{comment}{// logic to handle this error:}
+  \textcolor{comment}{// assert and/or log the failure?}
+  \textcolor{comment}{// return or continue execution?}
+\}
+
+result = descriptor->AnotherMethod();
+\textcolor{keywordflow}{if} (\hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS} != result) \{
+  \textcolor{comment}{// ditto}
+\}
+\end{DoxyCode}
+ \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} based error checking is awkward
+
+\hypertarget{a00326_describe_checking_results_solution}{}\subsubsection{The Solution}\label{a00326_describe_checking_results_solution}
+ The \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} class is designed to solve this problem. \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} can be used just like a plain-\/old-\/data \hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \+:
+
+
+\begin{DoxyCode}
+\hyperlink{a00019}{AAX\_CheckedResult} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+result = descriptor->SomeMethod();
+result = descriptor->AnotherMethod();
+\end{DoxyCode}
+ Simpler result checking with \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result}
+
+ When a failure is encountered, \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} will\+:
+\begin{DoxyItemize}
+\item Store the error value
+\item Log the error using A\+A\+X\+\_\+\+T\+R\+A\+C\+E\+\_\+\+R\+E\+L\+E\+A\+S\+E
+\item Throw an exception of type \hyperlink{a00019_a36fd71afc6d62993c1dd96e1ca9fcc0e}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Exception}
+\end{DoxyItemize}
+
+ To make this safe to use in the Describe routine, the \hyperlink{a00288}{A\+A\+X} Library includes a try/catch block around the call to the plug-\/in\textquotesingle{}s {\ttfamily \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()}} routine.
+
+ \begin{DoxyWarning}{Warning}
+Do not use \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} anywhere where an exception could escape to the host (\hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions()} is O\+K)
+\end{DoxyWarning}
+\hypertarget{a00326_describe_checking_results_handling_errors}{}\subsubsection{Handling Errors and Managing Control Flow}\label{a00326_describe_checking_results_handling_errors}
+ With the basic approach shown above, any error which is encountered will throw an exception which will cancel the plug-\/in\textquotesingle{}s registration and prevent the plug-\/in from being shown in the host. However, most errors can be safely handled without canceling the entire plug-\/in registration.
+
+
+\begin{DoxyCode}
+\hyperlink{a00019}{AAX\_CheckedResult} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+
+\textcolor{comment}{// effect 1 registration}
+result = DescribeMyEffect1( effect1Descriptor );
+result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect1ID, effect1Descriptor );
+
+\textcolor{comment}{// effect 2 registration}
+result = DescribeMyEffect2( effect2Descriptor );
+result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect2ID, effect2Descriptor );
+\end{DoxyCode}
+ Example with no error handling
+
+ In this example, a failure when describing either individual effect will prevent the other effect from being registered. Registration of individual Process\+Procs within a single effect, e.\+g. for different stem formats, is similar.
+
+ To allow the registration of other effects to proceed in the event of a failure, any exceptions thrown during the registration of one effect should be caught and should only prevent the registration of that individual effect.
+
+
+\begin{DoxyCode}
+\hyperlink{a00019}{AAX\_CheckedResult} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+
+\textcolor{comment}{// effect 1 registration}
+\textcolor{keywordflow}{try} \{
+  result = DescribeMyEffect1( effect1Descriptor );
+  result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect1ID, effect1Descriptor );
+\}
+\textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& ex) \{
+  \textcolor{comment}{// log the error using ex.What()}
+  \textcolor{comment}{// swallow the exception and proceed}
+\}
+
+\textcolor{comment}{// effect 2 registration}
+\textcolor{keywordflow}{try} \{
+  result = DescribeMyEffect2( effect2Descriptor );
+  result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect2ID, effect2Descriptor );
+\}
+\textcolor{keywordflow}{catch} (\textcolor{keyword}{const} \hyperlink{a00147}{AAX\_CheckedResult::Exception}& ex) \{
+  \textcolor{comment}{// ditto}
+\}
+\end{DoxyCode}
+ Example of error handling with try/catch
+
+ This solves the problem fully, but it is still cumbersome -\/ especially when registering a long list of separate Process\+Proc variants!
+
+ The \hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T} macro makes it easier to handle errors which are thrown by \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} \+:
+
+
+\begin{DoxyCode}
+\hyperlink{a00019}{AAX\_CheckedResult} result = \hyperlink{a00207_a5f8c7439f3a706c4f8315a9609811937aeddbd1bb67e3a66e6af54a4b4a7a57b3}{AAX\_SUCCESS};
+
+\textcolor{comment}{// effect 1 registration}
+\hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{AAX\_SWALLOW\_MULT} (
+  result = DescribeMyEffect1( effect1Descriptor );
+  result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect1ID, effect1Descriptor );
+);
+
+\textcolor{comment}{// effect 2 registration}
+\hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{AAX\_SWALLOW\_MULT} (
+  result = DescribeMyEffect2( effect2Descriptor );
+  result = outCollection->\hyperlink{a00087_a5ff114b8c4da2081515186f2faf65c8c}{AddEffect}( myEffect2ID, effect2Descriptor );
+);
+\end{DoxyCode}
+ Example of error handling with \hyperlink{a00208_aef6db72a3774d079609f94720928cdd6}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W\+\_\+\+M\+U\+L\+T}
+
+ {\itshape Variations}
+\begin{DoxyItemize}
+\item For single-\/line try/catch there is also \hyperlink{a00208_a8f177823e9388c5163d1b402a9069bce}{A\+A\+X\+\_\+\+S\+W\+A\+L\+L\+O\+W}.
+\item If you need to reference the error value after the exception is caught, use \hyperlink{a00208_a078be92d3d19a5a4b3da2b55ae5ac1c9}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E\+\_\+\+M\+U\+L\+T} (multi-\/line) or \hyperlink{a00208_af9972551e4546e894010f99eade68c94}{A\+A\+X\+\_\+\+C\+A\+P\+T\+U\+R\+E} (single-\/line)
+\item If you know that a certain error code is O\+K and should not throw in a given situation then you can add it as an exception to the \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} object with \hyperlink{a00019_af6c4b10c55e959f5f8424514a3cbb68a}{A\+A\+X\+\_\+\+Checked\+Result\+::\+Add\+Accepted\+Result()}.
+\end{DoxyItemize}
+
+ For examples of \hyperlink{a00019}{A\+A\+X\+\_\+\+Checked\+Result} in use, see the \hyperlink{a00376_DemoGain_Multichannel}{Demo\+Gain\+\_\+\+Multichannel} and \hyperlink{a00376_DemoGain_UpMixer}{Demo\+Gain\+\_\+\+Up\+Mixer} plug-\/ins
+
+
+
+ \hypertarget{a00326_describe_validation}{}\subsection{Describe Validation}\label{a00326_describe_validation}
+\hypertarget{a00326_describe_validation_dsh}{}\subsubsection{Validation with D\+S\+H}\label{a00326_describe_validation_dsh}
+ You can validate your plug-\/in\textquotesingle{}s Describe routine using the \hyperlink{a00365}{Digi\+Shell} command-\/line tool. The validation command is available directly in the aaxh dish and is also available through an A\+A\+X Validator test module\+:
+
+ {\itshape aaxh dish} \begin{DoxyVerb}dsh> load_dish aaxh
+dsh> loadpi "/quoted/path/without escape chars/MyPlugIn.aaxplugin"
+dsh> getdescriptionvalidationinfo 0\end{DoxyVerb}
+
+
+ {\itshape A\+A\+X Validator} \begin{DoxyVerb}dsh> load_dish aaxval
+dsh> runtest [test.describe_validation, "/quoted/path/without escape chars/MyPlugIn.aaxplugin"]\end{DoxyVerb}
+
+
+\hypertarget{a00326_describe_validation_protools}{}\subsubsection{Validation with Pro Tools}\label{a00326_describe_validation_protools}
+ Beginning in Pro Tools 12.\+8.\+2, developer builds of Pro Tools will also check plug-\/in describe routines and will present an alert dialog when the plug-\/in is scanned if any aspect of the plug-\/in\textquotesingle{}s describe code has failed the validation step.
+
+   Describe validation warning in a Pro Tools developer build
+
+ The specific kinds of errors which were encountered will be printed to the \hyperlink{a00364}{Digi\+Trace} log file\+:
+
+\begin{DoxyVerb}13033.502646,00307,0073: ERROR: Unknown target host for the plug-in.
+13033.502662,00307,0073: ERROR: PlugInID property is missing for a ProcessProc (process, initialization, or background function).
+13033.502734,00307,0e0f: CMN_TRACEASSERT  Sandbox.aaxplugin configuration contains 2 errors. See the DigiTrace log or run the AAX Validator for more info. (0 == numErrors)\end{DoxyVerb}
+
+
+ This check may be suppressed using the following \hyperlink{a00360_aax_pro_tools_guide_06c_digioptions}{Digi\+Option}\+:
+
+ {\ttfamily Test\+Plug\+In\+Descriptions 0}
+
+
+
+ \hypertarget{a00326_describe_additionaltopics}{}\subsection{Additional Topics}\label{a00326_describe_additionaltopics}
+ \begin{DoxySeeAlso}{See also}
+\hyperlink{a00337}{Plug-\/in meters}
+\end{DoxySeeAlso}
+ \subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection}
+\begin{DoxyCompactList}\small\item\em Interface to represent a plug-\/in binary\textquotesingle{}s static description. \end{DoxyCompactList}\item 
+class \hyperlink{a00088}{A\+A\+X\+\_\+\+I\+Component\+Descriptor}
+\begin{DoxyCompactList}\small\item\em Description interface for an A\+A\+X plug-\/in component. \end{DoxyCompactList}\item 
+class \hyperlink{a00096}{A\+A\+X\+\_\+\+I\+Effect\+Descriptor}
+\begin{DoxyCompactList}\small\item\em Description interface for an effect\textquotesingle{}s (plug-\/in type\textquotesingle{}s) components. \end{DoxyCompactList}\item 
+class \hyperlink{a00112}{A\+A\+X\+\_\+\+I\+Property\+Map}
+\begin{DoxyCompactList}\small\item\em Generic plug-\/in description property map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00326_ga83d05333118598c179ca6d89487fa203}{A\+A\+X\+Register\+Plugin} (\hyperlink{a00146}{I\+A\+C\+F\+Unknown} $\ast$p\+Unk\+Host, I\+A\+C\+F\+Plugin\+Definition $\ast$$\ast$pp\+Plugin\+Definition)
+\begin{DoxyCompactList}\small\item\em The main plug-\/in registration method. \end{DoxyCompactList}\item 
+\hyperlink{a00149_a4d8f69a697df7f70c3a8e9b8ee130d2f}{A\+A\+X\+\_\+\+Result} \hyperlink{a00326_gae0d356eef326f77cbb972e48946d4892}{Get\+Effect\+Descriptions} (\hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} $\ast$in\+Collection)
+\begin{DoxyCompactList}\small\item\em The plug-\/in\textquotesingle{}s static Description entrypoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00326_ga83d05333118598c179ca6d89487fa203}{}\index{Description callback@{Description callback}!A\+A\+X\+Register\+Plugin@{A\+A\+X\+Register\+Plugin}}
+\index{A\+A\+X\+Register\+Plugin@{A\+A\+X\+Register\+Plugin}!Description callback@{Description callback}}
+\subsubsection[{A\+A\+X\+Register\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} A\+A\+X\+Register\+Plugin (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+A\+C\+F\+Unknown} $\ast$}]{p\+Unk\+Host, }
+\item[{I\+A\+C\+F\+Plugin\+Definition $\ast$$\ast$}]{pp\+Plugin\+Definition}
+\end{DoxyParamCaption}
+)}\label{a00326_ga83d05333118598c179ca6d89487fa203}
+
+
+The main plug-\/in registration method. 
+
+This method determines the number of components defined in the dll. The implementation of this method in the A\+A\+X library calls the following function, which must be implemented somewhere in your plug-\/in\+:
+
+
+\begin{DoxyCode}
+1 extern AAX\_Result GetEffectDescriptions( AAX\_ICollection * outCollection );
+\end{DoxyCode}
+
+
+{\itshape Wrapped by \hyperlink{a00209_aa455fa4d9a2236334d0fd959b4919788}{A\+C\+F\+Register\+Plugin()} } 
+
+Referenced by A\+C\+F\+Register\+Plugin().
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{a00326_ga83d05333118598c179ca6d89487fa203_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{a00326_gae0d356eef326f77cbb972e48946d4892}{}\index{Description callback@{Description callback}!Get\+Effect\+Descriptions@{Get\+Effect\+Descriptions}}
+\index{Get\+Effect\+Descriptions@{Get\+Effect\+Descriptions}!Description callback@{Description callback}}
+\subsubsection[{Get\+Effect\+Descriptions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+Result} Get\+Effect\+Descriptions (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+A\+X\+\_\+\+I\+Collection} $\ast$}]{in\+Collection}
+\end{DoxyParamCaption}
+)}\label{a00326_gae0d356eef326f77cbb972e48946d4892}
+
+
+The plug-\/in\textquotesingle{}s static Description entrypoint. 
+
+This function is responsible for describing an A\+A\+X plug-\/in to the host. It does this by populating an \hyperlink{a00087}{A\+A\+X\+\_\+\+I\+Collection} interface.
+
+This function must be included in every plug-\/in that links to the A\+A\+X library. It is called when the host first loads the plug-\/in.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em in\+Collection} & \\
+\hline
+\end{DoxyParams}
+Collaboration diagram for Description callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{a00326}
+\end{center}
+\end{figure}

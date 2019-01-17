@@ -1,0 +1,424 @@
+\hypertarget{a00124}{}\section{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info Struct Reference}
+\label{a00124}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+
+
+{\ttfamily \#include $<$A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h$>$}
+
+
+
+\subsection{Description}
+Information used to describe the instrument. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00026_a69f9b80a70ecc6b7b2a7eec372d2502a}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe()} 
+\end{DoxySeeAlso}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00124_ac5626759986bbe38a6bc9790861c1591}{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{a00124_ae2d6f984fa92233e27828994a1e7ef79}{m\+Needs\+Global\+M\+I\+D\+I}
+\begin{DoxyCompactList}\small\item\em Does the instrument use a global M\+I\+D\+I input node? \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{a00124_ae281e987dc73d0ff5d6ccbceb3383da9}{m\+Global\+M\+I\+D\+I\+Node\+Name}
+\begin{DoxyCompactList}\small\item\em Name of the global M\+I\+D\+I node, if used. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00124_a3b64c64e7b90cb189eb24e5417d9d88b}{m\+Global\+M\+I\+D\+I\+Event\+Mask}
+\begin{DoxyCompactList}\small\item\em Global M\+I\+D\+I node event mask of \hyperlink{a00206_a349dae6bc64bda67a5440cbc6637f92d}{A\+A\+X\+\_\+\+E\+Midi\+Global\+Node\+Selectors}, if used. \end{DoxyCompactList}\item 
+bool \hyperlink{a00124_a69f737db7dfa0c8362a0b368dc3e19e9}{m\+Needs\+Input\+M\+I\+D\+I}
+\begin{DoxyCompactList}\small\item\em Does the instrument use a local M\+I\+D\+I input node? \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{a00124_ac9206c672bf45367ae0987b6adafb736}{m\+Input\+M\+I\+D\+I\+Node\+Name}
+\begin{DoxyCompactList}\small\item\em Name of the M\+I\+D\+I input node, if used. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{a00124_acfc35506cfa94a358411aade13070109}{m\+Input\+M\+I\+D\+I\+Channel\+Mask}
+\begin{DoxyCompactList}\small\item\em M\+I\+D\+I input node channel mask, if used. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00124_a256b7a612ed6ff827d47d8ea5b7c0968}{m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes}
+\begin{DoxyCompactList}\small\item\em Number of additional input M\+I\+D\+I Nodes. These will all share the same channel\+Mask and base M\+I\+D\+I\+Node\+Name, but the names will be appended with numbers 2,3,4,... \end{DoxyCompactList}\item 
+bool \hyperlink{a00124_af76fbb79466b45d7f48153e7951e843a}{m\+Needs\+Transport}
+\begin{DoxyCompactList}\small\item\em Does the instrument use the transport interface? \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{a00124_a8e96dc4ba78132184cfff16720e72bde}{m\+Transport\+M\+I\+D\+I\+Node\+Name}
+\begin{DoxyCompactList}\small\item\em Name of the M\+I\+D\+I transport node, if used. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00124_a58815894e89a352e5013046cbfa2a834}{m\+Num\+Meters}
+\begin{DoxyCompactList}\small\item\em Number of meter taps used by the instrument. Must match the size of \hyperlink{a00124_a996dacfece0048579de34e08cb10b449}{m\+Meter\+I\+Ds}. \end{DoxyCompactList}\item 
+const \hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} $\ast$ \hyperlink{a00124_a996dacfece0048579de34e08cb10b449}{m\+Meter\+I\+Ds}
+\begin{DoxyCompactList}\small\item\em Array of meter I\+Ds. \end{DoxyCompactList}\item 
+int32\+\_\+t \hyperlink{a00124_ac969f7d3a23a8bb66d53c8e6d8360dca}{m\+Num\+Aux\+Output\+Stems}
+\begin{DoxyCompactList}\small\item\em Number of aux output stems for the plug-\/in. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{a00124_a407f17bca3271cc84f0b85eefb0370cd}{m\+Aux\+Output\+Stem\+Names} \mbox{[}\hyperlink{a00178_a3ce9db1fba97512379a8715f9cb166e4}{k\+Max\+Aux\+Output\+Stems}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Names of the aux output stems. \end{DoxyCompactList}\item 
+\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} \hyperlink{a00124_afd521b6b1d9b3d809e55c5c065859159}{m\+Aux\+Output\+Stem\+Formats} \mbox{[}\hyperlink{a00178_a3ce9db1fba97512379a8715f9cb166e4}{k\+Max\+Aux\+Output\+Stems}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Stem formats for the output stems. \end{DoxyCompactList}\item 
+\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} \hyperlink{a00124_aeeee9ec016294caab1317d170ee0a2c2}{m\+Hybrid\+Input\+Stem\+Format}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249ea33a950bc2e02d38fc3be0a0ad8cc89b1}{Hybrid input stem format} \end{DoxyCompactList}\item 
+\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} \hyperlink{a00124_a1cc911c56d96a35affcc8fea94a983ae}{m\+Hybrid\+Output\+Stem\+Format}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249eac30a4e73772e37267dfef39ae3122705}{Hybrid output stem format} \end{DoxyCompactList}\item 
+\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} \hyperlink{a00124_aeb7ea647e496b742bc5bad5576f5ec1f}{m\+Input\+Stem\+Format}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eadebf03028b758123965a8b988fa2df99}{Input stem format} \end{DoxyCompactList}\item 
+\hyperlink{a00206_ad8af5ef008b2bd478add9a0acb0a1d85}{A\+A\+X\+\_\+\+E\+Stem\+Format} \hyperlink{a00124_ac69ab2fe88b00dfb6f22d7e2ebfa134d}{m\+Output\+Stem\+Format}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea211fdc6277e7fa652b5d482e810b0bc9}{Output stem format} \end{DoxyCompactList}\item 
+bool \hyperlink{a00124_a38bf1193daf9ebd4b0643dec21507caa}{m\+Use\+Host\+Generated\+G\+U\+I}
+\begin{DoxyCompactList}\small\item\em Allow Pro Tools or other host to generate a generic G\+U\+I. This can be useful for early development. \end{DoxyCompactList}\item 
+bool \hyperlink{a00124_a849b67e9badf7ca38a506f8010d4fff1}{m\+Can\+Bypass}
+\begin{DoxyCompactList}\small\item\em Can this instrument be bypassed? \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00124_ab28a76c6e5d7860d20b699869c108c84}{m\+Manufacturer\+I\+D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea996465cca29a2a15291d1c788ac5728c}{Manufacturer I\+D} \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00124_a139f8dc96e73b88a1e9f6abdfe7112c3}{m\+Product\+I\+D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{Product I\+D} \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00124_a80d2c48d5a97190ed2ebec043d073142}{m\+Plugin\+I\+D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{Plug-\/\+In (Type) I\+D} \end{DoxyCompactList}\item 
+\hyperlink{a00149_ac678f9c1fbcc26315d209f71a147a175}{A\+A\+X\+\_\+\+C\+Type\+I\+D} \hyperlink{a00124_a9feeadf3348cf1b4ce13008d3a02aaef}{m\+Audiosuite\+I\+D}
+\begin{DoxyCompactList}\small\item\em \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ead3344696b8298a8b254add3d039ea927}{Audio\+Suite I\+D} \end{DoxyCompactList}\item 
+\hyperlink{a00149_aa216506530f1d19a2965931ced2b274b}{A\+A\+X\+\_\+\+C\+Boolean} \hyperlink{a00124_a0803c641f72241bea5d7cf984c6263ca}{m\+Multi\+Mono\+Support}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00124_ac5626759986bbe38a6bc9790861c1591}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}]{\setlength{\rightskip}{0pt plus 5cm}A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::\+A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{a00124_ac5626759986bbe38a6bc9790861c1591}
+
+
+Default constructor. 
+
+Use this constructor if you want to enable a sub-\/set of features and don\textquotesingle{}t need to fill out the whole struct. 
+
+References A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+Mono, A\+A\+X\+\_\+e\+Stem\+Format\+\_\+\+None, and k\+Max\+Aux\+Output\+Stems.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{a00124_ae2d6f984fa92233e27828994a1e7ef79}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Needs\+Global\+M\+I\+D\+I@{m\+Needs\+Global\+M\+I\+D\+I}}
+\index{m\+Needs\+Global\+M\+I\+D\+I@{m\+Needs\+Global\+M\+I\+D\+I}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Needs\+Global\+M\+I\+D\+I}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Needs\+Global\+M\+I\+D\+I}\label{a00124_ae2d6f984fa92233e27828994a1e7ef79}
+
+
+Does the instrument use a global M\+I\+D\+I input node? 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_ae281e987dc73d0ff5d6ccbceb3383da9}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Global\+M\+I\+D\+I\+Node\+Name@{m\+Global\+M\+I\+D\+I\+Node\+Name}}
+\index{m\+Global\+M\+I\+D\+I\+Node\+Name@{m\+Global\+M\+I\+D\+I\+Node\+Name}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Global\+M\+I\+D\+I\+Node\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Global\+M\+I\+D\+I\+Node\+Name}\label{a00124_ae281e987dc73d0ff5d6ccbceb3383da9}
+
+
+Name of the global M\+I\+D\+I node, if used. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a3b64c64e7b90cb189eb24e5417d9d88b}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Global\+M\+I\+D\+I\+Event\+Mask@{m\+Global\+M\+I\+D\+I\+Event\+Mask}}
+\index{m\+Global\+M\+I\+D\+I\+Event\+Mask@{m\+Global\+M\+I\+D\+I\+Event\+Mask}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Global\+M\+I\+D\+I\+Event\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Global\+M\+I\+D\+I\+Event\+Mask}\label{a00124_a3b64c64e7b90cb189eb24e5417d9d88b}
+
+
+Global M\+I\+D\+I node event mask of \hyperlink{a00206_a349dae6bc64bda67a5440cbc6637f92d}{A\+A\+X\+\_\+\+E\+Midi\+Global\+Node\+Selectors}, if used. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a69f737db7dfa0c8362a0b368dc3e19e9}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Needs\+Input\+M\+I\+D\+I@{m\+Needs\+Input\+M\+I\+D\+I}}
+\index{m\+Needs\+Input\+M\+I\+D\+I@{m\+Needs\+Input\+M\+I\+D\+I}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Needs\+Input\+M\+I\+D\+I}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Needs\+Input\+M\+I\+D\+I}\label{a00124_a69f737db7dfa0c8362a0b368dc3e19e9}
+
+
+Does the instrument use a local M\+I\+D\+I input node? 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_ac9206c672bf45367ae0987b6adafb736}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Input\+M\+I\+D\+I\+Node\+Name@{m\+Input\+M\+I\+D\+I\+Node\+Name}}
+\index{m\+Input\+M\+I\+D\+I\+Node\+Name@{m\+Input\+M\+I\+D\+I\+Node\+Name}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Input\+M\+I\+D\+I\+Node\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Input\+M\+I\+D\+I\+Node\+Name}\label{a00124_ac9206c672bf45367ae0987b6adafb736}
+
+
+Name of the M\+I\+D\+I input node, if used. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_acfc35506cfa94a358411aade13070109}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Input\+M\+I\+D\+I\+Channel\+Mask@{m\+Input\+M\+I\+D\+I\+Channel\+Mask}}
+\index{m\+Input\+M\+I\+D\+I\+Channel\+Mask@{m\+Input\+M\+I\+D\+I\+Channel\+Mask}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Input\+M\+I\+D\+I\+Channel\+Mask}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Input\+M\+I\+D\+I\+Channel\+Mask}\label{a00124_acfc35506cfa94a358411aade13070109}
+
+
+M\+I\+D\+I input node channel mask, if used. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a256b7a612ed6ff827d47d8ea5b7c0968}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes@{m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes}}
+\index{m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes@{m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Num\+Additional\+Input\+M\+I\+D\+I\+Nodes}\label{a00124_a256b7a612ed6ff827d47d8ea5b7c0968}
+
+
+Number of additional input M\+I\+D\+I Nodes. These will all share the same channel\+Mask and base M\+I\+D\+I\+Node\+Name, but the names will be appended with numbers 2,3,4,... 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00336}{M\+I\+D\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_af76fbb79466b45d7f48153e7951e843a}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Needs\+Transport@{m\+Needs\+Transport}}
+\index{m\+Needs\+Transport@{m\+Needs\+Transport}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Needs\+Transport}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Needs\+Transport}\label{a00124_af76fbb79466b45d7f48153e7951e843a}
+
+
+Does the instrument use the transport interface? 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a8e96dc4ba78132184cfff16720e72bde}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Transport\+M\+I\+D\+I\+Node\+Name@{m\+Transport\+M\+I\+D\+I\+Node\+Name}}
+\index{m\+Transport\+M\+I\+D\+I\+Node\+Name@{m\+Transport\+M\+I\+D\+I\+Node\+Name}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Transport\+M\+I\+D\+I\+Node\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Transport\+M\+I\+D\+I\+Node\+Name}\label{a00124_a8e96dc4ba78132184cfff16720e72bde}
+
+
+Name of the M\+I\+D\+I transport node, if used. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00116}{A\+A\+X\+\_\+\+I\+Transport} 
+\end{DoxySeeAlso}
+\hypertarget{a00124_a58815894e89a352e5013046cbfa2a834}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Num\+Meters@{m\+Num\+Meters}}
+\index{m\+Num\+Meters@{m\+Num\+Meters}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Num\+Meters}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Num\+Meters}\label{a00124_a58815894e89a352e5013046cbfa2a834}
+
+
+Number of meter taps used by the instrument. Must match the size of \hyperlink{a00124_a996dacfece0048579de34e08cb10b449}{m\+Meter\+I\+Ds}. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00337}{Plug-\/in meters} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a996dacfece0048579de34e08cb10b449}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Meter\+I\+Ds@{m\+Meter\+I\+Ds}}
+\index{m\+Meter\+I\+Ds@{m\+Meter\+I\+Ds}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Meter\+I\+Ds}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\+A\+X\+\_\+\+C\+Type\+I\+D}$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Meter\+I\+Ds}\label{a00124_a996dacfece0048579de34e08cb10b449}
+
+
+Array of meter I\+Ds. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00337}{Plug-\/in meters} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_ac969f7d3a23a8bb66d53c8e6d8360dca}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Num\+Aux\+Output\+Stems@{m\+Num\+Aux\+Output\+Stems}}
+\index{m\+Num\+Aux\+Output\+Stems@{m\+Num\+Aux\+Output\+Stems}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Num\+Aux\+Output\+Stems}]{\setlength{\rightskip}{0pt plus 5cm}int32\+\_\+t A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Num\+Aux\+Output\+Stems}\label{a00124_ac969f7d3a23a8bb66d53c8e6d8360dca}
+
+
+Number of aux output stems for the plug-\/in. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00339}{Auxiliary Output Stems} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a407f17bca3271cc84f0b85eefb0370cd}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Aux\+Output\+Stem\+Names@{m\+Aux\+Output\+Stem\+Names}}
+\index{m\+Aux\+Output\+Stem\+Names@{m\+Aux\+Output\+Stem\+Names}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Aux\+Output\+Stem\+Names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Aux\+Output\+Stem\+Names\mbox{[}{\bf k\+Max\+Aux\+Output\+Stems}\mbox{]}}\label{a00124_a407f17bca3271cc84f0b85eefb0370cd}
+
+
+Names of the aux output stems. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00339}{Auxiliary Output Stems} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_afd521b6b1d9b3d809e55c5c065859159}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Aux\+Output\+Stem\+Formats@{m\+Aux\+Output\+Stem\+Formats}}
+\index{m\+Aux\+Output\+Stem\+Formats@{m\+Aux\+Output\+Stem\+Formats}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Aux\+Output\+Stem\+Formats}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Aux\+Output\+Stem\+Formats\mbox{[}{\bf k\+Max\+Aux\+Output\+Stems}\mbox{]}}\label{a00124_afd521b6b1d9b3d809e55c5c065859159}
+
+
+Stem formats for the output stems. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00339}{Auxiliary Output Stems} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_aeeee9ec016294caab1317d170ee0a2c2}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Hybrid\+Input\+Stem\+Format@{m\+Hybrid\+Input\+Stem\+Format}}
+\index{m\+Hybrid\+Input\+Stem\+Format@{m\+Hybrid\+Input\+Stem\+Format}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Hybrid\+Input\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Hybrid\+Input\+Stem\+Format}\label{a00124_aeeee9ec016294caab1317d170ee0a2c2}
+
+
+\hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249ea33a950bc2e02d38fc3be0a0ad8cc89b1}{Hybrid input stem format} 
+
+A plug-\/in that defines this value must also define {\ttfamily m\+Hybrid\+Output\+Stem\+Format} and implement \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Render\+Audio\+\_\+\+Hybrid()} \begin{DoxySeeAlso}{See also}
+\hyperlink{a00335}{Hybrid Processing architecture} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a1cc911c56d96a35affcc8fea94a983ae}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Hybrid\+Output\+Stem\+Format@{m\+Hybrid\+Output\+Stem\+Format}}
+\index{m\+Hybrid\+Output\+Stem\+Format@{m\+Hybrid\+Output\+Stem\+Format}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Hybrid\+Output\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Hybrid\+Output\+Stem\+Format}\label{a00124_a1cc911c56d96a35affcc8fea94a983ae}
+
+
+\hyperlink{a00335_ga6571f4e41a5dd06e4067249228e2249eac30a4e73772e37267dfef39ae3122705}{Hybrid output stem format} 
+
+A plug-\/in that defines this value must also define {\ttfamily m\+Hybrid\+Input\+Stem\+Format} and implement \hyperlink{a00335_gae6139041de22f51f3146d26a01c54c1b}{A\+A\+X\+\_\+\+I\+Effect\+Parameters\+::\+Render\+Audio\+\_\+\+Hybrid()} \begin{DoxySeeAlso}{See also}
+\hyperlink{a00335}{Hybrid Processing architecture} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_aeb7ea647e496b742bc5bad5576f5ec1f}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Input\+Stem\+Format@{m\+Input\+Stem\+Format}}
+\index{m\+Input\+Stem\+Format@{m\+Input\+Stem\+Format}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Input\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Input\+Stem\+Format}\label{a00124_aeb7ea647e496b742bc5bad5576f5ec1f}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eadebf03028b758123965a8b988fa2df99}{Input stem format} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_ac69ab2fe88b00dfb6f22d7e2ebfa134d}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Output\+Stem\+Format@{m\+Output\+Stem\+Format}}
+\index{m\+Output\+Stem\+Format@{m\+Output\+Stem\+Format}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Output\+Stem\+Format}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+E\+Stem\+Format} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Output\+Stem\+Format}\label{a00124_ac69ab2fe88b00dfb6f22d7e2ebfa134d}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea211fdc6277e7fa652b5d482e810b0bc9}{Output stem format} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a38bf1193daf9ebd4b0643dec21507caa}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Use\+Host\+Generated\+G\+U\+I@{m\+Use\+Host\+Generated\+G\+U\+I}}
+\index{m\+Use\+Host\+Generated\+G\+U\+I@{m\+Use\+Host\+Generated\+G\+U\+I}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Use\+Host\+Generated\+G\+U\+I}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Use\+Host\+Generated\+G\+U\+I}\label{a00124_a38bf1193daf9ebd4b0643dec21507caa}
+
+
+Allow Pro Tools or other host to generate a generic G\+U\+I. This can be useful for early development. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249eaf48412738dcfcc56046718d9e5a034d7}{A\+A\+X\+\_\+e\+Property\+\_\+\+Uses\+Client\+G\+U\+I} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a849b67e9badf7ca38a506f8010d4fff1}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Can\+Bypass@{m\+Can\+Bypass}}
+\index{m\+Can\+Bypass@{m\+Can\+Bypass}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Can\+Bypass}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Can\+Bypass}\label{a00124_a849b67e9badf7ca38a506f8010d4fff1}
+
+
+Can this instrument be bypassed? 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea6819867a9e86913e59decf318416d755}{A\+A\+X\+\_\+e\+Property\+\_\+\+Can\+Bypass} 
+\end{DoxySeeAlso}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_ab28a76c6e5d7860d20b699869c108c84}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Manufacturer\+I\+D@{m\+Manufacturer\+I\+D}}
+\index{m\+Manufacturer\+I\+D@{m\+Manufacturer\+I\+D}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Manufacturer\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Manufacturer\+I\+D}\label{a00124_ab28a76c6e5d7860d20b699869c108c84}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea996465cca29a2a15291d1c788ac5728c}{Manufacturer I\+D} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a139f8dc96e73b88a1e9f6abdfe7112c3}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Product\+I\+D@{m\+Product\+I\+D}}
+\index{m\+Product\+I\+D@{m\+Product\+I\+D}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Product\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Product\+I\+D}\label{a00124_a139f8dc96e73b88a1e9f6abdfe7112c3}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea3a41fcdff5af1a4fd19dcbca7b1ba6f3}{Product I\+D} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a80d2c48d5a97190ed2ebec043d073142}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Plugin\+I\+D@{m\+Plugin\+I\+D}}
+\index{m\+Plugin\+I\+D@{m\+Plugin\+I\+D}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Plugin\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Plugin\+I\+D}\label{a00124_a80d2c48d5a97190ed2ebec043d073142}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea89ca3dd6e96895cda14976c1b1ceb826}{Plug-\/\+In (Type) I\+D} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a9feeadf3348cf1b4ce13008d3a02aaef}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Audiosuite\+I\+D@{m\+Audiosuite\+I\+D}}
+\index{m\+Audiosuite\+I\+D@{m\+Audiosuite\+I\+D}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Audiosuite\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Type\+I\+D} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Audiosuite\+I\+D}\label{a00124_a9feeadf3348cf1b4ce13008d3a02aaef}
+
+
+\hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ead3344696b8298a8b254add3d039ea927}{Audio\+Suite I\+D} 
+
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+\hypertarget{a00124_a0803c641f72241bea5d7cf984c6263ca}{}\index{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}!m\+Multi\+Mono\+Support@{m\+Multi\+Mono\+Support}}
+\index{m\+Multi\+Mono\+Support@{m\+Multi\+Mono\+Support}!A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info@{A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info}}
+\subsubsection[{m\+Multi\+Mono\+Support}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\+A\+X\+\_\+\+C\+Boolean} A\+A\+X\+\_\+\+S\+Instrument\+Setup\+Info\+::m\+Multi\+Mono\+Support}\label{a00124_a0803c641f72241bea5d7cf984c6263ca}
+Multi-\/mono support
+
+\begin{DoxyNote}{Note}
+It is recommended to un-\/set the {\ttfamily m\+Multi\+Mono\+Support} flag for V\+Is and other plug-\/ins which rely on non-\/global M\+I\+D\+I input. For more information see \hyperlink{a00283_a6571f4e41a5dd06e4067249228e2249ea83f671685958bdc668ef574d5a2d92b0}{A\+A\+X\+\_\+e\+Property\+\_\+\+Constraint\+\_\+\+Multi\+Mono\+Support} 
+\end{DoxyNote}
+
+
+Referenced by A\+A\+X\+\_\+\+C\+Monolithic\+Parameters\+::\+Static\+Describe().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00178}{A\+A\+X\+\_\+\+C\+Monolithic\+Parameters.\+h}\end{DoxyCompactItemize}
