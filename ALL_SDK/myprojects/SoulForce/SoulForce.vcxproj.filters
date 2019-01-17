@@ -9,9 +9,9 @@
       <UniqueIdentifier>{426E6AEE-366C-4F5C-AF5A-BF964D1AA404}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-     <Filter Include="Resources">
+    <Filter Include="Resources">
       <UniqueIdentifier>{F85DF5FA-3459-4EF0-B563-63ABE13B8A14}</UniqueIdentifier>
-    </Filter>   
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="plugin.cpp">
@@ -21,6 +21,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SoulForce.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pluginobjects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIViewAttributes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VSTGUIController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VstPlugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,21 +55,35 @@
     <ClInclude Include="resource.h">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIViewAttributes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="synthfunctions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VSTGUIController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VstPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
-   <ItemGroup>
-      <Image Include="resources\knobvst.png">
-        <Filter>Resources</Filter>
-      </Image>
-    </ItemGroup>
-    <ItemGroup>
-      <ResourceCompile Include="SoulForce.rc">
-        <Filter>Resources</Filter>
-      </ResourceCompile>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="RackAFX.uidesc">
-        <Filter>Resources</Filter>
-      </None>
+  <ItemGroup>
+    <Image Include="resources\knobvst.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RackAFX.uidesc">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SoulForce.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
-
