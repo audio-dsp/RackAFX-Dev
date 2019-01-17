@@ -1,0 +1,678 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		089C1669FE841209C02AAC07 = {
+			buildStyles = (
+				4F9091AC011F3BD104CA0E50,
+				4F9091AD011F3BD104CA0E50,
+			);
+			isa = PBXProject;
+			mainGroup = 089C166AFE841209C02AAC07;
+			projectDirPath = "";
+			targets = (
+				089C1673FE841209C02AAC07,
+			);
+		};
+		089C166AFE841209C02AAC07 = {
+			children = (
+				08FB77ADFE841716C02AAC07,
+				089C167CFE841241C02AAC07,
+				089C1671FE841209C02AAC07,
+				19C28FB4FE9D528D11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = AmplitudeImposer;
+			refType = 4;
+		};
+		089C1671FE841209C02AAC07 = {
+			children = (
+				08EA7FFBFE8413EDC02AAC07,
+				F69250CA0795B6E201000009,
+				F69250CB0795B6E201000009,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+		};
+		089C1673FE841209C02AAC07 = {
+			buildPhases = (
+				089C1674FE841209C02AAC07,
+				089C1675FE841209C02AAC07,
+				089C1676FE841209C02AAC07,
+				089C1677FE841209C02AAC07,
+				089C1679FE841209C02AAC07,
+				F69250880795B60101000009,
+				F69250890795B61D01000009,
+			);
+			buildSettings = {
+				DEBUGGING_SYMBOLS = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/Users/niallmoody/Desktop/vstsdk2.3/source /Users/niallmoody/Desktop/vstsdk2.3/source/common";
+				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST/";
+				JAVA_CLASS_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OPTIMIZATION_CFLAGS = "-O3";
+				OTHER_CFLAGS = "-DVSTGUI3";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PREFIX_HEADER = ../vstgui_3_0_beta2/vstplugsquartz.h;
+				PRODUCT_NAME = AmplitudeImposer;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = vst;
+			};
+			dependencies = (
+			);
+			isa = PBXBundleTarget;
+			name = AmplitudeImposer;
+			productInstallPath = "$(HOME)/Library/Audio/Plug-Ins/VST/";
+			productName = AmplitudeImposer;
+			productReference = 4F9091AB011F3BD104CA0E50;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AmplitudeImposer</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.0.1d1</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+</dict>
+</plist>
+";
+			shouldUseHeadermap = 1;
+		};
+		089C1674FE841209C02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				F69250920795B67101000009,
+				F69250940795B67101000009,
+				F69250970795B67101000009,
+				F69250A20795B68A01000009,
+				F69250A30795B68A01000009,
+				F69250A40795B68A01000009,
+				F69250A60795B68A01000009,
+				F69250A80795B68A01000009,
+				F69250B60795B69E01000009,
+				F69250B80795B69E01000009,
+				F69250BA0795B69E01000009,
+				F69250BC0795B69E01000009,
+				F69250BD0795B69E01000009,
+				F69250C10795B6B101000009,
+				F69250C20795B6B101000009,
+				F69250C30795B6B101000009,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089C1675FE841209C02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				F69250C60795B6C001000009,
+				F69250C70795B6C001000009,
+				F69250C90795B6CD01000009,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089C1676FE841209C02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				F69250910795B67101000009,
+				F69250930795B67101000009,
+				F69250950795B67101000009,
+				F69250960795B67101000009,
+				F69250A50795B68A01000009,
+				F69250A70795B68A01000009,
+				F69250B50795B69E01000009,
+				F69250B70795B69E01000009,
+				F69250B90795B69E01000009,
+				F69250BB0795B69E01000009,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089C1677FE841209C02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				08EA7FFCFE8413EDC02AAC07,
+				F692518E0795B6E301000009,
+				F692518F0795B6E301000009,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089C1679FE841209C02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		089C167CFE841241C02AAC07 = {
+			children = (
+				F69250C40795B6C001000009,
+				F69250C50795B6C001000009,
+				F69250C80795B6CD01000009,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			refType = 4;
+		};
+		08EA7FFBFE8413EDC02AAC07 = {
+			isa = PBXFrameworkReference;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+		};
+		08EA7FFCFE8413EDC02AAC07 = {
+			fileRef = 08EA7FFBFE8413EDC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		08FB77ADFE841716C02AAC07 = {
+			children = (
+				F692508A0795B67101000009,
+				F692508B0795B67101000009,
+				F692508C0795B67101000009,
+				F692508D0795B67101000009,
+				F692508E0795B67101000009,
+				F692508F0795B67101000009,
+				F69250900795B67101000009,
+				F69250980795B68A01000009,
+				F69250990795B68A01000009,
+				F692509A0795B68A01000009,
+				F692509B0795B68A01000009,
+				F692509C0795B68A01000009,
+				F692509D0795B68A01000009,
+				F692509E0795B68A01000009,
+				F69250AC0795B69E01000009,
+				F69250AD0795B69E01000009,
+				F69250AE0795B69E01000009,
+				F69250AF0795B69E01000009,
+				F69250B00795B69E01000009,
+				F69250B10795B69E01000009,
+				F69250B20795B69E01000009,
+				F69250B30795B69E01000009,
+				F69250B40795B69E01000009,
+				F69250BE0795B6B101000009,
+				F69250BF0795B6B101000009,
+				F69250C00795B6B101000009,
+			);
+			isa = PBXGroup;
+			name = Source;
+			refType = 4;
+		};
+//080
+//081
+//082
+//083
+//084
+//190
+//191
+//192
+//193
+//194
+		19C28FB4FE9D528D11CA2CBB = {
+			children = (
+				4F9091AB011F3BD104CA0E50,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+//190
+//191
+//192
+//193
+//194
+//4F0
+//4F1
+//4F2
+//4F3
+//4F4
+		4F9091AB011F3BD104CA0E50 = {
+			isa = PBXBundleReference;
+			path = AmplitudeImposer.bundle;
+			refType = 3;
+		};
+		4F9091AC011F3BD104CA0E50 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				OPTIMIZATION_CFLAGS = "-O0";
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4F9091AD011F3BD104CA0E50 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4F0
+//4F1
+//4F2
+//4F3
+//4F4
+//F60
+//F61
+//F62
+//F63
+//F64
+		F69250880795B60101000009 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			generatedFileNames = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			neededFileNames = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp PkgInfo build/AmplitudeImposer.vst/Contents/";
+		};
+		F69250890795B61D01000009 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			generatedFileNames = (
+			);
+			isa = PBXShellScriptBuildPhase;
+			neededFileNames = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r build/AmplitudeImposer.vst $HOME/Library/Audio/Plug-Ins/VST";
+		};
+		F692508A0795B67101000009 = {
+			isa = PBXFileReference;
+			path = AmplitudeImposer.cpp;
+			refType = 4;
+		};
+		F692508B0795B67101000009 = {
+			isa = PBXFileReference;
+			path = AmplitudeImposer.h;
+			refType = 4;
+		};
+		F692508C0795B67101000009 = {
+			isa = PBXFileReference;
+			path = AmplitudeImposerEditor.cpp;
+			refType = 4;
+		};
+		F692508D0795B67101000009 = {
+			isa = PBXFileReference;
+			path = AmplitudeImposerEditor.h;
+			refType = 4;
+		};
+		F692508E0795B67101000009 = {
+			isa = PBXFileReference;
+			path = AmplitudeImposerMain.cpp;
+			refType = 4;
+		};
+		F692508F0795B67101000009 = {
+			isa = PBXFileReference;
+			path = RightClickControls.cpp;
+			refType = 4;
+		};
+		F69250900795B67101000009 = {
+			isa = PBXFileReference;
+			path = RightClickControls.h;
+			refType = 4;
+		};
+		F69250910795B67101000009 = {
+			fileRef = F692508A0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250920795B67101000009 = {
+			fileRef = F692508B0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250930795B67101000009 = {
+			fileRef = F692508C0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250940795B67101000009 = {
+			fileRef = F692508D0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250950795B67101000009 = {
+			fileRef = F692508E0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250960795B67101000009 = {
+			fileRef = F692508F0795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250970795B67101000009 = {
+			fileRef = F69250900795B67101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250980795B68A01000009 = {
+			isa = PBXFileReference;
+			name = AEffect.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/AEffect.h;
+			refType = 0;
+		};
+		F69250990795B68A01000009 = {
+			isa = PBXFileReference;
+			name = aeffectx.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/aeffectx.h;
+			refType = 0;
+		};
+		F692509A0795B68A01000009 = {
+			isa = PBXFileReference;
+			name = AEffEditor.hpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/AEffEditor.hpp;
+			refType = 0;
+		};
+		F692509B0795B68A01000009 = {
+			isa = PBXFileReference;
+			name = AudioEffect.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/AudioEffect.cpp;
+			refType = 0;
+		};
+		F692509C0795B68A01000009 = {
+			isa = PBXFileReference;
+			name = AudioEffect.hpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/AudioEffect.hpp;
+			refType = 0;
+		};
+		F692509D0795B68A01000009 = {
+			isa = PBXFileReference;
+			name = audioeffectx.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/audioeffectx.cpp;
+			refType = 0;
+		};
+		F692509E0795B68A01000009 = {
+			isa = PBXFileReference;
+			name = audioeffectx.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/common/audioeffectx.h;
+			refType = 0;
+		};
+		F69250A20795B68A01000009 = {
+			fileRef = F69250980795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A30795B68A01000009 = {
+			fileRef = F69250990795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A40795B68A01000009 = {
+			fileRef = F692509A0795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A50795B68A01000009 = {
+			fileRef = F692509B0795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A60795B68A01000009 = {
+			fileRef = F692509C0795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A70795B68A01000009 = {
+			fileRef = F692509D0795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250A80795B68A01000009 = {
+			fileRef = F692509E0795B68A01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250AC0795B69E01000009 = {
+			isa = PBXFileReference;
+			name = aeffguieditor.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/aeffguieditor.cpp;
+			refType = 0;
+		};
+		F69250AD0795B69E01000009 = {
+			isa = PBXFileReference;
+			name = aeffguieditor.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/aeffguieditor.h;
+			refType = 0;
+		};
+		F69250AE0795B69E01000009 = {
+			isa = PBXFileReference;
+			name = cscrollview.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/cscrollview.cpp;
+			refType = 0;
+		};
+		F69250AF0795B69E01000009 = {
+			isa = PBXFileReference;
+			name = cscrollview.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/cscrollview.h;
+			refType = 0;
+		};
+		F69250B00795B69E01000009 = {
+			isa = PBXFileReference;
+			name = vstcontrols.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstcontrols.cpp;
+			refType = 0;
+		};
+		F69250B10795B69E01000009 = {
+			isa = PBXFileReference;
+			name = vstcontrols.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstcontrols.h;
+			refType = 0;
+		};
+		F69250B20795B69E01000009 = {
+			isa = PBXFileReference;
+			name = vstgui.cpp;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstgui.cpp;
+			refType = 0;
+		};
+		F69250B30795B69E01000009 = {
+			isa = PBXFileReference;
+			name = vstgui.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstgui.h;
+			refType = 0;
+		};
+		F69250B40795B69E01000009 = {
+			isa = PBXFileReference;
+			name = vstplugsquartz.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstplugsquartz.h;
+			refType = 0;
+		};
+		F69250B50795B69E01000009 = {
+			fileRef = F69250AC0795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250B60795B69E01000009 = {
+			fileRef = F69250AD0795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250B70795B69E01000009 = {
+			fileRef = F69250AE0795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250B80795B69E01000009 = {
+			fileRef = F69250AF0795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250B90795B69E01000009 = {
+			fileRef = F69250B00795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250BA0795B69E01000009 = {
+			fileRef = F69250B10795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250BB0795B69E01000009 = {
+			fileRef = F69250B20795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250BC0795B69E01000009 = {
+			fileRef = F69250B30795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250BD0795B69E01000009 = {
+			fileRef = F69250B40795B69E01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250BE0795B6B101000009 = {
+			isa = PBXFileReference;
+			name = vstplugscarbon.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstplugscarbon.h;
+			refType = 0;
+		};
+		F69250BF0795B6B101000009 = {
+			isa = PBXFileReference;
+			name = vstplugsmac.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstplugsmac.h;
+			refType = 0;
+		};
+		F69250C00795B6B101000009 = {
+			isa = PBXFileReference;
+			name = vstplugsmacho.h;
+			path = /Users/niallmoody/Desktop/vstsdk2.3/source/vstgui_3_0_beta2/vstplugsmacho.h;
+			refType = 0;
+		};
+		F69250C10795B6B101000009 = {
+			fileRef = F69250BE0795B6B101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250C20795B6B101000009 = {
+			fileRef = F69250BF0795B6B101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250C30795B6B101000009 = {
+			fileRef = F69250C00795B6B101000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250C40795B6C001000009 = {
+			isa = PBXFileReference;
+			name = bmp00128.bmp;
+			path = images/bmp00128.bmp;
+			refType = 4;
+		};
+		F69250C50795B6C001000009 = {
+			isa = PBXFileReference;
+			name = bmp00129.bmp;
+			path = images/bmp00129.bmp;
+			refType = 4;
+		};
+		F69250C60795B6C001000009 = {
+			fileRef = F69250C40795B6C001000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250C70795B6C001000009 = {
+			fileRef = F69250C50795B6C001000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250C80795B6CD01000009 = {
+			isa = PBXFileReference;
+			path = PkgInfo;
+			refType = 4;
+		};
+		F69250C90795B6CD01000009 = {
+			fileRef = F69250C80795B6CD01000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F69250CA0795B6E201000009 = {
+			isa = PBXFrameworkReference;
+			name = ApplicationServices.framework;
+			path = /System/Library/Frameworks/ApplicationServices.framework;
+			refType = 0;
+		};
+		F69250CB0795B6E201000009 = {
+			isa = PBXFrameworkReference;
+			name = QuickTime.framework;
+			path = /System/Library/Frameworks/QuickTime.framework;
+			refType = 0;
+		};
+		F692518E0795B6E301000009 = {
+			fileRef = F69250CA0795B6E201000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		F692518F0795B6E301000009 = {
+			fileRef = F69250CB0795B6E201000009;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 089C1669FE841209C02AAC07;
+}

@@ -1,0 +1,3 @@
+LIBRARY			AMPLITUDEIMPOSER
+DESCRIPTION		'AmplitudeImposer'
+EXPORTS         main
