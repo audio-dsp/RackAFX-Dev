@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{3346243A-79D0-40C2-AF0B-26D7980430A9}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{426E6AEE-366C-4F5C-AF5A-BF964D1AA404}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+     <Filter Include="Resources">
+      <UniqueIdentifier>{F85DF5FA-3459-4EF0-B563-63ABE13B8A14}</UniqueIdentifier>
+    </Filter>   
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RackAFXDLL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoulForce.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginconstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RackAFXDLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoulForce.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+   <ItemGroup>
+      <Image Include="resources\knobvst.png">
+        <Filter>Resources</Filter>
+      </Image>
+    </ItemGroup>
+    <ItemGroup>
+      <ResourceCompile Include="SoulForce.rc">
+        <Filter>Resources</Filter>
+      </ResourceCompile>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="RackAFX.uidesc">
+        <Filter>Resources</Filter>
+      </None>
+  </ItemGroup>
+</Project>
+
