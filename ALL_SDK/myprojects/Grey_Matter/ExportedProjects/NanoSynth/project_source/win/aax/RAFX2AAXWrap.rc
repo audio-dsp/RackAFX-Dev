@@ -1,0 +1,210 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "RAFX2AAXWrapResource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DATA
+//
+
+RAFX.UIDESC             DATA                    "../resources/RackAFX.uidesc"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+KNOB.PNG     PNG     "../resources/knob.png"
+GROUPFRAME.PNG     PNG     "../resources/groupframe.png"
+BACKGROUND.PNG     PNG     "../resources/background.png"
+AMBERONOFF.PNG     PNG     "../resources/amberonoff.png"
+TWOSSAMBER.PNG     PNG     "../resources/twossamber.png"
+ASSIGNBAMBER.PNG     PNG     "../resources/assignbamber.png"
+RBSTRIPAMBER8.PNG     PNG     "../resources/rbstripamber8.png"
+RBSTRIPAMBER2.PNG     PNG     "../resources/rbstripamber2.png"
+RBSTRIPAMBER3.PNG     PNG     "../resources/rbstripamber3.png"
+RBSTRIPAMBER4.PNG     PNG     "../resources/rbstripamber4.png"
+RBSTRIPAMBER5.PNG     PNG     "../resources/rbstripamber5.png"
+RBSTRIPAMBER6.PNG     PNG     "../resources/rbstripamber6.png"
+RBSTRIPAMBER7.PNG     PNG     "../resources/rbstripamber7.png"
+VSBACKGROUND.PNG     PNG     "../resources/vsbackground.png"
+HSBACKGROUND.PNG     PNG     "../resources/hsbackground.png"
+HSBACKS700.PNG     PNG     "../resources/hsbackS700.png"
+VSHANDLE.PNG     PNG     "../resources/vshandle.png"
+HSHANDLE.PNG     PNG     "../resources/hshandle.png"
+HSHANDS700.PNG     PNG     "../resources/hshandS700.png"
+VULEDOFF.PNG     PNG     "../resources/vuledoff.png"
+VULEDON.PNG     PNG     "../resources/vuledon.png"
+VULEDOFFINV.PNG     PNG     "../resources/vuledoffinv.png"
+VULEDONINV.PNG     PNG     "../resources/vuledoninv.png"
+BLACKGEARKNOB.PNG     PNG     "../resources/blackgearknob.png"
+ALPHABLACKGEARKNOB1.PNG     PNG     "../resources/alphablackgearknob1.png"
+ALPHABLACKGEARKNOB2.PNG     PNG     "../resources/alphablackgearknob2.png"
+VSBACKSHORT56.PNG     PNG     "../resources/vsbackshort56.png"
+VSHANDSMALL56.PNG     PNG     "../resources/vshandsmall56.png"
+HSBACKSHORT56.PNG     PNG     "../resources/hsbackshort56.png"
+HSHANDSMALL56.PNG     PNG     "../resources/hshandsmall56.png"
+VSBACKGROUNDTWO.PNG     PNG     "../resources/vsbackgroundtwo.png"
+ALPHACHICKENHEAD.PNG     PNG     "../resources/alphachickenhead.png"
+ALPHAFXKNOB.PNG     PNG     "../resources/alphafxknob.png"
+ALPHAGREENABLETON.PNG     PNG     "../resources/alphagreenableton.png"
+ALPHAKNOB303.PNG     PNG     "../resources/alphaknob303.png"
+ALPHAM400.PNG     PNG     "../resources/alpham400.png"
+ALPHAMINIBRUTE.PNG     PNG     "../resources/alphaminibrute.png"
+ALPHASSLBLUE.PNG     PNG     "../resources/alphasslblue.png"
+ALPHASSLRED.PNG     PNG     "../resources/alphasslred.png"
+ALPHASSLGREEN.PNG     PNG     "../resources/alphasslgreen.png"
+BLUEABLETON.PNG     PNG     "../resources/blueableton.png"
+CHICKENHEAD.PNG     PNG     "../resources/chickenhead.png"
+FXKNOB.PNG     PNG     "../resources/fxknob.png"
+GREENABLETON.PNG     PNG     "../resources/greenableton.png"
+GREYABLETON.PNG     PNG     "../resources/greyableton.png"
+KNOB303.PNG     PNG     "../resources/knob303.png"
+KNOBM400.PNG     PNG     "../resources/knobm400.png"
+MINIBRUTE.PNG     PNG     "../resources/minibrute.png"
+SSLBLUE.PNG     PNG     "../resources/sslblue.png"
+SSLGREEN.PNG     PNG     "../resources/sslgreen.png"
+SSLRED.PNG     PNG     "../resources/sslred.png"
+BLUEMETAL.PNG     PNG     "../resources/bluemetal.png"
+DARKGREYVINYL.PNG     PNG     "../resources/darkgreyvinyl.png"
+GREENMETAL.PNG     PNG     "../resources/greenmetal.png"
+GREYMETAL.PNG     PNG     "../resources/greymetal.png"
+LIGHTGREYMETAL.PNG     PNG     "../resources/lightgreymetal.png"
+YELLOWMETAL.PNG     PNG     "../resources/yellowmetal.png"
+TWOSSGREEN.PNG     PNG     "../resources/twossgreen.png"
+RBSTRIPGREEN3.PNG     PNG     "../resources/rbstripgreen3.png"
+RBSTRIPGREEN4.PNG     PNG     "../resources/rbstripgreen4.png"
+RBSTRIPGREEN5.PNG     PNG     "../resources/rbstripgreen5.png"
+RBSTRIPGREEN6.PNG     PNG     "../resources/rbstripgreen6.png"
+RBSTRIPGREEN7.PNG     PNG     "../resources/rbstripgreen7.png"
+RBSTRIPGREEN8.PNG     PNG     "../resources/rbstripgreen8.png"
+RBSTRIPGREEN2.PNG     PNG     "../resources/rbstripgreen2.png"
+RBSTRIPSILVERBUTTON2.PNG     PNG     "../resources/rbstripsilverbutton2.png"
+RBSTRIPSILVERBUTTON4.PNG     PNG     "../resources/rbstripsilverbutton4.png"
+RBSTRIPSILVERBUTTON5.PNG     PNG     "../resources/rbstripsilverbutton5.png"
+RBSTRIPSILVERBUTTON6.PNG     PNG     "../resources/rbstripsilverbutton6.png"
+RBSTRIPSILVERBUTTON7.PNG     PNG     "../resources/rbstripsilverbutton7.png"
+RBSTRIPSILVERBUTTON8.PNG     PNG     "../resources/rbstripsilverbutton8.png"
+RBSTRIPSILVERBUTTON3.PNG     PNG     "../resources/rbstripsilverbutton3.png"
+ALPHAAMPKNOB.PNG     PNG     "../resources/alphaampknob.png"
+ALPHACHICKENHEAD2.PNG     PNG     "../resources/alphachickenhead2.png"
+ALPHACHICKENHEAD3.PNG     PNG     "../resources/alphachickenhead3.png"
+ALPHAMASCHINE.PNG     PNG     "../resources/alphamaschine.png"
+ALPHAORANGEAMP.PNG     PNG     "../resources/alphaorangeamp.png"
+ALPHASSLBLUE2.PNG     PNG     "../resources/alphasslblue2.png"
+ALPHASSLGREEN2.PNG     PNG     "../resources/alphasslgreen2.png"
+ALPHASSLRED2.PNG     PNG     "../resources/alphasslred2.png"
+ALPHASSLYELLOW.PNG     PNG     "../resources/alphasslyellow.png"
+ALPHAWHITEDUST.PNG     PNG     "../resources/alphawhitedust.png"
+AMPKNOB.PNG        	PNG     "../resources/ampknob.png"
+BIGAMPKNOB.PNG        	PNG     "../resources/bigampknob.png"
+BIGOBERHEIMBUTTON.PNG     PNG     "../resources/bigoberheimbutton.png"
+BIGPOWERSWITCH.PNG     	PNG     "../resources/bigpowerswitch.png"
+BIGPROHPHETBUTTON.PNG     PNG     "../resources/bigprohphetbutton.png"
+BIGRUBBERBUTTON.PNG     PNG     "../resources/bigrubberbutton.png"
+BIGTOGGLESWITCH.PNG     PNG     "../resources/bigtoggleswitch.png"
+CHICKENHEAD2.PNG     PNG     "../resources/chickenhead2.png"
+CHICKENHEAD3.PNG     PNG     "../resources/chickenhead3.png"
+GIANTAMPKNOB.PNG     PNG     "../resources/giantampknob.png"
+MASCHINE.PNG     PNG     "../resources/maschine.png"
+MEDOBERHEIMBUTTON.PNG     PNG     "../resources/medoberheimbutton.png"
+MEDPOWERSWITCH.PNG     PNG     "../resources/medpowerswitch.png"
+MEDPROPHETBUTTON.PNG     PNG     "../resources/medprophetbutton.png"
+MEDRUBBERBUTTON.PNG     PNG     "../resources/medrubberbutton.png"
+MEDTOGGLESWITCH.PNG     PNG     "../resources/medtoggleswitch.png"
+MICROOBERHEIMBUTTON.PNG     PNG     "../resources/microoberheimbutton.png"
+MICROTOGGLESWITCH.PNG     PNG     "../resources/microtoggleswitch.png"
+ORANGEAMP.PNG     PNG     "../resources/orangeamp.png"
+SMALLOBERHEIMBUTTON.PNG     PNG     "../resources/smalloberheimbutton.png"
+SMALLPOWERSWITCH.PNG     PNG     "../resources/smallpowerswitch.png"
+SMALLPROHETBUTTON.PNG     PNG     "../resources/smallprohetbutton.png"
+SMALLRUBBERBUTTON.PNG     PNG     "../resources/smallrubberbutton.png"
+SMALLTOGGLESWITCH.PNG     PNG     "../resources/smalltoggleswitch.png"
+SSLBLUE2.PNG     PNG     "../resources/sslblue2.png"
+SSLGREEN2.PNG     PNG     "../resources/sslgreen2.png"
+SSLYELLOW.PNG     PNG     "../resources/sslyellow.png"
+SSLYELLOW2.PNG     PNG     "../resources/sslyellow2.png"
+TINYTOGGLESWITCH.PNG     PNG     "../resources/tinytoggleswitch.png"
+WHITEDUST.PNG     PNG     "../resources/whitedust.png"
+TINYPROPHET.PNG     PNG     "../resources/tinyprophet.png"
+SMALLPROPHET.PNG     PNG     "../resources/smallprophet.png"
+GIANTPROPHET.PNG     PNG     "../resources/giantprophet.png"
+ALPHAPROPHET.PNG     PNG     "../resources/alphaprophet.png"
+PROPHET.PNG     PNG     "../resources/prophet.png"
+BLACKPLASTIC.PNG     PNG     "../resources/blackplastic.png"
+ALPHABLACKPLASTIC.PNG     PNG     "../resources/alphablackplastic.png"
+GIANTBLACKPLASTIC.PNG     PNG     "../resources/giantblackplastic.png"
+SMALLBLACKPLASTIC.PNG     PNG     "../resources/smallblackplastic.png"
+ANALOGVUMETER.PNG     PNG     "../resources/analogvumeter.png"
+SMALLANALOGVUMETER.PNG     PNG     "../resources/smallanalogvumeter.png"
+BIGANALOGVUMETER.PNG     PNG     "../resources/biganalogvumeter.png"
+MEDANALOGVUMETER.PNG     PNG     "../resources/medanalogvumeter.png"
+HORIZVULEDOFF.PNG     PNG     "../resources/horizvuledoff.png"
+HORIZVULEDON.PNG     PNG     "../resources/horizvuledon.png"
+HORIZVULEDOFFINV.PNG     PNG     "../resources/horizvuledoffinv.png"
+HORIZVULEDONINV.PNG     PNG     "../resources/horizvuledoninv.png"
+VERTSWITCHFILTERS.PNG     PNG     "../resources/vertswitchfilters.png"
+HORIZSWITCHSYNTH.PNG     PNG     "../resources/horizswitchsynth.png"
+
+// --- User PNG Files --- //
+KNOBVST.PNG     PNG     "../resources/knobvst.png"
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
+
