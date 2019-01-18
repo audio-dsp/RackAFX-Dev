@@ -6,11 +6,28 @@
 #pragma warning(disable : 4305)//double float truncation
 #pragma warning(disable : 4018)//signed/unsigned mismatch
 #pragma warning(disable : 4800)//signed/unsigned mismatch
+#pragma warning(disable : 4267)//'initializing' : conversion from 'xxxxxx' to 'int, float, etc...'
 
 // includes for the project
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+// --- for RAFX2 support, internal to RackAFX
+#ifdef _RAFX2
+#include"PluginKernel/pluginstructures.h"
+#else
+#include <stdint.h>
+class IMidiEventQueue
+{
+public:
+	// --- Get the event count (extra, does not really need to be used)
+	virtual uint32_t getEventCount() = 0;
+
+	// --- Fire off the next
+	virtual bool fireMidiEvents(uint32_t uSampleOffset) = 0;
+};
+#endif
 
 // this #define enables the following constants form math.h
 #define _MATH_DEFINES_DEFINED
@@ -42,15 +59,370 @@ typedef unsigned char		UCHAR;
 typedef unsigned char       BYTE;
 #endif
 
-// More #defines for MacOS/XCode
-/*
-#ifndef max
-#define max(a,b)            (((a) > (b)) ? (a) : (b))
+// --- v6.6 RAFX GUI Stuff
+// --- messages
+enum {GUI_DID_OPEN,				/* RAFX GUI called after GUI_RAFX_OPEN, NOT called with GUI_USER_CUSTOM_OPEN */
+	  GUI_WILL_CLOSE,			/* RAFX GUI called after GUI_RAFX_CLOSE, but before window is destroyed, NOT called with GUI_USER_CUSTOM_CLOSE */
+	  GUI_TIMER_PING,			/* timer ping for custom views */
+	  GUI_CUSTOMVIEW,			/* query for a custom view */
+	  GUI_SUBCONTROLLER,		/* query for a subcontroller (not supported) */
+	  GUI_HAS_USER_CUSTOM,		/* CUSTOM GUI - reply in bHasUserCustomView */
+	  GUI_USER_CUSTOM_OPEN,		/* CUSTOM GUI - create your custom GUI, you must supply the code */
+	  GUI_USER_CUSTOM_CLOSE,	/* CUSTOM GUI - destroy your custom GUI, you must supply the code */
+	  GUI_USER_CUSTOM_SIZE,		/* CUSTOM GUI Size - currently not used, return in the info struct instead */
+	  GUI_RAFX_OPEN,
+	  GUI_RAFX_CLOSE,
+	  GUI_RAFX_INIT,
+	  GUI_RAFX_SYNC,
+	  GUI_EXTERNAL_SET_NORM_VALUE,
+	  GUI_EXTERNAL_SET_ACTUAL_VALUE,
+	  GUI_EXTERNAL_GET_NORM_VALUE,		/* currently not used */
+	  GUI_EXTERNAL_GET_ACTUAL_VALUE};	/* currently not used */
+
+// --- simple stucts
+typedef struct
+{
+    int x;
+    int y;
+}VSTGUIPOINT;
+
+typedef struct
+{
+    int width;
+    int height;
+}VSTGUISIZE;
+
+typedef struct
+{
+    int left;
+    int top;
+	int bottom;
+	int right;
+}VSTGUIRECT;
+
+// --- info/messaging struct for RAFX<-->GUI Communication
+typedef struct
+{
+	unsigned int message; // type of info message
+
+	// --- custom view stuff
+	char*		customViewName;
+	int			customViewTag;
+	VSTGUIRECT	customViewRect;
+	VSTGUIPOINT customViewOffset;
+	char*		customViewBitmapName;
+	char*		customViewHandleBitmapName;		// sliders
+	char*		customViewOffBitmapName;		// LED Meters
+	char*		customViewOrientation;			// sliders, switches, meters
+
+	void*		customViewBackColor;	// CColor cloaked
+	void*		customViewFrameColor;	// CColor cloaked
+	void*		customViewFontColor;	// CColor cloaked
+	int			customViewFrameWidth;
+	int			customViewRoundRectRadius;
+	bool		customViewStyleNoFrame;
+	bool		customViewStyleRoundRect;
+
+	int			customViewHtOneImage;	// CAnimKnob
+	int			customViewSubPixmaps;	// CAnimKnob
+
+	// --- 9-part tiled offsets
+	bool		isNinePartTiledBitmap;
+	double		nptoLeft;
+	double		nptoTop;
+	double		nptoRight;
+	double		nptoBottom;
+
+	// --- subcontroller stuff
+	char* subControllerName;
+
+	// --- pointer to VST3Editor
+	void* editor; // editor
+	void* window; // HWND for WinOS or NSView* for MacOS
+	void* listener; // HWND for WinOS or NSView* for MacOS
+	int vstPlatformType; // for VST2 vs. VST3 on MacOS support
+
+	// --- handles updates/inits from various APIs (pure custom GUIs only)
+	double normalizedParameterValue;
+	double actualParameterValue;
+	int parameterTag;
+
+	// --- instance stuff
+	void* hRAFXInstance;
+	void* hPlugInInstance;
+
+	// --- for RAFX View
+    void* XMLResource;
+	unsigned long xmlSize;
+	int nControlCount;
+	UINT* pControlMap;
+	void* pGUISynchronizer; // ptr to host GUI_PARAM_SYNCH_STRUCT (pure custom GUIs only)
+	void* pAAXParameters;	// ptr to host AAX Parameters (pure custom GUIs only)
+
+	// --- for User Custom View
+	bool bHasUserCustomView;
+
+	VSTGUISIZE size; // return variable with GUI width/height, or (-1, -1) if GUI not supported
+}VSTGUI_VIEW_INFO;
+
+typedef struct
+{
+	// --- bus
+	UINT uInputBus; // sidechain input = 1; others may follow
+
+	// --- pointers for the three process types
+	float* pFrameInputBuffer;
+	float* pRAFXInputBuffer;
+	float** ppVSTInputBuffer;
+	UINT uNumInputChannels;
+	UINT uBufferSize; // RAFX buffer only, generally you won't need this
+
+	bool bInputEnabled;
+
+}audioProcessData;
+
+
+// --- for thread safe GUI updates v6.7.2.x and above
+// --- Messages
+enum { preProcessData, postProcessData, updateHostInfo, idleProcessData, midiMessageEx, midiEventList, queryPluginInfo };
+enum {vectorJoystickX_Offset, vectorJoystickY_Offset, numAddtlParams}; // numAddtlParams ALWAYS LAST
+enum {paramCount, paramInfo, paramValueDisplay, paramValueIn, paramValueOut};
+
+// --- struct for future MIDI expansion, implemented in Make VST for RAFX v6.8.0.5+
+typedef struct
+{
+	unsigned int uMessage;
+	unsigned int uChannel;
+	unsigned int uData1;
+	unsigned int uData2;
+	unsigned int uSampleOffset;
+	int nPitchBendValue;
+	float fNormalizedPitchBendValue;
+	bool bDirty;
+}MIDI_EVENT;
+
+// --- struct for VST2 Queries
+typedef struct
+{
+	unsigned int uInfoType;
+	int nNumParams;
+	int nParamIndex;
+	char cParamName[8];
+	char cParamUnits[8];
+	char cParamValue[8];
+	float fParamValueIn;
+	float fParamValueOut;
+
+}VST2_INFO;
+
+
+// --- struct for GUI parameter synchronization
+typedef struct
+{
+	int nControlIndex;						/* index of CUICtrl Object in plugin list */
+	UINT uControlId;						/* RackAFX ControlId */
+	float fNormalizedValue;					/* normalized version of parameter */
+	float fActualValue;						/* actual value of parameter */
+	bool bDirty;							/* flag that parameter needs update */
+	bool bKorgVectorJoystickOrientation;	/* Korg = Sequential Circuits = diamond shaped VJStick path */
+
+	// --- these are for future implementation
+	unsigned int uSampleOffset;				/* future implementation, currently not used */
+	unsigned int uNumSAParameters;			/* future implementation, currently not used */
+	unsigned int* pSASampleOffsets;			/* future implementation, currently not used */
+	float* pSANormalizedValues;				/* future implementation, currently not used */
+	float* pSAActualValue;					/* future implementation, currently not used */
+}GUI_PARAMETER;
+
+// --- GUI Thread Synchronization struct for RackAFX ONLY
+typedef struct
+{
+#if defined _WINDOWS || defined _WINDLL
+	CRITICAL_SECTION cs;			/* thread protection mechanism */
 #endif
-#ifndef min
-#define min(a,b)            (((a) < (b)) ? (a) : (b))
-#endif
-*/
+	GUI_PARAMETER* pGUIParameters;	/* ptr to (copy of) GUI_PARAMETER array */
+	int nNumParams;					/* num of params in struct; should be m_UIControlList.count( ) + numAddtlParams */
+} GUI_PARAM_SYNCH_STRUCT;
+
+
+typedef struct
+{
+	// --- common to all APIs
+	unsigned long long uAbsoluteFrameBufferIndex;	// --- the sample index at top of buffer; this is incremented for processAudioFrame() so you always know the current sample index; for processRackAFXBuffer() and processVSTBuffer() it is up to you to keep track
+	double dAbsoluteFrameBufferTime;				// --- the time in seconds of the sample index at top of buffer; this is incremented for processAudioFrame() so you always know the current sample index; for processRackAFXBuffer() and processVSTBuffer() it is up to you to keep track
+	double dBPM;									// --- beats per minute, aka "tempo"
+	float fTimeSigNumerator;						// --- time signature numerator
+	UINT uTimeSigDenomintor;						// --- time signature denominator
+
+	// --- VST3 Specific: note these use same variable names as VST3::struct ProcessContext
+	//     see ..\VST3 SDK\pluginterfaces\vst\ivstprocesscontext.h for information on decoding these
+	//
+	unsigned int state;				// --- a combination of the values from \ref StatesAndFlags; use to decode validity of other VST3 items in this struct
+	long long systemTime;			// --- system time in nanoseconds (optional)
+	double continousTimeSamples;	// --- project time, without loop (optional)
+	double projectTimeMusic;		// --- musical position in quarter notes (1.0 equals 1 quarter note)
+	double barPositionMusic;		// --- last bar start position, in quarter notes
+	double cycleStartMusic;			// --- cycle start in quarter notes
+	double cycleEndMusic;			// --- cycle end in quarter notes
+	unsigned int samplesToNextClock;// --- MIDI Clock Resolution (24 Per Quarter Note), can be negative (nearest)
+	/*
+		IF you need SMPTE information, you need to get the information yourself at the start of the process( ) function
+		where the above values are filled out. See the variables here in VST3 SDK\pluginterfaces\vst\ivstprocesscontext.h:
+
+		int32 smpteOffsetSubframes;		// --- SMPTE (sync) offset in subframes (1/80 of frame)
+		FrameRate frameRate;			// --- frame rate
+	*/
+
+	// --- AU Specific
+	//     see AUBase.h for definitions and information on decoding these
+	//
+	double dCurrentBeat;						// --- current DAW beat value
+	bool bIsPlayingAU;							// --- notorously incorrect in Logic - once set to true, stays stuck there
+	bool bTransportStateChanged;				// --- only notifies a change, but not what was changed to...
+	unsigned int nDeltaSampleOffsetToNextBeat;	// --- samples to next beat
+	double dCurrentMeasureDownBeat;				// --- current downbeat
+	bool bIsCycling;							// --- looping
+	double dCycleStartBeat;						// --- loop start
+	double dCycleEndBeat;						// --- loop end
+
+	// --- AAX Specific
+	//     see AAX_ITransport.h for definitions and information on decoding these
+	bool bIsPlayingAAX;					// --- flag if playing
+	long long nTickPosition;			// --- "Tick" is represented here as 1/960000 of a quarter note
+	bool bLooping;						// --- looping flag
+	long long nLoopStartTick;			// --- start tick for loop
+	long long nLoopEndTick ;			// --- end tick for loop
+	/*
+		NOTE: there are two optional functions that cause a performance hit in AAX; these are commented out of the
+		RAFX ported projects; if you decide to use them, you should re-locate them to a non-realtime thread. Use
+		at your own risk!
+
+        int32_t nBars = 0;
+        int32_t nBeats = 0;
+        int64_t nDisplayTicks = 0;
+        int64_t nCustomTickPosition = 0;
+
+        // --- There is a minor performance cost associated with using this API in Pro Tools. It should NOT be used excessively without need
+        midiTransport->GetBarBeatPosition(&nBars, &nBeats, &nDisplayTicks, nAbsoluteSampleLocation);
+
+        // --- There is a minor performance cost associated with using this API in Pro Tools. It should NOT be used excessively without need
+        midiTransport->GetCustomTickPosition(&nCustomTickPosition, nAbsoluteSampleLocation);
+
+		NOTE: if you need SMPTE or metronome information, you need to get the information yourself at the start of the ProcessAudio( ) function
+			  see AAX_ITransport.h for definitions and information on decoding these
+		virtual	AAX_Result GetTimeCodeInfo(AAX_EFrameRate* oFrameRate, int32_t* oOffset) const = 0;
+		virtual	AAX_Result GetFeetFramesInfo(AAX_EFeetFramesRate* oFeetFramesRate, int64_t* oOffset) const = 0;
+		virtual AAX_Result IsMetronomeEnabled(int32_t* isEnabled) const = 0;
+	*/
+}HOST_INFO;
+
+
+// --- thanks to Alexirae on my Forum for this LPF smoother; see:
+//     http://www.willpirkle.com/forum/synth-algorithms/frequency-change-in-wtoscillator/
+//
+// --- 6.8.0.5: added double-version
+//
+class CFloatParamSmoother
+{
+public:
+	CFloatParamSmoother(){a = 0.0; b = 0.0; z = 0.0; z2 = 0; da = 0.0; db = 0.0; dz = 0.0; dz2 = 0.0;}
+
+	void initParamSmoother(float smoothingTimeInMs, float samplingRate, float initValue)
+    {
+        const float c_twoPi = 6.283185307179586476925286766559f;
+        a = exp(-c_twoPi / (smoothingTimeInMs * 0.001f * samplingRate));
+        b = 1.f - a;
+        z = initValue;
+		z2 = initValue;
+		da = a;
+		db = b;
+		dz = z;
+		dz2 = z2;
+    }
+
+    inline bool smoothParameter(float in, float& out)
+    {
+        z = (in * b) + (z * a);
+		if(z == z2)
+		{
+			out = in;
+			return false;
+		}
+		z2 = z;
+		out = z2;
+        return true;
+    }
+
+   inline bool smoothDoubleParameter(double in, double& out)
+   {
+        dz = (in * db) + (dz * da);
+		if(dz == dz2)
+		{
+			out = in;
+			return false;
+		}
+		dz2 = dz;
+		out = dz2;
+        return true;
+    }
+
+private:
+    float a;
+    float b;
+    float z;
+    float z2;
+    double da;
+    double db;
+    double dz;
+    double dz2;
+};
+
+// --- Interface for VST3 parameter value update queue (sample accurate automation)
+class IParamUpdateQueue
+{
+public:
+	// --- Get the index number associated with the parameter
+	virtual UINT getParameterIndex() = 0;
+
+	// --- Get the sample-accurate value of the parameter at the given sample offset. Pass in the last known normalized value.
+	//     Returns true if dPreviousValue != dNextValue
+	virtual bool getValueAtOffset(long int lSampleOffset, double dPreviousValue, double &dNextValue) = 0;
+
+	// --- Get the sample-accurate value of the parameter at the next sample offset, determined by an internal counter
+	//     Returns true if dNextValue is different than the previous value
+	virtual bool getNextValue(double &dNextValue) = 0;
+};
+
+// --- only for plugins that use processVSTBuffers() and inside of VST3 host
+class IMidiEventList
+{
+public:
+	// --- Get the event count (extra, does not really need to be used)
+	virtual UINT getEventCount() = 0;
+
+	// --- Fire off the next
+	virtual bool fireMidiEvent(unsigned int uSampleOffset) = 0;
+};
+
+typedef struct
+{
+	char* rafx2Name;
+	IMidiEventQueue* midiEventQueue;
+}RAFX2_INFO;
+
+typedef struct
+{
+	const GUI_PARAMETER* pInGUIParameters;
+	const GUI_PARAMETER* pOutGUIParameters;
+	const HOST_INFO* pHostInfo;
+	const MIDI_EVENT* pMIDIEvent;	// for sample accurate MIDI in AU versions
+	IMidiEventList* pIMidiEventList;
+	VST2_INFO* pVSTInfo;			// for VST2 queries
+	RAFX2_INFO* pRAFX2Info;
+	int nNumParams;					// = number of ordinary RAFX variables + 2 for Vector Joystick
+	bool bIgnoreSmoothing;			// for impulse response analyzer measurements only, not for normal audio processing
+}PROCESS_INFO;
+
 
 #if defined _WINDOWS || defined _WINDLL
 	#if (_MSC_VER <= 1700) // vs2012 and earlier
@@ -61,13 +433,6 @@ typedef unsigned char       BYTE;
 			#define fmin(a,b)            (((a) < (b)) ? (a) : (b))
 		#endif
 	#endif
-#else
-		#ifndef fmax
-			#define fmax(a,b)            (((a) > (b)) ? (a) : (b))
-		#endif
-		#ifndef fmin
-			#define fmin(a,b)            (((a) < (b)) ? (a) : (b))
-		#endif
 #endif
 
 #ifndef itoa
@@ -88,20 +453,41 @@ typedef unsigned char       BYTE;
 #define FLT_MIN_PLUS          1.175494351e-38         /* min positive value */
 #define FLT_MIN_MINUS        -1.175494351e-38         /* min negative value */
 
-const UINT CURRENT_PLUGIN_API = 61;
 const UINT CONTROL_THEME_SIZE = 32;
 const UINT PLUGIN_CONTROL_THEME_SIZE = 64;
 const UINT CONTROL_THEME = 0;
 const UINT PRESET_COUNT = 16; // more than 16 in VST gets sluggish depending on the client
+const UINT CURRENT_PLUGIN_API = 64;
+const UINT MAX_USER_METERS = 1034; // v6.8+ allows 20 + 1014 = 1034 user meters
+
+// --- m_uPlugInEX[ ] index values
+//
+//     Other index values are used in RackAFX Client only
+//
+const UINT RESERVED_3 = 3; // future use
+const UINT ENABLE_SIDECHAIN_VSTAU = 4;	// VSTAU sidechain enable
+const UINT ENABLE_SAA_VST3 = 5;			// sample accurate automation/param support
+const UINT SAA_VST3_GRANULARITY = 6;	// sample accurate automation/param support
+const UINT VST_INFINITE_TAIL = 7;		// infinite tail time for VST, forces transport always-on
+// -------------------------------------------------------------------------
+
+// --- CControl::uFluxCapControl
+const UINT RESERVED_FLUX_CAP_CTRL_0 = 0; // --- reserved
+const UINT RESERVED_FLUX_CAP_CTRL_1 = 1; // --- reserved
+const UINT RESERVED_FLUX_CAP_CTRL_2 = 2; // --- reserved
+
+// -------------------------------------------------------------------------
+
+// --- CControl::fFluxCapData
+const UINT RESERVED_FLUX_CAP_VALUE_0 = 0; // --- reserved
+const UINT RESERVED_FLUX_CAP_VALUE_1 = 1; // --- reserved
+const UINT RESERVED_FLUX_CAP_VALUE_2 = 2; // --- reserved
+
+// -------------------------------------------------------------------------
+
 
 // custom messages
 #define SEND_STATUS_WND_MESSAGE		WM_USER + 3000
-#define UPDATE_SLIDER_CONTROL		WM_USER + 3001
-#define SEND_EDIT_CTRL_STRING		WM_USER + 3002
-#define SEND_SLIDER_CTRL_VALUE		WM_USER + 3004
-#define SEND_RADIO_CHECK			WM_USER + 3005
-#define SEND_ASGN_BUTTON_CLICK		WM_USER + 3006
-#define SEND_UPDATE_GUI				WM_USER + 3007
 #define SEND_JSPROG_BUTTON_CLICK	WM_USER + 3008
 
 const UINT MAX_JS_PROGRAM_STEPS		= 16;
@@ -239,9 +625,9 @@ inline float calcAntiLogControl(float fVar)
 // returns an anti-log version from 1.0 to 0.0
 /* y = 0.5(1-x) + 1
 	|
-1.0 |*					
-	|			*					
-	|				*	  
+1.0 |*
+	|			*
+	|				*
 	|				  *
 	|					*
 	|					*
@@ -258,9 +644,9 @@ inline float calcInverseLogControl(float fVar)
 // returns an anti-log version from 1.0 to 0.0
 /* y = 10^(-2x) -- this is similar to e^(-5x) but clamps value to 0 at 1
 	|
-1.0 |*					
-	|*		
-	| *	
+1.0 |*
+	|*
+	| *
 	|	*
 	|		*
 	|					*
@@ -286,6 +672,103 @@ inline float calcSliderVariable(float fMin, float fMax, float fVar)
 	float fDiff = fMax - fMin;
 	float fCookedData = (fVar - fMin)/fDiff;
 	return fCookedData;
+}
+
+inline void RotateVJSPoint45CW(double& x1, double& y1)
+{
+	double x = x1;
+	double y = y1;
+	x1 = (x + y)/1.41421356;
+	y1 = (y - x)/1.41421356;
+}
+
+inline void RotateVJSPoint45CCW(double& x1, double& y1)
+{
+	double x = x1;
+	double y = y1;
+	x1 = (x - y)/1.41421356;
+	y1 = (x + y)/1.41421356;
+}
+
+// --- for RAFX only
+inline void calculateRAFXVectorMixValues(double dPointX, double dPointY,
+									 double& dAmag, double& dBmag, double& dCmag, double& dDmag,
+									 double& dACMix, double& dBDMix, bool bJoystickCoords = true)
+{
+	double x = dPointX;
+	double y = dPointY;
+
+	double dUnitScalar = 1.41421356; // sqrt(2)
+
+	if(!bJoystickCoords)
+	{
+		RotateVJSPoint45CCW(x, y);
+
+		x /= dUnitScalar;
+		y /= dUnitScalar;
+	}
+
+	// these are 0->1 unipolar
+	dACMix = (x + 1.0)/2.0;
+	dBDMix = (y + 1.0)/2.0;
+
+	if(bJoystickCoords)
+	{
+		dPointX *= dUnitScalar;
+		dPointY *= dUnitScalar;
+	}
+
+	// actual surface is -45 degrees from joystick axes
+	if(bJoystickCoords)
+		RotateVJSPoint45CW(dPointX, dPointY);
+
+	dPointX *= 127;
+	dPointY *= 127;
+
+	if (dPointX > 127)   /* Limit range to -128 - 127 */
+		dPointX = 127;
+	else if (dPointX < -128)
+		dPointX = -128;
+
+	if (dPointY > 127)   /* Limit range to -128 - 127 */
+		dPointY = 127;
+	else if (dPointY < -128)
+		dPointY = -128;
+
+	dPointX += 127;
+	dPointY += 127;
+
+	if(dPointX == 127 && dPointY == 127)
+	{
+		dAmag = 0.25;
+		dBmag = 0.25;
+		dCmag = 0.25;
+		dDmag = 0.25;
+		return;
+	}
+
+	// the Korg/Sequential Circuits VS Equations
+	dBmag = dPointX*dPointY/645;   /* Calculate individual wave % */
+	dCmag = dPointX*(255 - dPointY)/645; /* 645=(255^2/100)*127/128 */
+	dDmag = (255-dPointX)*(255-dPointY)/645;
+	dAmag = 100.0 - dBmag - dCmag - dDmag;
+
+	// convert from percent
+	dAmag /= 100.0;
+	dBmag /= 100.0;
+	dCmag /= 100.0;
+	dDmag /= 100.0;
+
+	// limit to 1.0 from rounding/truncation
+	dAmag = fmin(1.0, dAmag);
+	dBmag = fmin(1.0, dBmag);
+	dCmag = fmin(1.0, dCmag);
+	dDmag = fmin(1.0, dDmag);
+
+	dAmag = fmax(0.0, dAmag);
+	dBmag = fmax(0.0, dBmag);
+	dCmag = fmax(0.0, dCmag);
+	dDmag = fmax(0.0, dDmag);
 }
 
 //
@@ -441,9 +924,10 @@ inline double extractControlValue(char* p)
 //
 // http://www.musicdsp.org/archive.php?classid=0#205
 //
-const float DIGITAL_TC = -2.0; // log(1%)
-const float ANALOG_TC = -0.43533393574791066201247090699309; // (log(36.7%)
-const float METER_UPDATE_INTERVAL_MSEC = 15.0;
+const float DIGITAL_TC = -4.60517019; // ln(1%)
+const float ANALOG_TC =  -1.00239343; // ln(36.7%)
+const float METER_UPDATE_INTERVAL_MSEC = 50.0;
+const float RAFX_METER_UPDATE_INTERVAL_MSEC = 50.0; //125.0;
 const float METER_MIN_DB = -60.0;
 
 class CEnvelopeDetector
@@ -771,14 +1255,14 @@ public:	// Functions
 	// VALID Examples: audio.wav
 	//				   //samples//audio.wav
 	CWaveData(char* pFilePath = NULL);
-    
+
 	// prompts with file open dialog, returns TRUE if successfuly
 	// opened and parsed the file into the member m_pWaveBuffer
 	bool initWithUserWAVFile(char* pInitDir = NULL);
-    
+
 	// One Time Destruction
 	~CWaveData(void);
-    
+
 	UINT m_uNumChannels;
 	UINT m_uSampleRate;
 	UINT m_uSampleCount;
@@ -790,14 +1274,14 @@ public:	// Functions
 	UINT m_uMIDIPitchFraction;
 	UINT m_uSMPTEFormat;
 	UINT m_uSMPTEOffset;
-    
+
 	bool m_bWaveLoaded;
-    
+
 	// the WAV file converted to floats on range of -1.0 --> +1.0
 	float* m_pWaveBuffer;
-    
+
 protected:
-	bool readWaveFile(char* pFilePath);
+	bool readWaveFile(const char* pFilePath);
 };
 
 #endif
@@ -832,18 +1316,25 @@ public:
 	float fInitUserDoubleValue;
 	float fInitUserUINTValue;
 
-	// FOR VST PRESETS ONLY!
-	float fUserCookedIntData;
-	float fUserCookedFloatData;
-	float fUserCookedDoubleData;
-	float fUserCookedUINTData;
+	// --- for parameter smoothing only
+	float fSmoothingFloatValue;
 
+	CFloatParamSmoother m_FloatParamSmoother;
+	float fSmoothingTimeInMs;
+	bool bEnableParamSmoothing;
+
+	// --- Vector Joystick values are NOT pointer-bound
+	float fJoystickValue;
+	bool bKorgVectorJoystickOrientation;
+
+//protected:
 	int*	m_pUserCookedIntData;
 	float*	m_pUserCookedFloatData;
 	double*	m_pUserCookedDoubleData;
 	UINT*	m_pUserCookedUINTData;
 	float*	m_pCurrentMeterValue;
 
+public:
 	char*  cControlName;
 	char*  cControlUnits;
 	char*  cVariableName;
@@ -913,11 +1404,13 @@ public:
 		this->fInitUserDoubleValue				= aCUICtrl.fInitUserDoubleValue;
 		this->fInitUserUINTValue				= aCUICtrl.fInitUserUINTValue;
 
-		// VST PRESETS ONLY
-		this->fUserCookedIntData				= aCUICtrl.fUserCookedIntData;
-		this->fUserCookedFloatData				= aCUICtrl.fInitUserFloatValue;
-		this->fUserCookedDoubleData				= aCUICtrl.fUserCookedDoubleData;
-		this->fUserCookedUINTData				= aCUICtrl.fUserCookedUINTData;
+		// --- for smoothing only, does not currently need copying, but leaving for future use
+		this->fSmoothingFloatValue				= aCUICtrl.fSmoothingFloatValue;
+		this->fSmoothingTimeInMs				= aCUICtrl.fSmoothingTimeInMs;
+		this->bEnableParamSmoothing				= aCUICtrl.bEnableParamSmoothing;
+
+		this->fJoystickValue				= aCUICtrl.fJoystickValue;
+		this->bKorgVectorJoystickOrientation = aCUICtrl.bKorgVectorJoystickOrientation;
 
 		this->m_pUserCookedIntData				= aCUICtrl.m_pUserCookedIntData;
 		this->m_pUserCookedFloatData				= aCUICtrl.m_pUserCookedFloatData;
@@ -985,37 +1478,44 @@ public:
 // This is the linked list of control objects
 const UINT uMaxVSTProgramNameLen = 24;
 
+// --- generic pure C++ linked list of CUICtrl objects (not pointers!)
+//     leaving this alone as much code depends on it directly; see
+//     below for a class-template version used for other linked-lists in RackAFX
 class CUIControlList
 {
-     private:
-
-         struct node
-         {
-            CUICtrl data;
-            node *link;
-         }*p;
+private:
+	struct node
+	{
+		CUICtrl data;
+		node *link;
+	}*p;
 
 public:
 
-     CUIControlList();
-     void append( CUICtrl data);
-     void add_as_first( CUICtrl data );
-     void addafter( int c, CUICtrl data);
-     void update(CUICtrl data);
-     void del( CUICtrl data);
-     void display();
-     int count();
-     int countLegalVSTIF();
-     int countLegalCustomVSTGUI();
+	 CUIControlList();
+	 ~CUIControlList();
 
+	 // --- basic functions
+	 void append(CUICtrl data);
+	 void add_as_first(CUICtrl data);
+	 void addafter(int c, CUICtrl data);
+	 void update(CUICtrl data);
+	 void del(CUICtrl data);
+	 void display();
+	 int count();
+
+	 // --- does not count LED Meters
+	 int countLegalVSTIF();
+	 int countLegalCustomVSTGUI();
+
+	 // --- find operation
 	 CUICtrl* getAt(int nIndex);
 
-	 // for VST preset storage
+	 // --- VST2 uMaxVSTProgramNameLen = 24; no longer used, but keeping for future
 	 char name[uMaxVSTProgramNameLen+1];
 
-     ~CUIControlList();
-
-	CUIControlList& operator=(CUIControlList& aCUICtrlList)	// need this override for collections to work
+	// --- = operator for collections
+	CUIControlList& operator=(CUIControlList& aCUICtrlList)
 	{
 		if(this == &aCUICtrlList)
 			return *this;
@@ -1026,7 +1526,7 @@ public:
 		int nCount = aCUICtrlList.count();
 		for(int j=0; j<nCount; j++)
 		{
-			CUICtrl* p = aCUICtrlList.getAt(j);
+			const CUICtrl* p = aCUICtrlList.getAt(j);
 			CUICtrl* pClone = new CUICtrl(*p);
 			this->append(*pClone);
 		}
@@ -1034,3 +1534,228 @@ public:
 		return *this;
 	}
 };
+
+/*
+	This is a generic C++ linked list that is modified to provide basic FILO and FIFO stack operations.
+	It is required for the checkUpdateGUI( ) operation and is similar in design to the CUIControlList object
+	(without the stack stuff). It is preferred over the std:: library for communication with the RAFX
+	host because the std:: library's binary is different for all versions of Visual Studio as well as
+	the Debug/Release configurations within each version.
+
+	The object is based on the code here: https://github.com/odem5442/DSAlgos/blob/master/linkedlist.cpp
+	However, I believe there is at least one error in the above code (in the del( ) method). It also does
+	not contain the push/pop operations that I added for stack-ish behavior.
+
+	You can use this for your own lists/stacks. For lists of structure objects, you only need to define the
+	structs. For lists of objects, you will need to override your equals-operator (= operator) so that
+	copying works properly.
+
+	- Will Pirkle
+*/
+template <class T>
+class CLinkedList
+{
+private:
+	struct node
+	{
+		T data;
+		node *link;
+	}*top;
+
+public:
+
+	CLinkedList<T>(){top = NULL;}
+	~CLinkedList<T>(){deleteAll();}
+
+	// --- basic functions
+	//
+	// --- append(T object)
+	// or
+	// --- pushBottom(T object)
+	//
+	//		add element to bottom of list/stack
+	#define pushBottom  append
+	inline void append(T object)
+	{
+	   node *q,*t;
+
+	   if(top == NULL)
+	   {
+			top = new node;
+			top->data = object;
+			top->link = NULL;
+	   }
+	   else
+	   {
+			q = top;
+			while(q->link != NULL)
+				q = q->link;
+
+			t = new node;
+			t->data = object;
+			t->link = NULL;
+			q->link = t;
+	   }
+	}
+
+	// --- pushTop(T object)
+	//		add element to top of list/stack
+	inline void pushTop(T object)
+	{
+		node *q;
+		q = new node;
+		q->data = object;
+		q->link = top;
+		top = q;
+	}
+
+	//--- popTop(T& object)
+	//
+	//      pop element from top of stack and delete
+	//      makes a copy in the caller supplied object
+	//
+	//		return value is success in popping top
+	//		use pushTop/popTop for FILO stack
+	inline bool popTop(T& object)
+	{
+		if(top)
+		{
+			object = top->data;
+			deleteAt(0);
+			return true;
+		}
+		return false;
+	}
+
+	//--- popBottom(T& object)
+	//
+	//      pop element from bottom of stack and delete
+	//      makes a copy in the caller supplied object
+	//
+	//     return value is success in popping bottom
+	//     use pushTop/popBottom for FIFO stack
+	inline bool popBottom(T& object)
+	{
+		int nBottom = count() - 1;
+		T* bottom = getAt(nBottom);
+		if(bottom)
+		{
+			object = *bottom;
+			deleteAt(nBottom);
+			return true;
+		}
+		return false;
+	}
+
+	//--- addafter(T& object)
+	//
+	//      insert an element after a certain index
+	//		int c		index to insert after
+	//		T object	object
+	inline void addafter(int c, T object)
+	{
+		node *q,*t;
+		int i;
+		for(i = 0, q = top; i<c; i++)
+		{
+			q = q->link;
+			if(q == NULL)
+				return;
+		}
+
+		t = new node;
+		t->data = object;
+		t->link = q->link;
+		q->link = t;
+	}
+
+	//--- addafter(T& object)
+	//
+	//		delete an element at a certain index
+	//		int c		index of element to delete
+	inline void deleteAt(int c)
+	{
+		node *q,*r;
+		q = top;
+		int m = 1;
+		if(c == 0)
+		{
+			top = q->link;
+			delete q;
+			return;
+		}
+
+		r = q;
+		q = q->link;
+
+		while(q != NULL)
+		{
+			if(m++ == c)
+			{
+				 r->link = q->link;
+				 delete q;
+				 return;
+			}
+
+			r = q;
+			q = q->link;
+		}
+	}
+
+	//--- deleteAll(T& object)
+	//
+	//		delete all elements
+	inline void deleteAll()
+	{
+		for(int j = count()-1; j>=0; j--)
+			deleteAt(j);
+	}
+
+	//--- count()
+	//
+	//		returns count of items in list
+	inline int count()
+	{
+		node *q;
+		int c = 0;
+		for(q = top; q != NULL; q = q->link)
+		   c++;
+
+		return c;
+	}
+
+	//--- getAt()
+	//
+	//		returns pointer to item at nIndex
+	//		or NULL if no item found
+	inline T* getAt(int nIndex)
+	{
+		node *q;
+		int c = 0;
+		for(q = top; q != NULL; q = q->link )
+		{
+			if(c == nIndex)
+				return &q->data;
+			c++;
+		}
+		return NULL;
+	}
+
+	// --- = operator for collections
+	CLinkedList& operator=(CLinkedList& aCLinkedList)
+	{
+		if(this == &aCLinkedList)
+		return *this;
+
+		int nCount = aCLinkedList.count();
+		for(int j=0; j<nCount; j++)
+		{
+			T* p = aCLinkedList.getAt(j);
+			T* pClone = new T(*top);
+			this->append(*pClone);
+		}
+
+		return *this;
+	}
+};
+
