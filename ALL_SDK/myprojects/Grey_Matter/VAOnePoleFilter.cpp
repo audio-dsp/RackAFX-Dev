@@ -32,7 +32,8 @@ void CVAOnePoleFilter::update()
 
 	double wd = 2*pi*m_dFc;          
 	double T  = 1/m_dSampleRate;             
-	double wa = (2/T)*tan(wd*T/2); 
+//	double wa = (2/T)*tan(wd*T/2); 
+	double wa = (2/T)*fasttan(wd*T/2); 
 	double g  = wa*T/2;            
 
 	m_dAlpha = g/(1.0 + g);

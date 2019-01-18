@@ -159,6 +159,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DigiSynthVoice.cpp" />
+    <ClCompile Include="KThreeFiveFilter.cpp" />
     <ClCompile Include="NanoSynth.cpp" />
     <ClCompile Include="plugin.cpp" />
     <ClCompile Include="pluginobjects.cpp" />
@@ -171,14 +173,24 @@
     <ClCompile Include="MoogLadderFilter.cpp" />
     <ClCompile Include="Oscillator.cpp" />
     <ClCompile Include="QBLimitedOscillator.cpp" />
+    <ClCompile Include="SampleOscillator.cpp" />
+    <ClCompile Include="SEMFilter.cpp" />
     <ClCompile Include="VAOnePoleFilter.cpp" />
+    <ClCompile Include="VectorPathGenerator.cpp" />
+    <ClCompile Include="VectorSynth.cpp" />
+    <ClCompile Include="VectorSynthVoice.cpp" />
+    <ClCompile Include="Voice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DigiSynthVoice.h" />
+    <ClInclude Include="KThreeFiveFilter.h" />
     <ClInclude Include="NanoSynth.h" />
     <ClInclude Include="plugin.h" />
     <ClInclude Include="pluginconstants.h" />
     <ClInclude Include="RackAFXDLL.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SampleOscillator.h" />
+    <ClInclude Include="SEMFilter.h" />
     <ClInclude Include="trace.h" />
     <ClInclude Include="DCA.h" />
     <ClInclude Include="EnvelopeGenerator.h" />
@@ -190,6 +202,10 @@
     <ClInclude Include="QBLimitedOscillator.h" />
     <ClInclude Include="synthfunctions.h" />
     <ClInclude Include="VAOnePoleFilter.h" />
+    <ClInclude Include="VectorPathGenerator.h" />
+    <ClInclude Include="VectorSynth.h" />
+    <ClInclude Include="VectorSynthVoice.h" />
+    <ClInclude Include="Voice.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\knobvst.png" />
@@ -204,17 +220,3 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
