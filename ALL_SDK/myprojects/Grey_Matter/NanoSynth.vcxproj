@@ -160,6 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DigiSynthVoice.cpp" />
+    <ClCompile Include="DiodeLadderFilter.cpp" />
     <ClCompile Include="KThreeFiveFilter.cpp" />
     <ClCompile Include="NanoSynth.cpp" />
     <ClCompile Include="plugin.cpp" />
@@ -183,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DigiSynthVoice.h" />
+    <ClInclude Include="DiodeLadderFilter.h" />
     <ClInclude Include="KThreeFiveFilter.h" />
     <ClInclude Include="NanoSynth.h" />
     <ClInclude Include="plugin.h" />

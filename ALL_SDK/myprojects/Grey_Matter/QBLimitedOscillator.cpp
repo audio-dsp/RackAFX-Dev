@@ -12,15 +12,12 @@ void CQBLimitedOscillator::reset()
 {
 	COscillator::reset();
 
-	// saw/tri starts at 0.5
+	// --- saw/tri starts at 0.5
 	if(m_uWaveform == SAW1 || m_uWaveform == SAW2 ||
 	   m_uWaveform == SAW3 || m_uWaveform == TRI)
 	{
 		m_dModulo = 0.5;
 	}
-
-	// update
-	update();
 }
 
 void CQBLimitedOscillator::startOscillator()
