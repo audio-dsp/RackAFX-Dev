@@ -78,6 +78,9 @@
     <ClCompile Include="DiodeLadderFilter.cpp">
       <Filter>Synth Core</Filter>
     </ClCompile>
+    <ClCompile Include="WTOscillator.cpp">
+      <Filter>Synth Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NanoSynth.h">
@@ -153,6 +156,9 @@
       <Filter>Synth Core</Filter>
     </ClInclude>
     <ClInclude Include="DiodeLadderFilter.h">
+      <Filter>Synth Core</Filter>
+    </ClInclude>
+    <ClInclude Include="WTOscillator.h">
       <Filter>Synth Core</Filter>
     </ClInclude>
   </ItemGroup>

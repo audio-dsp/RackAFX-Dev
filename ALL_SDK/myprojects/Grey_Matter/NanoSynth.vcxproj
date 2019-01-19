@@ -181,6 +181,7 @@
     <ClCompile Include="VectorSynth.cpp" />
     <ClCompile Include="VectorSynthVoice.cpp" />
     <ClCompile Include="Voice.cpp" />
+    <ClCompile Include="WTOscillator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DigiSynthVoice.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="VectorSynth.h" />
     <ClInclude Include="VectorSynthVoice.h" />
     <ClInclude Include="Voice.h" />
+    <ClInclude Include="WTOscillator.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\knobvst.png" />
