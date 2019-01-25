@@ -340,10 +340,46 @@
 				RelativePath="plugin.cpp"
 				>
 			</File>
+				<File RelativePath="WTOscillator.cpp"></File>
+
+				<File RelativePath="VectorSynthVoice.cpp"></File>
+
+				<File RelativePath="VectorSynth.cpp"></File>
+
+				<File RelativePath="VectorPathGenerator.cpp"></File>
+
+				<File RelativePath="SEMFilter.cpp"></File>
+
+				<File RelativePath="SampleOscillator.cpp"></File>
+
+				<File RelativePath="KThreeFiveFilter.cpp"></File>
+
+				<File RelativePath="DiodeLadderFilter.cpp"></File>
+
+				<File RelativePath="DigiSynthVoice.cpp"></File>
+
 			<File
 				RelativePath="plugin.h"
 				>
 			</File>
+				<File RelativePath="WTOscillator.h"></File>
+
+				<File RelativePath="VectorSynthVoice.h"></File>
+
+				<File RelativePath="VectorSynth.h"></File>
+
+				<File RelativePath="VectorPathGenerator.h"></File>
+
+				<File RelativePath="SEMFilter.h"></File>
+
+				<File RelativePath="SampleOscillator.h"></File>
+
+				<File RelativePath="KThreeFiveFilter.h"></File>
+
+				<File RelativePath="DiodeLadderFilter.h"></File>
+
+				<File RelativePath="DigiSynthVoice.h"></File>
+
 			<File
 				RelativePath="pluginconstants.h"
 				>
@@ -455,6 +491,8 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+
 
 
 

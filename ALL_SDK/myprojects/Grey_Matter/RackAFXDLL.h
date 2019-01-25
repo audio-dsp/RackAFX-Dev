@@ -4,7 +4,7 @@
 // Interface definitions
 //-----------------------------------------------------------------------------
 #include "windows.h"
-#include "NanoSynth.h" // ***
+#include "GrayMatter.h" // ***
 #include "RAFXPlugInContainer.h"
 
 #define DllExportVST3 __declspec(dllexport)

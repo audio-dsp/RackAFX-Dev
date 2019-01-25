@@ -12,9 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NanoSynth.cpp">
-      <Filter>RAFX Core</Filter>
-    </ClCompile>
     <ClCompile Include="plugin.cpp">
       <Filter>RAFX Core</Filter>
     </ClCompile>
@@ -81,11 +78,11 @@
     <ClCompile Include="WTOscillator.cpp">
       <Filter>Synth Core</Filter>
     </ClCompile>
+    <ClCompile Include="GrayMatter.cpp">
+      <Filter>RAFX Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NanoSynth.h">
-      <Filter>RAFX Core</Filter>
-    </ClInclude>
     <ClInclude Include="plugin.h">
       <Filter>RAFX Core</Filter>
     </ClInclude>
@@ -160,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="WTOscillator.h">
       <Filter>Synth Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GrayMatter.h">
+      <Filter>RAFX Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

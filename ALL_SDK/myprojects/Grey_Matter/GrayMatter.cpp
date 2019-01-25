@@ -6,7 +6,7 @@
 
 
 #include <vector>
-#include "NanoSynth.h"
+#include "GrayMatter.h"
 #include "trace.h"
 #define LOG_MIDI 1
 
@@ -16,7 +16,7 @@
 	require the plugin to be fully instantiated. If so, allocate in init()
 
 */
-CNanoSynth::CNanoSynth()
+CGrayMatter::CGrayMatter()
 {
 	// Added by RackAFX - DO NOT REMOVE
 	//
@@ -25,7 +25,7 @@ CNanoSynth::CNanoSynth()
 	// END initUI()
 
 	// built in initialization
-	m_PlugInName = "NanoSynth";
+	m_PlugInName = "GrayMatter";
 
 	// Default to Stereo Operation:
 	// Change this if you want to support more/less channels
@@ -250,7 +250,7 @@ CNanoSynth::CNanoSynth()
 	Destroy variables allocated in the contructor()
 
 */
-CNanoSynth::~CNanoSynth(void)
+CGrayMatter::~CGrayMatter(void)
 {
 	// --- delete on master ONLY
 	m_GlobalModMatrix.deleteModMatrix();
@@ -262,7 +262,7 @@ initialize()
 	so you can use the Plug-In -> Host functions here (eg sendUpdateUI())
 	See the website www.willpirkle.com for more details
 */
-bool __stdcall CNanoSynth::initialize()
+bool __stdcall CGrayMatter::initialize()
 {
 	// Add your code here
 
@@ -288,7 +288,7 @@ bool __stdcall CNanoSynth::initialize()
 
     NOTE: if you allocte memory in this function, destroy it in ::destroy() above
 */
-bool __stdcall CNanoSynth::prepareForPlay()
+bool __stdcall CGrayMatter::prepareForPlay()
 {
 	for(int i=0; i<MAX_VOICES; i++)
 	{
@@ -318,7 +318,7 @@ bool __stdcall CNanoSynth::prepareForPlay()
 	return CPlugIn::prepareForPlay(); // --- this sets up parameter smoothing, if enabled in RackAFX - DO NOT ALTER
 }
 
-void CNanoSynth::update()
+void CGrayMatter::update()
 {
 	// --- set the global parameters
 	//
@@ -387,7 +387,7 @@ LEFT INPUT = pInputBuffer[0]
 LEFT OUTPUT = pOutputBuffer[1]
 
 */
-bool __stdcall CNanoSynth::processAudioFrame(float* pInputBuffer, float* pOutputBuffer, UINT uNumInputChannels, UINT uNumOutputChannels)
+bool __stdcall CGrayMatter::processAudioFrame(float* pInputBuffer, float* pOutputBuffer, UINT uNumInputChannels, UINT uNumOutputChannels)
 {
 	// --- smooth params (if enabled) DO NOT REMOVE THIS CODE
 	smoothParameterValues();
@@ -541,7 +541,7 @@ UIList Index	Variable Name					Control Index
 // ------------------------------------------------------------------------------- */
 // Add your UI Handler code here ------------------------------------------------- //
 //
-bool __stdcall CNanoSynth::userInterfaceChange(int nControlIndex)
+bool __stdcall CGrayMatter::userInterfaceChange(int nControlIndex)
 {
 	update();
 	//
@@ -583,7 +583,7 @@ bool __stdcall CNanoSynth::userInterfaceChange(int nControlIndex)
 	AC Mix = projection on X Axis (0 -> 1)
 	BD Mix = projection on Y Axis (0 -> 1)
 */
-bool __stdcall CNanoSynth::joystickControlChange(float fControlA, float fControlB, float fControlC, float fControlD, float fACMix, float fBDMix)
+bool __stdcall CGrayMatter::joystickControlChange(float fControlA, float fControlB, float fControlC, float fControlD, float fACMix, float fBDMix)
 {
 	// add your code here
 
@@ -618,7 +618,7 @@ bool __stdcall CNanoSynth::joystickControlChange(float fControlA, float fControl
 	the VST buffer sizes no maximum value. This would require the use of dynamic buffering
 	in the callback which is not acceptable for performance!
 */
-bool __stdcall CNanoSynth::processRackAFXAudioBuffer(float* pInputBuffer, float* pOutputBuffer,
+bool __stdcall CGrayMatter::processRackAFXAudioBuffer(float* pInputBuffer, float* pOutputBuffer,
 													   UINT uNumInputChannels, UINT uNumOutputChannels,
 													   UINT uBufferSize)
 {
@@ -664,7 +664,7 @@ bool __stdcall CNanoSynth::processRackAFXAudioBuffer(float* pInputBuffer, float*
 	For 5.1 audio you would get 6 pointers in each buffer.
 
 */
-bool __stdcall CNanoSynth::processVSTAudioBuffer(float** inBuffer, float** outBuffer, UINT uNumChannels, int inFramesToProcess)
+bool __stdcall CGrayMatter::processVSTAudioBuffer(float** inBuffer, float** outBuffer, UINT uNumChannels, int inFramesToProcess)
 {
 	/* --- OLD Project Found:
 		   if you want to enable parameter smoothing, add the single line of code:
@@ -709,7 +709,7 @@ bool __stdcall CNanoSynth::processVSTAudioBuffer(float** inBuffer, float** outBu
 	return true;
 }
 
-void CNanoSynth::startNote(int nIndex, UINT uMIDINote, UINT uMIDIVelocity)
+void CGrayMatter::startNote(int nIndex, UINT uMIDINote, UINT uMIDIVelocity)
 {
 	if(nIndex > MAX_VOICES-1)
 		return;
@@ -737,7 +737,7 @@ void CNanoSynth::startNote(int nIndex, UINT uMIDINote, UINT uMIDIVelocity)
 
 }
 
-void CNanoSynth::stealNote(int nIndex, UINT uPendingMIDINote, UINT uPendingVelocity)
+void CGrayMatter::stealNote(int nIndex, UINT uPendingMIDINote, UINT uPendingVelocity)
 {
 	if(nIndex > MAX_VOICES-1)
 		return;
@@ -758,7 +758,7 @@ void CNanoSynth::stealNote(int nIndex, UINT uPendingMIDINote, UINT uPendingVeloc
 	#endif
 }
 
-bool __stdcall CNanoSynth::midiNoteOn(UINT uChannel, UINT uMIDINote, UINT uVelocity)
+bool __stdcall CGrayMatter::midiNoteOn(UINT uChannel, UINT uMIDINote, UINT uVelocity)
 {
 	// test channel/ignore
 	if(m_uMidiRxChannel != MIDI_CH_ALL && uChannel != m_uMidiRxChannel)
@@ -803,7 +803,7 @@ bool __stdcall CNanoSynth::midiNoteOn(UINT uChannel, UINT uMIDINote, UINT uVeloc
 	return true;
 }
 
-bool __stdcall CNanoSynth::midiNoteOff(UINT uChannel, UINT uMIDINote, UINT uVelocity, bool bAllNotesOff)
+bool __stdcall CGrayMatter::midiNoteOff(UINT uChannel, UINT uMIDINote, UINT uVelocity, bool bAllNotesOff)
 {
 	// test channel/ignore
 	if(m_uMidiRxChannel != MIDI_CH_ALL && uChannel != m_uMidiRxChannel)
@@ -834,7 +834,7 @@ bool __stdcall CNanoSynth::midiNoteOff(UINT uChannel, UINT uMIDINote, UINT uVelo
 }
 
 // uModValue = 0->127
-bool __stdcall CNanoSynth::midiModWheel(UINT uChannel, UINT uModValue)
+bool __stdcall CGrayMatter::midiModWheel(UINT uChannel, UINT uModValue)
 {
 	// test channel/ignore
 	if(m_uMidiRxChannel != MIDI_CH_ALL && uChannel != m_uMidiRxChannel)
@@ -849,7 +849,7 @@ bool __stdcall CNanoSynth::midiModWheel(UINT uChannel, UINT uModValue)
 
 // nActualPitchBendValue 		= -8192 -> +8191, 0 at center
 // fNormalizedPitchBendValue 	= -1.0  -> +1.0,  0 at center
-bool __stdcall CNanoSynth::midiPitchBend(UINT uChannel, int nActualPitchBendValue, float fNormalizedPitchBendValue)
+bool __stdcall CGrayMatter::midiPitchBend(UINT uChannel, int nActualPitchBendValue, float fNormalizedPitchBendValue)
 {
 	// test channel/ignore
 	if(m_uMidiRxChannel != MIDI_CH_ALL && uChannel != m_uMidiRxChannel)
@@ -878,14 +878,14 @@ bool __stdcall CNanoSynth::midiPitchBend(UINT uChannel, int nActualPitchBendValu
    in each quarter note. Therefore, there should be 24 * 120 MIDI Clocks per minute.
    So, each MIDI Clock is sent at a rate of 60,000,000/(24 * 120) microseconds).
 */
-bool __stdcall CNanoSynth::midiClock()
+bool __stdcall CGrayMatter::midiClock()
 {
 
 	return true;
 }
 
 // any midi message other than note on, note off, pitchbend, mod wheel or clock
-bool __stdcall CNanoSynth::midiMessage(unsigned char cChannel, unsigned char cStatus, unsigned char
+bool __stdcall CGrayMatter::midiMessage(unsigned char cChannel, unsigned char cStatus, unsigned char
 						   				  cData1, unsigned char cData2)
 {
 	// test channel/ignore
@@ -1000,7 +1000,7 @@ bool __stdcall CNanoSynth::midiMessage(unsigned char cChannel, unsigned char cSt
 
 
 // DO NOT DELETE THIS FUNCTION --------------------------------------------------- //
-bool __stdcall CNanoSynth::initUI()
+bool __stdcall CGrayMatter::initUI()
 {
 	// ADDED BY RACKAFX -- DO NOT EDIT THIS CODE!!! ------------------------------ //
 	if(m_UIControlList.count() > 0)

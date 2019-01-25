@@ -37,17 +37,17 @@ struct nanoSynthVoice
 #define MAX_VOICES 2
 
 // abstract base class for RackAFX filters
-class CNanoSynth : public CPlugIn
+class CGrayMatter : public CPlugIn
 {
 public:
 	// RackAFX Plug-In API Member Methods:
 	// The followung 5 methods must be impelemented for a meaningful Plug-In
 	//
 	// 1. One Time Initialization
-	CNanoSynth();
+	CGrayMatter();
 
 	// 2. One Time Destruction
-	virtual ~CNanoSynth(void);
+	virtual ~CGrayMatter(void);
 
 	// 3. The Prepare For Play Function is called just before audio streams
 	virtual bool __stdcall prepareForPlay();

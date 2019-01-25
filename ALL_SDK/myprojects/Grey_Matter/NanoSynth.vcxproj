@@ -22,6 +22,7 @@
     <ProjectGuid>{ED3E6A75-15A9-4D9B-B020-8EC23FAF5600}</ProjectGuid>
     <RootNamespace>NanoSynth</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <ProjectName>Gray Matter</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -162,7 +163,7 @@
     <ClCompile Include="DigiSynthVoice.cpp" />
     <ClCompile Include="DiodeLadderFilter.cpp" />
     <ClCompile Include="KThreeFiveFilter.cpp" />
-    <ClCompile Include="NanoSynth.cpp" />
+    <ClCompile Include="GrayMatter.cpp" />
     <ClCompile Include="plugin.cpp" />
     <ClCompile Include="pluginobjects.cpp" />
     <ClCompile Include="RackAFXDLL.cpp" />
@@ -187,7 +188,7 @@
     <ClInclude Include="DigiSynthVoice.h" />
     <ClInclude Include="DiodeLadderFilter.h" />
     <ClInclude Include="KThreeFiveFilter.h" />
-    <ClInclude Include="NanoSynth.h" />
+    <ClInclude Include="GrayMatter.h" />
     <ClInclude Include="plugin.h" />
     <ClInclude Include="pluginconstants.h" />
     <ClInclude Include="RackAFXDLL.h" />
