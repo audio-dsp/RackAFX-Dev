@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{1bcc14f4-f463-4744-969f-b196fab85078}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VST Stuff">
+      <UniqueIdentifier>{e973a617-ca11-4913-a467-68b0bf5249b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{7870ac8d-b9eb-4237-8763-1a07bfca115f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VstPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\vstgui.sf\vstgui\aeffguieditor.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\vstgui.sf\vstgui\vstcontrols.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\vstgui.sf\vstgui\vstgui.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\vstplugmain.cpp">
+      <Filter>VST Stuff</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Editor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VstPlugin.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\aeffeditor.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\vstgui.sf\vstgui\aeffguieditor.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\audioeffect.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\public.sdk\source\vst2.x\audioeffectx.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\vstgui.sf\vstgui\vstcontrols.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\vstsdk2.4\vstgui.sf\vstgui\vstgui.h">
+      <Filter>VST Stuff</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="images\bmp00127.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\bmp00128.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="images\bmp00129.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="vstplug.def">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
